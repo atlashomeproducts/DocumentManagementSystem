@@ -189,6 +189,12 @@ Public Class DocMan
             ApprovedbyTextBox.Clear()
             RecordedbyTextBox.Clear()
             ReceivedbyTextBox.Clear()
+            BankAddressTextBox.Clear()
+            BankBranchTextBox.Clear()
+            BankNameTextBox.Clear()
+            PaymentOthersTextBox.Clear()
+
+
 
             DocumentDateCorp.Clear()
             MeetingDateTextBox.Clear()

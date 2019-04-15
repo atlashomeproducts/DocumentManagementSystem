@@ -79,6 +79,10 @@ Public Class Index
                 Next
 
 
+                Me.ListBox1.Items.Clear()
+                AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+
+
                 MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Catch ex As Exception
@@ -101,13 +105,23 @@ Public Class Index
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.ListBox1.Items.Clear()
-        AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+        'Me.ListBox1.Items.Clear()
+        ' AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+        Try
+
+
+            ListBox1.Items.Remove(ListBox1.SelectedItem)
+        Me.ListBox1.SelectedIndex = Me.ListBox1.SelectedIndex + 1
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
     End Sub
 
-    Private Sub SplitContainer1_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles SplitContainer1.Panel2.Paint
 
-    End Sub
 
 
 End Class

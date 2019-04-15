@@ -112,7 +112,7 @@ Partial Class Index
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(191, 39)
         Me.Button3.TabIndex = 2
-        Me.Button3.Text = "CLEAR LIST"
+        Me.Button3.Text = "REMOVE"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button1
