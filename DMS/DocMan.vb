@@ -427,5 +427,6 @@ Public Class DocMan
 
     Private Sub PaymentFormComboBox_TextChanged(sender As Object, e As EventArgs) Handles PaymentFormComboBox.TextChanged
         ComboSelect2()
+
     End Sub
 End Class

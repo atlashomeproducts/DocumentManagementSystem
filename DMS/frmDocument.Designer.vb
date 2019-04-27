@@ -164,10 +164,9 @@ Partial Class frmDocument
         '
         'DocumentTypesBindingNavigatorSaveItem
         '
-        Me.DocumentTypesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.DocumentTypesBindingNavigatorSaveItem.Image = CType(resources.GetObject("DocumentTypesBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.DocumentTypesBindingNavigatorSaveItem.Name = "DocumentTypesBindingNavigatorSaveItem"
-        Me.DocumentTypesBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
+        Me.DocumentTypesBindingNavigatorSaveItem.Size = New System.Drawing.Size(78, 22)
         Me.DocumentTypesBindingNavigatorSaveItem.Text = "Save Data"
         '
         'DocumentTypesC1TrueDBGrid
@@ -209,6 +208,7 @@ Partial Class frmDocument
         Me.ClientSize = New System.Drawing.Size(366, 431)
         Me.Controls.Add(Me.DocumentTypesC1TrueDBGrid)
         Me.Controls.Add(Me.DocumentTypesBindingNavigator)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmDocument"
         Me.Text = "Document Types"
         CType(Me.DocumentTypesBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

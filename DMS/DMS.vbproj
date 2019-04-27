@@ -92,6 +92,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DMSDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DMSDataSet.vb">
+      <DependentUpon>DMSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DocMan.Designer.vb">
       <DependentUpon>DocMan.vb</DependentUpon>
     </Compile>

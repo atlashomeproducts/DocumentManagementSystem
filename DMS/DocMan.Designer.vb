@@ -1595,7 +1595,7 @@ Partial Class DocMan
         '
         'BtnSave
         '
-        Me.BtnSave.Location = New System.Drawing.Point(122, 8)
+        Me.BtnSave.Location = New System.Drawing.Point(119, 8)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(104, 27)
         Me.BtnSave.TabIndex = 2
