@@ -16,9 +16,9 @@
     End Sub
 
     Private Sub FrmDocument_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DMSDataSet.DocumentGroups' table. You can move, or remove it, as needed.
-        Me.DocumentGroupsTableAdapter.Fill(Me.DMSDataSet.DocumentGroups)
-        'TODO: This line of code loads data into the 'DMSDataSet1.DocumentTypes' table. You can move, or remove it, as needed.
+
+
+
 
 
         Me.DocumentTypesTableAdapter.Fill(Me.DMSDataSet.DocumentTypes)
@@ -33,7 +33,7 @@
 
     End Sub
 
-    Private Sub C1TrueDBDropdown1_Click(sender As Object, e As EventArgs) Handles C1TrueDBDropdown1.Click
+    Private Sub C1TrueDBDropdown1_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

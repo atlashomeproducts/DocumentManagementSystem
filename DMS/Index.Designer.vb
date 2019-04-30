@@ -193,7 +193,7 @@ Partial Class Index
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.batchIdTextBox.Location = New System.Drawing.Point(106, 349)
         Me.batchIdTextBox.Name = "batchIdTextBox"
-        Me.batchIdTextBox.Size = New System.Drawing.Size(255, 22)
+        Me.batchIdTextBox.Size = New System.Drawing.Size(288, 22)
         Me.batchIdTextBox.TabIndex = 1
         '
         'Button2

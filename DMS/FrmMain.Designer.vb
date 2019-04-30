@@ -27,12 +27,12 @@ Partial Class FrmMain
         Me.IndexToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IndexToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DocumentManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.DocumentTypesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TerminateProgramToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.QueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,13 +59,19 @@ Partial Class FrmMain
         '
         Me.IndexToolStripMenuItem1.Name = "IndexToolStripMenuItem1"
         Me.IndexToolStripMenuItem1.Size = New System.Drawing.Size(224, 30)
-        Me.IndexToolStripMenuItem1.Text = "Index"
+        Me.IndexToolStripMenuItem1.Text = "Index Files"
         '
         'DocumentManagementToolStripMenuItem
         '
         Me.DocumentManagementToolStripMenuItem.Name = "DocumentManagementToolStripMenuItem"
         Me.DocumentManagementToolStripMenuItem.Size = New System.Drawing.Size(224, 30)
         Me.DocumentManagementToolStripMenuItem.Text = "Editor"
+        '
+        'QueryToolStripMenuItem
+        '
+        Me.QueryToolStripMenuItem.Name = "QueryToolStripMenuItem"
+        Me.QueryToolStripMenuItem.Size = New System.Drawing.Size(224, 30)
+        Me.QueryToolStripMenuItem.Text = "Query Database"
         '
         'ToolStripSeparator1
         '
@@ -102,12 +108,6 @@ Partial Class FrmMain
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
-        '
-        'QueryToolStripMenuItem
-        '
-        Me.QueryToolStripMenuItem.Name = "QueryToolStripMenuItem"
-        Me.QueryToolStripMenuItem.Size = New System.Drawing.Size(224, 30)
-        Me.QueryToolStripMenuItem.Text = "Query"
         '
         'FrmMain
         '

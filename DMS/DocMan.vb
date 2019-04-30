@@ -6,7 +6,7 @@ Imports System.Configuration
 Imports System.IO
 Imports System.ComponentModel
 
-Public Class DocMan
+Public Class FrmEditor
 
 
     Private Sub PopulateComboItems()
@@ -381,7 +381,7 @@ Public Class DocMan
 
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            ' MessageBox.Show(ex.Message)
         End Try
 
     End Sub

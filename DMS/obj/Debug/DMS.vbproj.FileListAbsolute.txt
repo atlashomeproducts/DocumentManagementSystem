@@ -70,7 +70,6 @@ C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\De
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\Interop.AcroPDFLib.dll
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\AxInterop.AcroPDFLib.dll
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.vbproj.ResolveComReference.cache
-C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.DocMan.resources
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.frmDocument.resources
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.FrmMain.resources
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.Index.resources
@@ -85,3 +84,4 @@ C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\De
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.frmQuery.resources
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\bin\Debug\C1.Win.C1List.4.dll
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\bin\Debug\C1.Win.C1List.4.xml
+C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.FrmEditor.resources

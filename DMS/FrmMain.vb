@@ -3,7 +3,7 @@ Public Class FrmMain
     Private Sub DocumentManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DocumentManagementToolStripMenuItem.Click
 
 
-        DocMan.Show(Me)
+        FrmEditor.Show(Me)
 
     End Sub
 
