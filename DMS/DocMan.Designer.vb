@@ -75,8 +75,6 @@ Partial Class DocMan
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.DocsCatalogueC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
-        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.IdTextBox = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -156,6 +154,8 @@ Partial Class DocMan
         Me.BtnEdit = New System.Windows.Forms.Button()
         Me.DocumentTypeComboBox = New System.Windows.Forms.ComboBox()
         Me.BtnRefresh = New AxAcroPDFLib.AxAcroPDF()
+        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         DocumentTypeLabel = New System.Windows.Forms.Label()
@@ -215,8 +215,6 @@ Partial Class DocMan
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
         CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.Timesheet.SuspendLayout()
         Me.GrpTimeSheet.SuspendLayout()
@@ -235,6 +233,8 @@ Partial Class DocMan
         Me.GrpCorp.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.BtnRefresh, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DocumentTypeLabel
@@ -753,20 +753,10 @@ Partial Class DocMan
         Me.DocsCatalogueC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.DocsCatalogueC1TrueDBGrid.PropBag = resources.GetString("DocsCatalogueC1TrueDBGrid.PropBag")
         '
-        'DocsCatalogueBindingSource
-        '
-        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
-        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
-        '
-        'DMSDataSet
-        '
-        Me.DMSDataSet.DataSetName = "DMSDataSet"
-        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'IdTextBox
         '
         Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Id", True))
-        Me.IdTextBox.Location = New System.Drawing.Point(610, 46)
+        Me.IdTextBox.Location = New System.Drawing.Point(401, 12)
         Me.IdTextBox.Name = "IdTextBox"
         Me.IdTextBox.Size = New System.Drawing.Size(14, 20)
         Me.IdTextBox.TabIndex = 20
@@ -1634,6 +1624,16 @@ Partial Class DocMan
         Me.BtnRefresh.Size = New System.Drawing.Size(547, 678)
         Me.BtnRefresh.TabIndex = 0
         '
+        'DocsCatalogueBindingSource
+        '
+        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
+        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'DocsCatalogueTableAdapter
         '
         Me.DocsCatalogueTableAdapter.ClearBeforeFill = True
@@ -1642,6 +1642,7 @@ Partial Class DocMan
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.DocsCatalogueTableAdapter = Me.DocsCatalogueTableAdapter
+        Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -1665,8 +1666,6 @@ Partial Class DocMan
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
         CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.Timesheet.ResumeLayout(False)
         Me.GrpTimeSheet.ResumeLayout(False)
@@ -1695,6 +1694,8 @@ Partial Class DocMan
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.BtnRefresh, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

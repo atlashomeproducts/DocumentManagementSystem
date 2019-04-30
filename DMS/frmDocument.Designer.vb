@@ -24,6 +24,16 @@ Partial Class frmDocument
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDocument))
+        Dim Style11 As C1.Win.C1TrueDBGrid.Style = New C1.Win.C1TrueDBGrid.Style()
+        Dim Style12 As C1.Win.C1TrueDBGrid.Style = New C1.Win.C1TrueDBGrid.Style()
+        Dim Style13 As C1.Win.C1TrueDBGrid.Style = New C1.Win.C1TrueDBGrid.Style()
+        Dim Style14 As C1.Win.C1TrueDBGrid.Style = New C1.Win.C1TrueDBGrid.Style()
+        Dim Style15 As C1.Win.C1TrueDBGrid.Style = New C1.Win.C1TrueDBGrid.Style()
+        Dim Style16 As C1.Win.C1TrueDBGrid.Style = New C1.Win.C1TrueDBGrid.Style()
+        Dim Style17 As C1.Win.C1TrueDBGrid.Style = New C1.Win.C1TrueDBGrid.Style()
+        Dim Style18 As C1.Win.C1TrueDBGrid.Style = New C1.Win.C1TrueDBGrid.Style()
+        Dim Style19 As C1.Win.C1TrueDBGrid.Style = New C1.Win.C1TrueDBGrid.Style()
+        Dim Style20 As C1.Win.C1TrueDBGrid.Style = New C1.Win.C1TrueDBGrid.Style()
         Me.DocumentTypesBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.DocumentTypesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -42,11 +52,16 @@ Partial Class frmDocument
         Me.DocumentTypesC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.DocumentTypesTableAdapter = New DMS.DMSDataSetTableAdapters.DocumentTypesTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
+        Me.C1TrueDBDropdown1 = New C1.Win.C1TrueDBGrid.C1TrueDBDropdown()
+        Me.DocumentGroupsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DocumentGroupsTableAdapter = New DMS.DMSDataSetTableAdapters.DocumentGroupsTableAdapter()
         CType(Me.DocumentTypesBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentTypesBindingNavigator.SuspendLayout()
         CType(Me.DocumentTypesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DocumentTypesC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.C1TrueDBDropdown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DocumentGroupsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DocumentTypesBindingNavigator
@@ -63,7 +78,7 @@ Partial Class frmDocument
         Me.DocumentTypesBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.DocumentTypesBindingNavigator.Name = "DocumentTypesBindingNavigator"
         Me.DocumentTypesBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.DocumentTypesBindingNavigator.Size = New System.Drawing.Size(366, 25)
+        Me.DocumentTypesBindingNavigator.Size = New System.Drawing.Size(532, 25)
         Me.DocumentTypesBindingNavigator.TabIndex = 0
         Me.DocumentTypesBindingNavigator.Text = "BindingNavigator1"
         '
@@ -185,7 +200,7 @@ Partial Class frmDocument
         Me.DocumentTypesC1TrueDBGrid.PreviewInfo.Size = New System.Drawing.Size(0, 0)
         Me.DocumentTypesC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
         Me.DocumentTypesC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("DocumentTypesC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.DocumentTypesC1TrueDBGrid.Size = New System.Drawing.Size(366, 406)
+        Me.DocumentTypesC1TrueDBGrid.Size = New System.Drawing.Size(532, 406)
         Me.DocumentTypesC1TrueDBGrid.TabIndex = 1
         Me.DocumentTypesC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.DocumentTypesC1TrueDBGrid.PropBag = resources.GetString("DocumentTypesC1TrueDBGrid.PropBag")
@@ -198,14 +213,60 @@ Partial Class frmDocument
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.DocsCatalogueTableAdapter = Nothing
+        Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Me.DocumentTypesTableAdapter
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'C1TrueDBDropdown1
+        '
+        Me.C1TrueDBDropdown1.AllowColMove = True
+        Me.C1TrueDBDropdown1.AllowColSelect = True
+        Me.C1TrueDBDropdown1.AllowRowSizing = C1.Win.C1TrueDBGrid.RowSizingEnum.AllRows
+        Me.C1TrueDBDropdown1.AlternatingRows = False
+        Me.C1TrueDBDropdown1.CaptionStyle = Style11
+        Me.C1TrueDBDropdown1.ColumnCaptionHeight = 17
+        Me.C1TrueDBDropdown1.ColumnFooterHeight = 17
+        Me.C1TrueDBDropdown1.ColumnSelectorStyle = Style12
+        Me.C1TrueDBDropdown1.DataSource = Me.DocumentGroupsBindingSource
+        Me.C1TrueDBDropdown1.DisplayMember = "DocumentGroup"
+        Me.C1TrueDBDropdown1.EvenRowStyle = Style13
+        Me.C1TrueDBDropdown1.FetchRowStyles = False
+        Me.C1TrueDBDropdown1.FooterStyle = Style14
+        Me.C1TrueDBDropdown1.HeadingStyle = Style15
+        Me.C1TrueDBDropdown1.HighLightRowStyle = Style16
+        Me.C1TrueDBDropdown1.Images.Add(CType(resources.GetObject("C1TrueDBDropdown1.Images"), System.Drawing.Image))
+        Me.C1TrueDBDropdown1.Location = New System.Drawing.Point(198, 135)
+        Me.C1TrueDBDropdown1.Name = "C1TrueDBDropdown1"
+        Me.C1TrueDBDropdown1.OddRowStyle = Style17
+        Me.C1TrueDBDropdown1.RecordSelectorStyle = Style18
+        Me.C1TrueDBDropdown1.RowDivider.Color = System.Drawing.Color.DarkGray
+        Me.C1TrueDBDropdown1.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.[Single]
+        Me.C1TrueDBDropdown1.RowSelectorStyle = Style19
+        Me.C1TrueDBDropdown1.RowSubDividerColor = System.Drawing.Color.DarkGray
+        Me.C1TrueDBDropdown1.ScrollTips = False
+        Me.C1TrueDBDropdown1.Size = New System.Drawing.Size(310, 225)
+        Me.C1TrueDBDropdown1.Style = Style20
+        Me.C1TrueDBDropdown1.TabIndex = 2
+        Me.C1TrueDBDropdown1.TabStop = False
+        Me.C1TrueDBDropdown1.UseCompatibleTextRendering = False
+        Me.C1TrueDBDropdown1.Visible = False
+        Me.C1TrueDBDropdown1.PropBag = resources.GetString("C1TrueDBDropdown1.PropBag")
+        '
+        'DocumentGroupsBindingSource
+        '
+        Me.DocumentGroupsBindingSource.DataMember = "DocumentGroups"
+        Me.DocumentGroupsBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DocumentGroupsTableAdapter
+        '
+        Me.DocumentGroupsTableAdapter.ClearBeforeFill = True
         '
         'frmDocument
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(366, 431)
+        Me.ClientSize = New System.Drawing.Size(532, 431)
+        Me.Controls.Add(Me.C1TrueDBDropdown1)
         Me.Controls.Add(Me.DocumentTypesC1TrueDBGrid)
         Me.Controls.Add(Me.DocumentTypesBindingNavigator)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -217,6 +278,8 @@ Partial Class frmDocument
         CType(Me.DocumentTypesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DocumentTypesC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.C1TrueDBDropdown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DocumentGroupsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -240,4 +303,7 @@ Partial Class frmDocument
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents DocumentTypesBindingNavigatorSaveItem As ToolStripButton
     Friend WithEvents DocumentTypesC1TrueDBGrid As C1.Win.C1TrueDBGrid.C1TrueDBGrid
+    Friend WithEvents C1TrueDBDropdown1 As C1.Win.C1TrueDBGrid.C1TrueDBDropdown
+    Friend WithEvents DocumentGroupsBindingSource As BindingSource
+    Friend WithEvents DocumentGroupsTableAdapter As DMSDataSetTableAdapters.DocumentGroupsTableAdapter
 End Class

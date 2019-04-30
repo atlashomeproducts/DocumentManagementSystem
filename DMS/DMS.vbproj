@@ -58,6 +58,7 @@
     <Reference Include="C1.Win.4, Version=4.0.20173.282, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
     <Reference Include="C1.Win.C1Command.4, Version=4.0.20173.282, Culture=neutral, PublicKeyToken=e808566f358766d8" />
     <Reference Include="C1.Win.C1Input.4, Version=4.0.20173.282, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1List.4, Version=4.0.20173.282, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1Schedule.4, Version=4.0.20173.282, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1TrueDBGrid.4, Version=4.0.20173.282, Culture=neutral, PublicKeyToken=75ae3fb0e2b1e0da, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -114,6 +115,12 @@
       <DependentUpon>FrmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmQuery.Designer.vb">
+      <DependentUpon>frmQuery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuery.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Index.Designer.vb">
       <DependentUpon>Index.vb</DependentUpon>
     </Compile>
@@ -145,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuery.resx">
+      <DependentUpon>frmQuery.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.vb</DependentUpon>

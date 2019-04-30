@@ -82,3 +82,6 @@ C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\De
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.exe
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.xml
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.pdb
+C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.frmQuery.resources
+C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\bin\Debug\C1.Win.C1List.4.dll
+C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\bin\Debug\C1.Win.C1List.4.xml

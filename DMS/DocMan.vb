@@ -12,7 +12,7 @@ Public Class DocMan
     Private Sub PopulateComboItems()
         Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
         con.Open()
-        Dim cmd As SqlCommand = New SqlCommand("SELECT DocumentType, FormID FROM DocumentTypes ORDER BY DocumentType", con)
+        Dim cmd As SqlCommand = New SqlCommand("SELECT DocumentType FROM DocumentTypes ORDER BY DocumentType", con)
 
 
 
@@ -20,6 +20,7 @@ Public Class DocMan
 
         While read.Read()
             DocumentTypeComboBox.Items.Add(read.GetString(0))
+
 
 
         End While
@@ -51,6 +52,8 @@ Public Class DocMan
     End Sub
 
     Private Sub DocMan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DMSDataSet.DocumentGroups' table. You can move, or remove it, as needed.
+
 
 
         'Populate Data
@@ -275,16 +278,43 @@ Public Class DocMan
             TabControl1.SelectTab(ReceiptInvoice)
         ElseIf Me.DocumentTypeComboBox.Text = "Acknowledgement Receipt" Then
             TabControl1.SelectTab(ReceiptInvoice)
+        ElseIf Me.DocumentTypeComboBox.Text = "Collection Receipt" Then
+            TabControl1.SelectTab(ReceiptInvoice)
+        ElseIf Me.DocumentTypeComboBox.Text = "Provisional Receipt" Then
+            TabControl1.SelectTab(ReceiptInvoice)
+
+
+
         ElseIf Me.DocumentTypeComboBox.Text = "Daily Time Record" Then
             TabControl1.SelectTab(Timesheet)
+
+
         ElseIf Me.DocumentTypeComboBox.Text = "Warranty Card" Then
             TabControl1.SelectTab(Warranty)
+
+
         ElseIf Me.DocumentTypeComboBox.Text = "Payment Voucher" Then
             TabControl1.SelectTab(Voucher)
+
+
         ElseIf Me.DocumentTypeComboBox.Text = "Secretary's Certificate" Then
             TabControl1.SelectTab(CorpDocu)
         ElseIf Me.DocumentTypeComboBox.Text = "Minutes of Board Meeting" Then
             TabControl1.SelectTab(CorpDocu)
+        ElseIf Me.DocumentTypeComboBox.Text = "Articles of Incorporation" Then
+            TabControl1.SelectTab(CorpDocu)
+        ElseIf Me.DocumentTypeComboBox.Text = "SEC Certificate of Registration" Then
+            TabControl1.SelectTab(CorpDocu)
+        ElseIf Me.DocumentTypeComboBox.Text = "DTI Registration" Then
+            TabControl1.SelectTab(CorpDocu)
+        ElseIf Me.DocumentTypeComboBox.Text = "Financial Statement" Then
+            TabControl1.SelectTab(CorpDocu)
+
+
+
+
+
+
 
         End If
 
