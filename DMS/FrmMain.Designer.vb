@@ -83,6 +83,7 @@ Partial Class FrmMain
         Me.DocumentTypesToolStripMenuItem.Name = "DocumentTypesToolStripMenuItem"
         Me.DocumentTypesToolStripMenuItem.Size = New System.Drawing.Size(224, 30)
         Me.DocumentTypesToolStripMenuItem.Text = "Document Types"
+        Me.DocumentTypesToolStripMenuItem.Visible = False
         '
         'ExitToolStripMenuItem
         '

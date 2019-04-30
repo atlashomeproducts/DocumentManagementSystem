@@ -12,7 +12,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub IndexToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem1.Click
-        Index.Show(Me)
+        FrmIndex.Show(Me)
     End Sub
 
 
