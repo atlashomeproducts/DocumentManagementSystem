@@ -503,4 +503,34 @@ Public Class FrmEditor
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DTDateReceived.ValueChanged
         Me.DateReceivedTextBox.Text = Me.DTDateReceived.Value.ToString("MM/dd/yyyy")
     End Sub
+
+    Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click
+
+        Try
+            Dim MsgDelete = MessageBox.Show("Delete Record?", "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If MsgDelete = vbYes Then
+
+
+                Me.DocsCatalogueBindingSource.RemoveCurrent()
+
+
+                Me.Validate()
+                Me.DocsCatalogueBindingSource.EndEdit()
+                Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
+
+
+                MessageBox.Show("Record Deleted!!", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ElseIf MsgDelete = vbNo Then
+
+            End If
+
+        Catch ex As Exception
+
+            MessageBox.Show(ex.Message)
+
+        End Try
+
+    End Sub
 End Class

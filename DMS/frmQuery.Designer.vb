@@ -86,6 +86,8 @@ Partial Class FrmQuery
         Dim DocumentDateLabel2 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmQuery))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.C1TrueDBGrid1 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
         Me.DocumentTypeComboBox = New System.Windows.Forms.ComboBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Timesheet = New System.Windows.Forms.TabPage()
@@ -105,6 +107,7 @@ Partial Class FrmQuery
         Me.DTDocuTimeSheet = New System.Windows.Forms.DateTimePicker()
         Me.ReceiptInvoice = New System.Windows.Forms.TabPage()
         Me.GrpReceipt = New System.Windows.Forms.GroupBox()
+        Me.RISearch = New System.Windows.Forms.Button()
         Me.NONVATregCheckBox = New System.Windows.Forms.CheckBox()
         Me.VATregCheckBox = New System.Windows.Forms.CheckBox()
         Me.AddressCTextBox = New System.Windows.Forms.TextBox()
@@ -122,6 +125,7 @@ Partial Class FrmQuery
         Me.ReferenceNoRI = New System.Windows.Forms.TextBox()
         Me.Warranty = New System.Windows.Forms.TabPage()
         Me.GrpWarranty = New System.Windows.Forms.GroupBox()
+        Me.WarrantySearch = New System.Windows.Forms.Button()
         Me.BoxNoWarranty = New System.Windows.Forms.TextBox()
         Me.RackNoWarranty = New System.Windows.Forms.TextBox()
         Me.DTDatePurchased = New System.Windows.Forms.DateTimePicker()
@@ -139,6 +143,7 @@ Partial Class FrmQuery
         Me.WarrantyNoTextBox = New System.Windows.Forms.TextBox()
         Me.Voucher = New System.Windows.Forms.TabPage()
         Me.GrpVoucher = New System.Windows.Forms.GroupBox()
+        Me.VoucherSearch = New System.Windows.Forms.Button()
         Me.DTDateReceived = New System.Windows.Forms.DateTimePicker()
         Me.BoxNoVoucher = New System.Windows.Forms.TextBox()
         Me.RackNoVoucher = New System.Windows.Forms.TextBox()
@@ -165,6 +170,7 @@ Partial Class FrmQuery
         Me.CheckNoTextBox = New System.Windows.Forms.TextBox()
         Me.CorpDocu = New System.Windows.Forms.TabPage()
         Me.GrpCorp = New System.Windows.Forms.GroupBox()
+        Me.CorpDocuSearch = New System.Windows.Forms.Button()
         Me.BoxNoCorpDocu = New System.Windows.Forms.TextBox()
         Me.RackNoCorpDocu = New System.Windows.Forms.TextBox()
         Me.DTMeetingDate = New System.Windows.Forms.DateTimePicker()
@@ -174,12 +180,6 @@ Partial Class FrmQuery
         Me.PurposeTextBox = New System.Windows.Forms.TextBox()
         Me.CompanyTextBox = New System.Windows.Forms.TextBox()
         Me.DocumentDateCorp = New System.Windows.Forms.TextBox()
-        Me.C1TrueDBGrid1 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
-        Me.RISearch = New System.Windows.Forms.Button()
-        Me.WarrantySearch = New System.Windows.Forms.Button()
-        Me.VoucherSearch = New System.Windows.Forms.Button()
-        Me.CorpDocuSearch = New System.Windows.Forms.Button()
-        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         AddressCLabel = New System.Windows.Forms.Label()
         TinCustomerLabel = New System.Windows.Forms.Label()
@@ -246,6 +246,8 @@ Partial Class FrmQuery
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
+        CType(Me.C1TrueDBGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.Timesheet.SuspendLayout()
         Me.GrpTimeSheet.SuspendLayout()
@@ -262,8 +264,6 @@ Partial Class FrmQuery
         Me.Check.SuspendLayout()
         Me.CorpDocu.SuspendLayout()
         Me.GrpCorp.SuspendLayout()
-        CType(Me.C1TrueDBGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DocumentTypeLabel
@@ -859,6 +859,37 @@ Partial Class FrmQuery
         Me.SplitContainer1.SplitterDistance = 172
         Me.SplitContainer1.TabIndex = 0
         '
+        'C1TrueDBGrid1
+        '
+        Me.C1TrueDBGrid1.AllowUpdate = False
+        Me.C1TrueDBGrid1.AlternatingRows = True
+        Me.C1TrueDBGrid1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.C1TrueDBGrid1.FilterBar = True
+        Me.C1TrueDBGrid1.GroupByCaption = "Drag a column header here to group by that column"
+        Me.C1TrueDBGrid1.Images.Add(CType(resources.GetObject("C1TrueDBGrid1.Images"), System.Drawing.Image))
+        Me.C1TrueDBGrid1.Location = New System.Drawing.Point(0, 0)
+        Me.C1TrueDBGrid1.Name = "C1TrueDBGrid1"
+        Me.C1TrueDBGrid1.PreviewInfo.Location = New System.Drawing.Point(0, 0)
+        Me.C1TrueDBGrid1.PreviewInfo.Size = New System.Drawing.Size(0, 0)
+        Me.C1TrueDBGrid1.PreviewInfo.ZoomFactor = 75.0R
+        Me.C1TrueDBGrid1.PrintInfo.PageSettings = CType(resources.GetObject("C1TrueDBGrid1.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
+        Me.C1TrueDBGrid1.Size = New System.Drawing.Size(1240, 172)
+        Me.C1TrueDBGrid1.TabIndex = 0
+        Me.C1TrueDBGrid1.UseCompatibleTextRendering = False
+        Me.C1TrueDBGrid1.PropBag = resources.GetString("C1TrueDBGrid1.PropBag")
+        '
+        'AxAcroPDF1
+        '
+        Me.AxAcroPDF1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.AxAcroPDF1.Enabled = True
+        Me.AxAcroPDF1.Location = New System.Drawing.Point(652, 13)
+        Me.AxAcroPDF1.Name = "AxAcroPDF1"
+        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxAcroPDF1.Size = New System.Drawing.Size(576, 557)
+        Me.AxAcroPDF1.TabIndex = 30
+        '
         'DocumentTypeComboBox
         '
         Me.DocumentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -1099,6 +1130,15 @@ Partial Class FrmQuery
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
         '
+        'RISearch
+        '
+        Me.RISearch.Location = New System.Drawing.Point(11, 386)
+        Me.RISearch.Name = "RISearch"
+        Me.RISearch.Size = New System.Drawing.Size(151, 34)
+        Me.RISearch.TabIndex = 36
+        Me.RISearch.Text = "Search"
+        Me.RISearch.UseVisualStyleBackColor = True
+        '
         'NONVATregCheckBox
         '
         Me.NONVATregCheckBox.Location = New System.Drawing.Point(413, 49)
@@ -1283,6 +1323,15 @@ Partial Class FrmQuery
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
         '
+        'WarrantySearch
+        '
+        Me.WarrantySearch.Location = New System.Drawing.Point(12, 417)
+        Me.WarrantySearch.Name = "WarrantySearch"
+        Me.WarrantySearch.Size = New System.Drawing.Size(151, 34)
+        Me.WarrantySearch.TabIndex = 37
+        Me.WarrantySearch.Text = "Search"
+        Me.WarrantySearch.UseVisualStyleBackColor = True
+        '
         'BoxNoWarranty
         '
         Me.BoxNoWarranty.BackColor = System.Drawing.Color.White
@@ -1460,6 +1509,15 @@ Partial Class FrmQuery
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
+        '
+        'VoucherSearch
+        '
+        Me.VoucherSearch.Location = New System.Drawing.Point(11, 461)
+        Me.VoucherSearch.Name = "VoucherSearch"
+        Me.VoucherSearch.Size = New System.Drawing.Size(151, 34)
+        Me.VoucherSearch.TabIndex = 38
+        Me.VoucherSearch.Text = "Search"
+        Me.VoucherSearch.UseVisualStyleBackColor = True
         '
         'DTDateReceived
         '
@@ -1721,6 +1779,15 @@ Partial Class FrmQuery
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
         '
+        'CorpDocuSearch
+        '
+        Me.CorpDocuSearch.Location = New System.Drawing.Point(11, 362)
+        Me.CorpDocuSearch.Name = "CorpDocuSearch"
+        Me.CorpDocuSearch.Size = New System.Drawing.Size(151, 34)
+        Me.CorpDocuSearch.TabIndex = 38
+        Me.CorpDocuSearch.Text = "Search"
+        Me.CorpDocuSearch.UseVisualStyleBackColor = True
+        '
         'BoxNoCorpDocu
         '
         Me.BoxNoCorpDocu.BackColor = System.Drawing.Color.White
@@ -1796,73 +1863,6 @@ Partial Class FrmQuery
         Me.DocumentDateCorp.TabStop = False
         Me.DocumentDateCorp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'C1TrueDBGrid1
-        '
-        Me.C1TrueDBGrid1.AllowUpdate = False
-        Me.C1TrueDBGrid1.AlternatingRows = True
-        Me.C1TrueDBGrid1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.C1TrueDBGrid1.FilterBar = True
-        Me.C1TrueDBGrid1.GroupByCaption = "Drag a column header here to group by that column"
-        Me.C1TrueDBGrid1.Images.Add(CType(resources.GetObject("C1TrueDBGrid1.Images"), System.Drawing.Image))
-        Me.C1TrueDBGrid1.Location = New System.Drawing.Point(0, 0)
-        Me.C1TrueDBGrid1.Name = "C1TrueDBGrid1"
-        Me.C1TrueDBGrid1.PreviewInfo.Location = New System.Drawing.Point(0, 0)
-        Me.C1TrueDBGrid1.PreviewInfo.Size = New System.Drawing.Size(0, 0)
-        Me.C1TrueDBGrid1.PreviewInfo.ZoomFactor = 75.0R
-        Me.C1TrueDBGrid1.PrintInfo.PageSettings = CType(resources.GetObject("C1TrueDBGrid1.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.C1TrueDBGrid1.Size = New System.Drawing.Size(1240, 172)
-        Me.C1TrueDBGrid1.TabIndex = 0
-        Me.C1TrueDBGrid1.UseCompatibleTextRendering = False
-        Me.C1TrueDBGrid1.PropBag = resources.GetString("C1TrueDBGrid1.PropBag")
-        '
-        'RISearch
-        '
-        Me.RISearch.Location = New System.Drawing.Point(11, 386)
-        Me.RISearch.Name = "RISearch"
-        Me.RISearch.Size = New System.Drawing.Size(151, 34)
-        Me.RISearch.TabIndex = 36
-        Me.RISearch.Text = "Search"
-        Me.RISearch.UseVisualStyleBackColor = True
-        '
-        'WarrantySearch
-        '
-        Me.WarrantySearch.Location = New System.Drawing.Point(12, 417)
-        Me.WarrantySearch.Name = "WarrantySearch"
-        Me.WarrantySearch.Size = New System.Drawing.Size(151, 34)
-        Me.WarrantySearch.TabIndex = 37
-        Me.WarrantySearch.Text = "Search"
-        Me.WarrantySearch.UseVisualStyleBackColor = True
-        '
-        'VoucherSearch
-        '
-        Me.VoucherSearch.Location = New System.Drawing.Point(11, 461)
-        Me.VoucherSearch.Name = "VoucherSearch"
-        Me.VoucherSearch.Size = New System.Drawing.Size(151, 34)
-        Me.VoucherSearch.TabIndex = 38
-        Me.VoucherSearch.Text = "Search"
-        Me.VoucherSearch.UseVisualStyleBackColor = True
-        '
-        'CorpDocuSearch
-        '
-        Me.CorpDocuSearch.Location = New System.Drawing.Point(11, 362)
-        Me.CorpDocuSearch.Name = "CorpDocuSearch"
-        Me.CorpDocuSearch.Size = New System.Drawing.Size(151, 34)
-        Me.CorpDocuSearch.TabIndex = 38
-        Me.CorpDocuSearch.Text = "Search"
-        Me.CorpDocuSearch.UseVisualStyleBackColor = True
-        '
-        'AxAcroPDF1
-        '
-        Me.AxAcroPDF1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.AxAcroPDF1.Enabled = True
-        Me.AxAcroPDF1.Location = New System.Drawing.Point(652, 13)
-        Me.AxAcroPDF1.Name = "AxAcroPDF1"
-        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF1.Size = New System.Drawing.Size(576, 557)
-        Me.AxAcroPDF1.TabIndex = 30
-        '
         'FrmQuery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1870,12 +1870,15 @@ Partial Class FrmQuery
         Me.ClientSize = New System.Drawing.Size(1240, 758)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "FrmQuery"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmQuery"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
+        CType(Me.C1TrueDBGrid1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.Timesheet.ResumeLayout(False)
         Me.GrpTimeSheet.ResumeLayout(False)
@@ -1901,8 +1904,6 @@ Partial Class FrmQuery
         Me.CorpDocu.ResumeLayout(False)
         Me.GrpCorp.ResumeLayout(False)
         Me.GrpCorp.PerformLayout()
-        CType(Me.C1TrueDBGrid1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

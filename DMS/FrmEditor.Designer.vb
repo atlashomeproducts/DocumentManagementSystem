@@ -188,6 +188,7 @@ Partial Class FrmEditor
         Me.BtnRefresh = New AxAcroPDFLib.AxAcroPDF()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
+        Me.BtnRemove = New System.Windows.Forms.Button()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         DocumentDateLabel = New System.Windows.Forms.Label()
         ReferenceNoLabel = New System.Windows.Forms.Label()
@@ -887,6 +888,7 @@ Partial Class FrmEditor
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.AutoScroll = True
+        Me.SplitContainer2.Panel2.Controls.Add(Me.BtnRemove)
         Me.SplitContainer2.Panel2.Controls.Add(Me.IdTextBox)
         Me.SplitContainer2.Panel2.Controls.Add(Me.Button1)
         Me.SplitContainer2.Panel2.Controls.Add(Me.TabControl1)
@@ -937,7 +939,7 @@ Partial Class FrmEditor
         'IdTextBox
         '
         Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Id", True))
-        Me.IdTextBox.Location = New System.Drawing.Point(401, 12)
+        Me.IdTextBox.Location = New System.Drawing.Point(620, 41)
         Me.IdTextBox.Name = "IdTextBox"
         Me.IdTextBox.Size = New System.Drawing.Size(14, 20)
         Me.IdTextBox.TabIndex = 20
@@ -1006,7 +1008,7 @@ Partial Class FrmEditor
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(0, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(600, 297)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(566, 405)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1133,7 +1135,7 @@ Partial Class FrmEditor
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 25)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 257)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 246)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         Me.ReceiptInvoice.UseVisualStyleBackColor = True
@@ -1175,7 +1177,7 @@ Partial Class FrmEditor
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(0, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(600, 397)
+        Me.GrpReceipt.Size = New System.Drawing.Size(566, 694)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1326,7 +1328,7 @@ Partial Class FrmEditor
         Me.Warranty.Location = New System.Drawing.Point(4, 25)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(623, 267)
+        Me.Warranty.Size = New System.Drawing.Size(623, 246)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         Me.Warranty.UseVisualStyleBackColor = True
@@ -1370,7 +1372,7 @@ Partial Class FrmEditor
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(0, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(600, 421)
+        Me.GrpWarranty.Size = New System.Drawing.Size(566, 748)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1518,7 +1520,7 @@ Partial Class FrmEditor
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 25)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(623, 275)
+        Me.Voucher.Size = New System.Drawing.Size(623, 246)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         Me.Voucher.UseVisualStyleBackColor = True
@@ -1561,7 +1563,7 @@ Partial Class FrmEditor
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 3)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(600, 485)
+        Me.GrpVoucher.Size = New System.Drawing.Size(566, 964)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -1808,7 +1810,7 @@ Partial Class FrmEditor
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 25)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(623, 275)
+        Me.CorpDocu.Size = New System.Drawing.Size(623, 246)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         Me.CorpDocu.UseVisualStyleBackColor = True
@@ -1838,7 +1840,7 @@ Partial Class FrmEditor
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 3)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(600, 335)
+        Me.GrpCorp.Size = New System.Drawing.Size(566, 514)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2003,6 +2005,16 @@ Partial Class FrmEditor
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'BtnRemove
+        '
+        Me.BtnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnRemove.Location = New System.Drawing.Point(317, 8)
+        Me.BtnRemove.Name = "BtnRemove"
+        Me.BtnRemove.Size = New System.Drawing.Size(104, 27)
+        Me.BtnRemove.TabIndex = 27
+        Me.BtnRemove.Text = "Remove"
+        Me.BtnRemove.UseVisualStyleBackColor = True
+        '
         'FrmEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2160,4 +2172,5 @@ Partial Class FrmEditor
     Friend WithEvents DTDateReceived As DateTimePicker
     Friend WithEvents BoxNoCorpDocu As TextBox
     Friend WithEvents RackNoCorpDocu As TextBox
+    Friend WithEvents BtnRemove As Button
 End Class

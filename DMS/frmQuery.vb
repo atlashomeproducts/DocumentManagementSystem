@@ -123,9 +123,10 @@ Public Class FrmQuery
             'Create your query as you already have done
             Dim strsql As String = "SELECT 
 Id
-, DocumentDate as [Document Date]
+
 , RackNo as [Rack No]
 , BoxNo as [Box No]
+, DocumentDate as [Document Date]
 , LastName as [Last Name]
 , FirstName as [First Name] 
 , MiddleName as [Middle Name]
@@ -216,10 +217,11 @@ AND Status = 'Finished'
             'Create your query as you already have done
             Dim strsql As String = "SELECT 
 Id
-, DocumentDate as [Document Date]
+
 , RackNo as [Rack No]
 , BoxNo as [Box No]
 , BookletNo [Booklet No]
+, DocumentDate as [Document Date]
 , ReferenceNo [Invoice/Receipt]
 , Vendor [Vendor]
 , Customer [Customer]
@@ -421,9 +423,10 @@ AND Status = 'Finished'
             'Create your query as you already have done
             Dim strsql As String = "SELECT 
 Id
-, DocumentDate as [Document Date]
+
 , RackNo as [Rack No]
 , BoxNo as [Box No]
+, DocumentDate as [Document Date]
 , MeetingDate [Meeting Date]
 , Company [Company]
 , Secretary [Secretary]
@@ -504,9 +507,10 @@ AND Status = 'Finished'
             'Create your query as you already have done
             Dim strsql As String = "SELECT 
 Id
-, DocumentDate as [Document Date]
+
 , RackNo as [Rack No]
 , BoxNo as [Box No]
+, DocumentDate as [Document Date]
 , Payee [Payee]
 , Payor [Payor]
 , VoucherNo [VoucherNo]
@@ -608,10 +612,17 @@ AND Status = 'Finished'
     End Sub
 
     Private Sub C1TrueDBGrid1_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid1.Click
-        AxAcroPDF1.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid1.Columns("File Name").Text)
-    End Sub
 
-    Private Sub C1TrueDBGrid1_SelChange(sender As Object, e As C1.Win.C1TrueDBGrid.CancelEventArgs) Handles C1TrueDBGrid1.SelChange
+
+        Try
+
+            AxAcroPDF1.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid1.Columns("File Name").Text)
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
 
     End Sub
 End Class
