@@ -278,9 +278,6 @@ AND Status = 'Finished'
                 .Parameters.AddWithValue("@ItemPurchased", Me.ItemPurchasedTextBox.Text)
                 .Parameters.AddWithValue("@TotalValue", Me.TotalValueRI.Text)
 
-
-
-
                 .Connection = strconnectionstring
             End With
             'Create a new SqlDataAdapter
