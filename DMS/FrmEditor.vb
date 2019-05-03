@@ -6,6 +6,7 @@ Imports System.Configuration
 Imports System.IO
 Imports System.ComponentModel
 
+
 Public Class FrmEditor
 
 
@@ -110,6 +111,8 @@ Public Class FrmEditor
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
 
+        Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+        Dim cmd As New SqlCommand
 
         Try
 
@@ -117,8 +120,15 @@ Public Class FrmEditor
             Me.DocsCatalogueBindingSource.EndEdit()
             Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
 
+
+            con.Open()
+            cmd.Connection = con
+            cmd.CommandText = "UPDATE DocsCatalogue SET Status = 'Finished' WHERE Id = '" & Me.IdTextBox.Text & "' "
+            cmd.ExecuteNonQuery()
+
+
+            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue)
             Me.DocsCatalogueC1TrueDBGrid.Enabled = True
-            'Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue)
 
             'Temp Disabled
             Me.DocumentTypeComboBox.Enabled = False
@@ -136,7 +146,8 @@ Public Class FrmEditor
         Catch ex As Exception
 
             MessageBox.Show(ex.Message)
-
+        Finally
+            con.Close()
         End Try
 
     End Sub

@@ -41,4 +41,12 @@ Public Class FrmMain
             Return myCp
         End Get
     End Property
+
+    Private Sub QueryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QueryToolStripMenuItem.Click
+        frmQuery.Show()
+    End Sub
+
+    Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
+
+    End Sub
 End Class

@@ -70,7 +70,6 @@ Partial Class FrmEditor
         Dim BankNameLabel As System.Windows.Forms.Label
         Dim BankBranchLabel As System.Windows.Forms.Label
         Dim BankAddressLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEditor))
         Dim RackNoLabel As System.Windows.Forms.Label
         Dim BoxNoLabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
@@ -86,14 +85,19 @@ Partial Class FrmEditor
         Dim Label9 As System.Windows.Forms.Label
         Dim Label10 As System.Windows.Forms.Label
         Dim Label11 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEditor))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.DocsCatalogueC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.IdTextBox = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Timesheet = New System.Windows.Forms.TabPage()
         Me.GrpTimeSheet = New System.Windows.Forms.GroupBox()
+        Me.BoxNoTS = New System.Windows.Forms.TextBox()
+        Me.RackNoTS = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DTToPeriod = New System.Windows.Forms.DateTimePicker()
         Me.FromPeriodTextBox = New System.Windows.Forms.TextBox()
@@ -106,6 +110,13 @@ Partial Class FrmEditor
         Me.DTDocuTimeSheet = New System.Windows.Forms.DateTimePicker()
         Me.ReceiptInvoice = New System.Windows.Forms.TabPage()
         Me.GrpReceipt = New System.Windows.Forms.GroupBox()
+        Me.NONVATregCheckBox = New System.Windows.Forms.CheckBox()
+        Me.VATregCheckBox = New System.Windows.Forms.CheckBox()
+        Me.AddressCTextBox = New System.Windows.Forms.TextBox()
+        Me.TinCustomerTextBox = New System.Windows.Forms.TextBox()
+        Me.TinVendorTextBox = New System.Windows.Forms.TextBox()
+        Me.BoxNoRI = New System.Windows.Forms.TextBox()
+        Me.RackNoRI = New System.Windows.Forms.TextBox()
         Me.DocumentDateRI = New System.Windows.Forms.TextBox()
         Me.TotalValueRI = New System.Windows.Forms.TextBox()
         Me.ItemPurchasedTextBox = New System.Windows.Forms.TextBox()
@@ -116,6 +127,8 @@ Partial Class FrmEditor
         Me.ReferenceNoRI = New System.Windows.Forms.TextBox()
         Me.Warranty = New System.Windows.Forms.TabPage()
         Me.GrpWarranty = New System.Windows.Forms.GroupBox()
+        Me.BoxNoWarranty = New System.Windows.Forms.TextBox()
+        Me.RackNoWarranty = New System.Windows.Forms.TextBox()
         Me.DTDatePurchased = New System.Windows.Forms.DateTimePicker()
         Me.EmailTextBox = New System.Windows.Forms.TextBox()
         Me.ContactNoTextBox = New System.Windows.Forms.TextBox()
@@ -131,6 +144,10 @@ Partial Class FrmEditor
         Me.WarrantyNoTextBox = New System.Windows.Forms.TextBox()
         Me.Voucher = New System.Windows.Forms.TabPage()
         Me.GrpVoucher = New System.Windows.Forms.GroupBox()
+        Me.DTDateReceived = New System.Windows.Forms.DateTimePicker()
+        Me.BoxNoVoucher = New System.Windows.Forms.TextBox()
+        Me.RackNoVoucher = New System.Windows.Forms.TextBox()
+        Me.DateReceivedTextBox = New System.Windows.Forms.TextBox()
         Me.PaymentFormComboBox = New System.Windows.Forms.ComboBox()
         Me.DTDocuVoucher = New System.Windows.Forms.DateTimePicker()
         Me.ReceivedbyTextBox = New System.Windows.Forms.TextBox()
@@ -153,6 +170,8 @@ Partial Class FrmEditor
         Me.CheckNoTextBox = New System.Windows.Forms.TextBox()
         Me.CorpDocu = New System.Windows.Forms.TabPage()
         Me.GrpCorp = New System.Windows.Forms.GroupBox()
+        Me.BoxNoCorpDocu = New System.Windows.Forms.TextBox()
+        Me.RackNoCorpDocu = New System.Windows.Forms.TextBox()
         Me.DTMeetingDate = New System.Windows.Forms.DateTimePicker()
         Me.DTDocuCorp = New System.Windows.Forms.DateTimePicker()
         Me.MeetingDateTextBox = New System.Windows.Forms.TextBox()
@@ -167,27 +186,8 @@ Partial Class FrmEditor
         Me.BtnEdit = New System.Windows.Forms.Button()
         Me.DocumentTypeComboBox = New System.Windows.Forms.ComboBox()
         Me.BtnRefresh = New AxAcroPDFLib.AxAcroPDF()
-        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
-        Me.RackNoRI = New System.Windows.Forms.TextBox()
-        Me.BoxNoRI = New System.Windows.Forms.TextBox()
-        Me.BoxNoTS = New System.Windows.Forms.TextBox()
-        Me.RackNoTS = New System.Windows.Forms.TextBox()
-        Me.TinVendorTextBox = New System.Windows.Forms.TextBox()
-        Me.TinCustomerTextBox = New System.Windows.Forms.TextBox()
-        Me.AddressCTextBox = New System.Windows.Forms.TextBox()
-        Me.VATregCheckBox = New System.Windows.Forms.CheckBox()
-        Me.NONVATregCheckBox = New System.Windows.Forms.CheckBox()
-        Me.DateReceivedTextBox = New System.Windows.Forms.TextBox()
-        Me.BoxNoWarranty = New System.Windows.Forms.TextBox()
-        Me.RackNoWarranty = New System.Windows.Forms.TextBox()
-        Me.BoxNoVoucher = New System.Windows.Forms.TextBox()
-        Me.RackNoVoucher = New System.Windows.Forms.TextBox()
-        Me.DTDateReceived = New System.Windows.Forms.DateTimePicker()
-        Me.BoxNoCorpDocu = New System.Windows.Forms.TextBox()
-        Me.RackNoCorpDocu = New System.Windows.Forms.TextBox()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         DocumentDateLabel = New System.Windows.Forms.Label()
         ReferenceNoLabel = New System.Windows.Forms.Label()
@@ -259,6 +259,8 @@ Partial Class FrmEditor
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
         CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.Timesheet.SuspendLayout()
         Me.GrpTimeSheet.SuspendLayout()
@@ -277,8 +279,6 @@ Partial Class FrmEditor
         Me.GrpCorp.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.BtnRefresh, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DocumentTypeLabel
@@ -541,7 +541,7 @@ Partial Class FrmEditor
         '
         PaymentFormLabel.AutoSize = True
         PaymentFormLabel.ForeColor = System.Drawing.Color.Black
-        PaymentFormLabel.Location = New System.Drawing.Point(11, 182)
+        PaymentFormLabel.Location = New System.Drawing.Point(8, 183)
         PaymentFormLabel.Name = "PaymentFormLabel"
         PaymentFormLabel.Size = New System.Drawing.Size(112, 16)
         PaymentFormLabel.TabIndex = 4
@@ -561,7 +561,7 @@ Partial Class FrmEditor
         '
         TotalValueLabel2.AutoSize = True
         TotalValueLabel2.ForeColor = System.Drawing.Color.Black
-        TotalValueLabel2.Location = New System.Drawing.Point(8, 310)
+        TotalValueLabel2.Location = New System.Drawing.Point(8, 329)
         TotalValueLabel2.Name = "TotalValueLabel2"
         TotalValueLabel2.Size = New System.Drawing.Size(56, 16)
         TotalValueLabel2.TabIndex = 8
@@ -591,7 +591,7 @@ Partial Class FrmEditor
         '
         PreparedbyLabel.AutoSize = True
         PreparedbyLabel.ForeColor = System.Drawing.Color.Black
-        PreparedbyLabel.Location = New System.Drawing.Point(8, 341)
+        PreparedbyLabel.Location = New System.Drawing.Point(8, 352)
         PreparedbyLabel.Name = "PreparedbyLabel"
         PreparedbyLabel.Size = New System.Drawing.Size(87, 16)
         PreparedbyLabel.TabIndex = 14
@@ -601,7 +601,7 @@ Partial Class FrmEditor
         '
         ApprovedbyLabel.AutoSize = True
         ApprovedbyLabel.ForeColor = System.Drawing.Color.Black
-        ApprovedbyLabel.Location = New System.Drawing.Point(8, 364)
+        ApprovedbyLabel.Location = New System.Drawing.Point(8, 375)
         ApprovedbyLabel.Name = "ApprovedbyLabel"
         ApprovedbyLabel.Size = New System.Drawing.Size(90, 16)
         ApprovedbyLabel.TabIndex = 16
@@ -611,7 +611,7 @@ Partial Class FrmEditor
         '
         RecordedbyLabel.AutoSize = True
         RecordedbyLabel.ForeColor = System.Drawing.Color.Black
-        RecordedbyLabel.Location = New System.Drawing.Point(8, 387)
+        RecordedbyLabel.Location = New System.Drawing.Point(8, 398)
         RecordedbyLabel.Name = "RecordedbyLabel"
         RecordedbyLabel.Size = New System.Drawing.Size(91, 16)
         RecordedbyLabel.TabIndex = 18
@@ -621,7 +621,7 @@ Partial Class FrmEditor
         '
         ReceivedbyLabel.AutoSize = True
         ReceivedbyLabel.ForeColor = System.Drawing.Color.Black
-        ReceivedbyLabel.Location = New System.Drawing.Point(8, 410)
+        ReceivedbyLabel.Location = New System.Drawing.Point(8, 421)
         ReceivedbyLabel.Name = "ReceivedbyLabel"
         ReceivedbyLabel.Size = New System.Drawing.Size(89, 16)
         ReceivedbyLabel.TabIndex = 20
@@ -720,6 +720,141 @@ Partial Class FrmEditor
         BankAddressLabel.Text = "Bank Address:"
         AddHandler BankAddressLabel.Click, AddressOf Me.BankAddressLabel_Click
         '
+        'RackNoLabel
+        '
+        RackNoLabel.AutoSize = True
+        RackNoLabel.Location = New System.Drawing.Point(8, 30)
+        RackNoLabel.Name = "RackNoLabel"
+        RackNoLabel.Size = New System.Drawing.Size(131, 16)
+        RackNoLabel.TabIndex = 25
+        RackNoLabel.Text = "Document Rack No.:"
+        '
+        'BoxNoLabel
+        '
+        BoxNoLabel.AutoSize = True
+        BoxNoLabel.Location = New System.Drawing.Point(8, 53)
+        BoxNoLabel.Name = "BoxNoLabel"
+        BoxNoLabel.Size = New System.Drawing.Size(122, 16)
+        BoxNoLabel.TabIndex = 26
+        BoxNoLabel.Text = "Document Box No.:"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.Location = New System.Drawing.Point(8, 53)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(122, 16)
+        Label2.TabIndex = 34
+        Label2.Text = "Document Box No.:"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Location = New System.Drawing.Point(8, 30)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(131, 16)
+        Label3.TabIndex = 33
+        Label3.Text = "Document Rack No.:"
+        '
+        'TinVendorLabel
+        '
+        TinVendorLabel.AutoSize = True
+        TinVendorLabel.Location = New System.Drawing.Point(8, 232)
+        TinVendorLabel.Name = "TinVendorLabel"
+        TinVendorLabel.Size = New System.Drawing.Size(94, 16)
+        TinVendorLabel.TabIndex = 27
+        TinVendorLabel.Text = "TIN of Vendor:"
+        '
+        'TinCustomerLabel
+        '
+        TinCustomerLabel.AutoSize = True
+        TinCustomerLabel.Location = New System.Drawing.Point(8, 255)
+        TinCustomerLabel.Name = "TinCustomerLabel"
+        TinCustomerLabel.Size = New System.Drawing.Size(107, 16)
+        TinCustomerLabel.TabIndex = 28
+        TinCustomerLabel.Text = "TIN of Customer:"
+        '
+        'AddressCLabel
+        '
+        AddressCLabel.AutoSize = True
+        AddressCLabel.Location = New System.Drawing.Point(8, 203)
+        AddressCLabel.Name = "AddressCLabel"
+        AddressCLabel.Size = New System.Drawing.Size(122, 16)
+        AddressCLabel.TabIndex = 29
+        AddressCLabel.Text = "Customer Address:"
+        '
+        'DateReceivedLabel
+        '
+        DateReceivedLabel.AutoSize = True
+        DateReceivedLabel.Location = New System.Drawing.Point(8, 444)
+        DateReceivedLabel.Name = "DateReceivedLabel"
+        DateReceivedLabel.Size = New System.Drawing.Size(102, 16)
+        DateReceivedLabel.TabIndex = 26
+        DateReceivedLabel.Text = "Date Received:"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Location = New System.Drawing.Point(8, 53)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(122, 16)
+        Label4.TabIndex = 29
+        Label4.Text = "Document Box No.:"
+        '
+        'Label5
+        '
+        Label5.AutoSize = True
+        Label5.Location = New System.Drawing.Point(8, 30)
+        Label5.Name = "Label5"
+        Label5.Size = New System.Drawing.Size(131, 16)
+        Label5.TabIndex = 28
+        Label5.Text = "Document Rack No.:"
+        '
+        'Label6
+        '
+        Label6.AutoSize = True
+        Label6.Location = New System.Drawing.Point(298, 230)
+        Label6.Name = "Label6"
+        Label6.Size = New System.Drawing.Size(106, 16)
+        Label6.TabIndex = 32
+        Label6.Text = "(6 mos, 1 yr, etc.)"
+        '
+        'Label7
+        '
+        Label7.AutoSize = True
+        Label7.Location = New System.Drawing.Point(8, 53)
+        Label7.Name = "Label7"
+        Label7.Size = New System.Drawing.Size(122, 16)
+        Label7.TabIndex = 29
+        Label7.Text = "Document Box No.:"
+        '
+        'Label9
+        '
+        Label9.AutoSize = True
+        Label9.Location = New System.Drawing.Point(8, 30)
+        Label9.Name = "Label9"
+        Label9.Size = New System.Drawing.Size(131, 16)
+        Label9.TabIndex = 28
+        Label9.Text = "Document Rack No.:"
+        '
+        'Label10
+        '
+        Label10.AutoSize = True
+        Label10.Location = New System.Drawing.Point(8, 53)
+        Label10.Name = "Label10"
+        Label10.Size = New System.Drawing.Size(122, 16)
+        Label10.TabIndex = 33
+        Label10.Text = "Document Box No.:"
+        '
+        'Label11
+        '
+        Label11.AutoSize = True
+        Label11.Location = New System.Drawing.Point(8, 30)
+        Label11.Name = "Label11"
+        Label11.Size = New System.Drawing.Size(131, 16)
+        Label11.TabIndex = 32
+        Label11.Text = "Document Rack No.:"
+        '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -789,6 +924,16 @@ Partial Class FrmEditor
         Me.DocsCatalogueC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.DocsCatalogueC1TrueDBGrid.PropBag = resources.GetString("DocsCatalogueC1TrueDBGrid.PropBag")
         '
+        'DocsCatalogueBindingSource
+        '
+        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
+        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'IdTextBox
         '
         Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Id", True))
@@ -819,7 +964,7 @@ Partial Class FrmEditor
         Me.TabControl1.Location = New System.Drawing.Point(7, 77)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(631, 304)
+        Me.TabControl1.Size = New System.Drawing.Size(631, 275)
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl1.TabIndex = 26
         Me.TabControl1.TabStop = False
@@ -832,7 +977,7 @@ Partial Class FrmEditor
         Me.Timesheet.Location = New System.Drawing.Point(4, 25)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(623, 275)
+        Me.Timesheet.Size = New System.Drawing.Size(623, 246)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         Me.Timesheet.UseVisualStyleBackColor = True
@@ -861,10 +1006,28 @@ Partial Class FrmEditor
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(0, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(603, 289)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(600, 297)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
+        '
+        'BoxNoTS
+        '
+        Me.BoxNoTS.BackColor = System.Drawing.Color.White
+        Me.BoxNoTS.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
+        Me.BoxNoTS.Location = New System.Drawing.Point(158, 50)
+        Me.BoxNoTS.Name = "BoxNoTS"
+        Me.BoxNoTS.Size = New System.Drawing.Size(123, 22)
+        Me.BoxNoTS.TabIndex = 7
+        '
+        'RackNoTS
+        '
+        Me.RackNoTS.BackColor = System.Drawing.Color.White
+        Me.RackNoTS.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
+        Me.RackNoTS.Location = New System.Drawing.Point(158, 27)
+        Me.RackNoTS.Name = "RackNoTS"
+        Me.RackNoTS.Size = New System.Drawing.Size(123, 22)
+        Me.RackNoTS.TabIndex = 6
         '
         'GroupBox1
         '
@@ -876,7 +1039,7 @@ Partial Class FrmEditor
         Me.GroupBox1.Controls.Add(ToPeriodLabel)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 185)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(405, 84)
+        Me.GroupBox1.Size = New System.Drawing.Size(583, 84)
         Me.GroupBox1.TabIndex = 32
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Coverage"
@@ -923,7 +1086,7 @@ Partial Class FrmEditor
         Me.MiddleNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "MiddleName", True))
         Me.MiddleNameTextBox.Location = New System.Drawing.Point(158, 151)
         Me.MiddleNameTextBox.Name = "MiddleNameTextBox"
-        Me.MiddleNameTextBox.Size = New System.Drawing.Size(246, 22)
+        Me.MiddleNameTextBox.Size = New System.Drawing.Size(367, 22)
         Me.MiddleNameTextBox.TabIndex = 11
         '
         'FirstNameTextBox
@@ -932,7 +1095,7 @@ Partial Class FrmEditor
         Me.FirstNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "FirstName", True))
         Me.FirstNameTextBox.Location = New System.Drawing.Point(158, 128)
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
-        Me.FirstNameTextBox.Size = New System.Drawing.Size(246, 22)
+        Me.FirstNameTextBox.Size = New System.Drawing.Size(367, 22)
         Me.FirstNameTextBox.TabIndex = 10
         '
         'LastNameTextBox
@@ -941,7 +1104,7 @@ Partial Class FrmEditor
         Me.LastNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "LastName", True))
         Me.LastNameTextBox.Location = New System.Drawing.Point(158, 105)
         Me.LastNameTextBox.Name = "LastNameTextBox"
-        Me.LastNameTextBox.Size = New System.Drawing.Size(246, 22)
+        Me.LastNameTextBox.Size = New System.Drawing.Size(367, 22)
         Me.LastNameTextBox.TabIndex = 9
         '
         'DocumentDateTS
@@ -970,7 +1133,7 @@ Partial Class FrmEditor
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 25)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 275)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 257)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         Me.ReceiptInvoice.UseVisualStyleBackColor = True
@@ -1012,10 +1175,75 @@ Partial Class FrmEditor
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(0, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(603, 389)
+        Me.GrpReceipt.Size = New System.Drawing.Size(600, 397)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
+        '
+        'NONVATregCheckBox
+        '
+        Me.NONVATregCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.DocsCatalogueBindingSource, "NONVATreg", True))
+        Me.NONVATregCheckBox.Location = New System.Drawing.Point(413, 49)
+        Me.NONVATregCheckBox.Name = "NONVATregCheckBox"
+        Me.NONVATregCheckBox.Size = New System.Drawing.Size(160, 24)
+        Me.NONVATregCheckBox.TabIndex = 18
+        Me.NONVATregCheckBox.Text = "NON-VAT Registered"
+        Me.NONVATregCheckBox.UseVisualStyleBackColor = True
+        '
+        'VATregCheckBox
+        '
+        Me.VATregCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.DocsCatalogueBindingSource, "VATreg", True))
+        Me.VATregCheckBox.Location = New System.Drawing.Point(413, 27)
+        Me.VATregCheckBox.Name = "VATregCheckBox"
+        Me.VATregCheckBox.Size = New System.Drawing.Size(127, 24)
+        Me.VATregCheckBox.TabIndex = 17
+        Me.VATregCheckBox.Text = "VAT Registered"
+        Me.VATregCheckBox.UseVisualStyleBackColor = True
+        '
+        'AddressCTextBox
+        '
+        Me.AddressCTextBox.BackColor = System.Drawing.Color.White
+        Me.AddressCTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "AddressC", True))
+        Me.AddressCTextBox.Location = New System.Drawing.Point(158, 200)
+        Me.AddressCTextBox.Name = "AddressCTextBox"
+        Me.AddressCTextBox.Size = New System.Drawing.Size(416, 22)
+        Me.AddressCTextBox.TabIndex = 13
+        '
+        'TinCustomerTextBox
+        '
+        Me.TinCustomerTextBox.BackColor = System.Drawing.Color.White
+        Me.TinCustomerTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "TinCustomer", True))
+        Me.TinCustomerTextBox.Location = New System.Drawing.Point(158, 252)
+        Me.TinCustomerTextBox.Name = "TinCustomerTextBox"
+        Me.TinCustomerTextBox.Size = New System.Drawing.Size(182, 22)
+        Me.TinCustomerTextBox.TabIndex = 15
+        '
+        'TinVendorTextBox
+        '
+        Me.TinVendorTextBox.BackColor = System.Drawing.Color.White
+        Me.TinVendorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "TinVendor", True))
+        Me.TinVendorTextBox.Location = New System.Drawing.Point(158, 229)
+        Me.TinVendorTextBox.Name = "TinVendorTextBox"
+        Me.TinVendorTextBox.Size = New System.Drawing.Size(182, 22)
+        Me.TinVendorTextBox.TabIndex = 14
+        '
+        'BoxNoRI
+        '
+        Me.BoxNoRI.BackColor = System.Drawing.Color.White
+        Me.BoxNoRI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
+        Me.BoxNoRI.Location = New System.Drawing.Point(158, 50)
+        Me.BoxNoRI.Name = "BoxNoRI"
+        Me.BoxNoRI.Size = New System.Drawing.Size(123, 22)
+        Me.BoxNoRI.TabIndex = 7
+        '
+        'RackNoRI
+        '
+        Me.RackNoRI.BackColor = System.Drawing.Color.White
+        Me.RackNoRI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
+        Me.RackNoRI.Location = New System.Drawing.Point(158, 27)
+        Me.RackNoRI.Name = "RackNoRI"
+        Me.RackNoRI.Size = New System.Drawing.Size(123, 22)
+        Me.RackNoRI.TabIndex = 6
         '
         'DocumentDateRI
         '
@@ -1098,7 +1326,7 @@ Partial Class FrmEditor
         Me.Warranty.Location = New System.Drawing.Point(4, 25)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(623, 275)
+        Me.Warranty.Size = New System.Drawing.Size(623, 267)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         Me.Warranty.UseVisualStyleBackColor = True
@@ -1142,10 +1370,28 @@ Partial Class FrmEditor
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(0, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(603, 409)
+        Me.GrpWarranty.Size = New System.Drawing.Size(600, 421)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
+        '
+        'BoxNoWarranty
+        '
+        Me.BoxNoWarranty.BackColor = System.Drawing.Color.White
+        Me.BoxNoWarranty.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
+        Me.BoxNoWarranty.Location = New System.Drawing.Point(158, 50)
+        Me.BoxNoWarranty.Name = "BoxNoWarranty"
+        Me.BoxNoWarranty.Size = New System.Drawing.Size(123, 22)
+        Me.BoxNoWarranty.TabIndex = 7
+        '
+        'RackNoWarranty
+        '
+        Me.RackNoWarranty.BackColor = System.Drawing.Color.White
+        Me.RackNoWarranty.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
+        Me.RackNoWarranty.Location = New System.Drawing.Point(158, 27)
+        Me.RackNoWarranty.Name = "RackNoWarranty"
+        Me.RackNoWarranty.Size = New System.Drawing.Size(123, 22)
+        Me.RackNoWarranty.TabIndex = 6
         '
         'DTDatePurchased
         '
@@ -1268,7 +1514,7 @@ Partial Class FrmEditor
         'Voucher
         '
         Me.Voucher.AutoScroll = True
-        Me.Voucher.AutoScrollMinSize = New System.Drawing.Size(0, 475)
+        Me.Voucher.AutoScrollMinSize = New System.Drawing.Size(0, 500)
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 25)
         Me.Voucher.Name = "Voucher"
@@ -1315,10 +1561,45 @@ Partial Class FrmEditor
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 3)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(606, 469)
+        Me.GrpVoucher.Size = New System.Drawing.Size(600, 485)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
+        '
+        'DTDateReceived
+        '
+        Me.DTDateReceived.Location = New System.Drawing.Point(259, 441)
+        Me.DTDateReceived.Name = "DTDateReceived"
+        Me.DTDateReceived.Size = New System.Drawing.Size(18, 22)
+        Me.DTDateReceived.TabIndex = 21
+        '
+        'BoxNoVoucher
+        '
+        Me.BoxNoVoucher.BackColor = System.Drawing.Color.White
+        Me.BoxNoVoucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
+        Me.BoxNoVoucher.Location = New System.Drawing.Point(158, 50)
+        Me.BoxNoVoucher.Name = "BoxNoVoucher"
+        Me.BoxNoVoucher.Size = New System.Drawing.Size(123, 22)
+        Me.BoxNoVoucher.TabIndex = 7
+        '
+        'RackNoVoucher
+        '
+        Me.RackNoVoucher.BackColor = System.Drawing.Color.White
+        Me.RackNoVoucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
+        Me.RackNoVoucher.Location = New System.Drawing.Point(158, 27)
+        Me.RackNoVoucher.Name = "RackNoVoucher"
+        Me.RackNoVoucher.Size = New System.Drawing.Size(123, 22)
+        Me.RackNoVoucher.TabIndex = 6
+        '
+        'DateReceivedTextBox
+        '
+        Me.DateReceivedTextBox.BackColor = System.Drawing.Color.White
+        Me.DateReceivedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DateReceived", True))
+        Me.DateReceivedTextBox.Location = New System.Drawing.Point(158, 441)
+        Me.DateReceivedTextBox.Name = "DateReceivedTextBox"
+        Me.DateReceivedTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.DateReceivedTextBox.TabIndex = 27
+        Me.DateReceivedTextBox.TabStop = False
         '
         'PaymentFormComboBox
         '
@@ -1326,7 +1607,7 @@ Partial Class FrmEditor
         Me.PaymentFormComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.PaymentFormComboBox.FormattingEnabled = True
         Me.PaymentFormComboBox.ItemHeight = 16
-        Me.PaymentFormComboBox.Location = New System.Drawing.Point(158, 179)
+        Me.PaymentFormComboBox.Location = New System.Drawing.Point(158, 180)
         Me.PaymentFormComboBox.Name = "PaymentFormComboBox"
         Me.PaymentFormComboBox.Size = New System.Drawing.Size(183, 24)
         Me.PaymentFormComboBox.TabIndex = 10
@@ -1342,7 +1623,7 @@ Partial Class FrmEditor
         '
         Me.ReceivedbyTextBox.BackColor = System.Drawing.Color.White
         Me.ReceivedbyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Receivedby", True))
-        Me.ReceivedbyTextBox.Location = New System.Drawing.Point(158, 407)
+        Me.ReceivedbyTextBox.Location = New System.Drawing.Point(158, 418)
         Me.ReceivedbyTextBox.Name = "ReceivedbyTextBox"
         Me.ReceivedbyTextBox.Size = New System.Drawing.Size(326, 22)
         Me.ReceivedbyTextBox.TabIndex = 20
@@ -1351,7 +1632,7 @@ Partial Class FrmEditor
         '
         Me.RecordedbyTextBox.BackColor = System.Drawing.Color.White
         Me.RecordedbyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Recordedby", True))
-        Me.RecordedbyTextBox.Location = New System.Drawing.Point(158, 384)
+        Me.RecordedbyTextBox.Location = New System.Drawing.Point(158, 395)
         Me.RecordedbyTextBox.Name = "RecordedbyTextBox"
         Me.RecordedbyTextBox.Size = New System.Drawing.Size(326, 22)
         Me.RecordedbyTextBox.TabIndex = 19
@@ -1360,7 +1641,7 @@ Partial Class FrmEditor
         '
         Me.ApprovedbyTextBox.BackColor = System.Drawing.Color.White
         Me.ApprovedbyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Approvedby", True))
-        Me.ApprovedbyTextBox.Location = New System.Drawing.Point(158, 361)
+        Me.ApprovedbyTextBox.Location = New System.Drawing.Point(158, 372)
         Me.ApprovedbyTextBox.Name = "ApprovedbyTextBox"
         Me.ApprovedbyTextBox.Size = New System.Drawing.Size(326, 22)
         Me.ApprovedbyTextBox.TabIndex = 18
@@ -1369,7 +1650,7 @@ Partial Class FrmEditor
         '
         Me.PreparedbyTextBox.BackColor = System.Drawing.Color.White
         Me.PreparedbyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Preparedby", True))
-        Me.PreparedbyTextBox.Location = New System.Drawing.Point(158, 338)
+        Me.PreparedbyTextBox.Location = New System.Drawing.Point(158, 349)
         Me.PreparedbyTextBox.Name = "PreparedbyTextBox"
         Me.PreparedbyTextBox.Size = New System.Drawing.Size(326, 22)
         Me.PreparedbyTextBox.TabIndex = 17
@@ -1396,7 +1677,7 @@ Partial Class FrmEditor
         '
         Me.TotalValueVoucher.BackColor = System.Drawing.Color.White
         Me.TotalValueVoucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "TotalValue", True))
-        Me.TotalValueVoucher.Location = New System.Drawing.Point(158, 307)
+        Me.TotalValueVoucher.Location = New System.Drawing.Point(158, 326)
         Me.TotalValueVoucher.Name = "TotalValueVoucher"
         Me.TotalValueVoucher.Size = New System.Drawing.Size(183, 22)
         Me.TotalValueVoucher.TabIndex = 16
@@ -1427,7 +1708,7 @@ Partial Class FrmEditor
         Me.TabControl2.Controls.Add(Me.BankDepo)
         Me.TabControl2.Controls.Add(Me.Others)
         Me.TabControl2.Controls.Add(Me.Check)
-        Me.TabControl2.Location = New System.Drawing.Point(0, 179)
+        Me.TabControl2.Location = New System.Drawing.Point(0, 202)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
         Me.TabControl2.Size = New System.Drawing.Size(564, 129)
@@ -1557,10 +1838,28 @@ Partial Class FrmEditor
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 3)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(600, 336)
+        Me.GrpCorp.Size = New System.Drawing.Size(600, 335)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
+        '
+        'BoxNoCorpDocu
+        '
+        Me.BoxNoCorpDocu.BackColor = System.Drawing.Color.White
+        Me.BoxNoCorpDocu.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
+        Me.BoxNoCorpDocu.Location = New System.Drawing.Point(158, 50)
+        Me.BoxNoCorpDocu.Name = "BoxNoCorpDocu"
+        Me.BoxNoCorpDocu.Size = New System.Drawing.Size(123, 22)
+        Me.BoxNoCorpDocu.TabIndex = 7
+        '
+        'RackNoCorpDocu
+        '
+        Me.RackNoCorpDocu.BackColor = System.Drawing.Color.White
+        Me.RackNoCorpDocu.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
+        Me.RackNoCorpDocu.Location = New System.Drawing.Point(158, 27)
+        Me.RackNoCorpDocu.Name = "RackNoCorpDocu"
+        Me.RackNoCorpDocu.Size = New System.Drawing.Size(123, 22)
+        Me.RackNoCorpDocu.TabIndex = 6
         '
         'DTMeetingDate
         '
@@ -1692,16 +1991,6 @@ Partial Class FrmEditor
         Me.BtnRefresh.Size = New System.Drawing.Size(547, 678)
         Me.BtnRefresh.TabIndex = 0
         '
-        'DocsCatalogueBindingSource
-        '
-        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
-        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
-        '
-        'DMSDataSet
-        '
-        Me.DMSDataSet.DataSetName = "DMSDataSet"
-        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'DocsCatalogueTableAdapter
         '
         Me.DocsCatalogueTableAdapter.ClearBeforeFill = True
@@ -1713,295 +2002,6 @@ Partial Class FrmEditor
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'RackNoLabel
-        '
-        RackNoLabel.AutoSize = True
-        RackNoLabel.Location = New System.Drawing.Point(8, 30)
-        RackNoLabel.Name = "RackNoLabel"
-        RackNoLabel.Size = New System.Drawing.Size(131, 16)
-        RackNoLabel.TabIndex = 25
-        RackNoLabel.Text = "Document Rack No.:"
-        '
-        'RackNoRI
-        '
-        Me.RackNoRI.BackColor = System.Drawing.Color.White
-        Me.RackNoRI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
-        Me.RackNoRI.Location = New System.Drawing.Point(158, 27)
-        Me.RackNoRI.Name = "RackNoRI"
-        Me.RackNoRI.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoRI.TabIndex = 6
-        '
-        'BoxNoLabel
-        '
-        BoxNoLabel.AutoSize = True
-        BoxNoLabel.Location = New System.Drawing.Point(8, 53)
-        BoxNoLabel.Name = "BoxNoLabel"
-        BoxNoLabel.Size = New System.Drawing.Size(122, 16)
-        BoxNoLabel.TabIndex = 26
-        BoxNoLabel.Text = "Document Box No.:"
-        '
-        'BoxNoRI
-        '
-        Me.BoxNoRI.BackColor = System.Drawing.Color.White
-        Me.BoxNoRI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
-        Me.BoxNoRI.Location = New System.Drawing.Point(158, 50)
-        Me.BoxNoRI.Name = "BoxNoRI"
-        Me.BoxNoRI.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoRI.TabIndex = 7
-        '
-        'Label2
-        '
-        Label2.AutoSize = True
-        Label2.Location = New System.Drawing.Point(8, 53)
-        Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(122, 16)
-        Label2.TabIndex = 34
-        Label2.Text = "Document Box No.:"
-        '
-        'BoxNoTS
-        '
-        Me.BoxNoTS.BackColor = System.Drawing.Color.White
-        Me.BoxNoTS.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
-        Me.BoxNoTS.Location = New System.Drawing.Point(158, 50)
-        Me.BoxNoTS.Name = "BoxNoTS"
-        Me.BoxNoTS.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoTS.TabIndex = 7
-        '
-        'Label3
-        '
-        Label3.AutoSize = True
-        Label3.Location = New System.Drawing.Point(8, 30)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(131, 16)
-        Label3.TabIndex = 33
-        Label3.Text = "Document Rack No.:"
-        '
-        'RackNoTS
-        '
-        Me.RackNoTS.BackColor = System.Drawing.Color.White
-        Me.RackNoTS.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
-        Me.RackNoTS.Location = New System.Drawing.Point(158, 27)
-        Me.RackNoTS.Name = "RackNoTS"
-        Me.RackNoTS.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoTS.TabIndex = 6
-        '
-        'TinVendorLabel
-        '
-        TinVendorLabel.AutoSize = True
-        TinVendorLabel.Location = New System.Drawing.Point(8, 232)
-        TinVendorLabel.Name = "TinVendorLabel"
-        TinVendorLabel.Size = New System.Drawing.Size(94, 16)
-        TinVendorLabel.TabIndex = 27
-        TinVendorLabel.Text = "TIN of Vendor:"
-        '
-        'TinVendorTextBox
-        '
-        Me.TinVendorTextBox.BackColor = System.Drawing.Color.White
-        Me.TinVendorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "TinVendor", True))
-        Me.TinVendorTextBox.Location = New System.Drawing.Point(158, 229)
-        Me.TinVendorTextBox.Name = "TinVendorTextBox"
-        Me.TinVendorTextBox.Size = New System.Drawing.Size(182, 22)
-        Me.TinVendorTextBox.TabIndex = 14
-        '
-        'TinCustomerLabel
-        '
-        TinCustomerLabel.AutoSize = True
-        TinCustomerLabel.Location = New System.Drawing.Point(8, 255)
-        TinCustomerLabel.Name = "TinCustomerLabel"
-        TinCustomerLabel.Size = New System.Drawing.Size(107, 16)
-        TinCustomerLabel.TabIndex = 28
-        TinCustomerLabel.Text = "TIN of Customer:"
-        '
-        'TinCustomerTextBox
-        '
-        Me.TinCustomerTextBox.BackColor = System.Drawing.Color.White
-        Me.TinCustomerTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "TinCustomer", True))
-        Me.TinCustomerTextBox.Location = New System.Drawing.Point(158, 252)
-        Me.TinCustomerTextBox.Name = "TinCustomerTextBox"
-        Me.TinCustomerTextBox.Size = New System.Drawing.Size(182, 22)
-        Me.TinCustomerTextBox.TabIndex = 15
-        '
-        'AddressCLabel
-        '
-        AddressCLabel.AutoSize = True
-        AddressCLabel.Location = New System.Drawing.Point(8, 203)
-        AddressCLabel.Name = "AddressCLabel"
-        AddressCLabel.Size = New System.Drawing.Size(122, 16)
-        AddressCLabel.TabIndex = 29
-        AddressCLabel.Text = "Customer Address:"
-        '
-        'AddressCTextBox
-        '
-        Me.AddressCTextBox.BackColor = System.Drawing.Color.White
-        Me.AddressCTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "AddressC", True))
-        Me.AddressCTextBox.Location = New System.Drawing.Point(158, 200)
-        Me.AddressCTextBox.Name = "AddressCTextBox"
-        Me.AddressCTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.AddressCTextBox.TabIndex = 13
-        '
-        'VATregCheckBox
-        '
-        Me.VATregCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.DocsCatalogueBindingSource, "VATreg", True))
-        Me.VATregCheckBox.Location = New System.Drawing.Point(413, 27)
-        Me.VATregCheckBox.Name = "VATregCheckBox"
-        Me.VATregCheckBox.Size = New System.Drawing.Size(127, 24)
-        Me.VATregCheckBox.TabIndex = 17
-        Me.VATregCheckBox.Text = "VAT Registered"
-        Me.VATregCheckBox.UseVisualStyleBackColor = True
-        '
-        'NONVATregCheckBox
-        '
-        Me.NONVATregCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.DocsCatalogueBindingSource, "NONVATreg", True))
-        Me.NONVATregCheckBox.Location = New System.Drawing.Point(413, 49)
-        Me.NONVATregCheckBox.Name = "NONVATregCheckBox"
-        Me.NONVATregCheckBox.Size = New System.Drawing.Size(160, 24)
-        Me.NONVATregCheckBox.TabIndex = 18
-        Me.NONVATregCheckBox.Text = "NON-VAT Registered"
-        Me.NONVATregCheckBox.UseVisualStyleBackColor = True
-        '
-        'DateReceivedLabel
-        '
-        DateReceivedLabel.AutoSize = True
-        DateReceivedLabel.Location = New System.Drawing.Point(8, 433)
-        DateReceivedLabel.Name = "DateReceivedLabel"
-        DateReceivedLabel.Size = New System.Drawing.Size(102, 16)
-        DateReceivedLabel.TabIndex = 26
-        DateReceivedLabel.Text = "Date Received:"
-        '
-        'DateReceivedTextBox
-        '
-        Me.DateReceivedTextBox.BackColor = System.Drawing.Color.White
-        Me.DateReceivedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DateReceived", True))
-        Me.DateReceivedTextBox.Location = New System.Drawing.Point(158, 430)
-        Me.DateReceivedTextBox.Name = "DateReceivedTextBox"
-        Me.DateReceivedTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.DateReceivedTextBox.TabIndex = 27
-        Me.DateReceivedTextBox.TabStop = False
-        '
-        'Label4
-        '
-        Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(8, 53)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(122, 16)
-        Label4.TabIndex = 29
-        Label4.Text = "Document Box No.:"
-        '
-        'BoxNoWarranty
-        '
-        Me.BoxNoWarranty.BackColor = System.Drawing.Color.White
-        Me.BoxNoWarranty.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
-        Me.BoxNoWarranty.Location = New System.Drawing.Point(158, 50)
-        Me.BoxNoWarranty.Name = "BoxNoWarranty"
-        Me.BoxNoWarranty.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoWarranty.TabIndex = 7
-        '
-        'Label5
-        '
-        Label5.AutoSize = True
-        Label5.Location = New System.Drawing.Point(8, 30)
-        Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(131, 16)
-        Label5.TabIndex = 28
-        Label5.Text = "Document Rack No.:"
-        '
-        'RackNoWarranty
-        '
-        Me.RackNoWarranty.BackColor = System.Drawing.Color.White
-        Me.RackNoWarranty.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
-        Me.RackNoWarranty.Location = New System.Drawing.Point(158, 27)
-        Me.RackNoWarranty.Name = "RackNoWarranty"
-        Me.RackNoWarranty.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoWarranty.TabIndex = 6
-        '
-        'Label6
-        '
-        Label6.AutoSize = True
-        Label6.Location = New System.Drawing.Point(298, 230)
-        Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(106, 16)
-        Label6.TabIndex = 32
-        Label6.Text = "(6 mos, 1 yr, etc.)"
-        '
-        'Label7
-        '
-        Label7.AutoSize = True
-        Label7.Location = New System.Drawing.Point(8, 53)
-        Label7.Name = "Label7"
-        Label7.Size = New System.Drawing.Size(122, 16)
-        Label7.TabIndex = 29
-        Label7.Text = "Document Box No.:"
-        '
-        'BoxNoVoucher
-        '
-        Me.BoxNoVoucher.BackColor = System.Drawing.Color.White
-        Me.BoxNoVoucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
-        Me.BoxNoVoucher.Location = New System.Drawing.Point(158, 50)
-        Me.BoxNoVoucher.Name = "BoxNoVoucher"
-        Me.BoxNoVoucher.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoVoucher.TabIndex = 7
-        '
-        'Label9
-        '
-        Label9.AutoSize = True
-        Label9.Location = New System.Drawing.Point(8, 30)
-        Label9.Name = "Label9"
-        Label9.Size = New System.Drawing.Size(131, 16)
-        Label9.TabIndex = 28
-        Label9.Text = "Document Rack No.:"
-        '
-        'RackNoVoucher
-        '
-        Me.RackNoVoucher.BackColor = System.Drawing.Color.White
-        Me.RackNoVoucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
-        Me.RackNoVoucher.Location = New System.Drawing.Point(158, 27)
-        Me.RackNoVoucher.Name = "RackNoVoucher"
-        Me.RackNoVoucher.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoVoucher.TabIndex = 6
-        '
-        'DTDateReceived
-        '
-        Me.DTDateReceived.Location = New System.Drawing.Point(259, 430)
-        Me.DTDateReceived.Name = "DTDateReceived"
-        Me.DTDateReceived.Size = New System.Drawing.Size(18, 22)
-        Me.DTDateReceived.TabIndex = 21
-        '
-        'Label10
-        '
-        Label10.AutoSize = True
-        Label10.Location = New System.Drawing.Point(8, 53)
-        Label10.Name = "Label10"
-        Label10.Size = New System.Drawing.Size(122, 16)
-        Label10.TabIndex = 33
-        Label10.Text = "Document Box No.:"
-        '
-        'BoxNoCorpDocu
-        '
-        Me.BoxNoCorpDocu.BackColor = System.Drawing.Color.White
-        Me.BoxNoCorpDocu.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
-        Me.BoxNoCorpDocu.Location = New System.Drawing.Point(158, 50)
-        Me.BoxNoCorpDocu.Name = "BoxNoCorpDocu"
-        Me.BoxNoCorpDocu.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoCorpDocu.TabIndex = 7
-        '
-        'Label11
-        '
-        Label11.AutoSize = True
-        Label11.Location = New System.Drawing.Point(8, 30)
-        Label11.Name = "Label11"
-        Label11.Size = New System.Drawing.Size(131, 16)
-        Label11.TabIndex = 32
-        Label11.Text = "Document Rack No.:"
-        '
-        'RackNoCorpDocu
-        '
-        Me.RackNoCorpDocu.BackColor = System.Drawing.Color.White
-        Me.RackNoCorpDocu.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
-        Me.RackNoCorpDocu.Location = New System.Drawing.Point(158, 27)
-        Me.RackNoCorpDocu.Name = "RackNoCorpDocu"
-        Me.RackNoCorpDocu.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoCorpDocu.TabIndex = 6
         '
         'FrmEditor
         '
@@ -2023,6 +2023,8 @@ Partial Class FrmEditor
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
         CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.Timesheet.ResumeLayout(False)
         Me.GrpTimeSheet.ResumeLayout(False)
@@ -2051,8 +2053,6 @@ Partial Class FrmEditor
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.BtnRefresh, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
