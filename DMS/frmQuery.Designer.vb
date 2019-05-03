@@ -180,6 +180,7 @@ Partial Class FrmQuery
         Me.PurposeTextBox = New System.Windows.Forms.TextBox()
         Me.CompanyTextBox = New System.Windows.Forms.TextBox()
         Me.DocumentDateCorp = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         AddressCLabel = New System.Windows.Forms.Label()
         TinCustomerLabel = New System.Windows.Forms.Label()
@@ -851,6 +852,7 @@ Partial Class FrmQuery
         '
         'SplitContainer1.Panel2
         '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label12)
         Me.SplitContainer1.Panel2.Controls.Add(Me.AxAcroPDF1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.DocumentTypeComboBox)
         Me.SplitContainer1.Panel2.Controls.Add(DocumentTypeLabel)
@@ -897,7 +899,7 @@ Partial Class FrmQuery
         Me.DocumentTypeComboBox.FormattingEnabled = True
         Me.DocumentTypeComboBox.Location = New System.Drawing.Point(148, 10)
         Me.DocumentTypeComboBox.Name = "DocumentTypeComboBox"
-        Me.DocumentTypeComboBox.Size = New System.Drawing.Size(396, 28)
+        Me.DocumentTypeComboBox.Size = New System.Drawing.Size(310, 28)
         Me.DocumentTypeComboBox.TabIndex = 28
         '
         'TabControl1
@@ -1863,6 +1865,15 @@ Partial Class FrmQuery
         Me.DocumentDateCorp.TabStop = False
         Me.DocumentDateCorp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(518, 10)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(124, 13)
+        Me.Label12.TabIndex = 31
+        Me.Label12.Text = "Double Click to View File"
+        '
         'FrmQuery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2003,4 +2014,5 @@ Partial Class FrmQuery
     Friend WithEvents VoucherSearch As Button
     Friend WithEvents CorpDocuSearch As Button
     Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
+    Friend WithEvents Label12 As Label
 End Class

@@ -194,6 +194,8 @@ AND Status = 'Finished'
 
             Me.C1TrueDBGrid1.Splits(0).DisplayColumns("Id").Visible = False
 
+            Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
+
 
 
         End If
@@ -217,7 +219,6 @@ AND Status = 'Finished'
             'Create your query as you already have done
             Dim strsql As String = "SELECT 
 Id
-
 , RackNo as [Rack No]
 , BoxNo as [Box No]
 , BookletNo [Booklet No]
@@ -296,7 +297,7 @@ AND Status = 'Finished'
             C1TrueDBGrid1.DataSource = objbindingsource
 
             Me.C1TrueDBGrid1.Splits(0).DisplayColumns("Id").Visible = False
-
+            Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
 
         End If
 
@@ -404,7 +405,7 @@ AND Status = 'Finished'
             C1TrueDBGrid1.DataSource = objbindingsource
 
             Me.C1TrueDBGrid1.Splits(0).DisplayColumns("Id").Visible = False
-
+            Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
 
         End If
 
@@ -489,6 +490,9 @@ AND Status = 'Finished'
             C1TrueDBGrid1.DataSource = objbindingsource
 
             Me.C1TrueDBGrid1.Splits(0).DisplayColumns("Id").Visible = False
+            Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
+
+
 
         End If
 
@@ -605,7 +609,7 @@ AND Status = 'Finished'
             C1TrueDBGrid1.DataSource = objbindingsource
 
             Me.C1TrueDBGrid1.Splits(0).DisplayColumns("Id").Visible = False
-
+            Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
 
 
         End If
@@ -614,6 +618,12 @@ AND Status = 'Finished'
     Private Sub C1TrueDBGrid1_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid1.Click
 
 
+
+
+
+    End Sub
+
+    Private Sub C1TrueDBGrid1_DoubleClick(sender As Object, e As EventArgs) Handles C1TrueDBGrid1.DoubleClick
         Try
 
             AxAcroPDF1.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid1.Columns("File Name").Text)
@@ -622,7 +632,5 @@ AND Status = 'Finished'
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
-
     End Sub
 End Class
