@@ -385,7 +385,6 @@ AND Status = 'Finished'
                 .Parameters.AddWithValue("@Email", Me.EmailTextBox.Text)
                 .Parameters.AddWithValue("@TotalValue", Me.TotalValueWarranty.Text)
 
-
                 .Connection = strconnectionstring
             End With
             'Create a new SqlDataAdapter
