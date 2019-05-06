@@ -69,12 +69,12 @@ Public Class FrmIndex
                 For Each Item As String In ListBox1.Items
 
                     cmd.Connection = con
-                    cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([Batch],[ScannedDate],[Filename],[Status]) 
-                                        VALUES ('" & batchIdTextBox.Text & "','" & scanDateTimePicker.Text & "' 
+                    cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([Batch], [SubBatch],[BatchDesc],[ScannedDate],[Filename],[Status]) 
+                                        VALUES ('" & batchIdTextBox.Text & "', '" & TxtSubBatch.Text & "', '" & TxtBatchDesc.Text & "','" & scanDateTimePicker.Text & "' 
                                                 , '" & batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "')"
                     cmd.ExecuteNonQuery()
 
-                    File.Copy(Item, Path.Combine(My.Settings.ImgPath, batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
+                    File.Copy(Item, Path.Combine(My.Settings.ImgPath, batchIdTextBox.Text & "_" & TxtSubBatch.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
 
                 Next
 

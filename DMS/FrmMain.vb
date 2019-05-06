@@ -43,7 +43,7 @@ Public Class FrmMain
     End Property
 
     Private Sub QueryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QueryToolStripMenuItem.Click
-        frmQuery.Show()
+        FrmQuery.Show()
     End Sub
 
     Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click

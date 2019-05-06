@@ -37,6 +37,10 @@ Partial Class FrmIndex
         Me.batchIdTextBox = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.TxtBatchDesc = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtSubBatch = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -60,6 +64,10 @@ Partial Class FrmIndex
         '
         'SplitContainer1.Panel2
         '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label5)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.TxtSubBatch)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label4)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.TxtBatchDesc)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label3)
         Me.SplitContainer1.Panel2.Controls.Add(Me.AxAcroPDF1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Splitter1)
@@ -70,7 +78,7 @@ Partial Class FrmIndex
         Me.SplitContainer1.Panel2.Controls.Add(Me.Button2)
         Me.SplitContainer1.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SplitContainer1.Size = New System.Drawing.Size(837, 483)
-        Me.SplitContainer1.SplitterDistance = 427
+        Me.SplitContainer1.SplitterDistance = 405
         Me.SplitContainer1.TabIndex = 0
         '
         'SplitContainer2
@@ -89,7 +97,7 @@ Partial Class FrmIndex
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.Button3)
         Me.SplitContainer2.Panel2.Controls.Add(Me.Button1)
-        Me.SplitContainer2.Size = New System.Drawing.Size(427, 483)
+        Me.SplitContainer2.Size = New System.Drawing.Size(405, 483)
         Me.SplitContainer2.SplitterDistance = 433
         Me.SplitContainer2.TabIndex = 0
         '
@@ -101,14 +109,14 @@ Partial Class FrmIndex
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(0, 0)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(424, 420)
-        Me.ListBox1.TabIndex = 0
+        Me.ListBox1.Size = New System.Drawing.Size(402, 420)
+        Me.ListBox1.TabIndex = 1
         '
         'Button3
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(230, 1)
+        Me.Button3.Location = New System.Drawing.Point(209, 1)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(191, 39)
         Me.Button3.TabIndex = 2
@@ -122,7 +130,7 @@ Partial Class FrmIndex
         Me.Button1.Location = New System.Drawing.Point(8, 1)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(191, 39)
-        Me.Button1.TabIndex = 1
+        Me.Button1.TabIndex = 0
         Me.Button1.Text = "BROWSE"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -144,8 +152,9 @@ Partial Class FrmIndex
         Me.AxAcroPDF1.Location = New System.Drawing.Point(18, 28)
         Me.AxAcroPDF1.Name = "AxAcroPDF1"
         Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF1.Size = New System.Drawing.Size(376, 307)
+        Me.AxAcroPDF1.Size = New System.Drawing.Size(398, 307)
         Me.AxAcroPDF1.TabIndex = 6
+        Me.AxAcroPDF1.TabStop = False
         '
         'Splitter1
         '
@@ -160,7 +169,7 @@ Partial Class FrmIndex
         Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 374)
+        Me.Label2.Location = New System.Drawing.Point(19, 416)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(97, 16)
         Me.Label2.TabIndex = 4
@@ -171,17 +180,17 @@ Partial Class FrmIndex
         Me.scanDateTimePicker.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.scanDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.scanDateTimePicker.Location = New System.Drawing.Point(107, 372)
+        Me.scanDateTimePicker.Location = New System.Drawing.Point(130, 413)
         Me.scanDateTimePicker.Name = "scanDateTimePicker"
-        Me.scanDateTimePicker.Size = New System.Drawing.Size(128, 22)
-        Me.scanDateTimePicker.TabIndex = 3
+        Me.scanDateTimePicker.Size = New System.Drawing.Size(150, 22)
+        Me.scanDateTimePicker.TabIndex = 6
         '
         'Label1
         '
         Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(19, 350)
+        Me.Label1.Location = New System.Drawing.Point(19, 345)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 16)
         Me.Label1.TabIndex = 2
@@ -191,18 +200,18 @@ Partial Class FrmIndex
         '
         Me.batchIdTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.batchIdTextBox.Location = New System.Drawing.Point(106, 349)
+        Me.batchIdTextBox.Location = New System.Drawing.Point(130, 344)
         Me.batchIdTextBox.Name = "batchIdTextBox"
-        Me.batchIdTextBox.Size = New System.Drawing.Size(288, 22)
-        Me.batchIdTextBox.TabIndex = 1
+        Me.batchIdTextBox.Size = New System.Drawing.Size(280, 22)
+        Me.batchIdTextBox.TabIndex = 3
         '
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(245, 438)
+        Me.Button2.Location = New System.Drawing.Point(267, 438)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(149, 36)
-        Me.Button2.TabIndex = 0
+        Me.Button2.TabIndex = 7
         Me.Button2.Text = "INDEX FILES"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -210,14 +219,54 @@ Partial Class FrmIndex
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'Index
+        'TxtBatchDesc
+        '
+        Me.TxtBatchDesc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtBatchDesc.Location = New System.Drawing.Point(130, 390)
+        Me.TxtBatchDesc.Name = "TxtBatchDesc"
+        Me.TxtBatchDesc.Size = New System.Drawing.Size(280, 22)
+        Me.TxtBatchDesc.TabIndex = 5
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(19, 393)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(80, 16)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "Batch Desc:"
+        '
+        'TxtSubBatch
+        '
+        Me.TxtSubBatch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtSubBatch.Location = New System.Drawing.Point(130, 367)
+        Me.TxtSubBatch.Name = "TxtSubBatch"
+        Me.TxtSubBatch.Size = New System.Drawing.Size(280, 22)
+        Me.TxtSubBatch.TabIndex = 4
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(19, 370)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(112, 16)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Sub Batch Name:"
+        '
+        'FrmIndex
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(837, 483)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Index"
+        Me.Name = "FrmIndex"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "INDEX"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
@@ -248,4 +297,8 @@ Partial Class FrmIndex
     Friend WithEvents Splitter1 As Splitter
     Friend WithEvents Button3 As Button
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TxtBatchDesc As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TxtSubBatch As TextBox
 End Class

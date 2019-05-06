@@ -5,6 +5,7 @@ Imports System.Data.SqlClient
 Imports System.Configuration
 Imports System.IO
 Imports System.ComponentModel
+Imports System.Globalization
 
 
 Public Class FrmEditor
@@ -88,10 +89,10 @@ Public Class FrmEditor
         'Permanently Disabled
         Me.IdTextBox.ReadOnly = True
         Me.IdTextBox.Visible = False
-        Me.DocumentDateCorp.ReadOnly = True
-        Me.DocumentDateRI.ReadOnly = True
-        Me.DocumentDateTS.ReadOnly = True
-        Me.DocumentDateVoucher.ReadOnly = True
+        ' Me.DocumentDateCorp.ReadOnly = True
+        ' Me.DocumentDateRI.ReadOnly = True
+        '   Me.DocumentDateTS.ReadOnly = True
+        '  Me.DocumentDateVoucher.ReadOnly = True
 
         'Temp Disabled
         Me.DocumentTypeComboBox.Enabled = False
@@ -102,9 +103,12 @@ Public Class FrmEditor
         GrpWarranty.Enabled = False
 
         'Changing
+
         Me.LblStat.Text = ""
         Me.BtnSave.Enabled = False
         Me.BtnClear.Enabled = False
+        Me.BtnCancel1.Enabled = False
+
 
     End Sub
 
@@ -115,6 +119,32 @@ Public Class FrmEditor
         Dim cmd As New SqlCommand
 
         Try
+
+
+            If Me.RackNoCorpDocu.Text = "" And Me.RackNoRI.Text = "" And Me.RackNoTS.Text = "" And Me.RackNoVoucher.Text = "" Then
+                Dim Rac As String = Me.RackNoWarranty.Text
+
+            ElseIf Me.RackNoCorpDocu.Text = "" And Me.RackNoRI.Text = "" And Me.RackNoTS.Text = "" And Me.RackNoWarranty.Text = "" Then
+                Dim Rac As String = Me.RackNoVoucher.Text
+
+            ElseIf Me.RackNoCorpDocu.Text = "" And Me.RackNoRI.Text = "" And Me.RackNoVoucher.Text = "" And Me.RackNoWarranty.Text = "" Then
+                Dim Rac As String = Me.RackNoTS.Text
+
+            ElseIf Me.RackNoCorpDocu.Text = "" And Me.RackNoTS.Text = "" And Me.RackNoVoucher.Text = "" And Me.RackNoWarranty.Text = "" Then
+                Dim Rac As String = Me.RackNoRI.Text
+
+            ElseIf Me.RackNoRI.Text = "" And Me.RackNoTS.Text = "" And Me.RackNoVoucher.Text = "" And Me.RackNoWarranty.Text = "" Then
+                Dim Rac As String = Me.RackNoCorpDocu.Text
+            End If
+
+
+
+
+
+            'Dim Box As String
+            '    Dim Book As String
+
+
 
             Me.Validate()
             Me.DocsCatalogueBindingSource.EndEdit()
@@ -142,6 +172,7 @@ Public Class FrmEditor
             Me.BtnSave.Enabled = False
             Me.BtnClear.Enabled = False
             Me.BtnEdit.Enabled = True
+            Me.BtnCancel1.Enabled = False
 
         Catch ex As Exception
 
@@ -284,6 +315,7 @@ Public Class FrmEditor
         Me.BtnSave.Enabled = True
         Me.BtnClear.Enabled = True
         Me.BtnEdit.Enabled = False
+        Me.BtnCancel1.Enabled = True
 
     End Sub
 
@@ -390,7 +422,7 @@ Public Class FrmEditor
     Private Sub IdTextBox_TextChanged(sender As Object, e As EventArgs) Handles IdTextBox.TextChanged
         Try
 
-            BtnRefresh.src = (My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
+            AcroReader1.src = (My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
 
 
             If IsDBNull(DocsCatalogueBindingSource.Current!DocumentType) Then
@@ -512,9 +544,9 @@ Public Class FrmEditor
             If MsgDelete = vbYes Then
 
 
+                File.Delete(My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
+
                 Me.DocsCatalogueBindingSource.RemoveCurrent()
-
-
                 Me.Validate()
                 Me.DocsCatalogueBindingSource.EndEdit()
                 Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
@@ -533,4 +565,24 @@ Public Class FrmEditor
         End Try
 
     End Sub
+
+
+
+    Private Sub BtnCancel1_Click(sender As Object, e As EventArgs) Handles BtnCancel1.Click
+        'Temp Disabled
+        Me.DocumentTypeComboBox.Enabled = False
+        GrpTimeSheet.Enabled = False
+        GrpReceipt.Enabled = False
+        GrpCorp.Enabled = False
+        GrpVoucher.Enabled = False
+        GrpWarranty.Enabled = False
+
+
+        Me.BtnSave.Enabled = False
+        Me.BtnClear.Enabled = False
+        Me.BtnEdit.Enabled = True
+        Me.BtnCancel1.Enabled = False
+    End Sub
+
+
 End Class
