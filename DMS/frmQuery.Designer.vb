@@ -938,14 +938,11 @@ Partial Class FrmQuery
         '
         'AcroPDF
         '
-        Me.AcroPDF.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AcroPDF.Enabled = True
-        Me.AcroPDF.Location = New System.Drawing.Point(638, 2)
+        Me.AcroPDF.Location = New System.Drawing.Point(641, 0)
         Me.AcroPDF.Name = "AcroPDF"
         Me.AcroPDF.OcxState = CType(resources.GetObject("AcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AcroPDF.Size = New System.Drawing.Size(599, 481)
+        Me.AcroPDF.Size = New System.Drawing.Size(599, 483)
         Me.AcroPDF.TabIndex = 30
         '
         'TabControl1
@@ -1295,9 +1292,6 @@ Partial Class FrmQuery
         '
         'GrpTimeSheet
         '
-        Me.GrpTimeSheet.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpTimeSheet.BackColor = System.Drawing.Color.Transparent
         Me.GrpTimeSheet.Controls.Add(Me.Label12)
         Me.GrpTimeSheet.Controls.Add(Me.Label13)
@@ -1314,9 +1308,10 @@ Partial Class FrmQuery
         Me.GrpTimeSheet.Controls.Add(Me.DocumentDateTS)
         Me.GrpTimeSheet.Controls.Add(Me.DTDocuTimeSheet)
         Me.GrpTimeSheet.Controls.Add(Me.Label15)
+        Me.GrpTimeSheet.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpTimeSheet.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
-        Me.GrpTimeSheet.Location = New System.Drawing.Point(0, 3)
+        Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
         Me.GrpTimeSheet.Size = New System.Drawing.Size(617, 383)
         Me.GrpTimeSheet.TabIndex = 25
@@ -1462,9 +1457,6 @@ Partial Class FrmQuery
         '
         'GrpReceipt
         '
-        Me.GrpReceipt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpReceipt.BackColor = System.Drawing.SystemColors.Control
         Me.GrpReceipt.Controls.Add(Me.Label16)
         Me.GrpReceipt.Controls.Add(Me.NONVATregCheckBox)
@@ -1495,11 +1487,12 @@ Partial Class FrmQuery
         Me.GrpReceipt.Controls.Add(Me.ReferenceNoLabel)
         Me.GrpReceipt.Controls.Add(Me.ReferenceNoRI)
         Me.GrpReceipt.Controls.Add(Me.DocumentDateLabel)
+        Me.GrpReceipt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
-        Me.GrpReceipt.Location = New System.Drawing.Point(0, 3)
+        Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(600, 422)
+        Me.GrpReceipt.Size = New System.Drawing.Size(600, 394)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1657,9 +1650,6 @@ Partial Class FrmQuery
         '
         'GrpWarranty
         '
-        Me.GrpWarranty.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpWarranty.Controls.Add(Me.Label18)
         Me.GrpWarranty.Controls.Add(Me.Label19)
         Me.GrpWarranty.Controls.Add(Me.Label20)
@@ -1691,11 +1681,12 @@ Partial Class FrmQuery
         Me.GrpWarranty.Controls.Add(Me.ProductBrandTextBox)
         Me.GrpWarranty.Controls.Add(Me.WarrantyNoLabel)
         Me.GrpWarranty.Controls.Add(Me.WarrantyNoTextBox)
+        Me.GrpWarranty.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpWarranty.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
-        Me.GrpWarranty.Location = New System.Drawing.Point(0, 3)
+        Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(600, 482)
+        Me.GrpWarranty.Size = New System.Drawing.Size(600, 414)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1850,9 +1841,6 @@ Partial Class FrmQuery
         '
         'GrpVoucher
         '
-        Me.GrpVoucher.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpVoucher.Controls.Add(Me.Label22)
         Me.GrpVoucher.Controls.Add(Me.DTDateReceived)
         Me.GrpVoucher.Controls.Add(Me.Label23)
@@ -1883,11 +1871,12 @@ Partial Class FrmQuery
         Me.GrpVoucher.Controls.Add(Me.DocumentDateLabel1)
         Me.GrpVoucher.Controls.Add(Me.DocumentDateVoucher)
         Me.GrpVoucher.Controls.Add(Me.TabControl3)
+        Me.GrpVoucher.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVoucher.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
-        Me.GrpVoucher.Location = New System.Drawing.Point(0, 3)
+        Me.GrpVoucher.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(603, 713)
+        Me.GrpVoucher.Size = New System.Drawing.Size(606, 500)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -2137,9 +2126,6 @@ Partial Class FrmQuery
         '
         'GrpCorp
         '
-        Me.GrpCorp.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpCorp.BackColor = System.Drawing.SystemColors.Control
         Me.GrpCorp.Controls.Add(Me.Label25)
         Me.GrpCorp.Controls.Add(Me.Label26)
@@ -2159,11 +2145,12 @@ Partial Class FrmQuery
         Me.GrpCorp.Controls.Add(Me.CompanyTextBox)
         Me.GrpCorp.Controls.Add(Me.DocumentDateLabel2)
         Me.GrpCorp.Controls.Add(Me.DocumentDateCorp)
+        Me.GrpCorp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpCorp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
-        Me.GrpCorp.Location = New System.Drawing.Point(0, 3)
+        Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(620, 394)
+        Me.GrpCorp.Size = New System.Drawing.Size(623, 389)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"

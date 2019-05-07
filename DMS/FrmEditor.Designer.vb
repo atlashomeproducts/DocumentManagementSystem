@@ -94,7 +94,6 @@ Partial Class FrmEditor
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEditor))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
-        Me.DocsCatalogueC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DMSDataSet = New DMS.DMSDataSet()
         Me.BtnCancel1 = New System.Windows.Forms.Button()
@@ -196,6 +195,7 @@ Partial Class FrmEditor
         Me.AcroReader1 = New AxAcroPDFLib.AxAcroPDF()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
+        Me.DocsCatalogueC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         DocumentDateLabel = New System.Windows.Forms.Label()
         ReferenceNoLabel = New System.Windows.Forms.Label()
@@ -272,7 +272,6 @@ Partial Class FrmEditor
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
-        CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -293,6 +292,7 @@ Partial Class FrmEditor
         Me.GrpCorp.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DocumentTypeLabel
@@ -970,30 +970,6 @@ Partial Class FrmEditor
         Me.SplitContainer2.SplitterDistance = 274
         Me.SplitContainer2.TabIndex = 0
         '
-        'DocsCatalogueC1TrueDBGrid
-        '
-        Me.DocsCatalogueC1TrueDBGrid.AllowUpdate = False
-        Me.DocsCatalogueC1TrueDBGrid.AlternatingRows = True
-        Me.DocsCatalogueC1TrueDBGrid.DataSource = Me.DocsCatalogueBindingSource
-        Me.DocsCatalogueC1TrueDBGrid.DataView = C1.Win.C1TrueDBGrid.DataViewEnum.GroupBy
-        Me.DocsCatalogueC1TrueDBGrid.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DocsCatalogueC1TrueDBGrid.ExtendRightColumn = True
-        Me.DocsCatalogueC1TrueDBGrid.FilterBar = True
-        Me.DocsCatalogueC1TrueDBGrid.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Standard
-        Me.DocsCatalogueC1TrueDBGrid.GroupByCaption = "Drag a column header here to group by that column"
-        Me.DocsCatalogueC1TrueDBGrid.Images.Add(CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.Images"), System.Drawing.Image))
-        Me.DocsCatalogueC1TrueDBGrid.Location = New System.Drawing.Point(0, 0)
-        Me.DocsCatalogueC1TrueDBGrid.MarqueeStyle = C1.Win.C1TrueDBGrid.MarqueeEnum.HighlightRow
-        Me.DocsCatalogueC1TrueDBGrid.Name = "DocsCatalogueC1TrueDBGrid"
-        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.Location = New System.Drawing.Point(0, 0)
-        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.Size = New System.Drawing.Size(0, 0)
-        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
-        Me.DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(641, 274)
-        Me.DocsCatalogueC1TrueDBGrid.TabIndex = 0
-        Me.DocsCatalogueC1TrueDBGrid.UseCompatibleTextRendering = False
-        Me.DocsCatalogueC1TrueDBGrid.PropBag = resources.GetString("DocsCatalogueC1TrueDBGrid.PropBag")
-        '
         'DocsCatalogueBindingSource
         '
         Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
@@ -1073,9 +1049,6 @@ Partial Class FrmEditor
         '
         'GrpTimeSheet
         '
-        Me.GrpTimeSheet.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpTimeSheet.BackColor = System.Drawing.Color.Transparent
         Me.GrpTimeSheet.Controls.Add(Label12)
         Me.GrpTimeSheet.Controls.Add(Label2)
@@ -1092,11 +1065,12 @@ Partial Class FrmEditor
         Me.GrpTimeSheet.Controls.Add(Me.DocumentDateTS)
         Me.GrpTimeSheet.Controls.Add(Me.DTDocuTimeSheet)
         Me.GrpTimeSheet.Controls.Add(Label8)
+        Me.GrpTimeSheet.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpTimeSheet.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
-        Me.GrpTimeSheet.Location = New System.Drawing.Point(0, 3)
+        Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(566, 344)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(600, 294)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1230,9 +1204,6 @@ Partial Class FrmEditor
         '
         'GrpReceipt
         '
-        Me.GrpReceipt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpReceipt.Controls.Add(Label13)
         Me.GrpReceipt.Controls.Add(Me.NONVATregCheckBox)
         Me.GrpReceipt.Controls.Add(Me.VATregCheckBox)
@@ -1262,11 +1233,12 @@ Partial Class FrmEditor
         Me.GrpReceipt.Controls.Add(ReferenceNoLabel)
         Me.GrpReceipt.Controls.Add(Me.ReferenceNoRI)
         Me.GrpReceipt.Controls.Add(DocumentDateLabel)
+        Me.GrpReceipt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
-        Me.GrpReceipt.Location = New System.Drawing.Point(0, 3)
+        Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(566, 644)
+        Me.GrpReceipt.Size = New System.Drawing.Size(600, 394)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1424,9 +1396,6 @@ Partial Class FrmEditor
         '
         'GrpWarranty
         '
-        Me.GrpWarranty.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpWarranty.Controls.Add(Label14)
         Me.GrpWarranty.Controls.Add(Label6)
         Me.GrpWarranty.Controls.Add(Label4)
@@ -1458,11 +1427,12 @@ Partial Class FrmEditor
         Me.GrpWarranty.Controls.Add(Me.ProductBrandTextBox)
         Me.GrpWarranty.Controls.Add(WarrantyNoLabel)
         Me.GrpWarranty.Controls.Add(Me.WarrantyNoTextBox)
+        Me.GrpWarranty.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpWarranty.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
-        Me.GrpWarranty.Location = New System.Drawing.Point(0, 3)
+        Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(566, 704)
+        Me.GrpWarranty.Size = New System.Drawing.Size(600, 414)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1617,9 +1587,6 @@ Partial Class FrmEditor
         '
         'GrpVoucher
         '
-        Me.GrpVoucher.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpVoucher.Controls.Add(Label15)
         Me.GrpVoucher.Controls.Add(Me.DTDateReceived)
         Me.GrpVoucher.Controls.Add(Label7)
@@ -1650,11 +1617,12 @@ Partial Class FrmEditor
         Me.GrpVoucher.Controls.Add(DocumentDateLabel1)
         Me.GrpVoucher.Controls.Add(Me.DocumentDateVoucher)
         Me.GrpVoucher.Controls.Add(Me.TabControl2)
+        Me.GrpVoucher.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpVoucher.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
-        Me.GrpVoucher.Location = New System.Drawing.Point(0, 3)
+        Me.GrpVoucher.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(569, 944)
+        Me.GrpVoucher.Size = New System.Drawing.Size(606, 500)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -1908,9 +1876,6 @@ Partial Class FrmEditor
         '
         'GrpCorp
         '
-        Me.GrpCorp.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GrpCorp.Controls.Add(Label17)
         Me.GrpCorp.Controls.Add(Label16)
         Me.GrpCorp.Controls.Add(Label10)
@@ -1929,11 +1894,12 @@ Partial Class FrmEditor
         Me.GrpCorp.Controls.Add(Me.CompanyTextBox)
         Me.GrpCorp.Controls.Add(DocumentDateLabel2)
         Me.GrpCorp.Controls.Add(Me.DocumentDateCorp)
+        Me.GrpCorp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GrpCorp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
-        Me.GrpCorp.Location = New System.Drawing.Point(0, 3)
+        Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(569, 494)
+        Me.GrpCorp.Size = New System.Drawing.Size(606, 350)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2076,14 +2042,12 @@ Partial Class FrmEditor
         '
         'AcroReader1
         '
-        Me.AcroReader1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.AcroReader1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AcroReader1.Enabled = True
-        Me.AcroReader1.Location = New System.Drawing.Point(2, 3)
+        Me.AcroReader1.Location = New System.Drawing.Point(0, 0)
         Me.AcroReader1.Name = "AcroReader1"
         Me.AcroReader1.OcxState = CType(resources.GetObject("AcroReader1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AcroReader1.Size = New System.Drawing.Size(547, 678)
+        Me.AcroReader1.Size = New System.Drawing.Size(552, 684)
         Me.AcroReader1.TabIndex = 0
         '
         'DocsCatalogueTableAdapter
@@ -2097,6 +2061,30 @@ Partial Class FrmEditor
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'DocsCatalogueC1TrueDBGrid
+        '
+        Me.DocsCatalogueC1TrueDBGrid.AllowUpdate = False
+        Me.DocsCatalogueC1TrueDBGrid.AlternatingRows = True
+        Me.DocsCatalogueC1TrueDBGrid.DataSource = Me.DocsCatalogueBindingSource
+        Me.DocsCatalogueC1TrueDBGrid.DataView = C1.Win.C1TrueDBGrid.DataViewEnum.GroupBy
+        Me.DocsCatalogueC1TrueDBGrid.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DocsCatalogueC1TrueDBGrid.ExtendRightColumn = True
+        Me.DocsCatalogueC1TrueDBGrid.FilterBar = True
+        Me.DocsCatalogueC1TrueDBGrid.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
+        Me.DocsCatalogueC1TrueDBGrid.GroupByCaption = "Drag a column header here to group by that column"
+        Me.DocsCatalogueC1TrueDBGrid.Images.Add(CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.Images"), System.Drawing.Image))
+        Me.DocsCatalogueC1TrueDBGrid.LinesPerRow = 10
+        Me.DocsCatalogueC1TrueDBGrid.Location = New System.Drawing.Point(0, 0)
+        Me.DocsCatalogueC1TrueDBGrid.Name = "DocsCatalogueC1TrueDBGrid"
+        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.Location = New System.Drawing.Point(0, 0)
+        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.Size = New System.Drawing.Size(0, 0)
+        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
+        Me.DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
+        Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(641, 274)
+        Me.DocsCatalogueC1TrueDBGrid.TabIndex = 0
+        Me.DocsCatalogueC1TrueDBGrid.UseCompatibleTextRendering = False
+        Me.DocsCatalogueC1TrueDBGrid.PropBag = resources.GetString("DocsCatalogueC1TrueDBGrid.PropBag")
         '
         'FrmEditor
         '
@@ -2117,7 +2105,6 @@ Partial Class FrmEditor
         Me.SplitContainer2.Panel2.PerformLayout()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
-        CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
@@ -2148,6 +2135,7 @@ Partial Class FrmEditor
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2159,7 +2147,6 @@ Partial Class FrmEditor
     Friend WithEvents GrpReceipt As GroupBox
     Friend WithEvents DMSDataSet As DMSDataSet
     Friend WithEvents DocumentTypeComboBox As ComboBox
-    Friend WithEvents DocsCatalogueC1TrueDBGrid As C1.Win.C1TrueDBGrid.C1TrueDBGrid
     Friend WithEvents BtnClear As Button
     Friend WithEvents ReferenceNoRI As TextBox
     Friend WithEvents StatusStrip1 As StatusStrip
@@ -2257,4 +2244,5 @@ Partial Class FrmEditor
     Friend WithEvents RackNoCorpDocu As TextBox
     Friend WithEvents BtnRemove As Button
     Friend WithEvents BtnCancel1 As Button
+    Friend WithEvents DocsCatalogueC1TrueDBGrid As C1.Win.C1TrueDBGrid.C1TrueDBGrid
 End Class

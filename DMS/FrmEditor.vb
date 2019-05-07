@@ -545,7 +545,7 @@ Public Class FrmEditor
 
     End Sub
 
-    Private Sub DocsCatalogueC1TrueDBGrid_Click(sender As Object, e As EventArgs) Handles DocsCatalogueC1TrueDBGrid.Click
+    Private Sub DocsCatalogueC1TrueDBGrid_Click(sender As Object, e As EventArgs)
 
     End Sub
 
