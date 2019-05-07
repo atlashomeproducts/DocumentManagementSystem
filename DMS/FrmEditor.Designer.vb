@@ -1053,7 +1053,7 @@ Partial Class FrmEditor
         Me.TabControl1.Location = New System.Drawing.Point(7, 77)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(631, 275)
+        Me.TabControl1.Size = New System.Drawing.Size(631, 304)
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl1.TabIndex = 26
         Me.TabControl1.TabStop = False
@@ -1066,7 +1066,7 @@ Partial Class FrmEditor
         Me.Timesheet.Location = New System.Drawing.Point(4, 25)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(623, 246)
+        Me.Timesheet.Size = New System.Drawing.Size(623, 275)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         Me.Timesheet.UseVisualStyleBackColor = True
@@ -1096,7 +1096,7 @@ Partial Class FrmEditor
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(0, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(583, 624)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(566, 344)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1223,7 +1223,7 @@ Partial Class FrmEditor
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 25)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 246)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 275)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         Me.ReceiptInvoice.UseVisualStyleBackColor = True
@@ -1266,7 +1266,7 @@ Partial Class FrmEditor
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(0, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(583, 1313)
+        Me.GrpReceipt.Size = New System.Drawing.Size(566, 644)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1417,7 +1417,7 @@ Partial Class FrmEditor
         Me.Warranty.Location = New System.Drawing.Point(4, 25)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(623, 246)
+        Me.Warranty.Size = New System.Drawing.Size(623, 275)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         Me.Warranty.UseVisualStyleBackColor = True
@@ -1462,7 +1462,7 @@ Partial Class FrmEditor
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(0, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(583, 1447)
+        Me.GrpWarranty.Size = New System.Drawing.Size(566, 704)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1610,7 +1610,7 @@ Partial Class FrmEditor
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 25)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(623, 246)
+        Me.Voucher.Size = New System.Drawing.Size(623, 275)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         Me.Voucher.UseVisualStyleBackColor = True
@@ -1654,7 +1654,7 @@ Partial Class FrmEditor
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 3)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(586, 1980)
+        Me.GrpVoucher.Size = New System.Drawing.Size(569, 944)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -1901,7 +1901,7 @@ Partial Class FrmEditor
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 25)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(623, 246)
+        Me.CorpDocu.Size = New System.Drawing.Size(623, 275)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         Me.CorpDocu.UseVisualStyleBackColor = True
@@ -1933,7 +1933,7 @@ Partial Class FrmEditor
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 3)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(586, 930)
+        Me.GrpCorp.Size = New System.Drawing.Size(569, 494)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"

@@ -60,7 +60,7 @@ Public Class FrmEditor
 
         'Populate Data
         PopulateComboItems()
-        Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue)
+        Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
 
 
 
@@ -153,7 +153,7 @@ Public Class FrmEditor
             cmd.ExecuteNonQuery()
 
 
-            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue)
+            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
             Me.DocsCatalogueC1TrueDBGrid.Enabled = True
 
 
@@ -325,7 +325,7 @@ Public Class FrmEditor
 
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue)
+        Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
 
 
     End Sub

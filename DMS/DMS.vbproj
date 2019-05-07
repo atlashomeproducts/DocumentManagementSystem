@@ -211,9 +211,6 @@
     <EmbeddedResource Include="FrmIndex.resx">
       <DependentUpon>FrmIndex.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmQuery.resx">
-      <DependentUpon>FrmQuery.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

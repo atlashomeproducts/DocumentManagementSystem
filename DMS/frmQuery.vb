@@ -9,7 +9,52 @@ Imports System.ComponentModel
 
 Public Class FrmQuery
     Private Sub FrmQuery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DMSDataSet.DocsCatalogueChanges' table. You can move, or remove it, as needed.
+
+
+
         PopulateCombobox()
+
+
+
+        'Format
+        TabControl1.Appearance = TabAppearance.FlatButtons
+        TabControl1.ItemSize = New Size(0, 1)
+        TabControl1.SizeMode = TabSizeMode.Fixed
+        For Each TabPage In TabControl1.TabPages
+
+            TabPage.Text = ""
+
+        Next
+
+
+        TabControl2.Appearance = TabAppearance.FlatButtons
+        TabControl2.ItemSize = New Size(0, 1)
+        TabControl2.SizeMode = TabSizeMode.Fixed
+        For Each TabPage In TabControl2.TabPages
+
+            TabPage.Text = ""
+
+        Next
+
+        TabControl3.Appearance = TabAppearance.FlatButtons
+        TabControl3.ItemSize = New Size(0, 1)
+        TabControl3.SizeMode = TabSizeMode.Fixed
+        For Each TabPage In TabControl2.TabPages
+
+            TabPage.Text = ""
+
+        Next
+
+
+        Me.PaymentFormComboBox.Items.Add("Bank Deposit")
+        Me.PaymentFormComboBox.Items.Add("Cash")
+        Me.PaymentFormComboBox.Items.Add("Check")
+        Me.PaymentFormComboBox.Items.Add("Others")
+
+
+
+
 
     End Sub
     Private Sub PopulateCombobox()
@@ -31,11 +76,66 @@ Public Class FrmQuery
 
 
 
-    Private Sub DocumentTypeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) 
+    Private Sub DocumentTypeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
 
+    Private Sub ComboSelect()
 
+        If Me.C1TrueDBGrid1.Columns("Document Type").Text = "Sales Invoice" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Official Receipt" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Delivery Receipt" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Acknowledgement Receipt" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Collection Receipt" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Provisional Receipt" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+
+
+
+
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Daily Time Record" Then
+            TabControl2.SelectTab(Timesheet)
+
+
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Warranty Card" Then
+            TabControl2.SelectTab(Warranty)
+
+
+
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Payment Voucher" Then
+            TabControl2.SelectTab(Voucher)
+
+
+
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Secretary's Certificate" Then
+            TabControl2.SelectTab(CorpDocu)
+
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Minutes of Board Meeting" Then
+            TabControl2.SelectTab(CorpDocu)
+
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Articles of Incorporation" Then
+            TabControl2.SelectTab(CorpDocu)
+
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "SEC Certificate of Registration" Then
+            TabControl2.SelectTab(CorpDocu)
+
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "DTI Registration" Then
+            TabControl2.SelectTab(CorpDocu)
+
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Financial Statement" Then
+            TabControl2.SelectTab(CorpDocu)
+
+
+        End If
+
+
+
+    End Sub
     Private Sub C1TrueDBGrid1_DoubleClick(sender As Object, e As EventArgs) Handles C1TrueDBGrid1.DoubleClick
         Try
 
@@ -47,7 +147,8 @@ Public Class FrmQuery
         End Try
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnSearch.Click
+
 
 
 
@@ -187,18 +288,6 @@ AND Status = 'Finished'
                 .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.MaxDate)
             End If
 
-
-
-
-
-
-
-
-
-
-
-
-
             .Connection = strconnectionstring
         End With
         'Create a new SqlDataAdapter
@@ -218,6 +307,48 @@ AND Status = 'Finished'
         Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
 
 
+    End Sub
 
+    Private Sub C1TrueDBGrid1_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid1.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnEditRecord.Click
+        Try
+            ComboSelect()
+
+            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Finished")
+            Me.DocsCatalogueBindingSource.Filter = "[Id] = '" & Me.C1TrueDBGrid1.Columns("Id").Text & "' "
+
+
+
+
+            AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid1.Columns("File Name").Text)
+
+            TabControl1.SelectTab(TabChanges)
+            Me.C1TrueDBGrid1.Enabled = False
+            Me.BtnEditRecord.Enabled = False
+            Me.BtnSearch.Enabled = False
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+    End Sub
+
+    Private Sub BtnSaveChanges_Click(sender As Object, e As EventArgs) Handles BtnSaveChanges.Click
+
+
+        Me.Validate()
+        Me.DocsCatalogueBindingSource.EndEdit()
+        Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
+        ' Me.DocsCatalogueChangesTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
+
+
+        Me.BtnEditRecord.Enabled = True
+        Me.C1TrueDBGrid1.Enabled = True
+        Me.BtnSearch.Enabled = True
+
+        Me.TabControl1.SelectTab(TabQuery)
     End Sub
 End Class

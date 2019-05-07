@@ -70,11 +70,11 @@ Public Class FrmIndex
 
                     cmd.Connection = con
                     cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([Batch], [SubBatch],[BatchDesc],[ScannedDate],[Filename],[Status]) 
-                                        VALUES ('" & batchIdTextBox.Text & "', '" & TxtSubBatch.Text & "', '" & TxtBatchDesc.Text & "','" & scanDateTimePicker.Text & "' 
+                                        VALUES ('" & batchIdTextBox.Text & "', '" & SubBatchTextbox.Text & "', '" & TxtBatchDesc.Text & "','" & scanDateTimePicker.Text & "' 
                                                 , '" & batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "')"
                     cmd.ExecuteNonQuery()
 
-                    File.Copy(Item, Path.Combine(My.Settings.ImgPath, batchIdTextBox.Text & "_" & TxtSubBatch.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
+                    File.Copy(Item, Path.Combine(My.Settings.ImgPath, Me.batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
 
                 Next
 

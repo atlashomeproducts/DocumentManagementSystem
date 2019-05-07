@@ -1,4 +1,6 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿Imports System.Data.SqlClient
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmQuery
     Inherits System.Windows.Forms.Form
 
@@ -22,13 +24,83 @@ Partial Class FrmQuery
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmQuery))
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.FromPeriodLabel = New System.Windows.Forms.Label()
+        Me.ToPeriodLabel = New System.Windows.Forms.Label()
+        Me.MiddleNameLabel = New System.Windows.Forms.Label()
+        Me.FirstNameLabel = New System.Windows.Forms.Label()
+        Me.LastNameLabel = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.AddressCLabel = New System.Windows.Forms.Label()
+        Me.TinCustomerLabel = New System.Windows.Forms.Label()
+        Me.TinVendorLabel = New System.Windows.Forms.Label()
+        Me.BoxNoLabel = New System.Windows.Forms.Label()
+        Me.RackNoLabel = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.TotalValueLabel = New System.Windows.Forms.Label()
+        Me.ItemPurchasedLabel = New System.Windows.Forms.Label()
+        Me.CustomerLabel = New System.Windows.Forms.Label()
+        Me.VendorLabel = New System.Windows.Forms.Label()
+        Me.BookletNoLabel = New System.Windows.Forms.Label()
+        Me.ReferenceNoLabel = New System.Windows.Forms.Label()
+        Me.DocumentDateLabel = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.EmailLabel = New System.Windows.Forms.Label()
+        Me.ContactNoLabel = New System.Windows.Forms.Label()
+        Me.AddressLabel = New System.Windows.Forms.Label()
+        Me.ServiceCenterLabel = New System.Windows.Forms.Label()
+        Me.WarrantyPeriodLabel = New System.Windows.Forms.Label()
+        Me.SerialLabel = New System.Windows.Forms.Label()
+        Me.TotalValueLabel1 = New System.Windows.Forms.Label()
+        Me.ReferenceNoLabel1 = New System.Windows.Forms.Label()
+        Me.DatePurchasedLabel = New System.Windows.Forms.Label()
+        Me.ProductTypeLabel = New System.Windows.Forms.Label()
+        Me.ProductBrandLabel = New System.Windows.Forms.Label()
+        Me.WarrantyNoLabel = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.DateReceivedLabel = New System.Windows.Forms.Label()
+        Me.ReceivedbyLabel = New System.Windows.Forms.Label()
+        Me.RecordedbyLabel = New System.Windows.Forms.Label()
+        Me.ApprovedbyLabel = New System.Windows.Forms.Label()
+        Me.PreparedbyLabel = New System.Windows.Forms.Label()
+        Me.PayorLabel = New System.Windows.Forms.Label()
+        Me.PayeeLabel = New System.Windows.Forms.Label()
+        Me.TotalValueLabel2 = New System.Windows.Forms.Label()
+        Me.PaymentFormLabel = New System.Windows.Forms.Label()
+        Me.VoucherNoLabel = New System.Windows.Forms.Label()
+        Me.DocumentDateLabel1 = New System.Windows.Forms.Label()
+        Me.BankAddressLabel = New System.Windows.Forms.Label()
+        Me.BankBranchLabel = New System.Windows.Forms.Label()
+        Me.BankNameLabel = New System.Windows.Forms.Label()
+        Me.PaymentOthersLabel = New System.Windows.Forms.Label()
+        Me.CheckNoLabel = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.MeetingDateLabel = New System.Windows.Forms.Label()
+        Me.SecretaryLabel = New System.Windows.Forms.Label()
+        Me.PurposeLabel = New System.Windows.Forms.Label()
+        Me.CompanyLabel = New System.Windows.Forms.Label()
+        Me.DocumentDateLabel2 = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.C1TrueDBGrid1 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.BtnSaveChanges = New System.Windows.Forms.Button()
+        Me.BtnSearch = New System.Windows.Forms.Button()
+        Me.BtnEditRecord = New System.Windows.Forms.Button()
         Me.AcroPDF = New AxAcroPDFLib.AxAcroPDF()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabQuery = New System.Windows.Forms.TabPage()
         Me.CHKBatch = New System.Windows.Forms.CheckBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TxtBatch = New System.Windows.Forms.TextBox()
@@ -55,9 +127,99 @@ Partial Class FrmQuery
         Me.TxtRack = New System.Windows.Forms.TextBox()
         Me.DTDocDateTo = New System.Windows.Forms.DateTimePicker()
         Me.DTDocDateFrom = New System.Windows.Forms.DateTimePicker()
-        Me.BtnSearch = New System.Windows.Forms.Button()
         Me.DocumentTypeComboBox = New System.Windows.Forms.ComboBox()
         Me.DocumentTypeLabel = New System.Windows.Forms.Label()
+        Me.TabChanges = New System.Windows.Forms.TabPage()
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.Timesheet = New System.Windows.Forms.TabPage()
+        Me.GrpTimeSheet = New System.Windows.Forms.GroupBox()
+        Me.BoxNoTS = New System.Windows.Forms.TextBox()
+        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
+        Me.RackNoTS = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.DTToPeriod = New System.Windows.Forms.DateTimePicker()
+        Me.FromPeriodTextBox = New System.Windows.Forms.TextBox()
+        Me.DTFromPeriod = New System.Windows.Forms.DateTimePicker()
+        Me.ToPeriodTextBox = New System.Windows.Forms.TextBox()
+        Me.MiddleNameTextBox = New System.Windows.Forms.TextBox()
+        Me.FirstNameTextBox = New System.Windows.Forms.TextBox()
+        Me.LastNameTextBox = New System.Windows.Forms.TextBox()
+        Me.DocumentDateTS = New System.Windows.Forms.TextBox()
+        Me.DTDocuTimeSheet = New System.Windows.Forms.DateTimePicker()
+        Me.ReceiptInvoice = New System.Windows.Forms.TabPage()
+        Me.GrpReceipt = New System.Windows.Forms.GroupBox()
+        Me.NONVATregCheckBox = New System.Windows.Forms.CheckBox()
+        Me.VATregCheckBox = New System.Windows.Forms.CheckBox()
+        Me.AddressCTextBox = New System.Windows.Forms.TextBox()
+        Me.TinCustomerTextBox = New System.Windows.Forms.TextBox()
+        Me.TinVendorTextBox = New System.Windows.Forms.TextBox()
+        Me.BoxNoRI = New System.Windows.Forms.TextBox()
+        Me.RackNoRI = New System.Windows.Forms.TextBox()
+        Me.DocumentDateRI = New System.Windows.Forms.TextBox()
+        Me.TotalValueRI = New System.Windows.Forms.TextBox()
+        Me.ItemPurchasedTextBox = New System.Windows.Forms.TextBox()
+        Me.CustomerTextBox = New System.Windows.Forms.TextBox()
+        Me.VendorTextBox = New System.Windows.Forms.TextBox()
+        Me.BookletNoTextBox = New System.Windows.Forms.TextBox()
+        Me.DTDocuRI = New System.Windows.Forms.DateTimePicker()
+        Me.ReferenceNoRI = New System.Windows.Forms.TextBox()
+        Me.Warranty = New System.Windows.Forms.TabPage()
+        Me.GrpWarranty = New System.Windows.Forms.GroupBox()
+        Me.BoxNoWarranty = New System.Windows.Forms.TextBox()
+        Me.RackNoWarranty = New System.Windows.Forms.TextBox()
+        Me.DTDatePurchased = New System.Windows.Forms.DateTimePicker()
+        Me.EmailTextBox = New System.Windows.Forms.TextBox()
+        Me.ContactNoTextBox = New System.Windows.Forms.TextBox()
+        Me.AddressTextBox = New System.Windows.Forms.TextBox()
+        Me.ServiceCenterTextBox = New System.Windows.Forms.TextBox()
+        Me.WarrantyPeriodTextBox = New System.Windows.Forms.TextBox()
+        Me.SerialTextBox = New System.Windows.Forms.TextBox()
+        Me.TotalValueWarranty = New System.Windows.Forms.TextBox()
+        Me.ReferenceNoTextBox1 = New System.Windows.Forms.TextBox()
+        Me.DatePurchasedTextBox = New System.Windows.Forms.TextBox()
+        Me.ProductTypeTextBox = New System.Windows.Forms.TextBox()
+        Me.ProductBrandTextBox = New System.Windows.Forms.TextBox()
+        Me.WarrantyNoTextBox = New System.Windows.Forms.TextBox()
+        Me.Voucher = New System.Windows.Forms.TabPage()
+        Me.GrpVoucher = New System.Windows.Forms.GroupBox()
+        Me.DTDateReceived = New System.Windows.Forms.DateTimePicker()
+        Me.BoxNoVoucher = New System.Windows.Forms.TextBox()
+        Me.RackNoVoucher = New System.Windows.Forms.TextBox()
+        Me.DateReceivedTextBox = New System.Windows.Forms.TextBox()
+        Me.PaymentFormComboBox = New System.Windows.Forms.ComboBox()
+        Me.DTDocuVoucher = New System.Windows.Forms.DateTimePicker()
+        Me.ReceivedbyTextBox = New System.Windows.Forms.TextBox()
+        Me.RecordedbyTextBox = New System.Windows.Forms.TextBox()
+        Me.ApprovedbyTextBox = New System.Windows.Forms.TextBox()
+        Me.PreparedbyTextBox = New System.Windows.Forms.TextBox()
+        Me.PayorTextBox = New System.Windows.Forms.TextBox()
+        Me.PayeeTextBox = New System.Windows.Forms.TextBox()
+        Me.TotalValueVoucher = New System.Windows.Forms.TextBox()
+        Me.VoucherNoTextBox = New System.Windows.Forms.TextBox()
+        Me.DocumentDateVoucher = New System.Windows.Forms.TextBox()
+        Me.TabControl3 = New System.Windows.Forms.TabControl()
+        Me.BankDepo = New System.Windows.Forms.TabPage()
+        Me.BankAddressTextBox = New System.Windows.Forms.TextBox()
+        Me.BankBranchTextBox = New System.Windows.Forms.TextBox()
+        Me.BankNameTextBox = New System.Windows.Forms.TextBox()
+        Me.Others = New System.Windows.Forms.TabPage()
+        Me.PaymentOthersTextBox = New System.Windows.Forms.TextBox()
+        Me.Check = New System.Windows.Forms.TabPage()
+        Me.CheckNoTextBox = New System.Windows.Forms.TextBox()
+        Me.CorpDocu = New System.Windows.Forms.TabPage()
+        Me.GrpCorp = New System.Windows.Forms.GroupBox()
+        Me.BoxNoCorpDocu = New System.Windows.Forms.TextBox()
+        Me.RackNoCorpDocu = New System.Windows.Forms.TextBox()
+        Me.DTMeetingDate = New System.Windows.Forms.DateTimePicker()
+        Me.DTDocuCorp = New System.Windows.Forms.DateTimePicker()
+        Me.MeetingDateTextBox = New System.Windows.Forms.TextBox()
+        Me.SecretaryTextBox = New System.Windows.Forms.TextBox()
+        Me.PurposeTextBox = New System.Windows.Forms.TextBox()
+        Me.CompanyTextBox = New System.Windows.Forms.TextBox()
+        Me.DocumentDateCorp = New System.Windows.Forms.TextBox()
+        Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
+        Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -65,8 +227,643 @@ Partial Class FrmQuery
         CType(Me.C1TrueDBGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AcroPDF, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.TabQuery.SuspendLayout()
+        Me.TabChanges.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
+        Me.Timesheet.SuspendLayout()
+        Me.GrpTimeSheet.SuspendLayout()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.ReceiptInvoice.SuspendLayout()
+        Me.GrpReceipt.SuspendLayout()
+        Me.Warranty.SuspendLayout()
+        Me.GrpWarranty.SuspendLayout()
+        Me.Voucher.SuspendLayout()
+        Me.GrpVoucher.SuspendLayout()
+        Me.TabControl3.SuspendLayout()
+        Me.BankDepo.SuspendLayout()
+        Me.Others.SuspendLayout()
+        Me.Check.SuspendLayout()
+        Me.CorpDocu.SuspendLayout()
+        Me.GrpCorp.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(284, 76)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(82, 16)
+        Me.Label12.TabIndex = 35
+        Me.Label12.Text = "MM/dd/yyyy"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(8, 53)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(122, 16)
+        Me.Label13.TabIndex = 34
+        Me.Label13.Text = "Document Box No.:"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(8, 30)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(131, 16)
+        Me.Label14.TabIndex = 33
+        Me.Label14.Text = "Document Rack No.:"
+        '
+        'FromPeriodLabel
+        '
+        Me.FromPeriodLabel.AutoSize = True
+        Me.FromPeriodLabel.Location = New System.Drawing.Point(132, 24)
+        Me.FromPeriodLabel.Name = "FromPeriodLabel"
+        Me.FromPeriodLabel.Size = New System.Drawing.Size(42, 16)
+        Me.FromPeriodLabel.TabIndex = 27
+        Me.FromPeriodLabel.Text = "From:"
+        '
+        'ToPeriodLabel
+        '
+        Me.ToPeriodLabel.AutoSize = True
+        Me.ToPeriodLabel.Location = New System.Drawing.Point(151, 50)
+        Me.ToPeriodLabel.Name = "ToPeriodLabel"
+        Me.ToPeriodLabel.Size = New System.Drawing.Size(28, 16)
+        Me.ToPeriodLabel.TabIndex = 28
+        Me.ToPeriodLabel.Text = "To:"
+        '
+        'MiddleNameLabel
+        '
+        Me.MiddleNameLabel.AutoSize = True
+        Me.MiddleNameLabel.Location = New System.Drawing.Point(8, 154)
+        Me.MiddleNameLabel.Name = "MiddleNameLabel"
+        Me.MiddleNameLabel.Size = New System.Drawing.Size(92, 16)
+        Me.MiddleNameLabel.TabIndex = 26
+        Me.MiddleNameLabel.Text = "Middle Name:"
+        '
+        'FirstNameLabel
+        '
+        Me.FirstNameLabel.AutoSize = True
+        Me.FirstNameLabel.Location = New System.Drawing.Point(8, 131)
+        Me.FirstNameLabel.Name = "FirstNameLabel"
+        Me.FirstNameLabel.Size = New System.Drawing.Size(76, 16)
+        Me.FirstNameLabel.TabIndex = 25
+        Me.FirstNameLabel.Text = "First Name:"
+        '
+        'LastNameLabel
+        '
+        Me.LastNameLabel.AutoSize = True
+        Me.LastNameLabel.Location = New System.Drawing.Point(8, 108)
+        Me.LastNameLabel.Name = "LastNameLabel"
+        Me.LastNameLabel.Size = New System.Drawing.Size(76, 16)
+        Me.LastNameLabel.TabIndex = 24
+        Me.LastNameLabel.Text = "Last Name:"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(8, 76)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(104, 16)
+        Me.Label15.TabIndex = 2
+        Me.Label15.Text = "Document Date:"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(285, 76)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(82, 16)
+        Me.Label16.TabIndex = 36
+        Me.Label16.Text = "MM/dd/yyyy"
+        '
+        'AddressCLabel
+        '
+        Me.AddressCLabel.AutoSize = True
+        Me.AddressCLabel.Location = New System.Drawing.Point(8, 203)
+        Me.AddressCLabel.Name = "AddressCLabel"
+        Me.AddressCLabel.Size = New System.Drawing.Size(122, 16)
+        Me.AddressCLabel.TabIndex = 29
+        Me.AddressCLabel.Text = "Customer Address:"
+        '
+        'TinCustomerLabel
+        '
+        Me.TinCustomerLabel.AutoSize = True
+        Me.TinCustomerLabel.Location = New System.Drawing.Point(8, 255)
+        Me.TinCustomerLabel.Name = "TinCustomerLabel"
+        Me.TinCustomerLabel.Size = New System.Drawing.Size(107, 16)
+        Me.TinCustomerLabel.TabIndex = 28
+        Me.TinCustomerLabel.Text = "TIN of Customer:"
+        '
+        'TinVendorLabel
+        '
+        Me.TinVendorLabel.AutoSize = True
+        Me.TinVendorLabel.Location = New System.Drawing.Point(8, 232)
+        Me.TinVendorLabel.Name = "TinVendorLabel"
+        Me.TinVendorLabel.Size = New System.Drawing.Size(94, 16)
+        Me.TinVendorLabel.TabIndex = 27
+        Me.TinVendorLabel.Text = "TIN of Vendor:"
+        '
+        'BoxNoLabel
+        '
+        Me.BoxNoLabel.AutoSize = True
+        Me.BoxNoLabel.Location = New System.Drawing.Point(8, 53)
+        Me.BoxNoLabel.Name = "BoxNoLabel"
+        Me.BoxNoLabel.Size = New System.Drawing.Size(122, 16)
+        Me.BoxNoLabel.TabIndex = 26
+        Me.BoxNoLabel.Text = "Document Box No.:"
+        '
+        'RackNoLabel
+        '
+        Me.RackNoLabel.AutoSize = True
+        Me.RackNoLabel.Location = New System.Drawing.Point(8, 30)
+        Me.RackNoLabel.Name = "RackNoLabel"
+        Me.RackNoLabel.Size = New System.Drawing.Size(131, 16)
+        Me.RackNoLabel.TabIndex = 25
+        Me.RackNoLabel.Text = "Document Rack No.:"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(359, 123)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(55, 13)
+        Me.Label17.TabIndex = 25
+        Me.Label17.Text = "(VAT INC)"
+        '
+        'TotalValueLabel
+        '
+        Me.TotalValueLabel.AutoSize = True
+        Me.TotalValueLabel.Location = New System.Drawing.Point(348, 105)
+        Me.TotalValueLabel.Name = "TotalValueLabel"
+        Me.TotalValueLabel.Size = New System.Drawing.Size(80, 16)
+        Me.TotalValueLabel.TabIndex = 22
+        Me.TotalValueLabel.Text = "Total Value:"
+        '
+        'ItemPurchasedLabel
+        '
+        Me.ItemPurchasedLabel.AutoSize = True
+        Me.ItemPurchasedLabel.Location = New System.Drawing.Point(8, 287)
+        Me.ItemPurchasedLabel.Name = "ItemPurchasedLabel"
+        Me.ItemPurchasedLabel.Size = New System.Drawing.Size(104, 16)
+        Me.ItemPurchasedLabel.TabIndex = 21
+        Me.ItemPurchasedLabel.Text = "Item Purchased:"
+        '
+        'CustomerLabel
+        '
+        Me.CustomerLabel.AutoSize = True
+        Me.CustomerLabel.Location = New System.Drawing.Point(8, 180)
+        Me.CustomerLabel.Name = "CustomerLabel"
+        Me.CustomerLabel.Size = New System.Drawing.Size(68, 16)
+        Me.CustomerLabel.TabIndex = 20
+        Me.CustomerLabel.Text = "Customer:"
+        '
+        'VendorLabel
+        '
+        Me.VendorLabel.AutoSize = True
+        Me.VendorLabel.Location = New System.Drawing.Point(8, 157)
+        Me.VendorLabel.Name = "VendorLabel"
+        Me.VendorLabel.Size = New System.Drawing.Size(55, 16)
+        Me.VendorLabel.TabIndex = 19
+        Me.VendorLabel.Text = "Vendor:"
+        '
+        'BookletNoLabel
+        '
+        Me.BookletNoLabel.AutoSize = True
+        Me.BookletNoLabel.Location = New System.Drawing.Point(8, 105)
+        Me.BookletNoLabel.Name = "BookletNoLabel"
+        Me.BookletNoLabel.Size = New System.Drawing.Size(78, 16)
+        Me.BookletNoLabel.TabIndex = 18
+        Me.BookletNoLabel.Text = "Booklet No:"
+        '
+        'ReferenceNoLabel
+        '
+        Me.ReferenceNoLabel.AutoSize = True
+        Me.ReferenceNoLabel.Location = New System.Drawing.Point(8, 128)
+        Me.ReferenceNoLabel.Name = "ReferenceNoLabel"
+        Me.ReferenceNoLabel.Size = New System.Drawing.Size(126, 16)
+        Me.ReferenceNoLabel.TabIndex = 5
+        Me.ReferenceNoLabel.Text = "Reciept/Invoice No:"
+        '
+        'DocumentDateLabel
+        '
+        Me.DocumentDateLabel.AutoSize = True
+        Me.DocumentDateLabel.Location = New System.Drawing.Point(8, 76)
+        Me.DocumentDateLabel.Name = "DocumentDateLabel"
+        Me.DocumentDateLabel.Size = New System.Drawing.Size(104, 16)
+        Me.DocumentDateLabel.TabIndex = 2
+        Me.DocumentDateLabel.Text = "Document Date:"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(277, 153)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(82, 16)
+        Me.Label18.TabIndex = 36
+        Me.Label18.Text = "MM/dd/yyyy"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(298, 230)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(106, 16)
+        Me.Label19.TabIndex = 32
+        Me.Label19.Text = "(6 mos, 1 yr, etc.)"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(8, 53)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(122, 16)
+        Me.Label20.TabIndex = 29
+        Me.Label20.Text = "Document Box No.:"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(8, 30)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(131, 16)
+        Me.Label21.TabIndex = 28
+        Me.Label21.Text = "Document Rack No.:"
+        '
+        'EmailLabel
+        '
+        Me.EmailLabel.AutoSize = True
+        Me.EmailLabel.Location = New System.Drawing.Point(9, 362)
+        Me.EmailLabel.Name = "EmailLabel"
+        Me.EmailLabel.Size = New System.Drawing.Size(45, 16)
+        Me.EmailLabel.TabIndex = 22
+        Me.EmailLabel.Text = "Email:"
+        '
+        'ContactNoLabel
+        '
+        Me.ContactNoLabel.AutoSize = True
+        Me.ContactNoLabel.Location = New System.Drawing.Point(9, 339)
+        Me.ContactNoLabel.Name = "ContactNoLabel"
+        Me.ContactNoLabel.Size = New System.Drawing.Size(77, 16)
+        Me.ContactNoLabel.TabIndex = 20
+        Me.ContactNoLabel.Text = "Contact No:"
+        '
+        'AddressLabel
+        '
+        Me.AddressLabel.AutoSize = True
+        Me.AddressLabel.Location = New System.Drawing.Point(9, 284)
+        Me.AddressLabel.Name = "AddressLabel"
+        Me.AddressLabel.Size = New System.Drawing.Size(153, 16)
+        Me.AddressLabel.TabIndex = 18
+        Me.AddressLabel.Text = "Service Center Address:"
+        '
+        'ServiceCenterLabel
+        '
+        Me.ServiceCenterLabel.AutoSize = True
+        Me.ServiceCenterLabel.Location = New System.Drawing.Point(9, 261)
+        Me.ServiceCenterLabel.Name = "ServiceCenterLabel"
+        Me.ServiceCenterLabel.Size = New System.Drawing.Size(99, 16)
+        Me.ServiceCenterLabel.TabIndex = 16
+        Me.ServiceCenterLabel.Text = "Service Center:"
+        '
+        'WarrantyPeriodLabel
+        '
+        Me.WarrantyPeriodLabel.AutoSize = True
+        Me.WarrantyPeriodLabel.Location = New System.Drawing.Point(9, 230)
+        Me.WarrantyPeriodLabel.Name = "WarrantyPeriodLabel"
+        Me.WarrantyPeriodLabel.Size = New System.Drawing.Size(108, 16)
+        Me.WarrantyPeriodLabel.TabIndex = 14
+        Me.WarrantyPeriodLabel.Text = "Warranty Period:"
+        '
+        'SerialLabel
+        '
+        Me.SerialLabel.AutoSize = True
+        Me.SerialLabel.Location = New System.Drawing.Point(9, 129)
+        Me.SerialLabel.Name = "SerialLabel"
+        Me.SerialLabel.Size = New System.Drawing.Size(46, 16)
+        Me.SerialLabel.TabIndex = 12
+        Me.SerialLabel.Text = "Serial:"
+        '
+        'TotalValueLabel1
+        '
+        Me.TotalValueLabel1.AutoSize = True
+        Me.TotalValueLabel1.Location = New System.Drawing.Point(9, 385)
+        Me.TotalValueLabel1.Name = "TotalValueLabel1"
+        Me.TotalValueLabel1.Size = New System.Drawing.Size(56, 16)
+        Me.TotalValueLabel1.TabIndex = 10
+        Me.TotalValueLabel1.Text = "Amount:"
+        '
+        'ReferenceNoLabel1
+        '
+        Me.ReferenceNoLabel1.AutoSize = True
+        Me.ReferenceNoLabel1.Location = New System.Drawing.Point(9, 184)
+        Me.ReferenceNoLabel1.Name = "ReferenceNoLabel1"
+        Me.ReferenceNoLabel1.Size = New System.Drawing.Size(75, 16)
+        Me.ReferenceNoLabel1.TabIndex = 8
+        Me.ReferenceNoLabel1.Text = "Invoice No:"
+        '
+        'DatePurchasedLabel
+        '
+        Me.DatePurchasedLabel.AutoSize = True
+        Me.DatePurchasedLabel.Location = New System.Drawing.Point(9, 152)
+        Me.DatePurchasedLabel.Name = "DatePurchasedLabel"
+        Me.DatePurchasedLabel.Size = New System.Drawing.Size(108, 16)
+        Me.DatePurchasedLabel.TabIndex = 6
+        Me.DatePurchasedLabel.Text = "Date Purchased:"
+        '
+        'ProductTypeLabel
+        '
+        Me.ProductTypeLabel.AutoSize = True
+        Me.ProductTypeLabel.Location = New System.Drawing.Point(9, 106)
+        Me.ProductTypeLabel.Name = "ProductTypeLabel"
+        Me.ProductTypeLabel.Size = New System.Drawing.Size(92, 16)
+        Me.ProductTypeLabel.TabIndex = 4
+        Me.ProductTypeLabel.Text = "Product Type:"
+        '
+        'ProductBrandLabel
+        '
+        Me.ProductBrandLabel.AutoSize = True
+        Me.ProductBrandLabel.Location = New System.Drawing.Point(9, 83)
+        Me.ProductBrandLabel.Name = "ProductBrandLabel"
+        Me.ProductBrandLabel.Size = New System.Drawing.Size(96, 16)
+        Me.ProductBrandLabel.TabIndex = 2
+        Me.ProductBrandLabel.Text = "Product Brand:"
+        '
+        'WarrantyNoLabel
+        '
+        Me.WarrantyNoLabel.AutoSize = True
+        Me.WarrantyNoLabel.Location = New System.Drawing.Point(9, 207)
+        Me.WarrantyNoLabel.Name = "WarrantyNoLabel"
+        Me.WarrantyNoLabel.Size = New System.Drawing.Size(86, 16)
+        Me.WarrantyNoLabel.TabIndex = 0
+        Me.WarrantyNoLabel.Text = "Warranty No:"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(280, 444)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(82, 16)
+        Me.Label22.TabIndex = 36
+        Me.Label22.Text = "MM/dd/yyyy"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(8, 53)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(122, 16)
+        Me.Label23.TabIndex = 29
+        Me.Label23.Text = "Document Box No.:"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(8, 30)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(131, 16)
+        Me.Label24.TabIndex = 28
+        Me.Label24.Text = "Document Rack No.:"
+        '
+        'DateReceivedLabel
+        '
+        Me.DateReceivedLabel.AutoSize = True
+        Me.DateReceivedLabel.Location = New System.Drawing.Point(8, 444)
+        Me.DateReceivedLabel.Name = "DateReceivedLabel"
+        Me.DateReceivedLabel.Size = New System.Drawing.Size(102, 16)
+        Me.DateReceivedLabel.TabIndex = 26
+        Me.DateReceivedLabel.Text = "Date Received:"
+        '
+        'ReceivedbyLabel
+        '
+        Me.ReceivedbyLabel.AutoSize = True
+        Me.ReceivedbyLabel.ForeColor = System.Drawing.Color.Black
+        Me.ReceivedbyLabel.Location = New System.Drawing.Point(8, 421)
+        Me.ReceivedbyLabel.Name = "ReceivedbyLabel"
+        Me.ReceivedbyLabel.Size = New System.Drawing.Size(89, 16)
+        Me.ReceivedbyLabel.TabIndex = 20
+        Me.ReceivedbyLabel.Text = "Received By:"
+        '
+        'RecordedbyLabel
+        '
+        Me.RecordedbyLabel.AutoSize = True
+        Me.RecordedbyLabel.ForeColor = System.Drawing.Color.Black
+        Me.RecordedbyLabel.Location = New System.Drawing.Point(8, 398)
+        Me.RecordedbyLabel.Name = "RecordedbyLabel"
+        Me.RecordedbyLabel.Size = New System.Drawing.Size(91, 16)
+        Me.RecordedbyLabel.TabIndex = 18
+        Me.RecordedbyLabel.Text = "Recorded By:"
+        '
+        'ApprovedbyLabel
+        '
+        Me.ApprovedbyLabel.AutoSize = True
+        Me.ApprovedbyLabel.ForeColor = System.Drawing.Color.Black
+        Me.ApprovedbyLabel.Location = New System.Drawing.Point(8, 375)
+        Me.ApprovedbyLabel.Name = "ApprovedbyLabel"
+        Me.ApprovedbyLabel.Size = New System.Drawing.Size(90, 16)
+        Me.ApprovedbyLabel.TabIndex = 16
+        Me.ApprovedbyLabel.Text = "Approved By:"
+        '
+        'PreparedbyLabel
+        '
+        Me.PreparedbyLabel.AutoSize = True
+        Me.PreparedbyLabel.ForeColor = System.Drawing.Color.Black
+        Me.PreparedbyLabel.Location = New System.Drawing.Point(8, 352)
+        Me.PreparedbyLabel.Name = "PreparedbyLabel"
+        Me.PreparedbyLabel.Size = New System.Drawing.Size(87, 16)
+        Me.PreparedbyLabel.TabIndex = 14
+        Me.PreparedbyLabel.Text = "Prepared By:"
+        '
+        'PayorLabel
+        '
+        Me.PayorLabel.AutoSize = True
+        Me.PayorLabel.ForeColor = System.Drawing.Color.Black
+        Me.PayorLabel.Location = New System.Drawing.Point(8, 129)
+        Me.PayorLabel.Name = "PayorLabel"
+        Me.PayorLabel.Size = New System.Drawing.Size(47, 16)
+        Me.PayorLabel.TabIndex = 12
+        Me.PayorLabel.Text = "Payor:"
+        '
+        'PayeeLabel
+        '
+        Me.PayeeLabel.AutoSize = True
+        Me.PayeeLabel.ForeColor = System.Drawing.Color.Black
+        Me.PayeeLabel.Location = New System.Drawing.Point(8, 106)
+        Me.PayeeLabel.Name = "PayeeLabel"
+        Me.PayeeLabel.Size = New System.Drawing.Size(51, 16)
+        Me.PayeeLabel.TabIndex = 10
+        Me.PayeeLabel.Text = "Payee:"
+        '
+        'TotalValueLabel2
+        '
+        Me.TotalValueLabel2.AutoSize = True
+        Me.TotalValueLabel2.ForeColor = System.Drawing.Color.Black
+        Me.TotalValueLabel2.Location = New System.Drawing.Point(8, 329)
+        Me.TotalValueLabel2.Name = "TotalValueLabel2"
+        Me.TotalValueLabel2.Size = New System.Drawing.Size(56, 16)
+        Me.TotalValueLabel2.TabIndex = 8
+        Me.TotalValueLabel2.Text = "Amount:"
+        '
+        'PaymentFormLabel
+        '
+        Me.PaymentFormLabel.AutoSize = True
+        Me.PaymentFormLabel.ForeColor = System.Drawing.Color.Black
+        Me.PaymentFormLabel.Location = New System.Drawing.Point(8, 183)
+        Me.PaymentFormLabel.Name = "PaymentFormLabel"
+        Me.PaymentFormLabel.Size = New System.Drawing.Size(112, 16)
+        Me.PaymentFormLabel.TabIndex = 4
+        Me.PaymentFormLabel.Text = "Form of Payment:"
+        '
+        'VoucherNoLabel
+        '
+        Me.VoucherNoLabel.AutoSize = True
+        Me.VoucherNoLabel.ForeColor = System.Drawing.Color.Black
+        Me.VoucherNoLabel.Location = New System.Drawing.Point(8, 152)
+        Me.VoucherNoLabel.Name = "VoucherNoLabel"
+        Me.VoucherNoLabel.Size = New System.Drawing.Size(82, 16)
+        Me.VoucherNoLabel.TabIndex = 2
+        Me.VoucherNoLabel.Text = "Voucher No:"
+        '
+        'DocumentDateLabel1
+        '
+        Me.DocumentDateLabel1.AutoSize = True
+        Me.DocumentDateLabel1.ForeColor = System.Drawing.Color.Black
+        Me.DocumentDateLabel1.Location = New System.Drawing.Point(8, 76)
+        Me.DocumentDateLabel1.Name = "DocumentDateLabel1"
+        Me.DocumentDateLabel1.Size = New System.Drawing.Size(104, 16)
+        Me.DocumentDateLabel1.TabIndex = 0
+        Me.DocumentDateLabel1.Text = "Document Date:"
+        '
+        'BankAddressLabel
+        '
+        Me.BankAddressLabel.AutoSize = True
+        Me.BankAddressLabel.Location = New System.Drawing.Point(4, 51)
+        Me.BankAddressLabel.Name = "BankAddressLabel"
+        Me.BankAddressLabel.Size = New System.Drawing.Size(96, 16)
+        Me.BankAddressLabel.TabIndex = 4
+        Me.BankAddressLabel.Text = "Bank Address:"
+        '
+        'BankBranchLabel
+        '
+        Me.BankBranchLabel.AutoSize = True
+        Me.BankBranchLabel.Location = New System.Drawing.Point(4, 28)
+        Me.BankBranchLabel.Name = "BankBranchLabel"
+        Me.BankBranchLabel.Size = New System.Drawing.Size(87, 16)
+        Me.BankBranchLabel.TabIndex = 2
+        Me.BankBranchLabel.Text = "Bank Branch:"
+        '
+        'BankNameLabel
+        '
+        Me.BankNameLabel.AutoSize = True
+        Me.BankNameLabel.Location = New System.Drawing.Point(4, 5)
+        Me.BankNameLabel.Name = "BankNameLabel"
+        Me.BankNameLabel.Size = New System.Drawing.Size(82, 16)
+        Me.BankNameLabel.TabIndex = 0
+        Me.BankNameLabel.Text = "Bank Name:"
+        '
+        'PaymentOthersLabel
+        '
+        Me.PaymentOthersLabel.AutoSize = True
+        Me.PaymentOthersLabel.Location = New System.Drawing.Point(7, 7)
+        Me.PaymentOthersLabel.Name = "PaymentOthersLabel"
+        Me.PaymentOthersLabel.Size = New System.Drawing.Size(102, 16)
+        Me.PaymentOthersLabel.TabIndex = 0
+        Me.PaymentOthersLabel.Text = "Please Specify:"
+        '
+        'CheckNoLabel
+        '
+        Me.CheckNoLabel.AutoSize = True
+        Me.CheckNoLabel.ForeColor = System.Drawing.Color.Black
+        Me.CheckNoLabel.Location = New System.Drawing.Point(7, 7)
+        Me.CheckNoLabel.Name = "CheckNoLabel"
+        Me.CheckNoLabel.Size = New System.Drawing.Size(70, 16)
+        Me.CheckNoLabel.TabIndex = 6
+        Me.CheckNoLabel.Text = "Check No:"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(281, 106)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(82, 16)
+        Me.Label25.TabIndex = 36
+        Me.Label25.Text = "MM/dd/yyyy"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(281, 75)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(82, 16)
+        Me.Label26.TabIndex = 36
+        Me.Label26.Text = "MM/dd/yyyy"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(8, 53)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(122, 16)
+        Me.Label27.TabIndex = 33
+        Me.Label27.Text = "Document Box No.:"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(8, 30)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(131, 16)
+        Me.Label28.TabIndex = 32
+        Me.Label28.Text = "Document Rack No.:"
+        '
+        'MeetingDateLabel
+        '
+        Me.MeetingDateLabel.AutoSize = True
+        Me.MeetingDateLabel.Location = New System.Drawing.Point(8, 106)
+        Me.MeetingDateLabel.Name = "MeetingDateLabel"
+        Me.MeetingDateLabel.Size = New System.Drawing.Size(91, 16)
+        Me.MeetingDateLabel.TabIndex = 8
+        Me.MeetingDateLabel.Text = "Meeting Date:"
+        '
+        'SecretaryLabel
+        '
+        Me.SecretaryLabel.AutoSize = True
+        Me.SecretaryLabel.Location = New System.Drawing.Point(8, 152)
+        Me.SecretaryLabel.Name = "SecretaryLabel"
+        Me.SecretaryLabel.Size = New System.Drawing.Size(69, 16)
+        Me.SecretaryLabel.TabIndex = 6
+        Me.SecretaryLabel.Text = "Secretary:"
+        '
+        'PurposeLabel
+        '
+        Me.PurposeLabel.AutoSize = True
+        Me.PurposeLabel.Location = New System.Drawing.Point(8, 186)
+        Me.PurposeLabel.Name = "PurposeLabel"
+        Me.PurposeLabel.Size = New System.Drawing.Size(62, 16)
+        Me.PurposeLabel.TabIndex = 4
+        Me.PurposeLabel.Text = "Purpose:"
+        '
+        'CompanyLabel
+        '
+        Me.CompanyLabel.AutoSize = True
+        Me.CompanyLabel.Location = New System.Drawing.Point(8, 129)
+        Me.CompanyLabel.Name = "CompanyLabel"
+        Me.CompanyLabel.Size = New System.Drawing.Size(69, 16)
+        Me.CompanyLabel.TabIndex = 2
+        Me.CompanyLabel.Text = "Company:"
+        '
+        'DocumentDateLabel2
+        '
+        Me.DocumentDateLabel2.AutoSize = True
+        Me.DocumentDateLabel2.ForeColor = System.Drawing.Color.Black
+        Me.DocumentDateLabel2.Location = New System.Drawing.Point(8, 76)
+        Me.DocumentDateLabel2.Name = "DocumentDateLabel2"
+        Me.DocumentDateLabel2.Size = New System.Drawing.Size(104, 16)
+        Me.DocumentDateLabel2.TabIndex = 0
+        Me.DocumentDateLabel2.Text = "Document Date:"
         '
         'SplitContainer1
         '
@@ -81,11 +878,14 @@ Partial Class FrmQuery
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.TabControl1)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.BtnSaveChanges)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.BtnSearch)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.BtnEditRecord)
         Me.SplitContainer1.Panel2.Controls.Add(Me.AcroPDF)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.TabControl1)
         Me.SplitContainer1.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SplitContainer1.Size = New System.Drawing.Size(1240, 741)
-        Me.SplitContainer1.SplitterDistance = 253
+        Me.SplitContainer1.Size = New System.Drawing.Size(1240, 738)
+        Me.SplitContainer1.SplitterDistance = 251
         Me.SplitContainer1.TabIndex = 0
         '
         'C1TrueDBGrid1
@@ -102,10 +902,39 @@ Partial Class FrmQuery
         Me.C1TrueDBGrid1.PreviewInfo.Size = New System.Drawing.Size(0, 0)
         Me.C1TrueDBGrid1.PreviewInfo.ZoomFactor = 75.0R
         Me.C1TrueDBGrid1.PrintInfo.PageSettings = CType(resources.GetObject("C1TrueDBGrid1.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.C1TrueDBGrid1.Size = New System.Drawing.Size(1240, 253)
+        Me.C1TrueDBGrid1.Size = New System.Drawing.Size(1240, 251)
         Me.C1TrueDBGrid1.TabIndex = 0
         Me.C1TrueDBGrid1.UseCompatibleTextRendering = False
         Me.C1TrueDBGrid1.PropBag = resources.GetString("C1TrueDBGrid1.PropBag")
+        '
+        'BtnSaveChanges
+        '
+        Me.BtnSaveChanges.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnSaveChanges.Location = New System.Drawing.Point(507, 3)
+        Me.BtnSaveChanges.Name = "BtnSaveChanges"
+        Me.BtnSaveChanges.Size = New System.Drawing.Size(125, 28)
+        Me.BtnSaveChanges.TabIndex = 89
+        Me.BtnSaveChanges.Text = "Save Changes"
+        Me.BtnSaveChanges.UseVisualStyleBackColor = True
+        '
+        'BtnSearch
+        '
+        Me.BtnSearch.Location = New System.Drawing.Point(5, 3)
+        Me.BtnSearch.Name = "BtnSearch"
+        Me.BtnSearch.Size = New System.Drawing.Size(125, 28)
+        Me.BtnSearch.TabIndex = 61
+        Me.BtnSearch.Text = "Search"
+        Me.BtnSearch.UseVisualStyleBackColor = True
+        '
+        'BtnEditRecord
+        '
+        Me.BtnEditRecord.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnEditRecord.Location = New System.Drawing.Point(381, 3)
+        Me.BtnEditRecord.Name = "BtnEditRecord"
+        Me.BtnEditRecord.Size = New System.Drawing.Size(125, 28)
+        Me.BtnEditRecord.TabIndex = 88
+        Me.BtnEditRecord.Text = "Edit Record"
+        Me.BtnEditRecord.UseVisualStyleBackColor = True
         '
         'AcroPDF
         '
@@ -113,75 +942,68 @@ Partial Class FrmQuery
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AcroPDF.Enabled = True
-        Me.AcroPDF.Location = New System.Drawing.Point(599, 2)
+        Me.AcroPDF.Location = New System.Drawing.Point(638, 2)
         Me.AcroPDF.Name = "AcroPDF"
         Me.AcroPDF.OcxState = CType(resources.GetObject("AcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AcroPDF.Size = New System.Drawing.Size(629, 482)
+        Me.AcroPDF.Size = New System.Drawing.Size(599, 481)
         Me.AcroPDF.TabIndex = 30
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(3, 2)
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
+        Me.TabControl1.Controls.Add(Me.TabQuery)
+        Me.TabControl1.Controls.Add(Me.TabChanges)
+        Me.TabControl1.Location = New System.Drawing.Point(-2, 31)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(599, 479)
+        Me.TabControl1.Size = New System.Drawing.Size(638, 453)
         Me.TabControl1.TabIndex = 31
         '
-        'TabPage1
+        'TabQuery
         '
-        Me.TabPage1.Controls.Add(Me.CHKBatch)
-        Me.TabPage1.Controls.Add(Me.Label11)
-        Me.TabPage1.Controls.Add(Me.TxtBatch)
-        Me.TabPage1.Controls.Add(Me.CHKScanDate)
-        Me.TabPage1.Controls.Add(Me.Label8)
-        Me.TabPage1.Controls.Add(Me.Label9)
-        Me.TabPage1.Controls.Add(Me.Label10)
-        Me.TabPage1.Controls.Add(Me.DTScanDateTo)
-        Me.TabPage1.Controls.Add(Me.DTScanDateFrom)
-        Me.TabPage1.Controls.Add(Me.CHKDocType)
-        Me.TabPage1.Controls.Add(Me.CHKDocDate)
-        Me.TabPage1.Controls.Add(Me.CHKBook)
-        Me.TabPage1.Controls.Add(Me.CHKBox)
-        Me.TabPage1.Controls.Add(Me.CHKRack)
-        Me.TabPage1.Controls.Add(Me.Label7)
-        Me.TabPage1.Controls.Add(Me.Label6)
-        Me.TabPage1.Controls.Add(Me.Label5)
-        Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.TxtBook)
-        Me.TabPage1.Controls.Add(Me.TxtBox)
-        Me.TabPage1.Controls.Add(Me.TxtRack)
-        Me.TabPage1.Controls.Add(Me.DTDocDateTo)
-        Me.TabPage1.Controls.Add(Me.DTDocDateFrom)
-        Me.TabPage1.Controls.Add(Me.BtnSearch)
-        Me.TabPage1.Controls.Add(Me.DocumentTypeComboBox)
-        Me.TabPage1.Controls.Add(Me.DocumentTypeLabel)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(591, 446)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(591, 446)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.TabQuery.BackColor = System.Drawing.SystemColors.Control
+        Me.TabQuery.Controls.Add(Me.CHKBatch)
+        Me.TabQuery.Controls.Add(Me.Label11)
+        Me.TabQuery.Controls.Add(Me.TxtBatch)
+        Me.TabQuery.Controls.Add(Me.CHKScanDate)
+        Me.TabQuery.Controls.Add(Me.Label8)
+        Me.TabQuery.Controls.Add(Me.Label9)
+        Me.TabQuery.Controls.Add(Me.Label10)
+        Me.TabQuery.Controls.Add(Me.DTScanDateTo)
+        Me.TabQuery.Controls.Add(Me.DTScanDateFrom)
+        Me.TabQuery.Controls.Add(Me.CHKDocType)
+        Me.TabQuery.Controls.Add(Me.CHKDocDate)
+        Me.TabQuery.Controls.Add(Me.CHKBook)
+        Me.TabQuery.Controls.Add(Me.CHKBox)
+        Me.TabQuery.Controls.Add(Me.CHKRack)
+        Me.TabQuery.Controls.Add(Me.Label7)
+        Me.TabQuery.Controls.Add(Me.Label6)
+        Me.TabQuery.Controls.Add(Me.Label5)
+        Me.TabQuery.Controls.Add(Me.Label4)
+        Me.TabQuery.Controls.Add(Me.Label3)
+        Me.TabQuery.Controls.Add(Me.Label2)
+        Me.TabQuery.Controls.Add(Me.Label1)
+        Me.TabQuery.Controls.Add(Me.TxtBook)
+        Me.TabQuery.Controls.Add(Me.TxtBox)
+        Me.TabQuery.Controls.Add(Me.TxtRack)
+        Me.TabQuery.Controls.Add(Me.DTDocDateTo)
+        Me.TabQuery.Controls.Add(Me.DTDocDateFrom)
+        Me.TabQuery.Controls.Add(Me.DocumentTypeComboBox)
+        Me.TabQuery.Controls.Add(Me.DocumentTypeLabel)
+        Me.TabQuery.Location = New System.Drawing.Point(4, 32)
+        Me.TabQuery.Name = "TabQuery"
+        Me.TabQuery.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabQuery.Size = New System.Drawing.Size(630, 417)
+        Me.TabQuery.TabIndex = 0
+        Me.TabQuery.Text = "TabQuery"
         '
         'CHKBatch
         '
         Me.CHKBatch.AutoSize = True
-        Me.CHKBatch.Location = New System.Drawing.Point(43, 149)
+        Me.CHKBatch.Location = New System.Drawing.Point(43, 151)
         Me.CHKBatch.Name = "CHKBatch"
         Me.CHKBatch.Size = New System.Drawing.Size(15, 14)
         Me.CHKBatch.TabIndex = 87
@@ -191,7 +1013,7 @@ Partial Class FrmQuery
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(64, 145)
+        Me.Label11.Location = New System.Drawing.Point(64, 147)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(83, 20)
         Me.Label11.TabIndex = 86
@@ -199,7 +1021,7 @@ Partial Class FrmQuery
         '
         'TxtBatch
         '
-        Me.TxtBatch.Location = New System.Drawing.Point(191, 142)
+        Me.TxtBatch.Location = New System.Drawing.Point(191, 144)
         Me.TxtBatch.Name = "TxtBatch"
         Me.TxtBatch.Size = New System.Drawing.Size(157, 26)
         Me.TxtBatch.TabIndex = 85
@@ -280,7 +1102,7 @@ Partial Class FrmQuery
         'CHKBook
         '
         Me.CHKBook.AutoSize = True
-        Me.CHKBook.Location = New System.Drawing.Point(43, 122)
+        Me.CHKBook.Location = New System.Drawing.Point(43, 124)
         Me.CHKBook.Name = "CHKBook"
         Me.CHKBook.Size = New System.Drawing.Size(15, 14)
         Me.CHKBook.TabIndex = 76
@@ -289,7 +1111,7 @@ Partial Class FrmQuery
         'CHKBox
         '
         Me.CHKBox.AutoSize = True
-        Me.CHKBox.Location = New System.Drawing.Point(43, 96)
+        Me.CHKBox.Location = New System.Drawing.Point(43, 97)
         Me.CHKBox.Name = "CHKBox"
         Me.CHKBox.Size = New System.Drawing.Size(15, 14)
         Me.CHKBox.TabIndex = 75
@@ -348,7 +1170,7 @@ Partial Class FrmQuery
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(64, 118)
+        Me.Label3.Location = New System.Drawing.Point(64, 120)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(95, 20)
         Me.Label3.TabIndex = 69
@@ -358,7 +1180,7 @@ Partial Class FrmQuery
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(64, 92)
+        Me.Label2.Location = New System.Drawing.Point(64, 93)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(68, 20)
         Me.Label2.TabIndex = 68
@@ -376,14 +1198,14 @@ Partial Class FrmQuery
         '
         'TxtBook
         '
-        Me.TxtBook.Location = New System.Drawing.Point(191, 115)
+        Me.TxtBook.Location = New System.Drawing.Point(191, 117)
         Me.TxtBook.Name = "TxtBook"
         Me.TxtBook.Size = New System.Drawing.Size(157, 26)
         Me.TxtBook.TabIndex = 66
         '
         'TxtBox
         '
-        Me.TxtBox.Location = New System.Drawing.Point(191, 89)
+        Me.TxtBox.Location = New System.Drawing.Point(191, 90)
         Me.TxtBox.Name = "TxtBox"
         Me.TxtBox.Size = New System.Drawing.Size(157, 26)
         Me.TxtBox.TabIndex = 65
@@ -411,15 +1233,6 @@ Partial Class FrmQuery
         Me.DTDocDateFrom.Size = New System.Drawing.Size(129, 26)
         Me.DTDocDateFrom.TabIndex = 62
         '
-        'BtnSearch
-        '
-        Me.BtnSearch.Location = New System.Drawing.Point(419, 396)
-        Me.BtnSearch.Name = "BtnSearch"
-        Me.BtnSearch.Size = New System.Drawing.Size(160, 38)
-        Me.BtnSearch.TabIndex = 61
-        Me.BtnSearch.Text = "Search"
-        Me.BtnSearch.UseVisualStyleBackColor = True
-        '
         'DocumentTypeComboBox
         '
         Me.DocumentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -440,11 +1253,1021 @@ Partial Class FrmQuery
         Me.DocumentTypeLabel.TabIndex = 59
         Me.DocumentTypeLabel.Text = "Document Type:"
         '
+        'TabChanges
+        '
+        Me.TabChanges.BackColor = System.Drawing.SystemColors.Control
+        Me.TabChanges.Controls.Add(Me.TabControl2)
+        Me.TabChanges.Location = New System.Drawing.Point(4, 32)
+        Me.TabChanges.Name = "TabChanges"
+        Me.TabChanges.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabChanges.Size = New System.Drawing.Size(630, 417)
+        Me.TabChanges.TabIndex = 1
+        Me.TabChanges.Text = "TabChanges"
+        '
+        'TabControl2
+        '
+        Me.TabControl2.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
+        Me.TabControl2.Controls.Add(Me.Timesheet)
+        Me.TabControl2.Controls.Add(Me.ReceiptInvoice)
+        Me.TabControl2.Controls.Add(Me.Warranty)
+        Me.TabControl2.Controls.Add(Me.Voucher)
+        Me.TabControl2.Controls.Add(Me.CorpDocu)
+        Me.TabControl2.Location = New System.Drawing.Point(-1, -4)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(631, 425)
+        Me.TabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        Me.TabControl2.TabIndex = 27
+        Me.TabControl2.TabStop = False
+        '
+        'Timesheet
+        '
+        Me.Timesheet.AutoScroll = True
+        Me.Timesheet.AutoScrollMinSize = New System.Drawing.Size(0, 300)
+        Me.Timesheet.BackColor = System.Drawing.SystemColors.Control
+        Me.Timesheet.Controls.Add(Me.GrpTimeSheet)
+        Me.Timesheet.Location = New System.Drawing.Point(4, 32)
+        Me.Timesheet.Name = "Timesheet"
+        Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
+        Me.Timesheet.Size = New System.Drawing.Size(623, 389)
+        Me.Timesheet.TabIndex = 0
+        Me.Timesheet.Text = "Timesheet"
+        '
+        'GrpTimeSheet
+        '
+        Me.GrpTimeSheet.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GrpTimeSheet.BackColor = System.Drawing.Color.Transparent
+        Me.GrpTimeSheet.Controls.Add(Me.Label12)
+        Me.GrpTimeSheet.Controls.Add(Me.Label13)
+        Me.GrpTimeSheet.Controls.Add(Me.BoxNoTS)
+        Me.GrpTimeSheet.Controls.Add(Me.Label14)
+        Me.GrpTimeSheet.Controls.Add(Me.RackNoTS)
+        Me.GrpTimeSheet.Controls.Add(Me.GroupBox1)
+        Me.GrpTimeSheet.Controls.Add(Me.MiddleNameLabel)
+        Me.GrpTimeSheet.Controls.Add(Me.MiddleNameTextBox)
+        Me.GrpTimeSheet.Controls.Add(Me.FirstNameLabel)
+        Me.GrpTimeSheet.Controls.Add(Me.FirstNameTextBox)
+        Me.GrpTimeSheet.Controls.Add(Me.LastNameLabel)
+        Me.GrpTimeSheet.Controls.Add(Me.LastNameTextBox)
+        Me.GrpTimeSheet.Controls.Add(Me.DocumentDateTS)
+        Me.GrpTimeSheet.Controls.Add(Me.DTDocuTimeSheet)
+        Me.GrpTimeSheet.Controls.Add(Me.Label15)
+        Me.GrpTimeSheet.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
+        Me.GrpTimeSheet.Location = New System.Drawing.Point(0, 3)
+        Me.GrpTimeSheet.Name = "GrpTimeSheet"
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(617, 383)
+        Me.GrpTimeSheet.TabIndex = 25
+        Me.GrpTimeSheet.TabStop = False
+        Me.GrpTimeSheet.Text = "Keywords"
+        '
+        'BoxNoTS
+        '
+        Me.BoxNoTS.BackColor = System.Drawing.Color.White
+        Me.BoxNoTS.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
+        Me.BoxNoTS.Location = New System.Drawing.Point(158, 50)
+        Me.BoxNoTS.Name = "BoxNoTS"
+        Me.BoxNoTS.Size = New System.Drawing.Size(123, 22)
+        Me.BoxNoTS.TabIndex = 7
+        '
+        'DocsCatalogueBindingSource
+        '
+        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
+        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'RackNoTS
+        '
+        Me.RackNoTS.BackColor = System.Drawing.Color.White
+        Me.RackNoTS.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
+        Me.RackNoTS.Location = New System.Drawing.Point(158, 27)
+        Me.RackNoTS.Name = "RackNoTS"
+        Me.RackNoTS.Size = New System.Drawing.Size(123, 22)
+        Me.RackNoTS.TabIndex = 6
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.FromPeriodLabel)
+        Me.GroupBox1.Controls.Add(Me.DTToPeriod)
+        Me.GroupBox1.Controls.Add(Me.FromPeriodTextBox)
+        Me.GroupBox1.Controls.Add(Me.DTFromPeriod)
+        Me.GroupBox1.Controls.Add(Me.ToPeriodTextBox)
+        Me.GroupBox1.Controls.Add(Me.ToPeriodLabel)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 185)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(583, 84)
+        Me.GroupBox1.TabIndex = 32
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Coverage"
+        '
+        'DTToPeriod
+        '
+        Me.DTToPeriod.Location = New System.Drawing.Point(285, 47)
+        Me.DTToPeriod.Name = "DTToPeriod"
+        Me.DTToPeriod.Size = New System.Drawing.Size(18, 22)
+        Me.DTToPeriod.TabIndex = 13
+        '
+        'FromPeriodTextBox
+        '
+        Me.FromPeriodTextBox.BackColor = System.Drawing.Color.White
+        Me.FromPeriodTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "FromPeriod", True))
+        Me.FromPeriodTextBox.Location = New System.Drawing.Point(181, 21)
+        Me.FromPeriodTextBox.Name = "FromPeriodTextBox"
+        Me.FromPeriodTextBox.Size = New System.Drawing.Size(104, 22)
+        Me.FromPeriodTextBox.TabIndex = 12
+        Me.FromPeriodTextBox.TabStop = False
+        Me.FromPeriodTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'DTFromPeriod
+        '
+        Me.DTFromPeriod.Location = New System.Drawing.Point(286, 21)
+        Me.DTFromPeriod.Name = "DTFromPeriod"
+        Me.DTFromPeriod.Size = New System.Drawing.Size(18, 22)
+        Me.DTFromPeriod.TabIndex = 12
+        '
+        'ToPeriodTextBox
+        '
+        Me.ToPeriodTextBox.BackColor = System.Drawing.Color.White
+        Me.ToPeriodTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "ToPeriod", True))
+        Me.ToPeriodTextBox.Location = New System.Drawing.Point(181, 47)
+        Me.ToPeriodTextBox.Name = "ToPeriodTextBox"
+        Me.ToPeriodTextBox.Size = New System.Drawing.Size(103, 22)
+        Me.ToPeriodTextBox.TabIndex = 29
+        Me.ToPeriodTextBox.TabStop = False
+        Me.ToPeriodTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'MiddleNameTextBox
+        '
+        Me.MiddleNameTextBox.BackColor = System.Drawing.Color.White
+        Me.MiddleNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "MiddleName", True))
+        Me.MiddleNameTextBox.Location = New System.Drawing.Point(158, 151)
+        Me.MiddleNameTextBox.Name = "MiddleNameTextBox"
+        Me.MiddleNameTextBox.Size = New System.Drawing.Size(367, 22)
+        Me.MiddleNameTextBox.TabIndex = 11
+        '
+        'FirstNameTextBox
+        '
+        Me.FirstNameTextBox.BackColor = System.Drawing.Color.White
+        Me.FirstNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "FirstName", True))
+        Me.FirstNameTextBox.Location = New System.Drawing.Point(158, 128)
+        Me.FirstNameTextBox.Name = "FirstNameTextBox"
+        Me.FirstNameTextBox.Size = New System.Drawing.Size(367, 22)
+        Me.FirstNameTextBox.TabIndex = 10
+        '
+        'LastNameTextBox
+        '
+        Me.LastNameTextBox.BackColor = System.Drawing.Color.White
+        Me.LastNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "LastName", True))
+        Me.LastNameTextBox.Location = New System.Drawing.Point(158, 105)
+        Me.LastNameTextBox.Name = "LastNameTextBox"
+        Me.LastNameTextBox.Size = New System.Drawing.Size(367, 22)
+        Me.LastNameTextBox.TabIndex = 9
+        '
+        'DocumentDateTS
+        '
+        Me.DocumentDateTS.BackColor = System.Drawing.Color.White
+        Me.DocumentDateTS.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DocumentDate", True))
+        Me.DocumentDateTS.Location = New System.Drawing.Point(158, 73)
+        Me.DocumentDateTS.Name = "DocumentDateTS"
+        Me.DocumentDateTS.Size = New System.Drawing.Size(104, 22)
+        Me.DocumentDateTS.TabIndex = 8
+        Me.DocumentDateTS.TabStop = False
+        Me.DocumentDateTS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'DTDocuTimeSheet
+        '
+        Me.DTDocuTimeSheet.Location = New System.Drawing.Point(263, 73)
+        Me.DTDocuTimeSheet.Name = "DTDocuTimeSheet"
+        Me.DTDocuTimeSheet.Size = New System.Drawing.Size(18, 22)
+        Me.DTDocuTimeSheet.TabIndex = 8
+        '
+        'ReceiptInvoice
+        '
+        Me.ReceiptInvoice.AutoScroll = True
+        Me.ReceiptInvoice.AutoScrollMinSize = New System.Drawing.Size(0, 400)
+        Me.ReceiptInvoice.BackColor = System.Drawing.SystemColors.Control
+        Me.ReceiptInvoice.Controls.Add(Me.GrpReceipt)
+        Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 32)
+        Me.ReceiptInvoice.Name = "ReceiptInvoice"
+        Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 389)
+        Me.ReceiptInvoice.TabIndex = 1
+        Me.ReceiptInvoice.Text = "Receipt/Invoice"
+        '
+        'GrpReceipt
+        '
+        Me.GrpReceipt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GrpReceipt.BackColor = System.Drawing.SystemColors.Control
+        Me.GrpReceipt.Controls.Add(Me.Label16)
+        Me.GrpReceipt.Controls.Add(Me.NONVATregCheckBox)
+        Me.GrpReceipt.Controls.Add(Me.VATregCheckBox)
+        Me.GrpReceipt.Controls.Add(Me.AddressCLabel)
+        Me.GrpReceipt.Controls.Add(Me.AddressCTextBox)
+        Me.GrpReceipt.Controls.Add(Me.TinCustomerLabel)
+        Me.GrpReceipt.Controls.Add(Me.TinCustomerTextBox)
+        Me.GrpReceipt.Controls.Add(Me.TinVendorLabel)
+        Me.GrpReceipt.Controls.Add(Me.TinVendorTextBox)
+        Me.GrpReceipt.Controls.Add(Me.BoxNoLabel)
+        Me.GrpReceipt.Controls.Add(Me.BoxNoRI)
+        Me.GrpReceipt.Controls.Add(Me.RackNoLabel)
+        Me.GrpReceipt.Controls.Add(Me.RackNoRI)
+        Me.GrpReceipt.Controls.Add(Me.Label17)
+        Me.GrpReceipt.Controls.Add(Me.DocumentDateRI)
+        Me.GrpReceipt.Controls.Add(Me.TotalValueLabel)
+        Me.GrpReceipt.Controls.Add(Me.TotalValueRI)
+        Me.GrpReceipt.Controls.Add(Me.ItemPurchasedLabel)
+        Me.GrpReceipt.Controls.Add(Me.ItemPurchasedTextBox)
+        Me.GrpReceipt.Controls.Add(Me.CustomerLabel)
+        Me.GrpReceipt.Controls.Add(Me.CustomerTextBox)
+        Me.GrpReceipt.Controls.Add(Me.VendorLabel)
+        Me.GrpReceipt.Controls.Add(Me.VendorTextBox)
+        Me.GrpReceipt.Controls.Add(Me.BookletNoLabel)
+        Me.GrpReceipt.Controls.Add(Me.BookletNoTextBox)
+        Me.GrpReceipt.Controls.Add(Me.DTDocuRI)
+        Me.GrpReceipt.Controls.Add(Me.ReferenceNoLabel)
+        Me.GrpReceipt.Controls.Add(Me.ReferenceNoRI)
+        Me.GrpReceipt.Controls.Add(Me.DocumentDateLabel)
+        Me.GrpReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
+        Me.GrpReceipt.Location = New System.Drawing.Point(0, 3)
+        Me.GrpReceipt.Name = "GrpReceipt"
+        Me.GrpReceipt.Size = New System.Drawing.Size(600, 422)
+        Me.GrpReceipt.TabIndex = 0
+        Me.GrpReceipt.TabStop = False
+        Me.GrpReceipt.Text = "Keywords"
+        '
+        'NONVATregCheckBox
+        '
+        Me.NONVATregCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.DocsCatalogueBindingSource, "NONVATreg", True))
+        Me.NONVATregCheckBox.Location = New System.Drawing.Point(413, 49)
+        Me.NONVATregCheckBox.Name = "NONVATregCheckBox"
+        Me.NONVATregCheckBox.Size = New System.Drawing.Size(160, 24)
+        Me.NONVATregCheckBox.TabIndex = 18
+        Me.NONVATregCheckBox.Text = "NON-VAT Registered"
+        Me.NONVATregCheckBox.UseVisualStyleBackColor = True
+        '
+        'VATregCheckBox
+        '
+        Me.VATregCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.DocsCatalogueBindingSource, "VATreg", True))
+        Me.VATregCheckBox.Location = New System.Drawing.Point(413, 27)
+        Me.VATregCheckBox.Name = "VATregCheckBox"
+        Me.VATregCheckBox.Size = New System.Drawing.Size(127, 24)
+        Me.VATregCheckBox.TabIndex = 17
+        Me.VATregCheckBox.Text = "VAT Registered"
+        Me.VATregCheckBox.UseVisualStyleBackColor = True
+        '
+        'AddressCTextBox
+        '
+        Me.AddressCTextBox.BackColor = System.Drawing.Color.White
+        Me.AddressCTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "AddressC", True))
+        Me.AddressCTextBox.Location = New System.Drawing.Point(158, 200)
+        Me.AddressCTextBox.Name = "AddressCTextBox"
+        Me.AddressCTextBox.Size = New System.Drawing.Size(416, 22)
+        Me.AddressCTextBox.TabIndex = 13
+        '
+        'TinCustomerTextBox
+        '
+        Me.TinCustomerTextBox.BackColor = System.Drawing.Color.White
+        Me.TinCustomerTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "TinCustomer", True))
+        Me.TinCustomerTextBox.Location = New System.Drawing.Point(158, 252)
+        Me.TinCustomerTextBox.Name = "TinCustomerTextBox"
+        Me.TinCustomerTextBox.Size = New System.Drawing.Size(182, 22)
+        Me.TinCustomerTextBox.TabIndex = 15
+        '
+        'TinVendorTextBox
+        '
+        Me.TinVendorTextBox.BackColor = System.Drawing.Color.White
+        Me.TinVendorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "TinVendor", True))
+        Me.TinVendorTextBox.Location = New System.Drawing.Point(158, 229)
+        Me.TinVendorTextBox.Name = "TinVendorTextBox"
+        Me.TinVendorTextBox.Size = New System.Drawing.Size(182, 22)
+        Me.TinVendorTextBox.TabIndex = 14
+        '
+        'BoxNoRI
+        '
+        Me.BoxNoRI.BackColor = System.Drawing.Color.White
+        Me.BoxNoRI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
+        Me.BoxNoRI.Location = New System.Drawing.Point(158, 50)
+        Me.BoxNoRI.Name = "BoxNoRI"
+        Me.BoxNoRI.Size = New System.Drawing.Size(123, 22)
+        Me.BoxNoRI.TabIndex = 7
+        '
+        'RackNoRI
+        '
+        Me.RackNoRI.BackColor = System.Drawing.Color.White
+        Me.RackNoRI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
+        Me.RackNoRI.Location = New System.Drawing.Point(158, 27)
+        Me.RackNoRI.Name = "RackNoRI"
+        Me.RackNoRI.Size = New System.Drawing.Size(123, 22)
+        Me.RackNoRI.TabIndex = 6
+        '
+        'DocumentDateRI
+        '
+        Me.DocumentDateRI.BackColor = System.Drawing.Color.White
+        Me.DocumentDateRI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DocumentDate", True))
+        Me.DocumentDateRI.Location = New System.Drawing.Point(158, 73)
+        Me.DocumentDateRI.Name = "DocumentDateRI"
+        Me.DocumentDateRI.Size = New System.Drawing.Size(104, 22)
+        Me.DocumentDateRI.TabIndex = 8
+        Me.DocumentDateRI.TabStop = False
+        Me.DocumentDateRI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TotalValueRI
+        '
+        Me.TotalValueRI.BackColor = System.Drawing.Color.White
+        Me.TotalValueRI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "TotalValue", True))
+        Me.TotalValueRI.Location = New System.Drawing.Point(434, 102)
+        Me.TotalValueRI.Name = "TotalValueRI"
+        Me.TotalValueRI.Size = New System.Drawing.Size(140, 22)
+        Me.TotalValueRI.TabIndex = 19
+        '
+        'ItemPurchasedTextBox
+        '
+        Me.ItemPurchasedTextBox.BackColor = System.Drawing.Color.White
+        Me.ItemPurchasedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "ItemPurchased", True))
+        Me.ItemPurchasedTextBox.Location = New System.Drawing.Point(158, 284)
+        Me.ItemPurchasedTextBox.Multiline = True
+        Me.ItemPurchasedTextBox.Name = "ItemPurchasedTextBox"
+        Me.ItemPurchasedTextBox.Size = New System.Drawing.Size(416, 83)
+        Me.ItemPurchasedTextBox.TabIndex = 16
+        '
+        'CustomerTextBox
+        '
+        Me.CustomerTextBox.BackColor = System.Drawing.Color.White
+        Me.CustomerTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Customer", True))
+        Me.CustomerTextBox.Location = New System.Drawing.Point(158, 177)
+        Me.CustomerTextBox.Name = "CustomerTextBox"
+        Me.CustomerTextBox.Size = New System.Drawing.Size(416, 22)
+        Me.CustomerTextBox.TabIndex = 12
+        '
+        'VendorTextBox
+        '
+        Me.VendorTextBox.BackColor = System.Drawing.Color.White
+        Me.VendorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Vendor", True))
+        Me.VendorTextBox.Location = New System.Drawing.Point(158, 154)
+        Me.VendorTextBox.Name = "VendorTextBox"
+        Me.VendorTextBox.Size = New System.Drawing.Size(416, 22)
+        Me.VendorTextBox.TabIndex = 11
+        '
+        'BookletNoTextBox
+        '
+        Me.BookletNoTextBox.BackColor = System.Drawing.Color.White
+        Me.BookletNoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BookletNo", True))
+        Me.BookletNoTextBox.Location = New System.Drawing.Point(158, 102)
+        Me.BookletNoTextBox.Name = "BookletNoTextBox"
+        Me.BookletNoTextBox.Size = New System.Drawing.Size(123, 22)
+        Me.BookletNoTextBox.TabIndex = 9
+        '
+        'DTDocuRI
+        '
+        Me.DTDocuRI.Location = New System.Drawing.Point(263, 73)
+        Me.DTDocuRI.Name = "DTDocuRI"
+        Me.DTDocuRI.Size = New System.Drawing.Size(18, 22)
+        Me.DTDocuRI.TabIndex = 8
+        '
+        'ReferenceNoRI
+        '
+        Me.ReferenceNoRI.BackColor = System.Drawing.Color.White
+        Me.ReferenceNoRI.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "ReferenceNo", True))
+        Me.ReferenceNoRI.Location = New System.Drawing.Point(158, 125)
+        Me.ReferenceNoRI.Name = "ReferenceNoRI"
+        Me.ReferenceNoRI.Size = New System.Drawing.Size(123, 22)
+        Me.ReferenceNoRI.TabIndex = 10
+        '
+        'Warranty
+        '
+        Me.Warranty.AutoScroll = True
+        Me.Warranty.AutoScrollMinSize = New System.Drawing.Size(0, 420)
+        Me.Warranty.BackColor = System.Drawing.SystemColors.Control
+        Me.Warranty.Controls.Add(Me.GrpWarranty)
+        Me.Warranty.Location = New System.Drawing.Point(4, 32)
+        Me.Warranty.Name = "Warranty"
+        Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
+        Me.Warranty.Size = New System.Drawing.Size(623, 389)
+        Me.Warranty.TabIndex = 2
+        Me.Warranty.Text = "Warranty"
+        '
+        'GrpWarranty
+        '
+        Me.GrpWarranty.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GrpWarranty.Controls.Add(Me.Label18)
+        Me.GrpWarranty.Controls.Add(Me.Label19)
+        Me.GrpWarranty.Controls.Add(Me.Label20)
+        Me.GrpWarranty.Controls.Add(Me.BoxNoWarranty)
+        Me.GrpWarranty.Controls.Add(Me.Label21)
+        Me.GrpWarranty.Controls.Add(Me.RackNoWarranty)
+        Me.GrpWarranty.Controls.Add(Me.DTDatePurchased)
+        Me.GrpWarranty.Controls.Add(Me.EmailLabel)
+        Me.GrpWarranty.Controls.Add(Me.EmailTextBox)
+        Me.GrpWarranty.Controls.Add(Me.ContactNoLabel)
+        Me.GrpWarranty.Controls.Add(Me.ContactNoTextBox)
+        Me.GrpWarranty.Controls.Add(Me.AddressLabel)
+        Me.GrpWarranty.Controls.Add(Me.AddressTextBox)
+        Me.GrpWarranty.Controls.Add(Me.ServiceCenterLabel)
+        Me.GrpWarranty.Controls.Add(Me.ServiceCenterTextBox)
+        Me.GrpWarranty.Controls.Add(Me.WarrantyPeriodLabel)
+        Me.GrpWarranty.Controls.Add(Me.WarrantyPeriodTextBox)
+        Me.GrpWarranty.Controls.Add(Me.SerialLabel)
+        Me.GrpWarranty.Controls.Add(Me.SerialTextBox)
+        Me.GrpWarranty.Controls.Add(Me.TotalValueLabel1)
+        Me.GrpWarranty.Controls.Add(Me.TotalValueWarranty)
+        Me.GrpWarranty.Controls.Add(Me.ReferenceNoLabel1)
+        Me.GrpWarranty.Controls.Add(Me.ReferenceNoTextBox1)
+        Me.GrpWarranty.Controls.Add(Me.DatePurchasedLabel)
+        Me.GrpWarranty.Controls.Add(Me.DatePurchasedTextBox)
+        Me.GrpWarranty.Controls.Add(Me.ProductTypeLabel)
+        Me.GrpWarranty.Controls.Add(Me.ProductTypeTextBox)
+        Me.GrpWarranty.Controls.Add(Me.ProductBrandLabel)
+        Me.GrpWarranty.Controls.Add(Me.ProductBrandTextBox)
+        Me.GrpWarranty.Controls.Add(Me.WarrantyNoLabel)
+        Me.GrpWarranty.Controls.Add(Me.WarrantyNoTextBox)
+        Me.GrpWarranty.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
+        Me.GrpWarranty.Location = New System.Drawing.Point(0, 3)
+        Me.GrpWarranty.Name = "GrpWarranty"
+        Me.GrpWarranty.Size = New System.Drawing.Size(600, 482)
+        Me.GrpWarranty.TabIndex = 0
+        Me.GrpWarranty.TabStop = False
+        Me.GrpWarranty.Text = "Keywords"
+        '
+        'BoxNoWarranty
+        '
+        Me.BoxNoWarranty.BackColor = System.Drawing.Color.White
+        Me.BoxNoWarranty.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
+        Me.BoxNoWarranty.Location = New System.Drawing.Point(158, 50)
+        Me.BoxNoWarranty.Name = "BoxNoWarranty"
+        Me.BoxNoWarranty.Size = New System.Drawing.Size(123, 22)
+        Me.BoxNoWarranty.TabIndex = 7
+        '
+        'RackNoWarranty
+        '
+        Me.RackNoWarranty.BackColor = System.Drawing.Color.White
+        Me.RackNoWarranty.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
+        Me.RackNoWarranty.Location = New System.Drawing.Point(158, 27)
+        Me.RackNoWarranty.Name = "RackNoWarranty"
+        Me.RackNoWarranty.Size = New System.Drawing.Size(123, 22)
+        Me.RackNoWarranty.TabIndex = 6
+        '
+        'DTDatePurchased
+        '
+        Me.DTDatePurchased.Location = New System.Drawing.Point(255, 149)
+        Me.DTDatePurchased.Name = "DTDatePurchased"
+        Me.DTDatePurchased.Size = New System.Drawing.Size(18, 22)
+        Me.DTDatePurchased.TabIndex = 11
+        '
+        'EmailTextBox
+        '
+        Me.EmailTextBox.BackColor = System.Drawing.Color.White
+        Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Email", True))
+        Me.EmailTextBox.Location = New System.Drawing.Point(158, 359)
+        Me.EmailTextBox.Name = "EmailTextBox"
+        Me.EmailTextBox.Size = New System.Drawing.Size(191, 22)
+        Me.EmailTextBox.TabIndex = 18
+        '
+        'ContactNoTextBox
+        '
+        Me.ContactNoTextBox.BackColor = System.Drawing.Color.White
+        Me.ContactNoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "ContactNo", True))
+        Me.ContactNoTextBox.Location = New System.Drawing.Point(158, 336)
+        Me.ContactNoTextBox.Name = "ContactNoTextBox"
+        Me.ContactNoTextBox.Size = New System.Drawing.Size(191, 22)
+        Me.ContactNoTextBox.TabIndex = 17
+        '
+        'AddressTextBox
+        '
+        Me.AddressTextBox.BackColor = System.Drawing.Color.White
+        Me.AddressTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Address", True))
+        Me.AddressTextBox.Location = New System.Drawing.Point(158, 281)
+        Me.AddressTextBox.Multiline = True
+        Me.AddressTextBox.Name = "AddressTextBox"
+        Me.AddressTextBox.Size = New System.Drawing.Size(414, 47)
+        Me.AddressTextBox.TabIndex = 16
+        '
+        'ServiceCenterTextBox
+        '
+        Me.ServiceCenterTextBox.BackColor = System.Drawing.Color.White
+        Me.ServiceCenterTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "ServiceCenter", True))
+        Me.ServiceCenterTextBox.Location = New System.Drawing.Point(158, 258)
+        Me.ServiceCenterTextBox.Name = "ServiceCenterTextBox"
+        Me.ServiceCenterTextBox.Size = New System.Drawing.Size(414, 22)
+        Me.ServiceCenterTextBox.TabIndex = 15
+        '
+        'WarrantyPeriodTextBox
+        '
+        Me.WarrantyPeriodTextBox.BackColor = System.Drawing.Color.White
+        Me.WarrantyPeriodTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "WarrantyPeriod", True))
+        Me.WarrantyPeriodTextBox.Location = New System.Drawing.Point(158, 227)
+        Me.WarrantyPeriodTextBox.Name = "WarrantyPeriodTextBox"
+        Me.WarrantyPeriodTextBox.Size = New System.Drawing.Size(140, 22)
+        Me.WarrantyPeriodTextBox.TabIndex = 14
+        '
+        'SerialTextBox
+        '
+        Me.SerialTextBox.BackColor = System.Drawing.Color.White
+        Me.SerialTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Serial", True))
+        Me.SerialTextBox.Location = New System.Drawing.Point(158, 126)
+        Me.SerialTextBox.Name = "SerialTextBox"
+        Me.SerialTextBox.Size = New System.Drawing.Size(303, 22)
+        Me.SerialTextBox.TabIndex = 10
+        '
+        'TotalValueWarranty
+        '
+        Me.TotalValueWarranty.BackColor = System.Drawing.Color.White
+        Me.TotalValueWarranty.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "TotalValue", True))
+        Me.TotalValueWarranty.Location = New System.Drawing.Point(158, 382)
+        Me.TotalValueWarranty.Name = "TotalValueWarranty"
+        Me.TotalValueWarranty.Size = New System.Drawing.Size(191, 22)
+        Me.TotalValueWarranty.TabIndex = 19
+        '
+        'ReferenceNoTextBox1
+        '
+        Me.ReferenceNoTextBox1.BackColor = System.Drawing.Color.White
+        Me.ReferenceNoTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "ReferenceNo", True))
+        Me.ReferenceNoTextBox1.Location = New System.Drawing.Point(158, 181)
+        Me.ReferenceNoTextBox1.Name = "ReferenceNoTextBox1"
+        Me.ReferenceNoTextBox1.Size = New System.Drawing.Size(140, 22)
+        Me.ReferenceNoTextBox1.TabIndex = 12
+        '
+        'DatePurchasedTextBox
+        '
+        Me.DatePurchasedTextBox.BackColor = System.Drawing.Color.White
+        Me.DatePurchasedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DatePurchased", True))
+        Me.DatePurchasedTextBox.Location = New System.Drawing.Point(158, 149)
+        Me.DatePurchasedTextBox.Name = "DatePurchasedTextBox"
+        Me.DatePurchasedTextBox.Size = New System.Drawing.Size(95, 22)
+        Me.DatePurchasedTextBox.TabIndex = 7
+        Me.DatePurchasedTextBox.TabStop = False
+        Me.DatePurchasedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'ProductTypeTextBox
+        '
+        Me.ProductTypeTextBox.BackColor = System.Drawing.Color.White
+        Me.ProductTypeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "ProductType", True))
+        Me.ProductTypeTextBox.Location = New System.Drawing.Point(158, 103)
+        Me.ProductTypeTextBox.Name = "ProductTypeTextBox"
+        Me.ProductTypeTextBox.Size = New System.Drawing.Size(303, 22)
+        Me.ProductTypeTextBox.TabIndex = 9
+        '
+        'ProductBrandTextBox
+        '
+        Me.ProductBrandTextBox.BackColor = System.Drawing.Color.White
+        Me.ProductBrandTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "ProductBrand", True))
+        Me.ProductBrandTextBox.Location = New System.Drawing.Point(158, 80)
+        Me.ProductBrandTextBox.Name = "ProductBrandTextBox"
+        Me.ProductBrandTextBox.Size = New System.Drawing.Size(303, 22)
+        Me.ProductBrandTextBox.TabIndex = 8
+        '
+        'WarrantyNoTextBox
+        '
+        Me.WarrantyNoTextBox.BackColor = System.Drawing.Color.White
+        Me.WarrantyNoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "WarrantyNo", True))
+        Me.WarrantyNoTextBox.Location = New System.Drawing.Point(158, 204)
+        Me.WarrantyNoTextBox.Name = "WarrantyNoTextBox"
+        Me.WarrantyNoTextBox.Size = New System.Drawing.Size(140, 22)
+        Me.WarrantyNoTextBox.TabIndex = 13
+        '
+        'Voucher
+        '
+        Me.Voucher.AutoScroll = True
+        Me.Voucher.AutoScrollMinSize = New System.Drawing.Size(0, 500)
+        Me.Voucher.BackColor = System.Drawing.SystemColors.Control
+        Me.Voucher.Controls.Add(Me.GrpVoucher)
+        Me.Voucher.Location = New System.Drawing.Point(4, 32)
+        Me.Voucher.Name = "Voucher"
+        Me.Voucher.Size = New System.Drawing.Size(623, 389)
+        Me.Voucher.TabIndex = 3
+        Me.Voucher.Text = "Voucher"
+        '
+        'GrpVoucher
+        '
+        Me.GrpVoucher.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GrpVoucher.Controls.Add(Me.Label22)
+        Me.GrpVoucher.Controls.Add(Me.DTDateReceived)
+        Me.GrpVoucher.Controls.Add(Me.Label23)
+        Me.GrpVoucher.Controls.Add(Me.BoxNoVoucher)
+        Me.GrpVoucher.Controls.Add(Me.Label24)
+        Me.GrpVoucher.Controls.Add(Me.RackNoVoucher)
+        Me.GrpVoucher.Controls.Add(Me.DateReceivedLabel)
+        Me.GrpVoucher.Controls.Add(Me.DateReceivedTextBox)
+        Me.GrpVoucher.Controls.Add(Me.PaymentFormComboBox)
+        Me.GrpVoucher.Controls.Add(Me.DTDocuVoucher)
+        Me.GrpVoucher.Controls.Add(Me.ReceivedbyLabel)
+        Me.GrpVoucher.Controls.Add(Me.ReceivedbyTextBox)
+        Me.GrpVoucher.Controls.Add(Me.RecordedbyLabel)
+        Me.GrpVoucher.Controls.Add(Me.RecordedbyTextBox)
+        Me.GrpVoucher.Controls.Add(Me.ApprovedbyLabel)
+        Me.GrpVoucher.Controls.Add(Me.ApprovedbyTextBox)
+        Me.GrpVoucher.Controls.Add(Me.PreparedbyLabel)
+        Me.GrpVoucher.Controls.Add(Me.PreparedbyTextBox)
+        Me.GrpVoucher.Controls.Add(Me.PayorLabel)
+        Me.GrpVoucher.Controls.Add(Me.PayorTextBox)
+        Me.GrpVoucher.Controls.Add(Me.PayeeLabel)
+        Me.GrpVoucher.Controls.Add(Me.PayeeTextBox)
+        Me.GrpVoucher.Controls.Add(Me.TotalValueLabel2)
+        Me.GrpVoucher.Controls.Add(Me.TotalValueVoucher)
+        Me.GrpVoucher.Controls.Add(Me.PaymentFormLabel)
+        Me.GrpVoucher.Controls.Add(Me.VoucherNoLabel)
+        Me.GrpVoucher.Controls.Add(Me.VoucherNoTextBox)
+        Me.GrpVoucher.Controls.Add(Me.DocumentDateLabel1)
+        Me.GrpVoucher.Controls.Add(Me.DocumentDateVoucher)
+        Me.GrpVoucher.Controls.Add(Me.TabControl3)
+        Me.GrpVoucher.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
+        Me.GrpVoucher.Location = New System.Drawing.Point(0, 3)
+        Me.GrpVoucher.Name = "GrpVoucher"
+        Me.GrpVoucher.Size = New System.Drawing.Size(603, 713)
+        Me.GrpVoucher.TabIndex = 1
+        Me.GrpVoucher.TabStop = False
+        Me.GrpVoucher.Text = "Keywords"
+        '
+        'DTDateReceived
+        '
+        Me.DTDateReceived.Location = New System.Drawing.Point(259, 441)
+        Me.DTDateReceived.Name = "DTDateReceived"
+        Me.DTDateReceived.Size = New System.Drawing.Size(18, 22)
+        Me.DTDateReceived.TabIndex = 21
+        '
+        'BoxNoVoucher
+        '
+        Me.BoxNoVoucher.BackColor = System.Drawing.Color.White
+        Me.BoxNoVoucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
+        Me.BoxNoVoucher.Location = New System.Drawing.Point(158, 50)
+        Me.BoxNoVoucher.Name = "BoxNoVoucher"
+        Me.BoxNoVoucher.Size = New System.Drawing.Size(123, 22)
+        Me.BoxNoVoucher.TabIndex = 7
+        '
+        'RackNoVoucher
+        '
+        Me.RackNoVoucher.BackColor = System.Drawing.Color.White
+        Me.RackNoVoucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
+        Me.RackNoVoucher.Location = New System.Drawing.Point(158, 27)
+        Me.RackNoVoucher.Name = "RackNoVoucher"
+        Me.RackNoVoucher.Size = New System.Drawing.Size(123, 22)
+        Me.RackNoVoucher.TabIndex = 6
+        '
+        'DateReceivedTextBox
+        '
+        Me.DateReceivedTextBox.BackColor = System.Drawing.Color.White
+        Me.DateReceivedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DateReceived", True))
+        Me.DateReceivedTextBox.Location = New System.Drawing.Point(158, 441)
+        Me.DateReceivedTextBox.Name = "DateReceivedTextBox"
+        Me.DateReceivedTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.DateReceivedTextBox.TabIndex = 27
+        Me.DateReceivedTextBox.TabStop = False
+        '
+        'PaymentFormComboBox
+        '
+        Me.PaymentFormComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "PaymentForm", True))
+        Me.PaymentFormComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.PaymentFormComboBox.FormattingEnabled = True
+        Me.PaymentFormComboBox.ItemHeight = 16
+        Me.PaymentFormComboBox.Location = New System.Drawing.Point(158, 180)
+        Me.PaymentFormComboBox.Name = "PaymentFormComboBox"
+        Me.PaymentFormComboBox.Size = New System.Drawing.Size(183, 24)
+        Me.PaymentFormComboBox.TabIndex = 10
+        '
+        'DTDocuVoucher
+        '
+        Me.DTDocuVoucher.Location = New System.Drawing.Point(259, 73)
+        Me.DTDocuVoucher.Name = "DTDocuVoucher"
+        Me.DTDocuVoucher.Size = New System.Drawing.Size(18, 22)
+        Me.DTDocuVoucher.TabIndex = 8
+        '
+        'ReceivedbyTextBox
+        '
+        Me.ReceivedbyTextBox.BackColor = System.Drawing.Color.White
+        Me.ReceivedbyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Receivedby", True))
+        Me.ReceivedbyTextBox.Location = New System.Drawing.Point(158, 418)
+        Me.ReceivedbyTextBox.Name = "ReceivedbyTextBox"
+        Me.ReceivedbyTextBox.Size = New System.Drawing.Size(326, 22)
+        Me.ReceivedbyTextBox.TabIndex = 20
+        '
+        'RecordedbyTextBox
+        '
+        Me.RecordedbyTextBox.BackColor = System.Drawing.Color.White
+        Me.RecordedbyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Recordedby", True))
+        Me.RecordedbyTextBox.Location = New System.Drawing.Point(158, 395)
+        Me.RecordedbyTextBox.Name = "RecordedbyTextBox"
+        Me.RecordedbyTextBox.Size = New System.Drawing.Size(326, 22)
+        Me.RecordedbyTextBox.TabIndex = 19
+        '
+        'ApprovedbyTextBox
+        '
+        Me.ApprovedbyTextBox.BackColor = System.Drawing.Color.White
+        Me.ApprovedbyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Approvedby", True))
+        Me.ApprovedbyTextBox.Location = New System.Drawing.Point(158, 372)
+        Me.ApprovedbyTextBox.Name = "ApprovedbyTextBox"
+        Me.ApprovedbyTextBox.Size = New System.Drawing.Size(326, 22)
+        Me.ApprovedbyTextBox.TabIndex = 18
+        '
+        'PreparedbyTextBox
+        '
+        Me.PreparedbyTextBox.BackColor = System.Drawing.Color.White
+        Me.PreparedbyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Preparedby", True))
+        Me.PreparedbyTextBox.Location = New System.Drawing.Point(158, 349)
+        Me.PreparedbyTextBox.Name = "PreparedbyTextBox"
+        Me.PreparedbyTextBox.Size = New System.Drawing.Size(326, 22)
+        Me.PreparedbyTextBox.TabIndex = 17
+        '
+        'PayorTextBox
+        '
+        Me.PayorTextBox.BackColor = System.Drawing.Color.White
+        Me.PayorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Payor", True))
+        Me.PayorTextBox.Location = New System.Drawing.Point(158, 126)
+        Me.PayorTextBox.Name = "PayorTextBox"
+        Me.PayorTextBox.Size = New System.Drawing.Size(406, 22)
+        Me.PayorTextBox.TabIndex = 10
+        '
+        'PayeeTextBox
+        '
+        Me.PayeeTextBox.BackColor = System.Drawing.Color.White
+        Me.PayeeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Payee", True))
+        Me.PayeeTextBox.Location = New System.Drawing.Point(158, 103)
+        Me.PayeeTextBox.Name = "PayeeTextBox"
+        Me.PayeeTextBox.Size = New System.Drawing.Size(406, 22)
+        Me.PayeeTextBox.TabIndex = 9
+        '
+        'TotalValueVoucher
+        '
+        Me.TotalValueVoucher.BackColor = System.Drawing.Color.White
+        Me.TotalValueVoucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "TotalValue", True))
+        Me.TotalValueVoucher.Location = New System.Drawing.Point(158, 326)
+        Me.TotalValueVoucher.Name = "TotalValueVoucher"
+        Me.TotalValueVoucher.Size = New System.Drawing.Size(183, 22)
+        Me.TotalValueVoucher.TabIndex = 16
+        '
+        'VoucherNoTextBox
+        '
+        Me.VoucherNoTextBox.BackColor = System.Drawing.Color.White
+        Me.VoucherNoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "VoucherNo", True))
+        Me.VoucherNoTextBox.Location = New System.Drawing.Point(158, 149)
+        Me.VoucherNoTextBox.Name = "VoucherNoTextBox"
+        Me.VoucherNoTextBox.Size = New System.Drawing.Size(183, 22)
+        Me.VoucherNoTextBox.TabIndex = 11
+        '
+        'DocumentDateVoucher
+        '
+        Me.DocumentDateVoucher.BackColor = System.Drawing.Color.White
+        Me.DocumentDateVoucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DocumentDate", True))
+        Me.DocumentDateVoucher.Location = New System.Drawing.Point(158, 73)
+        Me.DocumentDateVoucher.Name = "DocumentDateVoucher"
+        Me.DocumentDateVoucher.Size = New System.Drawing.Size(100, 22)
+        Me.DocumentDateVoucher.TabIndex = 1
+        Me.DocumentDateVoucher.TabStop = False
+        Me.DocumentDateVoucher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TabControl3
+        '
+        Me.TabControl3.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
+        Me.TabControl3.Controls.Add(Me.BankDepo)
+        Me.TabControl3.Controls.Add(Me.Others)
+        Me.TabControl3.Controls.Add(Me.Check)
+        Me.TabControl3.Location = New System.Drawing.Point(0, 202)
+        Me.TabControl3.Name = "TabControl3"
+        Me.TabControl3.SelectedIndex = 0
+        Me.TabControl3.Size = New System.Drawing.Size(564, 129)
+        Me.TabControl3.TabIndex = 21
+        Me.TabControl3.TabStop = False
+        '
+        'BankDepo
+        '
+        Me.BankDepo.AutoScroll = True
+        Me.BankDepo.BackColor = System.Drawing.SystemColors.Control
+        Me.BankDepo.Controls.Add(Me.BankAddressLabel)
+        Me.BankDepo.Controls.Add(Me.BankAddressTextBox)
+        Me.BankDepo.Controls.Add(Me.BankBranchLabel)
+        Me.BankDepo.Controls.Add(Me.BankBranchTextBox)
+        Me.BankDepo.Controls.Add(Me.BankNameLabel)
+        Me.BankDepo.Controls.Add(Me.BankNameTextBox)
+        Me.BankDepo.Location = New System.Drawing.Point(4, 28)
+        Me.BankDepo.Name = "BankDepo"
+        Me.BankDepo.Padding = New System.Windows.Forms.Padding(3)
+        Me.BankDepo.Size = New System.Drawing.Size(556, 97)
+        Me.BankDepo.TabIndex = 0
+        Me.BankDepo.Text = "BankDepo"
+        '
+        'BankAddressTextBox
+        '
+        Me.BankAddressTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BankAddress", True))
+        Me.BankAddressTextBox.Location = New System.Drawing.Point(154, 48)
+        Me.BankAddressTextBox.Multiline = True
+        Me.BankAddressTextBox.Name = "BankAddressTextBox"
+        Me.BankAddressTextBox.Size = New System.Drawing.Size(367, 46)
+        Me.BankAddressTextBox.TabIndex = 15
+        '
+        'BankBranchTextBox
+        '
+        Me.BankBranchTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BankBranch", True))
+        Me.BankBranchTextBox.Location = New System.Drawing.Point(154, 25)
+        Me.BankBranchTextBox.Name = "BankBranchTextBox"
+        Me.BankBranchTextBox.Size = New System.Drawing.Size(367, 22)
+        Me.BankBranchTextBox.TabIndex = 14
+        '
+        'BankNameTextBox
+        '
+        Me.BankNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BankName", True))
+        Me.BankNameTextBox.Location = New System.Drawing.Point(154, 2)
+        Me.BankNameTextBox.Name = "BankNameTextBox"
+        Me.BankNameTextBox.Size = New System.Drawing.Size(367, 22)
+        Me.BankNameTextBox.TabIndex = 13
+        '
+        'Others
+        '
+        Me.Others.AutoScroll = True
+        Me.Others.BackColor = System.Drawing.SystemColors.Control
+        Me.Others.Controls.Add(Me.PaymentOthersLabel)
+        Me.Others.Controls.Add(Me.PaymentOthersTextBox)
+        Me.Others.Location = New System.Drawing.Point(4, 28)
+        Me.Others.Name = "Others"
+        Me.Others.Padding = New System.Windows.Forms.Padding(3)
+        Me.Others.Size = New System.Drawing.Size(556, 97)
+        Me.Others.TabIndex = 1
+        Me.Others.Text = "Others"
+        '
+        'PaymentOthersTextBox
+        '
+        Me.PaymentOthersTextBox.BackColor = System.Drawing.Color.White
+        Me.PaymentOthersTextBox.Location = New System.Drawing.Point(154, 4)
+        Me.PaymentOthersTextBox.Name = "PaymentOthersTextBox"
+        Me.PaymentOthersTextBox.Size = New System.Drawing.Size(367, 22)
+        Me.PaymentOthersTextBox.TabIndex = 13
+        '
+        'Check
+        '
+        Me.Check.BackColor = System.Drawing.SystemColors.Control
+        Me.Check.Controls.Add(Me.CheckNoTextBox)
+        Me.Check.Controls.Add(Me.CheckNoLabel)
+        Me.Check.Location = New System.Drawing.Point(4, 28)
+        Me.Check.Name = "Check"
+        Me.Check.Size = New System.Drawing.Size(556, 97)
+        Me.Check.TabIndex = 2
+        Me.Check.Text = "Check"
+        '
+        'CheckNoTextBox
+        '
+        Me.CheckNoTextBox.BackColor = System.Drawing.Color.White
+        Me.CheckNoTextBox.Location = New System.Drawing.Point(154, 4)
+        Me.CheckNoTextBox.Name = "CheckNoTextBox"
+        Me.CheckNoTextBox.Size = New System.Drawing.Size(367, 22)
+        Me.CheckNoTextBox.TabIndex = 13
+        '
+        'CorpDocu
+        '
+        Me.CorpDocu.AutoScroll = True
+        Me.CorpDocu.AutoScrollMinSize = New System.Drawing.Size(0, 350)
+        Me.CorpDocu.BackColor = System.Drawing.SystemColors.Control
+        Me.CorpDocu.Controls.Add(Me.GrpCorp)
+        Me.CorpDocu.Location = New System.Drawing.Point(4, 32)
+        Me.CorpDocu.Name = "CorpDocu"
+        Me.CorpDocu.Size = New System.Drawing.Size(623, 389)
+        Me.CorpDocu.TabIndex = 4
+        Me.CorpDocu.Text = "CorpDocu"
+        '
+        'GrpCorp
+        '
+        Me.GrpCorp.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GrpCorp.BackColor = System.Drawing.SystemColors.Control
+        Me.GrpCorp.Controls.Add(Me.Label25)
+        Me.GrpCorp.Controls.Add(Me.Label26)
+        Me.GrpCorp.Controls.Add(Me.Label27)
+        Me.GrpCorp.Controls.Add(Me.BoxNoCorpDocu)
+        Me.GrpCorp.Controls.Add(Me.Label28)
+        Me.GrpCorp.Controls.Add(Me.RackNoCorpDocu)
+        Me.GrpCorp.Controls.Add(Me.DTMeetingDate)
+        Me.GrpCorp.Controls.Add(Me.DTDocuCorp)
+        Me.GrpCorp.Controls.Add(Me.MeetingDateLabel)
+        Me.GrpCorp.Controls.Add(Me.MeetingDateTextBox)
+        Me.GrpCorp.Controls.Add(Me.SecretaryLabel)
+        Me.GrpCorp.Controls.Add(Me.SecretaryTextBox)
+        Me.GrpCorp.Controls.Add(Me.PurposeLabel)
+        Me.GrpCorp.Controls.Add(Me.PurposeTextBox)
+        Me.GrpCorp.Controls.Add(Me.CompanyLabel)
+        Me.GrpCorp.Controls.Add(Me.CompanyTextBox)
+        Me.GrpCorp.Controls.Add(Me.DocumentDateLabel2)
+        Me.GrpCorp.Controls.Add(Me.DocumentDateCorp)
+        Me.GrpCorp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GrpCorp.ForeColor = System.Drawing.Color.Black
+        Me.GrpCorp.Location = New System.Drawing.Point(0, 3)
+        Me.GrpCorp.Name = "GrpCorp"
+        Me.GrpCorp.Size = New System.Drawing.Size(620, 394)
+        Me.GrpCorp.TabIndex = 1
+        Me.GrpCorp.TabStop = False
+        Me.GrpCorp.Text = "Keywords"
+        '
+        'BoxNoCorpDocu
+        '
+        Me.BoxNoCorpDocu.BackColor = System.Drawing.Color.White
+        Me.BoxNoCorpDocu.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "BoxNo", True))
+        Me.BoxNoCorpDocu.Location = New System.Drawing.Point(158, 50)
+        Me.BoxNoCorpDocu.Name = "BoxNoCorpDocu"
+        Me.BoxNoCorpDocu.Size = New System.Drawing.Size(123, 22)
+        Me.BoxNoCorpDocu.TabIndex = 7
+        '
+        'RackNoCorpDocu
+        '
+        Me.RackNoCorpDocu.BackColor = System.Drawing.Color.White
+        Me.RackNoCorpDocu.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "RackNo", True))
+        Me.RackNoCorpDocu.Location = New System.Drawing.Point(158, 27)
+        Me.RackNoCorpDocu.Name = "RackNoCorpDocu"
+        Me.RackNoCorpDocu.Size = New System.Drawing.Size(123, 22)
+        Me.RackNoCorpDocu.TabIndex = 6
+        '
+        'DTMeetingDate
+        '
+        Me.DTMeetingDate.Location = New System.Drawing.Point(259, 103)
+        Me.DTMeetingDate.Name = "DTMeetingDate"
+        Me.DTMeetingDate.Size = New System.Drawing.Size(18, 22)
+        Me.DTMeetingDate.TabIndex = 9
+        '
+        'DTDocuCorp
+        '
+        Me.DTDocuCorp.Location = New System.Drawing.Point(259, 73)
+        Me.DTDocuCorp.Name = "DTDocuCorp"
+        Me.DTDocuCorp.Size = New System.Drawing.Size(18, 22)
+        Me.DTDocuCorp.TabIndex = 8
+        '
+        'MeetingDateTextBox
+        '
+        Me.MeetingDateTextBox.BackColor = System.Drawing.Color.White
+        Me.MeetingDateTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "MeetingDate", True))
+        Me.MeetingDateTextBox.Location = New System.Drawing.Point(158, 103)
+        Me.MeetingDateTextBox.Name = "MeetingDateTextBox"
+        Me.MeetingDateTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.MeetingDateTextBox.TabIndex = 9
+        Me.MeetingDateTextBox.TabStop = False
+        Me.MeetingDateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'SecretaryTextBox
+        '
+        Me.SecretaryTextBox.BackColor = System.Drawing.Color.White
+        Me.SecretaryTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Secretary", True))
+        Me.SecretaryTextBox.Location = New System.Drawing.Point(158, 149)
+        Me.SecretaryTextBox.Name = "SecretaryTextBox"
+        Me.SecretaryTextBox.Size = New System.Drawing.Size(416, 22)
+        Me.SecretaryTextBox.TabIndex = 11
+        '
+        'PurposeTextBox
+        '
+        Me.PurposeTextBox.BackColor = System.Drawing.Color.White
+        Me.PurposeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Purpose", True))
+        Me.PurposeTextBox.Location = New System.Drawing.Point(158, 183)
+        Me.PurposeTextBox.Multiline = True
+        Me.PurposeTextBox.Name = "PurposeTextBox"
+        Me.PurposeTextBox.Size = New System.Drawing.Size(416, 137)
+        Me.PurposeTextBox.TabIndex = 12
+        '
+        'CompanyTextBox
+        '
+        Me.CompanyTextBox.BackColor = System.Drawing.Color.White
+        Me.CompanyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Company", True))
+        Me.CompanyTextBox.Location = New System.Drawing.Point(158, 126)
+        Me.CompanyTextBox.Name = "CompanyTextBox"
+        Me.CompanyTextBox.Size = New System.Drawing.Size(416, 22)
+        Me.CompanyTextBox.TabIndex = 10
+        '
+        'DocumentDateCorp
+        '
+        Me.DocumentDateCorp.BackColor = System.Drawing.Color.White
+        Me.DocumentDateCorp.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DocumentDate", True))
+        Me.DocumentDateCorp.Location = New System.Drawing.Point(158, 73)
+        Me.DocumentDateCorp.Name = "DocumentDateCorp"
+        Me.DocumentDateCorp.Size = New System.Drawing.Size(100, 22)
+        Me.DocumentDateCorp.TabIndex = 1
+        Me.DocumentDateCorp.TabStop = False
+        Me.DocumentDateCorp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.DocsCatalogueTableAdapter = Nothing
+        Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
+        Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'DocsCatalogueTableAdapter
+        '
+        Me.DocsCatalogueTableAdapter.ClearBeforeFill = True
+        '
         'FrmQuery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1240, 741)
+        Me.ClientSize = New System.Drawing.Size(1240, 738)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "FrmQuery"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -456,8 +2279,36 @@ Partial Class FrmQuery
         CType(Me.C1TrueDBGrid1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AcroPDF, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        Me.TabQuery.ResumeLayout(False)
+        Me.TabQuery.PerformLayout()
+        Me.TabChanges.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
+        Me.Timesheet.ResumeLayout(False)
+        Me.GrpTimeSheet.ResumeLayout(False)
+        Me.GrpTimeSheet.PerformLayout()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.ReceiptInvoice.ResumeLayout(False)
+        Me.GrpReceipt.ResumeLayout(False)
+        Me.GrpReceipt.PerformLayout()
+        Me.Warranty.ResumeLayout(False)
+        Me.GrpWarranty.ResumeLayout(False)
+        Me.GrpWarranty.PerformLayout()
+        Me.Voucher.ResumeLayout(False)
+        Me.GrpVoucher.ResumeLayout(False)
+        Me.GrpVoucher.PerformLayout()
+        Me.TabControl3.ResumeLayout(False)
+        Me.BankDepo.ResumeLayout(False)
+        Me.BankDepo.PerformLayout()
+        Me.Others.ResumeLayout(False)
+        Me.Others.PerformLayout()
+        Me.Check.ResumeLayout(False)
+        Me.Check.PerformLayout()
+        Me.CorpDocu.ResumeLayout(False)
+        Me.GrpCorp.ResumeLayout(False)
+        Me.GrpCorp.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -466,12 +2317,12 @@ Partial Class FrmQuery
     Friend WithEvents C1TrueDBGrid1 As C1.Win.C1TrueDBGrid.C1TrueDBGrid
     Friend WithEvents AcroPDF As AxAcroPDFLib.AxAcroPDF
 
-    Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
 
-    End Sub
+
+
 
     Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabQuery As TabPage
     Friend WithEvents CHKBatch As CheckBox
     Friend WithEvents Label11 As Label
     Friend WithEvents TxtBatch As TextBox
@@ -501,5 +2352,164 @@ Partial Class FrmQuery
     Friend WithEvents BtnSearch As Button
     Friend WithEvents DocumentTypeComboBox As ComboBox
     Friend WithEvents DocumentTypeLabel As Label
-    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents TabChanges As TabPage
+    Friend WithEvents TabControl2 As TabControl
+    Friend WithEvents Timesheet As TabPage
+    Friend WithEvents GrpTimeSheet As GroupBox
+    Friend WithEvents BoxNoTS As TextBox
+    Friend WithEvents RackNoTS As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents DTToPeriod As DateTimePicker
+    Friend WithEvents FromPeriodTextBox As TextBox
+    Friend WithEvents DTFromPeriod As DateTimePicker
+    Friend WithEvents ToPeriodTextBox As TextBox
+    Friend WithEvents MiddleNameTextBox As TextBox
+    Friend WithEvents FirstNameTextBox As TextBox
+    Friend WithEvents LastNameTextBox As TextBox
+    Friend WithEvents DocumentDateTS As TextBox
+    Friend WithEvents DTDocuTimeSheet As DateTimePicker
+    Friend WithEvents ReceiptInvoice As TabPage
+    Friend WithEvents GrpReceipt As GroupBox
+    Friend WithEvents NONVATregCheckBox As CheckBox
+    Friend WithEvents VATregCheckBox As CheckBox
+    Friend WithEvents AddressCTextBox As TextBox
+    Friend WithEvents TinCustomerTextBox As TextBox
+    Friend WithEvents TinVendorTextBox As TextBox
+    Friend WithEvents BoxNoRI As TextBox
+    Friend WithEvents RackNoRI As TextBox
+    Friend WithEvents DocumentDateRI As TextBox
+    Friend WithEvents TotalValueRI As TextBox
+    Friend WithEvents ItemPurchasedTextBox As TextBox
+    Friend WithEvents CustomerTextBox As TextBox
+    Friend WithEvents VendorTextBox As TextBox
+    Friend WithEvents BookletNoTextBox As TextBox
+    Friend WithEvents DTDocuRI As DateTimePicker
+    Friend WithEvents ReferenceNoRI As TextBox
+    Friend WithEvents Warranty As TabPage
+    Friend WithEvents GrpWarranty As GroupBox
+    Friend WithEvents BoxNoWarranty As TextBox
+    Friend WithEvents RackNoWarranty As TextBox
+    Friend WithEvents DTDatePurchased As DateTimePicker
+    Friend WithEvents EmailTextBox As TextBox
+    Friend WithEvents ContactNoTextBox As TextBox
+    Friend WithEvents AddressTextBox As TextBox
+    Friend WithEvents ServiceCenterTextBox As TextBox
+    Friend WithEvents WarrantyPeriodTextBox As TextBox
+    Friend WithEvents SerialTextBox As TextBox
+    Friend WithEvents TotalValueWarranty As TextBox
+    Friend WithEvents ReferenceNoTextBox1 As TextBox
+    Friend WithEvents DatePurchasedTextBox As TextBox
+    Friend WithEvents ProductTypeTextBox As TextBox
+    Friend WithEvents ProductBrandTextBox As TextBox
+    Friend WithEvents WarrantyNoTextBox As TextBox
+    Friend WithEvents Voucher As TabPage
+    Friend WithEvents GrpVoucher As GroupBox
+    Friend WithEvents DTDateReceived As DateTimePicker
+    Friend WithEvents BoxNoVoucher As TextBox
+    Friend WithEvents RackNoVoucher As TextBox
+    Friend WithEvents DateReceivedTextBox As TextBox
+    Friend WithEvents PaymentFormComboBox As ComboBox
+    Friend WithEvents DTDocuVoucher As DateTimePicker
+    Friend WithEvents ReceivedbyTextBox As TextBox
+    Friend WithEvents RecordedbyTextBox As TextBox
+    Friend WithEvents ApprovedbyTextBox As TextBox
+    Friend WithEvents PreparedbyTextBox As TextBox
+    Friend WithEvents PayorTextBox As TextBox
+    Friend WithEvents PayeeTextBox As TextBox
+    Friend WithEvents TotalValueVoucher As TextBox
+    Friend WithEvents VoucherNoTextBox As TextBox
+    Friend WithEvents DocumentDateVoucher As TextBox
+    Friend WithEvents TabControl3 As TabControl
+    Friend WithEvents BankDepo As TabPage
+    Friend WithEvents BankAddressTextBox As TextBox
+    Friend WithEvents BankBranchTextBox As TextBox
+    Friend WithEvents BankNameTextBox As TextBox
+    Friend WithEvents Others As TabPage
+    Friend WithEvents PaymentOthersTextBox As TextBox
+    Friend WithEvents Check As TabPage
+    Friend WithEvents CheckNoTextBox As TextBox
+    Friend WithEvents CorpDocu As TabPage
+    Friend WithEvents GrpCorp As GroupBox
+    Friend WithEvents BoxNoCorpDocu As TextBox
+    Friend WithEvents RackNoCorpDocu As TextBox
+    Friend WithEvents DTMeetingDate As DateTimePicker
+    Friend WithEvents DTDocuCorp As DateTimePicker
+    Friend WithEvents MeetingDateTextBox As TextBox
+    Friend WithEvents SecretaryTextBox As TextBox
+    Friend WithEvents PurposeTextBox As TextBox
+    Friend WithEvents CompanyTextBox As TextBox
+    Friend WithEvents DocumentDateCorp As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents FromPeriodLabel As Label
+    Friend WithEvents ToPeriodLabel As Label
+    Friend WithEvents MiddleNameLabel As Label
+    Friend WithEvents FirstNameLabel As Label
+    Friend WithEvents LastNameLabel As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents AddressCLabel As Label
+    Friend WithEvents TinCustomerLabel As Label
+    Friend WithEvents TinVendorLabel As Label
+    Friend WithEvents BoxNoLabel As Label
+    Friend WithEvents RackNoLabel As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents TotalValueLabel As Label
+    Friend WithEvents ItemPurchasedLabel As Label
+    Friend WithEvents CustomerLabel As Label
+    Friend WithEvents VendorLabel As Label
+    Friend WithEvents BookletNoLabel As Label
+    Friend WithEvents ReferenceNoLabel As Label
+    Friend WithEvents DocumentDateLabel As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents EmailLabel As Label
+    Friend WithEvents ContactNoLabel As Label
+    Friend WithEvents AddressLabel As Label
+    Friend WithEvents ServiceCenterLabel As Label
+    Friend WithEvents WarrantyPeriodLabel As Label
+    Friend WithEvents SerialLabel As Label
+    Friend WithEvents TotalValueLabel1 As Label
+    Friend WithEvents ReferenceNoLabel1 As Label
+    Friend WithEvents DatePurchasedLabel As Label
+    Friend WithEvents ProductTypeLabel As Label
+    Friend WithEvents ProductBrandLabel As Label
+    Friend WithEvents WarrantyNoLabel As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents DateReceivedLabel As Label
+    Friend WithEvents ReceivedbyLabel As Label
+    Friend WithEvents RecordedbyLabel As Label
+    Friend WithEvents ApprovedbyLabel As Label
+    Friend WithEvents PreparedbyLabel As Label
+    Friend WithEvents PayorLabel As Label
+    Friend WithEvents PayeeLabel As Label
+    Friend WithEvents TotalValueLabel2 As Label
+    Friend WithEvents PaymentFormLabel As Label
+    Friend WithEvents VoucherNoLabel As Label
+    Friend WithEvents DocumentDateLabel1 As Label
+    Friend WithEvents BankAddressLabel As Label
+    Friend WithEvents BankBranchLabel As Label
+    Friend WithEvents BankNameLabel As Label
+    Friend WithEvents PaymentOthersLabel As Label
+    Friend WithEvents CheckNoLabel As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Label28 As Label
+    Friend WithEvents MeetingDateLabel As Label
+    Friend WithEvents SecretaryLabel As Label
+    Friend WithEvents PurposeLabel As Label
+    Friend WithEvents CompanyLabel As Label
+    Friend WithEvents DocumentDateLabel2 As Label
+    Friend WithEvents BtnEditRecord As Button
+    Friend WithEvents BtnSaveChanges As Button
+    Friend WithEvents DMSDataSet As DMSDataSet
+    Friend WithEvents TableAdapterManager As DMSDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents DocsCatalogueBindingSource As BindingSource
+    Friend WithEvents DocsCatalogueTableAdapter As DMSDataSetTableAdapters.DocsCatalogueTableAdapter
 End Class
