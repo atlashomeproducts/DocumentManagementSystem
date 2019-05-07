@@ -85,13 +85,13 @@ Partial Class FrmEditor
         Dim Label9 As System.Windows.Forms.Label
         Dim Label10 As System.Windows.Forms.Label
         Dim Label11 As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEditor))
         Dim Label12 As System.Windows.Forms.Label
         Dim Label13 As System.Windows.Forms.Label
         Dim Label14 As System.Windows.Forms.Label
         Dim Label15 As System.Windows.Forms.Label
         Dim Label16 As System.Windows.Forms.Label
         Dim Label17 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEditor))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.DocsCatalogueC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
@@ -869,6 +869,60 @@ Partial Class FrmEditor
         Label11.TabIndex = 32
         Label11.Text = "Document Rack No.:"
         '
+        'Label12
+        '
+        Label12.AutoSize = True
+        Label12.Location = New System.Drawing.Point(284, 76)
+        Label12.Name = "Label12"
+        Label12.Size = New System.Drawing.Size(82, 16)
+        Label12.TabIndex = 35
+        Label12.Text = "MM/dd/yyyy"
+        '
+        'Label13
+        '
+        Label13.AutoSize = True
+        Label13.Location = New System.Drawing.Point(285, 76)
+        Label13.Name = "Label13"
+        Label13.Size = New System.Drawing.Size(82, 16)
+        Label13.TabIndex = 36
+        Label13.Text = "MM/dd/yyyy"
+        '
+        'Label14
+        '
+        Label14.AutoSize = True
+        Label14.Location = New System.Drawing.Point(277, 153)
+        Label14.Name = "Label14"
+        Label14.Size = New System.Drawing.Size(82, 16)
+        Label14.TabIndex = 36
+        Label14.Text = "MM/dd/yyyy"
+        '
+        'Label15
+        '
+        Label15.AutoSize = True
+        Label15.Location = New System.Drawing.Point(280, 444)
+        Label15.Name = "Label15"
+        Label15.Size = New System.Drawing.Size(82, 16)
+        Label15.TabIndex = 36
+        Label15.Text = "MM/dd/yyyy"
+        '
+        'Label16
+        '
+        Label16.AutoSize = True
+        Label16.Location = New System.Drawing.Point(281, 75)
+        Label16.Name = "Label16"
+        Label16.Size = New System.Drawing.Size(82, 16)
+        Label16.TabIndex = 36
+        Label16.Text = "MM/dd/yyyy"
+        '
+        'Label17
+        '
+        Label17.AutoSize = True
+        Label17.Location = New System.Drawing.Point(281, 106)
+        Label17.Name = "Label17"
+        Label17.Size = New System.Drawing.Size(82, 16)
+        Label17.TabIndex = 36
+        Label17.Text = "MM/dd/yyyy"
+        '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -1042,7 +1096,7 @@ Partial Class FrmEditor
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(0, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(600, 567)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(583, 624)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1212,7 +1266,7 @@ Partial Class FrmEditor
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(0, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(600, 1156)
+        Me.GrpReceipt.Size = New System.Drawing.Size(583, 1313)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1408,7 +1462,7 @@ Partial Class FrmEditor
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(0, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(600, 1270)
+        Me.GrpWarranty.Size = New System.Drawing.Size(583, 1447)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1600,7 +1654,7 @@ Partial Class FrmEditor
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 3)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(603, 1726)
+        Me.GrpVoucher.Size = New System.Drawing.Size(586, 1980)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -1879,7 +1933,7 @@ Partial Class FrmEditor
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 3)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(603, 826)
+        Me.GrpCorp.Size = New System.Drawing.Size(586, 930)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2043,60 +2097,6 @@ Partial Class FrmEditor
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'Label12
-        '
-        Label12.AutoSize = True
-        Label12.Location = New System.Drawing.Point(284, 76)
-        Label12.Name = "Label12"
-        Label12.Size = New System.Drawing.Size(82, 16)
-        Label12.TabIndex = 35
-        Label12.Text = "MM/dd/yyyy"
-        '
-        'Label13
-        '
-        Label13.AutoSize = True
-        Label13.Location = New System.Drawing.Point(285, 76)
-        Label13.Name = "Label13"
-        Label13.Size = New System.Drawing.Size(82, 16)
-        Label13.TabIndex = 36
-        Label13.Text = "MM/dd/yyyy"
-        '
-        'Label14
-        '
-        Label14.AutoSize = True
-        Label14.Location = New System.Drawing.Point(277, 153)
-        Label14.Name = "Label14"
-        Label14.Size = New System.Drawing.Size(82, 16)
-        Label14.TabIndex = 36
-        Label14.Text = "MM/dd/yyyy"
-        '
-        'Label15
-        '
-        Label15.AutoSize = True
-        Label15.Location = New System.Drawing.Point(280, 444)
-        Label15.Name = "Label15"
-        Label15.Size = New System.Drawing.Size(82, 16)
-        Label15.TabIndex = 36
-        Label15.Text = "MM/dd/yyyy"
-        '
-        'Label16
-        '
-        Label16.AutoSize = True
-        Label16.Location = New System.Drawing.Point(281, 75)
-        Label16.Name = "Label16"
-        Label16.Size = New System.Drawing.Size(82, 16)
-        Label16.TabIndex = 36
-        Label16.Text = "MM/dd/yyyy"
-        '
-        'Label17
-        '
-        Label17.AutoSize = True
-        Label17.Location = New System.Drawing.Point(281, 106)
-        Label17.Name = "Label17"
-        Label17.Size = New System.Drawing.Size(82, 16)
-        Label17.TabIndex = 36
-        Label17.Text = "MM/dd/yyyy"
         '
         'FrmEditor
         '

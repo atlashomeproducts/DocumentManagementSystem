@@ -31,7 +31,7 @@ Public Class FrmQuery
 
 
 
-    Private Sub DocumentTypeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DocumentTypeComboBox.SelectedIndexChanged
+    Private Sub DocumentTypeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) 
 
     End Sub
 
@@ -47,7 +47,7 @@ Public Class FrmQuery
         End Try
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnSearch.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) 
 
 
 

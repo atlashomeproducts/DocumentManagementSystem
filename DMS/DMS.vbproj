@@ -138,6 +138,12 @@
     <Compile Include="DMSDataSet.vb">
       <DependentUpon>DMSDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmChanges.Designer.vb">
+      <DependentUpon>FrmChanges.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChanges.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmEditor.Designer.vb">
       <DependentUpon>FrmEditor.vb</DependentUpon>
     </Compile>
@@ -187,6 +193,9 @@
     <Compile Include="Settings.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmChanges.resx">
+      <DependentUpon>FrmChanges.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEditor.resx">
       <DependentUpon>FrmEditor.vb</DependentUpon>
     </EmbeddedResource>
@@ -199,9 +208,11 @@
     <EmbeddedResource Include="FrmQuery.Designer.resx">
       <DependentUpon>FrmQuery.Designer.vb</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="FrmIndex.resx">
       <DependentUpon>FrmIndex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuery.resx">
+      <DependentUpon>FrmQuery.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">

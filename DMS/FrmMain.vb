@@ -8,6 +8,26 @@ Public Class FrmMain
     End Sub
 
     Private Sub TerminateProgramToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TerminateProgramToolStripMenuItem.Click
+
+        My.Settings.Save_RackNoTS = ""
+        My.Settings.Save_BoxNoTS = ""
+        My.Settings.Save_RackNoRI = ""
+        My.Settings.Save_BoxNoRI = ""
+        My.Settings.Save_BookletNoRI = ""
+        My.Settings.Save_RackNoWarranty = ""
+        My.Settings.Save_BoxNoWarranty = ""
+        My.Settings.Save_RackNoVoucher = ""
+        My.Settings.Save_BoxNoVoucher = ""
+        My.Settings.Save_RackNoCorpDocu = ""
+        My.Settings.Save_BoxNoCorpDocu = ""
+
+
+        My.Settings.Save()
+
+
+
+
+
         End
     End Sub
 
@@ -47,6 +67,10 @@ Public Class FrmMain
     End Sub
 
     Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
 
     End Sub
 End Class

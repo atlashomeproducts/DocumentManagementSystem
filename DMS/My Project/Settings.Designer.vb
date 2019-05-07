@@ -72,6 +72,138 @@ Namespace My
                 Return CType(Me("ImgPath"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_RackNoTS() As String
+            Get
+                Return CType(Me("Save_RackNoTS"),String)
+            End Get
+            Set
+                Me("Save_RackNoTS") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_BoxNoTS() As String
+            Get
+                Return CType(Me("Save_BoxNoTS"),String)
+            End Get
+            Set
+                Me("Save_BoxNoTS") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_RackNoRI() As String
+            Get
+                Return CType(Me("Save_RackNoRI"),String)
+            End Get
+            Set
+                Me("Save_RackNoRI") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_BoxNoRI() As String
+            Get
+                Return CType(Me("Save_BoxNoRI"),String)
+            End Get
+            Set
+                Me("Save_BoxNoRI") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_BookletNoRI() As String
+            Get
+                Return CType(Me("Save_BookletNoRI"),String)
+            End Get
+            Set
+                Me("Save_BookletNoRI") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_RackNoWarranty() As String
+            Get
+                Return CType(Me("Save_RackNoWarranty"),String)
+            End Get
+            Set
+                Me("Save_RackNoWarranty") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_BoxNoWarranty() As String
+            Get
+                Return CType(Me("Save_BoxNoWarranty"),String)
+            End Get
+            Set
+                Me("Save_BoxNoWarranty") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_RackNoVoucher() As String
+            Get
+                Return CType(Me("Save_RackNoVoucher"),String)
+            End Get
+            Set
+                Me("Save_RackNoVoucher") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_BoxNoVoucher() As String
+            Get
+                Return CType(Me("Save_BoxNoVoucher"),String)
+            End Get
+            Set
+                Me("Save_BoxNoVoucher") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_RackNoCorpDocu() As String
+            Get
+                Return CType(Me("Save_RackNoCorpDocu"),String)
+            End Get
+            Set
+                Me("Save_RackNoCorpDocu") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Save_BoxNoCorpDocu() As String
+            Get
+                Return CType(Me("Save_BoxNoCorpDocu"),String)
+            End Get
+            Set
+                Me("Save_BoxNoCorpDocu") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

@@ -121,28 +121,24 @@ Public Class FrmEditor
         Try
 
 
-            If Me.RackNoCorpDocu.Text = "" And Me.RackNoRI.Text = "" And Me.RackNoTS.Text = "" And Me.RackNoVoucher.Text = "" Then
-                Dim Rac As String = Me.RackNoWarranty.Text
-
-            ElseIf Me.RackNoCorpDocu.Text = "" And Me.RackNoRI.Text = "" And Me.RackNoTS.Text = "" And Me.RackNoWarranty.Text = "" Then
-                Dim Rac As String = Me.RackNoVoucher.Text
-
-            ElseIf Me.RackNoCorpDocu.Text = "" And Me.RackNoRI.Text = "" And Me.RackNoVoucher.Text = "" And Me.RackNoWarranty.Text = "" Then
-                Dim Rac As String = Me.RackNoTS.Text
-
-            ElseIf Me.RackNoCorpDocu.Text = "" And Me.RackNoTS.Text = "" And Me.RackNoVoucher.Text = "" And Me.RackNoWarranty.Text = "" Then
-                Dim Rac As String = Me.RackNoRI.Text
-
-            ElseIf Me.RackNoRI.Text = "" And Me.RackNoTS.Text = "" And Me.RackNoVoucher.Text = "" And Me.RackNoWarranty.Text = "" Then
-                Dim Rac As String = Me.RackNoCorpDocu.Text
-            End If
 
 
+            My.Settings.Save_RackNoTS = RackNoTS.Text
+            My.Settings.Save_BoxNoTS = BoxNoTS.Text
+            My.Settings.Save_RackNoRI = RackNoRI.Text
+            My.Settings.Save_BoxNoRI = BoxNoRI.Text
+            My.Settings.Save_BookletNoRI = BookletNoTextBox.Text
+            My.Settings.Save_RackNoWarranty = RackNoWarranty.Text
+            My.Settings.Save_BoxNoWarranty = BoxNoWarranty.Text
+            My.Settings.Save_RackNoVoucher = RackNoVoucher.Text
+            My.Settings.Save_BoxNoVoucher = BoxNoVoucher.Text
+            My.Settings.Save_RackNoCorpDocu = RackNoCorpDocu.Text
+            My.Settings.Save_BoxNoCorpDocu = BoxNoCorpDocu.Text
 
 
+            My.Settings.Save()
 
-            'Dim Box As String
-            '    Dim Book As String
+
 
 
 
@@ -159,6 +155,8 @@ Public Class FrmEditor
 
             Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue)
             Me.DocsCatalogueC1TrueDBGrid.Enabled = True
+
+
 
             'Temp Disabled
             Me.DocumentTypeComboBox.Enabled = False
@@ -336,43 +334,79 @@ Public Class FrmEditor
 
         If Me.DocumentTypeComboBox.Text = "Sales Invoice" Then
             TabControl1.SelectTab(ReceiptInvoice)
+            RackNoRI.Text = My.Settings.Save_RackNoRI
+            BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
         ElseIf Me.DocumentTypeComboBox.Text = "Official Receipt" Then
             TabControl1.SelectTab(ReceiptInvoice)
+            RackNoRI.Text = My.Settings.Save_RackNoRI
+            BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
         ElseIf Me.DocumentTypeComboBox.Text = "Delivery Receipt" Then
             TabControl1.SelectTab(ReceiptInvoice)
+            RackNoRI.Text = My.Settings.Save_RackNoRI
+            BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
         ElseIf Me.DocumentTypeComboBox.Text = "Acknowledgement Receipt" Then
             TabControl1.SelectTab(ReceiptInvoice)
+            RackNoRI.Text = My.Settings.Save_RackNoRI
+            BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
         ElseIf Me.DocumentTypeComboBox.Text = "Collection Receipt" Then
             TabControl1.SelectTab(ReceiptInvoice)
+            RackNoRI.Text = My.Settings.Save_RackNoRI
+            BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
         ElseIf Me.DocumentTypeComboBox.Text = "Provisional Receipt" Then
             TabControl1.SelectTab(ReceiptInvoice)
+            RackNoRI.Text = My.Settings.Save_RackNoRI
+            BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
 
 
 
         ElseIf Me.DocumentTypeComboBox.Text = "Daily Time Record" Then
             TabControl1.SelectTab(Timesheet)
+            RackNoTS.Text = My.Settings.Save_RackNoTS
+            BoxNoTS.Text = My.Settings.Save_BoxNoTS
 
 
         ElseIf Me.DocumentTypeComboBox.Text = "Warranty Card" Then
             TabControl1.SelectTab(Warranty)
+            RackNoWarranty.Text = My.Settings.Save_RackNoWarranty
+            BoxNoWarranty.Text = My.Settings.Save_BoxNoWarranty
 
 
         ElseIf Me.DocumentTypeComboBox.Text = "Payment Voucher" Then
             TabControl1.SelectTab(Voucher)
+            RackNoVoucher.Text = My.Settings.Save_RackNoVoucher
+            BoxNoVoucher.Text = My.Settings.Save_BoxNoVoucher
 
 
         ElseIf Me.DocumentTypeComboBox.Text = "Secretary's Certificate" Then
             TabControl1.SelectTab(CorpDocu)
+            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
         ElseIf Me.DocumentTypeComboBox.Text = "Minutes of Board Meeting" Then
             TabControl1.SelectTab(CorpDocu)
+            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
         ElseIf Me.DocumentTypeComboBox.Text = "Articles of Incorporation" Then
             TabControl1.SelectTab(CorpDocu)
+            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
         ElseIf Me.DocumentTypeComboBox.Text = "SEC Certificate of Registration" Then
             TabControl1.SelectTab(CorpDocu)
+            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
         ElseIf Me.DocumentTypeComboBox.Text = "DTI Registration" Then
             TabControl1.SelectTab(CorpDocu)
+            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
         ElseIf Me.DocumentTypeComboBox.Text = "Financial Statement" Then
             TabControl1.SelectTab(CorpDocu)
+            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
 
 
 
