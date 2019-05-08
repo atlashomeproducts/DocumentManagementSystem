@@ -134,12 +134,7 @@ Public Class FrmEditor
             My.Settings.Save_BoxNoVoucher = BoxNoVoucher.Text
             My.Settings.Save_RackNoCorpDocu = RackNoCorpDocu.Text
             My.Settings.Save_BoxNoCorpDocu = BoxNoCorpDocu.Text
-
-
             My.Settings.Save()
-
-
-
 
 
             Me.Validate()
@@ -192,13 +187,11 @@ Public Class FrmEditor
             DocumentTypeComboBox.Text = ""
             DocumentDateRI.Clear()
             ReferenceNoRI.Clear()
-            ' RemarksTextBox.Clear()
             BookletNoTextBox.Clear()
             ReferenceNoRI.Clear()
             VendorTextBox.Clear()
             CustomerTextBox.Clear()
             ItemPurchasedTextBox.Clear()
-            '  RemarksTextBox.Clear()
             TotalValueRI.Clear()
             RackNoRI.Clear()
             BoxNoRI.Clear()
@@ -207,6 +200,8 @@ Public Class FrmEditor
             AddressCTextBox.Clear()
             TinCustomerTextBox.Clear()
             TinVendorTextBox.Clear()
+            Me.VATregCheckBox.Checked = False
+            Me.NONVATregCheckBox.Checked = False
 
 
 
@@ -619,4 +614,102 @@ Public Class FrmEditor
     End Sub
 
 
+
+    Private Sub DocumentDateRI_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateRI.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DocumentDateRI.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateRI.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DocumentDateRI.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DocumentDateRI.Clear()
+        End If
+    End Sub
+
+    Private Sub DocumentDateTS_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateTS.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DocumentDateTS.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateTS.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DocumentDateTS.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DocumentDateTS.Clear()
+        End If
+    End Sub
+
+
+    Private Sub FromPeriodTextBox_LostFocus(sender As Object, e As EventArgs) Handles FromPeriodTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FromPeriodTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FromPeriodTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FromPeriodTextBox.Clear()
+        End If
+    End Sub
+
+    Private Sub ToPeriodTextBox_LostFocus(sender As Object, e As EventArgs) Handles ToPeriodTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(ToPeriodTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.ToPeriodTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.ToPeriodTextBox.Clear()
+        End If
+    End Sub
+    Private Sub DocumentDateVoucher_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateVoucher.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DocumentDateVoucher.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateVoucher.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DocumentDateVoucher.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DocumentDateVoucher.Clear()
+        End If
+    End Sub
+
+    Private Sub DatePurchasedTextBox_LostFocus(sender As Object, e As EventArgs) Handles DatePurchasedTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DatePurchasedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DatePurchasedTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DatePurchasedTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DatePurchasedTextBox.Clear()
+        End If
+    End Sub
+
+    Private Sub DateReceivedTextBox_LostFocus(sender As Object, e As EventArgs) Handles DateReceivedTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DateReceivedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DateReceivedTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DateReceivedTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DateReceivedTextBox.Clear()
+        End If
+    End Sub
+
+    Private Sub DocumentDateCorp_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateCorp.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DocumentDateCorp.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateCorp.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DocumentDateCorp.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DocumentDateCorp.Clear()
+        End If
+    End Sub
+    Private Sub MeetingDateTextBox_LostFocus(sender As Object, e As EventArgs) Handles MeetingDateTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(MeetingDateTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.MeetingDateTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.MeetingDateTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.MeetingDateTextBox.Clear()
+        End If
+    End Sub
 End Class

@@ -91,9 +91,13 @@ Partial Class FrmEditor
         Dim Label15 As System.Windows.Forms.Label
         Dim Label16 As System.Windows.Forms.Label
         Dim Label17 As System.Windows.Forms.Label
+        Dim Label18 As System.Windows.Forms.Label
+        Dim Label19 As System.Windows.Forms.Label
+        Dim Label20 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEditor))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
+        Me.DocsCatalogueC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DMSDataSet = New DMS.DMSDataSet()
         Me.BtnCancel1 = New System.Windows.Forms.Button()
@@ -195,7 +199,6 @@ Partial Class FrmEditor
         Me.AcroReader1 = New AxAcroPDFLib.AxAcroPDF()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
-        Me.DocsCatalogueC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         DocumentDateLabel = New System.Windows.Forms.Label()
         ReferenceNoLabel = New System.Windows.Forms.Label()
@@ -264,6 +267,9 @@ Partial Class FrmEditor
         Label15 = New System.Windows.Forms.Label()
         Label16 = New System.Windows.Forms.Label()
         Label17 = New System.Windows.Forms.Label()
+        Label18 = New System.Windows.Forms.Label()
+        Label19 = New System.Windows.Forms.Label()
+        Label20 = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -272,6 +278,7 @@ Partial Class FrmEditor
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
+        CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -292,7 +299,6 @@ Partial Class FrmEditor
         Me.GrpCorp.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DocumentTypeLabel
@@ -876,7 +882,7 @@ Partial Class FrmEditor
         Label12.Name = "Label12"
         Label12.Size = New System.Drawing.Size(82, 16)
         Label12.TabIndex = 35
-        Label12.Text = "MM/dd/yyyy"
+        Label12.Text = "mm/dd/yyyy"
         '
         'Label13
         '
@@ -894,7 +900,7 @@ Partial Class FrmEditor
         Label14.Name = "Label14"
         Label14.Size = New System.Drawing.Size(82, 16)
         Label14.TabIndex = 36
-        Label14.Text = "MM/dd/yyyy"
+        Label14.Text = "mm/dd/yyyy"
         '
         'Label15
         '
@@ -903,7 +909,7 @@ Partial Class FrmEditor
         Label15.Name = "Label15"
         Label15.Size = New System.Drawing.Size(82, 16)
         Label15.TabIndex = 36
-        Label15.Text = "MM/dd/yyyy"
+        Label15.Text = "mm/dd/yyyy"
         '
         'Label16
         '
@@ -912,7 +918,7 @@ Partial Class FrmEditor
         Label16.Name = "Label16"
         Label16.Size = New System.Drawing.Size(82, 16)
         Label16.TabIndex = 36
-        Label16.Text = "MM/dd/yyyy"
+        Label16.Text = "mm/dd/yyyy"
         '
         'Label17
         '
@@ -921,7 +927,34 @@ Partial Class FrmEditor
         Label17.Name = "Label17"
         Label17.Size = New System.Drawing.Size(82, 16)
         Label17.TabIndex = 36
-        Label17.Text = "MM/dd/yyyy"
+        Label17.Text = "mm/dd/yyyy"
+        '
+        'Label18
+        '
+        Label18.AutoSize = True
+        Label18.Location = New System.Drawing.Point(306, 24)
+        Label18.Name = "Label18"
+        Label18.Size = New System.Drawing.Size(82, 16)
+        Label18.TabIndex = 36
+        Label18.Text = "mm/dd/yyyy"
+        '
+        'Label19
+        '
+        Label19.AutoSize = True
+        Label19.Location = New System.Drawing.Point(306, 50)
+        Label19.Name = "Label19"
+        Label19.Size = New System.Drawing.Size(82, 16)
+        Label19.TabIndex = 37
+        Label19.Text = "mm/dd/yyyy"
+        '
+        'Label20
+        '
+        Label20.AutoSize = True
+        Label20.Location = New System.Drawing.Point(280, 76)
+        Label20.Name = "Label20"
+        Label20.Size = New System.Drawing.Size(82, 16)
+        Label20.TabIndex = 37
+        Label20.Text = "mm/dd/yyyy"
         '
         'SplitContainer1
         '
@@ -939,6 +972,7 @@ Partial Class FrmEditor
         Me.SplitContainer1.Size = New System.Drawing.Size(1197, 684)
         Me.SplitContainer1.SplitterDistance = 641
         Me.SplitContainer1.TabIndex = 0
+        Me.SplitContainer1.TabStop = False
         '
         'SplitContainer2
         '
@@ -969,6 +1003,31 @@ Partial Class FrmEditor
         Me.SplitContainer2.Size = New System.Drawing.Size(641, 684)
         Me.SplitContainer2.SplitterDistance = 274
         Me.SplitContainer2.TabIndex = 0
+        Me.SplitContainer2.TabStop = False
+        '
+        'DocsCatalogueC1TrueDBGrid
+        '
+        Me.DocsCatalogueC1TrueDBGrid.AllowUpdate = False
+        Me.DocsCatalogueC1TrueDBGrid.AlternatingRows = True
+        Me.DocsCatalogueC1TrueDBGrid.DataSource = Me.DocsCatalogueBindingSource
+        Me.DocsCatalogueC1TrueDBGrid.DataView = C1.Win.C1TrueDBGrid.DataViewEnum.GroupBy
+        Me.DocsCatalogueC1TrueDBGrid.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DocsCatalogueC1TrueDBGrid.ExtendRightColumn = True
+        Me.DocsCatalogueC1TrueDBGrid.FilterBar = True
+        Me.DocsCatalogueC1TrueDBGrid.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
+        Me.DocsCatalogueC1TrueDBGrid.GroupByCaption = "Drag a column header here to group by that column"
+        Me.DocsCatalogueC1TrueDBGrid.Images.Add(CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.Images"), System.Drawing.Image))
+        Me.DocsCatalogueC1TrueDBGrid.LinesPerRow = 10
+        Me.DocsCatalogueC1TrueDBGrid.Location = New System.Drawing.Point(0, 0)
+        Me.DocsCatalogueC1TrueDBGrid.Name = "DocsCatalogueC1TrueDBGrid"
+        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.Location = New System.Drawing.Point(0, 0)
+        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.Size = New System.Drawing.Size(0, 0)
+        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
+        Me.DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
+        Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(641, 274)
+        Me.DocsCatalogueC1TrueDBGrid.TabIndex = 0
+        Me.DocsCatalogueC1TrueDBGrid.UseCompatibleTextRendering = False
+        Me.DocsCatalogueC1TrueDBGrid.PropBag = resources.GetString("DocsCatalogueC1TrueDBGrid.PropBag")
         '
         'DocsCatalogueBindingSource
         '
@@ -1095,6 +1154,8 @@ Partial Class FrmEditor
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Label19)
+        Me.GroupBox1.Controls.Add(Label18)
         Me.GroupBox1.Controls.Add(FromPeriodLabel)
         Me.GroupBox1.Controls.Add(Me.DTToPeriod)
         Me.GroupBox1.Controls.Add(Me.FromPeriodTextBox)
@@ -1113,7 +1174,7 @@ Partial Class FrmEditor
         Me.DTToPeriod.Location = New System.Drawing.Point(285, 47)
         Me.DTToPeriod.Name = "DTToPeriod"
         Me.DTToPeriod.Size = New System.Drawing.Size(18, 22)
-        Me.DTToPeriod.TabIndex = 13
+        Me.DTToPeriod.TabIndex = 16
         '
         'FromPeriodTextBox
         '
@@ -1122,8 +1183,7 @@ Partial Class FrmEditor
         Me.FromPeriodTextBox.Location = New System.Drawing.Point(181, 21)
         Me.FromPeriodTextBox.Name = "FromPeriodTextBox"
         Me.FromPeriodTextBox.Size = New System.Drawing.Size(104, 22)
-        Me.FromPeriodTextBox.TabIndex = 12
-        Me.FromPeriodTextBox.TabStop = False
+        Me.FromPeriodTextBox.TabIndex = 13
         Me.FromPeriodTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DTFromPeriod
@@ -1131,7 +1191,7 @@ Partial Class FrmEditor
         Me.DTFromPeriod.Location = New System.Drawing.Point(286, 21)
         Me.DTFromPeriod.Name = "DTFromPeriod"
         Me.DTFromPeriod.Size = New System.Drawing.Size(18, 22)
-        Me.DTFromPeriod.TabIndex = 12
+        Me.DTFromPeriod.TabIndex = 14
         '
         'ToPeriodTextBox
         '
@@ -1140,8 +1200,7 @@ Partial Class FrmEditor
         Me.ToPeriodTextBox.Location = New System.Drawing.Point(181, 47)
         Me.ToPeriodTextBox.Name = "ToPeriodTextBox"
         Me.ToPeriodTextBox.Size = New System.Drawing.Size(103, 22)
-        Me.ToPeriodTextBox.TabIndex = 29
-        Me.ToPeriodTextBox.TabStop = False
+        Me.ToPeriodTextBox.TabIndex = 15
         Me.ToPeriodTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'MiddleNameTextBox
@@ -1151,7 +1210,7 @@ Partial Class FrmEditor
         Me.MiddleNameTextBox.Location = New System.Drawing.Point(158, 151)
         Me.MiddleNameTextBox.Name = "MiddleNameTextBox"
         Me.MiddleNameTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.MiddleNameTextBox.TabIndex = 11
+        Me.MiddleNameTextBox.TabIndex = 12
         '
         'FirstNameTextBox
         '
@@ -1160,7 +1219,7 @@ Partial Class FrmEditor
         Me.FirstNameTextBox.Location = New System.Drawing.Point(158, 128)
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
         Me.FirstNameTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.FirstNameTextBox.TabIndex = 10
+        Me.FirstNameTextBox.TabIndex = 11
         '
         'LastNameTextBox
         '
@@ -1169,7 +1228,7 @@ Partial Class FrmEditor
         Me.LastNameTextBox.Location = New System.Drawing.Point(158, 105)
         Me.LastNameTextBox.Name = "LastNameTextBox"
         Me.LastNameTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.LastNameTextBox.TabIndex = 9
+        Me.LastNameTextBox.TabIndex = 10
         '
         'DocumentDateTS
         '
@@ -1179,7 +1238,6 @@ Partial Class FrmEditor
         Me.DocumentDateTS.Name = "DocumentDateTS"
         Me.DocumentDateTS.Size = New System.Drawing.Size(104, 22)
         Me.DocumentDateTS.TabIndex = 8
-        Me.DocumentDateTS.TabStop = False
         Me.DocumentDateTS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DTDocuTimeSheet
@@ -1187,7 +1245,7 @@ Partial Class FrmEditor
         Me.DTDocuTimeSheet.Location = New System.Drawing.Point(263, 73)
         Me.DTDocuTimeSheet.Name = "DTDocuTimeSheet"
         Me.DTDocuTimeSheet.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuTimeSheet.TabIndex = 8
+        Me.DTDocuTimeSheet.TabIndex = 9
         '
         'ReceiptInvoice
         '
@@ -1249,7 +1307,7 @@ Partial Class FrmEditor
         Me.NONVATregCheckBox.Location = New System.Drawing.Point(413, 49)
         Me.NONVATregCheckBox.Name = "NONVATregCheckBox"
         Me.NONVATregCheckBox.Size = New System.Drawing.Size(160, 24)
-        Me.NONVATregCheckBox.TabIndex = 18
+        Me.NONVATregCheckBox.TabIndex = 19
         Me.NONVATregCheckBox.Text = "NON-VAT Registered"
         Me.NONVATregCheckBox.UseVisualStyleBackColor = True
         '
@@ -1259,7 +1317,7 @@ Partial Class FrmEditor
         Me.VATregCheckBox.Location = New System.Drawing.Point(413, 27)
         Me.VATregCheckBox.Name = "VATregCheckBox"
         Me.VATregCheckBox.Size = New System.Drawing.Size(127, 24)
-        Me.VATregCheckBox.TabIndex = 17
+        Me.VATregCheckBox.TabIndex = 18
         Me.VATregCheckBox.Text = "VAT Registered"
         Me.VATregCheckBox.UseVisualStyleBackColor = True
         '
@@ -1270,7 +1328,7 @@ Partial Class FrmEditor
         Me.AddressCTextBox.Location = New System.Drawing.Point(158, 200)
         Me.AddressCTextBox.Name = "AddressCTextBox"
         Me.AddressCTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.AddressCTextBox.TabIndex = 13
+        Me.AddressCTextBox.TabIndex = 14
         '
         'TinCustomerTextBox
         '
@@ -1279,7 +1337,7 @@ Partial Class FrmEditor
         Me.TinCustomerTextBox.Location = New System.Drawing.Point(158, 252)
         Me.TinCustomerTextBox.Name = "TinCustomerTextBox"
         Me.TinCustomerTextBox.Size = New System.Drawing.Size(182, 22)
-        Me.TinCustomerTextBox.TabIndex = 15
+        Me.TinCustomerTextBox.TabIndex = 16
         '
         'TinVendorTextBox
         '
@@ -1288,7 +1346,7 @@ Partial Class FrmEditor
         Me.TinVendorTextBox.Location = New System.Drawing.Point(158, 229)
         Me.TinVendorTextBox.Name = "TinVendorTextBox"
         Me.TinVendorTextBox.Size = New System.Drawing.Size(182, 22)
-        Me.TinVendorTextBox.TabIndex = 14
+        Me.TinVendorTextBox.TabIndex = 15
         '
         'BoxNoRI
         '
@@ -1316,7 +1374,6 @@ Partial Class FrmEditor
         Me.DocumentDateRI.Name = "DocumentDateRI"
         Me.DocumentDateRI.Size = New System.Drawing.Size(104, 22)
         Me.DocumentDateRI.TabIndex = 8
-        Me.DocumentDateRI.TabStop = False
         Me.DocumentDateRI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TotalValueRI
@@ -1326,7 +1383,7 @@ Partial Class FrmEditor
         Me.TotalValueRI.Location = New System.Drawing.Point(434, 102)
         Me.TotalValueRI.Name = "TotalValueRI"
         Me.TotalValueRI.Size = New System.Drawing.Size(140, 22)
-        Me.TotalValueRI.TabIndex = 19
+        Me.TotalValueRI.TabIndex = 20
         '
         'ItemPurchasedTextBox
         '
@@ -1336,7 +1393,7 @@ Partial Class FrmEditor
         Me.ItemPurchasedTextBox.Multiline = True
         Me.ItemPurchasedTextBox.Name = "ItemPurchasedTextBox"
         Me.ItemPurchasedTextBox.Size = New System.Drawing.Size(416, 83)
-        Me.ItemPurchasedTextBox.TabIndex = 16
+        Me.ItemPurchasedTextBox.TabIndex = 17
         '
         'CustomerTextBox
         '
@@ -1345,7 +1402,7 @@ Partial Class FrmEditor
         Me.CustomerTextBox.Location = New System.Drawing.Point(158, 177)
         Me.CustomerTextBox.Name = "CustomerTextBox"
         Me.CustomerTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.CustomerTextBox.TabIndex = 12
+        Me.CustomerTextBox.TabIndex = 13
         '
         'VendorTextBox
         '
@@ -1354,7 +1411,7 @@ Partial Class FrmEditor
         Me.VendorTextBox.Location = New System.Drawing.Point(158, 154)
         Me.VendorTextBox.Name = "VendorTextBox"
         Me.VendorTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.VendorTextBox.TabIndex = 11
+        Me.VendorTextBox.TabIndex = 12
         '
         'BookletNoTextBox
         '
@@ -1363,14 +1420,14 @@ Partial Class FrmEditor
         Me.BookletNoTextBox.Location = New System.Drawing.Point(158, 102)
         Me.BookletNoTextBox.Name = "BookletNoTextBox"
         Me.BookletNoTextBox.Size = New System.Drawing.Size(123, 22)
-        Me.BookletNoTextBox.TabIndex = 9
+        Me.BookletNoTextBox.TabIndex = 10
         '
         'DTDocuRI
         '
         Me.DTDocuRI.Location = New System.Drawing.Point(263, 73)
         Me.DTDocuRI.Name = "DTDocuRI"
         Me.DTDocuRI.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuRI.TabIndex = 8
+        Me.DTDocuRI.TabIndex = 9
         '
         'ReferenceNoRI
         '
@@ -1379,7 +1436,7 @@ Partial Class FrmEditor
         Me.ReferenceNoRI.Location = New System.Drawing.Point(158, 125)
         Me.ReferenceNoRI.Name = "ReferenceNoRI"
         Me.ReferenceNoRI.Size = New System.Drawing.Size(123, 22)
-        Me.ReferenceNoRI.TabIndex = 10
+        Me.ReferenceNoRI.TabIndex = 11
         '
         'Warranty
         '
@@ -1460,7 +1517,7 @@ Partial Class FrmEditor
         Me.DTDatePurchased.Location = New System.Drawing.Point(255, 149)
         Me.DTDatePurchased.Name = "DTDatePurchased"
         Me.DTDatePurchased.Size = New System.Drawing.Size(18, 22)
-        Me.DTDatePurchased.TabIndex = 11
+        Me.DTDatePurchased.TabIndex = 12
         '
         'EmailTextBox
         '
@@ -1469,7 +1526,7 @@ Partial Class FrmEditor
         Me.EmailTextBox.Location = New System.Drawing.Point(158, 359)
         Me.EmailTextBox.Name = "EmailTextBox"
         Me.EmailTextBox.Size = New System.Drawing.Size(191, 22)
-        Me.EmailTextBox.TabIndex = 18
+        Me.EmailTextBox.TabIndex = 19
         '
         'ContactNoTextBox
         '
@@ -1478,7 +1535,7 @@ Partial Class FrmEditor
         Me.ContactNoTextBox.Location = New System.Drawing.Point(158, 336)
         Me.ContactNoTextBox.Name = "ContactNoTextBox"
         Me.ContactNoTextBox.Size = New System.Drawing.Size(191, 22)
-        Me.ContactNoTextBox.TabIndex = 17
+        Me.ContactNoTextBox.TabIndex = 18
         '
         'AddressTextBox
         '
@@ -1488,7 +1545,7 @@ Partial Class FrmEditor
         Me.AddressTextBox.Multiline = True
         Me.AddressTextBox.Name = "AddressTextBox"
         Me.AddressTextBox.Size = New System.Drawing.Size(414, 47)
-        Me.AddressTextBox.TabIndex = 16
+        Me.AddressTextBox.TabIndex = 17
         '
         'ServiceCenterTextBox
         '
@@ -1497,7 +1554,7 @@ Partial Class FrmEditor
         Me.ServiceCenterTextBox.Location = New System.Drawing.Point(158, 258)
         Me.ServiceCenterTextBox.Name = "ServiceCenterTextBox"
         Me.ServiceCenterTextBox.Size = New System.Drawing.Size(414, 22)
-        Me.ServiceCenterTextBox.TabIndex = 15
+        Me.ServiceCenterTextBox.TabIndex = 16
         '
         'WarrantyPeriodTextBox
         '
@@ -1506,7 +1563,7 @@ Partial Class FrmEditor
         Me.WarrantyPeriodTextBox.Location = New System.Drawing.Point(158, 227)
         Me.WarrantyPeriodTextBox.Name = "WarrantyPeriodTextBox"
         Me.WarrantyPeriodTextBox.Size = New System.Drawing.Size(140, 22)
-        Me.WarrantyPeriodTextBox.TabIndex = 14
+        Me.WarrantyPeriodTextBox.TabIndex = 15
         '
         'SerialTextBox
         '
@@ -1524,7 +1581,7 @@ Partial Class FrmEditor
         Me.TotalValueWarranty.Location = New System.Drawing.Point(158, 382)
         Me.TotalValueWarranty.Name = "TotalValueWarranty"
         Me.TotalValueWarranty.Size = New System.Drawing.Size(191, 22)
-        Me.TotalValueWarranty.TabIndex = 19
+        Me.TotalValueWarranty.TabIndex = 20
         '
         'ReferenceNoTextBox1
         '
@@ -1533,7 +1590,7 @@ Partial Class FrmEditor
         Me.ReferenceNoTextBox1.Location = New System.Drawing.Point(158, 181)
         Me.ReferenceNoTextBox1.Name = "ReferenceNoTextBox1"
         Me.ReferenceNoTextBox1.Size = New System.Drawing.Size(140, 22)
-        Me.ReferenceNoTextBox1.TabIndex = 12
+        Me.ReferenceNoTextBox1.TabIndex = 13
         '
         'DatePurchasedTextBox
         '
@@ -1542,8 +1599,7 @@ Partial Class FrmEditor
         Me.DatePurchasedTextBox.Location = New System.Drawing.Point(158, 149)
         Me.DatePurchasedTextBox.Name = "DatePurchasedTextBox"
         Me.DatePurchasedTextBox.Size = New System.Drawing.Size(95, 22)
-        Me.DatePurchasedTextBox.TabIndex = 7
-        Me.DatePurchasedTextBox.TabStop = False
+        Me.DatePurchasedTextBox.TabIndex = 11
         Me.DatePurchasedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ProductTypeTextBox
@@ -1571,7 +1627,7 @@ Partial Class FrmEditor
         Me.WarrantyNoTextBox.Location = New System.Drawing.Point(158, 204)
         Me.WarrantyNoTextBox.Name = "WarrantyNoTextBox"
         Me.WarrantyNoTextBox.Size = New System.Drawing.Size(140, 22)
-        Me.WarrantyNoTextBox.TabIndex = 13
+        Me.WarrantyNoTextBox.TabIndex = 14
         '
         'Voucher
         '
@@ -1587,6 +1643,7 @@ Partial Class FrmEditor
         '
         'GrpVoucher
         '
+        Me.GrpVoucher.Controls.Add(Label20)
         Me.GrpVoucher.Controls.Add(Label15)
         Me.GrpVoucher.Controls.Add(Me.DTDateReceived)
         Me.GrpVoucher.Controls.Add(Label7)
@@ -1632,7 +1689,7 @@ Partial Class FrmEditor
         Me.DTDateReceived.Location = New System.Drawing.Point(259, 441)
         Me.DTDateReceived.Name = "DTDateReceived"
         Me.DTDateReceived.Size = New System.Drawing.Size(18, 22)
-        Me.DTDateReceived.TabIndex = 21
+        Me.DTDateReceived.TabIndex = 23
         '
         'BoxNoVoucher
         '
@@ -1659,8 +1716,7 @@ Partial Class FrmEditor
         Me.DateReceivedTextBox.Location = New System.Drawing.Point(158, 441)
         Me.DateReceivedTextBox.Name = "DateReceivedTextBox"
         Me.DateReceivedTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.DateReceivedTextBox.TabIndex = 27
-        Me.DateReceivedTextBox.TabStop = False
+        Me.DateReceivedTextBox.TabIndex = 22
         '
         'PaymentFormComboBox
         '
@@ -1671,14 +1727,14 @@ Partial Class FrmEditor
         Me.PaymentFormComboBox.Location = New System.Drawing.Point(158, 180)
         Me.PaymentFormComboBox.Name = "PaymentFormComboBox"
         Me.PaymentFormComboBox.Size = New System.Drawing.Size(183, 24)
-        Me.PaymentFormComboBox.TabIndex = 10
+        Me.PaymentFormComboBox.TabIndex = 13
         '
         'DTDocuVoucher
         '
         Me.DTDocuVoucher.Location = New System.Drawing.Point(259, 73)
         Me.DTDocuVoucher.Name = "DTDocuVoucher"
         Me.DTDocuVoucher.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuVoucher.TabIndex = 8
+        Me.DTDocuVoucher.TabIndex = 9
         '
         'ReceivedbyTextBox
         '
@@ -1687,7 +1743,7 @@ Partial Class FrmEditor
         Me.ReceivedbyTextBox.Location = New System.Drawing.Point(158, 418)
         Me.ReceivedbyTextBox.Name = "ReceivedbyTextBox"
         Me.ReceivedbyTextBox.Size = New System.Drawing.Size(326, 22)
-        Me.ReceivedbyTextBox.TabIndex = 20
+        Me.ReceivedbyTextBox.TabIndex = 21
         '
         'RecordedbyTextBox
         '
@@ -1696,7 +1752,7 @@ Partial Class FrmEditor
         Me.RecordedbyTextBox.Location = New System.Drawing.Point(158, 395)
         Me.RecordedbyTextBox.Name = "RecordedbyTextBox"
         Me.RecordedbyTextBox.Size = New System.Drawing.Size(326, 22)
-        Me.RecordedbyTextBox.TabIndex = 19
+        Me.RecordedbyTextBox.TabIndex = 20
         '
         'ApprovedbyTextBox
         '
@@ -1705,7 +1761,7 @@ Partial Class FrmEditor
         Me.ApprovedbyTextBox.Location = New System.Drawing.Point(158, 372)
         Me.ApprovedbyTextBox.Name = "ApprovedbyTextBox"
         Me.ApprovedbyTextBox.Size = New System.Drawing.Size(326, 22)
-        Me.ApprovedbyTextBox.TabIndex = 18
+        Me.ApprovedbyTextBox.TabIndex = 19
         '
         'PreparedbyTextBox
         '
@@ -1714,7 +1770,7 @@ Partial Class FrmEditor
         Me.PreparedbyTextBox.Location = New System.Drawing.Point(158, 349)
         Me.PreparedbyTextBox.Name = "PreparedbyTextBox"
         Me.PreparedbyTextBox.Size = New System.Drawing.Size(326, 22)
-        Me.PreparedbyTextBox.TabIndex = 17
+        Me.PreparedbyTextBox.TabIndex = 18
         '
         'PayorTextBox
         '
@@ -1723,7 +1779,7 @@ Partial Class FrmEditor
         Me.PayorTextBox.Location = New System.Drawing.Point(158, 126)
         Me.PayorTextBox.Name = "PayorTextBox"
         Me.PayorTextBox.Size = New System.Drawing.Size(406, 22)
-        Me.PayorTextBox.TabIndex = 10
+        Me.PayorTextBox.TabIndex = 11
         '
         'PayeeTextBox
         '
@@ -1732,7 +1788,7 @@ Partial Class FrmEditor
         Me.PayeeTextBox.Location = New System.Drawing.Point(158, 103)
         Me.PayeeTextBox.Name = "PayeeTextBox"
         Me.PayeeTextBox.Size = New System.Drawing.Size(406, 22)
-        Me.PayeeTextBox.TabIndex = 9
+        Me.PayeeTextBox.TabIndex = 10
         '
         'TotalValueVoucher
         '
@@ -1741,7 +1797,7 @@ Partial Class FrmEditor
         Me.TotalValueVoucher.Location = New System.Drawing.Point(158, 326)
         Me.TotalValueVoucher.Name = "TotalValueVoucher"
         Me.TotalValueVoucher.Size = New System.Drawing.Size(183, 22)
-        Me.TotalValueVoucher.TabIndex = 16
+        Me.TotalValueVoucher.TabIndex = 17
         '
         'VoucherNoTextBox
         '
@@ -1750,7 +1806,7 @@ Partial Class FrmEditor
         Me.VoucherNoTextBox.Location = New System.Drawing.Point(158, 149)
         Me.VoucherNoTextBox.Name = "VoucherNoTextBox"
         Me.VoucherNoTextBox.Size = New System.Drawing.Size(183, 22)
-        Me.VoucherNoTextBox.TabIndex = 11
+        Me.VoucherNoTextBox.TabIndex = 12
         '
         'DocumentDateVoucher
         '
@@ -1759,8 +1815,7 @@ Partial Class FrmEditor
         Me.DocumentDateVoucher.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateVoucher.Name = "DocumentDateVoucher"
         Me.DocumentDateVoucher.Size = New System.Drawing.Size(100, 22)
-        Me.DocumentDateVoucher.TabIndex = 1
-        Me.DocumentDateVoucher.TabStop = False
+        Me.DocumentDateVoucher.TabIndex = 8
         Me.DocumentDateVoucher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TabControl2
@@ -1801,7 +1856,7 @@ Partial Class FrmEditor
         Me.BankAddressTextBox.Multiline = True
         Me.BankAddressTextBox.Name = "BankAddressTextBox"
         Me.BankAddressTextBox.Size = New System.Drawing.Size(367, 46)
-        Me.BankAddressTextBox.TabIndex = 15
+        Me.BankAddressTextBox.TabIndex = 16
         '
         'BankBranchTextBox
         '
@@ -1809,7 +1864,7 @@ Partial Class FrmEditor
         Me.BankBranchTextBox.Location = New System.Drawing.Point(154, 25)
         Me.BankBranchTextBox.Name = "BankBranchTextBox"
         Me.BankBranchTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.BankBranchTextBox.TabIndex = 14
+        Me.BankBranchTextBox.TabIndex = 15
         '
         'BankNameTextBox
         '
@@ -1817,7 +1872,7 @@ Partial Class FrmEditor
         Me.BankNameTextBox.Location = New System.Drawing.Point(154, 2)
         Me.BankNameTextBox.Name = "BankNameTextBox"
         Me.BankNameTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.BankNameTextBox.TabIndex = 13
+        Me.BankNameTextBox.TabIndex = 14
         '
         'Others
         '
@@ -1840,7 +1895,7 @@ Partial Class FrmEditor
         Me.PaymentOthersTextBox.Location = New System.Drawing.Point(154, 4)
         Me.PaymentOthersTextBox.Name = "PaymentOthersTextBox"
         Me.PaymentOthersTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.PaymentOthersTextBox.TabIndex = 13
+        Me.PaymentOthersTextBox.TabIndex = 14
         '
         'Check
         '
@@ -1860,7 +1915,7 @@ Partial Class FrmEditor
         Me.CheckNoTextBox.Location = New System.Drawing.Point(154, 4)
         Me.CheckNoTextBox.Name = "CheckNoTextBox"
         Me.CheckNoTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.CheckNoTextBox.TabIndex = 13
+        Me.CheckNoTextBox.TabIndex = 14
         '
         'CorpDocu
         '
@@ -1927,14 +1982,14 @@ Partial Class FrmEditor
         Me.DTMeetingDate.Location = New System.Drawing.Point(259, 103)
         Me.DTMeetingDate.Name = "DTMeetingDate"
         Me.DTMeetingDate.Size = New System.Drawing.Size(18, 22)
-        Me.DTMeetingDate.TabIndex = 9
+        Me.DTMeetingDate.TabIndex = 11
         '
         'DTDocuCorp
         '
         Me.DTDocuCorp.Location = New System.Drawing.Point(259, 73)
         Me.DTDocuCorp.Name = "DTDocuCorp"
         Me.DTDocuCorp.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuCorp.TabIndex = 8
+        Me.DTDocuCorp.TabIndex = 9
         '
         'MeetingDateTextBox
         '
@@ -1943,8 +1998,7 @@ Partial Class FrmEditor
         Me.MeetingDateTextBox.Location = New System.Drawing.Point(158, 103)
         Me.MeetingDateTextBox.Name = "MeetingDateTextBox"
         Me.MeetingDateTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.MeetingDateTextBox.TabIndex = 9
-        Me.MeetingDateTextBox.TabStop = False
+        Me.MeetingDateTextBox.TabIndex = 10
         Me.MeetingDateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SecretaryTextBox
@@ -1954,7 +2008,7 @@ Partial Class FrmEditor
         Me.SecretaryTextBox.Location = New System.Drawing.Point(158, 149)
         Me.SecretaryTextBox.Name = "SecretaryTextBox"
         Me.SecretaryTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.SecretaryTextBox.TabIndex = 11
+        Me.SecretaryTextBox.TabIndex = 13
         '
         'PurposeTextBox
         '
@@ -1964,7 +2018,7 @@ Partial Class FrmEditor
         Me.PurposeTextBox.Multiline = True
         Me.PurposeTextBox.Name = "PurposeTextBox"
         Me.PurposeTextBox.Size = New System.Drawing.Size(416, 137)
-        Me.PurposeTextBox.TabIndex = 12
+        Me.PurposeTextBox.TabIndex = 14
         '
         'CompanyTextBox
         '
@@ -1973,7 +2027,7 @@ Partial Class FrmEditor
         Me.CompanyTextBox.Location = New System.Drawing.Point(158, 126)
         Me.CompanyTextBox.Name = "CompanyTextBox"
         Me.CompanyTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.CompanyTextBox.TabIndex = 10
+        Me.CompanyTextBox.TabIndex = 12
         '
         'DocumentDateCorp
         '
@@ -1982,8 +2036,7 @@ Partial Class FrmEditor
         Me.DocumentDateCorp.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateCorp.Name = "DocumentDateCorp"
         Me.DocumentDateCorp.Size = New System.Drawing.Size(100, 22)
-        Me.DocumentDateCorp.TabIndex = 1
-        Me.DocumentDateCorp.TabStop = False
+        Me.DocumentDateCorp.TabIndex = 8
         Me.DocumentDateCorp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'StatusStrip1
@@ -2062,30 +2115,6 @@ Partial Class FrmEditor
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'DocsCatalogueC1TrueDBGrid
-        '
-        Me.DocsCatalogueC1TrueDBGrid.AllowUpdate = False
-        Me.DocsCatalogueC1TrueDBGrid.AlternatingRows = True
-        Me.DocsCatalogueC1TrueDBGrid.DataSource = Me.DocsCatalogueBindingSource
-        Me.DocsCatalogueC1TrueDBGrid.DataView = C1.Win.C1TrueDBGrid.DataViewEnum.GroupBy
-        Me.DocsCatalogueC1TrueDBGrid.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DocsCatalogueC1TrueDBGrid.ExtendRightColumn = True
-        Me.DocsCatalogueC1TrueDBGrid.FilterBar = True
-        Me.DocsCatalogueC1TrueDBGrid.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
-        Me.DocsCatalogueC1TrueDBGrid.GroupByCaption = "Drag a column header here to group by that column"
-        Me.DocsCatalogueC1TrueDBGrid.Images.Add(CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.Images"), System.Drawing.Image))
-        Me.DocsCatalogueC1TrueDBGrid.LinesPerRow = 10
-        Me.DocsCatalogueC1TrueDBGrid.Location = New System.Drawing.Point(0, 0)
-        Me.DocsCatalogueC1TrueDBGrid.Name = "DocsCatalogueC1TrueDBGrid"
-        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.Location = New System.Drawing.Point(0, 0)
-        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.Size = New System.Drawing.Size(0, 0)
-        Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
-        Me.DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(641, 274)
-        Me.DocsCatalogueC1TrueDBGrid.TabIndex = 0
-        Me.DocsCatalogueC1TrueDBGrid.UseCompatibleTextRendering = False
-        Me.DocsCatalogueC1TrueDBGrid.PropBag = resources.GetString("DocsCatalogueC1TrueDBGrid.PropBag")
-        '
         'FrmEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2105,6 +2134,7 @@ Partial Class FrmEditor
         Me.SplitContainer2.Panel2.PerformLayout()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
+        CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
@@ -2135,7 +2165,6 @@ Partial Class FrmEditor
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DocsCatalogueC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -95,7 +95,7 @@ Partial Class FrmQuery
         Me.DocumentDateLabel2 = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.C1TrueDBGrid1 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
-        Me.BtnSaveChanges = New System.Windows.Forms.Button()
+        Me.BtnSaveChanges1 = New System.Windows.Forms.Button()
         Me.BtnSearch = New System.Windows.Forms.Button()
         Me.BtnEditRecord = New System.Windows.Forms.Button()
         Me.AcroPDF = New AxAcroPDFLib.AxAcroPDF()
@@ -138,6 +138,8 @@ Partial Class FrmQuery
         Me.DMSDataSet = New DMS.DMSDataSet()
         Me.RackNoTS = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
         Me.DTToPeriod = New System.Windows.Forms.DateTimePicker()
         Me.FromPeriodTextBox = New System.Windows.Forms.TextBox()
         Me.DTFromPeriod = New System.Windows.Forms.DateTimePicker()
@@ -183,6 +185,7 @@ Partial Class FrmQuery
         Me.WarrantyNoTextBox = New System.Windows.Forms.TextBox()
         Me.Voucher = New System.Windows.Forms.TabPage()
         Me.GrpVoucher = New System.Windows.Forms.GroupBox()
+        Me.Label31 = New System.Windows.Forms.Label()
         Me.DTDateReceived = New System.Windows.Forms.DateTimePicker()
         Me.BoxNoVoucher = New System.Windows.Forms.TextBox()
         Me.RackNoVoucher = New System.Windows.Forms.TextBox()
@@ -256,7 +259,7 @@ Partial Class FrmQuery
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(82, 16)
         Me.Label12.TabIndex = 35
-        Me.Label12.Text = "MM/dd/yyyy"
+        Me.Label12.Text = "mm/dd/yyyy"
         '
         'Label13
         '
@@ -337,7 +340,7 @@ Partial Class FrmQuery
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(82, 16)
         Me.Label16.TabIndex = 36
-        Me.Label16.Text = "MM/dd/yyyy"
+        Me.Label16.Text = "mm/dd/yyyy"
         '
         'AddressCLabel
         '
@@ -464,7 +467,7 @@ Partial Class FrmQuery
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(82, 16)
         Me.Label18.TabIndex = 36
-        Me.Label18.Text = "MM/dd/yyyy"
+        Me.Label18.Text = "mm/dd/yyyy"
         '
         'Label19
         '
@@ -608,7 +611,7 @@ Partial Class FrmQuery
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(82, 16)
         Me.Label22.TabIndex = 36
-        Me.Label22.Text = "MM/dd/yyyy"
+        Me.Label22.Text = "mm/dd/yyyy"
         '
         'Label23
         '
@@ -790,7 +793,7 @@ Partial Class FrmQuery
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(82, 16)
         Me.Label25.TabIndex = 36
-        Me.Label25.Text = "MM/dd/yyyy"
+        Me.Label25.Text = "mm/dd/yyyy"
         '
         'Label26
         '
@@ -799,7 +802,7 @@ Partial Class FrmQuery
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(82, 16)
         Me.Label26.TabIndex = 36
-        Me.Label26.Text = "MM/dd/yyyy"
+        Me.Label26.Text = "mm/dd/yyyy"
         '
         'Label27
         '
@@ -878,7 +881,7 @@ Partial Class FrmQuery
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.BtnSaveChanges)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.BtnSaveChanges1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.BtnSearch)
         Me.SplitContainer1.Panel2.Controls.Add(Me.BtnEditRecord)
         Me.SplitContainer1.Panel2.Controls.Add(Me.AcroPDF)
@@ -887,6 +890,7 @@ Partial Class FrmQuery
         Me.SplitContainer1.Size = New System.Drawing.Size(1240, 738)
         Me.SplitContainer1.SplitterDistance = 251
         Me.SplitContainer1.TabIndex = 0
+        Me.SplitContainer1.TabStop = False
         '
         'C1TrueDBGrid1
         '
@@ -907,15 +911,15 @@ Partial Class FrmQuery
         Me.C1TrueDBGrid1.UseCompatibleTextRendering = False
         Me.C1TrueDBGrid1.PropBag = resources.GetString("C1TrueDBGrid1.PropBag")
         '
-        'BtnSaveChanges
+        'BtnSaveChanges1
         '
-        Me.BtnSaveChanges.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnSaveChanges.Location = New System.Drawing.Point(507, 3)
-        Me.BtnSaveChanges.Name = "BtnSaveChanges"
-        Me.BtnSaveChanges.Size = New System.Drawing.Size(125, 28)
-        Me.BtnSaveChanges.TabIndex = 89
-        Me.BtnSaveChanges.Text = "Save Changes"
-        Me.BtnSaveChanges.UseVisualStyleBackColor = True
+        Me.BtnSaveChanges1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnSaveChanges1.Location = New System.Drawing.Point(507, 3)
+        Me.BtnSaveChanges1.Name = "BtnSaveChanges1"
+        Me.BtnSaveChanges1.Size = New System.Drawing.Size(125, 28)
+        Me.BtnSaveChanges1.TabIndex = 89
+        Me.BtnSaveChanges1.Text = "Save Changes"
+        Me.BtnSaveChanges1.UseVisualStyleBackColor = True
         '
         'BtnSearch
         '
@@ -942,7 +946,7 @@ Partial Class FrmQuery
         Me.AcroPDF.Location = New System.Drawing.Point(641, 0)
         Me.AcroPDF.Name = "AcroPDF"
         Me.AcroPDF.OcxState = CType(resources.GetObject("AcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AcroPDF.Size = New System.Drawing.Size(599, 483)
+        Me.AcroPDF.Size = New System.Drawing.Size(629, 482)
         Me.AcroPDF.TabIndex = 30
         '
         'TabControl1
@@ -1348,6 +1352,8 @@ Partial Class FrmQuery
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label30)
+        Me.GroupBox1.Controls.Add(Me.Label29)
         Me.GroupBox1.Controls.Add(Me.FromPeriodLabel)
         Me.GroupBox1.Controls.Add(Me.DTToPeriod)
         Me.GroupBox1.Controls.Add(Me.FromPeriodTextBox)
@@ -1360,6 +1366,24 @@ Partial Class FrmQuery
         Me.GroupBox1.TabIndex = 32
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Coverage"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(307, 50)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(82, 16)
+        Me.Label30.TabIndex = 37
+        Me.Label30.Text = "mm/dd/yyyy"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(307, 24)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(82, 16)
+        Me.Label29.TabIndex = 36
+        Me.Label29.Text = "mm/dd/yyyy"
         '
         'DTToPeriod
         '
@@ -1841,6 +1865,7 @@ Partial Class FrmQuery
         '
         'GrpVoucher
         '
+        Me.GrpVoucher.Controls.Add(Me.Label31)
         Me.GrpVoucher.Controls.Add(Me.Label22)
         Me.GrpVoucher.Controls.Add(Me.DTDateReceived)
         Me.GrpVoucher.Controls.Add(Me.Label23)
@@ -1880,6 +1905,15 @@ Partial Class FrmQuery
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(280, 76)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(82, 16)
+        Me.Label31.TabIndex = 37
+        Me.Label31.Text = "mm/dd/yyyy"
         '
         'DTDateReceived
         '
@@ -2008,6 +2042,7 @@ Partial Class FrmQuery
         '
         'DocumentDateVoucher
         '
+        Me.DocumentDateVoucher.AcceptsReturn = True
         Me.DocumentDateVoucher.BackColor = System.Drawing.Color.White
         Me.DocumentDateVoucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DocumentDate", True))
         Me.DocumentDateVoucher.Location = New System.Drawing.Point(158, 73)
@@ -2494,9 +2529,16 @@ Partial Class FrmQuery
     Friend WithEvents CompanyLabel As Label
     Friend WithEvents DocumentDateLabel2 As Label
     Friend WithEvents BtnEditRecord As Button
-    Friend WithEvents BtnSaveChanges As Button
+    Friend WithEvents BtnSaveChanges1 As Button
     Friend WithEvents DMSDataSet As DMSDataSet
     Friend WithEvents TableAdapterManager As DMSDataSetTableAdapters.TableAdapterManager
     Friend WithEvents DocsCatalogueBindingSource As BindingSource
     Friend WithEvents DocsCatalogueTableAdapter As DMSDataSetTableAdapters.DocsCatalogueTableAdapter
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label31 As Label
+
+    Private Sub BtnSaveChanges_Click(sender As Object, e As EventArgs) Handles BtnSaveChanges1.Click
+
+    End Sub
 End Class

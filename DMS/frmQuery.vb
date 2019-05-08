@@ -53,13 +53,19 @@ Public Class FrmQuery
         Me.PaymentFormComboBox.Items.Add("Others")
 
 
+        Me.BtnSaveChanges1.Enabled = False
+
+
 
 
 
     End Sub
     Private Sub PopulateCombobox()
 
-        Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+        Try
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
         con.Open()
         Dim cmd As SqlCommand = New SqlCommand("SELECT DocumentType FROM DocumentTypes ORDER BY DocumentType", con)
 
@@ -69,6 +75,10 @@ Public Class FrmQuery
         End While
         con.Close()
 
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
 
 
 
@@ -150,16 +160,16 @@ Public Class FrmQuery
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnSearch.Click
 
 
+        Try
 
 
-        'Create a variable to hold your parameter value
-        Dim id As Integer = 0
+            'Create a variable to hold your parameter value
+            Dim id As Integer = 0
         'Create your query as you already have done
         Dim strsql As String = "SELECT 
                 [Id]
               ,[DocumentType] [Document Type]
-              ,[Batch]
-             
+              ,[Batch]            
               ,[BatchDesc] [Batch Description]
               ,[RackNo] [Rack No]
               ,[BoxNo] [Box No]
@@ -307,6 +317,11 @@ AND Status = 'Finished'
         Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
 
 
+
+        Catch ex As Exception
+            MessageBox.Show("Searching Failed! " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     Private Sub C1TrueDBGrid1_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid1.Click
@@ -319,36 +334,75 @@ AND Status = 'Finished'
 
             Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Finished")
             Me.DocsCatalogueBindingSource.Filter = "[Id] = '" & Me.C1TrueDBGrid1.Columns("Id").Text & "' "
-
-
-
-
             AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid1.Columns("File Name").Text)
 
             TabControl1.SelectTab(TabChanges)
             Me.C1TrueDBGrid1.Enabled = False
             Me.BtnEditRecord.Enabled = False
             Me.BtnSearch.Enabled = False
+            Me.BtnSaveChanges1.Enabled = True
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
 
 
     End Sub
-
-    Private Sub BtnSaveChanges_Click(sender As Object, e As EventArgs) Handles BtnSaveChanges.Click
-
-
+    Public Sub SaveChanges()
         Me.Validate()
         Me.DocsCatalogueBindingSource.EndEdit()
         Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
-        ' Me.DocsCatalogueChangesTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
-
 
         Me.BtnEditRecord.Enabled = True
         Me.C1TrueDBGrid1.Enabled = True
         Me.BtnSearch.Enabled = True
-
+        Me.BtnSaveChanges1.Enabled = False
+        MessageBox.Show("Successfully Saved!!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.TabControl1.SelectTab(TabQuery)
+    End Sub
+    Private Sub BtnSaveChanges1_Click(sender As Object, e As EventArgs) Handles BtnSaveChanges1.Click
+
+        Try
+
+            Dim DateFormat As Date
+
+            If Date.TryParseExact(DocumentDateTS.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateTS.Text = "" Then
+                SaveChanges()
+            ElseIf Date.TryParseExact(FromPeriodTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodTextBox.Text = "" Then
+                SaveChanges()
+            ElseIf Date.TryParseExact(ToPeriodTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodTextBox.Text = "" Then
+                SaveChanges()
+            ElseIf Date.TryParseExact(DocumentDateRI.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateRI.Text = "" Then
+                SaveChanges()
+            ElseIf Date.TryParseExact(DatePurchasedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DatePurchasedTextBox.Text = "" Then
+                SaveChanges()
+            ElseIf Date.TryParseExact(DocumentDateVoucher.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateVoucher.Text = "" Then
+                SaveChanges()
+            ElseIf Date.TryParseExact(DateReceivedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DateReceivedTextBox.Text = "" Then
+                SaveChanges()
+            ElseIf Date.TryParseExact(DocumentDateCorp.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateCorp.Text = "" Then
+                SaveChanges()
+            ElseIf Date.TryParseExact(MeetingDateTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.MeetingDateTextBox.Text = "" Then
+
+
+            Else
+
+                MessageBox.Show("Incorrect Date Format")
+                Me.DocumentDateTS.Clear()
+                Me.FromPeriodTextBox.Clear()
+                Me.ToPeriodTextBox.Clear()
+                Me.DocumentDateRI.Clear()
+                Me.DatePurchasedTextBox.Clear()
+                Me.DocumentDateVoucher.Clear()
+                Me.DateReceivedTextBox.Clear()
+                Me.DocumentDateCorp.Clear()
+                Me.MeetingDateTextBox.Clear()
+
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error while updating records " & ex.Message)
+        End Try
+
+
     End Sub
 End Class
