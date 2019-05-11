@@ -300,20 +300,22 @@ AND Status = 'Finished'
 
             .Connection = strconnectionstring
         End With
-        'Create a new SqlDataAdapter
-        Dim objdataAdapter As New SqlDataAdapter()
-        'Set the SelectCommand property of our adapter
-        objdataAdapter.SelectCommand = objcommand
-        'Create a new DataSet
-        Dim objdataset As New DataSet
-        'Fill the DataSet using the SqlDataAdapter
-        objdataAdapter.Fill(objdataset, "DMS")
+            'Create a new SqlDataAdapter
+            'Set the SelectCommand property of our adapter
+            Dim objdataAdapter As New SqlDataAdapter With {
+                .SelectCommand = objcommand
+            }
+            'Create a new DataSet
+            Dim objdataset As New DataSet
+            'Fill the DataSet using the SqlDataAdapter
+            objdataAdapter.Fill(objdataset, "DMS")
 
-        Dim objbindingsource As New BindingSource
-        objbindingsource.DataSource = objdataset.Tables("DMS")
-        C1TrueDBGrid1.DataSource = objbindingsource
+            Dim objbindingsource As New BindingSource With {
+                .DataSource = objdataset.Tables("DMS")
+            }
+            C1TrueDBGrid1.DataSource = objbindingsource
 
-        Me.C1TrueDBGrid1.Splits(0).DisplayColumns("Id").Visible = False
+            Me.C1TrueDBGrid1.Splits(0).DisplayColumns("Id").Visible = False
         Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
 
 
