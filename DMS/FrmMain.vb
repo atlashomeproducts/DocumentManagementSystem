@@ -3,16 +3,36 @@ Public Class FrmMain
     Private Sub DocumentManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DocumentManagementToolStripMenuItem.Click
 
 
-        DocMan.Show(Me)
+        FrmEditor.Show(Me)
 
     End Sub
 
     Private Sub TerminateProgramToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TerminateProgramToolStripMenuItem.Click
+
+        My.Settings.Save_RackNoTS = ""
+        My.Settings.Save_BoxNoTS = ""
+        My.Settings.Save_RackNoRI = ""
+        My.Settings.Save_BoxNoRI = ""
+        My.Settings.Save_BookletNoRI = ""
+        My.Settings.Save_RackNoWarranty = ""
+        My.Settings.Save_BoxNoWarranty = ""
+        My.Settings.Save_RackNoVoucher = ""
+        My.Settings.Save_BoxNoVoucher = ""
+        My.Settings.Save_RackNoCorpDocu = ""
+        My.Settings.Save_BoxNoCorpDocu = ""
+
+
+        My.Settings.Save()
+
+
+
+
+
         End
     End Sub
 
     Private Sub IndexToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem1.Click
-        Index.Show(Me)
+        FrmIndex.Show(Me)
     End Sub
 
 
@@ -41,4 +61,16 @@ Public Class FrmMain
             Return myCp
         End Get
     End Property
+
+    Private Sub QueryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QueryToolStripMenuItem.Click
+        FrmQuery.Show(Me)
+    End Sub
+
+    Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+
+    End Sub
 End Class

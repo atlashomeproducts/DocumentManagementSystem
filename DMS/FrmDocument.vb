@@ -17,6 +17,10 @@
 
     Private Sub FrmDocument_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+
+
+
         Me.DocumentTypesTableAdapter.Fill(Me.DMSDataSet.DocumentTypes)
 
 
@@ -26,6 +30,10 @@
     End Sub
 
     Private Sub BindingNavigatorAddNewItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorAddNewItem.Click
+
+    End Sub
+
+    Private Sub C1TrueDBDropdown1_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

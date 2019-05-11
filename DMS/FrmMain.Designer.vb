@@ -27,6 +27,7 @@ Partial Class FrmMain
         Me.IndexToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IndexToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DocumentManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.DocumentTypesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,7 +50,7 @@ Partial Class FrmMain
         '
         'IndexToolStripMenuItem
         '
-        Me.IndexToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexToolStripMenuItem1, Me.DocumentManagementToolStripMenuItem, Me.ToolStripSeparator1, Me.DocumentTypesToolStripMenuItem})
+        Me.IndexToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexToolStripMenuItem1, Me.DocumentManagementToolStripMenuItem, Me.QueryToolStripMenuItem, Me.ToolStripSeparator1, Me.DocumentTypesToolStripMenuItem})
         Me.IndexToolStripMenuItem.Name = "IndexToolStripMenuItem"
         Me.IndexToolStripMenuItem.Size = New System.Drawing.Size(53, 29)
         Me.IndexToolStripMenuItem.Text = "File"
@@ -58,13 +59,19 @@ Partial Class FrmMain
         '
         Me.IndexToolStripMenuItem1.Name = "IndexToolStripMenuItem1"
         Me.IndexToolStripMenuItem1.Size = New System.Drawing.Size(224, 30)
-        Me.IndexToolStripMenuItem1.Text = "Index"
+        Me.IndexToolStripMenuItem1.Text = "Index Files"
         '
         'DocumentManagementToolStripMenuItem
         '
         Me.DocumentManagementToolStripMenuItem.Name = "DocumentManagementToolStripMenuItem"
         Me.DocumentManagementToolStripMenuItem.Size = New System.Drawing.Size(224, 30)
         Me.DocumentManagementToolStripMenuItem.Text = "Editor"
+        '
+        'QueryToolStripMenuItem
+        '
+        Me.QueryToolStripMenuItem.Name = "QueryToolStripMenuItem"
+        Me.QueryToolStripMenuItem.Size = New System.Drawing.Size(224, 30)
+        Me.QueryToolStripMenuItem.Text = "Query Database"
         '
         'ToolStripSeparator1
         '
@@ -76,6 +83,7 @@ Partial Class FrmMain
         Me.DocumentTypesToolStripMenuItem.Name = "DocumentTypesToolStripMenuItem"
         Me.DocumentTypesToolStripMenuItem.Size = New System.Drawing.Size(224, 30)
         Me.DocumentTypesToolStripMenuItem.Text = "Document Types"
+        Me.DocumentTypesToolStripMenuItem.Visible = False
         '
         'ExitToolStripMenuItem
         '
@@ -132,4 +140,5 @@ Partial Class FrmMain
     Friend WithEvents TerminateProgramToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DocumentTypesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents QueryToolStripMenuItem As ToolStripMenuItem
 End Class
