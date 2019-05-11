@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Imports System.Configuration
 Imports System.IO
 Public Class FrmIndex
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnBrowse.Click
 
 
 
@@ -38,7 +38,7 @@ Public Class FrmIndex
 
 
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnIndex.Click
 
 
 
@@ -53,33 +53,34 @@ Public Class FrmIndex
 
         Else
 
-
-
-
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmd As New SqlCommand
-
-
 
             Try
 
 
                 con.Open()
 
-                For Each Item As String In ListBox1.Items
+                For Each Item As String In ListBox1.SelectedItems
 
                     cmd.Connection = con
-                    cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([Batch], [SubBatch],[BatchDesc],[ScannedDate],[Filename],[Status]) 
+                    cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([Batch], [SubBatch],[BatchDesc],[ScannedDate],[Filename],[Status], [RackNo], [BoxNo]) 
                                         VALUES ('" & batchIdTextBox.Text & "', '" & SubBatchTextbox.Text & "', '" & TxtBatchDesc.Text & "','" & scanDateTimePicker.Text & "' 
-                                                , '" & batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "')"
+                                                , '" & batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "', '" & RackNoTextbox.Text & "', '" & BoxNoTextbox.Text & "')"
                     cmd.ExecuteNonQuery()
 
                     File.Copy(Item, Path.Combine(My.Settings.ImgPath, Me.batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
 
                 Next
 
+                Dim lst As New List(Of Object)
+                For Each a As Object In ListBox1.SelectedItems
+                    lst.Add(a)
+                Next
+                For Each a As Object In lst
+                    ListBox1.Items.Remove(a)
+                Next
 
-                Me.ListBox1.Items.Clear()
                 AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
 
 
@@ -104,14 +105,25 @@ Public Class FrmIndex
         '  Me.TopMost = True
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        'Me.ListBox1.Items.Clear()
-        ' AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click
+
         Try
 
+            Dim MsgDelete = MessageBox.Show("Remove Items?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            ListBox1.Items.Remove(ListBox1.SelectedItem)
-        Me.ListBox1.SelectedIndex = Me.ListBox1.SelectedIndex + 1
+            If MsgDelete = vbYes Then
+
+                Me.ListBox1.Items.Clear()
+                AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+
+            ElseIf MsgDelete = vbNo Then
+
+            End If
+
+
+
+            '    ListBox1.Items.Remove(ListBox1.SelectedItem)
+            'Me.ListBox1.SelectedIndex = Me.ListBox1.SelectedIndex + 1
 
 
         Catch ex As Exception
