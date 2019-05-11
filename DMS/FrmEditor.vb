@@ -115,64 +115,76 @@ Public Class FrmEditor
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
 
-        Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-        Dim cmd As New SqlCommand
 
-        Try
+        If Me.DocumentTypeComboBox.Text = "" Then
 
+            MessageBox.Show("Please don't leave Document Type blank", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
-
-
-            My.Settings.Save_RackNoTS = RackNoTS.Text
-            My.Settings.Save_BoxNoTS = BoxNoTS.Text
-            My.Settings.Save_RackNoRI = RackNoRI.Text
-            My.Settings.Save_BoxNoRI = BoxNoRI.Text
-            My.Settings.Save_BookletNoRI = BookletNoTextBox.Text
-            My.Settings.Save_RackNoWarranty = RackNoWarranty.Text
-            My.Settings.Save_BoxNoWarranty = BoxNoWarranty.Text
-            My.Settings.Save_RackNoVoucher = RackNoVoucher.Text
-            My.Settings.Save_BoxNoVoucher = BoxNoVoucher.Text
-            My.Settings.Save_RackNoCorpDocu = RackNoCorpDocu.Text
-            My.Settings.Save_BoxNoCorpDocu = BoxNoCorpDocu.Text
-            My.Settings.Save()
-
-
-            Me.Validate()
-            Me.DocsCatalogueBindingSource.EndEdit()
-            Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
-
-
-            con.Open()
-            cmd.Connection = con
-            cmd.CommandText = "UPDATE DocsCatalogue SET Status = 'Finished' WHERE Id = '" & Me.IdTextBox.Text & "' "
-            cmd.ExecuteNonQuery()
-
-
-            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
-            Me.DocsCatalogueC1TrueDBGrid.Enabled = True
+        Else
 
 
 
-            'Temp Disabled
-            Me.DocumentTypeComboBox.Enabled = False
-            GrpTimeSheet.Enabled = False
-            GrpReceipt.Enabled = False
-            GrpCorp.Enabled = False
-            GrpVoucher.Enabled = False
-            GrpWarranty.Enabled = False
 
-            LblStat.Text = "Successfully Saved!!"
-            Me.BtnSave.Enabled = False
-            Me.BtnClear.Enabled = False
-            Me.BtnEdit.Enabled = True
-            Me.BtnCancel1.Enabled = False
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmd As New SqlCommand
 
-        Catch ex As Exception
+            Try
 
-            MessageBox.Show(ex.Message)
-        Finally
-            con.Close()
-        End Try
+
+
+
+                My.Settings.Save_RackNoTS = RackNoTS.Text
+                My.Settings.Save_BoxNoTS = BoxNoTS.Text
+                My.Settings.Save_RackNoRI = RackNoRI.Text
+                My.Settings.Save_BoxNoRI = BoxNoRI.Text
+                My.Settings.Save_BookletNoRI = BookletNoTextBox.Text
+                My.Settings.Save_RackNoWarranty = RackNoWarranty.Text
+                My.Settings.Save_BoxNoWarranty = BoxNoWarranty.Text
+                My.Settings.Save_RackNoVoucher = RackNoVoucher.Text
+                My.Settings.Save_BoxNoVoucher = BoxNoVoucher.Text
+                My.Settings.Save_RackNoCorpDocu = RackNoCorpDocu.Text
+                My.Settings.Save_BoxNoCorpDocu = BoxNoCorpDocu.Text
+                My.Settings.Save()
+
+
+                Me.Validate()
+                Me.DocsCatalogueBindingSource.EndEdit()
+                Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
+
+
+                con.Open()
+                cmd.Connection = con
+                cmd.CommandText = "UPDATE DocsCatalogue SET Status = 'Finished' WHERE Id = '" & Me.IdTextBox.Text & "' "
+                cmd.ExecuteNonQuery()
+
+
+                Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
+                Me.DocsCatalogueC1TrueDBGrid.Enabled = True
+
+
+
+                'Temp Disabled
+                Me.DocumentTypeComboBox.Enabled = False
+                GrpTimeSheet.Enabled = False
+                GrpReceipt.Enabled = False
+                GrpCorp.Enabled = False
+                GrpVoucher.Enabled = False
+                GrpWarranty.Enabled = False
+
+                LblStat.Text = "Successfully Saved!!"
+                Me.BtnSave.Enabled = False
+                Me.BtnClear.Enabled = False
+                Me.BtnEdit.Enabled = True
+                Me.BtnCancel1.Enabled = False
+
+            Catch ex As Exception
+
+                MessageBox.Show(ex.Message)
+            Finally
+                con.Close()
+            End Try
+
+        End If
 
     End Sub
 
