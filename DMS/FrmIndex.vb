@@ -133,7 +133,49 @@ Public Class FrmIndex
 
     End Sub
 
+    'Private Sub ListBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles ListBox1.MouseDown
+    '    Try
+
+    '        Dim sAllString As String = "ALL"
+
+    '        If Me.ListBox1.SelectedItems.Count = 0 Then
+
+    '            Me.ListBox1.ClearSelected()
+    '            Me.ListBox1.SelectedItems.Add(sAllString)
+
+    '        Else
+    '            Dim pt As Point = New Point(e.X, e.Y)
+
+    '            Dim index As Integer
+
+    '            index = CType(sender, ListBox).IndexFromPoint(pt)
+
+    '            If index = Me.ListBox1.Items.IndexOf(sAllString) Then
+
+    '                Me.ListBox1.ClearSelected()
+
+    '                Me.ListBox1.SelectedItems.Add(sAllString)
+
+    '            Else
+
+    '                If Me.ListBox1.SelectedItems.Count > 1 AndAlso Me.ListBox1.SelectedItems.Contains(sAllString) Then
+
+    '                    Me.ListBox1.SelectedItems.Remove(Me.ListBox1.Items.Item(Me.ListBox1.Items.IndexOf(sAllString)))
+    '                    Dim path = Me.ListBox1.SelectedItem
+
+    '                    AxAcroPDF1.src = path
+
+    '                End If
+
+    '            End If
+
+    '        End If
 
 
+    '    Catch ex As Exception
 
+    '        Throw ex
+
+    '    End Try
+    'End Sub
 End Class

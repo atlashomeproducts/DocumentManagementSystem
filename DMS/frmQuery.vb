@@ -71,8 +71,9 @@ Public Class FrmQuery
 
         Dim read As SqlDataReader = cmd.ExecuteReader()
         While read.Read()
-            DocumentTypeComboBox.Items.Add(read.GetString(0))
-        End While
+                DocumentTypeComboBox.Items.Add(read.GetString(0))
+                DocumentTypeCombobox2.Items.Add(read.GetString(0))
+            End While
         con.Close()
 
 
@@ -146,6 +147,62 @@ Public Class FrmQuery
 
 
     End Sub
+    Private Sub ComboSelect3()
+
+        If Me.DocumentTypeCombobox2.Text = "Sales Invoice" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Official Receipt" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Delivery Receipt" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Acknowledgement Receipt" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Collection Receipt" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Provisional Receipt" Then
+            TabControl2.SelectTab(ReceiptInvoice)
+
+
+
+
+        ElseIf Me.DocumentTypeCombobox2.Text = "Daily Time Record" Then
+            TabControl2.SelectTab(Timesheet)
+
+
+        ElseIf Me.DocumentTypeCombobox2.Text = "Warranty Card" Then
+            TabControl2.SelectTab(Warranty)
+
+
+
+        ElseIf Me.DocumentTypeCombobox2.Text = "Payment Voucher" Then
+            TabControl2.SelectTab(Voucher)
+
+
+
+        ElseIf Me.DocumentTypeCombobox2.Text = "Secretary's Certificate" Then
+            TabControl2.SelectTab(CorpDocu)
+
+        ElseIf Me.DocumentTypeCombobox2.Text = "Minutes of Board Meeting" Then
+            TabControl2.SelectTab(CorpDocu)
+
+        ElseIf Me.DocumentTypeCombobox2.Text = "Articles of Incorporation" Then
+            TabControl2.SelectTab(CorpDocu)
+
+        ElseIf Me.DocumentTypeCombobox2.Text = "SEC Certificate of Registration" Then
+            TabControl2.SelectTab(CorpDocu)
+
+        ElseIf Me.DocumentTypeCombobox2.Text = "DTI Registration" Then
+            TabControl2.SelectTab(CorpDocu)
+
+        ElseIf Me.DocumentTypeCombobox2.Text = "Financial Statement" Then
+            TabControl2.SelectTab(CorpDocu)
+
+
+        End If
+
+
+
+    End Sub
     Private Sub C1TrueDBGrid1_DoubleClick(sender As Object, e As EventArgs) Handles C1TrueDBGrid1.DoubleClick
         Try
 
@@ -156,17 +213,14 @@ Public Class FrmQuery
             MessageBox.Show(ex.Message)
         End Try
     End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnSearch.Click
-
-
+    Private Sub Search()
         Try
 
 
             'Create a variable to hold your parameter value
             Dim id As Integer = 0
-        'Create your query as you already have done
-        Dim strsql As String = "SELECT 
+            'Create your query as you already have done
+            Dim strsql As String = "SELECT 
                 [Id]
               ,[DocumentType] [Document Type]
               ,[Batch]            
@@ -237,69 +291,69 @@ AND ISNULL(ScannedDate, '') BETWEEN @ScanDateFrom AND @ScanDateTo
 AND Status = 'Finished'
 "
 
-        'Get your connection string (You've done this right)
-        Dim strconnectionstring As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-        'Create your SqlConnection (Done)
-        'Create your SqlCommand (done)
-        Dim objcommand As New SqlCommand()
+            'Get your connection string (You've done this right)
+            Dim strconnectionstring As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            'Create your SqlConnection (Done)
+            'Create your SqlCommand (done)
+            Dim objcommand As New SqlCommand()
 
-        '**Set your command properties**
-        With objcommand
-            .CommandText = strsql
-            .CommandType = CommandType.Text
+            '**Set your command properties**
+            With objcommand
+                .CommandText = strsql
+                .CommandType = CommandType.Text
 
-            If Me.CHKDocDate.Checked = True Then
-                .Parameters.AddWithValue("@DocDateFrom", Me.DTDocDateFrom.Value)
-                .Parameters.AddWithValue("@DocDateTo", Me.DTDocDateTo.Value)
-            Else
-                .Parameters.AddWithValue("@DocDateFrom", Me.DTDocDateFrom.MinDate)
-                .Parameters.AddWithValue("@DocDateTo", Me.DTDocDateTo.MaxDate)
-            End If
-
-
-            If CHKRack.Checked = True Then
-                .Parameters.AddWithValue("@RackNo", Me.TxtRack.Text)
-            Else
-                .Parameters.AddWithValue("@RackNo", "")
-            End If
-
-            If Me.CHKBox.Checked = True Then
-                .Parameters.AddWithValue("@BoxNo", Me.TxtBox.Text)
-            Else
-                .Parameters.AddWithValue("@BoxNo", "")
-            End If
-
-            If Me.CHKBook.Checked = True Then
-                .Parameters.AddWithValue("@BookletNo", Me.TxtBook.Text)
-            Else
-                .Parameters.AddWithValue("@BookletNo", "")
-            End If
-
-            If Me.CHKBatch.Checked = True Then
-                .Parameters.AddWithValue("@Batch", Me.TxtBatch.Text)
-            Else
-                .Parameters.AddWithValue("@Batch", "")
-            End If
-
-            If Me.CHKDocType.Checked = True Then
-                .Parameters.AddWithValue("@DocType", Me.DocumentTypeComboBox.Text)
-            Else
-                .Parameters.AddWithValue("@DocType", "")
-            End If
+                If Me.CHKDocDate.Checked = True Then
+                    .Parameters.AddWithValue("@DocDateFrom", Me.DTDocDateFrom.Value)
+                    .Parameters.AddWithValue("@DocDateTo", Me.DTDocDateTo.Value)
+                Else
+                    .Parameters.AddWithValue("@DocDateFrom", Me.DTDocDateFrom.MinDate)
+                    .Parameters.AddWithValue("@DocDateTo", Me.DTDocDateTo.MaxDate)
+                End If
 
 
+                If CHKRack.Checked = True Then
+                    .Parameters.AddWithValue("@RackNo", Me.TxtRack.Text)
+                Else
+                    .Parameters.AddWithValue("@RackNo", "")
+                End If
+
+                If Me.CHKBox.Checked = True Then
+                    .Parameters.AddWithValue("@BoxNo", Me.TxtBox.Text)
+                Else
+                    .Parameters.AddWithValue("@BoxNo", "")
+                End If
+
+                If Me.CHKBook.Checked = True Then
+                    .Parameters.AddWithValue("@BookletNo", Me.TxtBook.Text)
+                Else
+                    .Parameters.AddWithValue("@BookletNo", "")
+                End If
+
+                If Me.CHKBatch.Checked = True Then
+                    .Parameters.AddWithValue("@Batch", Me.TxtBatch.Text)
+                Else
+                    .Parameters.AddWithValue("@Batch", "")
+                End If
+
+                If Me.CHKDocType.Checked = True Then
+                    .Parameters.AddWithValue("@DocType", Me.DocumentTypeComboBox.Text)
+                Else
+                    .Parameters.AddWithValue("@DocType", "")
+                End If
 
 
-            If Me.CHKScanDate.Checked = True Then
-                .Parameters.AddWithValue("@ScanDateFrom", Me.DTScanDateFrom.Value)
-                .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.Value)
-            Else
-                .Parameters.AddWithValue("@ScanDateFrom", Me.DTScanDateFrom.MinDate)
-                .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.MaxDate)
-            End If
 
-            .Connection = strconnectionstring
-        End With
+
+                If Me.CHKScanDate.Checked = True Then
+                    .Parameters.AddWithValue("@ScanDateFrom", Me.DTScanDateFrom.Value)
+                    .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.Value)
+                Else
+                    .Parameters.AddWithValue("@ScanDateFrom", Me.DTScanDateFrom.MinDate)
+                    .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.MaxDate)
+                End If
+
+                .Connection = strconnectionstring
+            End With
             'Create a new SqlDataAdapter
             'Set the SelectCommand property of our adapter
             Dim objdataAdapter As New SqlDataAdapter With {
@@ -316,13 +370,18 @@ AND Status = 'Finished'
             C1TrueDBGrid1.DataSource = objbindingsource
 
             Me.C1TrueDBGrid1.Splits(0).DisplayColumns("Id").Visible = False
-        Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
+            Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
 
 
 
         Catch ex As Exception
             MessageBox.Show("Searching Failed! " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+    End Sub
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnSearch.Click
+
+        Search()
 
     End Sub
 
@@ -401,10 +460,28 @@ AND Status = 'Finished'
 
             End If
 
+            Search()
+
         Catch ex As Exception
             MessageBox.Show("Error while updating records " & ex.Message)
         End Try
 
+
+    End Sub
+
+    Private Sub DocumentTypeCombobox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DocumentTypeCombobox2.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub DocumentTypeComboBox_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles DocumentTypeComboBox.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub DocumentTypeCombobox2_TextChanged(sender As Object, e As EventArgs) Handles DocumentTypeCombobox2.TextChanged
+        ComboSelect3()
+    End Sub
+
+    Private Sub DocumentDateTS_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateTS.TextChanged
 
     End Sub
 End Class
