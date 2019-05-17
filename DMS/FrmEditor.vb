@@ -796,4 +796,8 @@ Public Class FrmEditor
             Me.MeetingDateTextBox.Clear()
         End If
     End Sub
+
+    Private Sub RackNoTS_TextChanged(sender As Object, e As EventArgs) Handles RackNoTS.TextChanged
+
+    End Sub
 End Class

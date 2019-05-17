@@ -925,7 +925,6 @@ Partial Class FrmQuery
         '
         'BtnSaveChanges1
         '
-        Me.BtnSaveChanges1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnSaveChanges1.Location = New System.Drawing.Point(507, 3)
         Me.BtnSaveChanges1.Name = "BtnSaveChanges1"
         Me.BtnSaveChanges1.Size = New System.Drawing.Size(125, 28)
@@ -944,7 +943,6 @@ Partial Class FrmQuery
         '
         'BtnEditRecord
         '
-        Me.BtnEditRecord.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnEditRecord.Location = New System.Drawing.Point(381, 3)
         Me.BtnEditRecord.Name = "BtnEditRecord"
         Me.BtnEditRecord.Size = New System.Drawing.Size(125, 28)
@@ -954,6 +952,9 @@ Partial Class FrmQuery
         '
         'AcroPDF
         '
+        Me.AcroPDF.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AcroPDF.Enabled = True
         Me.AcroPDF.Location = New System.Drawing.Point(641, 0)
         Me.AcroPDF.Name = "AcroPDF"
@@ -1500,10 +1501,10 @@ Partial Class FrmQuery
         Me.ReceiptInvoice.AutoScrollMinSize = New System.Drawing.Size(0, 400)
         Me.ReceiptInvoice.BackColor = System.Drawing.SystemColors.Control
         Me.ReceiptInvoice.Controls.Add(Me.GrpReceipt)
-        Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 32)
+        Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 25)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 352)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 359)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
@@ -1693,10 +1694,10 @@ Partial Class FrmQuery
         Me.Warranty.AutoScrollMinSize = New System.Drawing.Size(0, 420)
         Me.Warranty.BackColor = System.Drawing.SystemColors.Control
         Me.Warranty.Controls.Add(Me.GrpWarranty)
-        Me.Warranty.Location = New System.Drawing.Point(4, 32)
+        Me.Warranty.Location = New System.Drawing.Point(4, 25)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(623, 352)
+        Me.Warranty.Size = New System.Drawing.Size(623, 359)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
@@ -1885,9 +1886,9 @@ Partial Class FrmQuery
         Me.Voucher.AutoScrollMinSize = New System.Drawing.Size(0, 500)
         Me.Voucher.BackColor = System.Drawing.SystemColors.Control
         Me.Voucher.Controls.Add(Me.GrpVoucher)
-        Me.Voucher.Location = New System.Drawing.Point(4, 32)
+        Me.Voucher.Location = New System.Drawing.Point(4, 25)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(623, 352)
+        Me.Voucher.Size = New System.Drawing.Size(623, 359)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
@@ -2181,9 +2182,9 @@ Partial Class FrmQuery
         Me.CorpDocu.AutoScrollMinSize = New System.Drawing.Size(0, 350)
         Me.CorpDocu.BackColor = System.Drawing.SystemColors.Control
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
-        Me.CorpDocu.Location = New System.Drawing.Point(4, 32)
+        Me.CorpDocu.Location = New System.Drawing.Point(4, 25)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(623, 352)
+        Me.CorpDocu.Size = New System.Drawing.Size(623, 359)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
@@ -2213,7 +2214,7 @@ Partial Class FrmQuery
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(623, 352)
+        Me.GrpCorp.Size = New System.Drawing.Size(623, 359)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2315,8 +2316,6 @@ Partial Class FrmQuery
         '
         'FrmQuery
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1240, 738)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "FrmQuery"

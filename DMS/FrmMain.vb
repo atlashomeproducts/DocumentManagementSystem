@@ -2,7 +2,6 @@
 Public Class FrmMain
     Private Sub DocumentManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DocumentManagementToolStripMenuItem.Click
 
-
         FrmEditor.Show(Me)
 
     End Sub
@@ -26,8 +25,6 @@ Public Class FrmMain
 
 
 
-
-
         End
     End Sub
 
@@ -35,15 +32,11 @@ Public Class FrmMain
         FrmIndex.Show(Me)
     End Sub
 
-
-
     Private Sub DocumentTypesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DocumentTypesToolStripMenuItem.Click
-
         frmDocument.Show(Me)
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Public Sub MinimizeAllChildren()
@@ -67,10 +60,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
-
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-
     End Sub
 End Class

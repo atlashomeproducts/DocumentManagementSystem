@@ -310,8 +310,7 @@ Partial Class FrmIndex
         '
         'FrmIndex
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+
         Me.ClientSize = New System.Drawing.Size(899, 580)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

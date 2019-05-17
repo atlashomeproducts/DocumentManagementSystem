@@ -106,16 +106,12 @@ Public Class FrmQuery
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Provisional Receipt" Then
             TabControl2.SelectTab(ReceiptInvoice)
 
-
-
-
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Daily Time Record" Then
             TabControl2.SelectTab(Timesheet)
 
 
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Warranty Card" Then
             TabControl2.SelectTab(Warranty)
-
 
 
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Payment Voucher" Then
@@ -125,19 +121,14 @@ Public Class FrmQuery
 
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Secretary's Certificate" Then
             TabControl2.SelectTab(CorpDocu)
-
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Minutes of Board Meeting" Then
             TabControl2.SelectTab(CorpDocu)
-
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Articles of Incorporation" Then
             TabControl2.SelectTab(CorpDocu)
-
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "SEC Certificate of Registration" Then
             TabControl2.SelectTab(CorpDocu)
-
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "DTI Registration" Then
             TabControl2.SelectTab(CorpDocu)
-
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Financial Statement" Then
             TabControl2.SelectTab(CorpDocu)
 

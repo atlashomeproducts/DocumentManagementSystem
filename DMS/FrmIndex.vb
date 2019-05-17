@@ -6,11 +6,6 @@ Imports System.IO
 Public Class FrmIndex
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnBrowse.Click
 
-
-
-
-
-
         With OpenFileDialog1
             .FileName = vbNullString           'Clear out previous filename
             .Filter = "PDF Files (*.pdf)|*.pdf| All Files (*.*)|*.*"
@@ -22,7 +17,6 @@ Public Class FrmIndex
             If .ShowDialog() = System.Windows.Forms.DialogResult.OK Then
 
                 For Each filename As String In .FileNames  'Loop through the file names
-
                     ListBox1.Items.Add(filename)
                 Next
 
@@ -45,8 +39,6 @@ Public Class FrmIndex
         If ListBox1.Items.Count = 0 Then
 
             MessageBox.Show("Files not found!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-
         ElseIf batchIdTextBox.Text = "" Then
 
             MessageBox.Show("Please don't leave batch name empty..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -82,7 +74,6 @@ Public Class FrmIndex
                 Next
 
                 AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
-
 
                 MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -178,4 +169,6 @@ Public Class FrmIndex
 
     '    End Try
     'End Sub
+
+
 End Class
