@@ -1,6 +1,6 @@
 ﻿
 Public Class FrmMain
-    Private Sub DocumentManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub DocumentManagementToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
 
     End Sub
@@ -10,11 +10,11 @@ Public Class FrmMain
 
     End Sub
 
-    Private Sub IndexToolStripMenuItem1_Click(sender As Object, e As EventArgs) 
+    Private Sub IndexToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub DocumentTypesToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub DocumentTypesToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmDocument.Show(Me)
     End Sub
 
@@ -37,11 +37,11 @@ Public Class FrmMain
     '    End Get
     'End Property
 
-    Private Sub QueryToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub QueryToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs)
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs)

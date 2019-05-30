@@ -61,8 +61,8 @@ Partial Class FrmMain
         'IndexFilesToolStripMenuItem
         '
         Me.IndexFilesToolStripMenuItem.Name = "IndexFilesToolStripMenuItem"
-        Me.IndexFilesToolStripMenuItem.Size = New System.Drawing.Size(112, 29)
-        Me.IndexFilesToolStripMenuItem.Text = "Index Files"
+        Me.IndexFilesToolStripMenuItem.Size = New System.Drawing.Size(70, 29)
+        Me.IndexFilesToolStripMenuItem.Text = "Index"
         '
         'EditorToolStripMenuItem
         '
