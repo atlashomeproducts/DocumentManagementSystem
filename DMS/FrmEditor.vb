@@ -115,64 +115,76 @@ Public Class FrmEditor
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
 
-        Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-        Dim cmd As New SqlCommand
 
-        Try
+        If Me.DocumentTypeComboBox.Text = "" Then
 
+            MessageBox.Show("Please don't leave Document Type blank", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
-
-
-            My.Settings.Save_RackNoTS = RackNoTS.Text
-            My.Settings.Save_BoxNoTS = BoxNoTS.Text
-            My.Settings.Save_RackNoRI = RackNoRI.Text
-            My.Settings.Save_BoxNoRI = BoxNoRI.Text
-            My.Settings.Save_BookletNoRI = BookletNoTextBox.Text
-            My.Settings.Save_RackNoWarranty = RackNoWarranty.Text
-            My.Settings.Save_BoxNoWarranty = BoxNoWarranty.Text
-            My.Settings.Save_RackNoVoucher = RackNoVoucher.Text
-            My.Settings.Save_BoxNoVoucher = BoxNoVoucher.Text
-            My.Settings.Save_RackNoCorpDocu = RackNoCorpDocu.Text
-            My.Settings.Save_BoxNoCorpDocu = BoxNoCorpDocu.Text
-            My.Settings.Save()
-
-
-            Me.Validate()
-            Me.DocsCatalogueBindingSource.EndEdit()
-            Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
-
-
-            con.Open()
-            cmd.Connection = con
-            cmd.CommandText = "UPDATE DocsCatalogue SET Status = 'Finished' WHERE Id = '" & Me.IdTextBox.Text & "' "
-            cmd.ExecuteNonQuery()
-
-
-            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
-            Me.DocsCatalogueC1TrueDBGrid.Enabled = True
+        Else
 
 
 
-            'Temp Disabled
-            Me.DocumentTypeComboBox.Enabled = False
-            GrpTimeSheet.Enabled = False
-            GrpReceipt.Enabled = False
-            GrpCorp.Enabled = False
-            GrpVoucher.Enabled = False
-            GrpWarranty.Enabled = False
 
-            LblStat.Text = "Successfully Saved!!"
-            Me.BtnSave.Enabled = False
-            Me.BtnClear.Enabled = False
-            Me.BtnEdit.Enabled = True
-            Me.BtnCancel1.Enabled = False
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmd As New SqlCommand
 
-        Catch ex As Exception
+            Try
 
-            MessageBox.Show(ex.Message)
-        Finally
-            con.Close()
-        End Try
+
+
+
+                My.Settings.Save_RackNoTS = RackNoTS.Text
+                My.Settings.Save_BoxNoTS = BoxNoTS.Text
+                My.Settings.Save_RackNoRI = RackNoRI.Text
+                My.Settings.Save_BoxNoRI = BoxNoRI.Text
+                My.Settings.Save_BookletNoRI = BookletNoTextBox.Text
+                My.Settings.Save_RackNoWarranty = RackNoWarranty.Text
+                My.Settings.Save_BoxNoWarranty = BoxNoWarranty.Text
+                My.Settings.Save_RackNoVoucher = RackNoVoucher.Text
+                My.Settings.Save_BoxNoVoucher = BoxNoVoucher.Text
+                My.Settings.Save_RackNoCorpDocu = RackNoCorpDocu.Text
+                My.Settings.Save_BoxNoCorpDocu = BoxNoCorpDocu.Text
+                My.Settings.Save()
+
+
+                Me.Validate()
+                Me.DocsCatalogueBindingSource.EndEdit()
+                Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
+
+
+                con.Open()
+                cmd.Connection = con
+                cmd.CommandText = "UPDATE DocsCatalogue SET Status = 'Finished' WHERE Id = '" & Me.IdTextBox.Text & "' "
+                cmd.ExecuteNonQuery()
+
+
+                Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
+                Me.DocsCatalogueC1TrueDBGrid.Enabled = True
+
+
+
+                'Temp Disabled
+                Me.DocumentTypeComboBox.Enabled = False
+                GrpTimeSheet.Enabled = False
+                GrpReceipt.Enabled = False
+                GrpCorp.Enabled = False
+                GrpVoucher.Enabled = False
+                GrpWarranty.Enabled = False
+
+                LblStat.Text = "Successfully Saved!!"
+                Me.BtnSave.Enabled = False
+                Me.BtnClear.Enabled = False
+                Me.BtnEdit.Enabled = True
+                Me.BtnCancel1.Enabled = False
+
+            Catch ex As Exception
+
+                MessageBox.Show(ex.Message)
+            Finally
+                con.Close()
+            End Try
+
+        End If
 
     End Sub
 
@@ -329,79 +341,150 @@ Public Class FrmEditor
 
         If Me.DocumentTypeComboBox.Text = "Sales Invoice" Then
             TabControl1.SelectTab(ReceiptInvoice)
-            RackNoRI.Text = My.Settings.Save_RackNoRI
-            BoxNoRI.Text = My.Settings.Save_BoxNoRI
-            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+            If RackNoRI.Text = "" Then
+                RackNoRI.Text = My.Settings.Save_RackNoRI
+            End If
+            If BoxNoRI.Text = "" Then
+                BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            End If
+            If BookletNoTextBox.Text = "" Then
+                BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+            End If
+
         ElseIf Me.DocumentTypeComboBox.Text = "Official Receipt" Then
-            TabControl1.SelectTab(ReceiptInvoice)
-            RackNoRI.Text = My.Settings.Save_RackNoRI
-            BoxNoRI.Text = My.Settings.Save_BoxNoRI
-            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+                TabControl1.SelectTab(ReceiptInvoice)
+            If RackNoRI.Text = "" Then
+                RackNoRI.Text = My.Settings.Save_RackNoRI
+            End If
+            If BoxNoRI.Text = "" Then
+                BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            End If
+            If BookletNoTextBox.Text = "" Then
+                BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+            End If
         ElseIf Me.DocumentTypeComboBox.Text = "Delivery Receipt" Then
-            TabControl1.SelectTab(ReceiptInvoice)
-            RackNoRI.Text = My.Settings.Save_RackNoRI
-            BoxNoRI.Text = My.Settings.Save_BoxNoRI
-            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+                TabControl1.SelectTab(ReceiptInvoice)
+            If RackNoRI.Text = "" Then
+                RackNoRI.Text = My.Settings.Save_RackNoRI
+            End If
+            If BoxNoRI.Text = "" Then
+                BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            End If
+            If BookletNoTextBox.Text = "" Then
+                BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+            End If
         ElseIf Me.DocumentTypeComboBox.Text = "Acknowledgement Receipt" Then
-            TabControl1.SelectTab(ReceiptInvoice)
-            RackNoRI.Text = My.Settings.Save_RackNoRI
-            BoxNoRI.Text = My.Settings.Save_BoxNoRI
-            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+                TabControl1.SelectTab(ReceiptInvoice)
+            If RackNoRI.Text = "" Then
+                RackNoRI.Text = My.Settings.Save_RackNoRI
+            End If
+            If BoxNoRI.Text = "" Then
+                BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            End If
+            If BookletNoTextBox.Text = "" Then
+                BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+            End If
         ElseIf Me.DocumentTypeComboBox.Text = "Collection Receipt" Then
-            TabControl1.SelectTab(ReceiptInvoice)
-            RackNoRI.Text = My.Settings.Save_RackNoRI
-            BoxNoRI.Text = My.Settings.Save_BoxNoRI
-            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+                TabControl1.SelectTab(ReceiptInvoice)
+            If RackNoRI.Text = "" Then
+                RackNoRI.Text = My.Settings.Save_RackNoRI
+            End If
+            If BoxNoRI.Text = "" Then
+                BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            End If
+            If BookletNoTextBox.Text = "" Then
+                BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+            End If
         ElseIf Me.DocumentTypeComboBox.Text = "Provisional Receipt" Then
-            TabControl1.SelectTab(ReceiptInvoice)
-            RackNoRI.Text = My.Settings.Save_RackNoRI
-            BoxNoRI.Text = My.Settings.Save_BoxNoRI
-            BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+                TabControl1.SelectTab(ReceiptInvoice)
+            If RackNoRI.Text = "" Then
+                RackNoRI.Text = My.Settings.Save_RackNoRI
+            End If
+            If BoxNoRI.Text = "" Then
+                BoxNoRI.Text = My.Settings.Save_BoxNoRI
+            End If
+            If BookletNoTextBox.Text = "" Then
+                BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
+            End If
 
 
 
         ElseIf Me.DocumentTypeComboBox.Text = "Daily Time Record" Then
-            TabControl1.SelectTab(Timesheet)
-            RackNoTS.Text = My.Settings.Save_RackNoTS
-            BoxNoTS.Text = My.Settings.Save_BoxNoTS
+                TabControl1.SelectTab(Timesheet)
+            If RackNoTS.Text = "" Then
+                RackNoTS.Text = My.Settings.Save_RackNoTS
+            End If
+            If BoxNoTS.Text = "" Then
+                BoxNoTS.Text = My.Settings.Save_BoxNoTS
+            End If
 
 
         ElseIf Me.DocumentTypeComboBox.Text = "Warranty Card" Then
-            TabControl1.SelectTab(Warranty)
-            RackNoWarranty.Text = My.Settings.Save_RackNoWarranty
-            BoxNoWarranty.Text = My.Settings.Save_BoxNoWarranty
-
+                TabControl1.SelectTab(Warranty)
+            If RackNoWarranty.Text = "" = "" Then
+                RackNoWarranty.Text = My.Settings.Save_RackNoWarranty
+            End If
+            If BoxNoWarranty.Text = "" Then
+                BoxNoWarranty.Text = My.Settings.Save_BoxNoWarranty
+            End If
 
         ElseIf Me.DocumentTypeComboBox.Text = "Payment Voucher" Then
-            TabControl1.SelectTab(Voucher)
-            RackNoVoucher.Text = My.Settings.Save_RackNoVoucher
-            BoxNoVoucher.Text = My.Settings.Save_BoxNoVoucher
-
+                TabControl1.SelectTab(Voucher)
+            If RackNoVoucher.Text = "" Then
+                RackNoVoucher.Text = My.Settings.Save_RackNoVoucher
+            End If
+            If BoxNoVoucher.Text = "" Then
+                BoxNoVoucher.Text = My.Settings.Save_BoxNoVoucher
+            End If
 
         ElseIf Me.DocumentTypeComboBox.Text = "Secretary's Certificate" Then
-            TabControl1.SelectTab(CorpDocu)
-            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
-            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+                TabControl1.SelectTab(CorpDocu)
+            If RackNoCorpDocu.Text = "" Then
+                RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            End If
+            If BoxNoCorpDocu.Text = "" Then
+                BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+            End If
         ElseIf Me.DocumentTypeComboBox.Text = "Minutes of Board Meeting" Then
-            TabControl1.SelectTab(CorpDocu)
-            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
-            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+                TabControl1.SelectTab(CorpDocu)
+            If RackNoCorpDocu.Text = "" Then
+                RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            End If
+            If BoxNoCorpDocu.Text = "" Then
+                BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+            End If
         ElseIf Me.DocumentTypeComboBox.Text = "Articles of Incorporation" Then
-            TabControl1.SelectTab(CorpDocu)
-            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
-            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+                TabControl1.SelectTab(CorpDocu)
+            If RackNoCorpDocu.Text = "" Then
+                RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            End If
+            If BoxNoCorpDocu.Text = "" Then
+                BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+            End If
         ElseIf Me.DocumentTypeComboBox.Text = "SEC Certificate of Registration" Then
-            TabControl1.SelectTab(CorpDocu)
-            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
-            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+                TabControl1.SelectTab(CorpDocu)
+            If RackNoCorpDocu.Text = "" Then
+                RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            End If
+            If BoxNoCorpDocu.Text = "" Then
+                BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+            End If
         ElseIf Me.DocumentTypeComboBox.Text = "DTI Registration" Then
-            TabControl1.SelectTab(CorpDocu)
-            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
-            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+                TabControl1.SelectTab(CorpDocu)
+            If RackNoCorpDocu.Text = "" Then
+                RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            End If
+            If BoxNoCorpDocu.Text = "" Then
+                BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+            End If
         ElseIf Me.DocumentTypeComboBox.Text = "Financial Statement" Then
-            TabControl1.SelectTab(CorpDocu)
-            RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
-            BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+                TabControl1.SelectTab(CorpDocu)
+            If RackNoCorpDocu.Text = "" Then
+                RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            End If
+            If BoxNoCorpDocu.Text = "" Then
+                BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+            End If
 
 
 
@@ -581,7 +664,7 @@ Public Class FrmEditor
                 Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
 
 
-                MessageBox.Show("Record Deleted!!", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' MessageBox.Show("Record Deleted!!", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             ElseIf MsgDelete = vbNo Then
 
@@ -611,6 +694,7 @@ Public Class FrmEditor
         Me.BtnClear.Enabled = False
         Me.BtnEdit.Enabled = True
         Me.BtnCancel1.Enabled = False
+        Me.DocsCatalogueC1TrueDBGrid.Enabled = True
     End Sub
 
 
@@ -711,5 +795,9 @@ Public Class FrmEditor
             MessageBox.Show("Incorrect Date Format " & Me.MeetingDateTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Me.MeetingDateTextBox.Clear()
         End If
+    End Sub
+
+    Private Sub RackNoTS_TextChanged(sender As Object, e As EventArgs) Handles RackNoTS.TextChanged
+
     End Sub
 End Class

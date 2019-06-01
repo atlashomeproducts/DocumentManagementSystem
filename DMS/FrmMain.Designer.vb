@@ -24,15 +24,13 @@ Partial Class FrmMain
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.IndexToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IndexToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DocumentManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.QueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.DocumentTypesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TerminateProgramToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.IndexFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SEARCHToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -41,62 +39,12 @@ Partial Class FrmMain
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexFilesToolStripMenuItem, Me.ToolStripMenuItem1, Me.EditorToolStripMenuItem, Me.ToolStripMenuItem2, Me.SEARCHToolStripMenuItem, Me.ToolStripMenuItem3})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(909, 33)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'IndexToolStripMenuItem
-        '
-        Me.IndexToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexToolStripMenuItem1, Me.DocumentManagementToolStripMenuItem, Me.QueryToolStripMenuItem, Me.ToolStripSeparator1, Me.DocumentTypesToolStripMenuItem})
-        Me.IndexToolStripMenuItem.Name = "IndexToolStripMenuItem"
-        Me.IndexToolStripMenuItem.Size = New System.Drawing.Size(53, 29)
-        Me.IndexToolStripMenuItem.Text = "File"
-        '
-        'IndexToolStripMenuItem1
-        '
-        Me.IndexToolStripMenuItem1.Name = "IndexToolStripMenuItem1"
-        Me.IndexToolStripMenuItem1.Size = New System.Drawing.Size(224, 30)
-        Me.IndexToolStripMenuItem1.Text = "Index Files"
-        '
-        'DocumentManagementToolStripMenuItem
-        '
-        Me.DocumentManagementToolStripMenuItem.Name = "DocumentManagementToolStripMenuItem"
-        Me.DocumentManagementToolStripMenuItem.Size = New System.Drawing.Size(224, 30)
-        Me.DocumentManagementToolStripMenuItem.Text = "Editor"
-        '
-        'QueryToolStripMenuItem
-        '
-        Me.QueryToolStripMenuItem.Name = "QueryToolStripMenuItem"
-        Me.QueryToolStripMenuItem.Size = New System.Drawing.Size(224, 30)
-        Me.QueryToolStripMenuItem.Text = "Query Database"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(221, 6)
-        '
-        'DocumentTypesToolStripMenuItem
-        '
-        Me.DocumentTypesToolStripMenuItem.Name = "DocumentTypesToolStripMenuItem"
-        Me.DocumentTypesToolStripMenuItem.Size = New System.Drawing.Size(224, 30)
-        Me.DocumentTypesToolStripMenuItem.Text = "Document Types"
-        Me.DocumentTypesToolStripMenuItem.Visible = False
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TerminateProgramToolStripMenuItem})
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(54, 29)
-        Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'TerminateProgramToolStripMenuItem
-        '
-        Me.TerminateProgramToolStripMenuItem.Name = "TerminateProgramToolStripMenuItem"
-        Me.TerminateProgramToolStripMenuItem.Size = New System.Drawing.Size(247, 30)
-        Me.TerminateProgramToolStripMenuItem.Text = "Terminate Program"
         '
         'PictureBox1
         '
@@ -110,10 +58,47 @@ Partial Class FrmMain
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
+        'IndexFilesToolStripMenuItem
+        '
+        Me.IndexFilesToolStripMenuItem.Name = "IndexFilesToolStripMenuItem"
+        Me.IndexFilesToolStripMenuItem.Size = New System.Drawing.Size(70, 29)
+        Me.IndexFilesToolStripMenuItem.Text = "Index"
+        '
+        'EditorToolStripMenuItem
+        '
+        Me.EditorToolStripMenuItem.Name = "EditorToolStripMenuItem"
+        Me.EditorToolStripMenuItem.Size = New System.Drawing.Size(74, 29)
+        Me.EditorToolStripMenuItem.Text = "Editor"
+        '
+        'SEARCHToolStripMenuItem
+        '
+        Me.SEARCHToolStripMenuItem.Name = "SEARCHToolStripMenuItem"
+        Me.SEARCHToolStripMenuItem.Size = New System.Drawing.Size(81, 29)
+        Me.SEARCHToolStripMenuItem.Text = "Search"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Enabled = False
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(34, 29)
+        Me.ToolStripMenuItem1.Text = "||"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Enabled = False
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(34, 29)
+        Me.ToolStripMenuItem2.Text = "||"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Enabled = False
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(34, 29)
+        Me.ToolStripMenuItem3.Text = "||"
+        '
         'FrmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(909, 573)
         Me.Controls.Add(Me.PictureBox1)
@@ -132,13 +117,11 @@ Partial Class FrmMain
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents IndexToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents IndexToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents DocumentManagementToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TerminateProgramToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents DocumentTypesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents QueryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IndexFilesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SEARCHToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
 End Class

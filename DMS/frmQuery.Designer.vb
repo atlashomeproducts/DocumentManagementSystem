@@ -26,6 +26,7 @@ Partial Class FrmQuery
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmQuery))
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -130,12 +131,13 @@ Partial Class FrmQuery
         Me.DocumentTypeComboBox = New System.Windows.Forms.ComboBox()
         Me.DocumentTypeLabel = New System.Windows.Forms.Label()
         Me.TabChanges = New System.Windows.Forms.TabPage()
+        Me.DocumentTypeCombobox2 = New System.Windows.Forms.ComboBox()
+        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.Timesheet = New System.Windows.Forms.TabPage()
         Me.GrpTimeSheet = New System.Windows.Forms.GroupBox()
         Me.BoxNoTS = New System.Windows.Forms.TextBox()
-        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.RackNoTS = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label30 = New System.Windows.Forms.Label()
@@ -232,11 +234,11 @@ Partial Class FrmQuery
         Me.TabControl1.SuspendLayout()
         Me.TabQuery.SuspendLayout()
         Me.TabChanges.SuspendLayout()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl2.SuspendLayout()
         Me.Timesheet.SuspendLayout()
         Me.GrpTimeSheet.SuspendLayout()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.ReceiptInvoice.SuspendLayout()
         Me.GrpReceipt.SuspendLayout()
@@ -251,6 +253,16 @@ Partial Class FrmQuery
         Me.CorpDocu.SuspendLayout()
         Me.GrpCorp.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.Location = New System.Drawing.Point(9, 5)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(125, 20)
+        Me.Label32.TabIndex = 28
+        Me.Label32.Text = "Document Type:"
         '
         'Label12
         '
@@ -913,7 +925,6 @@ Partial Class FrmQuery
         '
         'BtnSaveChanges1
         '
-        Me.BtnSaveChanges1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnSaveChanges1.Location = New System.Drawing.Point(507, 3)
         Me.BtnSaveChanges1.Name = "BtnSaveChanges1"
         Me.BtnSaveChanges1.Size = New System.Drawing.Size(125, 28)
@@ -932,7 +943,6 @@ Partial Class FrmQuery
         '
         'BtnEditRecord
         '
-        Me.BtnEditRecord.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnEditRecord.Location = New System.Drawing.Point(381, 3)
         Me.BtnEditRecord.Name = "BtnEditRecord"
         Me.BtnEditRecord.Size = New System.Drawing.Size(125, 28)
@@ -942,6 +952,9 @@ Partial Class FrmQuery
         '
         'AcroPDF
         '
+        Me.AcroPDF.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AcroPDF.Enabled = True
         Me.AcroPDF.Location = New System.Drawing.Point(641, 0)
         Me.AcroPDF.Name = "AcroPDF"
@@ -1257,6 +1270,8 @@ Partial Class FrmQuery
         'TabChanges
         '
         Me.TabChanges.BackColor = System.Drawing.SystemColors.Control
+        Me.TabChanges.Controls.Add(Me.DocumentTypeCombobox2)
+        Me.TabChanges.Controls.Add(Me.Label32)
         Me.TabChanges.Controls.Add(Me.TabControl2)
         Me.TabChanges.Location = New System.Drawing.Point(4, 32)
         Me.TabChanges.Name = "TabChanges"
@@ -1265,18 +1280,42 @@ Partial Class FrmQuery
         Me.TabChanges.TabIndex = 1
         Me.TabChanges.Text = "TabChanges"
         '
+        'DocumentTypeCombobox2
+        '
+        Me.DocumentTypeCombobox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DocumentType", True))
+        Me.DocumentTypeCombobox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.DocumentTypeCombobox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DocumentTypeCombobox2.FormattingEnabled = True
+        Me.DocumentTypeCombobox2.Location = New System.Drawing.Point(138, 2)
+        Me.DocumentTypeCombobox2.Name = "DocumentTypeCombobox2"
+        Me.DocumentTypeCombobox2.Size = New System.Drawing.Size(396, 28)
+        Me.DocumentTypeCombobox2.TabIndex = 29
+        '
+        'DocsCatalogueBindingSource
+        '
+        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
+        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'TabControl2
         '
+        Me.TabControl2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl2.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
         Me.TabControl2.Controls.Add(Me.Timesheet)
         Me.TabControl2.Controls.Add(Me.ReceiptInvoice)
         Me.TabControl2.Controls.Add(Me.Warranty)
         Me.TabControl2.Controls.Add(Me.Voucher)
         Me.TabControl2.Controls.Add(Me.CorpDocu)
-        Me.TabControl2.Location = New System.Drawing.Point(-1, -4)
+        Me.TabControl2.Location = New System.Drawing.Point(-1, 33)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(631, 425)
+        Me.TabControl2.Size = New System.Drawing.Size(631, 388)
         Me.TabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl2.TabIndex = 27
         Me.TabControl2.TabStop = False
@@ -1290,7 +1329,7 @@ Partial Class FrmQuery
         Me.Timesheet.Location = New System.Drawing.Point(4, 32)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(623, 389)
+        Me.Timesheet.Size = New System.Drawing.Size(623, 352)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
@@ -1317,7 +1356,7 @@ Partial Class FrmQuery
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(617, 383)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(617, 346)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1330,16 +1369,6 @@ Partial Class FrmQuery
         Me.BoxNoTS.Name = "BoxNoTS"
         Me.BoxNoTS.Size = New System.Drawing.Size(123, 22)
         Me.BoxNoTS.TabIndex = 7
-        '
-        'DocsCatalogueBindingSource
-        '
-        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
-        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
-        '
-        'DMSDataSet
-        '
-        Me.DMSDataSet.DataSetName = "DMSDataSet"
-        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'RackNoTS
         '
@@ -1472,10 +1501,10 @@ Partial Class FrmQuery
         Me.ReceiptInvoice.AutoScrollMinSize = New System.Drawing.Size(0, 400)
         Me.ReceiptInvoice.BackColor = System.Drawing.SystemColors.Control
         Me.ReceiptInvoice.Controls.Add(Me.GrpReceipt)
-        Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 32)
+        Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 25)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 389)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 359)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
@@ -1665,10 +1694,10 @@ Partial Class FrmQuery
         Me.Warranty.AutoScrollMinSize = New System.Drawing.Size(0, 420)
         Me.Warranty.BackColor = System.Drawing.SystemColors.Control
         Me.Warranty.Controls.Add(Me.GrpWarranty)
-        Me.Warranty.Location = New System.Drawing.Point(4, 32)
+        Me.Warranty.Location = New System.Drawing.Point(4, 25)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(623, 389)
+        Me.Warranty.Size = New System.Drawing.Size(623, 359)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
@@ -1857,9 +1886,9 @@ Partial Class FrmQuery
         Me.Voucher.AutoScrollMinSize = New System.Drawing.Size(0, 500)
         Me.Voucher.BackColor = System.Drawing.SystemColors.Control
         Me.Voucher.Controls.Add(Me.GrpVoucher)
-        Me.Voucher.Location = New System.Drawing.Point(4, 32)
+        Me.Voucher.Location = New System.Drawing.Point(4, 25)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(623, 389)
+        Me.Voucher.Size = New System.Drawing.Size(623, 359)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
@@ -2153,9 +2182,9 @@ Partial Class FrmQuery
         Me.CorpDocu.AutoScrollMinSize = New System.Drawing.Size(0, 350)
         Me.CorpDocu.BackColor = System.Drawing.SystemColors.Control
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
-        Me.CorpDocu.Location = New System.Drawing.Point(4, 32)
+        Me.CorpDocu.Location = New System.Drawing.Point(4, 25)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(623, 389)
+        Me.CorpDocu.Size = New System.Drawing.Size(623, 359)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
@@ -2185,7 +2214,7 @@ Partial Class FrmQuery
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(623, 389)
+        Me.GrpCorp.Size = New System.Drawing.Size(623, 359)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2287,8 +2316,6 @@ Partial Class FrmQuery
         '
         'FrmQuery
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1240, 738)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "FrmQuery"
@@ -2304,12 +2331,13 @@ Partial Class FrmQuery
         Me.TabQuery.ResumeLayout(False)
         Me.TabQuery.PerformLayout()
         Me.TabChanges.ResumeLayout(False)
+        Me.TabChanges.PerformLayout()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl2.ResumeLayout(False)
         Me.Timesheet.ResumeLayout(False)
         Me.GrpTimeSheet.ResumeLayout(False)
         Me.GrpTimeSheet.PerformLayout()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ReceiptInvoice.ResumeLayout(False)
@@ -2541,4 +2569,7 @@ Partial Class FrmQuery
     Private Sub BtnSaveChanges_Click(sender As Object, e As EventArgs) Handles BtnSaveChanges1.Click
 
     End Sub
+
+    Friend WithEvents DocumentTypeCombobox2 As ComboBox
+    Friend WithEvents Label32 As Label
 End Class
