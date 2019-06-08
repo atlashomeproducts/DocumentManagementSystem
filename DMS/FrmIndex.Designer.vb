@@ -26,8 +26,14 @@ Partial Class FrmIndex
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.Splitter2 = New System.Windows.Forms.Splitter()
         Me.BtnRemove = New System.Windows.Forms.Button()
         Me.BtnBrowse = New System.Windows.Forms.Button()
+        Me.Splitter1 = New System.Windows.Forms.Splitter()
+        Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
+        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.RackNoTextbox = New System.Windows.Forms.TextBox()
@@ -36,9 +42,6 @@ Partial Class FrmIndex
         Me.SubBatchTextbox = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtBatchDesc = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
-        Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.scanDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -53,12 +56,18 @@ Partial Class FrmIndex
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
+        CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer3.Panel1.SuspendLayout()
+        Me.SplitContainer3.Panel2.SuspendLayout()
+        Me.SplitContainer3.SuspendLayout()
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainer1
         '
-        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
@@ -68,22 +77,8 @@ Partial Class FrmIndex
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Label7)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Label6)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.RackNoTextbox)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.BoxNoTextbox)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Label5)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.SubBatchTextbox)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Label4)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.TxtBatchDesc)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Label3)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.AxAcroPDF1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Splitter1)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Label2)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.scanDateTimePicker)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Label1)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.batchIdTextBox)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.BtnIndex)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer3)
         Me.SplitContainer1.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SplitContainer1.Size = New System.Drawing.Size(899, 580)
         Me.SplitContainer1.SplitterDistance = 432
@@ -92,7 +87,6 @@ Partial Class FrmIndex
         'SplitContainer2
         '
         Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer2.IsSplitterFixed = True
         Me.SplitContainer2.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer2.Name = "SplitContainer2"
         Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
@@ -103,6 +97,7 @@ Partial Class FrmIndex
         '
         'SplitContainer2.Panel2
         '
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Splitter2)
         Me.SplitContainer2.Panel2.Controls.Add(Me.BtnRemove)
         Me.SplitContainer2.Panel2.Controls.Add(Me.BtnBrowse)
         Me.SplitContainer2.Size = New System.Drawing.Size(432, 580)
@@ -111,19 +106,25 @@ Partial Class FrmIndex
         '
         'ListBox1
         '
-        Me.ListBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(0, 0)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox1.Size = New System.Drawing.Size(429, 498)
+        Me.ListBox1.Size = New System.Drawing.Size(432, 519)
         Me.ListBox1.TabIndex = 1
+        '
+        'Splitter2
+        '
+        Me.Splitter2.Location = New System.Drawing.Point(0, 0)
+        Me.Splitter2.Name = "Splitter2"
+        Me.Splitter2.Size = New System.Drawing.Size(3, 57)
+        Me.Splitter2.TabIndex = 3
+        Me.Splitter2.TabStop = False
         '
         'BtnRemove
         '
-        Me.BtnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnRemove.AutoSize = True
         Me.BtnRemove.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRemove.Location = New System.Drawing.Point(236, 12)
         Me.BtnRemove.Name = "BtnRemove"
@@ -134,116 +135,14 @@ Partial Class FrmIndex
         '
         'BtnBrowse
         '
-        Me.BtnBrowse.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BtnBrowse.AutoSize = True
         Me.BtnBrowse.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBrowse.Location = New System.Drawing.Point(8, 12)
+        Me.BtnBrowse.Location = New System.Drawing.Point(9, 12)
         Me.BtnBrowse.Name = "BtnBrowse"
         Me.BtnBrowse.Size = New System.Drawing.Size(191, 39)
         Me.BtnBrowse.TabIndex = 0
         Me.BtnBrowse.Text = "BROWSE"
         Me.BtnBrowse.UseVisualStyleBackColor = True
-        '
-        'Label7
-        '
-        Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(19, 509)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(67, 16)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "Rack No.:"
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(19, 485)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(58, 16)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Box No.:"
-        '
-        'RackNoTextbox
-        '
-        Me.RackNoTextbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RackNoTextbox.Location = New System.Drawing.Point(130, 506)
-        Me.RackNoTextbox.Name = "RackNoTextbox"
-        Me.RackNoTextbox.Size = New System.Drawing.Size(106, 22)
-        Me.RackNoTextbox.TabIndex = 8
-        '
-        'BoxNoTextbox
-        '
-        Me.BoxNoTextbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BoxNoTextbox.Location = New System.Drawing.Point(130, 482)
-        Me.BoxNoTextbox.Name = "BoxNoTextbox"
-        Me.BoxNoTextbox.Size = New System.Drawing.Size(106, 22)
-        Me.BoxNoTextbox.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(19, 416)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(112, 16)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Sub Batch Name:"
-        '
-        'SubBatchTextbox
-        '
-        Me.SubBatchTextbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SubBatchTextbox.Location = New System.Drawing.Point(130, 413)
-        Me.SubBatchTextbox.Name = "SubBatchTextbox"
-        Me.SubBatchTextbox.Size = New System.Drawing.Size(315, 22)
-        Me.SubBatchTextbox.TabIndex = 4
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 439)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(80, 16)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Batch Desc:"
-        '
-        'TxtBatchDesc
-        '
-        Me.TxtBatchDesc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBatchDesc.Location = New System.Drawing.Point(130, 436)
-        Me.TxtBatchDesc.Name = "TxtBatchDesc"
-        Me.TxtBatchDesc.Size = New System.Drawing.Size(315, 22)
-        Me.TxtBatchDesc.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(9, 9)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(56, 16)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "Preview"
-        '
-        'AxAcroPDF1
-        '
-        Me.AxAcroPDF1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.AxAcroPDF1.Enabled = True
-        Me.AxAcroPDF1.Location = New System.Drawing.Point(18, 28)
-        Me.AxAcroPDF1.Name = "AxAcroPDF1"
-        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxAcroPDF1.Size = New System.Drawing.Size(433, 355)
-        Me.AxAcroPDF1.TabIndex = 6
-        Me.AxAcroPDF1.TabStop = False
         '
         'Splitter1
         '
@@ -253,54 +152,194 @@ Partial Class FrmIndex
         Me.Splitter1.TabIndex = 5
         Me.Splitter1.TabStop = False
         '
+        'SplitContainer3
+        '
+        Me.SplitContainer3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer3.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer3.Name = "SplitContainer3"
+        Me.SplitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'SplitContainer3.Panel1
+        '
+        Me.SplitContainer3.Panel1.Controls.Add(Me.AxAcroPDF1)
+        '
+        'SplitContainer3.Panel2
+        '
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label8)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label3)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label7)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label6)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.RackNoTextbox)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.BoxNoTextbox)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label5)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.SubBatchTextbox)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label4)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.TxtBatchDesc)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label2)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.scanDateTimePicker)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label1)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.batchIdTextBox)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.BtnIndex)
+        Me.SplitContainer3.Size = New System.Drawing.Size(463, 580)
+        Me.SplitContainer3.SplitterDistance = 389
+        Me.SplitContainer3.TabIndex = 16
+        '
+        'AxAcroPDF1
+        '
+        Me.AxAcroPDF1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AxAcroPDF1.Enabled = True
+        Me.AxAcroPDF1.Location = New System.Drawing.Point(0, 0)
+        Me.AxAcroPDF1.Name = "AxAcroPDF1"
+        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxAcroPDF1.Size = New System.Drawing.Size(463, 389)
+        Me.AxAcroPDF1.TabIndex = 8
+        Me.AxAcroPDF1.TabStop = False
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(15, 3)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(56, 16)
+        Me.Label8.TabIndex = 30
+        Me.Label8.Text = "Preview"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(15, -388)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(56, 16)
+        Me.Label3.TabIndex = 24
+        Me.Label3.Text = "Preview"
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(15, 151)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(67, 16)
+        Me.Label7.TabIndex = 29
+        Me.Label7.Text = "Rack No.:"
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(15, 127)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(58, 16)
+        Me.Label6.TabIndex = 28
+        Me.Label6.Text = "Box No.:"
+        '
+        'RackNoTextbox
+        '
+        Me.RackNoTextbox.Location = New System.Drawing.Point(126, 148)
+        Me.RackNoTextbox.Name = "RackNoTextbox"
+        Me.RackNoTextbox.Size = New System.Drawing.Size(106, 22)
+        Me.RackNoTextbox.TabIndex = 23
+        '
+        'BoxNoTextbox
+        '
+        Me.BoxNoTextbox.Location = New System.Drawing.Point(126, 124)
+        Me.BoxNoTextbox.Name = "BoxNoTextbox"
+        Me.BoxNoTextbox.Size = New System.Drawing.Size(106, 22)
+        Me.BoxNoTextbox.TabIndex = 22
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(15, 58)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(112, 16)
+        Me.Label5.TabIndex = 27
+        Me.Label5.Text = "Sub Batch Name:"
+        '
+        'SubBatchTextbox
+        '
+        Me.SubBatchTextbox.Location = New System.Drawing.Point(126, 55)
+        Me.SubBatchTextbox.Name = "SubBatchTextbox"
+        Me.SubBatchTextbox.Size = New System.Drawing.Size(315, 22)
+        Me.SubBatchTextbox.TabIndex = 18
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(15, 81)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(80, 16)
+        Me.Label4.TabIndex = 25
+        Me.Label4.Text = "Batch Desc:"
+        '
+        'TxtBatchDesc
+        '
+        Me.TxtBatchDesc.Location = New System.Drawing.Point(126, 78)
+        Me.TxtBatchDesc.Name = "TxtBatchDesc"
+        Me.TxtBatchDesc.Size = New System.Drawing.Size(315, 22)
+        Me.TxtBatchDesc.TabIndex = 20
+        '
         'Label2
         '
-        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(19, 462)
+        Me.Label2.Location = New System.Drawing.Point(15, 104)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(97, 16)
-        Me.Label2.TabIndex = 4
+        Me.Label2.TabIndex = 19
         Me.Label2.Text = "Scanned Date:"
         '
         'scanDateTimePicker
         '
-        Me.scanDateTimePicker.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.scanDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.scanDateTimePicker.Location = New System.Drawing.Point(130, 459)
+        Me.scanDateTimePicker.Location = New System.Drawing.Point(126, 101)
         Me.scanDateTimePicker.Name = "scanDateTimePicker"
         Me.scanDateTimePicker.Size = New System.Drawing.Size(185, 22)
-        Me.scanDateTimePicker.TabIndex = 6
+        Me.scanDateTimePicker.TabIndex = 21
         '
         'Label1
         '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(19, 391)
+        Me.Label1.Location = New System.Drawing.Point(15, 33)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 16)
-        Me.Label1.TabIndex = 2
+        Me.Label1.TabIndex = 16
         Me.Label1.Text = "Batch Name:"
         '
         'batchIdTextBox
         '
-        Me.batchIdTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.batchIdTextBox.Location = New System.Drawing.Point(130, 390)
+        Me.batchIdTextBox.Location = New System.Drawing.Point(126, 32)
         Me.batchIdTextBox.Name = "batchIdTextBox"
         Me.batchIdTextBox.Size = New System.Drawing.Size(315, 22)
-        Me.batchIdTextBox.TabIndex = 3
+        Me.batchIdTextBox.TabIndex = 17
         '
         'BtnIndex
         '
-        Me.BtnIndex.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnIndex.Location = New System.Drawing.Point(302, 535)
+        Me.BtnIndex.Location = New System.Drawing.Point(292, 142)
         Me.BtnIndex.Name = "BtnIndex"
         Me.BtnIndex.Size = New System.Drawing.Size(149, 36)
-        Me.BtnIndex.TabIndex = 9
+        Me.BtnIndex.TabIndex = 26
         Me.BtnIndex.Text = "INDEX FILES"
         Me.BtnIndex.UseVisualStyleBackColor = True
         '
@@ -310,7 +349,10 @@ Partial Class FrmIndex
         '
         'FrmIndex
         '
-
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(899, 580)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -319,13 +361,18 @@ Partial Class FrmIndex
         Me.Text = "INDEX"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
-        Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
+        Me.SplitContainer2.Panel2.PerformLayout()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
+        Me.SplitContainer3.Panel1.ResumeLayout(False)
+        Me.SplitContainer3.Panel2.ResumeLayout(False)
+        Me.SplitContainer3.Panel2.PerformLayout()
+        CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer3.ResumeLayout(False)
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -335,22 +382,25 @@ Partial Class FrmIndex
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents BtnBrowse As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents BtnIndex As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents batchIdTextBox As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents scanDateTimePicker As DateTimePicker
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
     Friend WithEvents Splitter1 As Splitter
     Friend WithEvents BtnRemove As Button
+    Friend WithEvents SplitContainer3 As SplitContainer
+    Friend WithEvents Label8 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TxtBatchDesc As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents SubBatchTextbox As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents RackNoTextbox As TextBox
     Friend WithEvents BoxNoTextbox As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents SubBatchTextbox As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TxtBatchDesc As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents scanDateTimePicker As DateTimePicker
+    Friend WithEvents Label1 As Label
+    Friend WithEvents batchIdTextBox As TextBox
+    Friend WithEvents Splitter2 As Splitter
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
+    Friend WithEvents BtnIndex As Button
 End Class

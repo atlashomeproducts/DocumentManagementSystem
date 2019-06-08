@@ -124,6 +124,12 @@ Public Class FrmIndex
 
     End Sub
 
+    Private Sub SplitContainer3_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles SplitContainer3.Panel2.Paint
+
+    End Sub
+
+
+
     'Private Sub ListBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles ListBox1.MouseDown
     '    Try
 

@@ -958,17 +958,21 @@ Partial Class FrmEditor
         '
         'SplitContainer1
         '
-        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.Controls.Add(Me.SplitContainer2)
+        Me.SplitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No
         '
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.AcroReader1)
+        Me.SplitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer1.Size = New System.Drawing.Size(1197, 684)
         Me.SplitContainer1.SplitterDistance = 641
         Me.SplitContainer1.TabIndex = 0
@@ -976,7 +980,9 @@ Partial Class FrmEditor
         '
         'SplitContainer2
         '
-        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SplitContainer2.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer2.Name = "SplitContainer2"
         Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
@@ -985,6 +991,7 @@ Partial Class FrmEditor
         '
         Me.SplitContainer2.Panel1.AutoScroll = True
         Me.SplitContainer2.Panel1.Controls.Add(Me.DocsCatalogueC1TrueDBGrid)
+        Me.SplitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No
         '
         'SplitContainer2.Panel2
         '
@@ -1000,6 +1007,7 @@ Partial Class FrmEditor
         Me.SplitContainer2.Panel2.Controls.Add(Me.BtnEdit)
         Me.SplitContainer2.Panel2.Controls.Add(Me.DocumentTypeComboBox)
         Me.SplitContainer2.Panel2.Controls.Add(DocumentTypeLabel)
+        Me.SplitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer2.Size = New System.Drawing.Size(641, 684)
         Me.SplitContainer2.SplitterDistance = 274
         Me.SplitContainer2.TabIndex = 0
@@ -1050,7 +1058,6 @@ Partial Class FrmEditor
         '
         'BtnRemove
         '
-        Me.BtnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnRemove.Location = New System.Drawing.Point(362, 8)
         Me.BtnRemove.Name = "BtnRemove"
         Me.BtnRemove.Size = New System.Drawing.Size(92, 27)
@@ -1069,7 +1076,6 @@ Partial Class FrmEditor
         '
         'Button1
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(453, 8)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(92, 27)
@@ -1079,20 +1085,17 @@ Partial Class FrmEditor
         '
         'TabControl1
         '
-        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
         Me.TabControl1.Controls.Add(Me.Timesheet)
         Me.TabControl1.Controls.Add(Me.ReceiptInvoice)
         Me.TabControl1.Controls.Add(Me.Warranty)
         Me.TabControl1.Controls.Add(Me.Voucher)
         Me.TabControl1.Controls.Add(Me.CorpDocu)
-        Me.TabControl1.Location = New System.Drawing.Point(7, 77)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.TabControl1.Location = New System.Drawing.Point(0, 80)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(631, 304)
-        Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        Me.TabControl1.Size = New System.Drawing.Size(641, 304)
         Me.TabControl1.TabIndex = 26
         Me.TabControl1.TabStop = False
         '
@@ -1104,7 +1107,7 @@ Partial Class FrmEditor
         Me.Timesheet.Location = New System.Drawing.Point(4, 25)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(623, 275)
+        Me.Timesheet.Size = New System.Drawing.Size(633, 275)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         Me.Timesheet.UseVisualStyleBackColor = True
@@ -1132,7 +1135,7 @@ Partial Class FrmEditor
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(600, 294)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(610, 294)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1258,7 +1261,7 @@ Partial Class FrmEditor
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 25)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(623, 275)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(633, 275)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         Me.ReceiptInvoice.UseVisualStyleBackColor = True
@@ -1299,7 +1302,7 @@ Partial Class FrmEditor
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(600, 394)
+        Me.GrpReceipt.Size = New System.Drawing.Size(610, 394)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1449,7 +1452,7 @@ Partial Class FrmEditor
         Me.Warranty.Location = New System.Drawing.Point(4, 25)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(623, 275)
+        Me.Warranty.Size = New System.Drawing.Size(633, 275)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         Me.Warranty.UseVisualStyleBackColor = True
@@ -1492,7 +1495,7 @@ Partial Class FrmEditor
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(600, 414)
+        Me.GrpWarranty.Size = New System.Drawing.Size(610, 414)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1639,7 +1642,7 @@ Partial Class FrmEditor
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 25)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(623, 275)
+        Me.Voucher.Size = New System.Drawing.Size(633, 275)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         Me.Voucher.UseVisualStyleBackColor = True
@@ -1682,7 +1685,7 @@ Partial Class FrmEditor
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(606, 500)
+        Me.GrpVoucher.Size = New System.Drawing.Size(616, 500)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -1927,7 +1930,7 @@ Partial Class FrmEditor
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 25)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(623, 275)
+        Me.CorpDocu.Size = New System.Drawing.Size(633, 275)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         Me.CorpDocu.UseVisualStyleBackColor = True
@@ -1957,7 +1960,7 @@ Partial Class FrmEditor
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(606, 350)
+        Me.GrpCorp.Size = New System.Drawing.Size(616, 350)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2059,7 +2062,6 @@ Partial Class FrmEditor
         '
         'BtnClear
         '
-        Me.BtnClear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnClear.Location = New System.Drawing.Point(544, 8)
         Me.BtnClear.Name = "BtnClear"
         Me.BtnClear.Size = New System.Drawing.Size(92, 27)
@@ -2120,6 +2122,9 @@ Partial Class FrmEditor
         '
         'FrmEditor
         '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1197, 684)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

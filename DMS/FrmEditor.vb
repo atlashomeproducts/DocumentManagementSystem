@@ -421,7 +421,7 @@ Public Class FrmEditor
 
         ElseIf Me.DocumentTypeComboBox.Text = "Warranty Card" Then
                 TabControl1.SelectTab(Warranty)
-            If RackNoWarranty.Text = "" = "" Then
+            If RackNoWarranty.Text = "" Then
                 RackNoWarranty.Text = My.Settings.Save_RackNoWarranty
             End If
             If BoxNoWarranty.Text = "" Then

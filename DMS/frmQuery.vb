@@ -58,6 +58,14 @@ Public Class FrmQuery
 
 
 
+        Try
+            Me.C1TrueDBGrid1.LoadLayout("default.layout")
+        Catch ex As Exception
+            Me.C1TrueDBGrid1.SaveLayout("default.layout")
+        End Try
+
+
+
 
     End Sub
     Private Sub PopulateCombobox()
@@ -415,6 +423,8 @@ AND Status = 'Finished'
 
         Try
 
+
+
             Dim DateFormat As Date
 
             If Date.TryParseExact(DocumentDateTS.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateTS.Text = "" Then
@@ -460,19 +470,18 @@ AND Status = 'Finished'
 
     End Sub
 
-    Private Sub DocumentTypeCombobox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DocumentTypeCombobox2.SelectedIndexChanged
 
-    End Sub
 
-    Private Sub DocumentTypeComboBox_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles DocumentTypeComboBox.SelectedIndexChanged
 
-    End Sub
-
-    Private Sub DocumentTypeCombobox2_TextChanged(sender As Object, e As EventArgs) Handles DocumentTypeCombobox2.TextChanged
+    Private Sub DocumentTypeCombobox2_TextChanged(sender As Object, e As EventArgs)
         ComboSelect3()
     End Sub
 
-    Private Sub DocumentDateTS_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateTS.TextChanged
 
+
+    Private Sub FrmQuery_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Me.C1TrueDBGrid1.SaveLayout("default.layout")
     End Sub
+
+
 End Class
