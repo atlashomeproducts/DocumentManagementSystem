@@ -341,6 +341,7 @@ Public Class FrmEditor
 
         If Me.DocumentTypeComboBox.Text = "Sales Invoice" Then
             TabControl1.SelectTab(ReceiptInvoice)
+
             If RackNoRI.Text = "" Then
                 RackNoRI.Text = My.Settings.Save_RackNoRI
             End If

@@ -4,6 +4,8 @@ Imports System.Data.SqlClient
 Imports System.Configuration
 Imports System.IO
 Public Class FrmIndex
+
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnBrowse.Click
 
         With OpenFileDialog1
@@ -14,10 +16,18 @@ Public Class FrmIndex
             .CheckFileExists = True  'Only select existing files
             .ShowReadOnly = True   'Hide read only files
             .Title = "Import Files"  'Set caption of OFD
+
+
+
             If .ShowDialog() = System.Windows.Forms.DialogResult.OK Then
 
+
                 For Each filename As String In .FileNames  'Loop through the file names
-                    ListBox1.Items.Add(filename)
+                    If Not (ListBox1.Items.Contains(filename)) Then
+                        ListBox1.Items.Add(filename)
+                    Else
+                        MessageBox.Show(filename & " already exists", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    End If
                 Next
 
             End If
@@ -125,6 +135,11 @@ Public Class FrmIndex
     End Sub
 
     Private Sub SplitContainer3_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles SplitContainer3.Panel2.Paint
+
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
+
 
     End Sub
 

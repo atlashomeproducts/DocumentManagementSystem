@@ -327,7 +327,7 @@ Partial Class FrmEditor
         ReferenceNoLabel.Name = "ReferenceNoLabel"
         ReferenceNoLabel.Size = New System.Drawing.Size(126, 16)
         ReferenceNoLabel.TabIndex = 5
-        ReferenceNoLabel.Text = "Reciept/Invoice No:"
+        ReferenceNoLabel.Text = "Receipt/Invoice No:"
         '
         'BookletNoLabel
         '

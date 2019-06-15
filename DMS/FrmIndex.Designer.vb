@@ -130,7 +130,7 @@ Partial Class FrmIndex
         Me.BtnRemove.Name = "BtnRemove"
         Me.BtnRemove.Size = New System.Drawing.Size(191, 39)
         Me.BtnRemove.TabIndex = 2
-        Me.BtnRemove.Text = "REMOVE"
+        Me.BtnRemove.Text = "REMOVE ALL"
         Me.BtnRemove.UseVisualStyleBackColor = True
         '
         'BtnBrowse

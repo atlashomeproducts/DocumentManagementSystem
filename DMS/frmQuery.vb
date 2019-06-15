@@ -171,8 +171,6 @@ Public Class FrmQuery
         ElseIf Me.DocumentTypeCombobox2.Text = "Warranty Card" Then
             TabControl2.SelectTab(Warranty)
 
-
-
         ElseIf Me.DocumentTypeCombobox2.Text = "Payment Voucher" Then
             TabControl2.SelectTab(Voucher)
 
