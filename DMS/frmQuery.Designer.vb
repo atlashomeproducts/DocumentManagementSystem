@@ -26,6 +26,16 @@ Partial Class FrmQuery
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmQuery))
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.MeetingDateLabel = New System.Windows.Forms.Label()
+        Me.SecretaryLabel = New System.Windows.Forms.Label()
+        Me.CompanyLabel = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.DTIPermitNoLabel = New System.Windows.Forms.Label()
+        Me.PromoToLabel = New System.Windows.Forms.Label()
+        Me.PromoFromLabel = New System.Windows.Forms.Label()
+        Me.PromoTitleLabel = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.C1TrueDBGrid1 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
@@ -205,27 +215,35 @@ Partial Class FrmQuery
         Me.CheckNoLabel = New System.Windows.Forms.Label()
         Me.CorpDocu = New System.Windows.Forms.TabPage()
         Me.GrpCorp = New System.Windows.Forms.GroupBox()
-        Me.Label25 = New System.Windows.Forms.Label()
+        Me.TabControl4 = New System.Windows.Forms.TabControl()
+        Me.TabMeeting = New System.Windows.Forms.TabPage()
+        Me.DTMeetingDate = New System.Windows.Forms.DateTimePicker()
+        Me.MeetingDateTextBox = New System.Windows.Forms.TextBox()
+        Me.SecretaryTextBox = New System.Windows.Forms.TextBox()
+        Me.CompanyTextBox = New System.Windows.Forms.TextBox()
+        Me.TabPromo = New System.Windows.Forms.TabPage()
+        Me.DTPromoTo = New System.Windows.Forms.DateTimePicker()
+        Me.DTPromoFrom = New System.Windows.Forms.DateTimePicker()
+        Me.DTIPermitNoTextBox = New System.Windows.Forms.TextBox()
+        Me.PromoToTextBox = New System.Windows.Forms.TextBox()
+        Me.PromoFromTextBox = New System.Windows.Forms.TextBox()
+        Me.PromoTitleTextBox = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.BoxNoCorpDocu = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.RackNoCorpDocu = New System.Windows.Forms.TextBox()
-        Me.DTMeetingDate = New System.Windows.Forms.DateTimePicker()
         Me.DTDocuCorp = New System.Windows.Forms.DateTimePicker()
-        Me.MeetingDateLabel = New System.Windows.Forms.Label()
-        Me.MeetingDateTextBox = New System.Windows.Forms.TextBox()
-        Me.SecretaryLabel = New System.Windows.Forms.Label()
-        Me.SecretaryTextBox = New System.Windows.Forms.TextBox()
         Me.PurposeLabel = New System.Windows.Forms.Label()
         Me.PurposeTextBox = New System.Windows.Forms.TextBox()
-        Me.CompanyLabel = New System.Windows.Forms.Label()
-        Me.CompanyTextBox = New System.Windows.Forms.TextBox()
         Me.DocumentDateLabel2 = New System.Windows.Forms.Label()
         Me.DocumentDateCorp = New System.Windows.Forms.TextBox()
         Me.AcroPDF = New AxAcroPDFLib.AxAcroPDF()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
+        Me.TabMeeting2 = New System.Windows.Forms.TabPage()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -256,8 +274,102 @@ Partial Class FrmQuery
         Me.Check.SuspendLayout()
         Me.CorpDocu.SuspendLayout()
         Me.GrpCorp.SuspendLayout()
+        Me.TabControl4.SuspendLayout()
+        Me.TabMeeting.SuspendLayout()
+        Me.TabPromo.SuspendLayout()
         CType(Me.AcroPDF, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabMeeting2.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(277, 8)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(82, 16)
+        Me.Label25.TabIndex = 44
+        Me.Label25.Text = "mm/dd/yyyy"
+        '
+        'MeetingDateLabel
+        '
+        Me.MeetingDateLabel.AutoSize = True
+        Me.MeetingDateLabel.Location = New System.Drawing.Point(4, 8)
+        Me.MeetingDateLabel.Name = "MeetingDateLabel"
+        Me.MeetingDateLabel.Size = New System.Drawing.Size(91, 16)
+        Me.MeetingDateLabel.TabIndex = 39
+        Me.MeetingDateLabel.Text = "Meeting Date:"
+        '
+        'SecretaryLabel
+        '
+        Me.SecretaryLabel.AutoSize = True
+        Me.SecretaryLabel.Location = New System.Drawing.Point(4, 54)
+        Me.SecretaryLabel.Name = "SecretaryLabel"
+        Me.SecretaryLabel.Size = New System.Drawing.Size(69, 16)
+        Me.SecretaryLabel.TabIndex = 38
+        Me.SecretaryLabel.Text = "Secretary:"
+        '
+        'CompanyLabel
+        '
+        Me.CompanyLabel.AutoSize = True
+        Me.CompanyLabel.Location = New System.Drawing.Point(4, 31)
+        Me.CompanyLabel.Name = "CompanyLabel"
+        Me.CompanyLabel.Size = New System.Drawing.Size(69, 16)
+        Me.CompanyLabel.TabIndex = 37
+        Me.CompanyLabel.Text = "Company:"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(277, 53)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(82, 16)
+        Me.Label33.TabIndex = 56
+        Me.Label33.Text = "mm/dd/yyyy"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(277, 30)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(82, 16)
+        Me.Label34.TabIndex = 55
+        Me.Label34.Text = "mm/dd/yyyy"
+        '
+        'DTIPermitNoLabel
+        '
+        Me.DTIPermitNoLabel.AutoSize = True
+        Me.DTIPermitNoLabel.Location = New System.Drawing.Point(5, 76)
+        Me.DTIPermitNoLabel.Name = "DTIPermitNoLabel"
+        Me.DTIPermitNoLabel.Size = New System.Drawing.Size(92, 16)
+        Me.DTIPermitNoLabel.TabIndex = 50
+        Me.DTIPermitNoLabel.Text = "DTIPermit No:"
+        '
+        'PromoToLabel
+        '
+        Me.PromoToLabel.AutoSize = True
+        Me.PromoToLabel.Location = New System.Drawing.Point(4, 53)
+        Me.PromoToLabel.Name = "PromoToLabel"
+        Me.PromoToLabel.Size = New System.Drawing.Size(28, 16)
+        Me.PromoToLabel.TabIndex = 48
+        Me.PromoToLabel.Text = "To:"
+        '
+        'PromoFromLabel
+        '
+        Me.PromoFromLabel.AutoSize = True
+        Me.PromoFromLabel.Location = New System.Drawing.Point(5, 30)
+        Me.PromoFromLabel.Name = "PromoFromLabel"
+        Me.PromoFromLabel.Size = New System.Drawing.Size(42, 16)
+        Me.PromoFromLabel.TabIndex = 46
+        Me.PromoFromLabel.Text = "From:"
+        '
+        'PromoTitleLabel
+        '
+        Me.PromoTitleLabel.AutoSize = True
+        Me.PromoTitleLabel.Location = New System.Drawing.Point(4, 7)
+        Me.PromoTitleLabel.Name = "PromoTitleLabel"
+        Me.PromoTitleLabel.Size = New System.Drawing.Size(80, 16)
+        Me.PromoTitleLabel.TabIndex = 45
+        Me.PromoTitleLabel.Text = "Promo Title:"
         '
         'SplitContainer1
         '
@@ -710,7 +822,7 @@ Partial Class FrmQuery
         Me.TabControl2.Location = New System.Drawing.Point(-1, 33)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(592, 475)
+        Me.TabControl2.Size = New System.Drawing.Size(592, 566)
         Me.TabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl2.TabIndex = 27
         Me.TabControl2.TabStop = False
@@ -724,7 +836,7 @@ Partial Class FrmQuery
         Me.Timesheet.Location = New System.Drawing.Point(4, 32)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(584, 439)
+        Me.Timesheet.Size = New System.Drawing.Size(584, 530)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
@@ -751,7 +863,7 @@ Partial Class FrmQuery
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(578, 433)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(578, 524)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -980,7 +1092,7 @@ Partial Class FrmQuery
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 32)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(584, 439)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(584, 530)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
@@ -1021,7 +1133,7 @@ Partial Class FrmQuery
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(578, 433)
+        Me.GrpReceipt.Size = New System.Drawing.Size(578, 524)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1300,7 +1412,7 @@ Partial Class FrmQuery
         Me.Warranty.Location = New System.Drawing.Point(4, 32)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(584, 439)
+        Me.Warranty.Size = New System.Drawing.Size(584, 530)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
@@ -1342,7 +1454,7 @@ Partial Class FrmQuery
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(578, 433)
+        Me.GrpWarranty.Size = New System.Drawing.Size(578, 524)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1635,7 +1747,7 @@ Partial Class FrmQuery
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 32)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(584, 439)
+        Me.Voucher.Size = New System.Drawing.Size(584, 530)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
@@ -1677,7 +1789,7 @@ Partial Class FrmQuery
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(567, 500)
+        Me.GrpVoucher.Size = New System.Drawing.Size(584, 530)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -2113,29 +2225,22 @@ Partial Class FrmQuery
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 32)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(584, 439)
+        Me.CorpDocu.Size = New System.Drawing.Size(584, 530)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
         'GrpCorp
         '
         Me.GrpCorp.BackColor = System.Drawing.SystemColors.Control
-        Me.GrpCorp.Controls.Add(Me.Label25)
+        Me.GrpCorp.Controls.Add(Me.TabControl4)
         Me.GrpCorp.Controls.Add(Me.Label26)
         Me.GrpCorp.Controls.Add(Me.Label27)
         Me.GrpCorp.Controls.Add(Me.BoxNoCorpDocu)
         Me.GrpCorp.Controls.Add(Me.Label28)
         Me.GrpCorp.Controls.Add(Me.RackNoCorpDocu)
-        Me.GrpCorp.Controls.Add(Me.DTMeetingDate)
         Me.GrpCorp.Controls.Add(Me.DTDocuCorp)
-        Me.GrpCorp.Controls.Add(Me.MeetingDateLabel)
-        Me.GrpCorp.Controls.Add(Me.MeetingDateTextBox)
-        Me.GrpCorp.Controls.Add(Me.SecretaryLabel)
-        Me.GrpCorp.Controls.Add(Me.SecretaryTextBox)
         Me.GrpCorp.Controls.Add(Me.PurposeLabel)
         Me.GrpCorp.Controls.Add(Me.PurposeTextBox)
-        Me.GrpCorp.Controls.Add(Me.CompanyLabel)
-        Me.GrpCorp.Controls.Add(Me.CompanyTextBox)
         Me.GrpCorp.Controls.Add(Me.DocumentDateLabel2)
         Me.GrpCorp.Controls.Add(Me.DocumentDateCorp)
         Me.GrpCorp.Dock = System.Windows.Forms.DockStyle.Fill
@@ -2143,19 +2248,142 @@ Partial Class FrmQuery
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(584, 439)
+        Me.GrpCorp.Size = New System.Drawing.Size(584, 530)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
         '
-        'Label25
+        'TabControl4
         '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(281, 106)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(82, 16)
-        Me.Label25.TabIndex = 36
-        Me.Label25.Text = "mm/dd/yyyy"
+        Me.TabControl4.Controls.Add(Me.TabMeeting)
+        Me.TabControl4.Controls.Add(Me.TabPromo)
+        Me.TabControl4.Controls.Add(Me.TabMeeting2)
+        Me.TabControl4.Location = New System.Drawing.Point(0, 95)
+        Me.TabControl4.Name = "TabControl4"
+        Me.TabControl4.SelectedIndex = 0
+        Me.TabControl4.Size = New System.Drawing.Size(590, 129)
+        Me.TabControl4.TabIndex = 46
+        '
+        'TabMeeting
+        '
+        Me.TabMeeting.BackColor = System.Drawing.SystemColors.Control
+        Me.TabMeeting.Controls.Add(Me.Label25)
+        Me.TabMeeting.Controls.Add(Me.DTMeetingDate)
+        Me.TabMeeting.Controls.Add(Me.MeetingDateLabel)
+        Me.TabMeeting.Controls.Add(Me.MeetingDateTextBox)
+        Me.TabMeeting.Controls.Add(Me.SecretaryLabel)
+        Me.TabMeeting.Controls.Add(Me.SecretaryTextBox)
+        Me.TabMeeting.Controls.Add(Me.CompanyLabel)
+        Me.TabMeeting.Controls.Add(Me.CompanyTextBox)
+        Me.TabMeeting.Location = New System.Drawing.Point(4, 25)
+        Me.TabMeeting.Name = "TabMeeting"
+        Me.TabMeeting.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabMeeting.Size = New System.Drawing.Size(582, 100)
+        Me.TabMeeting.TabIndex = 0
+        Me.TabMeeting.Text = "Meeting"
+        '
+        'DTMeetingDate
+        '
+        Me.DTMeetingDate.Location = New System.Drawing.Point(255, 5)
+        Me.DTMeetingDate.Name = "DTMeetingDate"
+        Me.DTMeetingDate.Size = New System.Drawing.Size(18, 22)
+        Me.DTMeetingDate.TabIndex = 41
+        '
+        'MeetingDateTextBox
+        '
+        Me.MeetingDateTextBox.BackColor = System.Drawing.Color.White
+        Me.MeetingDateTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "MeetingDate", True))
+        Me.MeetingDateTextBox.Location = New System.Drawing.Point(154, 5)
+        Me.MeetingDateTextBox.Name = "MeetingDateTextBox"
+        Me.MeetingDateTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.MeetingDateTextBox.TabIndex = 40
+        Me.MeetingDateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'SecretaryTextBox
+        '
+        Me.SecretaryTextBox.BackColor = System.Drawing.Color.White
+        Me.SecretaryTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Secretary", True))
+        Me.SecretaryTextBox.Location = New System.Drawing.Point(154, 51)
+        Me.SecretaryTextBox.Name = "SecretaryTextBox"
+        Me.SecretaryTextBox.Size = New System.Drawing.Size(229, 22)
+        Me.SecretaryTextBox.TabIndex = 43
+        '
+        'CompanyTextBox
+        '
+        Me.CompanyTextBox.BackColor = System.Drawing.Color.White
+        Me.CompanyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Company", True))
+        Me.CompanyTextBox.Location = New System.Drawing.Point(154, 28)
+        Me.CompanyTextBox.Name = "CompanyTextBox"
+        Me.CompanyTextBox.Size = New System.Drawing.Size(374, 22)
+        Me.CompanyTextBox.TabIndex = 42
+        '
+        'TabPromo
+        '
+        Me.TabPromo.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPromo.Controls.Add(Me.Label33)
+        Me.TabPromo.Controls.Add(Me.Label34)
+        Me.TabPromo.Controls.Add(Me.DTPromoTo)
+        Me.TabPromo.Controls.Add(Me.DTPromoFrom)
+        Me.TabPromo.Controls.Add(Me.DTIPermitNoLabel)
+        Me.TabPromo.Controls.Add(Me.DTIPermitNoTextBox)
+        Me.TabPromo.Controls.Add(Me.PromoToLabel)
+        Me.TabPromo.Controls.Add(Me.PromoToTextBox)
+        Me.TabPromo.Controls.Add(Me.PromoFromLabel)
+        Me.TabPromo.Controls.Add(Me.PromoFromTextBox)
+        Me.TabPromo.Controls.Add(Me.PromoTitleLabel)
+        Me.TabPromo.Controls.Add(Me.PromoTitleTextBox)
+        Me.TabPromo.Location = New System.Drawing.Point(4, 25)
+        Me.TabPromo.Name = "TabPromo"
+        Me.TabPromo.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPromo.Size = New System.Drawing.Size(582, 100)
+        Me.TabPromo.TabIndex = 1
+        Me.TabPromo.Text = "Promo"
+        '
+        'DTPromoTo
+        '
+        Me.DTPromoTo.Location = New System.Drawing.Point(255, 50)
+        Me.DTPromoTo.Name = "DTPromoTo"
+        Me.DTPromoTo.Size = New System.Drawing.Size(18, 22)
+        Me.DTPromoTo.TabIndex = 54
+        '
+        'DTPromoFrom
+        '
+        Me.DTPromoFrom.Location = New System.Drawing.Point(255, 28)
+        Me.DTPromoFrom.Name = "DTPromoFrom"
+        Me.DTPromoFrom.Size = New System.Drawing.Size(18, 22)
+        Me.DTPromoFrom.TabIndex = 53
+        '
+        'DTIPermitNoTextBox
+        '
+        Me.DTIPermitNoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DTIPermitNo", True))
+        Me.DTIPermitNoTextBox.Location = New System.Drawing.Point(154, 73)
+        Me.DTIPermitNoTextBox.Name = "DTIPermitNoTextBox"
+        Me.DTIPermitNoTextBox.Size = New System.Drawing.Size(229, 22)
+        Me.DTIPermitNoTextBox.TabIndex = 52
+        '
+        'PromoToTextBox
+        '
+        Me.PromoToTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "PromoTo", True))
+        Me.PromoToTextBox.Location = New System.Drawing.Point(154, 50)
+        Me.PromoToTextBox.Name = "PromoToTextBox"
+        Me.PromoToTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.PromoToTextBox.TabIndex = 51
+        '
+        'PromoFromTextBox
+        '
+        Me.PromoFromTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "PromoFrom", True))
+        Me.PromoFromTextBox.Location = New System.Drawing.Point(154, 27)
+        Me.PromoFromTextBox.Name = "PromoFromTextBox"
+        Me.PromoFromTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.PromoFromTextBox.TabIndex = 49
+        '
+        'PromoTitleTextBox
+        '
+        Me.PromoTitleTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "PromoTitle", True))
+        Me.PromoTitleTextBox.Location = New System.Drawing.Point(154, 4)
+        Me.PromoTitleTextBox.Name = "PromoTitleTextBox"
+        Me.PromoTitleTextBox.Size = New System.Drawing.Size(344, 22)
+        Me.PromoTitleTextBox.TabIndex = 47
         '
         'Label26
         '
@@ -2202,13 +2430,6 @@ Partial Class FrmQuery
         Me.RackNoCorpDocu.Size = New System.Drawing.Size(123, 22)
         Me.RackNoCorpDocu.TabIndex = 6
         '
-        'DTMeetingDate
-        '
-        Me.DTMeetingDate.Location = New System.Drawing.Point(259, 103)
-        Me.DTMeetingDate.Name = "DTMeetingDate"
-        Me.DTMeetingDate.Size = New System.Drawing.Size(18, 22)
-        Me.DTMeetingDate.TabIndex = 9
-        '
         'DTDocuCorp
         '
         Me.DTDocuCorp.Location = New System.Drawing.Point(259, 73)
@@ -2216,48 +2437,10 @@ Partial Class FrmQuery
         Me.DTDocuCorp.Size = New System.Drawing.Size(18, 22)
         Me.DTDocuCorp.TabIndex = 8
         '
-        'MeetingDateLabel
-        '
-        Me.MeetingDateLabel.AutoSize = True
-        Me.MeetingDateLabel.Location = New System.Drawing.Point(8, 106)
-        Me.MeetingDateLabel.Name = "MeetingDateLabel"
-        Me.MeetingDateLabel.Size = New System.Drawing.Size(91, 16)
-        Me.MeetingDateLabel.TabIndex = 8
-        Me.MeetingDateLabel.Text = "Meeting Date:"
-        '
-        'MeetingDateTextBox
-        '
-        Me.MeetingDateTextBox.BackColor = System.Drawing.Color.White
-        Me.MeetingDateTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "MeetingDate", True))
-        Me.MeetingDateTextBox.Location = New System.Drawing.Point(158, 103)
-        Me.MeetingDateTextBox.Name = "MeetingDateTextBox"
-        Me.MeetingDateTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.MeetingDateTextBox.TabIndex = 9
-        Me.MeetingDateTextBox.TabStop = False
-        Me.MeetingDateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'SecretaryLabel
-        '
-        Me.SecretaryLabel.AutoSize = True
-        Me.SecretaryLabel.Location = New System.Drawing.Point(8, 152)
-        Me.SecretaryLabel.Name = "SecretaryLabel"
-        Me.SecretaryLabel.Size = New System.Drawing.Size(69, 16)
-        Me.SecretaryLabel.TabIndex = 6
-        Me.SecretaryLabel.Text = "Secretary:"
-        '
-        'SecretaryTextBox
-        '
-        Me.SecretaryTextBox.BackColor = System.Drawing.Color.White
-        Me.SecretaryTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Secretary", True))
-        Me.SecretaryTextBox.Location = New System.Drawing.Point(158, 149)
-        Me.SecretaryTextBox.Name = "SecretaryTextBox"
-        Me.SecretaryTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.SecretaryTextBox.TabIndex = 11
-        '
         'PurposeLabel
         '
         Me.PurposeLabel.AutoSize = True
-        Me.PurposeLabel.Location = New System.Drawing.Point(8, 186)
+        Me.PurposeLabel.Location = New System.Drawing.Point(8, 228)
         Me.PurposeLabel.Name = "PurposeLabel"
         Me.PurposeLabel.Size = New System.Drawing.Size(62, 16)
         Me.PurposeLabel.TabIndex = 4
@@ -2267,29 +2450,10 @@ Partial Class FrmQuery
         '
         Me.PurposeTextBox.BackColor = System.Drawing.Color.White
         Me.PurposeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Purpose", True))
-        Me.PurposeTextBox.Location = New System.Drawing.Point(158, 183)
-        Me.PurposeTextBox.Multiline = True
+        Me.PurposeTextBox.Location = New System.Drawing.Point(158, 225)
         Me.PurposeTextBox.Name = "PurposeTextBox"
-        Me.PurposeTextBox.Size = New System.Drawing.Size(416, 137)
+        Me.PurposeTextBox.Size = New System.Drawing.Size(416, 22)
         Me.PurposeTextBox.TabIndex = 12
-        '
-        'CompanyLabel
-        '
-        Me.CompanyLabel.AutoSize = True
-        Me.CompanyLabel.Location = New System.Drawing.Point(8, 129)
-        Me.CompanyLabel.Name = "CompanyLabel"
-        Me.CompanyLabel.Size = New System.Drawing.Size(69, 16)
-        Me.CompanyLabel.TabIndex = 2
-        Me.CompanyLabel.Text = "Company:"
-        '
-        'CompanyTextBox
-        '
-        Me.CompanyTextBox.BackColor = System.Drawing.Color.White
-        Me.CompanyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Company", True))
-        Me.CompanyTextBox.Location = New System.Drawing.Point(158, 126)
-        Me.CompanyTextBox.Name = "CompanyTextBox"
-        Me.CompanyTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.CompanyTextBox.TabIndex = 10
         '
         'DocumentDateLabel2
         '
@@ -2334,6 +2498,36 @@ Partial Class FrmQuery
         'DocsCatalogueTableAdapter
         '
         Me.DocsCatalogueTableAdapter.ClearBeforeFill = True
+        '
+        'TabMeeting2
+        '
+        Me.TabMeeting2.BackColor = System.Drawing.SystemColors.Control
+        Me.TabMeeting2.Controls.Add(Me.Label35)
+        Me.TabMeeting2.Controls.Add(Me.TextBox1)
+        Me.TabMeeting2.Location = New System.Drawing.Point(4, 25)
+        Me.TabMeeting2.Name = "TabMeeting2"
+        Me.TabMeeting2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabMeeting2.Size = New System.Drawing.Size(582, 100)
+        Me.TabMeeting2.TabIndex = 2
+        Me.TabMeeting2.Text = "TabMeeting2"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(4, 7)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(69, 16)
+        Me.Label35.TabIndex = 43
+        Me.Label35.Text = "Company:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.White
+        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Company", True))
+        Me.TextBox1.Location = New System.Drawing.Point(154, 4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(374, 22)
+        Me.TextBox1.TabIndex = 44
         '
         'FrmQuery
         '
@@ -2386,7 +2580,14 @@ Partial Class FrmQuery
         Me.CorpDocu.ResumeLayout(False)
         Me.GrpCorp.ResumeLayout(False)
         Me.GrpCorp.PerformLayout()
+        Me.TabControl4.ResumeLayout(False)
+        Me.TabMeeting.ResumeLayout(False)
+        Me.TabMeeting.PerformLayout()
+        Me.TabPromo.ResumeLayout(False)
+        Me.TabPromo.PerformLayout()
         CType(Me.AcroPDF, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabMeeting2.ResumeLayout(False)
+        Me.TabMeeting2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2576,23 +2777,41 @@ Partial Class FrmQuery
     Friend WithEvents CheckNoLabel As Label
     Friend WithEvents CorpDocu As TabPage
     Friend WithEvents GrpCorp As GroupBox
-    Friend WithEvents Label25 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
     Friend WithEvents BoxNoCorpDocu As TextBox
     Friend WithEvents Label28 As Label
     Friend WithEvents RackNoCorpDocu As TextBox
-    Friend WithEvents DTMeetingDate As DateTimePicker
     Friend WithEvents DTDocuCorp As DateTimePicker
-    Friend WithEvents MeetingDateLabel As Label
-    Friend WithEvents MeetingDateTextBox As TextBox
-    Friend WithEvents SecretaryLabel As Label
-    Friend WithEvents SecretaryTextBox As TextBox
     Friend WithEvents PurposeLabel As Label
     Friend WithEvents PurposeTextBox As TextBox
-    Friend WithEvents CompanyLabel As Label
-    Friend WithEvents CompanyTextBox As TextBox
     Friend WithEvents DocumentDateLabel2 As Label
     Friend WithEvents DocumentDateCorp As TextBox
     Friend WithEvents AcroPDF As AxAcroPDFLib.AxAcroPDF
+    Friend WithEvents TabControl4 As TabControl
+    Friend WithEvents TabMeeting As TabPage
+    Friend WithEvents DTMeetingDate As DateTimePicker
+    Friend WithEvents MeetingDateTextBox As TextBox
+    Friend WithEvents SecretaryTextBox As TextBox
+    Friend WithEvents CompanyTextBox As TextBox
+    Friend WithEvents TabPromo As TabPage
+    Friend WithEvents DTPromoTo As DateTimePicker
+    Friend WithEvents DTPromoFrom As DateTimePicker
+    Friend WithEvents DTIPermitNoTextBox As TextBox
+    Friend WithEvents PromoToTextBox As TextBox
+    Friend WithEvents PromoFromTextBox As TextBox
+    Friend WithEvents PromoTitleTextBox As TextBox
+    Friend WithEvents Label25 As Label
+    Friend WithEvents MeetingDateLabel As Label
+    Friend WithEvents SecretaryLabel As Label
+    Friend WithEvents CompanyLabel As Label
+    Friend WithEvents Label33 As Label
+    Friend WithEvents Label34 As Label
+    Friend WithEvents DTIPermitNoLabel As Label
+    Friend WithEvents PromoToLabel As Label
+    Friend WithEvents PromoFromLabel As Label
+    Friend WithEvents PromoTitleLabel As Label
+    Friend WithEvents TabMeeting2 As TabPage
+    Friend WithEvents Label35 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

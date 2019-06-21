@@ -86,6 +86,17 @@ Public Class FrmEditor
         Next
 
 
+        TabControl3.Appearance = TabAppearance.FlatButtons
+        TabControl3.ItemSize = New Size(0, 1)
+        TabControl3.SizeMode = TabSizeMode.Fixed
+        For Each TabPage In TabControl3.TabPages
+
+            TabPage.Text = ""
+
+        Next
+
+
+
         'Permanently Disabled
         Me.IdTextBox.ReadOnly = True
         Me.IdTextBox.Visible = False
@@ -108,6 +119,11 @@ Public Class FrmEditor
         Me.BtnSave.Enabled = False
         Me.BtnClear.Enabled = False
         Me.BtnCancel1.Enabled = False
+
+
+        If FrmMain.type = "User" Or FrmMain.type = "" Then
+            Me.BtnRemove.Visible = False
+        End If
 
 
     End Sub
@@ -353,7 +369,7 @@ Public Class FrmEditor
             End If
 
         ElseIf Me.DocumentTypeComboBox.Text = "Official Receipt" Then
-                TabControl1.SelectTab(ReceiptInvoice)
+            TabControl1.SelectTab(ReceiptInvoice)
             If RackNoRI.Text = "" Then
                 RackNoRI.Text = My.Settings.Save_RackNoRI
             End If
@@ -364,7 +380,7 @@ Public Class FrmEditor
                 BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
             End If
         ElseIf Me.DocumentTypeComboBox.Text = "Delivery Receipt" Then
-                TabControl1.SelectTab(ReceiptInvoice)
+            TabControl1.SelectTab(ReceiptInvoice)
             If RackNoRI.Text = "" Then
                 RackNoRI.Text = My.Settings.Save_RackNoRI
             End If
@@ -375,7 +391,7 @@ Public Class FrmEditor
                 BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
             End If
         ElseIf Me.DocumentTypeComboBox.Text = "Acknowledgement Receipt" Then
-                TabControl1.SelectTab(ReceiptInvoice)
+            TabControl1.SelectTab(ReceiptInvoice)
             If RackNoRI.Text = "" Then
                 RackNoRI.Text = My.Settings.Save_RackNoRI
             End If
@@ -386,7 +402,7 @@ Public Class FrmEditor
                 BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
             End If
         ElseIf Me.DocumentTypeComboBox.Text = "Collection Receipt" Then
-                TabControl1.SelectTab(ReceiptInvoice)
+            TabControl1.SelectTab(ReceiptInvoice)
             If RackNoRI.Text = "" Then
                 RackNoRI.Text = My.Settings.Save_RackNoRI
             End If
@@ -397,7 +413,7 @@ Public Class FrmEditor
                 BookletNoTextBox.Text = My.Settings.Save_BookletNoRI
             End If
         ElseIf Me.DocumentTypeComboBox.Text = "Provisional Receipt" Then
-                TabControl1.SelectTab(ReceiptInvoice)
+            TabControl1.SelectTab(ReceiptInvoice)
             If RackNoRI.Text = "" Then
                 RackNoRI.Text = My.Settings.Save_RackNoRI
             End If
@@ -411,7 +427,7 @@ Public Class FrmEditor
 
 
         ElseIf Me.DocumentTypeComboBox.Text = "Daily Time Record" Then
-                TabControl1.SelectTab(Timesheet)
+            TabControl1.SelectTab(Timesheet)
             If RackNoTS.Text = "" Then
                 RackNoTS.Text = My.Settings.Save_RackNoTS
             End If
@@ -421,7 +437,7 @@ Public Class FrmEditor
 
 
         ElseIf Me.DocumentTypeComboBox.Text = "Warranty Card" Then
-                TabControl1.SelectTab(Warranty)
+            TabControl1.SelectTab(Warranty)
             If RackNoWarranty.Text = "" Then
                 RackNoWarranty.Text = My.Settings.Save_RackNoWarranty
             End If
@@ -430,7 +446,7 @@ Public Class FrmEditor
             End If
 
         ElseIf Me.DocumentTypeComboBox.Text = "Payment Voucher" Then
-                TabControl1.SelectTab(Voucher)
+            TabControl1.SelectTab(Voucher)
             If RackNoVoucher.Text = "" Then
                 RackNoVoucher.Text = My.Settings.Save_RackNoVoucher
             End If
@@ -439,7 +455,8 @@ Public Class FrmEditor
             End If
 
         ElseIf Me.DocumentTypeComboBox.Text = "Secretary's Certificate" Then
-                TabControl1.SelectTab(CorpDocu)
+            TabControl1.SelectTab(CorpDocu)
+            TabControl3.SelectTab(TabMeeting)
             If RackNoCorpDocu.Text = "" Then
                 RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
             End If
@@ -447,7 +464,8 @@ Public Class FrmEditor
                 BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
             End If
         ElseIf Me.DocumentTypeComboBox.Text = "Minutes of Board Meeting" Then
-                TabControl1.SelectTab(CorpDocu)
+            TabControl1.SelectTab(CorpDocu)
+            TabControl3.SelectTab(TabMeeting)
             If RackNoCorpDocu.Text = "" Then
                 RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
             End If
@@ -455,7 +473,8 @@ Public Class FrmEditor
                 BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
             End If
         ElseIf Me.DocumentTypeComboBox.Text = "Articles of Incorporation" Then
-                TabControl1.SelectTab(CorpDocu)
+            TabControl1.SelectTab(CorpDocu)
+            TabControl3.SelectTab(TabMeeting2)
             If RackNoCorpDocu.Text = "" Then
                 RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
             End If
@@ -463,15 +482,17 @@ Public Class FrmEditor
                 BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
             End If
         ElseIf Me.DocumentTypeComboBox.Text = "SEC Certificate of Registration" Then
-                TabControl1.SelectTab(CorpDocu)
+            TabControl1.SelectTab(CorpDocu)
+            TabControl3.SelectTab(TabMeeting2)
             If RackNoCorpDocu.Text = "" Then
                 RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
             End If
             If BoxNoCorpDocu.Text = "" Then
                 BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
             End If
-        ElseIf Me.DocumentTypeComboBox.Text = "DTI Registration" Then
-                TabControl1.SelectTab(CorpDocu)
+        ElseIf Me.DocumentTypeComboBox.Text = "DTI Permit" Then
+            TabControl1.SelectTab(CorpDocu)
+            TabControl3.SelectTab(TabPromo)
             If RackNoCorpDocu.Text = "" Then
                 RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
             End If
@@ -479,7 +500,18 @@ Public Class FrmEditor
                 BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
             End If
         ElseIf Me.DocumentTypeComboBox.Text = "Financial Statement" Then
-                TabControl1.SelectTab(CorpDocu)
+            TabControl1.SelectTab(CorpDocu)
+            TabControl3.SelectTab(TabMeeting2)
+            If RackNoCorpDocu.Text = "" Then
+                RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
+            End If
+            If BoxNoCorpDocu.Text = "" Then
+                BoxNoCorpDocu.Text = My.Settings.Save_BoxNoCorpDocu
+            End If
+
+        ElseIf Me.DocumentTypeComboBox.Text = "General Information Sheet" Then
+            TabControl1.SelectTab(CorpDocu)
+            TabControl3.SelectTab(TabMeeting2)
             If RackNoCorpDocu.Text = "" Then
                 RackNoCorpDocu.Text = My.Settings.Save_RackNoCorpDocu
             End If
@@ -583,9 +615,7 @@ Public Class FrmEditor
 
     End Sub
 
-    Private Sub DocumentDateLabel1_Click(sender As Object, e As EventArgs)
 
-    End Sub
 
     Private Sub GrpVoucher_Enter(sender As Object, e As EventArgs) Handles GrpVoucher.Enter
 
@@ -611,8 +641,8 @@ Public Class FrmEditor
         Me.DocumentDateCorp.Text = Me.DTDocuCorp.Value.ToString("MM/dd/yyyy")
     End Sub
 
-    Private Sub DTMeetingDate_ValueChanged(sender As Object, e As EventArgs) Handles DTMeetingDate.ValueChanged
-        Me.MeetingDateTextBox.Text = Me.DTMeetingDate.Value.ToString("MM/dd/yyyy")
+    Private Sub DTMeetingDate_ValueChanged(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub TotalValueRI_TextChanged(sender As Object, e As EventArgs) Handles TotalValueRI.TextChanged
@@ -787,6 +817,8 @@ Public Class FrmEditor
             Me.DocumentDateCorp.Clear()
         End If
     End Sub
+
+
     Private Sub MeetingDateTextBox_LostFocus(sender As Object, e As EventArgs) Handles MeetingDateTextBox.LostFocus
         Dim DateFormat As Date
 
@@ -799,6 +831,47 @@ Public Class FrmEditor
     End Sub
 
     Private Sub RackNoTS_TextChanged(sender As Object, e As EventArgs) Handles RackNoTS.TextChanged
+
+    End Sub
+
+    Private Sub DTMeetingDate_ValueChanged_1(sender As Object, e As EventArgs) Handles DTMeetingDate.ValueChanged
+        Me.MeetingDateTextBox.Text = Me.DTMeetingDate.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged_2(sender As Object, e As EventArgs) Handles DTPromoFrom.ValueChanged
+        Me.PromoFromTextBox.Text = Me.DTPromoFrom.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTPromoTo_ValueChanged(sender As Object, e As EventArgs) Handles DTPromoTo.ValueChanged
+        Me.PromoToTextBox.Text = Me.DTPromoTo.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+
+    Private Sub PromoFromTextBox_LostFocus(sender As Object, e As EventArgs) Handles PromoFromTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(PromoFromTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoFromTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.PromoFromTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.PromoFromTextBox.Clear()
+        End If
+    End Sub
+
+
+
+    Private Sub PromoToTextBox_LostFocus(sender As Object, e As EventArgs) Handles PromoToTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(PromoToTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoToTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.PromoToTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.PromoToTextBox.Clear()
+        End If
+    End Sub
+
+    Private Sub MeetingDateLabel_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

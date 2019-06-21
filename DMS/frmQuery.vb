@@ -47,6 +47,16 @@ Public Class FrmQuery
         Next
 
 
+        TabControl4.Appearance = TabAppearance.FlatButtons
+        TabControl4.ItemSize = New Size(0, 1)
+        TabControl4.SizeMode = TabSizeMode.Fixed
+        For Each TabPage In TabControl4.TabPages
+
+            TabPage.Text = ""
+
+        Next
+
+
         Me.PaymentFormComboBox.Items.Add("Bank Deposit")
         Me.PaymentFormComboBox.Items.Add("Cash")
         Me.PaymentFormComboBox.Items.Add("Check")
@@ -129,18 +139,25 @@ Public Class FrmQuery
 
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Secretary's Certificate" Then
             TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting)
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Minutes of Board Meeting" Then
             TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting)
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Articles of Incorporation" Then
             TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting2)
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "SEC Certificate of Registration" Then
             TabControl2.SelectTab(CorpDocu)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "DTI Registration" Then
+            TabControl4.SelectTab(TabMeeting2)
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "DTI Permit" Then
             TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabPromo)
         ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Financial Statement" Then
             TabControl2.SelectTab(CorpDocu)
-
-
+            TabControl4.SelectTab(TabMeeting2)
+        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "General Information Sheet" Then
+            TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting2)
         End If
 
 
@@ -178,22 +195,30 @@ Public Class FrmQuery
 
         ElseIf Me.DocumentTypeCombobox2.Text = "Secretary's Certificate" Then
             TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting)
 
         ElseIf Me.DocumentTypeCombobox2.Text = "Minutes of Board Meeting" Then
             TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting)
 
         ElseIf Me.DocumentTypeCombobox2.Text = "Articles of Incorporation" Then
             TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting2)
 
         ElseIf Me.DocumentTypeCombobox2.Text = "SEC Certificate of Registration" Then
             TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting2)
 
-        ElseIf Me.DocumentTypeCombobox2.Text = "DTI Registration" Then
+        ElseIf Me.DocumentTypeCombobox2.Text = "DTI Permit" Then
             TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabPromo)
 
         ElseIf Me.DocumentTypeCombobox2.Text = "Financial Statement" Then
             TabControl2.SelectTab(CorpDocu)
-
+            TabControl4.SelectTab(TabMeeting2)
+        ElseIf Me.DocumentTypeCombobox2.Text = "General Information Sheet" Then
+            TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting2)
 
         End If
 
@@ -221,7 +246,7 @@ Public Class FrmQuery
                 [Id]
               ,[DocumentType] [Document Type]
               ,[Batch]            
-              ,[BatchDesc] [Batch Description]
+              ,[SubBatch]  [Sub Batch]               
               ,[RackNo] [Rack No]
               ,[BoxNo] [Box No]
               ,[ScannedDate] [Scanned Date]
@@ -442,8 +467,11 @@ AND Status = 'Finished'
             ElseIf Date.TryParseExact(DocumentDateCorp.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateCorp.Text = "" Then
                 SaveChanges()
             ElseIf Date.TryParseExact(MeetingDateTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.MeetingDateTextBox.Text = "" Then
-
-
+                SaveChanges()
+            ElseIf Date.TryParseExact(PromoFromTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoFromTextBox.Text = "" Then
+                SaveChanges()
+            ElseIf Date.TryParseExact(PromoToTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoToTextBox.Text = "" Then
+                SaveChanges()
             Else
 
                 MessageBox.Show("Incorrect Date Format")
@@ -456,6 +484,8 @@ AND Status = 'Finished'
                 Me.DateReceivedTextBox.Clear()
                 Me.DocumentDateCorp.Clear()
                 Me.MeetingDateTextBox.Clear()
+                Me.PromoFromTextBox.Clear()
+                Me.PromoToTextBox.Clear()
 
             End If
 
@@ -471,9 +501,7 @@ AND Status = 'Finished'
 
 
 
-    Private Sub DocumentTypeCombobox2_TextChanged(sender As Object, e As EventArgs)
-        ComboSelect3()
-    End Sub
+
 
 
 
@@ -481,5 +509,160 @@ AND Status = 'Finished'
         Me.C1TrueDBGrid1.SaveLayout("default.layout")
     End Sub
 
+    Private Sub DTMeetingDate_ValueChanged(sender As Object, e As EventArgs) Handles DTMeetingDate.ValueChanged
+        Me.MeetingDateTextBox.Text = Me.DTMeetingDate.Value.ToString("MM/dd/yyyy")
+    End Sub
 
+    Private Sub DTDocuCorp_ValueChanged(sender As Object, e As EventArgs) Handles DTDocuCorp.ValueChanged
+        Me.DocumentDateCorp.Text = Me.DTDocuCorp.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTPromoFrom_ValueChanged(sender As Object, e As EventArgs) Handles DTPromoFrom.ValueChanged
+        Me.PromoFromTextBox.Text = Me.DTPromoFrom.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTPromoTo_ValueChanged(sender As Object, e As EventArgs) Handles DTPromoTo.ValueChanged
+        Me.PromoToTextBox.Text = Me.DTPromoTo.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+
+
+    Private Sub DocumentDateCorp_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateCorp.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DocumentDateCorp.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateCorp.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DocumentDateCorp.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DocumentDateCorp.Clear()
+        End If
+    End Sub
+
+
+
+    Private Sub MeetingDateTextBox_LostFocus(sender As Object, e As EventArgs) Handles MeetingDateTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(MeetingDateTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.MeetingDateTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.MeetingDateTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.MeetingDateTextBox.Clear()
+        End If
+    End Sub
+
+
+
+    Private Sub PromoFromTextBox_LostFocus(sender As Object, e As EventArgs) Handles PromoFromTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(PromoFromTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoFromTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.PromoFromTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.PromoFromTextBox.Clear()
+        End If
+    End Sub
+
+
+
+    Private Sub PromoToTextBox_LostFocus(sender As Object, e As EventArgs) Handles PromoToTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(PromoToTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoToTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.PromoToTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.PromoToTextBox.Clear()
+        End If
+    End Sub
+
+
+
+    Private Sub DocumentDateVoucher_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateVoucher.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DocumentDateVoucher.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateVoucher.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DocumentDateVoucher.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DocumentDateVoucher.Clear()
+        End If
+    End Sub
+
+
+
+    Private Sub DatePurchasedTextBox_LostFocus(sender As Object, e As EventArgs) Handles DatePurchasedTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DatePurchasedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DatePurchasedTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DatePurchasedTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DatePurchasedTextBox.Clear()
+        End If
+    End Sub
+
+
+
+    Private Sub DocumentDateRI_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateRI.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DocumentDateRI.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateRI.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DocumentDateRI.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DocumentDateRI.Clear()
+        End If
+    End Sub
+
+
+
+    Private Sub FromPeriodTextBox_LostFocus(sender As Object, e As EventArgs) Handles FromPeriodTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FromPeriodTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FromPeriodTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FromPeriodTextBox.Clear()
+        End If
+    End Sub
+
+
+
+    Private Sub ToPeriodTextBox_LostFocus(sender As Object, e As EventArgs) Handles ToPeriodTextBox.LostFocus
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(ToPeriodTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.ToPeriodTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.ToPeriodTextBox.Clear()
+        End If
+    End Sub
+
+    Private Sub DTDocuTimeSheet_ValueChanged(sender As Object, e As EventArgs) Handles DTDocuTimeSheet.ValueChanged
+        Me.DocumentDateTS.Text = Me.DTDocuTimeSheet.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTDocuRI_ValueChanged(sender As Object, e As EventArgs) Handles DTDocuRI.ValueChanged
+        Me.DocumentDateRI.Text = Me.DTDocuRI.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTDatePurchased_ValueChanged(sender As Object, e As EventArgs) Handles DTDatePurchased.ValueChanged
+        Me.DatePurchasedTextBox.Text = Me.DTDatePurchased.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTDocuVoucher_ValueChanged(sender As Object, e As EventArgs) Handles DTDocuVoucher.ValueChanged
+        Me.DocumentDateVoucher.Text = Me.DTDocuVoucher.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub PromoFromTextBox_TextChanged(sender As Object, e As EventArgs) Handles PromoFromTextBox.TextChanged
+
+    End Sub
+
+    Private Sub DocumentTypeCombobox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DocumentTypeCombobox2.SelectedIndexChanged
+        ComboSelect3()
+    End Sub
 End Class

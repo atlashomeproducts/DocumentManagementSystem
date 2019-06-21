@@ -43,55 +43,70 @@ Public Class FrmIndex
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnIndex.Click
+        If txtCompany.Text = "" Or txtPurpose.Text = "" Or DocumentTypeComboBox.Text = "" Or batchIdTextBox.Text = "" Or SubBatchTextbox.Text = "" Then
 
 
-
-        If ListBox1.Items.Count = 0 Then
-
-            MessageBox.Show("Files not found!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        ElseIf batchIdTextBox.Text = "" Then
-
-            MessageBox.Show("Please don't leave batch name empty..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please complete all the required fields.", "Incomplete Details", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Else
 
-            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-            Dim cmd As New SqlCommand
 
-            Try
+            If ListBox1.Items.Count = 0 Then
+
+                MessageBox.Show("Files not found!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            ElseIf batchIdTextBox.Text = "" Then
+
+                MessageBox.Show("Please don't leave batch name empty..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            Else
+
+                Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+                Dim cmd As New SqlCommand
+
+                Try
 
 
-                con.Open()
+                    con.Open()
 
-                For Each Item As String In ListBox1.SelectedItems
+                    For Each Item As String In ListBox1.SelectedItems
 
-                    cmd.Connection = con
-                    cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([Batch], [SubBatch],[BatchDesc],[ScannedDate],[Filename],[Status], [RackNo], [BoxNo]) 
-                                        VALUES ('" & batchIdTextBox.Text & "', '" & SubBatchTextbox.Text & "', '" & TxtBatchDesc.Text & "','" & scanDateTimePicker.Text & "' 
-                                                , '" & batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "', '" & RackNoTextbox.Text & "', '" & BoxNoTextbox.Text & "')"
-                    cmd.ExecuteNonQuery()
+                        cmd.Connection = con
+                        cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([DocumentType], [Batch], [SubBatch],[ScannedDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo]) 
+                                        VALUES ('" & DocumentTypeComboBox.Text & "', '" & batchIdTextBox.Text & "', '" & SubBatchTextbox.Text & "','" & scanDateTimePicker.Text & "' 
+                                                , '" & batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "', '" & txtCompany.Text & "', '" & txtPurpose.Text & "', '" & RackNoTextbox.Text & "', '" & BoxNoTextbox.Text & "')"
+                        cmd.ExecuteNonQuery()
 
-                    File.Copy(Item, Path.Combine(My.Settings.ImgPath, Me.batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
+                        'Dim dt As Date = DateTime.Now.ToString("yyyyMMddhhmmsstt")
+                        'Dim str As String = dt.Year & dt.Month & dt.Day & dt.Hour & dt.Second & dt.Millisecond
 
-                Next
+                        'Dim tDate As New DateTime(Date.Today.Year, Date.Today.Month, Date.Today.Day, Date.Now.Hour, Date.Now.Minute, Date.Now.Second)
+                        'Dim csvFile As String
+                        'csvFile = "E:\test\" & tDate.ToString("yyyyMMdd_HHmmss") & ".csv"
 
-                Dim lst As New List(Of Object)
-                For Each a As Object In ListBox1.SelectedItems
-                    lst.Add(a)
-                Next
-                For Each a As Object In lst
-                    ListBox1.Items.Remove(a)
-                Next
+                        ' Dim fileDateTime As String = DateTime.Now.ToString("yyyyMMdd") & "_" & DateTime.Now.ToString("HHmmss")
 
-                AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+                        File.Copy(Item, Path.Combine(My.Settings.ImgPath & txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
+                    Next
 
-                MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Dim lst As New List(Of Object)
+                    For Each a As Object In ListBox1.SelectedItems
+                        lst.Add(a)
+                    Next
+                    For Each a As Object In lst
+                        ListBox1.Items.Remove(a)
+                    Next
 
-            Catch ex As Exception
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Finally
-                con.Close()
-            End Try
+                    AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+
+                    MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Finally
+                    con.Close()
+                End Try
+
+            End If
 
         End If
     End Sub
@@ -104,6 +119,36 @@ Public Class FrmIndex
 
     Private Sub Index_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '  Me.TopMost = True
+
+
+        Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+        Dim cmd2 As New SqlCommand("SELECT Distinct Company FROM DocsCatalogue WHERE Status = 'Finished' ", con)
+        Dim ds As New DataSet
+        Dim da As New SqlDataAdapter(cmd2)
+        da.Fill(ds, "list") ' list can be any name u want
+        Dim col As New AutoCompleteStringCollection
+
+        Dim i As Integer
+        For i = 0 To ds.Tables(0).Rows.Count - 1
+            col.Add(ds.Tables(0).Rows(i)("Company").ToString())  'columnname same as in query
+        Next
+
+
+
+        txtCompany.AutoCompleteSource = AutoCompleteSource.CustomSource
+        txtCompany.AutoCompleteCustomSource = col
+        txtCompany.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+
+
+        ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+        con.Open()
+        Dim cmd As SqlCommand = New SqlCommand("SELECT DocumentType FROM DocumentTypes ORDER BY DocumentType", con)
+        Dim read As SqlDataReader = cmd.ExecuteReader()
+        While read.Read()
+            DocumentTypeComboBox.Items.Add(read.GetString(0))
+        End While
+
+        con.Close()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click
@@ -112,9 +157,15 @@ Public Class FrmIndex
 
             Dim MsgDelete = MessageBox.Show("Remove Items?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
+
             If MsgDelete = vbYes Then
 
-                Me.ListBox1.Items.Clear()
+
+
+                Do While (ListBox1.SelectedItems.Count > 0)
+                    ListBox1.Items.Remove(ListBox1.SelectedItem)
+                Loop
+
                 AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
 
             ElseIf MsgDelete = vbNo Then
@@ -125,7 +176,6 @@ Public Class FrmIndex
 
             '    ListBox1.Items.Remove(ListBox1.SelectedItem)
             'Me.ListBox1.SelectedIndex = Me.ListBox1.SelectedIndex + 1
-
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -141,6 +191,24 @@ Public Class FrmIndex
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
 
 
+    End Sub
+
+    Private Sub DocumentTypeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DocumentTypeComboBox.SelectedIndexChanged
+        batchIdTextBox.Text = DocumentTypeComboBox.Text & "-" & txtCompany.Text & "-" & Me.DateTimePicker1.Value.ToString("yyyyMMMdd") & "-" & txtPurpose.Text
+    End Sub
+
+    Private Sub txtPurpose_TextChanged(sender As Object, e As EventArgs) Handles txtPurpose.TextChanged
+
+
+        batchIdTextBox.Text = DocumentTypeComboBox.Text & "-" & txtCompany.Text & "-" & Me.DateTimePicker1.Value.ToString("yyyyMMMdd") & "-" & txtPurpose.Text
+    End Sub
+
+    Private Sub txtCompany_TextChanged(sender As Object, e As EventArgs) Handles txtCompany.TextChanged
+        batchIdTextBox.Text = DocumentTypeComboBox.Text & "-" & txtCompany.Text & "-" & Me.DateTimePicker1.Value.ToString("yyyyMMMdd") & "-" & txtPurpose.Text
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        batchIdTextBox.Text = DocumentTypeComboBox.Text & "-" & txtCompany.Text & "-" & Me.DateTimePicker1.Value.ToString("yyyyMMMdd") & "-" & txtPurpose.Text
     End Sub
 
 
