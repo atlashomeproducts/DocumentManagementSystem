@@ -162,7 +162,7 @@ Partial Class FrmUsers
         Me.txtUsertype.Items.AddRange(New Object() {"Administrator", "User"})
         Me.txtUsertype.Location = New System.Drawing.Point(109, 97)
         Me.txtUsertype.Name = "txtUsertype"
-        Me.txtUsertype.Size = New System.Drawing.Size(179, 21)
+        Me.txtUsertype.Size = New System.Drawing.Size(254, 21)
         Me.txtUsertype.TabIndex = 4
         '
         'txtRetype

@@ -363,9 +363,6 @@ AND Status = 'Finished'
                     .Parameters.AddWithValue("@DocType", "")
                 End If
 
-
-
-
                 If Me.CHKScanDate.Checked = True Then
                     .Parameters.AddWithValue("@ScanDateFrom", Me.DTScanDateFrom.Value)
                     .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.Value)

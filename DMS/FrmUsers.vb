@@ -32,53 +32,47 @@ Public Class FrmUsers
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
 
-        Try
-
-            If txtPassword.Text = txtRetype.Text Then
+        If txtUsername.Text = "" Or txtName.Text = "" Or txtPassword.Text = "" Or txtRetype.Text = "" Or txtUsertype.Text = "" Then
 
 
+            MessageBox.Show("Please complete all the required fields.", "Incomplete Details", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Else
 
 
-                Me.DMSUserBindingSource.AddNew()
+            Try
+
+                If txtPassword.Text = txtRetype.Text Then
+
+                    Me.DMSUserBindingSource.AddNew()
 
 
-                Me.DMSUserC1TrueDBGrid.Columns("Username").Text = Me.txtUsername.Text
-                Me.DMSUserC1TrueDBGrid.Columns("Name").Text = Me.txtName.Text
-                Me.DMSUserC1TrueDBGrid.Columns("Password").Text = Me.txtPassword.Text
-                Me.DMSUserC1TrueDBGrid.Columns("Usertype").Text = Me.txtUsertype.Text
+                    Me.DMSUserC1TrueDBGrid.Columns("Username").Text = Me.txtUsername.Text
+                    Me.DMSUserC1TrueDBGrid.Columns("Name").Text = Me.txtName.Text
+                    Me.DMSUserC1TrueDBGrid.Columns("Password").Text = Me.txtPassword.Text
+                    Me.DMSUserC1TrueDBGrid.Columns("Usertype").Text = Me.txtUsertype.Text
 
-                Me.Validate()
-                Me.DMSUserBindingSource.EndEdit()
-                Me.DMSUserTableAdapter.Update(Me.DMSDataSet.DMSUser)
+                    Me.Validate()
+                    Me.DMSUserBindingSource.EndEdit()
+                    Me.DMSUserTableAdapter.Update(Me.DMSDataSet.DMSUser)
 
-                '   MessageBox.Show("Successfully Saved!!", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-
-            Else
-
-                MessageBox.Show("""Password"" and ""Retype Password"" does not match. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    '   MessageBox.Show("Successfully Saved!!", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
-            End If
+                Else
+
+                    MessageBox.Show("""Password"" and ""Retype Password"" does not match. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
-
-        Catch ex As Exception
-            MessageBox.Show("Error inserting records.." & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        End Try
-
+                End If
 
 
 
+            Catch ex As Exception
+                MessageBox.Show("Error inserting records.." & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End Try
 
-
-
-
-
-
-
-
-
+        End If
 
 
     End Sub
@@ -108,7 +102,6 @@ Public Class FrmUsers
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If Me.CheckBox1.Checked = True Then
             Me.DMSUserC1TrueDBGrid.Splits(0).DisplayColumns("Password").Visible = True
-
         Else
             Me.DMSUserC1TrueDBGrid.Splits(0).DisplayColumns("Password").Visible = False
         End If
@@ -121,7 +114,7 @@ Public Class FrmUsers
 
             Me.Validate()
             Me.DMSUserBindingSource.EndEdit()
-        Me.DMSUserTableAdapter.Update(Me.DMSDataSet.DMSUser)
+            Me.DMSUserTableAdapter.Update(Me.DMSDataSet.DMSUser)
 
 
         Catch ex As Exception
