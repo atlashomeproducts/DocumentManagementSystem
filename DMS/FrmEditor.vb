@@ -163,6 +163,9 @@ Public Class FrmEditor
                 My.Settings.Save()
 
 
+
+                Me.DocsCatalogueBindingSource.Current!UserID = FrmMain.User
+
                 Me.Validate()
                 Me.DocsCatalogueBindingSource.EndEdit()
                 Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
@@ -187,6 +190,8 @@ Public Class FrmEditor
                 GrpVoucher.Enabled = False
                 GrpWarranty.Enabled = False
 
+
+                FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
                 LblStat.Text = "Successfully Saved!!"
                 Me.BtnSave.Enabled = False
                 Me.BtnClear.Enabled = False
@@ -872,6 +877,10 @@ Public Class FrmEditor
     End Sub
 
     Private Sub MeetingDateLabel_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BtnDownload_Click(sender As Object, e As EventArgs) 
 
     End Sub
 End Class

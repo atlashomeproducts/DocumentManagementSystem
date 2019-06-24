@@ -1124,6 +1124,7 @@ Partial Class FrmEditor
         Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.Size = New System.Drawing.Size(0, 0)
         Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
         Me.DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
+        Me.DocsCatalogueC1TrueDBGrid.RowHeight = 22
         Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(641, 274)
         Me.DocsCatalogueC1TrueDBGrid.TabIndex = 0
         Me.DocsCatalogueC1TrueDBGrid.UseCompatibleTextRendering = False
@@ -1227,7 +1228,7 @@ Partial Class FrmEditor
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(610, 294)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(610, 297)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1394,7 +1395,7 @@ Partial Class FrmEditor
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(610, 394)
+        Me.GrpReceipt.Size = New System.Drawing.Size(610, 397)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"

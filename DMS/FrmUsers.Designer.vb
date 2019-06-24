@@ -26,18 +26,18 @@ Partial Class FrmUsers
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmUsers))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.BtnDelete = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.TxtName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtUsertype = New System.Windows.Forms.ComboBox()
-        Me.txtRetype = New System.Windows.Forms.TextBox()
-        Me.btnConfirm = New System.Windows.Forms.Button()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.TxtUsertype = New System.Windows.Forms.ComboBox()
+        Me.TxtRetype = New System.Windows.Forms.TextBox()
+        Me.BtnConfirm = New System.Windows.Forms.Button()
+        Me.TxtPassword = New System.Windows.Forms.TextBox()
+        Me.TxtUsername = New System.Windows.Forms.TextBox()
         Me.DMSUserC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.DMSUserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DMSDataSet = New DMS.DMSDataSet()
@@ -63,18 +63,18 @@ Partial Class FrmUsers
         '
         Me.SplitContainer1.Panel1.AutoScroll = True
         Me.SplitContainer1.Panel1.Controls.Add(Me.CheckBox1)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.btnDelete)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.BtnDelete)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label5)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.txtName)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.TxtName)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label4)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label3)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label2)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.txtUsertype)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.txtRetype)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.btnConfirm)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.txtPassword)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.txtUsername)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.TxtUsertype)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.TxtRetype)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.BtnConfirm)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.TxtPassword)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.TxtUsername)
         '
         'SplitContainer1.Panel2
         '
@@ -94,108 +94,108 @@ Partial Class FrmUsers
         Me.CheckBox1.Text = "Show Passwords"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'btnDelete
+        'BtnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(280, 122)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(83, 26)
-        Me.btnDelete.TabIndex = 14
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
+        Me.BtnDelete.Location = New System.Drawing.Point(280, 122)
+        Me.BtnDelete.Name = "BtnDelete"
+        Me.BtnDelete.Size = New System.Drawing.Size(83, 26)
+        Me.BtnDelete.TabIndex = 14
+        Me.BtnDelete.Text = "Delete"
+        Me.BtnDelete.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(59, 37)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(38, 13)
+        Me.Label5.Size = New System.Drawing.Size(42, 13)
         Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Name:"
+        Me.Label5.Text = "Name:*"
         '
-        'txtName
+        'TxtName
         '
-        Me.txtName.Location = New System.Drawing.Point(109, 34)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(254, 20)
-        Me.txtName.TabIndex = 1
+        Me.TxtName.Location = New System.Drawing.Point(109, 34)
+        Me.TxtName.Name = "TxtName"
+        Me.TxtName.Size = New System.Drawing.Size(254, 20)
+        Me.TxtName.TabIndex = 1
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(38, 100)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(59, 13)
+        Me.Label4.Size = New System.Drawing.Size(63, 13)
         Me.Label4.TabIndex = 11
-        Me.Label4.Text = "User Type:"
+        Me.Label4.Text = "User Type:*"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(4, 79)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 13)
+        Me.Label3.Size = New System.Drawing.Size(97, 13)
         Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Retype Password:"
+        Me.Label3.Text = "Retype Password:*"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(41, 58)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 13)
+        Me.Label2.Size = New System.Drawing.Size(60, 13)
         Me.Label2.TabIndex = 9
-        Me.Label2.Text = "Password:"
+        Me.Label2.Text = "Password:*"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(39, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 13)
+        Me.Label1.Size = New System.Drawing.Size(62, 13)
         Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Username:"
+        Me.Label1.Text = "Username:*"
         '
-        'txtUsertype
+        'TxtUsertype
         '
-        Me.txtUsertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.txtUsertype.FormattingEnabled = True
-        Me.txtUsertype.Items.AddRange(New Object() {"Administrator", "User"})
-        Me.txtUsertype.Location = New System.Drawing.Point(109, 97)
-        Me.txtUsertype.Name = "txtUsertype"
-        Me.txtUsertype.Size = New System.Drawing.Size(254, 21)
-        Me.txtUsertype.TabIndex = 4
+        Me.TxtUsertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TxtUsertype.FormattingEnabled = True
+        Me.TxtUsertype.Items.AddRange(New Object() {"Administrator", "User"})
+        Me.TxtUsertype.Location = New System.Drawing.Point(109, 97)
+        Me.TxtUsertype.Name = "TxtUsertype"
+        Me.TxtUsertype.Size = New System.Drawing.Size(254, 21)
+        Me.TxtUsertype.TabIndex = 4
         '
-        'txtRetype
+        'TxtRetype
         '
-        Me.txtRetype.Location = New System.Drawing.Point(109, 76)
-        Me.txtRetype.Name = "txtRetype"
-        Me.txtRetype.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtRetype.Size = New System.Drawing.Size(254, 20)
-        Me.txtRetype.TabIndex = 3
+        Me.TxtRetype.Location = New System.Drawing.Point(109, 76)
+        Me.TxtRetype.Name = "TxtRetype"
+        Me.TxtRetype.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtRetype.Size = New System.Drawing.Size(254, 20)
+        Me.TxtRetype.TabIndex = 3
         '
-        'btnConfirm
+        'BtnConfirm
         '
-        Me.btnConfirm.Location = New System.Drawing.Point(191, 122)
-        Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.Size = New System.Drawing.Size(83, 26)
-        Me.btnConfirm.TabIndex = 5
-        Me.btnConfirm.Text = "Confirm"
-        Me.btnConfirm.UseVisualStyleBackColor = True
+        Me.BtnConfirm.Location = New System.Drawing.Point(191, 122)
+        Me.BtnConfirm.Name = "BtnConfirm"
+        Me.BtnConfirm.Size = New System.Drawing.Size(83, 26)
+        Me.BtnConfirm.TabIndex = 5
+        Me.BtnConfirm.Text = "Confirm"
+        Me.BtnConfirm.UseVisualStyleBackColor = True
         '
-        'txtPassword
+        'TxtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(109, 55)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(254, 20)
-        Me.txtPassword.TabIndex = 2
+        Me.TxtPassword.Location = New System.Drawing.Point(109, 55)
+        Me.TxtPassword.Name = "TxtPassword"
+        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtPassword.Size = New System.Drawing.Size(254, 20)
+        Me.TxtPassword.TabIndex = 2
         '
-        'txtUsername
+        'TxtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(109, 13)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(254, 20)
-        Me.txtUsername.TabIndex = 0
+        Me.TxtUsername.Location = New System.Drawing.Point(109, 13)
+        Me.TxtUsername.Name = "TxtUsername"
+        Me.TxtUsername.Size = New System.Drawing.Size(254, 20)
+        Me.TxtUsername.TabIndex = 0
         '
         'DMSUserC1TrueDBGrid
         '
@@ -212,7 +212,7 @@ Partial Class FrmUsers
         Me.DMSUserC1TrueDBGrid.PreviewInfo.Size = New System.Drawing.Size(0, 0)
         Me.DMSUserC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
         Me.DMSUserC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("DMSUserC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.DMSUserC1TrueDBGrid.RecordSelectors = False
+        Me.DMSUserC1TrueDBGrid.RowHeight = 22
         Me.DMSUserC1TrueDBGrid.Size = New System.Drawing.Size(386, 307)
         Me.DMSUserC1TrueDBGrid.TabIndex = 0
         Me.DMSUserC1TrueDBGrid.UseCompatibleTextRendering = False
@@ -267,19 +267,19 @@ Partial Class FrmUsers
     Friend WithEvents DMSDataSet As DMSDataSet
     Friend WithEvents DMSUserBindingSource As BindingSource
     Friend WithEvents TableAdapterManager As DMSDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents txtPassword As TextBox
-    Friend WithEvents txtUsername As TextBox
+    Friend WithEvents TxtPassword As TextBox
+    Friend WithEvents TxtUsername As TextBox
     Friend WithEvents DMSUserC1TrueDBGrid As C1.Win.C1TrueDBGrid.C1TrueDBGrid
-    Friend WithEvents btnConfirm As Button
-    Friend WithEvents txtUsertype As ComboBox
-    Friend WithEvents txtRetype As TextBox
+    Friend WithEvents BtnConfirm As Button
+    Friend WithEvents TxtUsertype As ComboBox
+    Friend WithEvents TxtRetype As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtName As TextBox
-    Friend WithEvents btnDelete As Button
+    Friend WithEvents TxtName As TextBox
+    Friend WithEvents BtnDelete As Button
     Friend WithEvents DMSUserTableAdapter As DMSDataSetTableAdapters.DMSUserTableAdapter
     Friend WithEvents CheckBox1 As CheckBox
 End Class

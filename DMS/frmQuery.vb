@@ -230,7 +230,6 @@ Public Class FrmQuery
 
             AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid1.Columns("File Name").Text)
 
-
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -661,5 +660,19 @@ AND Status = 'Finished'
 
     Private Sub DocumentTypeCombobox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DocumentTypeCombobox2.SelectedIndexChanged
         ComboSelect3()
+    End Sub
+
+    Private Sub BtnDownload_Click(sender As Object, e As EventArgs) Handles BtnDownload.Click
+        Try
+
+            My.Computer.Network.DownloadFile(Path.Combine(My.Settings.ImgPath, Me.C1TrueDBGrid1.Columns("File Name").Text), Path.Combine("C:\", Me.C1TrueDBGrid1.Columns("File Name").Text), "anonymous", "")
+            MessageBox.Show("File Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
     End Sub
 End Class

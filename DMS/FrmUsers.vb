@@ -30,9 +30,9 @@ Public Class FrmUsers
 
     End Sub
 
-    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+    Private Sub BtnConfirm_Click(sender As Object, e As EventArgs) Handles BtnConfirm.Click
 
-        If txtUsername.Text = "" Or txtName.Text = "" Or txtPassword.Text = "" Or txtRetype.Text = "" Or txtUsertype.Text = "" Then
+        If TxtUsername.Text = "" Or TxtName.Text = "" Or TxtPassword.Text = "" Or TxtRetype.Text = "" Or TxtUsertype.Text = "" Then
 
 
             MessageBox.Show("Please complete all the required fields.", "Incomplete Details", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -42,15 +42,15 @@ Public Class FrmUsers
 
             Try
 
-                If txtPassword.Text = txtRetype.Text Then
+                If TxtPassword.Text = TxtRetype.Text Then
 
                     Me.DMSUserBindingSource.AddNew()
 
 
-                    Me.DMSUserC1TrueDBGrid.Columns("Username").Text = Me.txtUsername.Text
-                    Me.DMSUserC1TrueDBGrid.Columns("Name").Text = Me.txtName.Text
-                    Me.DMSUserC1TrueDBGrid.Columns("Password").Text = Me.txtPassword.Text
-                    Me.DMSUserC1TrueDBGrid.Columns("Usertype").Text = Me.txtUsertype.Text
+                    Me.DMSUserC1TrueDBGrid.Columns("Username").Text = Me.TxtUsername.Text
+                    Me.DMSUserC1TrueDBGrid.Columns("Name").Text = Me.TxtName.Text
+                    Me.DMSUserC1TrueDBGrid.Columns("Password").Text = Me.TxtPassword.Text
+                    Me.DMSUserC1TrueDBGrid.Columns("Usertype").Text = Me.TxtUsertype.Text
 
                     Me.Validate()
                     Me.DMSUserBindingSource.EndEdit()
@@ -77,7 +77,7 @@ Public Class FrmUsers
 
     End Sub
 
-    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         Dim MsgDelete = MessageBox.Show("Delete User?", "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If MsgDelete = vbYes Then

@@ -71,9 +71,9 @@ Public Class FrmIndex
                     For Each Item As String In ListBox1.SelectedItems
 
                         cmd.Connection = con
-                        cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([DocumentType], [Batch], [SubBatch],[ScannedDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo]) 
+                        cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([DocumentType], [Batch], [SubBatch],[ScannedDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo], [UserID]) 
                                         VALUES ('" & DocumentTypeComboBox.Text & "', '" & batchIdTextBox.Text & "', '" & SubBatchTextbox.Text & "','" & scanDateTimePicker.Text & "' 
-                                                , '" & batchIdTextBox.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "', '" & txtCompany.Text & "', '" & txtPurpose.Text & "', '" & RackNoTextbox.Text & "', '" & BoxNoTextbox.Text & "')"
+                                                , '" & txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "', '" & txtCompany.Text & "', '" & txtPurpose.Text & "', '" & RackNoTextbox.Text & "', '" & BoxNoTextbox.Text & "', '" & FrmMain.User & "')"
                         cmd.ExecuteNonQuery()
 
                         'Dim dt As Date = DateTime.Now.ToString("yyyyMMddhhmmsstt")
@@ -85,7 +85,7 @@ Public Class FrmIndex
 
                         ' Dim fileDateTime As String = DateTime.Now.ToString("yyyyMMdd") & "_" & DateTime.Now.ToString("HHmmss")
 
-                        File.Copy(Item, Path.Combine(My.Settings.ImgPath & txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
+                        File.Copy(Item, Path.Combine(My.Settings.ImgPath, txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
                     Next
 
                     Dim lst As New List(Of Object)
@@ -97,8 +97,10 @@ Public Class FrmIndex
                     Next
 
                     AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
-
+                    FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
                     MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
 
                 Catch ex As Exception
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -197,13 +199,13 @@ Public Class FrmIndex
         batchIdTextBox.Text = DocumentTypeComboBox.Text & "-" & txtCompany.Text & "-" & Me.DateTimePicker1.Value.ToString("yyyyMMMdd") & "-" & txtPurpose.Text
     End Sub
 
-    Private Sub txtPurpose_TextChanged(sender As Object, e As EventArgs) Handles txtPurpose.TextChanged
+    Private Sub TxtPurpose_TextChanged(sender As Object, e As EventArgs) Handles txtPurpose.TextChanged
 
 
         batchIdTextBox.Text = DocumentTypeComboBox.Text & "-" & txtCompany.Text & "-" & Me.DateTimePicker1.Value.ToString("yyyyMMMdd") & "-" & txtPurpose.Text
     End Sub
 
-    Private Sub txtCompany_TextChanged(sender As Object, e As EventArgs) Handles txtCompany.TextChanged
+    Private Sub TxtCompany_TextChanged(sender As Object, e As EventArgs) Handles txtCompany.TextChanged
         batchIdTextBox.Text = DocumentTypeComboBox.Text & "-" & txtCompany.Text & "-" & Me.DateTimePicker1.Value.ToString("yyyyMMMdd") & "-" & txtPurpose.Text
     End Sub
 

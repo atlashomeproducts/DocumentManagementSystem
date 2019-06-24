@@ -9,6 +9,7 @@ Public Class FrmMain
 
 
     Public type As String
+    Public User As String
 
     Private Sub DocumentManagementToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
@@ -45,6 +46,10 @@ Public Class FrmMain
         TabControl1.SelectTab(TabLogin)
         Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
 
+
+
+        Timer1.Enabled = True
+        Timer1.Interval = 30000
 
 
 
@@ -134,9 +139,10 @@ Public Class FrmMain
             If (sdr.Read() = True) Then
 
                 type = sdr!UserType
-                Dim usertxt As String = TxtUsername.Text
-                usertxt = StrConv(usertxt, VbStrConv.ProperCase)
-                Me.LblUser.Text = "Logged in as:" & usertxt
+                User = StrConv(TxtUsername.Text, VbStrConv.ProperCase)
+                'Dim usertxt As String = TxtUsername.Text
+                'usertxt = StrConv(usertxt, VbStrConv.ProperCase)
+                Me.LblUser.Text = "Logged in as:" & User
 
                 If Type = "Administrator" Then
                     TabControl1.SelectTab(TabMain)
@@ -208,5 +214,9 @@ Public Class FrmMain
 
     Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
         FrmUsers.Show(Me)
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
     End Sub
 End Class
