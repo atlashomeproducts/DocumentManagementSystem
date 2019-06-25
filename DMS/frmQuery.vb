@@ -225,7 +225,7 @@ Public Class FrmQuery
 
 
     End Sub
-    Private Sub C1TrueDBGrid1_DoubleClick(sender As Object, e As EventArgs) Handles C1TrueDBGrid1.DoubleClick
+    Private Sub C1TrueDBGrid1_DoubleClick(sender As Object, e As EventArgs)
         Try
 
             AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid1.Columns("File Name").Text)
@@ -403,7 +403,7 @@ AND Status = 'Finished'
 
     End Sub
 
-    Private Sub C1TrueDBGrid1_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid1.Click
+    Private Sub C1TrueDBGrid1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -665,9 +665,54 @@ AND Status = 'Finished'
     Private Sub BtnDownload_Click(sender As Object, e As EventArgs) Handles BtnDownload.Click
         Try
 
-            My.Computer.Network.DownloadFile(Path.Combine(My.Settings.ImgPath, Me.C1TrueDBGrid1.Columns("File Name").Text), Path.Combine("C:\", Me.C1TrueDBGrid1.Columns("File Name").Text), "anonymous", "")
-            MessageBox.Show("File Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim FilePath As String
 
+
+            'If OpenFileDialog1.ShowDialog = DialogResult.OK Then
+            '    FilePath = OpenFileDialog1.FileName 'get the path
+            '    '  MsgBox(FilePath) 'displayt the path with the filename
+            '    ' FilePath = StrReverse(FilePath) 'reverse the string
+            '    FilePath = Mid(FilePath, InStr(FilePath, "\"), Len(FilePath)) 'extract from the first slash
+            '    ' FilePath = StrReverse(FilePath) 'reverse it again
+            '    ' MsgBox(FilePath) 'voila u have the path now :)
+            '    MsgBox(FilePath)
+
+            '    My.Computer.Network.DownloadFile(Path.Combine(My.Settings.ImgPath, Me.C1TrueDBGrid1.Columns("File Name").Text), Path.Combine(FilePath, Me.C1TrueDBGrid1.Columns("File Name").Text), "guest", "")
+            '    MessageBox.Show("File Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            'End If
+
+
+            With SaveFileDialog1
+                '.FileName = Me.C1TrueDBGrid1.Columns("File Name").Text    'Clear out previous filename
+                .Filter = "PDF Files (*.pdf)|*.pdf| All Files (*.*)|*.*"
+                .FilterIndex = 1             'Set index of filter
+                .Title = "Import Files"  'Set caption of OFD
+
+
+                If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
+                    FilePath = SaveFileDialog1.FileName
+                    'Path.Combine(FilePath, Me.C1TrueDBGrid1.Columns("File Name").Text), "guest", ""
+
+
+                    Dim i As Integer = 0
+                    For i = 0 To C1TrueDBGrid1.RowCount - 1
+                        If C1TrueDBGrid1.Rows(i).Item(0).Value = True Then  'See if checkbox is checked
+
+                            My.Computer.Network.DownloadFile(Path.Combine(My.Settings.ImgPath, Me.C1TrueDBGrid1.Columns("File Name").Text), FilePath, "guest", "")
+                            MessageBox.Show("File Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        End If
+                    Next
+
+
+                    '   My.Computer.Network.DownloadFile(Path.Combine(My.Settings.ImgPath, Me.C1TrueDBGrid1.Columns("File Name").Text), FilePath, "guest", "")
+                    '  MessageBox.Show("File Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+                End If
+
+            End With
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)

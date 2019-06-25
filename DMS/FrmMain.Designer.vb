@@ -40,6 +40,8 @@ Partial Class FrmMain
         Me.LblUser = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SpDMSTotalsC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.SpDMSTotalsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.IndexFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -50,8 +52,6 @@ Partial Class FrmMain
         Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.SpDMSTotalsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.SpDMSTotalsTableAdapter = New DMS.DMSDataSetTableAdapters.spDMSTotalsTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.TabControl1.SuspendLayout()
@@ -65,9 +65,9 @@ Partial Class FrmMain
         Me.SplitContainer1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SpDMSTotalsC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.SpDMSTotalsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -232,7 +232,7 @@ Partial Class FrmMain
         '
         Me.LblUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.LblUser.AutoSize = True
-        Me.LblUser.BackColor = System.Drawing.Color.Transparent
+        Me.LblUser.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.LblUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.LblUser.Font = New System.Drawing.Font("Britannic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblUser.Location = New System.Drawing.Point(4, 506)
@@ -293,6 +293,16 @@ Partial Class FrmMain
         Me.SpDMSTotalsC1TrueDBGrid.VisualStyle = C1.Win.C1TrueDBGrid.VisualStyle.System
         Me.SpDMSTotalsC1TrueDBGrid.PropBag = resources.GetString("SpDMSTotalsC1TrueDBGrid.PropBag")
         '
+        'SpDMSTotalsBindingSource
+        '
+        Me.SpDMSTotalsBindingSource.DataMember = "spDMSTotals"
+        Me.SpDMSTotalsBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
@@ -308,67 +318,57 @@ Partial Class FrmMain
         'IndexFilesToolStripMenuItem
         '
         Me.IndexFilesToolStripMenuItem.Name = "IndexFilesToolStripMenuItem"
-        Me.IndexFilesToolStripMenuItem.Size = New System.Drawing.Size(70, 29)
+        Me.IndexFilesToolStripMenuItem.Size = New System.Drawing.Size(65, 27)
         Me.IndexFilesToolStripMenuItem.Text = "Index"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Enabled = False
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(34, 29)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(40, 27)
         Me.ToolStripMenuItem1.Text = "||"
         '
         'EditorToolStripMenuItem
         '
         Me.EditorToolStripMenuItem.Name = "EditorToolStripMenuItem"
-        Me.EditorToolStripMenuItem.Size = New System.Drawing.Size(74, 29)
+        Me.EditorToolStripMenuItem.Size = New System.Drawing.Size(68, 27)
         Me.EditorToolStripMenuItem.Text = "Editor"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Enabled = False
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(34, 29)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(40, 27)
         Me.ToolStripMenuItem2.Text = "||"
         '
         'SEARCHToolStripMenuItem
         '
         Me.SEARCHToolStripMenuItem.Name = "SEARCHToolStripMenuItem"
-        Me.SEARCHToolStripMenuItem.Size = New System.Drawing.Size(81, 29)
+        Me.SEARCHToolStripMenuItem.Size = New System.Drawing.Size(74, 27)
         Me.SEARCHToolStripMenuItem.Text = "Search"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Enabled = False
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(34, 29)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(40, 27)
         Me.ToolStripMenuItem3.Text = "||"
         '
         'UserManagementToolStripMenuItem
         '
         Me.UserManagementToolStripMenuItem.Name = "UserManagementToolStripMenuItem"
-        Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(70, 29)
+        Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(66, 27)
         Me.UserManagementToolStripMenuItem.Text = "Users"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Enabled = False
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(34, 29)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(40, 27)
         Me.ToolStripMenuItem4.Text = "||"
         '
         'Timer1
         '
-        '
-        'SpDMSTotalsBindingSource
-        '
-        Me.SpDMSTotalsBindingSource.DataMember = "spDMSTotals"
-        Me.SpDMSTotalsBindingSource.DataSource = Me.DMSDataSet
-        '
-        'DMSDataSet
-        '
-        Me.DMSDataSet.DataSetName = "DMSDataSet"
-        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'SpDMSTotalsTableAdapter
         '
@@ -407,10 +407,10 @@ Partial Class FrmMain
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SpDMSTotalsC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         CType(Me.SpDMSTotalsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

@@ -245,6 +245,9 @@ Partial Class FrmQuery
         Me.AcroPDF = New AxAcroPDFLib.AxAcroPDF()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -397,7 +400,6 @@ Partial Class FrmQuery
         Me.C1TrueDBGrid1.AllowUpdate = False
         Me.C1TrueDBGrid1.AlternatingRows = True
         Me.C1TrueDBGrid1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.C1TrueDBGrid1.FilterBar = True
         Me.C1TrueDBGrid1.GroupByCaption = "Drag a column header here to group by that column"
         Me.C1TrueDBGrid1.Images.Add(CType(resources.GetObject("C1TrueDBGrid1.Images"), System.Drawing.Image))
         Me.C1TrueDBGrid1.Location = New System.Drawing.Point(0, 0)
@@ -833,7 +835,7 @@ Partial Class FrmQuery
         Me.TabControl2.Location = New System.Drawing.Point(-1, 33)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(592, 594)
+        Me.TabControl2.Size = New System.Drawing.Size(592, 643)
         Me.TabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl2.TabIndex = 27
         Me.TabControl2.TabStop = False
@@ -847,7 +849,7 @@ Partial Class FrmQuery
         Me.Timesheet.Location = New System.Drawing.Point(4, 32)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(584, 558)
+        Me.Timesheet.Size = New System.Drawing.Size(584, 607)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
@@ -874,7 +876,7 @@ Partial Class FrmQuery
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(578, 552)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(578, 601)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1103,7 +1105,7 @@ Partial Class FrmQuery
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 32)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(584, 558)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(584, 607)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
@@ -1144,7 +1146,7 @@ Partial Class FrmQuery
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(578, 552)
+        Me.GrpReceipt.Size = New System.Drawing.Size(578, 601)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1423,7 +1425,7 @@ Partial Class FrmQuery
         Me.Warranty.Location = New System.Drawing.Point(4, 32)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(584, 558)
+        Me.Warranty.Size = New System.Drawing.Size(584, 607)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
@@ -1465,7 +1467,7 @@ Partial Class FrmQuery
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(578, 552)
+        Me.GrpWarranty.Size = New System.Drawing.Size(578, 601)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1758,7 +1760,7 @@ Partial Class FrmQuery
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 32)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(584, 558)
+        Me.Voucher.Size = New System.Drawing.Size(584, 607)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
@@ -1800,7 +1802,7 @@ Partial Class FrmQuery
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(584, 558)
+        Me.GrpVoucher.Size = New System.Drawing.Size(584, 607)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -2236,7 +2238,7 @@ Partial Class FrmQuery
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 32)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(584, 558)
+        Me.CorpDocu.Size = New System.Drawing.Size(584, 607)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
@@ -2259,7 +2261,7 @@ Partial Class FrmQuery
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(584, 558)
+        Me.GrpCorp.Size = New System.Drawing.Size(584, 607)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2541,6 +2543,10 @@ Partial Class FrmQuery
         '
         Me.DocsCatalogueTableAdapter.ClearBeforeFill = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'FrmQuery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2613,7 +2619,6 @@ Partial Class FrmQuery
     Private Sub BtnSaveChanges_Click(sender As Object, e As EventArgs)
 
     End Sub
-    Friend WithEvents C1TrueDBGrid1 As C1.Win.C1TrueDBGrid.C1TrueDBGrid
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents BtnSaveChanges1 As Button
     Friend WithEvents BtnSearch As Button
@@ -2827,4 +2832,8 @@ Partial Class FrmQuery
     Friend WithEvents Label35 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents BtnDownload As Button
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents C1TrueDBGrid1 As C1.Win.C1TrueDBGrid.C1TrueDBGrid
 End Class

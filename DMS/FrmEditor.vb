@@ -692,14 +692,14 @@ Public Class FrmEditor
             If MsgDelete = vbYes Then
 
 
-                File.Delete(My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
+
 
                 Me.DocsCatalogueBindingSource.RemoveCurrent()
                 Me.Validate()
                 Me.DocsCatalogueBindingSource.EndEdit()
                 Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
 
-
+                File.Delete(My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
                 ' MessageBox.Show("Record Deleted!!", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             ElseIf MsgDelete = vbNo Then

@@ -146,12 +146,6 @@
     <Compile Include="DMSDataSet.vb">
       <DependentUpon>DMSDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrmChanges.Designer.vb">
-      <DependentUpon>FrmChanges.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmChanges.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FrmEditor.Designer.vb">
       <DependentUpon>FrmEditor.vb</DependentUpon>
     </Compile>
@@ -207,9 +201,6 @@
     <Compile Include="Settings.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmChanges.resx">
-      <DependentUpon>FrmChanges.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmEditor.resx">
       <DependentUpon>FrmEditor.vb</DependentUpon>
     </EmbeddedResource>
