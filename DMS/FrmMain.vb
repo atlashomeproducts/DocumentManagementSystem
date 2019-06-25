@@ -116,7 +116,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub SEARCHToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SEARCHToolStripMenuItem.Click
-        FrmQuery.Show(Me)
+        FrmSearch.Show(Me)
     End Sub
 
     Private Sub IndexFilesToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles IndexFilesToolStripMenuItem.Click

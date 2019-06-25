@@ -165,10 +165,10 @@
       <DependentUpon>FrmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmQuery.Designer.vb">
-      <DependentUpon>FrmQuery.vb</DependentUpon>
+    <Compile Include="FrmSearch.Designer.vb">
+      <DependentUpon>FrmSearch.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmQuery.vb">
+    <Compile Include="FrmSearch.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmIndex.Designer.vb">
@@ -210,11 +210,11 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmQuery.Designer.resx">
-      <DependentUpon>FrmQuery.Designer.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmIndex.resx">
       <DependentUpon>FrmIndex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSearch.Designer.resx">
+      <DependentUpon>FrmSearch.Designer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsers.resx">
       <DependentUpon>FrmUsers.vb</DependentUpon>
