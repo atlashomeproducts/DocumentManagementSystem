@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>77</ApplicationRevision>
+    <ApplicationRevision>98</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -165,16 +165,16 @@
       <DependentUpon>FrmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSearch.Designer.vb">
-      <DependentUpon>FrmSearch.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmSearch.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FrmIndex.Designer.vb">
       <DependentUpon>FrmIndex.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmIndex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSearch2.Designer.vb">
+      <DependentUpon>FrmSearch2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSearch2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmUsers.Designer.vb">
@@ -213,8 +213,9 @@
     <EmbeddedResource Include="FrmIndex.resx">
       <DependentUpon>FrmIndex.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSearch.Designer.resx">
-      <DependentUpon>FrmSearch.Designer.vb</DependentUpon>
+    <EmbeddedResource Include="FrmSearch2.resx">
+      <DependentUpon>FrmSearch2.vb</DependentUpon>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsers.resx">
       <DependentUpon>FrmUsers.vb</DependentUpon>
@@ -279,6 +280,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

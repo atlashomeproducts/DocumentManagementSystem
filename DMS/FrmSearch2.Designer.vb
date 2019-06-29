@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmSearch
+Partial Class FrmSearch2
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -25,7 +25,7 @@ Partial Class FrmSearch
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSearch))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSearch2))
         Me.Label25 = New System.Windows.Forms.Label()
         Me.MeetingDateLabel = New System.Windows.Forms.Label()
         Me.SecretaryLabel = New System.Windows.Forms.Label()
@@ -37,7 +37,7 @@ Partial Class FrmSearch
         Me.PromoFromLabel = New System.Windows.Forms.Label()
         Me.PromoTitleLabel = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.C1TrueDBGrid1 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.C1TrueDBGrid2 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.BtnDownload = New System.Windows.Forms.Button()
         Me.BtnSaveChanges1 = New System.Windows.Forms.Button()
@@ -252,7 +252,7 @@ Partial Class FrmSearch
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        CType(Me.C1TrueDBGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.C1TrueDBGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
@@ -384,10 +384,12 @@ Partial Class FrmSearch
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.C1TrueDBGrid1)
+        Me.SplitContainer1.Panel1.AutoScroll = True
+        Me.SplitContainer1.Panel1.Controls.Add(Me.C1TrueDBGrid2)
         '
         'SplitContainer1.Panel2
         '
+        Me.SplitContainer1.Panel2.AutoScroll = True
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
         Me.SplitContainer1.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SplitContainer1.Size = New System.Drawing.Size(1240, 738)
@@ -395,47 +397,50 @@ Partial Class FrmSearch
         Me.SplitContainer1.TabIndex = 0
         Me.SplitContainer1.TabStop = False
         '
-        'C1TrueDBGrid1
+        'C1TrueDBGrid2
         '
-        Me.C1TrueDBGrid1.AllowUpdate = False
-        Me.C1TrueDBGrid1.AlternatingRows = True
-        Me.C1TrueDBGrid1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.C1TrueDBGrid1.GroupByCaption = "Drag a column header here to group by that column"
-        Me.C1TrueDBGrid1.Images.Add(CType(resources.GetObject("C1TrueDBGrid1.Images"), System.Drawing.Image))
-        Me.C1TrueDBGrid1.Location = New System.Drawing.Point(0, 0)
-        Me.C1TrueDBGrid1.Name = "C1TrueDBGrid1"
-        Me.C1TrueDBGrid1.PreviewInfo.Location = New System.Drawing.Point(0, 0)
-        Me.C1TrueDBGrid1.PreviewInfo.Size = New System.Drawing.Size(0, 0)
-        Me.C1TrueDBGrid1.PreviewInfo.ZoomFactor = 75.0R
-        Me.C1TrueDBGrid1.Size = New System.Drawing.Size(1240, 251)
-        Me.C1TrueDBGrid1.TabIndex = 0
-        Me.C1TrueDBGrid1.UseCompatibleTextRendering = False
-        Me.C1TrueDBGrid1.PropBag = resources.GetString("C1TrueDBGrid1.PropBag")
+        Me.C1TrueDBGrid2.AlternatingRows = True
+        Me.C1TrueDBGrid2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.C1TrueDBGrid2.GroupByCaption = "Drag a column header here to group by that column"
+        Me.C1TrueDBGrid2.Images.Add(CType(resources.GetObject("C1TrueDBGrid2.Images"), System.Drawing.Image))
+        Me.C1TrueDBGrid2.Location = New System.Drawing.Point(0, 0)
+        Me.C1TrueDBGrid2.Name = "C1TrueDBGrid2"
+        Me.C1TrueDBGrid2.PreviewInfo.Location = New System.Drawing.Point(0, 0)
+        Me.C1TrueDBGrid2.PreviewInfo.Size = New System.Drawing.Size(0, 0)
+        Me.C1TrueDBGrid2.PreviewInfo.ZoomFactor = 75.0R
+        Me.C1TrueDBGrid2.PrintInfo.PageSettings = CType(resources.GetObject("C1TrueDBGrid2.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
+        Me.C1TrueDBGrid2.Size = New System.Drawing.Size(1240, 251)
+        Me.C1TrueDBGrid2.TabIndex = 0
+        Me.C1TrueDBGrid2.UseCompatibleTextRendering = False
+        Me.C1TrueDBGrid2.PropBag = resources.GetString("C1TrueDBGrid2.PropBag")
         '
         'SplitContainer2
         '
-        Me.SplitContainer2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SplitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
         Me.SplitContainer2.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer2.Name = "SplitContainer2"
         '
         'SplitContainer2.Panel1
         '
+        Me.SplitContainer2.Panel1.AutoScroll = True
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnDownload)
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnSaveChanges1)
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnSearch)
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnEditRecord)
         Me.SplitContainer2.Panel1.Controls.Add(Me.TabControl1)
+        Me.SplitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No
         '
         'SplitContainer2.Panel2
         '
+        Me.SplitContainer2.Panel2.AutoScroll = True
         Me.SplitContainer2.Panel2.Controls.Add(Me.AcroPDF)
+        Me.SplitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.SplitContainer2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer2.Size = New System.Drawing.Size(1240, 483)
-        Me.SplitContainer2.SplitterDistance = 595
+        Me.SplitContainer2.SplitterDistance = 629
         Me.SplitContainer2.TabIndex = 0
+        Me.SplitContainer2.TabStop = False
         '
         'BtnDownload
         '
@@ -479,10 +484,10 @@ Partial Class FrmSearch
         Me.TabControl1.Controls.Add(Me.TabQuery)
         Me.TabControl1.Controls.Add(Me.TabChanges)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TabControl1.Location = New System.Drawing.Point(0, 32)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 35)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(593, 449)
+        Me.TabControl1.Size = New System.Drawing.Size(612, 449)
         Me.TabControl1.TabIndex = 91
         '
         'TabQuery
@@ -519,7 +524,7 @@ Partial Class FrmSearch
         Me.TabQuery.Location = New System.Drawing.Point(4, 32)
         Me.TabQuery.Name = "TabQuery"
         Me.TabQuery.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabQuery.Size = New System.Drawing.Size(585, 413)
+        Me.TabQuery.Size = New System.Drawing.Size(604, 413)
         Me.TabQuery.TabIndex = 0
         Me.TabQuery.Text = "TabQuery"
         '
@@ -686,6 +691,7 @@ Partial Class FrmSearch
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(11, 13)
         Me.Label6.Name = "Label6"
+        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label6.Size = New System.Drawing.Size(94, 20)
         Me.Label6.TabIndex = 72
         Me.Label6.Text = "Search by:"
@@ -785,7 +791,7 @@ Partial Class FrmSearch
         Me.TabChanges.Location = New System.Drawing.Point(4, 32)
         Me.TabChanges.Name = "TabChanges"
         Me.TabChanges.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabChanges.Size = New System.Drawing.Size(585, 413)
+        Me.TabChanges.Size = New System.Drawing.Size(604, 413)
         Me.TabChanges.TabIndex = 1
         Me.TabChanges.Text = "TabChanges"
         '
@@ -834,7 +840,7 @@ Partial Class FrmSearch
         Me.TabControl2.Location = New System.Drawing.Point(-1, 33)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(592, 678)
+        Me.TabControl2.Size = New System.Drawing.Size(611, 867)
         Me.TabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl2.TabIndex = 27
         Me.TabControl2.TabStop = False
@@ -848,7 +854,7 @@ Partial Class FrmSearch
         Me.Timesheet.Location = New System.Drawing.Point(4, 32)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(584, 642)
+        Me.Timesheet.Size = New System.Drawing.Size(603, 831)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
@@ -875,7 +881,7 @@ Partial Class FrmSearch
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(578, 636)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(597, 825)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1104,7 +1110,7 @@ Partial Class FrmSearch
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 32)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(584, 642)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(603, 831)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
@@ -1145,7 +1151,7 @@ Partial Class FrmSearch
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(578, 636)
+        Me.GrpReceipt.Size = New System.Drawing.Size(597, 825)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1424,7 +1430,7 @@ Partial Class FrmSearch
         Me.Warranty.Location = New System.Drawing.Point(4, 32)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(584, 642)
+        Me.Warranty.Size = New System.Drawing.Size(603, 831)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
@@ -1466,7 +1472,7 @@ Partial Class FrmSearch
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(578, 636)
+        Me.GrpWarranty.Size = New System.Drawing.Size(597, 825)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1759,7 +1765,7 @@ Partial Class FrmSearch
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 32)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(584, 642)
+        Me.Voucher.Size = New System.Drawing.Size(603, 831)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
@@ -1801,7 +1807,7 @@ Partial Class FrmSearch
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(584, 642)
+        Me.GrpVoucher.Size = New System.Drawing.Size(603, 831)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -2237,7 +2243,7 @@ Partial Class FrmSearch
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 32)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(584, 642)
+        Me.CorpDocu.Size = New System.Drawing.Size(603, 831)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
@@ -2260,7 +2266,7 @@ Partial Class FrmSearch
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(584, 642)
+        Me.GrpCorp.Size = New System.Drawing.Size(603, 831)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2525,7 +2531,7 @@ Partial Class FrmSearch
         Me.AcroPDF.Location = New System.Drawing.Point(0, 0)
         Me.AcroPDF.Name = "AcroPDF"
         Me.AcroPDF.OcxState = CType(resources.GetObject("AcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AcroPDF.Size = New System.Drawing.Size(639, 481)
+        Me.AcroPDF.Size = New System.Drawing.Size(607, 483)
         Me.AcroPDF.TabIndex = 91
         '
         'TableAdapterManager
@@ -2546,21 +2552,21 @@ Partial Class FrmSearch
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'FrmSearch
+        'FrmSearch2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1240, 738)
         Me.Controls.Add(Me.SplitContainer1)
-        Me.Name = "FrmSearch"
+        Me.Name = "FrmSearch2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Search"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
-        CType(Me.C1TrueDBGrid1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.C1TrueDBGrid2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2834,5 +2840,7 @@ Partial Class FrmSearch
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
-    Friend WithEvents C1TrueDBGrid1 As C1.Win.C1TrueDBGrid.C1TrueDBGrid
+    Friend WithEvents C1TrueDBGrid2 As C1.Win.C1TrueDBGrid.C1TrueDBGrid
 End Class
+
+

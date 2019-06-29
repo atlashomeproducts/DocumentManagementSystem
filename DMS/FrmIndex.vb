@@ -62,6 +62,41 @@ Public Class FrmIndex
 
                 Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
                 Dim cmd As New SqlCommand
+                Dim strsql As String = "INSERT INTO DocsCatalogue([DocumentType], [Batch], [SubBatch],[ScannedDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo], [UserID])
+                                                   VALUES (@DocumentType, @BatchID, @SubBatch, @ScanDate, @FileName, @Status, @Company, @Purpose, @RackNo, @BoxNo, @UserID)"
+
+                With cmd
+                    .CommandText = strsql
+                    .CommandType = CommandType.Text
+
+
+                    .Parameters.AddWithValue("@DocumentType", "")
+                    .Parameters.AddWithValue("@BatchID", "")
+                    .Parameters.AddWithValue("@SubBatch", "")
+                    .Parameters.AddWithValue("@ScanDate", "")
+                    .Parameters.AddWithValue("@FileName", "")
+                    .Parameters.AddWithValue("@Status", "")
+                    .Parameters.AddWithValue("@Company", "")
+                    .Parameters.AddWithValue("@Purpose", "")
+                    .Parameters.AddWithValue("@RackNo", "")
+                    .Parameters.AddWithValue("@BoxNo", "")
+                    .Parameters.AddWithValue("@UserID", "")
+
+
+                    '.Parameters(0).Value = "@DocumentType"
+                    '.Parameters(0).Value = "@BatchID"
+                    '.Parameters(0).Value = "@SubBatch"
+                    '.Parameters(0).Value = "@ScanDate"
+                    '.Parameters(0).Value = "@FileName"
+                    '.Parameters(0).Value = "@Status"
+                    '.Parameters(0).Value = "@Company"
+                    '.Parameters(0).Value = "@Purpose"
+                    '.Parameters(0).Value = "@RackNo"
+                    '.Parameters(0).Value = "@BoxNo"
+                    '.Parameters(0).Value = "@UserID"
+
+                    .Connection = con
+                End With
 
                 Try
 
@@ -70,20 +105,26 @@ Public Class FrmIndex
 
                     For Each Item As String In ListBox1.SelectedItems
 
-                        cmd.Connection = con
-                        cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([DocumentType], [Batch], [SubBatch],[ScannedDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo], [UserID]) 
-                                        VALUES ('" & DocumentTypeComboBox.Text & "', '" & batchIdTextBox.Text & "', '" & SubBatchTextbox.Text & "','" & scanDateTimePicker.Text & "' 
-                                                , '" & txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "', '" & txtCompany.Text & "', '" & txtPurpose.Text & "', '" & RackNoTextbox.Text & "', '" & BoxNoTextbox.Text & "', '" & FrmMain.User & "')"
+
+                        cmd.Parameters("@DocumentType").Value = DocumentTypeComboBox.Text
+                        cmd.Parameters("@BatchID").Value = batchIdTextBox.Text
+                        cmd.Parameters("@SubBatch").Value = SubBatchTextbox.Text
+                        cmd.Parameters("@ScanDate").Value = scanDateTimePicker.Text
+                        cmd.Parameters("@FileName").Value = txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name
+                        cmd.Parameters("@Status").Value = "Indexed"
+                        cmd.Parameters("@Company").Value = txtCompany.Text
+                        cmd.Parameters("@Purpose").Value = txtPurpose.Text
+                        cmd.Parameters("@RackNo").Value = RackNoTextbox.Text
+                        cmd.Parameters("@BoxNo").Value = BoxNoTextbox.Text
+                        cmd.Parameters("@UserID").Value = FrmMain.User
+
                         cmd.ExecuteNonQuery()
 
-                        'Dim dt As Date = DateTime.Now.ToString("yyyyMMddhhmmsstt")
-                        'Dim str As String = dt.Year & dt.Month & dt.Day & dt.Hour & dt.Second & dt.Millisecond
-
-                        'Dim tDate As New DateTime(Date.Today.Year, Date.Today.Month, Date.Today.Day, Date.Now.Hour, Date.Now.Minute, Date.Now.Second)
-                        'Dim csvFile As String
-                        'csvFile = "E:\test\" & tDate.ToString("yyyyMMdd_HHmmss") & ".csv"
-
-                        ' Dim fileDateTime As String = DateTime.Now.ToString("yyyyMMdd") & "_" & DateTime.Now.ToString("HHmmss")
+                        'cmd.Connection = con
+                        'cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([DocumentType], [Batch], [SubBatch],[ScannedDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo], [UserID]) 
+                        '                VALUES ('" & Replace(DocumentTypeComboBox.Text, "'", "''") & "' , '" & batchIdTextBox.Text & "', '" & SubBatchTextbox.Text & "','" & scanDateTimePicker.Text & "' 
+                        '                        , '" & txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "', '" & txtCompany.Text & "', '" & txtPurpose.Text & "', '" & RackNoTextbox.Text & "', '" & BoxNoTextbox.Text & "', '" & FrmMain.User & "')"
+                        'cmd.ExecuteNonQuery()
 
                         File.Copy(Item, Path.Combine(My.Settings.ImgPath, txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
                     Next

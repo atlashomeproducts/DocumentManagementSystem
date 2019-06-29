@@ -80,7 +80,7 @@ Partial Class FrmMain
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.Padding = New System.Drawing.Point(0, 0)
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(964, 596)
+        Me.TabControl1.Size = New System.Drawing.Size(1085, 687)
         Me.TabControl1.TabIndex = 1
         '
         'TabLogin
@@ -91,7 +91,7 @@ Partial Class FrmMain
         Me.TabLogin.Location = New System.Drawing.Point(4, 22)
         Me.TabLogin.Margin = New System.Windows.Forms.Padding(0)
         Me.TabLogin.Name = "TabLogin"
-        Me.TabLogin.Size = New System.Drawing.Size(956, 570)
+        Me.TabLogin.Size = New System.Drawing.Size(1077, 661)
         Me.TabLogin.TabIndex = 0
         Me.TabLogin.Text = "Login"
         '
@@ -106,7 +106,7 @@ Partial Class FrmMain
         Me.GroupBox1.Controls.Add(Me.BtnOK)
         Me.GroupBox1.Controls.Add(Me.TxtPassword)
         Me.GroupBox1.Controls.Add(Me.TxtUsername)
-        Me.GroupBox1.Location = New System.Drawing.Point(216, 178)
+        Me.GroupBox1.Location = New System.Drawing.Point(276, 178)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(524, 244)
         Me.GroupBox1.TabIndex = 7
@@ -117,7 +117,7 @@ Partial Class FrmMain
         '
         Me.ChkShow.AutoSize = True
         Me.ChkShow.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkShow.Location = New System.Drawing.Point(165, 159)
+        Me.ChkShow.Location = New System.Drawing.Point(165, 164)
         Me.ChkShow.Name = "ChkShow"
         Me.ChkShow.Size = New System.Drawing.Size(114, 19)
         Me.ChkShow.TabIndex = 14
@@ -138,7 +138,7 @@ Partial Class FrmMain
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(161, 100)
+        Me.Label2.Location = New System.Drawing.Point(161, 101)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(97, 24)
         Me.Label2.TabIndex = 12
@@ -148,7 +148,7 @@ Partial Class FrmMain
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(161, 40)
+        Me.Label1.Location = New System.Drawing.Point(161, 38)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(102, 24)
         Me.Label1.TabIndex = 11
@@ -158,7 +158,7 @@ Partial Class FrmMain
         '
         Me.BtnCancel.Image = CType(resources.GetObject("BtnCancel.Image"), System.Drawing.Image)
         Me.BtnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCancel.Location = New System.Drawing.Point(353, 189)
+        Me.BtnCancel.Location = New System.Drawing.Point(353, 191)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(131, 34)
         Me.BtnCancel.TabIndex = 10
@@ -170,7 +170,7 @@ Partial Class FrmMain
         '
         Me.BtnOK.Image = CType(resources.GetObject("BtnOK.Image"), System.Drawing.Image)
         Me.BtnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnOK.Location = New System.Drawing.Point(165, 189)
+        Me.BtnOK.Location = New System.Drawing.Point(165, 191)
         Me.BtnOK.Name = "BtnOK"
         Me.BtnOK.Size = New System.Drawing.Size(131, 34)
         Me.BtnOK.TabIndex = 9
@@ -179,7 +179,7 @@ Partial Class FrmMain
         '
         'TxtPassword
         '
-        Me.TxtPassword.Location = New System.Drawing.Point(165, 127)
+        Me.TxtPassword.Location = New System.Drawing.Point(165, 129)
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPassword.Size = New System.Drawing.Size(319, 29)
@@ -199,7 +199,7 @@ Partial Class FrmMain
         Me.TabMain.Location = New System.Drawing.Point(4, 22)
         Me.TabMain.Name = "TabMain"
         Me.TabMain.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabMain.Size = New System.Drawing.Size(956, 570)
+        Me.TabMain.Size = New System.Drawing.Size(1077, 661)
         Me.TabMain.TabIndex = 1
         Me.TabMain.Text = "Main"
         Me.TabMain.UseVisualStyleBackColor = True
@@ -223,8 +223,8 @@ Partial Class FrmMain
         '
         Me.SplitContainer1.Panel2.AutoScroll = True
         Me.SplitContainer1.Panel2.Controls.Add(Me.SpDMSTotalsC1TrueDBGrid)
-        Me.SplitContainer1.Size = New System.Drawing.Size(950, 537)
-        Me.SplitContainer1.SplitterDistance = 622
+        Me.SplitContainer1.Size = New System.Drawing.Size(1071, 628)
+        Me.SplitContainer1.SplitterDistance = 743
         Me.SplitContainer1.TabIndex = 6
         Me.SplitContainer1.TabStop = False
         '
@@ -235,7 +235,7 @@ Partial Class FrmMain
         Me.LblUser.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.LblUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.LblUser.Font = New System.Drawing.Font("Britannic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblUser.Location = New System.Drawing.Point(4, 506)
+        Me.LblUser.Location = New System.Drawing.Point(4, 597)
         Me.LblUser.Name = "LblUser"
         Me.LblUser.Size = New System.Drawing.Size(52, 23)
         Me.LblUser.TabIndex = 8
@@ -249,7 +249,7 @@ Partial Class FrmMain
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(622, 537)
+        Me.PictureBox1.Size = New System.Drawing.Size(743, 628)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
@@ -286,7 +286,7 @@ Partial Class FrmMain
         Me.SpDMSTotalsC1TrueDBGrid.RowDivider.Color = System.Drawing.Color.DimGray
         Me.SpDMSTotalsC1TrueDBGrid.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.Raised
         Me.SpDMSTotalsC1TrueDBGrid.RowHeight = 21
-        Me.SpDMSTotalsC1TrueDBGrid.Size = New System.Drawing.Size(324, 537)
+        Me.SpDMSTotalsC1TrueDBGrid.Size = New System.Drawing.Size(324, 628)
         Me.SpDMSTotalsC1TrueDBGrid.SplitDividerSize = New System.Drawing.Size(0, 0)
         Me.SpDMSTotalsC1TrueDBGrid.TabIndex = 0
         Me.SpDMSTotalsC1TrueDBGrid.UseCompatibleTextRendering = False
@@ -311,7 +311,7 @@ Partial Class FrmMain
         Me.MenuStrip1.Location = New System.Drawing.Point(3, 3)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(0)
-        Me.MenuStrip1.Size = New System.Drawing.Size(950, 27)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1071, 27)
         Me.MenuStrip1.TabIndex = 7
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -387,7 +387,7 @@ Partial Class FrmMain
         'FrmMain
         '
         Me.BackColor = System.Drawing.Color.DimGray
-        Me.ClientSize = New System.Drawing.Size(964, 596)
+        Me.ClientSize = New System.Drawing.Size(1085, 687)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmMain"

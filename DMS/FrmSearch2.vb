@@ -7,7 +7,10 @@ Imports System.Configuration
 Imports System.IO
 Imports System.ComponentModel
 
-Public Class FrmSearch
+Public Class FrmSearch2
+
+
+    Public source As New BindingSource
     Private Sub FrmQuery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DMSDataSet.DocsCatalogueChanges' table. You can move, or remove it, as needed.
 
@@ -64,14 +67,14 @@ Public Class FrmSearch
 
 
         Me.BtnSaveChanges1.Enabled = False
-
+        Me.BtnDownload.Enabled = False
 
 
 
         Try
-            Me.C1TrueDBGrid1.LoadLayout("default.layout")
+            Me.C1TrueDBGrid2.LoadLayout("default.layout")
         Catch ex As Exception
-            Me.C1TrueDBGrid1.SaveLayout("default.layout")
+            Me.C1TrueDBGrid2.SaveLayout("default.layout")
         End Try
 
 
@@ -84,15 +87,15 @@ Public Class FrmSearch
 
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-        con.Open()
-        Dim cmd As SqlCommand = New SqlCommand("SELECT DocumentType FROM DocumentTypes ORDER BY DocumentType", con)
+            con.Open()
+            Dim cmd As SqlCommand = New SqlCommand("SELECT DocumentType FROM DocumentTypes ORDER BY DocumentType", con)
 
-        Dim read As SqlDataReader = cmd.ExecuteReader()
-        While read.Read()
+            Dim read As SqlDataReader = cmd.ExecuteReader()
+            While read.Read()
                 DocumentTypeComboBox.Items.Add(read.GetString(0))
                 DocumentTypeCombobox2.Items.Add(read.GetString(0))
             End While
-        con.Close()
+            con.Close()
 
 
         Catch ex As Exception
@@ -111,51 +114,51 @@ Public Class FrmSearch
 
     Private Sub ComboSelect()
 
-        If Me.C1TrueDBGrid1.Columns("Document Type").Text = "Sales Invoice" Then
+        If Me.C1TrueDBGrid2.Columns("Document Type").Text = "Sales Invoice" Then
             TabControl2.SelectTab(ReceiptInvoice)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Official Receipt" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Official Receipt" Then
             TabControl2.SelectTab(ReceiptInvoice)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Delivery Receipt" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Delivery Receipt" Then
             TabControl2.SelectTab(ReceiptInvoice)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Acknowledgement Receipt" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Acknowledgement Receipt" Then
             TabControl2.SelectTab(ReceiptInvoice)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Collection Receipt" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Collection Receipt" Then
             TabControl2.SelectTab(ReceiptInvoice)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Provisional Receipt" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Provisional Receipt" Then
             TabControl2.SelectTab(ReceiptInvoice)
 
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Daily Time Record" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Daily Time Record" Then
             TabControl2.SelectTab(Timesheet)
 
 
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Warranty Card" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Warranty Card" Then
             TabControl2.SelectTab(Warranty)
 
 
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Payment Voucher" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Payment Voucher" Then
             TabControl2.SelectTab(Voucher)
 
 
 
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Secretary's Certificate" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Secretary's Certificate" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Minutes of Board Meeting" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Minutes of Board Meeting" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Articles of Incorporation" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Articles of Incorporation" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting2)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "SEC Certificate of Registration" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "SEC Certificate of Registration" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting2)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "DTI Permit" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "DTI Permit" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabPromo)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "Financial Statement" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Financial Statement" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting2)
-        ElseIf Me.C1TrueDBGrid1.Columns("Document Type").Text = "General Information Sheet" Then
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "General Information Sheet" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting2)
         End If
@@ -225,15 +228,7 @@ Public Class FrmSearch
 
 
     End Sub
-    Private Sub C1TrueDBGrid1_DoubleClick(sender As Object, e As EventArgs)
-        Try
 
-            AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid1.Columns("File Name").Text)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
     Private Sub Search()
         Try
 
@@ -243,6 +238,7 @@ Public Class FrmSearch
             'Create your query as you already have done
             Dim strsql As String = "SELECT 
                 [Id]
+               ,'' [Download]
               ,[DocumentType] [Document Type]
               ,[Batch]            
               ,[SubBatch]  [Sub Batch]               
@@ -372,6 +368,10 @@ AND Status = 'Finished'
 
                 .Connection = strconnectionstring
             End With
+
+
+
+
             'Create a new SqlDataAdapter
             'Set the SelectCommand property of our adapter
             Dim objdataAdapter As New SqlDataAdapter With {
@@ -385,13 +385,93 @@ AND Status = 'Finished'
             Dim objbindingsource As New BindingSource With {
                 .DataSource = objdataset.Tables("DMS")
             }
-            C1TrueDBGrid1.DataSource = objbindingsource
-
-            Me.C1TrueDBGrid1.Splits(0).DisplayColumns("Id").Visible = False
-            Me.C1TrueDBGrid1.Splits(0).ExtendRightColumn = True
+            C1TrueDBGrid2.DataSource = objbindingsource
 
 
+            source = objbindingsource
 
+
+
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Id").Visible = False
+            Me.C1TrueDBGrid2.Splits(0).ExtendRightColumn = True
+
+
+
+            Me.C1TrueDBGrid2.Columns("Download").ValueItems.Presentation = C1.Win.C1TrueDBGrid.PresentationEnum.CheckBox
+
+
+
+            For i = 0 To objbindingsource.Count
+
+                Me.C1TrueDBGrid2.Columns("Download").Value = False
+
+                objbindingsource.MoveNext()
+            Next
+
+
+
+
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Document Type").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Sub Batch").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Rack No").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Box No").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Scanned Date").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("File Name").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Document Date").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Reference No").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Booklet No").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Vendor").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Customer").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Item Purchased").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Total Value").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Last Name").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("First Name").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Middle Name").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("From").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("To").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Warranty No").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Product Brand").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Product Type").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Date Purchased").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Serial").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Warranty Period").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Service Center").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Service Center Address").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Contact No").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("E-Mail").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Voucher No").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Form Of Payment").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Check No").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Payee").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Payor").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Prepared By").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Approved By").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Recorded By").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Received By").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Company").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Purpose").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Secretary").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Meeting Date").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Payment Others").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Bank Name").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Bank Branch").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Bank Address").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Tin of Vendor").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Tin of Customer").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("VAT-Registered").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("NONVAT-Registered").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Date Received").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Customer Address").Locked = True
+
+
+
+
+
+
+            Me.BtnDownload.Enabled = True
+
+
+            ''''''''''''''''''''''
         Catch ex As Exception
             MessageBox.Show("Searching Failed! " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -400,6 +480,8 @@ AND Status = 'Finished'
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnSearch.Click
 
         Search()
+
+
 
     End Sub
 
@@ -412,11 +494,11 @@ AND Status = 'Finished'
             ComboSelect()
 
             Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Finished")
-            Me.DocsCatalogueBindingSource.Filter = "[Id] = '" & Me.C1TrueDBGrid1.Columns("Id").Text & "' "
-            AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid1.Columns("File Name").Text)
+            Me.DocsCatalogueBindingSource.Filter = "[Id] = '" & Me.C1TrueDBGrid2.Columns("Id").Text & "' "
+            AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
 
             TabControl1.SelectTab(TabChanges)
-            Me.C1TrueDBGrid1.Enabled = False
+            Me.C1TrueDBGrid2.Enabled = False
             Me.BtnEditRecord.Enabled = False
             Me.BtnSearch.Enabled = False
             Me.BtnSaveChanges1.Enabled = True
@@ -432,7 +514,7 @@ AND Status = 'Finished'
         Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
 
         Me.BtnEditRecord.Enabled = True
-        Me.C1TrueDBGrid1.Enabled = True
+        Me.C1TrueDBGrid2.Enabled = True
         Me.BtnSearch.Enabled = True
         Me.BtnSaveChanges1.Enabled = False
         MessageBox.Show("Successfully Saved!!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -502,7 +584,7 @@ AND Status = 'Finished'
 
 
     Private Sub FrmQuery_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Me.C1TrueDBGrid1.SaveLayout("default.layout")
+        Me.C1TrueDBGrid2.SaveLayout("default.layout")
     End Sub
 
     Private Sub DTMeetingDate_ValueChanged(sender As Object, e As EventArgs) Handles DTMeetingDate.ValueChanged
@@ -664,55 +746,43 @@ AND Status = 'Finished'
 
     Private Sub BtnDownload_Click(sender As Object, e As EventArgs) Handles BtnDownload.Click
         Try
-
             Dim FilePath As String
+            If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+
+                source.Position = 0
+                For i = 0 To Me.source.Count - 1
+
+                    If Me.C1TrueDBGrid2.Columns("Download").Value = True Then
+                        FilePath = FolderBrowserDialog1.SelectedPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text
+                        My.Computer.Network.DownloadFile(Path.Combine(My.Settings.ImgPath, Me.C1TrueDBGrid2.Columns("File Name").Text), FilePath, "guest", "")
+
+                    End If
 
 
-            'If OpenFileDialog1.ShowDialog = DialogResult.OK Then
-            '    FilePath = OpenFileDialog1.FileName 'get the path
-            '    '  MsgBox(FilePath) 'displayt the path with the filename
-            '    ' FilePath = StrReverse(FilePath) 'reverse the string
-            '    FilePath = Mid(FilePath, InStr(FilePath, "\"), Len(FilePath)) 'extract from the first slash
-            '    ' FilePath = StrReverse(FilePath) 'reverse it again
-            '    ' MsgBox(FilePath) 'voila u have the path now :)
-            '    MsgBox(FilePath)
+                    source.MoveNext()
 
-            '    My.Computer.Network.DownloadFile(Path.Combine(My.Settings.ImgPath, Me.C1TrueDBGrid1.Columns("File Name").Text), Path.Combine(FilePath, Me.C1TrueDBGrid1.Columns("File Name").Text), "guest", "")
-            '    MessageBox.Show("File Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            'End If
+                Next
 
 
-            'With SaveFileDialog1
-            '    '.FileName = Me.C1TrueDBGrid1.Columns("File Name").Text    'Clear out previous filename
-            '    .Filter = "PDF Files (*.pdf)|*.pdf| All Files (*.*)|*.*"
-            '    .FilterIndex = 1             'Set index of filter
-            '    .Title = "Import Files"  'Set caption of OFD
-
-
-            If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
-                FilePath = SaveFileDialog1.FileName
-                'Path.Combine(FilePath, Me.C1TrueDBGrid1.Columns("File Name").Text), "guest", ""
-
-
-                '   Dim i As Integer = 0
-                '    For i = 0 To C1TrueDBGrid1.RowCount - 1
-                ' If C1TrueDBGrid1.Rows(i).Item(0).Value = True Then  'See if checkbox is checked
-
-                My.Computer.Network.DownloadFile(Path.Combine(My.Settings.ImgPath, Me.C1TrueDBGrid1.Columns("File Name").Text), FilePath, "guest", "")
-                MessageBox.Show("File Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-                'End If
-                ' Next
-
-
-                '   My.Computer.Network.DownloadFile(Path.Combine(My.Settings.ImgPath, Me.C1TrueDBGrid1.Columns("File Name").Text), FilePath, "guest", "")
-                '  MessageBox.Show("File Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                MessageBox.Show("Files Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             End If
 
-            '  End With
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+    End Sub
+
+    Private Sub C1TrueDBGrid1_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub C1TrueDBGrid1_DoubleClick(sender As Object, e As EventArgs)
+        Try
+
+            AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
