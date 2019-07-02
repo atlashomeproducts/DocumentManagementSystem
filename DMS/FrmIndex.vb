@@ -83,17 +83,6 @@ Public Class FrmIndex
                     .Parameters.AddWithValue("@UserID", "")
 
 
-                    '.Parameters(0).Value = "@DocumentType"
-                    '.Parameters(0).Value = "@BatchID"
-                    '.Parameters(0).Value = "@SubBatch"
-                    '.Parameters(0).Value = "@ScanDate"
-                    '.Parameters(0).Value = "@FileName"
-                    '.Parameters(0).Value = "@Status"
-                    '.Parameters(0).Value = "@Company"
-                    '.Parameters(0).Value = "@Purpose"
-                    '.Parameters(0).Value = "@RackNo"
-                    '.Parameters(0).Value = "@BoxNo"
-                    '.Parameters(0).Value = "@UserID"
 
                     .Connection = con
                 End With
@@ -120,11 +109,7 @@ Public Class FrmIndex
 
                         cmd.ExecuteNonQuery()
 
-                        'cmd.Connection = con
-                        'cmd.CommandText = "INSERT INTO [dbo].[DocsCatalogue] ([DocumentType], [Batch], [SubBatch],[ScannedDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo], [UserID]) 
-                        '                VALUES ('" & Replace(DocumentTypeComboBox.Text, "'", "''") & "' , '" & batchIdTextBox.Text & "', '" & SubBatchTextbox.Text & "','" & scanDateTimePicker.Text & "' 
-                        '                        , '" & txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name & "', '" & "Indexed" & "', '" & txtCompany.Text & "', '" & txtPurpose.Text & "', '" & RackNoTextbox.Text & "', '" & BoxNoTextbox.Text & "', '" & FrmMain.User & "')"
-                        'cmd.ExecuteNonQuery()
+
 
                         File.Copy(Item, Path.Combine(My.Settings.ImgPath, txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
                     Next
@@ -216,10 +201,6 @@ Public Class FrmIndex
             End If
 
 
-
-            '    ListBox1.Items.Remove(ListBox1.SelectedItem)
-            'Me.ListBox1.SelectedIndex = Me.ListBox1.SelectedIndex + 1
-
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -256,51 +237,6 @@ Public Class FrmIndex
 
 
 
-    'Private Sub ListBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles ListBox1.MouseDown
-    '    Try
-
-    '        Dim sAllString As String = "ALL"
-
-    '        If Me.ListBox1.SelectedItems.Count = 0 Then
-
-    '            Me.ListBox1.ClearSelected()
-    '            Me.ListBox1.SelectedItems.Add(sAllString)
-
-    '        Else
-    '            Dim pt As Point = New Point(e.X, e.Y)
-
-    '            Dim index As Integer
-
-    '            index = CType(sender, ListBox).IndexFromPoint(pt)
-
-    '            If index = Me.ListBox1.Items.IndexOf(sAllString) Then
-
-    '                Me.ListBox1.ClearSelected()
-
-    '                Me.ListBox1.SelectedItems.Add(sAllString)
-
-    '            Else
-
-    '                If Me.ListBox1.SelectedItems.Count > 1 AndAlso Me.ListBox1.SelectedItems.Contains(sAllString) Then
-
-    '                    Me.ListBox1.SelectedItems.Remove(Me.ListBox1.Items.Item(Me.ListBox1.Items.IndexOf(sAllString)))
-    '                    Dim path = Me.ListBox1.SelectedItem
-
-    '                    AxAcroPDF1.src = path
-
-    '                End If
-
-    '            End If
-
-    '        End If
-
-
-    '    Catch ex As Exception
-
-    '        Throw ex
-
-    '    End Try
-    'End Sub
 
 
 End Class

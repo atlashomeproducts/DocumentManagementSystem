@@ -39,9 +39,14 @@ Partial Class FrmMain
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.LblUser = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.SpDMSTotalsC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
-        Me.SpDMSTotalsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DMSDataSet = New DMS.DMSDataSet()
+        Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
+        Me.SpDMSLogsC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.IndexFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,8 +57,12 @@ Partial Class FrmMain
         Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.SpDMSTotalsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
+        Me.SpDMSLogsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SpDMSTotalsTableAdapter = New DMS.DMSDataSetTableAdapters.spDMSTotalsTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
+        Me.SpDMSLogsTableAdapter = New DMS.DMSDataSetTableAdapters.spDMSLogsTableAdapter()
         Me.TabControl1.SuspendLayout()
         Me.TabLogin.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -64,10 +73,20 @@ Partial Class FrmMain
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer2.Panel1.SuspendLayout()
+        Me.SplitContainer2.Panel2.SuspendLayout()
+        Me.SplitContainer2.SuspendLayout()
         CType(Me.SpDMSTotalsC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer3.Panel1.SuspendLayout()
+        Me.SplitContainer3.Panel2.SuspendLayout()
+        Me.SplitContainer3.SuspendLayout()
+        CType(Me.SpDMSLogsC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         CType(Me.SpDMSTotalsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
+        CType(Me.SpDMSLogsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -82,6 +101,7 @@ Partial Class FrmMain
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1085, 687)
         Me.TabControl1.TabIndex = 1
+        Me.TabControl1.TabStop = False
         '
         'TabLogin
         '
@@ -120,7 +140,7 @@ Partial Class FrmMain
         Me.ChkShow.Location = New System.Drawing.Point(165, 164)
         Me.ChkShow.Name = "ChkShow"
         Me.ChkShow.Size = New System.Drawing.Size(114, 19)
-        Me.ChkShow.TabIndex = 14
+        Me.ChkShow.TabIndex = 2
         Me.ChkShow.Text = "Show Password"
         Me.ChkShow.UseVisualStyleBackColor = True
         '
@@ -161,7 +181,7 @@ Partial Class FrmMain
         Me.BtnCancel.Location = New System.Drawing.Point(353, 191)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(131, 34)
-        Me.BtnCancel.TabIndex = 10
+        Me.BtnCancel.TabIndex = 4
         Me.BtnCancel.Text = "CANCEL"
         Me.BtnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnCancel.UseVisualStyleBackColor = True
@@ -173,7 +193,7 @@ Partial Class FrmMain
         Me.BtnOK.Location = New System.Drawing.Point(165, 191)
         Me.BtnOK.Name = "BtnOK"
         Me.BtnOK.Size = New System.Drawing.Size(131, 34)
-        Me.BtnOK.TabIndex = 9
+        Me.BtnOK.TabIndex = 3
         Me.BtnOK.Text = "OK"
         Me.BtnOK.UseVisualStyleBackColor = True
         '
@@ -183,14 +203,14 @@ Partial Class FrmMain
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPassword.Size = New System.Drawing.Size(319, 29)
-        Me.TxtPassword.TabIndex = 8
+        Me.TxtPassword.TabIndex = 1
         '
         'TxtUsername
         '
         Me.TxtUsername.Location = New System.Drawing.Point(165, 67)
         Me.TxtUsername.Name = "TxtUsername"
         Me.TxtUsername.Size = New System.Drawing.Size(319, 29)
-        Me.TxtUsername.TabIndex = 7
+        Me.TxtUsername.TabIndex = 0
         '
         'TabMain
         '
@@ -222,7 +242,7 @@ Partial Class FrmMain
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.AutoScroll = True
-        Me.SplitContainer1.Panel2.Controls.Add(Me.SpDMSTotalsC1TrueDBGrid)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
         Me.SplitContainer1.Size = New System.Drawing.Size(1071, 628)
         Me.SplitContainer1.SplitterDistance = 743
         Me.SplitContainer1.TabIndex = 6
@@ -253,6 +273,27 @@ Partial Class FrmMain
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
+        '
+        'SplitContainer2
+        '
+        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer2.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer2.Name = "SplitContainer2"
+        Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'SplitContainer2.Panel1
+        '
+        Me.SplitContainer2.Panel1.AutoScroll = True
+        Me.SplitContainer2.Panel1.Controls.Add(Me.SpDMSTotalsC1TrueDBGrid)
+        '
+        'SplitContainer2.Panel2
+        '
+        Me.SplitContainer2.Panel2.AutoScroll = True
+        Me.SplitContainer2.Panel2.Controls.Add(Me.SplitContainer3)
+        Me.SplitContainer2.Size = New System.Drawing.Size(324, 628)
+        Me.SplitContainer2.SplitterDistance = 327
+        Me.SplitContainer2.TabIndex = 0
+        Me.SplitContainer2.TabStop = False
         '
         'SpDMSTotalsC1TrueDBGrid
         '
@@ -286,22 +327,107 @@ Partial Class FrmMain
         Me.SpDMSTotalsC1TrueDBGrid.RowDivider.Color = System.Drawing.Color.DimGray
         Me.SpDMSTotalsC1TrueDBGrid.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.Raised
         Me.SpDMSTotalsC1TrueDBGrid.RowHeight = 21
-        Me.SpDMSTotalsC1TrueDBGrid.Size = New System.Drawing.Size(324, 628)
+        Me.SpDMSTotalsC1TrueDBGrid.Size = New System.Drawing.Size(324, 327)
         Me.SpDMSTotalsC1TrueDBGrid.SplitDividerSize = New System.Drawing.Size(0, 0)
-        Me.SpDMSTotalsC1TrueDBGrid.TabIndex = 0
+        Me.SpDMSTotalsC1TrueDBGrid.TabIndex = 1
+        Me.SpDMSTotalsC1TrueDBGrid.TabStop = False
         Me.SpDMSTotalsC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.SpDMSTotalsC1TrueDBGrid.VisualStyle = C1.Win.C1TrueDBGrid.VisualStyle.System
         Me.SpDMSTotalsC1TrueDBGrid.PropBag = resources.GetString("SpDMSTotalsC1TrueDBGrid.PropBag")
         '
-        'SpDMSTotalsBindingSource
+        'SplitContainer3
         '
-        Me.SpDMSTotalsBindingSource.DataMember = "spDMSTotals"
-        Me.SpDMSTotalsBindingSource.DataSource = Me.DMSDataSet
+        Me.SplitContainer3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer3.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer3.Name = "SplitContainer3"
+        Me.SplitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
-        'DMSDataSet
+        'SplitContainer3.Panel1
         '
-        Me.DMSDataSet.DataSetName = "DMSDataSet"
-        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.SplitContainer3.Panel1.AutoScroll = True
+        Me.SplitContainer3.Panel1.Controls.Add(Me.SpDMSLogsC1TrueDBGrid)
+        '
+        'SplitContainer3.Panel2
+        '
+        Me.SplitContainer3.Panel2.AutoScroll = True
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label4)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label3)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.DateTimePicker2)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.DateTimePicker1)
+        Me.SplitContainer3.Size = New System.Drawing.Size(324, 297)
+        Me.SplitContainer3.SplitterDistance = 258
+        Me.SplitContainer3.TabIndex = 0
+        Me.SplitContainer3.TabStop = False
+        '
+        'SpDMSLogsC1TrueDBGrid
+        '
+        Me.SpDMSLogsC1TrueDBGrid.AllowArrows = False
+        Me.SpDMSLogsC1TrueDBGrid.AllowColSelect = False
+        Me.SpDMSLogsC1TrueDBGrid.AllowFilter = False
+        Me.SpDMSLogsC1TrueDBGrid.AllowRowSelect = False
+        Me.SpDMSLogsC1TrueDBGrid.AllowSort = False
+        Me.SpDMSLogsC1TrueDBGrid.AllowUpdate = False
+        Me.SpDMSLogsC1TrueDBGrid.BorderColor = System.Drawing.Color.Transparent
+        Me.SpDMSLogsC1TrueDBGrid.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.SpDMSLogsC1TrueDBGrid.CaptionHeight = 17
+        Me.SpDMSLogsC1TrueDBGrid.DataSource = Me.SpDMSLogsBindingSource
+        Me.SpDMSLogsC1TrueDBGrid.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SpDMSLogsC1TrueDBGrid.EditDropDown = False
+        Me.SpDMSLogsC1TrueDBGrid.Enabled = False
+        Me.SpDMSLogsC1TrueDBGrid.ExtendRightColumn = True
+        Me.SpDMSLogsC1TrueDBGrid.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
+        Me.SpDMSLogsC1TrueDBGrid.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SpDMSLogsC1TrueDBGrid.GroupByCaption = "Drag a column header here to group by that column"
+        Me.SpDMSLogsC1TrueDBGrid.Images.Add(CType(resources.GetObject("SpDMSLogsC1TrueDBGrid.Images"), System.Drawing.Image))
+        Me.SpDMSLogsC1TrueDBGrid.Location = New System.Drawing.Point(0, 0)
+        Me.SpDMSLogsC1TrueDBGrid.Name = "SpDMSLogsC1TrueDBGrid"
+        Me.SpDMSLogsC1TrueDBGrid.PreviewInfo.Location = New System.Drawing.Point(0, 0)
+        Me.SpDMSLogsC1TrueDBGrid.PreviewInfo.Size = New System.Drawing.Size(0, 0)
+        Me.SpDMSLogsC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
+        Me.SpDMSLogsC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("SpDMSLogsC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
+        Me.SpDMSLogsC1TrueDBGrid.RecordSelectors = False
+        Me.SpDMSLogsC1TrueDBGrid.RowHeight = 21
+        Me.SpDMSLogsC1TrueDBGrid.Size = New System.Drawing.Size(324, 258)
+        Me.SpDMSLogsC1TrueDBGrid.SplitDividerSize = New System.Drawing.Size(0, 0)
+        Me.SpDMSLogsC1TrueDBGrid.TabIndex = 0
+        Me.SpDMSLogsC1TrueDBGrid.TabStop = False
+        Me.SpDMSLogsC1TrueDBGrid.UseCompatibleTextRendering = False
+        Me.SpDMSLogsC1TrueDBGrid.VisualStyle = C1.Win.C1TrueDBGrid.VisualStyle.System
+        Me.SpDMSLogsC1TrueDBGrid.PropBag = resources.GetString("SpDMSLogsC1TrueDBGrid.PropBag")
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(174, 10)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(29, 13)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "End:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(10, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(32, 13)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Start:"
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker2.Location = New System.Drawing.Point(210, 7)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(104, 20)
+        Me.DateTimePicker2.TabIndex = 6
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(47, 7)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(104, 20)
+        Me.DateTimePicker1.TabIndex = 5
         '
         'MenuStrip1
         '
@@ -370,6 +496,21 @@ Partial Class FrmMain
         'Timer1
         '
         '
+        'SpDMSTotalsBindingSource
+        '
+        Me.SpDMSTotalsBindingSource.DataMember = "spDMSTotals"
+        Me.SpDMSTotalsBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SpDMSLogsBindingSource
+        '
+        Me.SpDMSLogsBindingSource.DataMember = "spDMSLogs"
+        Me.SpDMSLogsBindingSource.DataSource = Me.DMSDataSet
+        '
         'SpDMSTotalsTableAdapter
         '
         Me.SpDMSTotalsTableAdapter.ClearBeforeFill = True
@@ -378,11 +519,16 @@ Partial Class FrmMain
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.DMSLogsTableAdapter = Nothing
         Me.TableAdapterManager.DMSUserTableAdapter = Nothing
         Me.TableAdapterManager.DocsCatalogueTableAdapter = Nothing
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SpDMSLogsTableAdapter
+        '
+        Me.SpDMSLogsTableAdapter.ClearBeforeFill = True
         '
         'FrmMain
         '
@@ -406,11 +552,22 @@ Partial Class FrmMain
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer2.Panel1.ResumeLayout(False)
+        Me.SplitContainer2.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer2.ResumeLayout(False)
         CType(Me.SpDMSTotalsC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SpDMSTotalsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer3.Panel1.ResumeLayout(False)
+        Me.SplitContainer3.Panel2.ResumeLayout(False)
+        Me.SplitContainer3.Panel2.PerformLayout()
+        CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer3.ResumeLayout(False)
+        CType(Me.SpDMSLogsC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.SpDMSTotalsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpDMSLogsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -430,7 +587,6 @@ Partial Class FrmMain
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents SpDMSTotalsC1TrueDBGrid As C1.Win.C1TrueDBGrid.C1TrueDBGrid
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label2 As Label
@@ -444,4 +600,14 @@ Partial Class FrmMain
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents LblUser As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents SplitContainer2 As SplitContainer
+    Friend WithEvents SpDMSTotalsC1TrueDBGrid As C1.Win.C1TrueDBGrid.C1TrueDBGrid
+    Friend WithEvents SplitContainer3 As SplitContainer
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents SpDMSLogsC1TrueDBGrid As C1.Win.C1TrueDBGrid.C1TrueDBGrid
+    Friend WithEvents SpDMSLogsBindingSource As BindingSource
+    Friend WithEvents SpDMSLogsTableAdapter As DMSDataSetTableAdapters.spDMSLogsTableAdapter
 End Class

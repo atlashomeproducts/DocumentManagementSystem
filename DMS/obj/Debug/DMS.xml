@@ -52,6 +52,16 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:DMS.DMSDataSet.DMSLogsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.spDMSLogsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:DMS.DMSDataSet.DocumentTypesRow">
 <summary>
 Represents strongly named DataRow class.
@@ -73,6 +83,16 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:DMS.DMSDataSet.DMSUserRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.DMSLogsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.spDMSLogsRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -102,6 +122,16 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:DMS.DMSDataSet.DMSLogsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.spDMSLogsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:DMS.DMSDataSetTableAdapters.DocumentTypesTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -123,6 +153,16 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:DMS.DMSDataSetTableAdapters.DMSUserTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSetTableAdapters.DMSLogsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSetTableAdapters.spDMSLogsTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

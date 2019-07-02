@@ -30,32 +30,36 @@ Public Class FrmMain
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DMSDataSet.spDMSTotals' table. You can move, or remove it, as needed.
-
-
-        TabControl1.Appearance = TabAppearance.FlatButtons
-        TabControl1.ItemSize = New Size(0, 1)
-        TabControl1.SizeMode = TabSizeMode.Fixed
-
-        For Each TabPage In TabControl1.TabPages
-
-            TabPage.Text = ""
-
-        Next
-
         TabControl1.SelectTab(TabLogin)
-        Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
-
-
-
-        Timer1.Enabled = True
-        Timer1.Interval = 30000
-
-
 
         Me.AcceptButton = BtnOK
         Me.CancelButton = BtnCancel
         Me.TxtUsername.Focus()
+
+
+
+
+
+
+
+
+
+
+        TabControl1.Appearance = TabAppearance.FlatButtons
+            TabControl1.ItemSize = New Size(0, 1)
+            TabControl1.SizeMode = TabSizeMode.Fixed
+
+            For Each TabPage In TabControl1.TabPages
+
+                TabPage.Text = ""
+
+            Next
+
+
+
+
+
+
 
 
 
@@ -128,8 +132,6 @@ Public Class FrmMain
         Try
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmd As New SqlCommand("SELECT UserName, Password, UserType FROM DMSUser WHERE (UserName = '" & Me.TxtUsername.Text & "') AND (Password = '" & Me.TxtPassword.Text & "')", con)
-
-
             con.Open()
 
 
@@ -162,6 +164,7 @@ Public Class FrmMain
 
                 End If
 
+
             Else
 
                 MessageBox.Show("Invalid Username or Password. Please try again.", "User Not Found!!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -179,6 +182,43 @@ Public Class FrmMain
             MessageBox.Show(ex.Message)
         End Try
 
+
+
+
+        Dim con2 As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+        Dim cmd2 As New SqlCommand
+
+        Try
+
+            con2.Open()
+
+            cmd2.Connection = con2
+            cmd2.CommandText = " INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)"
+            cmd2.Parameters.AddWithValue("@Username", User)
+            cmd2.Parameters.AddWithValue("@Action", User & " " & "logged in")
+            cmd2.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+
+            cmd2.ExecuteNonQuery()
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con2.Close()
+        End Try
+
+
+
+        Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
+        Me.SpDMSLogsTableAdapter.Fill(Me.DMSDataSet.spDMSLogs, Me.DateTimePicker1.Value, Me.DateTimePicker2.Value)
+
+        Me.DateTimePicker1.Value = Date.Now.ToShortDateString
+        Me.DateTimePicker2.Value = Date.Now.ToShortDateString
+        Timer1.Enabled = True
+        Timer1.Interval = 3000
+
+
+
     End Sub
 
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
@@ -193,30 +233,47 @@ Public Class FrmMain
             TxtPassword.PasswordChar = "*"
         End If
     End Sub
-
-    Private Sub FrmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        'Dim Msg = MessageBox.Show("Do you want to logout? or close the program?", "Exit?", MessageBoxButtons.YesNoCancel)
-
-        'If Msg = vbYes Then
-        '    TabControl1.SelectTab(TabLogin)
-        'ElseIf Msg = vbNo Then
-        '    End
-
-        'ElseIf Msg = vbNo.Cancel Then
-
-
-        'End If
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
     Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
         FrmUsers.Show(Me)
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
+        Me.SpDMSLogsTableAdapter.Fill(Me.DMSDataSet.spDMSLogs, DateTimePicker1.Value, DateTimePicker2.Value)
+    End Sub
+
+    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
+
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        Try
+
+
+            Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
+            Me.SpDMSLogsTableAdapter.Fill(Me.DMSDataSet.spDMSLogs, Me.DateTimePicker1.Value, Me.DateTimePicker2.Value)
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
+        Try
+
+
+            Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
+            Me.SpDMSLogsTableAdapter.Fill(Me.DMSDataSet.spDMSLogs, Me.DateTimePicker1.Value, Me.DateTimePicker2.Value)
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub TabLogin_Click(sender As Object, e As EventArgs) Handles TabLogin.Click
+
     End Sub
 End Class

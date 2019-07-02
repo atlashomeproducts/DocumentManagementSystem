@@ -29,10 +29,6 @@ Public Class FrmEditor
 
         con.Close()
 
-
-
-
-
         Me.PaymentFormComboBox.Items.Add("Bank Deposit")
         Me.PaymentFormComboBox.Items.Add("Cash")
         Me.PaymentFormComboBox.Items.Add("Check")
@@ -41,15 +37,7 @@ Public Class FrmEditor
 
 
 
-        'Dim adapter As New SqlDataAdapter(cmd)
-        'Dim table As New DataTable()
 
-        '    adapter.Fill(table)
-
-        'DocumentTypeComboBox.DataSource = table
-
-        'DocumentTypeComboBox.DisplayMember = "DocumentType"
-        '' DocumentTypeComboBox.ValueMember = "Id"
 
     End Sub
 
@@ -100,10 +88,7 @@ Public Class FrmEditor
         'Permanently Disabled
         Me.IdTextBox.ReadOnly = True
         Me.IdTextBox.Visible = False
-        ' Me.DocumentDateCorp.ReadOnly = True
-        ' Me.DocumentDateRI.ReadOnly = True
-        '   Me.DocumentDateTS.ReadOnly = True
-        '  Me.DocumentDateVoucher.ReadOnly = True
+
 
         'Temp Disabled
         Me.DocumentTypeComboBox.Enabled = False
@@ -284,8 +269,6 @@ Public Class FrmEditor
             DateReceivedTextBox.Clear()
 
 
-
-
             DocumentDateCorp.Clear()
             MeetingDateTextBox.Clear()
             CompanyTextBox.Clear()
@@ -293,8 +276,10 @@ Public Class FrmEditor
             PurposeTextBox.Clear()
             RackNoCorpDocu.Clear()
             BoxNoCorpDocu.Clear()
-
-        Else
+            PromoFromTextBox.Clear()
+            PromoToTextBox.Clear()
+            DTIPermitNoTextBox.Clear()
+            PromoTitleTextBox.Clear()
 
         End If
 
