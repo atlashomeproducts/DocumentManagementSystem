@@ -8,7 +8,8 @@
             Me.DocumentTypesBindingSource.EndEdit()
             Me.DocumentTypesTableAdapter.Update(Me.DMSDataSet.DocumentTypes)
 
-            MessageBox.Show("Successfuly Saved!!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Successfuly 
+!!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try

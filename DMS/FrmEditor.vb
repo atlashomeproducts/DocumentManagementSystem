@@ -128,6 +128,8 @@ Public Class FrmEditor
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmd As New SqlCommand
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
 
             Try
 
@@ -160,6 +162,18 @@ Public Class FrmEditor
                 cmd.Connection = con
                 cmd.CommandText = "UPDATE DocsCatalogue SET Status = 'Finished' WHERE Id = '" & Me.IdTextBox.Text & "' "
                 cmd.ExecuteNonQuery()
+                con.Close()
+
+
+
+                con.Open()
+                cmdlogs.Connection = con
+                cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+                cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Saved changes on record with Id:" & Me.IdTextBox.Text)
+                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                cmdlogs.ExecuteNonQuery()
+                con.Close()
+
 
 
                 Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
@@ -177,17 +191,15 @@ Public Class FrmEditor
 
 
                 FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
-                LblStat.Text = "Successfully Saved!!"
+                LblStat.Text = "Successfully Saved!"
                 Me.BtnSave.Enabled = False
                 Me.BtnClear.Enabled = False
                 Me.BtnEdit.Enabled = True
                 Me.BtnCancel1.Enabled = False
 
             Catch ex As Exception
-
                 MessageBox.Show(ex.Message)
-            Finally
-                con.Close()
+
             End Try
 
         End If
@@ -281,6 +293,35 @@ Public Class FrmEditor
             DTIPermitNoTextBox.Clear()
             PromoTitleTextBox.Clear()
 
+
+
+
+            Try
+
+
+                Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+                Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+                con.Open()
+                cmdlogs.Connection = con
+                cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+                cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Cleared keys")
+                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                cmdlogs.ExecuteNonQuery()
+                con.Close()
+
+
+
+
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+
+
         End If
 
 
@@ -328,6 +369,34 @@ Public Class FrmEditor
         Me.BtnEdit.Enabled = False
         Me.BtnCancel1.Enabled = True
 
+
+
+        Try
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+            cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Edited a record with ID:" & Me.IdTextBox.Text)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
+
+
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+
     End Sub
 
 
@@ -338,7 +407,34 @@ Public Class FrmEditor
 
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
+        Try
+
+            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
+
+
+
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+            cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Refreshed record list")
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
+
+
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
 
 
     End Sub
@@ -686,8 +782,26 @@ Public Class FrmEditor
 
                 File.Delete(My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
                 ' MessageBox.Show("Record Deleted!!", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.LblStat.Text = "Record Deleted."
 
-            ElseIf MsgDelete = vbNo Then
+
+
+
+                Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+                Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+                con.Open()
+                cmdlogs.Connection = con
+                cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+                cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Edited a record with ID:" & Me.IdTextBox.Text)
+                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                cmdlogs.ExecuteNonQuery()
+                con.Close()
+
+
+
 
             End If
 
@@ -716,6 +830,31 @@ Public Class FrmEditor
         Me.BtnEdit.Enabled = True
         Me.BtnCancel1.Enabled = False
         Me.DocsCatalogueC1TrueDBGrid.Enabled = True
+
+
+        Try
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+            cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Cancelled edit on record with ID:" & Me.IdTextBox.Text)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
+
+
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
 

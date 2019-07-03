@@ -479,7 +479,34 @@ AND Status = 'Finished'
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnSearch.Click
 
-        Search()
+
+
+
+        Try
+
+            Search()
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+            cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Searched records")
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
+
+
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
 
 
 
@@ -502,6 +529,25 @@ AND Status = 'Finished'
             Me.BtnEditRecord.Enabled = False
             Me.BtnSearch.Enabled = False
             Me.BtnSaveChanges1.Enabled = True
+
+
+
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+                Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+                con.Open()
+                cmdlogs.Connection = con
+                cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+            cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Edited the searched record with ID:" & Me.C1TrueDBGrid2.Columns("Id").Text)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                cmdlogs.ExecuteNonQuery()
+                con.Close()
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -509,16 +555,40 @@ AND Status = 'Finished'
 
     End Sub
     Public Sub SaveChanges()
-        Me.Validate()
-        Me.DocsCatalogueBindingSource.EndEdit()
-        Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
 
-        Me.BtnEditRecord.Enabled = True
-        Me.C1TrueDBGrid2.Enabled = True
-        Me.BtnSearch.Enabled = True
-        Me.BtnSaveChanges1.Enabled = False
-        MessageBox.Show("Successfully Saved!!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Me.TabControl1.SelectTab(TabQuery)
+
+        Me.Validate()
+            Me.DocsCatalogueBindingSource.EndEdit()
+            Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
+
+            Me.BtnEditRecord.Enabled = True
+            Me.C1TrueDBGrid2.Enabled = True
+            Me.BtnSearch.Enabled = True
+            Me.BtnSaveChanges1.Enabled = False
+            MessageBox.Show("Successfully Saved!!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.TabControl1.SelectTab(TabQuery)
+
+
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+        con.Open()
+        cmdlogs.Connection = con
+        cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+        cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Saved changes on searched record with ID:" & C1TrueDBGrid2.Columns("Id").Text)
+        cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+        cmdlogs.ExecuteNonQuery()
+        con.Close()
+
+
+
+
+
+
     End Sub
     Private Sub BtnSaveChanges1_Click(sender As Object, e As EventArgs) Handles BtnSaveChanges1.Click
 
@@ -566,6 +636,12 @@ AND Status = 'Finished'
                 Me.PromoToTextBox.Clear()
 
             End If
+
+
+
+
+
+
 
             Search()
 
@@ -762,6 +838,31 @@ AND Status = 'Finished'
                     source.MoveNext()
 
                 Next
+
+
+                Try
+
+
+                    Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+                    Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+                    con.Open()
+                    cmdlogs.Connection = con
+                    cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+                    cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Downloaded files.")
+                    cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                    cmdlogs.ExecuteNonQuery()
+                    con.Close()
+
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+
+
+
 
 
                 MessageBox.Show("Files Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)

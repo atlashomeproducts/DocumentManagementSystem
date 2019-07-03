@@ -11,15 +11,11 @@ Public Class FrmMain
     Public type As String
     Public User As String
 
-    Private Sub DocumentManagementToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    'Public con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+    'Public cmd As New SqlCommand("SELECT UserName, Password, UserType FROM DMSUser WHERE (UserName = '" & Me.TxtUsername.Text & "') AND (Password = '" & Me.TxtPassword.Text & "')", con)
+    'Public cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
 
 
-    End Sub
-
-    Private Sub TerminateProgramToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-
-    End Sub
 
     Private Sub IndexToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
@@ -31,17 +27,9 @@ Public Class FrmMain
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TabControl1.SelectTab(TabLogin)
-
+        Me.TxtUsername.Focus()
         Me.AcceptButton = BtnOK
         Me.CancelButton = BtnCancel
-        Me.TxtUsername.Focus()
-
-
-
-
-
-
-
 
 
 
@@ -49,13 +37,11 @@ Public Class FrmMain
             TabControl1.ItemSize = New Size(0, 1)
             TabControl1.SizeMode = TabSizeMode.Fixed
 
-            For Each TabPage In TabControl1.TabPages
+        For Each TabPage In TabControl1.TabPages
 
-                TabPage.Text = ""
+            TabPage.Text = ""
 
-            Next
-
-
+        Next
 
 
 
@@ -115,16 +101,92 @@ Public Class FrmMain
 
 
     Private Sub EditorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditorToolStripMenuItem.Click
-        FrmEditor.Show(Me)
+
+
+        Try
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", User)
+            cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Opened ""Editor"" form")
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
+
+            FrmEditor.Show(Me)
+
+            con.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
 
     End Sub
 
     Private Sub SEARCHToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SEARCHToolStripMenuItem.Click
-        FrmSearch2.Show(Me)
+
+        Try
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", User)
+            cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Opened ""Search"" form")
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
+
+            FrmSearch2.Show(Me)
+
+            con.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
     End Sub
 
     Private Sub IndexFilesToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles IndexFilesToolStripMenuItem.Click
-        FrmIndex.Show(Me)
+
+        Try
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", User)
+            cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Opened ""Index"" form")
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
+
+            FrmIndex.Show(Me)
+
+            con.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnOK.Click
@@ -132,9 +194,8 @@ Public Class FrmMain
         Try
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmd As New SqlCommand("SELECT UserName, Password, UserType FROM DMSUser WHERE (UserName = '" & Me.TxtUsername.Text & "') AND (Password = '" & Me.TxtPassword.Text & "')", con)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
             con.Open()
-
-
 
             Dim sdr As SqlDataReader = cmd.ExecuteReader()
             ' If the record can be queried, it means passing verification, then open another form.
@@ -142,28 +203,35 @@ Public Class FrmMain
 
                 type = sdr!UserType
                 User = StrConv(TxtUsername.Text, VbStrConv.ProperCase)
-                'Dim usertxt As String = TxtUsername.Text
-                'usertxt = StrConv(usertxt, VbStrConv.ProperCase)
+
                 Me.LblUser.Text = "Logged in as:" & User
 
                 If Type = "Administrator" Then
                     TabControl1.SelectTab(TabMain)
-
-
-
                 ElseIf Type = "User" Then
                     TabControl1.SelectTab(TabMain)
                     UserManagementToolStripMenuItem.Visible = False
                     Me.ToolStripMenuItem4.Visible = False
-
                 Else
-
                     TabControl1.SelectTab(TabMain)
                     UserManagementToolStripMenuItem.Visible = False
                     Me.ToolStripMenuItem4.Visible = False
 
                 End If
 
+                con.Close()
+
+
+                con.Open()
+                cmdlogs.Connection = con
+                cmdlogs.Parameters.AddWithValue("@Username", User)
+                cmdlogs.Parameters.AddWithValue("@Action", User & " " & "logged in")
+                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                'cmd.Parameters("@Username").Value = User
+                'cmd.Parameters("@Action").Value = User & " " & "logged in"
+                'cmd.Parameters("@ActionDate").Value = DateTime.Now
+                cmdlogs.ExecuteNonQuery()
+                con.Close()
 
             Else
 
@@ -174,10 +242,11 @@ Public Class FrmMain
                 Me.TxtUsername.Focus()
                 Me.TxtPassword.Clear()
 
+                con.Close()
+
             End If
 
 
-            con.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -185,27 +254,27 @@ Public Class FrmMain
 
 
 
-        Dim con2 As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-        Dim cmd2 As New SqlCommand
+        'Dim con2 As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+        'Dim cmd2 As New SqlCommand
 
-        Try
+        'Try
 
-            con2.Open()
+        '    con2.Open()
 
-            cmd2.Connection = con2
-            cmd2.CommandText = " INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)"
-            cmd2.Parameters.AddWithValue("@Username", User)
-            cmd2.Parameters.AddWithValue("@Action", User & " " & "logged in")
-            cmd2.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+        '    cmd2.Connection = con2
+        '    cmd2.CommandText = " INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)"
+        '    cmd2.Parameters.AddWithValue("@Username", User)
+        '    cmd2.Parameters.AddWithValue("@Action", User & " " & "logged in")
+        '    cmd2.Parameters.AddWithValue("@ActionDate", DateTime.Now)
 
-            cmd2.ExecuteNonQuery()
+        '    cmd2.ExecuteNonQuery()
 
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            con2.Close()
-        End Try
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
+        'Finally
+        '    con2.Close()
+        'End Try
 
 
 
@@ -235,11 +304,17 @@ Public Class FrmMain
     End Sub
     Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
         FrmUsers.Show(Me)
+
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
         Me.SpDMSLogsTableAdapter.Fill(Me.DMSDataSet.spDMSLogs, DateTimePicker1.Value, DateTimePicker2.Value)
+
+
+        Me.SpDMSTotalsBindingSource.MoveLast()
+        Me.SpDMSLogsBindingSource.MoveLast()
     End Sub
 
     Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
@@ -275,5 +350,9 @@ Public Class FrmMain
 
     Private Sub TabLogin_Click(sender As Object, e As EventArgs) Handles TabLogin.Click
 
+    End Sub
+
+    Private Sub FrmMain_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Me.TxtUsername.Focus()
     End Sub
 End Class

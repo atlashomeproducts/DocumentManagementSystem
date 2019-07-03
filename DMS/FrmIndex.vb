@@ -64,6 +64,7 @@ Public Class FrmIndex
                 Dim cmd As New SqlCommand
                 Dim strsql As String = "INSERT INTO DocsCatalogue([DocumentType], [Batch], [SubBatch],[ScannedDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo], [UserID])
                                                    VALUES (@DocumentType, @BatchID, @SubBatch, @ScanDate, @FileName, @Status, @Company, @Purpose, @RackNo, @BoxNo, @UserID)"
+                Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
 
                 With cmd
                     .CommandText = strsql
@@ -114,6 +115,9 @@ Public Class FrmIndex
                         File.Copy(Item, Path.Combine(My.Settings.ImgPath, txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
                     Next
 
+
+                    con.Close()
+
                     Dim lst As New List(Of Object)
                     For Each a As Object In ListBox1.SelectedItems
                         lst.Add(a)
@@ -128,7 +132,18 @@ Public Class FrmIndex
 
 
 
-                Catch ex As Exception
+
+                    con.Open()
+                        cmdlogs.Connection = con
+                        cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+                    cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " Indexed documents with batch name: " & Me.batchIdTextBox.Text)
+                    cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                        cmdlogs.ExecuteNonQuery()
+                        con.Close()
+
+
+
+                    Catch ex As Exception
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Finally
                     con.Close()
@@ -151,7 +166,7 @@ Public Class FrmIndex
 
         Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
         Dim cmd2 As New SqlCommand("SELECT Distinct Company FROM DocsCatalogue WHERE Status = 'Finished' ", con)
-        Dim ds As New DataSet
+                    Dim ds As New DataSet
         Dim da As New SqlDataAdapter(cmd2)
         da.Fill(ds, "list") ' list can be any name u want
         Dim col As New AutoCompleteStringCollection

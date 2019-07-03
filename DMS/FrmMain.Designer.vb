@@ -41,8 +41,11 @@ Partial Class FrmMain
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.SpDMSTotalsC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.SpDMSTotalsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
         Me.SpDMSLogsC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.SpDMSLogsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
@@ -57,12 +60,10 @@ Partial Class FrmMain
         Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.SpDMSTotalsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DMSDataSet = New DMS.DMSDataSet()
-        Me.SpDMSLogsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SpDMSTotalsTableAdapter = New DMS.DMSDataSetTableAdapters.spDMSTotalsTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.SpDMSLogsTableAdapter = New DMS.DMSDataSetTableAdapters.spDMSLogsTableAdapter()
+        Me.SpDMSLogsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabLogin.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -78,15 +79,16 @@ Partial Class FrmMain
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
         CType(Me.SpDMSTotalsC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SpDMSTotalsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer3.Panel1.SuspendLayout()
         Me.SplitContainer3.Panel2.SuspendLayout()
         Me.SplitContainer3.SuspendLayout()
         CType(Me.SpDMSLogsC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
-        CType(Me.SpDMSTotalsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SpDMSLogsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.SpDMSLogsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -235,6 +237,7 @@ Partial Class FrmMain
         '
         'SplitContainer1.Panel1
         '
+        Me.SplitContainer1.Panel1.AutoScroll = True
         Me.SplitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.SplitContainer1.Panel1.Controls.Add(Me.LblUser)
         Me.SplitContainer1.Panel1.Controls.Add(Me.PictureBox1)
@@ -255,7 +258,7 @@ Partial Class FrmMain
         Me.LblUser.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.LblUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.LblUser.Font = New System.Drawing.Font("Britannic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblUser.Location = New System.Drawing.Point(4, 597)
+        Me.LblUser.Location = New System.Drawing.Point(6, 598)
         Me.LblUser.Name = "LblUser"
         Me.LblUser.Size = New System.Drawing.Size(52, 23)
         Me.LblUser.TabIndex = 8
@@ -311,7 +314,6 @@ Partial Class FrmMain
         Me.SpDMSTotalsC1TrueDBGrid.DataSource = Me.SpDMSTotalsBindingSource
         Me.SpDMSTotalsC1TrueDBGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SpDMSTotalsC1TrueDBGrid.EditDropDown = False
-        Me.SpDMSTotalsC1TrueDBGrid.Enabled = False
         Me.SpDMSTotalsC1TrueDBGrid.ExtendRightColumn = True
         Me.SpDMSTotalsC1TrueDBGrid.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
         Me.SpDMSTotalsC1TrueDBGrid.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -334,6 +336,16 @@ Partial Class FrmMain
         Me.SpDMSTotalsC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.SpDMSTotalsC1TrueDBGrid.VisualStyle = C1.Win.C1TrueDBGrid.VisualStyle.System
         Me.SpDMSTotalsC1TrueDBGrid.PropBag = resources.GetString("SpDMSTotalsC1TrueDBGrid.PropBag")
+        '
+        'SpDMSTotalsBindingSource
+        '
+        Me.SpDMSTotalsBindingSource.DataMember = "spDMSTotals"
+        Me.SpDMSTotalsBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'SplitContainer3
         '
@@ -373,7 +385,6 @@ Partial Class FrmMain
         Me.SpDMSLogsC1TrueDBGrid.DataSource = Me.SpDMSLogsBindingSource
         Me.SpDMSLogsC1TrueDBGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SpDMSLogsC1TrueDBGrid.EditDropDown = False
-        Me.SpDMSLogsC1TrueDBGrid.Enabled = False
         Me.SpDMSLogsC1TrueDBGrid.ExtendRightColumn = True
         Me.SpDMSLogsC1TrueDBGrid.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
         Me.SpDMSLogsC1TrueDBGrid.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -386,7 +397,7 @@ Partial Class FrmMain
         Me.SpDMSLogsC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
         Me.SpDMSLogsC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("SpDMSLogsC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
         Me.SpDMSLogsC1TrueDBGrid.RecordSelectors = False
-        Me.SpDMSLogsC1TrueDBGrid.RowHeight = 21
+        Me.SpDMSLogsC1TrueDBGrid.RowHeight = 27
         Me.SpDMSLogsC1TrueDBGrid.Size = New System.Drawing.Size(324, 258)
         Me.SpDMSLogsC1TrueDBGrid.SplitDividerSize = New System.Drawing.Size(0, 0)
         Me.SpDMSLogsC1TrueDBGrid.TabIndex = 0
@@ -394,6 +405,11 @@ Partial Class FrmMain
         Me.SpDMSLogsC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.SpDMSLogsC1TrueDBGrid.VisualStyle = C1.Win.C1TrueDBGrid.VisualStyle.System
         Me.SpDMSLogsC1TrueDBGrid.PropBag = resources.GetString("SpDMSLogsC1TrueDBGrid.PropBag")
+        '
+        'SpDMSLogsBindingSource
+        '
+        Me.SpDMSLogsBindingSource.DataMember = "spDMSLogs"
+        Me.SpDMSLogsBindingSource.DataSource = Me.DMSDataSet
         '
         'Label4
         '
@@ -496,21 +512,6 @@ Partial Class FrmMain
         'Timer1
         '
         '
-        'SpDMSTotalsBindingSource
-        '
-        Me.SpDMSTotalsBindingSource.DataMember = "spDMSTotals"
-        Me.SpDMSTotalsBindingSource.DataSource = Me.DMSDataSet
-        '
-        'DMSDataSet
-        '
-        Me.DMSDataSet.DataSetName = "DMSDataSet"
-        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'SpDMSLogsBindingSource
-        '
-        Me.SpDMSLogsBindingSource.DataMember = "spDMSLogs"
-        Me.SpDMSLogsBindingSource.DataSource = Me.DMSDataSet
-        '
         'SpDMSTotalsTableAdapter
         '
         Me.SpDMSTotalsTableAdapter.ClearBeforeFill = True
@@ -529,6 +530,11 @@ Partial Class FrmMain
         'SpDMSLogsTableAdapter
         '
         Me.SpDMSLogsTableAdapter.ClearBeforeFill = True
+        '
+        'SpDMSLogsBindingSource1
+        '
+        Me.SpDMSLogsBindingSource1.DataMember = "spDMSLogs"
+        Me.SpDMSLogsBindingSource1.DataSource = Me.DMSDataSet
         '
         'FrmMain
         '
@@ -557,17 +563,18 @@ Partial Class FrmMain
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
         CType(Me.SpDMSTotalsC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpDMSTotalsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer3.Panel1.ResumeLayout(False)
         Me.SplitContainer3.Panel2.ResumeLayout(False)
         Me.SplitContainer3.Panel2.PerformLayout()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer3.ResumeLayout(False)
         CType(Me.SpDMSLogsC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpDMSLogsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.SpDMSTotalsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SpDMSLogsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpDMSLogsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -610,4 +617,5 @@ Partial Class FrmMain
     Friend WithEvents SpDMSLogsC1TrueDBGrid As C1.Win.C1TrueDBGrid.C1TrueDBGrid
     Friend WithEvents SpDMSLogsBindingSource As BindingSource
     Friend WithEvents SpDMSLogsTableAdapter As DMSDataSetTableAdapters.spDMSLogsTableAdapter
+    Friend WithEvents SpDMSLogsBindingSource1 As BindingSource
 End Class
