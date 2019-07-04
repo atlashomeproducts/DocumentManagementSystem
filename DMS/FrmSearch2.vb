@@ -71,11 +71,6 @@ Public Class FrmSearch2
 
 
 
-        Try
-            Me.C1TrueDBGrid2.LoadLayout("default.layout")
-        Catch ex As Exception
-            Me.C1TrueDBGrid2.SaveLayout("default.layout")
-        End Try
 
 
 
@@ -262,7 +257,7 @@ Public Class FrmSearch2
               ,[ProductBrand] [Product Brand]
               ,[ProductType] [Product Type]
               ,[DatePurchased] [Date Purchased]
-              ,[Serial] 
+              ,[Serial] [Serial Number] 
               ,[WarrantyPeriod] [Warranty Period]
               ,[ServiceCenter] [Service Center]
               ,[Address] [Service Center Address]
@@ -281,6 +276,10 @@ Public Class FrmSearch2
               ,[Purpose]   
               ,[Secretary] 
               ,[MeetingDate] [Meeting Date]
+, [PromoTitle] [Promo Title] 
+, [PromoFrom] 
+, [PromoTo]
+, [DTIPermitNo] [DTI Permit No]
               ,[PaymentOthers] [Payment Others]
               ,[BankName] [Bank Name]
               ,[BankBranch] [Bank Branch]
@@ -291,6 +290,7 @@ Public Class FrmSearch2
               ,[NONVATreg] [NONVAT-Registered]
               ,[DateReceived] [Date Received]
               ,[AddressC] [Customer Address]
+, [UserID]
 
 
                 FROM DocsCatalogue 
@@ -326,7 +326,6 @@ AND Status = 'Finished'
                     .Parameters.AddWithValue("@DocDateFrom", Me.DTDocDateFrom.MinDate)
                     .Parameters.AddWithValue("@DocDateTo", Me.DTDocDateTo.MaxDate)
                 End If
-
 
                 If CHKRack.Checked = True Then
                     .Parameters.AddWithValue("@RackNo", Me.TxtRack.Text)
@@ -387,10 +386,7 @@ AND Status = 'Finished'
             }
             C1TrueDBGrid2.DataSource = objbindingsource
 
-
             source = objbindingsource
-
-
 
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Id").Visible = False
             Me.C1TrueDBGrid2.Splits(0).ExtendRightColumn = True
@@ -412,6 +408,7 @@ AND Status = 'Finished'
 
 
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Document Type").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Batch").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Sub Batch").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Rack No").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Box No").Locked = True
@@ -433,7 +430,7 @@ AND Status = 'Finished'
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Product Brand").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Product Type").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Date Purchased").Locked = True
-            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Serial").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Serial Number").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Warranty Period").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Service Center").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Service Center Address").Locked = True
@@ -462,11 +459,27 @@ AND Status = 'Finished'
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("NONVAT-Registered").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Date Received").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Customer Address").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Promo Title").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("PromoFrom").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("UserID").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("PromoTo").Locked = True
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("DTI Permit No").Locked = True
 
 
 
 
 
+
+            Try
+                Me.C1TrueDBGrid2.LoadLayout("default.layout")
+            Catch ex As Exception
+                Me.C1TrueDBGrid2.SaveLayout("default.layout")
+            End Try
+
+
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Download").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Download").Width = 54
+            Me.C1TrueDBGrid2.Splits(0).ColumnCaptionHeight = 34
 
             Me.BtnDownload.Enabled = True
 
@@ -481,12 +494,12 @@ AND Status = 'Finished'
 
 
 
-
         Try
 
             Search()
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
 
 
 
@@ -497,8 +510,6 @@ AND Status = 'Finished'
             cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
             cmdlogs.ExecuteNonQuery()
             con.Close()
-
-
 
 
 
@@ -531,21 +542,18 @@ AND Status = 'Finished'
             Me.BtnSaveChanges1.Enabled = True
 
 
-
-
-
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
                 Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
 
 
 
-                con.Open()
-                cmdlogs.Connection = con
-                cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
             cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Edited the searched record with ID:" & Me.C1TrueDBGrid2.Columns("Id").Text)
             cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
-                cmdlogs.ExecuteNonQuery()
-                con.Close()
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
 
 
         Catch ex As Exception
@@ -638,11 +646,6 @@ AND Status = 'Finished'
             End If
 
 
-
-
-
-
-
             Search()
 
         Catch ex As Exception
@@ -651,12 +654,6 @@ AND Status = 'Finished'
 
 
     End Sub
-
-
-
-
-
-
 
 
     Private Sub FrmQuery_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed

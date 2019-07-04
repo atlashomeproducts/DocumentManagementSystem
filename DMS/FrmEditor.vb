@@ -266,7 +266,7 @@ Public Class FrmEditor
             PayorTextBox.Clear()
             VoucherNoTextBox.Clear()
             CheckNoTextBox.Clear()
-            PaymentFormTextBox.Clear()
+            PaymentFormComboBox.SelectedIndex = -1
             TotalValueVoucher.Clear()
             PreparedbyTextBox.Clear()
             ApprovedbyTextBox.Clear()
@@ -795,7 +795,7 @@ Public Class FrmEditor
                 con.Open()
                 cmdlogs.Connection = con
                 cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
-                cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Edited a record with ID:" & Me.IdTextBox.Text)
+                cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Deleted a record with ID:" & Me.IdTextBox.Text)
                 cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
                 cmdlogs.ExecuteNonQuery()
                 con.Close()

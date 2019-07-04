@@ -232,6 +232,7 @@ Partial Class FrmUsers
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.DMSLogsTableAdapter = Nothing
         Me.TableAdapterManager.DMSUserTableAdapter = Nothing
         Me.TableAdapterManager.DocsCatalogueTableAdapter = Nothing
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing

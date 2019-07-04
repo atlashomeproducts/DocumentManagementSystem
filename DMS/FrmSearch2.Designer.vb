@@ -248,6 +248,7 @@ Partial Class FrmSearch2
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.Label36 = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -401,6 +402,7 @@ Partial Class FrmSearch2
         '
         Me.C1TrueDBGrid2.AlternatingRows = True
         Me.C1TrueDBGrid2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.C1TrueDBGrid2.FilterBar = True
         Me.C1TrueDBGrid2.GroupByCaption = "Drag a column header here to group by that column"
         Me.C1TrueDBGrid2.Images.Add(CType(resources.GetObject("C1TrueDBGrid2.Images"), System.Drawing.Image))
         Me.C1TrueDBGrid2.Location = New System.Drawing.Point(0, 0)
@@ -493,6 +495,7 @@ Partial Class FrmSearch2
         'TabQuery
         '
         Me.TabQuery.BackColor = System.Drawing.SystemColors.Control
+        Me.TabQuery.Controls.Add(Me.Label36)
         Me.TabQuery.Controls.Add(Me.CHKBatch)
         Me.TabQuery.Controls.Add(Me.Label11)
         Me.TabQuery.Controls.Add(Me.TxtBatch)
@@ -840,7 +843,7 @@ Partial Class FrmSearch2
         Me.TabControl2.Location = New System.Drawing.Point(-1, 33)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(611, 867)
+        Me.TabControl2.Size = New System.Drawing.Size(609, 874)
         Me.TabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl2.TabIndex = 27
         Me.TabControl2.TabStop = False
@@ -854,7 +857,7 @@ Partial Class FrmSearch2
         Me.Timesheet.Location = New System.Drawing.Point(4, 32)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(603, 831)
+        Me.Timesheet.Size = New System.Drawing.Size(601, 838)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
@@ -881,7 +884,7 @@ Partial Class FrmSearch2
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(597, 825)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(595, 832)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1110,7 +1113,7 @@ Partial Class FrmSearch2
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 32)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(603, 831)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(601, 838)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
@@ -1151,7 +1154,7 @@ Partial Class FrmSearch2
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(597, 825)
+        Me.GrpReceipt.Size = New System.Drawing.Size(595, 832)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1430,7 +1433,7 @@ Partial Class FrmSearch2
         Me.Warranty.Location = New System.Drawing.Point(4, 32)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(603, 831)
+        Me.Warranty.Size = New System.Drawing.Size(601, 838)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
@@ -1472,7 +1475,7 @@ Partial Class FrmSearch2
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(597, 825)
+        Me.GrpWarranty.Size = New System.Drawing.Size(595, 832)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1765,7 +1768,7 @@ Partial Class FrmSearch2
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 32)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(603, 831)
+        Me.Voucher.Size = New System.Drawing.Size(601, 838)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
@@ -1807,7 +1810,7 @@ Partial Class FrmSearch2
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(603, 831)
+        Me.GrpVoucher.Size = New System.Drawing.Size(601, 838)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -2243,7 +2246,7 @@ Partial Class FrmSearch2
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 32)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(603, 831)
+        Me.CorpDocu.Size = New System.Drawing.Size(601, 838)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
@@ -2266,7 +2269,7 @@ Partial Class FrmSearch2
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(603, 831)
+        Me.GrpCorp.Size = New System.Drawing.Size(601, 838)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2538,6 +2541,7 @@ Partial Class FrmSearch2
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.DMSLogsTableAdapter = Nothing
         Me.TableAdapterManager.DMSUserTableAdapter = Nothing
         Me.TableAdapterManager.DocsCatalogueTableAdapter = Nothing
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
@@ -2551,6 +2555,18 @@ Partial Class FrmSearch2
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.Location = New System.Drawing.Point(326, 12)
+        Me.Label36.Name = "Label36"
+        Me.Label36.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label36.Size = New System.Drawing.Size(267, 30)
+        Me.Label36.TabIndex = 88
+        Me.Label36.Text = "Check the box if you want to search by that field. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If there is no selected it w" &
+    "ill seach all records." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'FrmSearch2
         '
@@ -2841,6 +2857,7 @@ Partial Class FrmSearch2
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents C1TrueDBGrid2 As C1.Win.C1TrueDBGrid.C1TrueDBGrid
+    Friend WithEvents Label36 As Label
 End Class
 
 

@@ -78,6 +78,33 @@ Public Class FrmMain
     End Sub
 
     Private Sub FrmMain_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+
+        Try
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", User)
+            cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Logged Out")
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
+
+
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+
         My.Settings.Save_RackNoTS = ""
         My.Settings.Save_BoxNoTS = ""
         My.Settings.Save_RackNoRI = ""
