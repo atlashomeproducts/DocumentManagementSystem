@@ -46,5 +46,8 @@
     <Setting Name="Save_BoxNoCorpDocu" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="remoteTOD" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.168.0.115</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

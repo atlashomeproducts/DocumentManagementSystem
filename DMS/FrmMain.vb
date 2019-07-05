@@ -2,6 +2,8 @@
 Imports System.ComponentModel
 Imports System.Configuration
 Imports System.Data.SqlClient
+Imports System.Runtime.InteropServices
+
 
 
 
@@ -11,11 +13,60 @@ Public Class FrmMain
     Public type As String
     Public User As String
 
+
+
+
     'Public con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
     'Public cmd As New SqlCommand("SELECT UserName, Password, UserType FROM DMSUser WHERE (UserName = '" & Me.TxtUsername.Text & "') AND (Password = '" & Me.TxtPassword.Text & "')", con)
     'Public cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
 
+    Private Declare Unicode Function NetRemoteTOD Lib "netapi32" (<MarshalAs(UnmanagedType.LPWStr)> ByVal ServerName As String, ByRef BufferPtr As IntPtr) As Integer
+    Private Declare Function NetApiBufferFree Lib "netapi32" (ByVal Buffer As IntPtr) As Integer
 
+    Structure TIME_OF_DAY_INFO
+        Dim tod_elapsedt As Integer
+        Dim tod_msecs As Integer
+        Dim tod_hours As Integer
+        Dim tod_mins As Integer
+        Dim tod_secs As Integer
+        Dim tod_hunds As Integer
+        Dim tod_timezone As Integer
+        Dim tod_tinterval As Integer
+        Dim tod_day As Integer
+        Dim tod_month As Integer
+        Dim tod_year As Integer
+        Dim tod_weekday As Integer
+    End Structure
+
+
+    Function GetNetRemoteTOD(ByVal strServerName As String) As Date
+        Try
+            Dim iRet As Integer
+            Dim ptodi As IntPtr
+            Dim todi As TIME_OF_DAY_INFO
+            Dim dDate As Date
+            strServerName = strServerName & vbNullChar
+            iRet = NetRemoteTOD(strServerName, ptodi)
+            If iRet = 0 Then
+                todi = CType(Marshal.PtrToStructure(ptodi, GetType(TIME_OF_DAY_INFO)), TIME_OF_DAY_INFO)
+                NetApiBufferFree(ptodi)
+                dDate = DateSerial(todi.tod_year, todi.tod_month, todi.tod_day) + " " + TimeSerial(todi.tod_hours, todi.tod_mins - todi.tod_timezone, todi.tod_secs)
+                GetNetRemoteTOD = dDate
+            Else
+                MsgBox("Error retrieving time")
+            End If
+        Catch
+
+            Try
+                GetNetRemoteTOD = Date.Now.ToString("MM/dd/yyyy HH:mm:ss tt")
+            Catch
+                MsgBox("Error in GetNetRemoteTOD: " & Err.Description)
+            End Try
+
+        End Try
+
+        Return GetNetRemoteTOD
+    End Function
 
     Private Sub IndexToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
@@ -84,14 +135,15 @@ Public Class FrmMain
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-
+            Dim dRemoteDate As Date
+            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
             con.Open()
             cmdlogs.Connection = con
             cmdlogs.Parameters.AddWithValue("@Username", User)
             cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Logged Out")
-            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
             cmdlogs.ExecuteNonQuery()
             con.Close()
 
@@ -135,14 +187,15 @@ Public Class FrmMain
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-
+            Dim dRemoteDate As Date
+            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
             con.Open()
             cmdlogs.Connection = con
             cmdlogs.Parameters.AddWithValue("@Username", User)
             cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Opened ""Editor"" form")
-            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
             cmdlogs.ExecuteNonQuery()
             con.Close()
 
@@ -163,14 +216,15 @@ Public Class FrmMain
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-
+            Dim dRemoteDate As Date
+            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
             con.Open()
             cmdlogs.Connection = con
             cmdlogs.Parameters.AddWithValue("@Username", User)
             cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Opened ""Search"" form")
-            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
             cmdlogs.ExecuteNonQuery()
             con.Close()
 
@@ -192,14 +246,15 @@ Public Class FrmMain
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-
+            Dim dRemoteDate As Date
+            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
             con.Open()
             cmdlogs.Connection = con
             cmdlogs.Parameters.AddWithValue("@Username", User)
             cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Opened ""Index"" form")
-            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
             cmdlogs.ExecuteNonQuery()
             con.Close()
 
@@ -222,6 +277,9 @@ Public Class FrmMain
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmd As New SqlCommand("SELECT UserName, Password, UserType FROM DMSUser WHERE (UserName = '" & Me.TxtUsername.Text & "') AND (Password = '" & Me.TxtPassword.Text & "')", con)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+            Dim dRemoteDate As Date
+            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+
             con.Open()
 
             Dim sdr As SqlDataReader = cmd.ExecuteReader()
@@ -252,8 +310,8 @@ Public Class FrmMain
                 con.Open()
                 cmdlogs.Connection = con
                 cmdlogs.Parameters.AddWithValue("@Username", User)
-                cmdlogs.Parameters.AddWithValue("@Action", User & " " & "logged in")
-                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Logged In")
+                cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
                 'cmd.Parameters("@Username").Value = User
                 'cmd.Parameters("@Action").Value = User & " " & "logged in"
                 'cmd.Parameters("@ActionDate").Value = DateTime.Now

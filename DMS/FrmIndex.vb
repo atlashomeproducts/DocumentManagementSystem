@@ -3,8 +3,56 @@ Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Configuration
 Imports System.IO
+Imports System.Runtime.InteropServices
 Public Class FrmIndex
+    Private Declare Unicode Function NetRemoteTOD Lib "netapi32" (<MarshalAs(UnmanagedType.LPWStr)> ByVal ServerName As String, ByRef BufferPtr As IntPtr) As Integer
+    Private Declare Function NetApiBufferFree Lib "netapi32" (ByVal Buffer As IntPtr) As Integer
 
+    Structure TIME_OF_DAY_INFO
+        Dim tod_elapsedt As Integer
+        Dim tod_msecs As Integer
+        Dim tod_hours As Integer
+        Dim tod_mins As Integer
+        Dim tod_secs As Integer
+        Dim tod_hunds As Integer
+        Dim tod_timezone As Integer
+        Dim tod_tinterval As Integer
+        Dim tod_day As Integer
+        Dim tod_month As Integer
+        Dim tod_year As Integer
+        Dim tod_weekday As Integer
+    End Structure
+
+
+    Function GetNetRemoteTOD(ByVal strServerName As String) As Date
+        Try
+            Dim iRet As Integer
+            Dim ptodi As IntPtr
+            Dim todi As TIME_OF_DAY_INFO
+            Dim dDate As Date
+            strServerName = strServerName & vbNullChar
+            iRet = NetRemoteTOD(strServerName, ptodi)
+            If iRet = 0 Then
+                todi = CType(Marshal.PtrToStructure(ptodi, GetType(TIME_OF_DAY_INFO)), TIME_OF_DAY_INFO)
+                NetApiBufferFree(ptodi)
+                dDate = DateSerial(todi.tod_year, todi.tod_month, todi.tod_day) + " " + TimeSerial(todi.tod_hours, todi.tod_mins - todi.tod_timezone, todi.tod_secs)
+                GetNetRemoteTOD = dDate
+
+            Else
+                MsgBox("Error retrieving time")
+            End If
+        Catch
+
+            Try
+                GetNetRemoteTOD = Date.Now.ToString("MM/dd/yyyy HH:mm:ss tt")
+            Catch
+                MsgBox("Error in GetNetRemoteTOD: " & Err.Description)
+            End Try
+
+        End Try
+
+        Return GetNetRemoteTOD
+    End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnBrowse.Click
 
@@ -65,6 +113,9 @@ Public Class FrmIndex
                 Dim strsql As String = "INSERT INTO DocsCatalogue([DocumentType], [Batch], [SubBatch],[ScannedDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo], [UserID])
                                                    VALUES (@DocumentType, @BatchID, @SubBatch, @ScanDate, @FileName, @Status, @Company, @Purpose, @RackNo, @BoxNo, @UserID)"
                 Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+                Dim dRemoteDate As Date
+                dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+
 
                 With cmd
                     .CommandText = strsql
@@ -137,8 +188,8 @@ Public Class FrmIndex
                         cmdlogs.Connection = con
                         cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
                     cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " Indexed documents with batch name: " & Me.batchIdTextBox.Text)
-                    cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
-                        cmdlogs.ExecuteNonQuery()
+                    cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
+                    cmdlogs.ExecuteNonQuery()
                         con.Close()
 
 

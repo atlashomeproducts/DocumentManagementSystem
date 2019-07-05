@@ -204,6 +204,18 @@ Namespace My
                 Me("Save_BoxNoCorpDocu") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("192.168.0.115")>  _
+        Public Property remoteTOD() As String
+            Get
+                Return CType(Me("remoteTOD"),String)
+            End Get
+            Set
+                Me("remoteTOD") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
