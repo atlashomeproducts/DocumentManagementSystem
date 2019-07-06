@@ -76,6 +76,8 @@ Partial Class FrmSearch2
         Me.DocumentTypeLabel = New System.Windows.Forms.Label()
         Me.TabChanges = New System.Windows.Forms.TabPage()
         Me.DocumentTypeCombobox2 = New System.Windows.Forms.ComboBox()
+        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.Timesheet = New System.Windows.Forms.TabPage()
@@ -245,8 +247,6 @@ Partial Class FrmSearch2
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -261,6 +261,8 @@ Partial Class FrmSearch2
         Me.TabControl1.SuspendLayout()
         Me.TabQuery.SuspendLayout()
         Me.TabChanges.SuspendLayout()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl2.SuspendLayout()
         Me.Timesheet.SuspendLayout()
         Me.GrpTimeSheet.SuspendLayout()
@@ -282,8 +284,6 @@ Partial Class FrmSearch2
         Me.TabPromo.SuspendLayout()
         Me.TabMeeting2.SuspendLayout()
         CType(Me.AcroPDF, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label25
@@ -821,6 +821,16 @@ Partial Class FrmSearch2
         Me.DocumentTypeCombobox2.Size = New System.Drawing.Size(396, 28)
         Me.DocumentTypeCombobox2.TabIndex = 29
         '
+        'DocsCatalogueBindingSource
+        '
+        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
+        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Label32
         '
         Me.Label32.AutoSize = True
@@ -845,7 +855,7 @@ Partial Class FrmSearch2
         Me.TabControl2.Location = New System.Drawing.Point(-1, 33)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(609, 881)
+        Me.TabControl2.Size = New System.Drawing.Size(609, 888)
         Me.TabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl2.TabIndex = 27
         Me.TabControl2.TabStop = False
@@ -859,7 +869,7 @@ Partial Class FrmSearch2
         Me.Timesheet.Location = New System.Drawing.Point(4, 32)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(601, 845)
+        Me.Timesheet.Size = New System.Drawing.Size(601, 852)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
@@ -886,7 +896,7 @@ Partial Class FrmSearch2
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(595, 839)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(595, 846)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1115,7 +1125,7 @@ Partial Class FrmSearch2
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 32)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(601, 845)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(601, 852)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
@@ -1435,7 +1445,7 @@ Partial Class FrmSearch2
         Me.Warranty.Location = New System.Drawing.Point(4, 32)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(601, 845)
+        Me.Warranty.Size = New System.Drawing.Size(601, 852)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
@@ -1770,7 +1780,7 @@ Partial Class FrmSearch2
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 32)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(601, 845)
+        Me.Voucher.Size = New System.Drawing.Size(601, 852)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
@@ -2248,7 +2258,7 @@ Partial Class FrmSearch2
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 32)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(601, 845)
+        Me.CorpDocu.Size = New System.Drawing.Size(601, 852)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
@@ -2543,16 +2553,6 @@ Partial Class FrmSearch2
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'DocsCatalogueBindingSource
-        '
-        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
-        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
-        '
-        'DMSDataSet
-        '
-        Me.DMSDataSet.DataSetName = "DMSDataSet"
-        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
@@ -2575,6 +2575,7 @@ Partial Class FrmSearch2
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1240, 738)
         Me.Controls.Add(Me.SplitContainer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmSearch2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Search"
@@ -2592,6 +2593,8 @@ Partial Class FrmSearch2
         Me.TabQuery.PerformLayout()
         Me.TabChanges.ResumeLayout(False)
         Me.TabChanges.PerformLayout()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl2.ResumeLayout(False)
         Me.Timesheet.ResumeLayout(False)
         Me.GrpTimeSheet.ResumeLayout(False)
@@ -2625,8 +2628,6 @@ Partial Class FrmSearch2
         Me.TabMeeting2.ResumeLayout(False)
         Me.TabMeeting2.PerformLayout()
         CType(Me.AcroPDF, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

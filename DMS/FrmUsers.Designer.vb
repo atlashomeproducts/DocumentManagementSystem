@@ -250,6 +250,7 @@ Partial Class FrmUsers
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(386, 466)
         Me.Controls.Add(Me.SplitContainer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmUsers"
         Me.Text = "Users"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
