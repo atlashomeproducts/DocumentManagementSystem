@@ -9,60 +9,64 @@ Imports System.ComponentModel
 Imports System.Runtime.InteropServices
 
 Public Class FrmSearch2
-    Private Declare Unicode Function NetRemoteTOD Lib "netapi32" (<MarshalAs(UnmanagedType.LPWStr)> ByVal ServerName As String, ByRef BufferPtr As IntPtr) As Integer
-    Private Declare Function NetApiBufferFree Lib "netapi32" (ByVal Buffer As IntPtr) As Integer
+    'Private Declare Unicode Function NetRemoteTOD Lib "netapi32" (<MarshalAs(UnmanagedType.LPWStr)> ByVal ServerName As String, ByRef BufferPtr As IntPtr) As Integer
+    'Private Declare Function NetApiBufferFree Lib "netapi32" (ByVal Buffer As IntPtr) As Integer
 
-    Structure TIME_OF_DAY_INFO
-        Dim tod_elapsedt As Integer
-        Dim tod_msecs As Integer
-        Dim tod_hours As Integer
-        Dim tod_mins As Integer
-        Dim tod_secs As Integer
-        Dim tod_hunds As Integer
-        Dim tod_timezone As Integer
-        Dim tod_tinterval As Integer
-        Dim tod_day As Integer
-        Dim tod_month As Integer
-        Dim tod_year As Integer
-        Dim tod_weekday As Integer
-    End Structure
+    'Structure TIME_OF_DAY_INFO
+    '    Dim tod_elapsedt As Integer
+    '    Dim tod_msecs As Integer
+    '    Dim tod_hours As Integer
+    '    Dim tod_mins As Integer
+    '    Dim tod_secs As Integer
+    '    Dim tod_hunds As Integer
+    '    Dim tod_timezone As Integer
+    '    Dim tod_tinterval As Integer
+    '    Dim tod_day As Integer
+    '    Dim tod_month As Integer
+    '    Dim tod_year As Integer
+    '    Dim tod_weekday As Integer
+    'End Structure
 
 
-    Function GetNetRemoteTOD(ByVal strServerName As String) As Date
-        Try
-            Dim iRet As Integer
-            Dim ptodi As IntPtr
-            Dim todi As TIME_OF_DAY_INFO
-            Dim dDate As Date
-            strServerName = strServerName & vbNullChar
-            iRet = NetRemoteTOD(strServerName, ptodi)
-            If iRet = 0 Then
-                todi = CType(Marshal.PtrToStructure(ptodi, GetType(TIME_OF_DAY_INFO)), TIME_OF_DAY_INFO)
-                NetApiBufferFree(ptodi)
-                dDate = DateSerial(todi.tod_year, todi.tod_month, todi.tod_day) + " " + TimeSerial(todi.tod_hours, todi.tod_mins - todi.tod_timezone, todi.tod_secs)
-                GetNetRemoteTOD = dDate
+    'Function GetNetRemoteTOD(ByVal strServerName As String) As Date
+    '    Try
+    '        Dim iRet As Integer
+    '        Dim ptodi As IntPtr
+    '        Dim todi As TIME_OF_DAY_INFO
+    '        Dim dDate As Date
+    '        strServerName = strServerName & vbNullChar
+    '        iRet = NetRemoteTOD(strServerName, ptodi)
+    '        If iRet = 0 Then
+    '            todi = CType(Marshal.PtrToStructure(ptodi, GetType(TIME_OF_DAY_INFO)), TIME_OF_DAY_INFO)
+    '            NetApiBufferFree(ptodi)
+    '            dDate = DateSerial(todi.tod_year, todi.tod_month, todi.tod_day) + " " + TimeSerial(todi.tod_hours, todi.tod_mins - todi.tod_timezone, todi.tod_secs)
+    '            GetNetRemoteTOD = dDate
 
-            Else
-                MsgBox("Error retrieving time")
-            End If
-        Catch
+    '        Else
+    '            MsgBox("Error retrieving time")
+    '        End If
+    '    Catch
 
-            Try
-                GetNetRemoteTOD = Date.Now.ToString("MM/dd/yyyy HH:mm:ss tt")
-            Catch
-                MsgBox("Error in GetNetRemoteTOD: " & Err.Description)
-            End Try
+    '        Try
+    '            GetNetRemoteTOD = Date.Now.ToString("MM/dd/yyyy HH:mm:ss tt")
+    '        Catch
+    '            MsgBox("Error in GetNetRemoteTOD: " & Err.Description)
+    '        End Try
 
-        End Try
+    '    End Try
 
-        Return GetNetRemoteTOD
-    End Function
+    '    Return GetNetRemoteTOD
+    'End Function
 
     Public source As New BindingSource
+
+
+
     Private Sub FrmQuery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DMSDataSet.DocsCatalogueChanges' table. You can move, or remove it, as needed.
 
 
+        TabControl1.BackColor = Color.Azure
 
         PopulateCombobox()
 
@@ -75,6 +79,7 @@ Public Class FrmSearch2
         For Each TabPage In TabControl1.TabPages
 
             TabPage.Text = ""
+            TabPage.BackColor = Color.Azure
 
         Next
 
@@ -82,9 +87,11 @@ Public Class FrmSearch2
         TabControl2.Appearance = TabAppearance.FlatButtons
         TabControl2.ItemSize = New Size(0, 1)
         TabControl2.SizeMode = TabSizeMode.Fixed
+
         For Each TabPage In TabControl2.TabPages
 
             TabPage.Text = ""
+            TabPage.BackColor = Color.Azure
 
         Next
 
@@ -94,6 +101,7 @@ Public Class FrmSearch2
         For Each TabPage In TabControl2.TabPages
 
             TabPage.Text = ""
+            TabPage.BackColor = Color.Azure
 
         Next
 
@@ -104,6 +112,7 @@ Public Class FrmSearch2
         For Each TabPage In TabControl4.TabPages
 
             TabPage.Text = ""
+            TabPage.BackColor = Color.Azure
 
         Next
 
@@ -116,6 +125,8 @@ Public Class FrmSearch2
 
         Me.BtnSaveChanges1.Enabled = False
         Me.BtnDownload.Enabled = False
+
+
 
 
 
@@ -173,15 +184,11 @@ Public Class FrmSearch2
         ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Daily Time Record" Then
             TabControl2.SelectTab(Timesheet)
 
-
         ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Warranty Card" Then
             TabControl2.SelectTab(Warranty)
 
-
         ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Payment Voucher" Then
             TabControl2.SelectTab(Voucher)
-
-
 
         ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Secretary's Certificate" Then
             TabControl2.SelectTab(CorpDocu)
@@ -230,14 +237,11 @@ Public Class FrmSearch2
         ElseIf Me.DocumentTypeCombobox2.Text = "Daily Time Record" Then
             TabControl2.SelectTab(Timesheet)
 
-
         ElseIf Me.DocumentTypeCombobox2.Text = "Warranty Card" Then
             TabControl2.SelectTab(Warranty)
 
         ElseIf Me.DocumentTypeCombobox2.Text = "Payment Voucher" Then
             TabControl2.SelectTab(Voucher)
-
-
 
         ElseIf Me.DocumentTypeCombobox2.Text = "Secretary's Certificate" Then
             TabControl2.SelectTab(CorpDocu)
@@ -324,10 +328,10 @@ Public Class FrmSearch2
               ,[Purpose]   
               ,[Secretary] 
               ,[MeetingDate] [Meeting Date]
-, [PromoTitle] [Promo Title] 
-, [PromoFrom] 
-, [PromoTo]
-, [DTIPermitNo] [DTI Permit No]
+              , [PromoTitle] [Promo Title] 
+              , [PromoFrom] 
+              , [PromoTo]
+              , [DTIPermitNo] [DTI Permit No]
               ,[PaymentOthers] [Payment Others]
               ,[BankName] [Bank Name]
               ,[BankBranch] [Bank Branch]
@@ -338,19 +342,19 @@ Public Class FrmSearch2
               ,[NONVATreg] [NONVAT-Registered]
               ,[DateReceived] [Date Received]
               ,[AddressC] [Customer Address]
-, [UserID]
-
+              , [UserID]
 
                 FROM DocsCatalogue 
 
 WHERE
-ISNULL(DocumentDate, '') BETWEEN @DocDateFrom AND @DocDateTo
-AND ISNULL(RackNo, '') LIKE '%' + @RackNo + '%'
-AND ISNULL(BoxNo, '') LIKE '%' + @BoxNo + '%'
-AND ISNULL(BookletNo, '') LIKE '%' + @BookletNo + '%'
-AND ISNULL(Batch, '') LIKE '%' + @Batch + '%'
-AND ISNULL(DocumentType, '') LIKE '%' + @DocType + '%'
-AND ISNULL(ScannedDate, '') BETWEEN @ScanDateFrom AND @ScanDateTo
+ISNULL([DocumentDate], '') BETWEEN @DocDateFrom AND @DocDateTo
+AND ISNULL([RackNo], '') LIKE '%' + @RackNo + '%'
+AND ISNULL([BoxNo], '') LIKE '%' + @BoxNo + '%'
+AND ISNULL([BookletNo], '') LIKE '%' + @BookletNo + '%'
+AND ISNULL([Batch], '') LIKE '%' + @Batch + '%'
+AND ISNULL([DocumentType], '') LIKE '%' + @DocType + '%'
+AND ISNULL([ScannedDate], '') BETWEEN @ScanDateFrom AND @ScanDateTo 
+AND ISNULL([FileName], '') LIKE '%' + @FileName + '%'
 
 
 AND Status = 'Finished'
@@ -413,6 +417,11 @@ AND Status = 'Finished'
                     .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.MaxDate)
                 End If
 
+                If Me.CHKFileName.Checked = True Then
+                    .Parameters.AddWithValue("@FileName", Me.TxtFileName.Text)
+                Else
+                    .Parameters.AddWithValue("@FileName", "")
+                End If
                 .Connection = strconnectionstring
             End With
 
@@ -446,9 +455,7 @@ AND Status = 'Finished'
 
 
             For i = 0 To objbindingsource.Count
-
                 Me.C1TrueDBGrid2.Columns("Download").Value = False
-
                 objbindingsource.MoveNext()
             Next
 
@@ -516,13 +523,11 @@ AND Status = 'Finished'
 
 
 
-
-
-            Try
-                Me.C1TrueDBGrid2.LoadLayout("default.layout")
-            Catch ex As Exception
-                Me.C1TrueDBGrid2.SaveLayout("default.layout")
-            End Try
+            'Try
+            '    Me.C1TrueDBGrid2.LoadLayout("default1.layout")
+            'Catch ex As Exception
+            '    Me.C1TrueDBGrid2.SaveLayout("default1.layout")
+            'End Try
 
 
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Download").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
@@ -547,8 +552,8 @@ AND Status = 'Finished'
             Search()
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-            Dim dRemoteDate As Date
-            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+            ' Dim dRemoteDate As Date
+            ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
 
@@ -556,7 +561,7 @@ AND Status = 'Finished'
             cmdlogs.Connection = con
             cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
             cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Searched records")
-            cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
             cmdlogs.ExecuteNonQuery()
             con.Close()
 
@@ -593,15 +598,15 @@ AND Status = 'Finished'
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
                 Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-            Dim dRemoteDate As Date
-            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+            ' Dim dRemoteDate As Date
+            '  dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
             con.Open()
             cmdlogs.Connection = con
             cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
             cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Edited the searched record with ID:" & Me.C1TrueDBGrid2.Columns("Id").Text)
-            cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
             cmdlogs.ExecuteNonQuery()
             con.Close()
 
@@ -631,15 +636,15 @@ AND Status = 'Finished'
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-        Dim dRemoteDate As Date
-        dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+        ' Dim dRemoteDate As Date
+        '  dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
         con.Open()
         cmdlogs.Connection = con
         cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
         cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Saved changes on searched record with ID:" & C1TrueDBGrid2.Columns("Id").Text)
-        cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
+        cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
         cmdlogs.ExecuteNonQuery()
         con.Close()
 
@@ -708,7 +713,7 @@ AND Status = 'Finished'
 
 
     Private Sub FrmQuery_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Me.C1TrueDBGrid2.SaveLayout("default.layout")
+        ' Me.C1TrueDBGrid2.SaveLayout("default1.layout")
     End Sub
 
     Private Sub DTMeetingDate_ValueChanged(sender As Object, e As EventArgs) Handles DTMeetingDate.ValueChanged
@@ -893,15 +898,15 @@ AND Status = 'Finished'
 
                     Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
                     Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-                    Dim dRemoteDate As Date
-                    dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+                    ' Dim dRemoteDate As Date
+                    '  dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
                     con.Open()
                     cmdlogs.Connection = con
                     cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
                     cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Downloaded files.")
-                    cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
+                    cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
                     cmdlogs.ExecuteNonQuery()
                     con.Close()
 

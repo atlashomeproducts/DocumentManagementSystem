@@ -2,7 +2,7 @@
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmSearch2
-    Inherits System.Windows.Forms.Form
+    Inherits C1.Win.C1Ribbon.C1RibbonForm
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -45,6 +45,9 @@ Partial Class FrmSearch2
         Me.BtnEditRecord = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabQuery = New System.Windows.Forms.TabPage()
+        Me.CHKFileName = New System.Windows.Forms.CheckBox()
+        Me.sdasd = New System.Windows.Forms.Label()
+        Me.TxtFileName = New System.Windows.Forms.TextBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.CHKBatch = New System.Windows.Forms.CheckBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -378,6 +381,7 @@ Partial Class FrmSearch2
         '
         'SplitContainer1
         '
+        Me.SplitContainer1.BackColor = System.Drawing.Color.Azure
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
@@ -386,11 +390,13 @@ Partial Class FrmSearch2
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.AutoScroll = True
+        Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Azure
         Me.SplitContainer1.Panel1.Controls.Add(Me.C1TrueDBGrid2)
         '
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.AutoScroll = True
+        Me.SplitContainer1.Panel2.BackColor = System.Drawing.Color.Azure
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
         Me.SplitContainer1.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SplitContainer1.Size = New System.Drawing.Size(1240, 738)
@@ -446,39 +452,47 @@ Partial Class FrmSearch2
         '
         'BtnDownload
         '
+        Me.BtnDownload.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnDownload.Location = New System.Drawing.Point(206, 7)
         Me.BtnDownload.Name = "BtnDownload"
         Me.BtnDownload.Size = New System.Drawing.Size(125, 28)
-        Me.BtnDownload.TabIndex = 95
+        Me.BtnDownload.TabIndex = 2
         Me.BtnDownload.Text = "Download"
-        Me.BtnDownload.UseVisualStyleBackColor = True
+        Me.BtnDownload.UseVisualStyleBackColor = False
         '
         'BtnSaveChanges1
         '
+        Me.BtnSaveChanges1.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnSaveChanges1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnSaveChanges1.Location = New System.Drawing.Point(458, 7)
         Me.BtnSaveChanges1.Name = "BtnSaveChanges1"
         Me.BtnSaveChanges1.Size = New System.Drawing.Size(125, 28)
-        Me.BtnSaveChanges1.TabIndex = 94
+        Me.BtnSaveChanges1.TabIndex = 4
         Me.BtnSaveChanges1.Text = "Save Changes"
-        Me.BtnSaveChanges1.UseVisualStyleBackColor = True
+        Me.BtnSaveChanges1.UseVisualStyleBackColor = False
         '
         'BtnSearch
         '
+        Me.BtnSearch.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnSearch.Location = New System.Drawing.Point(6, 7)
         Me.BtnSearch.Name = "BtnSearch"
         Me.BtnSearch.Size = New System.Drawing.Size(125, 28)
-        Me.BtnSearch.TabIndex = 92
+        Me.BtnSearch.TabIndex = 1
         Me.BtnSearch.Text = "Search"
-        Me.BtnSearch.UseVisualStyleBackColor = True
+        Me.BtnSearch.UseVisualStyleBackColor = False
         '
         'BtnEditRecord
         '
+        Me.BtnEditRecord.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnEditRecord.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnEditRecord.Location = New System.Drawing.Point(332, 7)
         Me.BtnEditRecord.Name = "BtnEditRecord"
         Me.BtnEditRecord.Size = New System.Drawing.Size(125, 28)
-        Me.BtnEditRecord.TabIndex = 93
+        Me.BtnEditRecord.TabIndex = 3
         Me.BtnEditRecord.Text = "Edit Record"
-        Me.BtnEditRecord.UseVisualStyleBackColor = True
+        Me.BtnEditRecord.UseVisualStyleBackColor = False
         '
         'TabControl1
         '
@@ -486,15 +500,20 @@ Partial Class FrmSearch2
         Me.TabControl1.Controls.Add(Me.TabQuery)
         Me.TabControl1.Controls.Add(Me.TabChanges)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.TabControl1.ItemSize = New System.Drawing.Size(81, 28)
         Me.TabControl1.Location = New System.Drawing.Point(0, 35)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(612, 449)
         Me.TabControl1.TabIndex = 91
+        Me.TabControl1.TabStop = False
         '
         'TabQuery
         '
-        Me.TabQuery.BackColor = System.Drawing.SystemColors.Control
+        Me.TabQuery.BackColor = System.Drawing.Color.Azure
+        Me.TabQuery.Controls.Add(Me.CHKFileName)
+        Me.TabQuery.Controls.Add(Me.sdasd)
+        Me.TabQuery.Controls.Add(Me.TxtFileName)
         Me.TabQuery.Controls.Add(Me.Label36)
         Me.TabQuery.Controls.Add(Me.CHKBatch)
         Me.TabQuery.Controls.Add(Me.Label11)
@@ -531,6 +550,32 @@ Partial Class FrmSearch2
         Me.TabQuery.TabIndex = 0
         Me.TabQuery.Text = "TabQuery"
         '
+        'CHKFileName
+        '
+        Me.CHKFileName.AutoSize = True
+        Me.CHKFileName.Location = New System.Drawing.Point(43, 179)
+        Me.CHKFileName.Name = "CHKFileName"
+        Me.CHKFileName.Size = New System.Drawing.Size(15, 14)
+        Me.CHKFileName.TabIndex = 13
+        Me.CHKFileName.UseVisualStyleBackColor = True
+        '
+        'sdasd
+        '
+        Me.sdasd.AutoSize = True
+        Me.sdasd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sdasd.Location = New System.Drawing.Point(64, 175)
+        Me.sdasd.Name = "sdasd"
+        Me.sdasd.Size = New System.Drawing.Size(88, 20)
+        Me.sdasd.TabIndex = 90
+        Me.sdasd.Text = "File Name.:"
+        '
+        'TxtFileName
+        '
+        Me.TxtFileName.Location = New System.Drawing.Point(191, 172)
+        Me.TxtFileName.Name = "TxtFileName"
+        Me.TxtFileName.Size = New System.Drawing.Size(157, 26)
+        Me.TxtFileName.TabIndex = 14
+        '
         'Label36
         '
         Me.Label36.AutoSize = True
@@ -549,7 +594,7 @@ Partial Class FrmSearch2
         Me.CHKBatch.Location = New System.Drawing.Point(43, 151)
         Me.CHKBatch.Name = "CHKBatch"
         Me.CHKBatch.Size = New System.Drawing.Size(15, 14)
-        Me.CHKBatch.TabIndex = 87
+        Me.CHKBatch.TabIndex = 11
         Me.CHKBatch.UseVisualStyleBackColor = True
         '
         'Label11
@@ -567,28 +612,28 @@ Partial Class FrmSearch2
         Me.TxtBatch.Location = New System.Drawing.Point(191, 144)
         Me.TxtBatch.Name = "TxtBatch"
         Me.TxtBatch.Size = New System.Drawing.Size(157, 26)
-        Me.TxtBatch.TabIndex = 85
+        Me.TxtBatch.TabIndex = 12
         '
         'TxtBook
         '
         Me.TxtBook.Location = New System.Drawing.Point(191, 117)
         Me.TxtBook.Name = "TxtBook"
         Me.TxtBook.Size = New System.Drawing.Size(157, 26)
-        Me.TxtBook.TabIndex = 66
+        Me.TxtBook.TabIndex = 10
         '
         'TxtBox
         '
         Me.TxtBox.Location = New System.Drawing.Point(191, 90)
         Me.TxtBox.Name = "TxtBox"
         Me.TxtBox.Size = New System.Drawing.Size(157, 26)
-        Me.TxtBox.TabIndex = 65
+        Me.TxtBox.TabIndex = 8
         '
         'TxtRack
         '
         Me.TxtRack.Location = New System.Drawing.Point(191, 63)
         Me.TxtRack.Name = "TxtRack"
         Me.TxtRack.Size = New System.Drawing.Size(157, 26)
-        Me.TxtRack.TabIndex = 64
+        Me.TxtRack.TabIndex = 6
         '
         'CHKScanDate
         '
@@ -596,7 +641,7 @@ Partial Class FrmSearch2
         Me.CHKScanDate.Location = New System.Drawing.Point(43, 270)
         Me.CHKScanDate.Name = "CHKScanDate"
         Me.CHKScanDate.Size = New System.Drawing.Size(15, 14)
-        Me.CHKScanDate.TabIndex = 84
+        Me.CHKScanDate.TabIndex = 18
         Me.CHKScanDate.UseVisualStyleBackColor = True
         '
         'Label8
@@ -635,7 +680,7 @@ Partial Class FrmSearch2
         Me.DTScanDateTo.Location = New System.Drawing.Point(346, 290)
         Me.DTScanDateTo.Name = "DTScanDateTo"
         Me.DTScanDateTo.Size = New System.Drawing.Size(129, 26)
-        Me.DTScanDateTo.TabIndex = 80
+        Me.DTScanDateTo.TabIndex = 20
         '
         'DTScanDateFrom
         '
@@ -643,7 +688,7 @@ Partial Class FrmSearch2
         Me.DTScanDateFrom.Location = New System.Drawing.Point(165, 290)
         Me.DTScanDateFrom.Name = "DTScanDateFrom"
         Me.DTScanDateFrom.Size = New System.Drawing.Size(129, 26)
-        Me.DTScanDateFrom.TabIndex = 79
+        Me.DTScanDateFrom.TabIndex = 19
         '
         'CHKDocType
         '
@@ -651,7 +696,7 @@ Partial Class FrmSearch2
         Me.CHKDocType.Location = New System.Drawing.Point(43, 344)
         Me.CHKDocType.Name = "CHKDocType"
         Me.CHKDocType.Size = New System.Drawing.Size(15, 14)
-        Me.CHKDocType.TabIndex = 78
+        Me.CHKDocType.TabIndex = 21
         Me.CHKDocType.UseVisualStyleBackColor = True
         '
         'CHKDocDate
@@ -660,7 +705,7 @@ Partial Class FrmSearch2
         Me.CHKDocDate.Location = New System.Drawing.Point(43, 206)
         Me.CHKDocDate.Name = "CHKDocDate"
         Me.CHKDocDate.Size = New System.Drawing.Size(15, 14)
-        Me.CHKDocDate.TabIndex = 77
+        Me.CHKDocDate.TabIndex = 15
         Me.CHKDocDate.UseVisualStyleBackColor = True
         '
         'CHKBook
@@ -669,7 +714,7 @@ Partial Class FrmSearch2
         Me.CHKBook.Location = New System.Drawing.Point(43, 124)
         Me.CHKBook.Name = "CHKBook"
         Me.CHKBook.Size = New System.Drawing.Size(15, 14)
-        Me.CHKBook.TabIndex = 76
+        Me.CHKBook.TabIndex = 9
         Me.CHKBook.UseVisualStyleBackColor = True
         '
         'CHKBox
@@ -678,7 +723,7 @@ Partial Class FrmSearch2
         Me.CHKBox.Location = New System.Drawing.Point(43, 97)
         Me.CHKBox.Name = "CHKBox"
         Me.CHKBox.Size = New System.Drawing.Size(15, 14)
-        Me.CHKBox.TabIndex = 75
+        Me.CHKBox.TabIndex = 7
         Me.CHKBox.UseVisualStyleBackColor = True
         '
         'CHKRack
@@ -687,7 +732,7 @@ Partial Class FrmSearch2
         Me.CHKRack.Location = New System.Drawing.Point(43, 70)
         Me.CHKRack.Name = "CHKRack"
         Me.CHKRack.Size = New System.Drawing.Size(15, 14)
-        Me.CHKRack.TabIndex = 74
+        Me.CHKRack.TabIndex = 5
         Me.CHKRack.UseVisualStyleBackColor = True
         '
         'Label7
@@ -767,7 +812,7 @@ Partial Class FrmSearch2
         Me.DTDocDateTo.Location = New System.Drawing.Point(346, 226)
         Me.DTDocDateTo.Name = "DTDocDateTo"
         Me.DTDocDateTo.Size = New System.Drawing.Size(129, 26)
-        Me.DTDocDateTo.TabIndex = 63
+        Me.DTDocDateTo.TabIndex = 17
         '
         'DTDocDateFrom
         '
@@ -775,7 +820,7 @@ Partial Class FrmSearch2
         Me.DTDocDateFrom.Location = New System.Drawing.Point(165, 226)
         Me.DTDocDateFrom.Name = "DTDocDateFrom"
         Me.DTDocDateFrom.Size = New System.Drawing.Size(129, 26)
-        Me.DTDocDateFrom.TabIndex = 62
+        Me.DTDocDateFrom.TabIndex = 16
         '
         'DocumentTypeComboBox
         '
@@ -785,7 +830,7 @@ Partial Class FrmSearch2
         Me.DocumentTypeComboBox.Location = New System.Drawing.Point(195, 337)
         Me.DocumentTypeComboBox.Name = "DocumentTypeComboBox"
         Me.DocumentTypeComboBox.Size = New System.Drawing.Size(384, 28)
-        Me.DocumentTypeComboBox.TabIndex = 60
+        Me.DocumentTypeComboBox.TabIndex = 22
         '
         'DocumentTypeLabel
         '
@@ -799,7 +844,7 @@ Partial Class FrmSearch2
         '
         'TabChanges
         '
-        Me.TabChanges.BackColor = System.Drawing.SystemColors.Control
+        Me.TabChanges.BackColor = System.Drawing.Color.Azure
         Me.TabChanges.Controls.Add(Me.DocumentTypeCombobox2)
         Me.TabChanges.Controls.Add(Me.Label32)
         Me.TabChanges.Controls.Add(Me.TabControl2)
@@ -812,6 +857,7 @@ Partial Class FrmSearch2
         '
         'DocumentTypeCombobox2
         '
+        Me.DocumentTypeCombobox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(164, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.DocumentTypeCombobox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DocumentType", True))
         Me.DocumentTypeCombobox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DocumentTypeCombobox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -819,7 +865,7 @@ Partial Class FrmSearch2
         Me.DocumentTypeCombobox2.Location = New System.Drawing.Point(138, 2)
         Me.DocumentTypeCombobox2.Name = "DocumentTypeCombobox2"
         Me.DocumentTypeCombobox2.Size = New System.Drawing.Size(396, 28)
-        Me.DocumentTypeCombobox2.TabIndex = 29
+        Me.DocumentTypeCombobox2.TabIndex = 23
         '
         'DocsCatalogueBindingSource
         '
@@ -855,7 +901,7 @@ Partial Class FrmSearch2
         Me.TabControl2.Location = New System.Drawing.Point(-1, 33)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(609, 888)
+        Me.TabControl2.Size = New System.Drawing.Size(609, 930)
         Me.TabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl2.TabIndex = 27
         Me.TabControl2.TabStop = False
@@ -869,13 +915,13 @@ Partial Class FrmSearch2
         Me.Timesheet.Location = New System.Drawing.Point(4, 32)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(601, 852)
+        Me.Timesheet.Size = New System.Drawing.Size(601, 894)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
         'GrpTimeSheet
         '
-        Me.GrpTimeSheet.BackColor = System.Drawing.Color.Transparent
+        Me.GrpTimeSheet.BackColor = System.Drawing.Color.Azure
         Me.GrpTimeSheet.Controls.Add(Me.Label12)
         Me.GrpTimeSheet.Controls.Add(Me.Label13)
         Me.GrpTimeSheet.Controls.Add(Me.BoxNoTS)
@@ -896,7 +942,7 @@ Partial Class FrmSearch2
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(595, 846)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(595, 888)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -926,7 +972,7 @@ Partial Class FrmSearch2
         Me.BoxNoTS.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoTS.Name = "BoxNoTS"
         Me.BoxNoTS.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoTS.TabIndex = 7
+        Me.BoxNoTS.TabIndex = 25
         '
         'Label14
         '
@@ -944,7 +990,7 @@ Partial Class FrmSearch2
         Me.RackNoTS.Location = New System.Drawing.Point(158, 27)
         Me.RackNoTS.Name = "RackNoTS"
         Me.RackNoTS.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoTS.TabIndex = 6
+        Me.RackNoTS.TabIndex = 24
         '
         'GroupBox1
         '
@@ -995,7 +1041,7 @@ Partial Class FrmSearch2
         Me.DTToPeriod.Location = New System.Drawing.Point(285, 47)
         Me.DTToPeriod.Name = "DTToPeriod"
         Me.DTToPeriod.Size = New System.Drawing.Size(18, 22)
-        Me.DTToPeriod.TabIndex = 13
+        Me.DTToPeriod.TabIndex = 34
         '
         'FromPeriodTextBox
         '
@@ -1004,7 +1050,7 @@ Partial Class FrmSearch2
         Me.FromPeriodTextBox.Location = New System.Drawing.Point(181, 21)
         Me.FromPeriodTextBox.Name = "FromPeriodTextBox"
         Me.FromPeriodTextBox.Size = New System.Drawing.Size(104, 22)
-        Me.FromPeriodTextBox.TabIndex = 12
+        Me.FromPeriodTextBox.TabIndex = 31
         Me.FromPeriodTextBox.TabStop = False
         Me.FromPeriodTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1013,7 +1059,7 @@ Partial Class FrmSearch2
         Me.DTFromPeriod.Location = New System.Drawing.Point(286, 21)
         Me.DTFromPeriod.Name = "DTFromPeriod"
         Me.DTFromPeriod.Size = New System.Drawing.Size(18, 22)
-        Me.DTFromPeriod.TabIndex = 12
+        Me.DTFromPeriod.TabIndex = 32
         '
         'ToPeriodTextBox
         '
@@ -1022,7 +1068,7 @@ Partial Class FrmSearch2
         Me.ToPeriodTextBox.Location = New System.Drawing.Point(181, 47)
         Me.ToPeriodTextBox.Name = "ToPeriodTextBox"
         Me.ToPeriodTextBox.Size = New System.Drawing.Size(103, 22)
-        Me.ToPeriodTextBox.TabIndex = 29
+        Me.ToPeriodTextBox.TabIndex = 33
         Me.ToPeriodTextBox.TabStop = False
         Me.ToPeriodTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1051,7 +1097,7 @@ Partial Class FrmSearch2
         Me.MiddleNameTextBox.Location = New System.Drawing.Point(158, 151)
         Me.MiddleNameTextBox.Name = "MiddleNameTextBox"
         Me.MiddleNameTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.MiddleNameTextBox.TabIndex = 11
+        Me.MiddleNameTextBox.TabIndex = 30
         '
         'FirstNameLabel
         '
@@ -1069,7 +1115,7 @@ Partial Class FrmSearch2
         Me.FirstNameTextBox.Location = New System.Drawing.Point(158, 128)
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
         Me.FirstNameTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.FirstNameTextBox.TabIndex = 10
+        Me.FirstNameTextBox.TabIndex = 29
         '
         'LastNameLabel
         '
@@ -1087,7 +1133,7 @@ Partial Class FrmSearch2
         Me.LastNameTextBox.Location = New System.Drawing.Point(158, 105)
         Me.LastNameTextBox.Name = "LastNameTextBox"
         Me.LastNameTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.LastNameTextBox.TabIndex = 9
+        Me.LastNameTextBox.TabIndex = 28
         '
         'DocumentDateTS
         '
@@ -1096,7 +1142,7 @@ Partial Class FrmSearch2
         Me.DocumentDateTS.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateTS.Name = "DocumentDateTS"
         Me.DocumentDateTS.Size = New System.Drawing.Size(104, 22)
-        Me.DocumentDateTS.TabIndex = 8
+        Me.DocumentDateTS.TabIndex = 26
         Me.DocumentDateTS.TabStop = False
         Me.DocumentDateTS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1105,7 +1151,7 @@ Partial Class FrmSearch2
         Me.DTDocuTimeSheet.Location = New System.Drawing.Point(263, 73)
         Me.DTDocuTimeSheet.Name = "DTDocuTimeSheet"
         Me.DTDocuTimeSheet.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuTimeSheet.TabIndex = 8
+        Me.DTDocuTimeSheet.TabIndex = 27
         '
         'Label15
         '
@@ -1125,13 +1171,13 @@ Partial Class FrmSearch2
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 32)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(601, 852)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(601, 894)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
         'GrpReceipt
         '
-        Me.GrpReceipt.BackColor = System.Drawing.SystemColors.Control
+        Me.GrpReceipt.BackColor = System.Drawing.Color.Azure
         Me.GrpReceipt.Controls.Add(Me.Label16)
         Me.GrpReceipt.Controls.Add(Me.NONVATregCheckBox)
         Me.GrpReceipt.Controls.Add(Me.VATregCheckBox)
@@ -1166,7 +1212,7 @@ Partial Class FrmSearch2
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(595, 846)
+        Me.GrpReceipt.Size = New System.Drawing.Size(595, 888)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1186,7 +1232,7 @@ Partial Class FrmSearch2
         Me.NONVATregCheckBox.Location = New System.Drawing.Point(413, 49)
         Me.NONVATregCheckBox.Name = "NONVATregCheckBox"
         Me.NONVATregCheckBox.Size = New System.Drawing.Size(160, 24)
-        Me.NONVATregCheckBox.TabIndex = 18
+        Me.NONVATregCheckBox.TabIndex = 31
         Me.NONVATregCheckBox.Text = "NON-VAT Registered"
         Me.NONVATregCheckBox.UseVisualStyleBackColor = True
         '
@@ -1196,7 +1242,7 @@ Partial Class FrmSearch2
         Me.VATregCheckBox.Location = New System.Drawing.Point(413, 27)
         Me.VATregCheckBox.Name = "VATregCheckBox"
         Me.VATregCheckBox.Size = New System.Drawing.Size(127, 24)
-        Me.VATregCheckBox.TabIndex = 17
+        Me.VATregCheckBox.TabIndex = 30
         Me.VATregCheckBox.Text = "VAT Registered"
         Me.VATregCheckBox.UseVisualStyleBackColor = True
         '
@@ -1216,7 +1262,7 @@ Partial Class FrmSearch2
         Me.AddressCTextBox.Location = New System.Drawing.Point(158, 200)
         Me.AddressCTextBox.Name = "AddressCTextBox"
         Me.AddressCTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.AddressCTextBox.TabIndex = 13
+        Me.AddressCTextBox.TabIndex = 35
         '
         'TinCustomerLabel
         '
@@ -1234,7 +1280,7 @@ Partial Class FrmSearch2
         Me.TinCustomerTextBox.Location = New System.Drawing.Point(158, 252)
         Me.TinCustomerTextBox.Name = "TinCustomerTextBox"
         Me.TinCustomerTextBox.Size = New System.Drawing.Size(182, 22)
-        Me.TinCustomerTextBox.TabIndex = 15
+        Me.TinCustomerTextBox.TabIndex = 37
         '
         'TinVendorLabel
         '
@@ -1252,7 +1298,7 @@ Partial Class FrmSearch2
         Me.TinVendorTextBox.Location = New System.Drawing.Point(158, 229)
         Me.TinVendorTextBox.Name = "TinVendorTextBox"
         Me.TinVendorTextBox.Size = New System.Drawing.Size(182, 22)
-        Me.TinVendorTextBox.TabIndex = 14
+        Me.TinVendorTextBox.TabIndex = 36
         '
         'BoxNoLabel
         '
@@ -1270,7 +1316,7 @@ Partial Class FrmSearch2
         Me.BoxNoRI.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoRI.Name = "BoxNoRI"
         Me.BoxNoRI.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoRI.TabIndex = 7
+        Me.BoxNoRI.TabIndex = 25
         '
         'RackNoLabel
         '
@@ -1288,7 +1334,7 @@ Partial Class FrmSearch2
         Me.RackNoRI.Location = New System.Drawing.Point(158, 27)
         Me.RackNoRI.Name = "RackNoRI"
         Me.RackNoRI.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoRI.TabIndex = 6
+        Me.RackNoRI.TabIndex = 24
         '
         'Label17
         '
@@ -1307,7 +1353,7 @@ Partial Class FrmSearch2
         Me.DocumentDateRI.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateRI.Name = "DocumentDateRI"
         Me.DocumentDateRI.Size = New System.Drawing.Size(104, 22)
-        Me.DocumentDateRI.TabIndex = 8
+        Me.DocumentDateRI.TabIndex = 26
         Me.DocumentDateRI.TabStop = False
         Me.DocumentDateRI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1327,7 +1373,7 @@ Partial Class FrmSearch2
         Me.TotalValueRI.Location = New System.Drawing.Point(434, 102)
         Me.TotalValueRI.Name = "TotalValueRI"
         Me.TotalValueRI.Size = New System.Drawing.Size(140, 22)
-        Me.TotalValueRI.TabIndex = 19
+        Me.TotalValueRI.TabIndex = 32
         '
         'ItemPurchasedLabel
         '
@@ -1346,7 +1392,7 @@ Partial Class FrmSearch2
         Me.ItemPurchasedTextBox.Multiline = True
         Me.ItemPurchasedTextBox.Name = "ItemPurchasedTextBox"
         Me.ItemPurchasedTextBox.Size = New System.Drawing.Size(416, 83)
-        Me.ItemPurchasedTextBox.TabIndex = 16
+        Me.ItemPurchasedTextBox.TabIndex = 38
         '
         'CustomerLabel
         '
@@ -1364,7 +1410,7 @@ Partial Class FrmSearch2
         Me.CustomerTextBox.Location = New System.Drawing.Point(158, 177)
         Me.CustomerTextBox.Name = "CustomerTextBox"
         Me.CustomerTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.CustomerTextBox.TabIndex = 12
+        Me.CustomerTextBox.TabIndex = 34
         '
         'VendorLabel
         '
@@ -1382,7 +1428,7 @@ Partial Class FrmSearch2
         Me.VendorTextBox.Location = New System.Drawing.Point(158, 154)
         Me.VendorTextBox.Name = "VendorTextBox"
         Me.VendorTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.VendorTextBox.TabIndex = 11
+        Me.VendorTextBox.TabIndex = 33
         '
         'BookletNoLabel
         '
@@ -1400,14 +1446,14 @@ Partial Class FrmSearch2
         Me.BookletNoTextBox.Location = New System.Drawing.Point(158, 102)
         Me.BookletNoTextBox.Name = "BookletNoTextBox"
         Me.BookletNoTextBox.Size = New System.Drawing.Size(123, 22)
-        Me.BookletNoTextBox.TabIndex = 9
+        Me.BookletNoTextBox.TabIndex = 28
         '
         'DTDocuRI
         '
         Me.DTDocuRI.Location = New System.Drawing.Point(263, 73)
         Me.DTDocuRI.Name = "DTDocuRI"
         Me.DTDocuRI.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuRI.TabIndex = 8
+        Me.DTDocuRI.TabIndex = 27
         '
         'ReferenceNoLabel
         '
@@ -1425,7 +1471,7 @@ Partial Class FrmSearch2
         Me.ReferenceNoRI.Location = New System.Drawing.Point(158, 125)
         Me.ReferenceNoRI.Name = "ReferenceNoRI"
         Me.ReferenceNoRI.Size = New System.Drawing.Size(123, 22)
-        Me.ReferenceNoRI.TabIndex = 10
+        Me.ReferenceNoRI.TabIndex = 29
         '
         'DocumentDateLabel
         '
@@ -1445,12 +1491,13 @@ Partial Class FrmSearch2
         Me.Warranty.Location = New System.Drawing.Point(4, 32)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(601, 852)
+        Me.Warranty.Size = New System.Drawing.Size(601, 894)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
         'GrpWarranty
         '
+        Me.GrpWarranty.BackColor = System.Drawing.Color.Azure
         Me.GrpWarranty.Controls.Add(Me.Label18)
         Me.GrpWarranty.Controls.Add(Me.Label19)
         Me.GrpWarranty.Controls.Add(Me.Label20)
@@ -1487,7 +1534,7 @@ Partial Class FrmSearch2
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(595, 846)
+        Me.GrpWarranty.Size = New System.Drawing.Size(595, 888)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1526,7 +1573,7 @@ Partial Class FrmSearch2
         Me.BoxNoWarranty.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoWarranty.Name = "BoxNoWarranty"
         Me.BoxNoWarranty.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoWarranty.TabIndex = 7
+        Me.BoxNoWarranty.TabIndex = 25
         '
         'Label21
         '
@@ -1544,14 +1591,14 @@ Partial Class FrmSearch2
         Me.RackNoWarranty.Location = New System.Drawing.Point(158, 27)
         Me.RackNoWarranty.Name = "RackNoWarranty"
         Me.RackNoWarranty.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoWarranty.TabIndex = 6
+        Me.RackNoWarranty.TabIndex = 24
         '
         'DTDatePurchased
         '
         Me.DTDatePurchased.Location = New System.Drawing.Point(255, 149)
         Me.DTDatePurchased.Name = "DTDatePurchased"
         Me.DTDatePurchased.Size = New System.Drawing.Size(18, 22)
-        Me.DTDatePurchased.TabIndex = 11
+        Me.DTDatePurchased.TabIndex = 30
         '
         'EmailLabel
         '
@@ -1587,7 +1634,7 @@ Partial Class FrmSearch2
         Me.ContactNoTextBox.Location = New System.Drawing.Point(158, 336)
         Me.ContactNoTextBox.Name = "ContactNoTextBox"
         Me.ContactNoTextBox.Size = New System.Drawing.Size(191, 22)
-        Me.ContactNoTextBox.TabIndex = 17
+        Me.ContactNoTextBox.TabIndex = 36
         '
         'AddressLabel
         '
@@ -1606,7 +1653,7 @@ Partial Class FrmSearch2
         Me.AddressTextBox.Multiline = True
         Me.AddressTextBox.Name = "AddressTextBox"
         Me.AddressTextBox.Size = New System.Drawing.Size(414, 47)
-        Me.AddressTextBox.TabIndex = 16
+        Me.AddressTextBox.TabIndex = 35
         '
         'ServiceCenterLabel
         '
@@ -1624,7 +1671,7 @@ Partial Class FrmSearch2
         Me.ServiceCenterTextBox.Location = New System.Drawing.Point(158, 258)
         Me.ServiceCenterTextBox.Name = "ServiceCenterTextBox"
         Me.ServiceCenterTextBox.Size = New System.Drawing.Size(414, 22)
-        Me.ServiceCenterTextBox.TabIndex = 15
+        Me.ServiceCenterTextBox.TabIndex = 34
         '
         'WarrantyPeriodLabel
         '
@@ -1642,7 +1689,7 @@ Partial Class FrmSearch2
         Me.WarrantyPeriodTextBox.Location = New System.Drawing.Point(158, 227)
         Me.WarrantyPeriodTextBox.Name = "WarrantyPeriodTextBox"
         Me.WarrantyPeriodTextBox.Size = New System.Drawing.Size(140, 22)
-        Me.WarrantyPeriodTextBox.TabIndex = 14
+        Me.WarrantyPeriodTextBox.TabIndex = 33
         '
         'SerialLabel
         '
@@ -1660,7 +1707,7 @@ Partial Class FrmSearch2
         Me.SerialTextBox.Location = New System.Drawing.Point(158, 126)
         Me.SerialTextBox.Name = "SerialTextBox"
         Me.SerialTextBox.Size = New System.Drawing.Size(303, 22)
-        Me.SerialTextBox.TabIndex = 10
+        Me.SerialTextBox.TabIndex = 28
         '
         'TotalValueLabel1
         '
@@ -1696,7 +1743,7 @@ Partial Class FrmSearch2
         Me.ReferenceNoTextBox1.Location = New System.Drawing.Point(158, 181)
         Me.ReferenceNoTextBox1.Name = "ReferenceNoTextBox1"
         Me.ReferenceNoTextBox1.Size = New System.Drawing.Size(140, 22)
-        Me.ReferenceNoTextBox1.TabIndex = 12
+        Me.ReferenceNoTextBox1.TabIndex = 31
         '
         'DatePurchasedLabel
         '
@@ -1714,7 +1761,7 @@ Partial Class FrmSearch2
         Me.DatePurchasedTextBox.Location = New System.Drawing.Point(158, 149)
         Me.DatePurchasedTextBox.Name = "DatePurchasedTextBox"
         Me.DatePurchasedTextBox.Size = New System.Drawing.Size(95, 22)
-        Me.DatePurchasedTextBox.TabIndex = 7
+        Me.DatePurchasedTextBox.TabIndex = 29
         Me.DatePurchasedTextBox.TabStop = False
         Me.DatePurchasedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1734,7 +1781,7 @@ Partial Class FrmSearch2
         Me.ProductTypeTextBox.Location = New System.Drawing.Point(158, 103)
         Me.ProductTypeTextBox.Name = "ProductTypeTextBox"
         Me.ProductTypeTextBox.Size = New System.Drawing.Size(303, 22)
-        Me.ProductTypeTextBox.TabIndex = 9
+        Me.ProductTypeTextBox.TabIndex = 27
         '
         'ProductBrandLabel
         '
@@ -1752,7 +1799,7 @@ Partial Class FrmSearch2
         Me.ProductBrandTextBox.Location = New System.Drawing.Point(158, 80)
         Me.ProductBrandTextBox.Name = "ProductBrandTextBox"
         Me.ProductBrandTextBox.Size = New System.Drawing.Size(303, 22)
-        Me.ProductBrandTextBox.TabIndex = 8
+        Me.ProductBrandTextBox.TabIndex = 26
         '
         'WarrantyNoLabel
         '
@@ -1770,7 +1817,7 @@ Partial Class FrmSearch2
         Me.WarrantyNoTextBox.Location = New System.Drawing.Point(158, 204)
         Me.WarrantyNoTextBox.Name = "WarrantyNoTextBox"
         Me.WarrantyNoTextBox.Size = New System.Drawing.Size(140, 22)
-        Me.WarrantyNoTextBox.TabIndex = 13
+        Me.WarrantyNoTextBox.TabIndex = 32
         '
         'Voucher
         '
@@ -1780,12 +1827,13 @@ Partial Class FrmSearch2
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 32)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(601, 852)
+        Me.Voucher.Size = New System.Drawing.Size(601, 894)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
         'GrpVoucher
         '
+        Me.GrpVoucher.BackColor = System.Drawing.Color.Azure
         Me.GrpVoucher.Controls.Add(Me.Label31)
         Me.GrpVoucher.Controls.Add(Me.Label22)
         Me.GrpVoucher.Controls.Add(Me.DTDateReceived)
@@ -1822,7 +1870,7 @@ Partial Class FrmSearch2
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(601, 852)
+        Me.GrpVoucher.Size = New System.Drawing.Size(601, 894)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -1868,7 +1916,7 @@ Partial Class FrmSearch2
         Me.BoxNoVoucher.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoVoucher.Name = "BoxNoVoucher"
         Me.BoxNoVoucher.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoVoucher.TabIndex = 7
+        Me.BoxNoVoucher.TabIndex = 25
         '
         'Label24
         '
@@ -1886,7 +1934,7 @@ Partial Class FrmSearch2
         Me.RackNoVoucher.Location = New System.Drawing.Point(158, 27)
         Me.RackNoVoucher.Name = "RackNoVoucher"
         Me.RackNoVoucher.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoVoucher.TabIndex = 6
+        Me.RackNoVoucher.TabIndex = 24
         '
         'DateReceivedLabel
         '
@@ -1923,7 +1971,7 @@ Partial Class FrmSearch2
         Me.DTDocuVoucher.Location = New System.Drawing.Point(259, 73)
         Me.DTDocuVoucher.Name = "DTDocuVoucher"
         Me.DTDocuVoucher.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuVoucher.TabIndex = 8
+        Me.DTDocuVoucher.TabIndex = 27
         '
         'ReceivedbyLabel
         '
@@ -2018,7 +2066,7 @@ Partial Class FrmSearch2
         Me.PayorTextBox.Location = New System.Drawing.Point(158, 126)
         Me.PayorTextBox.Name = "PayorTextBox"
         Me.PayorTextBox.Size = New System.Drawing.Size(406, 22)
-        Me.PayorTextBox.TabIndex = 10
+        Me.PayorTextBox.TabIndex = 29
         '
         'PayeeLabel
         '
@@ -2037,7 +2085,7 @@ Partial Class FrmSearch2
         Me.PayeeTextBox.Location = New System.Drawing.Point(158, 103)
         Me.PayeeTextBox.Name = "PayeeTextBox"
         Me.PayeeTextBox.Size = New System.Drawing.Size(406, 22)
-        Me.PayeeTextBox.TabIndex = 9
+        Me.PayeeTextBox.TabIndex = 28
         '
         'TotalValueLabel2
         '
@@ -2056,7 +2104,7 @@ Partial Class FrmSearch2
         Me.TotalValueVoucher.Location = New System.Drawing.Point(158, 326)
         Me.TotalValueVoucher.Name = "TotalValueVoucher"
         Me.TotalValueVoucher.Size = New System.Drawing.Size(183, 22)
-        Me.TotalValueVoucher.TabIndex = 16
+        Me.TotalValueVoucher.TabIndex = 35
         '
         'PaymentFormLabel
         '
@@ -2085,7 +2133,7 @@ Partial Class FrmSearch2
         Me.VoucherNoTextBox.Location = New System.Drawing.Point(158, 149)
         Me.VoucherNoTextBox.Name = "VoucherNoTextBox"
         Me.VoucherNoTextBox.Size = New System.Drawing.Size(183, 22)
-        Me.VoucherNoTextBox.TabIndex = 11
+        Me.VoucherNoTextBox.TabIndex = 30
         '
         'DocumentDateLabel1
         '
@@ -2105,7 +2153,7 @@ Partial Class FrmSearch2
         Me.DocumentDateVoucher.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateVoucher.Name = "DocumentDateVoucher"
         Me.DocumentDateVoucher.Size = New System.Drawing.Size(100, 22)
-        Me.DocumentDateVoucher.TabIndex = 1
+        Me.DocumentDateVoucher.TabIndex = 26
         Me.DocumentDateVoucher.TabStop = False
         Me.DocumentDateVoucher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -2125,7 +2173,7 @@ Partial Class FrmSearch2
         'BankDepo
         '
         Me.BankDepo.AutoScroll = True
-        Me.BankDepo.BackColor = System.Drawing.SystemColors.Control
+        Me.BankDepo.BackColor = System.Drawing.Color.Azure
         Me.BankDepo.Controls.Add(Me.BankAddressLabel)
         Me.BankDepo.Controls.Add(Me.BankAddressTextBox)
         Me.BankDepo.Controls.Add(Me.BankBranchLabel)
@@ -2155,7 +2203,7 @@ Partial Class FrmSearch2
         Me.BankAddressTextBox.Multiline = True
         Me.BankAddressTextBox.Name = "BankAddressTextBox"
         Me.BankAddressTextBox.Size = New System.Drawing.Size(367, 46)
-        Me.BankAddressTextBox.TabIndex = 15
+        Me.BankAddressTextBox.TabIndex = 34
         '
         'BankBranchLabel
         '
@@ -2172,7 +2220,7 @@ Partial Class FrmSearch2
         Me.BankBranchTextBox.Location = New System.Drawing.Point(154, 25)
         Me.BankBranchTextBox.Name = "BankBranchTextBox"
         Me.BankBranchTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.BankBranchTextBox.TabIndex = 14
+        Me.BankBranchTextBox.TabIndex = 33
         '
         'BankNameLabel
         '
@@ -2189,12 +2237,12 @@ Partial Class FrmSearch2
         Me.BankNameTextBox.Location = New System.Drawing.Point(154, 2)
         Me.BankNameTextBox.Name = "BankNameTextBox"
         Me.BankNameTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.BankNameTextBox.TabIndex = 13
+        Me.BankNameTextBox.TabIndex = 32
         '
         'Others
         '
         Me.Others.AutoScroll = True
-        Me.Others.BackColor = System.Drawing.SystemColors.Control
+        Me.Others.BackColor = System.Drawing.Color.Azure
         Me.Others.Controls.Add(Me.PaymentOthersLabel)
         Me.Others.Controls.Add(Me.PaymentOthersTextBox)
         Me.Others.Location = New System.Drawing.Point(4, 28)
@@ -2219,11 +2267,11 @@ Partial Class FrmSearch2
         Me.PaymentOthersTextBox.Location = New System.Drawing.Point(154, 4)
         Me.PaymentOthersTextBox.Name = "PaymentOthersTextBox"
         Me.PaymentOthersTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.PaymentOthersTextBox.TabIndex = 13
+        Me.PaymentOthersTextBox.TabIndex = 32
         '
         'Check
         '
-        Me.Check.BackColor = System.Drawing.SystemColors.Control
+        Me.Check.BackColor = System.Drawing.Color.Azure
         Me.Check.Controls.Add(Me.CheckNoTextBox)
         Me.Check.Controls.Add(Me.CheckNoLabel)
         Me.Check.Location = New System.Drawing.Point(4, 28)
@@ -2238,7 +2286,7 @@ Partial Class FrmSearch2
         Me.CheckNoTextBox.Location = New System.Drawing.Point(154, 4)
         Me.CheckNoTextBox.Name = "CheckNoTextBox"
         Me.CheckNoTextBox.Size = New System.Drawing.Size(367, 22)
-        Me.CheckNoTextBox.TabIndex = 13
+        Me.CheckNoTextBox.TabIndex = 32
         '
         'CheckNoLabel
         '
@@ -2258,13 +2306,13 @@ Partial Class FrmSearch2
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 32)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(601, 852)
+        Me.CorpDocu.Size = New System.Drawing.Size(601, 894)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
         'GrpCorp
         '
-        Me.GrpCorp.BackColor = System.Drawing.SystemColors.Control
+        Me.GrpCorp.BackColor = System.Drawing.Color.Azure
         Me.GrpCorp.Controls.Add(Me.TabControl4)
         Me.GrpCorp.Controls.Add(Me.Label26)
         Me.GrpCorp.Controls.Add(Me.Label27)
@@ -2281,7 +2329,7 @@ Partial Class FrmSearch2
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(601, 852)
+        Me.GrpCorp.Size = New System.Drawing.Size(601, 894)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2296,10 +2344,11 @@ Partial Class FrmSearch2
         Me.TabControl4.SelectedIndex = 0
         Me.TabControl4.Size = New System.Drawing.Size(590, 129)
         Me.TabControl4.TabIndex = 46
+        Me.TabControl4.TabStop = False
         '
         'TabMeeting
         '
-        Me.TabMeeting.BackColor = System.Drawing.SystemColors.Control
+        Me.TabMeeting.BackColor = System.Drawing.Color.Azure
         Me.TabMeeting.Controls.Add(Me.Label25)
         Me.TabMeeting.Controls.Add(Me.DTMeetingDate)
         Me.TabMeeting.Controls.Add(Me.MeetingDateLabel)
@@ -2320,7 +2369,7 @@ Partial Class FrmSearch2
         Me.DTMeetingDate.Location = New System.Drawing.Point(255, 5)
         Me.DTMeetingDate.Name = "DTMeetingDate"
         Me.DTMeetingDate.Size = New System.Drawing.Size(18, 22)
-        Me.DTMeetingDate.TabIndex = 41
+        Me.DTMeetingDate.TabIndex = 29
         '
         'MeetingDateTextBox
         '
@@ -2329,7 +2378,7 @@ Partial Class FrmSearch2
         Me.MeetingDateTextBox.Location = New System.Drawing.Point(154, 5)
         Me.MeetingDateTextBox.Name = "MeetingDateTextBox"
         Me.MeetingDateTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.MeetingDateTextBox.TabIndex = 40
+        Me.MeetingDateTextBox.TabIndex = 28
         Me.MeetingDateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SecretaryTextBox
@@ -2339,7 +2388,7 @@ Partial Class FrmSearch2
         Me.SecretaryTextBox.Location = New System.Drawing.Point(154, 51)
         Me.SecretaryTextBox.Name = "SecretaryTextBox"
         Me.SecretaryTextBox.Size = New System.Drawing.Size(229, 22)
-        Me.SecretaryTextBox.TabIndex = 43
+        Me.SecretaryTextBox.TabIndex = 31
         '
         'CompanyTextBox
         '
@@ -2348,11 +2397,11 @@ Partial Class FrmSearch2
         Me.CompanyTextBox.Location = New System.Drawing.Point(154, 28)
         Me.CompanyTextBox.Name = "CompanyTextBox"
         Me.CompanyTextBox.Size = New System.Drawing.Size(374, 22)
-        Me.CompanyTextBox.TabIndex = 42
+        Me.CompanyTextBox.TabIndex = 30
         '
         'TabPromo
         '
-        Me.TabPromo.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPromo.BackColor = System.Drawing.Color.Azure
         Me.TabPromo.Controls.Add(Me.Label33)
         Me.TabPromo.Controls.Add(Me.Label34)
         Me.TabPromo.Controls.Add(Me.DTPromoTo)
@@ -2377,14 +2426,14 @@ Partial Class FrmSearch2
         Me.DTPromoTo.Location = New System.Drawing.Point(255, 50)
         Me.DTPromoTo.Name = "DTPromoTo"
         Me.DTPromoTo.Size = New System.Drawing.Size(18, 22)
-        Me.DTPromoTo.TabIndex = 54
+        Me.DTPromoTo.TabIndex = 32
         '
         'DTPromoFrom
         '
         Me.DTPromoFrom.Location = New System.Drawing.Point(255, 28)
         Me.DTPromoFrom.Name = "DTPromoFrom"
         Me.DTPromoFrom.Size = New System.Drawing.Size(18, 22)
-        Me.DTPromoFrom.TabIndex = 53
+        Me.DTPromoFrom.TabIndex = 30
         '
         'DTIPermitNoTextBox
         '
@@ -2392,7 +2441,7 @@ Partial Class FrmSearch2
         Me.DTIPermitNoTextBox.Location = New System.Drawing.Point(154, 73)
         Me.DTIPermitNoTextBox.Name = "DTIPermitNoTextBox"
         Me.DTIPermitNoTextBox.Size = New System.Drawing.Size(229, 22)
-        Me.DTIPermitNoTextBox.TabIndex = 52
+        Me.DTIPermitNoTextBox.TabIndex = 33
         '
         'PromoToTextBox
         '
@@ -2400,7 +2449,7 @@ Partial Class FrmSearch2
         Me.PromoToTextBox.Location = New System.Drawing.Point(154, 50)
         Me.PromoToTextBox.Name = "PromoToTextBox"
         Me.PromoToTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.PromoToTextBox.TabIndex = 51
+        Me.PromoToTextBox.TabIndex = 31
         '
         'PromoFromTextBox
         '
@@ -2408,7 +2457,7 @@ Partial Class FrmSearch2
         Me.PromoFromTextBox.Location = New System.Drawing.Point(154, 27)
         Me.PromoFromTextBox.Name = "PromoFromTextBox"
         Me.PromoFromTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.PromoFromTextBox.TabIndex = 49
+        Me.PromoFromTextBox.TabIndex = 29
         '
         'PromoTitleTextBox
         '
@@ -2416,11 +2465,11 @@ Partial Class FrmSearch2
         Me.PromoTitleTextBox.Location = New System.Drawing.Point(154, 4)
         Me.PromoTitleTextBox.Name = "PromoTitleTextBox"
         Me.PromoTitleTextBox.Size = New System.Drawing.Size(344, 22)
-        Me.PromoTitleTextBox.TabIndex = 47
+        Me.PromoTitleTextBox.TabIndex = 28
         '
         'TabMeeting2
         '
-        Me.TabMeeting2.BackColor = System.Drawing.SystemColors.Control
+        Me.TabMeeting2.BackColor = System.Drawing.Color.Azure
         Me.TabMeeting2.Controls.Add(Me.Label35)
         Me.TabMeeting2.Controls.Add(Me.TextBox1)
         Me.TabMeeting2.Location = New System.Drawing.Point(4, 25)
@@ -2446,7 +2495,7 @@ Partial Class FrmSearch2
         Me.TextBox1.Location = New System.Drawing.Point(154, 4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(374, 22)
-        Me.TextBox1.TabIndex = 44
+        Me.TextBox1.TabIndex = 28
         '
         'Label26
         '
@@ -2473,7 +2522,7 @@ Partial Class FrmSearch2
         Me.BoxNoCorpDocu.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoCorpDocu.Name = "BoxNoCorpDocu"
         Me.BoxNoCorpDocu.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoCorpDocu.TabIndex = 7
+        Me.BoxNoCorpDocu.TabIndex = 25
         '
         'Label28
         '
@@ -2491,14 +2540,14 @@ Partial Class FrmSearch2
         Me.RackNoCorpDocu.Location = New System.Drawing.Point(158, 27)
         Me.RackNoCorpDocu.Name = "RackNoCorpDocu"
         Me.RackNoCorpDocu.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoCorpDocu.TabIndex = 6
+        Me.RackNoCorpDocu.TabIndex = 24
         '
         'DTDocuCorp
         '
         Me.DTDocuCorp.Location = New System.Drawing.Point(259, 73)
         Me.DTDocuCorp.Name = "DTDocuCorp"
         Me.DTDocuCorp.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuCorp.TabIndex = 8
+        Me.DTDocuCorp.TabIndex = 27
         '
         'PurposeLabel
         '
@@ -2516,7 +2565,7 @@ Partial Class FrmSearch2
         Me.PurposeTextBox.Location = New System.Drawing.Point(158, 225)
         Me.PurposeTextBox.Name = "PurposeTextBox"
         Me.PurposeTextBox.Size = New System.Drawing.Size(416, 22)
-        Me.PurposeTextBox.TabIndex = 12
+        Me.PurposeTextBox.TabIndex = 34
         '
         'DocumentDateLabel2
         '
@@ -2535,7 +2584,7 @@ Partial Class FrmSearch2
         Me.DocumentDateCorp.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateCorp.Name = "DocumentDateCorp"
         Me.DocumentDateCorp.Size = New System.Drawing.Size(100, 22)
-        Me.DocumentDateCorp.TabIndex = 1
+        Me.DocumentDateCorp.TabIndex = 26
         Me.DocumentDateCorp.TabStop = False
         Me.DocumentDateCorp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -2859,6 +2908,10 @@ Partial Class FrmSearch2
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents C1TrueDBGrid2 As C1.Win.C1TrueDBGrid.C1TrueDBGrid
     Friend WithEvents Label36 As Label
+    Friend WithEvents CHKFileName As CheckBox
+    Friend WithEvents sdasd As Label
+    Friend WithEvents TxtFileName As TextBox
+
 End Class
 
 

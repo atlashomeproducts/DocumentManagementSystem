@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmIndex
-    Inherits System.Windows.Forms.Form
+    Inherits C1.Win.C1Ribbon.C1RibbonForm
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -22,8 +22,8 @@ Partial Class FrmIndex
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmIndex))
         Dim DocumentTypeLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmIndex))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
@@ -33,6 +33,13 @@ Partial Class FrmIndex
         Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
         Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtPurpose = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtCompany = New System.Windows.Forms.TextBox()
+        Me.DocumentTypeComboBox = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -46,13 +53,6 @@ Partial Class FrmIndex
         Me.batchIdTextBox = New System.Windows.Forms.TextBox()
         Me.BtnIndex = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.DocumentTypeComboBox = New System.Windows.Forms.ComboBox()
-        Me.txtCompany = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.txtPurpose = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -68,6 +68,16 @@ Partial Class FrmIndex
         Me.SplitContainer3.SuspendLayout()
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'DocumentTypeLabel
+        '
+        DocumentTypeLabel.AutoSize = True
+        DocumentTypeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DocumentTypeLabel.Location = New System.Drawing.Point(4, 8)
+        DocumentTypeLabel.Name = "DocumentTypeLabel"
+        DocumentTypeLabel.Size = New System.Drawing.Size(112, 16)
+        DocumentTypeLabel.TabIndex = 30
+        DocumentTypeLabel.Text = "Document Type:*"
         '
         'SplitContainer1
         '
@@ -103,6 +113,7 @@ Partial Class FrmIndex
         '
         'SplitContainer2.Panel2
         '
+        Me.SplitContainer2.Panel2.BackColor = System.Drawing.Color.Azure
         Me.SplitContainer2.Panel2.Controls.Add(Me.Splitter2)
         Me.SplitContainer2.Panel2.Controls.Add(Me.BtnRemove)
         Me.SplitContainer2.Panel2.Controls.Add(Me.BtnBrowse)
@@ -131,24 +142,28 @@ Partial Class FrmIndex
         'BtnRemove
         '
         Me.BtnRemove.AutoSize = True
+        Me.BtnRemove.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnRemove.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRemove.Location = New System.Drawing.Point(224, 12)
         Me.BtnRemove.Name = "BtnRemove"
         Me.BtnRemove.Size = New System.Drawing.Size(191, 39)
         Me.BtnRemove.TabIndex = 2
         Me.BtnRemove.Text = "REMOVE"
-        Me.BtnRemove.UseVisualStyleBackColor = True
+        Me.BtnRemove.UseVisualStyleBackColor = False
         '
         'BtnBrowse
         '
         Me.BtnBrowse.AutoSize = True
+        Me.BtnBrowse.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnBrowse.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBrowse.Location = New System.Drawing.Point(9, 12)
         Me.BtnBrowse.Name = "BtnBrowse"
         Me.BtnBrowse.Size = New System.Drawing.Size(191, 39)
         Me.BtnBrowse.TabIndex = 0
         Me.BtnBrowse.Text = "BROWSE"
-        Me.BtnBrowse.UseVisualStyleBackColor = True
+        Me.BtnBrowse.UseVisualStyleBackColor = False
         '
         'Splitter1
         '
@@ -171,6 +186,7 @@ Partial Class FrmIndex
         '
         'SplitContainer3.Panel2
         '
+        Me.SplitContainer3.Panel2.BackColor = System.Drawing.Color.Azure
         Me.SplitContainer3.Panel2.Controls.Add(Me.Label9)
         Me.SplitContainer3.Panel2.Controls.Add(Me.Label8)
         Me.SplitContainer3.Panel2.Controls.Add(Me.txtPurpose)
@@ -205,6 +221,75 @@ Partial Class FrmIndex
         Me.AxAcroPDF1.Size = New System.Drawing.Size(450, 332)
         Me.AxAcroPDF1.TabIndex = 8
         Me.AxAcroPDF1.TabStop = False
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(4, 80)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(67, 16)
+        Me.Label9.TabIndex = 37
+        Me.Label9.Text = "Purpose:*"
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(4, 59)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(45, 16)
+        Me.Label8.TabIndex = 36
+        Me.Label8.Text = "Date:*"
+        '
+        'txtPurpose
+        '
+        Me.txtPurpose.Location = New System.Drawing.Point(126, 77)
+        Me.txtPurpose.Name = "txtPurpose"
+        Me.txtPurpose.Size = New System.Drawing.Size(315, 22)
+        Me.txtPurpose.TabIndex = 35
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CustomFormat = "yyyyMMMdd"
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(126, 54)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(185, 22)
+        Me.DateTimePicker1.TabIndex = 34
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(4, 34)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(114, 16)
+        Me.Label4.TabIndex = 33
+        Me.Label4.Text = "Company Name:*"
+        '
+        'txtCompany
+        '
+        Me.txtCompany.Location = New System.Drawing.Point(126, 31)
+        Me.txtCompany.Name = "txtCompany"
+        Me.txtCompany.Size = New System.Drawing.Size(315, 22)
+        Me.txtCompany.TabIndex = 32
+        '
+        'DocumentTypeComboBox
+        '
+        Me.DocumentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.DocumentTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DocumentTypeComboBox.FormattingEnabled = True
+        Me.DocumentTypeComboBox.Location = New System.Drawing.Point(126, 5)
+        Me.DocumentTypeComboBox.Name = "DocumentTypeComboBox"
+        Me.DocumentTypeComboBox.Size = New System.Drawing.Size(315, 24)
+        Me.DocumentTypeComboBox.TabIndex = 31
         '
         'Label3
         '
@@ -265,7 +350,7 @@ Partial Class FrmIndex
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(119, 19)
         Me.Label5.TabIndex = 27
-        Me.Label5.Text = "Sub Batch Name:*"
+        Me.Label5.Text = "Sub Batch Name:"
         '
         'SubBatchTextbox
         '
@@ -316,95 +401,18 @@ Partial Class FrmIndex
         '
         'BtnIndex
         '
+        Me.BtnIndex.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnIndex.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnIndex.Location = New System.Drawing.Point(292, 199)
         Me.BtnIndex.Name = "BtnIndex"
         Me.BtnIndex.Size = New System.Drawing.Size(149, 38)
         Me.BtnIndex.TabIndex = 26
         Me.BtnIndex.Text = "INDEX FILES"
-        Me.BtnIndex.UseVisualStyleBackColor = True
+        Me.BtnIndex.UseVisualStyleBackColor = False
         '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'DocumentTypeComboBox
-        '
-        Me.DocumentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.DocumentTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DocumentTypeComboBox.FormattingEnabled = True
-        Me.DocumentTypeComboBox.Location = New System.Drawing.Point(126, 5)
-        Me.DocumentTypeComboBox.Name = "DocumentTypeComboBox"
-        Me.DocumentTypeComboBox.Size = New System.Drawing.Size(315, 24)
-        Me.DocumentTypeComboBox.TabIndex = 31
-        '
-        'DocumentTypeLabel
-        '
-        DocumentTypeLabel.AutoSize = True
-        DocumentTypeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DocumentTypeLabel.Location = New System.Drawing.Point(4, 8)
-        DocumentTypeLabel.Name = "DocumentTypeLabel"
-        DocumentTypeLabel.Size = New System.Drawing.Size(112, 16)
-        DocumentTypeLabel.TabIndex = 30
-        DocumentTypeLabel.Text = "Document Type:*"
-        '
-        'txtCompany
-        '
-        Me.txtCompany.Location = New System.Drawing.Point(126, 31)
-        Me.txtCompany.Name = "txtCompany"
-        Me.txtCompany.Size = New System.Drawing.Size(315, 22)
-        Me.txtCompany.TabIndex = 32
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(4, 34)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(114, 16)
-        Me.Label4.TabIndex = 33
-        Me.Label4.Text = "Company Name:*"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CustomFormat = "yyyyMMMdd"
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(126, 54)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(185, 22)
-        Me.DateTimePicker1.TabIndex = 34
-        '
-        'txtPurpose
-        '
-        Me.txtPurpose.Location = New System.Drawing.Point(126, 77)
-        Me.txtPurpose.Name = "txtPurpose"
-        Me.txtPurpose.Size = New System.Drawing.Size(315, 22)
-        Me.txtPurpose.TabIndex = 35
-        '
-        'Label8
-        '
-        Me.Label8.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(4, 59)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(45, 16)
-        Me.Label8.TabIndex = 36
-        Me.Label8.Text = "Date:*"
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(4, 80)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(67, 16)
-        Me.Label9.TabIndex = 37
-        Me.Label9.Text = "Purpose:*"
         '
         'FrmIndex
         '
@@ -412,6 +420,7 @@ Partial Class FrmIndex
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackgroundColor = System.Drawing.Color.GhostWhite
         Me.ClientSize = New System.Drawing.Size(873, 580)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

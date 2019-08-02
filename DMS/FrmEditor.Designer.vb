@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmEditor
-    Inherits System.Windows.Forms.Form
+    Inherits C1.Win.C1Ribbon.C1RibbonForm
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -1088,6 +1088,7 @@ Partial Class FrmEditor
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.AutoScroll = True
+        Me.SplitContainer2.Panel2.BackColor = System.Drawing.Color.Azure
         Me.SplitContainer2.Panel2.Controls.Add(Me.BtnCancel1)
         Me.SplitContainer2.Panel2.Controls.Add(Me.BtnRemove)
         Me.SplitContainer2.Panel2.Controls.Add(Me.IdTextBox)
@@ -1142,21 +1143,25 @@ Partial Class FrmEditor
         '
         'BtnCancel1
         '
+        Me.BtnCancel1.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnCancel1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnCancel1.Location = New System.Drawing.Point(97, 8)
         Me.BtnCancel1.Name = "BtnCancel1"
         Me.BtnCancel1.Size = New System.Drawing.Size(92, 27)
         Me.BtnCancel1.TabIndex = 28
         Me.BtnCancel1.Text = "Cancel"
-        Me.BtnCancel1.UseVisualStyleBackColor = True
+        Me.BtnCancel1.UseVisualStyleBackColor = False
         '
         'BtnRemove
         '
+        Me.BtnRemove.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnRemove.Location = New System.Drawing.Point(362, 8)
         Me.BtnRemove.Name = "BtnRemove"
         Me.BtnRemove.Size = New System.Drawing.Size(92, 27)
         Me.BtnRemove.TabIndex = 27
         Me.BtnRemove.Text = "Remove"
-        Me.BtnRemove.UseVisualStyleBackColor = True
+        Me.BtnRemove.UseVisualStyleBackColor = False
         '
         'IdTextBox
         '
@@ -1169,12 +1174,14 @@ Partial Class FrmEditor
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Location = New System.Drawing.Point(453, 8)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(92, 27)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Refresh List"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'TabControl1
         '
@@ -1196,6 +1203,7 @@ Partial Class FrmEditor
         '
         Me.Timesheet.AutoScroll = True
         Me.Timesheet.AutoScrollMinSize = New System.Drawing.Size(0, 300)
+        Me.Timesheet.BackColor = System.Drawing.Color.GhostWhite
         Me.Timesheet.Controls.Add(Me.GrpTimeSheet)
         Me.Timesheet.Location = New System.Drawing.Point(4, 25)
         Me.Timesheet.Name = "Timesheet"
@@ -1203,11 +1211,10 @@ Partial Class FrmEditor
         Me.Timesheet.Size = New System.Drawing.Size(633, 275)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
-        Me.Timesheet.UseVisualStyleBackColor = True
         '
         'GrpTimeSheet
         '
-        Me.GrpTimeSheet.BackColor = System.Drawing.Color.Transparent
+        Me.GrpTimeSheet.BackColor = System.Drawing.Color.Azure
         Me.GrpTimeSheet.Controls.Add(Label12)
         Me.GrpTimeSheet.Controls.Add(Label2)
         Me.GrpTimeSheet.Controls.Add(Me.BoxNoTS)
@@ -1228,7 +1235,7 @@ Partial Class FrmEditor
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(610, 297)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(610, 294)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1350,6 +1357,7 @@ Partial Class FrmEditor
         '
         Me.ReceiptInvoice.AutoScroll = True
         Me.ReceiptInvoice.AutoScrollMinSize = New System.Drawing.Size(0, 400)
+        Me.ReceiptInvoice.BackColor = System.Drawing.Color.GhostWhite
         Me.ReceiptInvoice.Controls.Add(Me.GrpReceipt)
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 25)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
@@ -1357,10 +1365,10 @@ Partial Class FrmEditor
         Me.ReceiptInvoice.Size = New System.Drawing.Size(633, 275)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
-        Me.ReceiptInvoice.UseVisualStyleBackColor = True
         '
         'GrpReceipt
         '
+        Me.GrpReceipt.BackColor = System.Drawing.Color.Azure
         Me.GrpReceipt.Controls.Add(Label13)
         Me.GrpReceipt.Controls.Add(Me.NONVATregCheckBox)
         Me.GrpReceipt.Controls.Add(Me.VATregCheckBox)
@@ -1395,7 +1403,7 @@ Partial Class FrmEditor
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(610, 397)
+        Me.GrpReceipt.Size = New System.Drawing.Size(610, 394)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1541,6 +1549,7 @@ Partial Class FrmEditor
         '
         Me.Warranty.AutoScroll = True
         Me.Warranty.AutoScrollMinSize = New System.Drawing.Size(0, 420)
+        Me.Warranty.BackColor = System.Drawing.Color.GhostWhite
         Me.Warranty.Controls.Add(Me.GrpWarranty)
         Me.Warranty.Location = New System.Drawing.Point(4, 25)
         Me.Warranty.Name = "Warranty"
@@ -1548,10 +1557,10 @@ Partial Class FrmEditor
         Me.Warranty.Size = New System.Drawing.Size(633, 275)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
-        Me.Warranty.UseVisualStyleBackColor = True
         '
         'GrpWarranty
         '
+        Me.GrpWarranty.BackColor = System.Drawing.Color.Azure
         Me.GrpWarranty.Controls.Add(Label14)
         Me.GrpWarranty.Controls.Add(Label6)
         Me.GrpWarranty.Controls.Add(Label4)
@@ -1732,16 +1741,17 @@ Partial Class FrmEditor
         '
         Me.Voucher.AutoScroll = True
         Me.Voucher.AutoScrollMinSize = New System.Drawing.Size(0, 500)
+        Me.Voucher.BackColor = System.Drawing.Color.GhostWhite
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 25)
         Me.Voucher.Name = "Voucher"
         Me.Voucher.Size = New System.Drawing.Size(633, 275)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
-        Me.Voucher.UseVisualStyleBackColor = True
         '
         'GrpVoucher
         '
+        Me.GrpVoucher.BackColor = System.Drawing.Color.Azure
         Me.GrpVoucher.Controls.Add(Label20)
         Me.GrpVoucher.Controls.Add(Label15)
         Me.GrpVoucher.Controls.Add(Me.DTDateReceived)
@@ -1933,7 +1943,7 @@ Partial Class FrmEditor
         'BankDepo
         '
         Me.BankDepo.AutoScroll = True
-        Me.BankDepo.BackColor = System.Drawing.SystemColors.Control
+        Me.BankDepo.BackColor = System.Drawing.Color.Azure
         Me.BankDepo.Controls.Add(BankAddressLabel)
         Me.BankDepo.Controls.Add(Me.BankAddressTextBox)
         Me.BankDepo.Controls.Add(BankBranchLabel)
@@ -1946,7 +1956,6 @@ Partial Class FrmEditor
         Me.BankDepo.Size = New System.Drawing.Size(556, 97)
         Me.BankDepo.TabIndex = 0
         Me.BankDepo.Text = "BankDepo"
-        Me.BankDepo.UseVisualStyleBackColor = True
         '
         'BankAddressTextBox
         '
@@ -1976,7 +1985,7 @@ Partial Class FrmEditor
         'Others
         '
         Me.Others.AutoScroll = True
-        Me.Others.BackColor = System.Drawing.SystemColors.Control
+        Me.Others.BackColor = System.Drawing.Color.Azure
         Me.Others.Controls.Add(PaymentOthersLabel)
         Me.Others.Controls.Add(Me.PaymentOthersTextBox)
         Me.Others.Location = New System.Drawing.Point(4, 28)
@@ -1985,7 +1994,6 @@ Partial Class FrmEditor
         Me.Others.Size = New System.Drawing.Size(556, 97)
         Me.Others.TabIndex = 1
         Me.Others.Text = "Others"
-        Me.Others.UseVisualStyleBackColor = True
         '
         'PaymentOthersTextBox
         '
@@ -1998,6 +2006,7 @@ Partial Class FrmEditor
         '
         'Check
         '
+        Me.Check.BackColor = System.Drawing.Color.Azure
         Me.Check.Controls.Add(Me.CheckNoTextBox)
         Me.Check.Controls.Add(CheckNoLabel)
         Me.Check.Location = New System.Drawing.Point(4, 28)
@@ -2005,7 +2014,6 @@ Partial Class FrmEditor
         Me.Check.Size = New System.Drawing.Size(556, 97)
         Me.Check.TabIndex = 2
         Me.Check.Text = "Check"
-        Me.Check.UseVisualStyleBackColor = True
         '
         'CheckNoTextBox
         '
@@ -2020,16 +2028,17 @@ Partial Class FrmEditor
         '
         Me.CorpDocu.AutoScroll = True
         Me.CorpDocu.AutoScrollMinSize = New System.Drawing.Size(0, 350)
+        Me.CorpDocu.BackColor = System.Drawing.Color.GhostWhite
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 25)
         Me.CorpDocu.Name = "CorpDocu"
         Me.CorpDocu.Size = New System.Drawing.Size(633, 275)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
-        Me.CorpDocu.UseVisualStyleBackColor = True
         '
         'GrpCorp
         '
+        Me.GrpCorp.BackColor = System.Drawing.Color.Azure
         Me.GrpCorp.Controls.Add(Me.TabControl3)
         Me.GrpCorp.Controls.Add(Label16)
         Me.GrpCorp.Controls.Add(Label10)
@@ -2064,7 +2073,7 @@ Partial Class FrmEditor
         '
         'TabMeeting
         '
-        Me.TabMeeting.BackColor = System.Drawing.SystemColors.Control
+        Me.TabMeeting.BackColor = System.Drawing.Color.Azure
         Me.TabMeeting.Controls.Add(Label17)
         Me.TabMeeting.Controls.Add(Me.DTMeetingDate)
         Me.TabMeeting.Controls.Add(MeetingDateLabel)
@@ -2117,7 +2126,7 @@ Partial Class FrmEditor
         '
         'TabPromo
         '
-        Me.TabPromo.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPromo.BackColor = System.Drawing.Color.Azure
         Me.TabPromo.Controls.Add(Label22)
         Me.TabPromo.Controls.Add(Label21)
         Me.TabPromo.Controls.Add(Me.DTPromoTo)
@@ -2185,7 +2194,7 @@ Partial Class FrmEditor
         '
         'TabMeeting2
         '
-        Me.TabMeeting2.BackColor = System.Drawing.SystemColors.Control
+        Me.TabMeeting2.BackColor = System.Drawing.Color.Azure
         Me.TabMeeting2.Controls.Add(Label23)
         Me.TabMeeting2.Controls.Add(Me.TextBox1)
         Me.TabMeeting2.Location = New System.Drawing.Point(4, 25)
@@ -2265,30 +2274,36 @@ Partial Class FrmEditor
         '
         'BtnClear
         '
+        Me.BtnClear.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnClear.Location = New System.Drawing.Point(544, 8)
         Me.BtnClear.Name = "BtnClear"
         Me.BtnClear.Size = New System.Drawing.Size(92, 27)
         Me.BtnClear.TabIndex = 4
         Me.BtnClear.Text = "Clear Keys"
-        Me.BtnClear.UseVisualStyleBackColor = True
+        Me.BtnClear.UseVisualStyleBackColor = False
         '
         'BtnSave
         '
+        Me.BtnSave.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnSave.Location = New System.Drawing.Point(188, 8)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(92, 27)
         Me.BtnSave.TabIndex = 2
         Me.BtnSave.Text = "Save"
-        Me.BtnSave.UseVisualStyleBackColor = True
+        Me.BtnSave.UseVisualStyleBackColor = False
         '
         'BtnEdit
         '
+        Me.BtnEdit.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnEdit.Location = New System.Drawing.Point(6, 8)
         Me.BtnEdit.Name = "BtnEdit"
         Me.BtnEdit.Size = New System.Drawing.Size(92, 27)
         Me.BtnEdit.TabIndex = 1
         Me.BtnEdit.Text = "Edit"
-        Me.BtnEdit.UseVisualStyleBackColor = True
+        Me.BtnEdit.UseVisualStyleBackColor = False
         '
         'DocumentTypeComboBox
         '
@@ -2318,6 +2333,7 @@ Partial Class FrmEditor
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.DMSLogsTableAdapter = Nothing
         Me.TableAdapterManager.DMSUserTableAdapter = Nothing
         Me.TableAdapterManager.DocsCatalogueTableAdapter = Me.DocsCatalogueTableAdapter
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
@@ -2329,6 +2345,7 @@ Partial Class FrmEditor
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
+        Me.BackgroundColor = System.Drawing.Color.Azure
         Me.ClientSize = New System.Drawing.Size(1197, 684)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

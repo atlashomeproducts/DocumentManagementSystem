@@ -20,53 +20,53 @@ Public Class FrmMain
     'Public cmd As New SqlCommand("SELECT UserName, Password, UserType FROM DMSUser WHERE (UserName = '" & Me.TxtUsername.Text & "') AND (Password = '" & Me.TxtPassword.Text & "')", con)
     'Public cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
 
-    Private Declare Unicode Function NetRemoteTOD Lib "netapi32" (<MarshalAs(UnmanagedType.LPWStr)> ByVal ServerName As String, ByRef BufferPtr As IntPtr) As Integer
-    Private Declare Function NetApiBufferFree Lib "netapi32" (ByVal Buffer As IntPtr) As Integer
+    'Private Declare Unicode Function NetRemoteTOD Lib "netapi32" (<MarshalAs(UnmanagedType.LPWStr)> ByVal ServerName As String, ByRef BufferPtr As IntPtr) As Integer
+    'Private Declare Function NetApiBufferFree Lib "netapi32" (ByVal Buffer As IntPtr) As Integer
 
-    Structure TIME_OF_DAY_INFO
-        Dim tod_elapsedt As Integer
-        Dim tod_msecs As Integer
-        Dim tod_hours As Integer
-        Dim tod_mins As Integer
-        Dim tod_secs As Integer
-        Dim tod_hunds As Integer
-        Dim tod_timezone As Integer
-        Dim tod_tinterval As Integer
-        Dim tod_day As Integer
-        Dim tod_month As Integer
-        Dim tod_year As Integer
-        Dim tod_weekday As Integer
-    End Structure
+    'Structure TIME_OF_DAY_INFO
+    '    Dim tod_elapsedt As Integer
+    '    Dim tod_msecs As Integer
+    '    Dim tod_hours As Integer
+    '    Dim tod_mins As Integer
+    '    Dim tod_secs As Integer
+    '    Dim tod_hunds As Integer
+    '    Dim tod_timezone As Integer
+    '    Dim tod_tinterval As Integer
+    '    Dim tod_day As Integer
+    '    Dim tod_month As Integer
+    '    Dim tod_year As Integer
+    '    Dim tod_weekday As Integer
+    'End Structure
 
 
-    Function GetNetRemoteTOD(ByVal strServerName As String) As Date
-        Try
-            Dim iRet As Integer
-            Dim ptodi As IntPtr
-            Dim todi As TIME_OF_DAY_INFO
-            Dim dDate As Date
-            strServerName = strServerName & vbNullChar
-            iRet = NetRemoteTOD(strServerName, ptodi)
-            If iRet = 0 Then
-                todi = CType(Marshal.PtrToStructure(ptodi, GetType(TIME_OF_DAY_INFO)), TIME_OF_DAY_INFO)
-                NetApiBufferFree(ptodi)
-                dDate = DateSerial(todi.tod_year, todi.tod_month, todi.tod_day) + " " + TimeSerial(todi.tod_hours, todi.tod_mins - todi.tod_timezone, todi.tod_secs)
-                GetNetRemoteTOD = dDate
-            Else
-                MsgBox("Error retrieving time")
-            End If
-        Catch
+    'Function GetNetRemoteTOD(ByVal strServerName As String) As Date
+    '    Try
+    '        Dim iRet As Integer
+    '        Dim ptodi As IntPtr
+    '        Dim todi As TIME_OF_DAY_INFO
+    '        Dim dDate As Date
+    '        strServerName = strServerName & vbNullChar
+    '        iRet = NetRemoteTOD(strServerName, ptodi)
+    '        If iRet = 0 Then
+    '            todi = CType(Marshal.PtrToStructure(ptodi, GetType(TIME_OF_DAY_INFO)), TIME_OF_DAY_INFO)
+    '            NetApiBufferFree(ptodi)
+    '            dDate = DateSerial(todi.tod_year, todi.tod_month, todi.tod_day) + " " + TimeSerial(todi.tod_hours, todi.tod_mins - todi.tod_timezone, todi.tod_secs)
+    '            GetNetRemoteTOD = dDate
+    '        Else
+    '            MsgBox("Error retrieving time")
+    '        End If
+    '    Catch
 
-            Try
-                GetNetRemoteTOD = Date.Now.ToString("MM/dd/yyyy HH:mm:ss tt")
-            Catch
-                MsgBox("Error in GetNetRemoteTOD: " & Err.Description)
-            End Try
+    '        Try
+    '            GetNetRemoteTOD = Date.Now.ToString("MM/dd/yyyy HH:mm:ss tt")
+    '        Catch
+    '            MsgBox("Error in GetNetRemoteTOD: " & Err.Description)
+    '        End Try
 
-        End Try
+    '    End Try
 
-        Return GetNetRemoteTOD
-    End Function
+    '    Return GetNetRemoteTOD
+    'End Function
 
     Private Sub IndexToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
@@ -77,7 +77,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TabControl1.SelectTab(TabLogin)
+        'TabControl1.SelectTab(TabLogin)
         Me.TxtUsername.Focus()
         Me.AcceptButton = BtnOK
         Me.CancelButton = BtnCancel
@@ -91,6 +91,7 @@ Public Class FrmMain
         For Each TabPage In TabControl1.TabPages
 
             TabPage.Text = ""
+            TabPage.BackColor = Color.Azure
 
         Next
 
@@ -130,51 +131,56 @@ Public Class FrmMain
 
     Private Sub FrmMain_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
 
-        Try
 
 
-            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-            Dim dRemoteDate As Date
-            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+        If User = "" Then
+
+        Else
 
 
-            con.Open()
-            cmdlogs.Connection = con
-            cmdlogs.Parameters.AddWithValue("@Username", User)
-            cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Logged Out")
-            cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
-            cmdlogs.ExecuteNonQuery()
-            con.Close()
+            Try
 
 
+                Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+                Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+                '   Dim dRemoteDate As Date
+                ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-
-
-
-        My.Settings.Save_RackNoTS = ""
-        My.Settings.Save_BoxNoTS = ""
-        My.Settings.Save_RackNoRI = ""
-        My.Settings.Save_BoxNoRI = ""
-        My.Settings.Save_BookletNoRI = ""
-        My.Settings.Save_RackNoWarranty = ""
-        My.Settings.Save_BoxNoWarranty = ""
-        My.Settings.Save_RackNoVoucher = ""
-        My.Settings.Save_BoxNoVoucher = ""
-        My.Settings.Save_RackNoCorpDocu = ""
-        My.Settings.Save_BoxNoCorpDocu = ""
+                con.Open()
+                cmdlogs.Connection = con
+                cmdlogs.Parameters.AddWithValue("@Username", User)
+                cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Logged Out")
+                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                cmdlogs.ExecuteNonQuery()
+                con.Close()
 
 
-        My.Settings.Save()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
 
 
 
-        End
+            My.Settings.Save_RackNoTS = ""
+            My.Settings.Save_BoxNoTS = ""
+            My.Settings.Save_RackNoRI = ""
+            My.Settings.Save_BoxNoRI = ""
+            My.Settings.Save_BookletNoRI = ""
+            My.Settings.Save_RackNoWarranty = ""
+            My.Settings.Save_BoxNoWarranty = ""
+            My.Settings.Save_RackNoVoucher = ""
+            My.Settings.Save_BoxNoVoucher = ""
+            My.Settings.Save_RackNoCorpDocu = ""
+            My.Settings.Save_BoxNoCorpDocu = ""
+
+
+            My.Settings.Save()
+
+            '  FrmSearch2.C1TrueDBGrid2.SaveLayout("default1.layout")
+            End
+        End If
+
     End Sub
 
 
@@ -187,15 +193,15 @@ Public Class FrmMain
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-            Dim dRemoteDate As Date
-            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+            '   Dim dRemoteDate As Date
+            ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
             con.Open()
             cmdlogs.Connection = con
             cmdlogs.Parameters.AddWithValue("@Username", User)
             cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Opened ""Editor"" form")
-            cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
             cmdlogs.ExecuteNonQuery()
             con.Close()
 
@@ -216,15 +222,15 @@ Public Class FrmMain
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-            Dim dRemoteDate As Date
-            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+            '   Dim dRemoteDate As Date
+            ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
             con.Open()
             cmdlogs.Connection = con
             cmdlogs.Parameters.AddWithValue("@Username", User)
             cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Opened ""Search"" form")
-            cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
             cmdlogs.ExecuteNonQuery()
             con.Close()
 
@@ -246,15 +252,15 @@ Public Class FrmMain
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-            Dim dRemoteDate As Date
-            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+            '   Dim dRemoteDate As Date
+            ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
             con.Open()
             cmdlogs.Connection = con
             cmdlogs.Parameters.AddWithValue("@Username", User)
             cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Opened ""Index"" form")
-            cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
             cmdlogs.ExecuteNonQuery()
             con.Close()
 
@@ -277,8 +283,8 @@ Public Class FrmMain
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmd As New SqlCommand("SELECT UserName, Password, UserType FROM DMSUser WHERE (UserName = '" & Me.TxtUsername.Text & "') AND (Password = '" & Me.TxtPassword.Text & "')", con)
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-            Dim dRemoteDate As Date
-            dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+            '  Dim dRemoteDate As Date
+            ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
             con.Open()
 
@@ -291,9 +297,9 @@ Public Class FrmMain
 
                 Me.LblUser.Text = "Logged in as:" & User
 
-                If Type = "Administrator" Then
+                If type = "Administrator" Then
                     TabControl1.SelectTab(TabMain)
-                ElseIf Type = "User" Then
+                ElseIf type = "User" Then
                     TabControl1.SelectTab(TabMain)
                     UserManagementToolStripMenuItem.Visible = False
                     Me.ToolStripMenuItem4.Visible = False
@@ -311,7 +317,7 @@ Public Class FrmMain
                 cmdlogs.Connection = con
                 cmdlogs.Parameters.AddWithValue("@Username", User)
                 cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Logged In")
-                cmdlogs.Parameters.AddWithValue("@ActionDate", dRemoteDate)
+                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
                 'cmd.Parameters("@Username").Value = User
                 'cmd.Parameters("@Action").Value = User & " " & "logged in"
                 'cmd.Parameters("@ActionDate").Value = DateTime.Now
@@ -439,5 +445,50 @@ Public Class FrmMain
 
     Private Sub FrmMain_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Me.TxtUsername.Focus()
+    End Sub
+
+    Private Sub SIDEPANELToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        If SplitContainer1.Panel2Collapsed = False Then
+
+            SplitContainer1.Panel2Collapsed = True
+
+        ElseIf SplitContainer1.Panel2Collapsed = True Then
+            SplitContainer1.Panel2Collapsed = False
+
+        End If
+
+    End Sub
+
+    Private Sub TxtUsername_TextChanged(sender As Object, e As EventArgs) Handles TxtUsername.TextChanged
+
+    End Sub
+
+    Private Sub btnDock_Click(sender As Object, e As EventArgs) Handles btnDock.Click
+        If SplitContainer1.Panel2Collapsed = False Then
+
+            SplitContainer1.Panel2Collapsed = True
+            btnDock.Text = "Undock"
+
+        ElseIf SplitContainer1.Panel2Collapsed = True Then
+            SplitContainer1.Panel2Collapsed = False
+            btnDock.Text = "Dock"
+
+        End If
+    End Sub
+
+    Private Sub IndexFilesToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub EditorToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub SEARCHToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub UserManagementToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
+
     End Sub
 End Class

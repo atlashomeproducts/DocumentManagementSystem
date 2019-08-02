@@ -227,3 +227,5 @@ C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\De
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.exe
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.xml
 C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.pdb
+C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\bin\Debug\C1.Win.C1Ribbon.4.dll
+C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\bin\Debug\C1.Win.C1Ribbon.4.xml
