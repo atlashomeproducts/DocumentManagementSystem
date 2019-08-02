@@ -497,7 +497,7 @@ Partial Class FrmMain
         Me.SpDMSLogsC1TrueDBGrid.RecordSelectors = False
         Me.SpDMSLogsC1TrueDBGrid.RowDivider.Color = System.Drawing.Color.GhostWhite
         Me.SpDMSLogsC1TrueDBGrid.RowDivider.Style = C1.Win.C1TrueDBGrid.LineStyleEnum.[Single]
-        Me.SpDMSLogsC1TrueDBGrid.RowHeight = 27
+        Me.SpDMSLogsC1TrueDBGrid.RowHeight = 28
         Me.SpDMSLogsC1TrueDBGrid.Size = New System.Drawing.Size(324, 269)
         Me.SpDMSLogsC1TrueDBGrid.SplitDividerSize = New System.Drawing.Size(0, 0)
         Me.SpDMSLogsC1TrueDBGrid.TabIndex = 0

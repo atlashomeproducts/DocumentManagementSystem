@@ -66,7 +66,7 @@ Public Class FrmSearch2
         'TODO: This line of code loads data into the 'DMSDataSet.DocsCatalogueChanges' table. You can move, or remove it, as needed.
 
 
-        TabControl1.BackColor = Color.Azure
+
 
         PopulateCombobox()
 
@@ -958,5 +958,35 @@ AND Status = 'Finished'
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub PaymentFormComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles PaymentFormComboBox.SelectedIndexChanged
+
+    End Sub
+    Private Sub ComboSelect2()
+
+
+        If Me.PaymentFormComboBox.Text = "Bank Deposit" Then
+            TabControl3.Visible = True
+            TabControl3.SelectTab(BankDepo)
+        ElseIf Me.PaymentFormComboBox.Text = "Check" Then
+            TabControl3.Visible = True
+            TabControl3.SelectTab(Check)
+
+        ElseIf Me.PaymentFormComboBox.Text = "Others" Then
+            TabControl3.Visible = True
+            TabControl3.SelectTab(Others)
+
+        ElseIf Me.PaymentFormComboBox.Text = "" Then
+            TabControl3.Visible = False
+        ElseIf Me.PaymentFormComboBox.Text = "Cash" Then
+            TabControl3.Visible = False
+        ElseIf Me.PaymentFormComboBox.SelectedIndex = -1 Then
+            TabControl3.Visible = False
+        End If
+    End Sub
+
+    Private Sub PaymentFormComboBox_TextChanged(sender As Object, e As EventArgs) Handles PaymentFormComboBox.TextChanged
+        ComboSelect2()
     End Sub
 End Class
