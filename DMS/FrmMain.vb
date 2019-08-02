@@ -491,4 +491,24 @@ Public Class FrmMain
     Private Sub UserManagementToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub TxtUsername_GotFocus(sender As Object, e As EventArgs) Handles TxtUsername.GotFocus
+        TxtUsername.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TxtUsername_LostFocus(sender As Object, e As EventArgs) Handles TxtUsername.LostFocus
+        TxtUsername.BackColor = Color.White
+    End Sub
+
+    Private Sub TxtPassword_TextChanged(sender As Object, e As EventArgs) Handles TxtPassword.TextChanged
+
+    End Sub
+
+    Private Sub TxtPassword_GotFocus(sender As Object, e As EventArgs) Handles TxtPassword.GotFocus
+        TxtPassword.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TxtPassword_LostFocus(sender As Object, e As EventArgs) Handles TxtPassword.LostFocus
+        TxtPassword.BackColor = Color.White
+    End Sub
 End Class

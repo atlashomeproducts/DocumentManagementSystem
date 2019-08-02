@@ -409,6 +409,7 @@ Partial Class FrmSearch2
         Me.C1TrueDBGrid2.AlternatingRows = True
         Me.C1TrueDBGrid2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.C1TrueDBGrid2.FilterBar = True
+        Me.C1TrueDBGrid2.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
         Me.C1TrueDBGrid2.GroupByCaption = "Drag a column header here to group by that column"
         Me.C1TrueDBGrid2.Images.Add(CType(resources.GetObject("C1TrueDBGrid2.Images"), System.Drawing.Image))
         Me.C1TrueDBGrid2.Location = New System.Drawing.Point(0, 0)
@@ -565,9 +566,9 @@ Partial Class FrmSearch2
         Me.sdasd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sdasd.Location = New System.Drawing.Point(64, 175)
         Me.sdasd.Name = "sdasd"
-        Me.sdasd.Size = New System.Drawing.Size(88, 20)
+        Me.sdasd.Size = New System.Drawing.Size(84, 20)
         Me.sdasd.TabIndex = 90
-        Me.sdasd.Text = "File Name.:"
+        Me.sdasd.Text = "File Name:"
         '
         'TxtFileName
         '

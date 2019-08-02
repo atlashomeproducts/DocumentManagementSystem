@@ -301,4 +301,95 @@ Public Class FrmIndex
         batchIdTextBox.Text = DocumentTypeComboBox.Text & "-" & txtCompany.Text & "-" & Me.DateTimePicker1.Value.ToString("yyyyMMMdd") & "-" & txtPurpose.Text
     End Sub
 
+    Private Sub txtCompany_GotFocus(sender As Object, e As EventArgs) Handles txtCompany.GotFocus
+        txtCompany.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub txtCompany_LostFocus(sender As Object, e As EventArgs) Handles txtCompany.LostFocus
+        txtCompany.BackColor = Color.White
+    End Sub
+
+    Private Sub DateTimePicker1_GotFocus(sender As Object, e As EventArgs) Handles DateTimePicker1.GotFocus
+        DateTimePicker1.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub DateTimePicker1_LostFocus(sender As Object, e As EventArgs) Handles DateTimePicker1.LostFocus
+        DateTimePicker1.BackColor = Color.White
+    End Sub
+
+    Private Sub txtPurpose_GotFocus(sender As Object, e As EventArgs) Handles txtPurpose.GotFocus
+        txtPurpose.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub txtPurpose_LostFocus(sender As Object, e As EventArgs) Handles txtPurpose.LostFocus
+        txtPurpose.BackColor = Color.White
+    End Sub
+
+    Private Sub batchIdTextBox_TextChanged(sender As Object, e As EventArgs) Handles batchIdTextBox.TextChanged
+
+    End Sub
+
+    Private Sub batchIdTextBox_GotFocus(sender As Object, e As EventArgs) Handles batchIdTextBox.GotFocus
+        batchIdTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub batchIdTextBox_LostFocus(sender As Object, e As EventArgs) Handles batchIdTextBox.LostFocus
+        batchIdTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub SubBatchTextbox_TextChanged(sender As Object, e As EventArgs) Handles SubBatchTextbox.TextChanged
+
+    End Sub
+
+    Private Sub SubBatchTextbox_GotFocus(sender As Object, e As EventArgs) Handles SubBatchTextbox.GotFocus
+        SubBatchTextbox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub SubBatchTextbox_LostFocus(sender As Object, e As EventArgs) Handles SubBatchTextbox.LostFocus
+        SubBatchTextbox.BackColor = Color.White
+    End Sub
+
+    Private Sub scanDateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles scanDateTimePicker.ValueChanged
+
+    End Sub
+
+    Private Sub scanDateTimePicker_GotFocus(sender As Object, e As EventArgs) Handles scanDateTimePicker.GotFocus
+        scanDateTimePicker.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub scanDateTimePicker_LostFocus(sender As Object, e As EventArgs) Handles scanDateTimePicker.LostFocus
+        scanDateTimePicker.BackColor = Color.White
+    End Sub
+
+    Private Sub BoxNoTextbox_TextChanged(sender As Object, e As EventArgs) Handles BoxNoTextbox.TextChanged
+
+    End Sub
+
+    Private Sub BoxNoTextbox_GotFocus(sender As Object, e As EventArgs) Handles BoxNoTextbox.GotFocus
+        BoxNoTextbox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BoxNoTextbox_LostFocus(sender As Object, e As EventArgs) Handles BoxNoTextbox.LostFocus
+        BoxNoTextbox.BackColor = Color.White
+    End Sub
+
+    Private Sub RackNoTextbox_TextChanged(sender As Object, e As EventArgs) Handles RackNoTextbox.TextChanged
+
+    End Sub
+
+    Private Sub RackNoTextbox_GotFocus(sender As Object, e As EventArgs) Handles RackNoTextbox.GotFocus
+        RackNoTextbox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub RackNoTextbox_LostFocus(sender As Object, e As EventArgs) Handles RackNoTextbox.LostFocus
+        RackNoTextbox.BackColor = Color.White
+    End Sub
+
+    Private Sub ListBox1_GotFocus(sender As Object, e As EventArgs) Handles ListBox1.GotFocus
+        ListBox1.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub ListBox1_LostFocus(sender As Object, e As EventArgs) Handles ListBox1.LostFocus
+        ListBox1.BackColor = Color.White
+    End Sub
 End Class

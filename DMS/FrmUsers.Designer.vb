@@ -96,12 +96,14 @@ Partial Class FrmUsers
         '
         'BtnDelete
         '
+        Me.BtnDelete.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnDelete.Location = New System.Drawing.Point(280, 122)
         Me.BtnDelete.Name = "BtnDelete"
         Me.BtnDelete.Size = New System.Drawing.Size(83, 26)
         Me.BtnDelete.TabIndex = 14
         Me.BtnDelete.Text = "Delete"
-        Me.BtnDelete.UseVisualStyleBackColor = True
+        Me.BtnDelete.UseVisualStyleBackColor = False
         '
         'Label5
         '
@@ -175,12 +177,14 @@ Partial Class FrmUsers
         '
         'BtnConfirm
         '
+        Me.BtnConfirm.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.BtnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnConfirm.Location = New System.Drawing.Point(191, 122)
         Me.BtnConfirm.Name = "BtnConfirm"
         Me.BtnConfirm.Size = New System.Drawing.Size(83, 26)
         Me.BtnConfirm.TabIndex = 5
         Me.BtnConfirm.Text = "Confirm"
-        Me.BtnConfirm.UseVisualStyleBackColor = True
+        Me.BtnConfirm.UseVisualStyleBackColor = False
         '
         'TxtPassword
         '
@@ -204,6 +208,7 @@ Partial Class FrmUsers
         Me.DMSUserC1TrueDBGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DMSUserC1TrueDBGrid.ExtendRightColumn = True
         Me.DMSUserC1TrueDBGrid.FilterBar = True
+        Me.DMSUserC1TrueDBGrid.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
         Me.DMSUserC1TrueDBGrid.GroupByCaption = "Drag a column header here to group by that column"
         Me.DMSUserC1TrueDBGrid.Images.Add(CType(resources.GetObject("DMSUserC1TrueDBGrid.Images"), System.Drawing.Image))
         Me.DMSUserC1TrueDBGrid.Location = New System.Drawing.Point(0, 0)

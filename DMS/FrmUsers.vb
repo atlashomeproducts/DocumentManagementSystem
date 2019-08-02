@@ -122,4 +122,53 @@ Public Class FrmUsers
         End Try
 
     End Sub
+
+    Private Sub TxtUsername_TextChanged(sender As Object, e As EventArgs) Handles TxtUsername.TextChanged
+
+    End Sub
+
+    Private Sub TxtUsername_GotFocus(sender As Object, e As EventArgs) Handles TxtUsername.GotFocus
+        TxtUsername.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TxtUsername_LostFocus(sender As Object, e As EventArgs) Handles TxtUsername.LostFocus
+        TxtUsername.BackColor = Color.White
+    End Sub
+
+    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs) Handles TxtName.TextChanged
+
+    End Sub
+
+    Private Sub TxtName_GotFocus(sender As Object, e As EventArgs) Handles TxtName.GotFocus
+        TxtUsername.BackColor = Color.LightYellow
+
+    End Sub
+
+    Private Sub TxtName_LostFocus(sender As Object, e As EventArgs) Handles TxtName.LostFocus
+        TxtUsername.BackColor = Color.White
+    End Sub
+
+    Private Sub TxtPassword_TextChanged(sender As Object, e As EventArgs) Handles TxtPassword.TextChanged
+
+    End Sub
+
+    Private Sub TxtPassword_GotFocus(sender As Object, e As EventArgs) Handles TxtPassword.GotFocus
+        TxtPassword.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TxtPassword_LostFocus(sender As Object, e As EventArgs) Handles TxtPassword.LostFocus
+        TxtPassword.BackColor = Color.White
+    End Sub
+
+    Private Sub TxtRetype_TextChanged(sender As Object, e As EventArgs) Handles TxtRetype.TextChanged
+
+    End Sub
+
+    Private Sub TxtRetype_GotFocus(sender As Object, e As EventArgs) Handles TxtRetype.GotFocus
+        TxtRetype.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TxtRetype_LostFocus(sender As Object, e As EventArgs) Handles TxtRetype.LostFocus
+        TxtRetype.BackColor = Color.White
+    End Sub
 End Class

@@ -84,11 +84,13 @@ Partial Class FrmIndex
         Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SplitContainer1.BackColor = System.Drawing.Color.Azure
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
         '
+        Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Azure
         Me.SplitContainer1.Panel1.Controls.Add(Me.SplitContainer2)
         '
         'SplitContainer1.Panel2
@@ -99,6 +101,7 @@ Partial Class FrmIndex
         Me.SplitContainer1.Size = New System.Drawing.Size(873, 580)
         Me.SplitContainer1.SplitterDistance = 419
         Me.SplitContainer1.TabIndex = 0
+        Me.SplitContainer1.TabStop = False
         '
         'SplitContainer2
         '
@@ -120,6 +123,7 @@ Partial Class FrmIndex
         Me.SplitContainer2.Size = New System.Drawing.Size(419, 580)
         Me.SplitContainer2.SplitterDistance = 519
         Me.SplitContainer2.TabIndex = 0
+        Me.SplitContainer2.TabStop = False
         '
         'ListBox1
         '
@@ -148,7 +152,7 @@ Partial Class FrmIndex
         Me.BtnRemove.Location = New System.Drawing.Point(224, 12)
         Me.BtnRemove.Name = "BtnRemove"
         Me.BtnRemove.Size = New System.Drawing.Size(191, 39)
-        Me.BtnRemove.TabIndex = 2
+        Me.BtnRemove.TabIndex = 3
         Me.BtnRemove.Text = "REMOVE"
         Me.BtnRemove.UseVisualStyleBackColor = False
         '
@@ -161,7 +165,7 @@ Partial Class FrmIndex
         Me.BtnBrowse.Location = New System.Drawing.Point(9, 12)
         Me.BtnBrowse.Name = "BtnBrowse"
         Me.BtnBrowse.Size = New System.Drawing.Size(191, 39)
-        Me.BtnBrowse.TabIndex = 0
+        Me.BtnBrowse.TabIndex = 2
         Me.BtnBrowse.Text = "BROWSE"
         Me.BtnBrowse.UseVisualStyleBackColor = False
         '
@@ -175,6 +179,7 @@ Partial Class FrmIndex
         '
         'SplitContainer3
         '
+        Me.SplitContainer3.BackColor = System.Drawing.Color.Azure
         Me.SplitContainer3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer3.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer3.Name = "SplitContainer3"
@@ -210,6 +215,7 @@ Partial Class FrmIndex
         Me.SplitContainer3.Size = New System.Drawing.Size(450, 580)
         Me.SplitContainer3.SplitterDistance = 332
         Me.SplitContainer3.TabIndex = 16
+        Me.SplitContainer3.TabStop = False
         '
         'AxAcroPDF1
         '
@@ -251,7 +257,7 @@ Partial Class FrmIndex
         Me.txtPurpose.Location = New System.Drawing.Point(126, 77)
         Me.txtPurpose.Name = "txtPurpose"
         Me.txtPurpose.Size = New System.Drawing.Size(315, 22)
-        Me.txtPurpose.TabIndex = 35
+        Me.txtPurpose.TabIndex = 7
         '
         'DateTimePicker1
         '
@@ -260,7 +266,7 @@ Partial Class FrmIndex
         Me.DateTimePicker1.Location = New System.Drawing.Point(126, 54)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(185, 22)
-        Me.DateTimePicker1.TabIndex = 34
+        Me.DateTimePicker1.TabIndex = 6
         '
         'Label4
         '
@@ -279,7 +285,7 @@ Partial Class FrmIndex
         Me.txtCompany.Location = New System.Drawing.Point(126, 31)
         Me.txtCompany.Name = "txtCompany"
         Me.txtCompany.Size = New System.Drawing.Size(315, 22)
-        Me.txtCompany.TabIndex = 32
+        Me.txtCompany.TabIndex = 5
         '
         'DocumentTypeComboBox
         '
@@ -289,7 +295,7 @@ Partial Class FrmIndex
         Me.DocumentTypeComboBox.Location = New System.Drawing.Point(126, 5)
         Me.DocumentTypeComboBox.Name = "DocumentTypeComboBox"
         Me.DocumentTypeComboBox.Size = New System.Drawing.Size(315, 24)
-        Me.DocumentTypeComboBox.TabIndex = 31
+        Me.DocumentTypeComboBox.TabIndex = 4
         '
         'Label3
         '
@@ -332,14 +338,14 @@ Partial Class FrmIndex
         Me.RackNoTextbox.Location = New System.Drawing.Point(126, 211)
         Me.RackNoTextbox.Name = "RackNoTextbox"
         Me.RackNoTextbox.Size = New System.Drawing.Size(106, 22)
-        Me.RackNoTextbox.TabIndex = 23
+        Me.RackNoTextbox.TabIndex = 12
         '
         'BoxNoTextbox
         '
         Me.BoxNoTextbox.Location = New System.Drawing.Point(126, 187)
         Me.BoxNoTextbox.Name = "BoxNoTextbox"
         Me.BoxNoTextbox.Size = New System.Drawing.Size(106, 22)
-        Me.BoxNoTextbox.TabIndex = 22
+        Me.BoxNoTextbox.TabIndex = 11
         '
         'Label5
         '
@@ -357,7 +363,7 @@ Partial Class FrmIndex
         Me.SubBatchTextbox.Location = New System.Drawing.Point(126, 141)
         Me.SubBatchTextbox.Name = "SubBatchTextbox"
         Me.SubBatchTextbox.Size = New System.Drawing.Size(315, 22)
-        Me.SubBatchTextbox.TabIndex = 18
+        Me.SubBatchTextbox.TabIndex = 9
         '
         'Label2
         '
@@ -377,7 +383,7 @@ Partial Class FrmIndex
         Me.scanDateTimePicker.Location = New System.Drawing.Point(126, 164)
         Me.scanDateTimePicker.Name = "scanDateTimePicker"
         Me.scanDateTimePicker.Size = New System.Drawing.Size(185, 22)
-        Me.scanDateTimePicker.TabIndex = 21
+        Me.scanDateTimePicker.TabIndex = 10
         '
         'Label1
         '
@@ -397,7 +403,7 @@ Partial Class FrmIndex
         Me.batchIdTextBox.Multiline = True
         Me.batchIdTextBox.Name = "batchIdTextBox"
         Me.batchIdTextBox.Size = New System.Drawing.Size(315, 42)
-        Me.batchIdTextBox.TabIndex = 17
+        Me.batchIdTextBox.TabIndex = 8
         '
         'BtnIndex
         '
@@ -406,7 +412,7 @@ Partial Class FrmIndex
         Me.BtnIndex.Location = New System.Drawing.Point(292, 199)
         Me.BtnIndex.Name = "BtnIndex"
         Me.BtnIndex.Size = New System.Drawing.Size(149, 38)
-        Me.BtnIndex.TabIndex = 26
+        Me.BtnIndex.TabIndex = 13
         Me.BtnIndex.Text = "INDEX FILES"
         Me.BtnIndex.UseVisualStyleBackColor = False
         '
