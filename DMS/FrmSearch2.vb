@@ -73,7 +73,7 @@ Public Class FrmSearch2
 
 
         'Format
-        TabControl1.Appearance = TabAppearance.FlatButtons
+        TabControl1.Appearance = TabAppearance.Normal
         TabControl1.ItemSize = New Size(0, 1)
         TabControl1.SizeMode = TabSizeMode.Fixed
         For Each TabPage In TabControl1.TabPages
@@ -84,7 +84,7 @@ Public Class FrmSearch2
         Next
 
 
-        TabControl2.Appearance = TabAppearance.FlatButtons
+        TabControl2.Appearance = TabAppearance.Normal
         TabControl2.ItemSize = New Size(0, 1)
         TabControl2.SizeMode = TabSizeMode.Fixed
 
@@ -95,7 +95,7 @@ Public Class FrmSearch2
 
         Next
 
-        TabControl3.Appearance = TabAppearance.FlatButtons
+        TabControl3.Appearance = TabAppearance.Normal
         TabControl3.ItemSize = New Size(0, 1)
         TabControl3.SizeMode = TabSizeMode.Fixed
         For Each TabPage In TabControl2.TabPages
@@ -106,7 +106,7 @@ Public Class FrmSearch2
         Next
 
 
-        TabControl4.Appearance = TabAppearance.FlatButtons
+        TabControl4.Appearance = TabAppearance.Normal
         TabControl4.ItemSize = New Size(0, 1)
         TabControl4.SizeMode = TabSizeMode.Fixed
         For Each TabPage In TabControl4.TabPages
@@ -735,6 +735,8 @@ AND Status = 'Finished'
 
 
     Private Sub DocumentDateCorp_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateCorp.LostFocus
+        DocumentDateCorp.BackColor = Color.White
+
         Dim DateFormat As Date
 
         If Date.TryParseExact(DocumentDateCorp.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateCorp.Text = "" Then
@@ -748,6 +750,8 @@ AND Status = 'Finished'
 
 
     Private Sub MeetingDateTextBox_LostFocus(sender As Object, e As EventArgs) Handles MeetingDateTextBox.LostFocus
+        MeetingDateTextBox.BackColor = Color.White
+
         Dim DateFormat As Date
 
         If Date.TryParseExact(MeetingDateTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.MeetingDateTextBox.Text = "" Then
@@ -761,6 +765,8 @@ AND Status = 'Finished'
 
 
     Private Sub PromoFromTextBox_LostFocus(sender As Object, e As EventArgs) Handles PromoFromTextBox.LostFocus
+        PromoFromTextBox.BackColor = Color.White
+
         Dim DateFormat As Date
 
         If Date.TryParseExact(PromoFromTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoFromTextBox.Text = "" Then
@@ -774,6 +780,8 @@ AND Status = 'Finished'
 
 
     Private Sub PromoToTextBox_LostFocus(sender As Object, e As EventArgs) Handles PromoToTextBox.LostFocus
+        PromoToTextBox.BackColor = Color.White
+
         Dim DateFormat As Date
 
         If Date.TryParseExact(PromoToTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoToTextBox.Text = "" Then
@@ -787,6 +795,8 @@ AND Status = 'Finished'
 
 
     Private Sub DocumentDateVoucher_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateVoucher.LostFocus
+
+        DocumentDateVoucher.BackColor = Color.White
         Dim DateFormat As Date
 
         If Date.TryParseExact(DocumentDateVoucher.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateVoucher.Text = "" Then
@@ -800,6 +810,8 @@ AND Status = 'Finished'
 
 
     Private Sub DatePurchasedTextBox_LostFocus(sender As Object, e As EventArgs) Handles DatePurchasedTextBox.LostFocus
+        SerialTextBox.BackColor = Color.White
+
         Dim DateFormat As Date
 
         If Date.TryParseExact(DatePurchasedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DatePurchasedTextBox.Text = "" Then
@@ -813,6 +825,9 @@ AND Status = 'Finished'
 
 
     Private Sub DocumentDateRI_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateRI.LostFocus
+
+        DocumentDateRI.BackColor = Color.White
+
         Dim DateFormat As Date
 
         If Date.TryParseExact(DocumentDateRI.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateRI.Text = "" Then
@@ -826,6 +841,8 @@ AND Status = 'Finished'
 
 
     Private Sub FromPeriodTextBox_LostFocus(sender As Object, e As EventArgs) Handles FromPeriodTextBox.LostFocus
+        FromPeriodTextBox.BackColor = Color.White
+
         Dim DateFormat As Date
 
         If Date.TryParseExact(FromPeriodTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodTextBox.Text = "" Then
@@ -839,6 +856,8 @@ AND Status = 'Finished'
 
 
     Private Sub ToPeriodTextBox_LostFocus(sender As Object, e As EventArgs) Handles ToPeriodTextBox.LostFocus
+
+        ToPeriodTextBox.BackColor = Color.White
         Dim DateFormat As Date
 
         If Date.TryParseExact(ToPeriodTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodTextBox.Text = "" Then
@@ -988,5 +1007,697 @@ AND Status = 'Finished'
 
     Private Sub PaymentFormComboBox_TextChanged(sender As Object, e As EventArgs) Handles PaymentFormComboBox.TextChanged
         ComboSelect2()
+    End Sub
+
+    Private Sub TxtRack_TextChanged(sender As Object, e As EventArgs) Handles TxtRack.TextChanged
+
+    End Sub
+
+    Private Sub TxtRack_GotFocus(sender As Object, e As EventArgs) Handles TxtRack.GotFocus
+        TxtRack.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TxtRack_LostFocus(sender As Object, e As EventArgs) Handles TxtRack.LostFocus
+        TxtRack.BackColor = Color.White
+    End Sub
+
+    Private Sub TxtBox_TextChanged(sender As Object, e As EventArgs) Handles TxtBox.TextChanged
+
+    End Sub
+
+    Private Sub TxtBox_GotFocus(sender As Object, e As EventArgs) Handles TxtBox.GotFocus
+        TxtBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TxtBox_LostFocus(sender As Object, e As EventArgs) Handles TxtBox.LostFocus
+        TxtBox.BackColor = Color.White
+    End Sub
+
+    Private Sub TxtBook_TextChanged(sender As Object, e As EventArgs) Handles TxtBook.TextChanged
+
+    End Sub
+
+    Private Sub TxtBook_GotFocus(sender As Object, e As EventArgs) Handles TxtBook.GotFocus
+        TxtBook.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TxtBook_LostFocus(sender As Object, e As EventArgs) Handles TxtBook.LostFocus
+        TxtBook.BackColor = Color.White
+    End Sub
+
+    Private Sub TxtBatch_TextChanged(sender As Object, e As EventArgs) Handles TxtBatch.TextChanged
+
+    End Sub
+
+    Private Sub TxtBatch_GotFocus(sender As Object, e As EventArgs) Handles TxtBatch.GotFocus
+        TxtBatch.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TxtBatch_LostFocus(sender As Object, e As EventArgs) Handles TxtBatch.LostFocus
+        TxtBatch.BackColor = Color.White
+    End Sub
+
+    Private Sub TxtFileName_TextChanged(sender As Object, e As EventArgs) Handles TxtFileName.TextChanged
+
+    End Sub
+
+    Private Sub TxtFileName_GotFocus(sender As Object, e As EventArgs) Handles TxtFileName.GotFocus
+        TxtFileName.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TxtFileName_LostFocus(sender As Object, e As EventArgs) Handles TxtFileName.LostFocus
+        TxtFileName.BackColor = Color.White
+    End Sub
+
+    Private Sub RackNoTS_TextChanged(sender As Object, e As EventArgs) Handles RackNoTS.TextChanged
+
+    End Sub
+
+    Private Sub RackNoTS_GotFocus(sender As Object, e As EventArgs) Handles RackNoTS.GotFocus
+        RackNoTS.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub RackNoTS_LostFocus(sender As Object, e As EventArgs) Handles RackNoTS.LostFocus
+        RackNoTS.BackColor = Color.White
+    End Sub
+
+    Private Sub BoxNoTS_TextChanged(sender As Object, e As EventArgs) Handles BoxNoTS.TextChanged
+
+    End Sub
+
+    Private Sub BoxNoTS_GotFocus(sender As Object, e As EventArgs) Handles BoxNoTS.GotFocus
+        BoxNoTS.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BoxNoTS_LostFocus(sender As Object, e As EventArgs) Handles BoxNoTS.LostFocus
+        BoxNoTS.BackColor = Color.White
+    End Sub
+
+    Private Sub DocumentDateTS_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateTS.TextChanged
+
+    End Sub
+
+    Private Sub DocumentDateTS_GotFocus(sender As Object, e As EventArgs) Handles DocumentDateTS.GotFocus
+        DocumentDateTS.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub DocumentDateTS_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateTS.LostFocus
+        DocumentDateTS.BackColor = Color.White
+    End Sub
+
+
+
+    Private Sub LastNameTextBox_GotFocus(sender As Object, e As EventArgs) Handles LastNameTextBox.GotFocus
+        LastNameTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub LastNameTextBox_LostFocus(sender As Object, e As EventArgs) Handles LastNameTextBox.LostFocus
+        LastNameTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub FirstNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles FirstNameTextBox.TextChanged
+
+    End Sub
+
+    Private Sub FirstNameTextBox_GotFocus(sender As Object, e As EventArgs) Handles FirstNameTextBox.GotFocus
+        FirstNameTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub FirstNameTextBox_LostFocus(sender As Object, e As EventArgs) Handles FirstNameTextBox.LostFocus
+        FirstNameTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub MiddleNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles MiddleNameTextBox.TextChanged
+
+    End Sub
+
+    Private Sub MiddleNameTextBox_GotFocus(sender As Object, e As EventArgs) Handles MiddleNameTextBox.GotFocus
+        MiddleNameTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub MiddleNameTextBox_LostFocus(sender As Object, e As EventArgs) Handles MiddleNameTextBox.LostFocus
+        MiddleNameTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub FromPeriodTextBox_TextChanged(sender As Object, e As EventArgs) Handles FromPeriodTextBox.TextChanged
+
+    End Sub
+
+    Private Sub FromPeriodTextBox_GotFocus(sender As Object, e As EventArgs) Handles FromPeriodTextBox.GotFocus
+        FromPeriodTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub ToPeriodTextBox_TextChanged(sender As Object, e As EventArgs) Handles ToPeriodTextBox.TextChanged
+
+    End Sub
+
+    Private Sub ToPeriodTextBox_GotFocus(sender As Object, e As EventArgs) Handles ToPeriodTextBox.GotFocus
+        ToPeriodTextBox.BackColor = Color.LightYellow
+    End Sub
+
+
+
+    Private Sub RackNoRI_GotFocus(sender As Object, e As EventArgs) Handles RackNoRI.GotFocus
+        RackNoRI.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub RackNoRI_LostFocus(sender As Object, e As EventArgs) Handles RackNoRI.LostFocus
+        RackNoRI.BackColor = Color.White
+    End Sub
+
+    Private Sub BoxNoRI_TextChanged(sender As Object, e As EventArgs) Handles BoxNoRI.TextChanged
+
+    End Sub
+
+    Private Sub BoxNoRI_GotFocus(sender As Object, e As EventArgs) Handles BoxNoRI.GotFocus
+        BoxNoRI.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BoxNoRI_LostFocus(sender As Object, e As EventArgs) Handles BoxNoRI.LostFocus
+        BoxNoRI.BackColor = Color.White
+    End Sub
+
+    Private Sub DocumentDateRI_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateRI.TextChanged
+
+    End Sub
+
+    Private Sub DocumentDateRI_GotFocus(sender As Object, e As EventArgs) Handles DocumentDateRI.GotFocus
+        DocumentDateRI.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BookletNoTextBox_TextChanged(sender As Object, e As EventArgs) Handles BookletNoTextBox.TextChanged
+
+    End Sub
+
+    Private Sub BookletNoTextBox_GotFocus(sender As Object, e As EventArgs) Handles BookletNoTextBox.GotFocus
+        BookletNoTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BookletNoTextBox_LostFocus(sender As Object, e As EventArgs) Handles BookletNoTextBox.LostFocus
+        BookletNoTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub ReferenceNoRI_TextChanged(sender As Object, e As EventArgs) Handles ReferenceNoRI.TextChanged
+
+    End Sub
+
+    Private Sub ReferenceNoRI_GotFocus(sender As Object, e As EventArgs) Handles ReferenceNoRI.GotFocus
+        ReferenceNoRI.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub ReferenceNoRI_LostFocus(sender As Object, e As EventArgs) Handles ReferenceNoRI.LostFocus
+        ReferenceNoRI.BackColor = Color.White
+    End Sub
+
+    Private Sub TotalValueRI_TextChanged(sender As Object, e As EventArgs) Handles TotalValueRI.TextChanged
+
+    End Sub
+
+    Private Sub TotalValueRI_GotFocus(sender As Object, e As EventArgs) Handles TotalValueRI.GotFocus
+        TotalValueRI.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TotalValueRI_LostFocus(sender As Object, e As EventArgs) Handles TotalValueRI.LostFocus
+        TotalValueRI.BackColor = Color.White
+    End Sub
+
+    Private Sub VendorTextBox_TextChanged(sender As Object, e As EventArgs) Handles VendorTextBox.TextChanged
+
+    End Sub
+
+    Private Sub VendorTextBox_GotFocus(sender As Object, e As EventArgs) Handles VendorTextBox.GotFocus
+        VendorTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub VendorTextBox_LostFocus(sender As Object, e As EventArgs) Handles VendorTextBox.LostFocus
+        VendorTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub CustomerTextBox_TextChanged(sender As Object, e As EventArgs) Handles CustomerTextBox.TextChanged
+
+    End Sub
+
+    Private Sub CustomerTextBox_GotFocus(sender As Object, e As EventArgs) Handles CustomerTextBox.GotFocus
+        CustomerTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub CustomerTextBox_LostFocus(sender As Object, e As EventArgs) Handles CustomerTextBox.LostFocus
+        CustomerTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub AddressCTextBox_TextChanged(sender As Object, e As EventArgs) Handles AddressCTextBox.TextChanged
+
+    End Sub
+
+    Private Sub AddressCTextBox_GotFocus(sender As Object, e As EventArgs) Handles AddressCTextBox.GotFocus
+        AddressCTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub AddressCTextBox_LostFocus(sender As Object, e As EventArgs) Handles AddressCTextBox.LostFocus
+        AddressCTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub TinVendorTextBox_TextChanged(sender As Object, e As EventArgs) Handles TinVendorTextBox.TextChanged
+
+    End Sub
+
+    Private Sub TinVendorTextBox_GotFocus(sender As Object, e As EventArgs) Handles TinVendorTextBox.GotFocus
+        TinVendorTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TinVendorTextBox_LostFocus(sender As Object, e As EventArgs) Handles TinVendorTextBox.LostFocus
+        TinVendorTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub TinCustomerTextBox_TextChanged(sender As Object, e As EventArgs) Handles TinCustomerTextBox.TextChanged
+
+    End Sub
+
+    Private Sub TinCustomerTextBox_GotFocus(sender As Object, e As EventArgs) Handles TinCustomerTextBox.GotFocus
+        TinCustomerTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TinCustomerTextBox_LostFocus(sender As Object, e As EventArgs) Handles TinCustomerTextBox.LostFocus
+        TinCustomerTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub ItemPurchasedTextBox_TextChanged(sender As Object, e As EventArgs) Handles ItemPurchasedTextBox.TextChanged
+
+    End Sub
+
+    Private Sub ItemPurchasedTextBox_GotFocus(sender As Object, e As EventArgs) Handles ItemPurchasedTextBox.GotFocus
+        ItemPurchasedTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub ItemPurchasedTextBox_LostFocus(sender As Object, e As EventArgs) Handles ItemPurchasedTextBox.LostFocus
+        ItemPurchasedTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub RackNoWarranty_TextChanged(sender As Object, e As EventArgs) Handles RackNoWarranty.TextChanged
+
+    End Sub
+
+    Private Sub RackNoRI_TextChanged(sender As Object, e As EventArgs) Handles RackNoRI.TextChanged
+
+    End Sub
+
+    Private Sub RackNoWarranty_GotFocus(sender As Object, e As EventArgs) Handles RackNoWarranty.GotFocus
+        RackNoWarranty.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub RackNoWarranty_LostFocus(sender As Object, e As EventArgs) Handles RackNoWarranty.LostFocus
+        RackNoWarranty.BackColor = Color.White
+    End Sub
+
+    Private Sub BoxNoWarranty_TextChanged(sender As Object, e As EventArgs) Handles BoxNoWarranty.TextChanged
+
+    End Sub
+
+    Private Sub BoxNoWarranty_GotFocus(sender As Object, e As EventArgs) Handles BoxNoWarranty.GotFocus
+        BoxNoWarranty.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BoxNoWarranty_LostFocus(sender As Object, e As EventArgs) Handles BoxNoWarranty.LostFocus
+        BoxNoWarranty.BackColor = Color.White
+    End Sub
+
+    Private Sub ProductBrandTextBox_GotFocus(sender As Object, e As EventArgs) Handles ProductBrandTextBox.GotFocus
+        BoxNoWarranty.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub ProductBrandTextBox_LostFocus(sender As Object, e As EventArgs) Handles ProductBrandTextBox.LostFocus
+        BoxNoWarranty.BackColor = Color.White
+    End Sub
+
+    Private Sub ProductTypeTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProductTypeTextBox.TextChanged
+
+    End Sub
+
+    Private Sub ProductTypeTextBox_GotFocus(sender As Object, e As EventArgs) Handles ProductTypeTextBox.GotFocus
+        ProductTypeTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub ProductTypeTextBox_LostFocus(sender As Object, e As EventArgs) Handles ProductTypeTextBox.LostFocus
+        ProductTypeTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub SerialTextBox_TextChanged(sender As Object, e As EventArgs) Handles SerialTextBox.TextChanged
+
+    End Sub
+
+    Private Sub SerialTextBox_GotFocus(sender As Object, e As EventArgs) Handles SerialTextBox.GotFocus
+        SerialTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub SerialTextBox_LostFocus(sender As Object, e As EventArgs) Handles SerialTextBox.LostFocus
+        SerialTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub DatePurchasedTextBox_TextChanged(sender As Object, e As EventArgs) Handles DatePurchasedTextBox.TextChanged
+
+    End Sub
+
+    Private Sub DatePurchasedTextBox_GotFocus(sender As Object, e As EventArgs) Handles DatePurchasedTextBox.GotFocus
+        SerialTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub ReferenceNoTextBox1_TextChanged(sender As Object, e As EventArgs) Handles ReferenceNoTextBox1.TextChanged
+
+    End Sub
+
+    Private Sub ReferenceNoTextBox1_GotFocus(sender As Object, e As EventArgs) Handles ReferenceNoTextBox1.GotFocus
+        SerialTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub ReferenceNoTextBox1_LostFocus(sender As Object, e As EventArgs) Handles ReferenceNoTextBox1.LostFocus
+        SerialTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub WarrantyNoTextBox_TextChanged(sender As Object, e As EventArgs) Handles WarrantyNoTextBox.TextChanged
+
+    End Sub
+
+    Private Sub WarrantyNoTextBox_GotFocus(sender As Object, e As EventArgs) Handles WarrantyNoTextBox.GotFocus
+        WarrantyNoTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub WarrantyNoTextBox_LostFocus(sender As Object, e As EventArgs) Handles WarrantyNoTextBox.LostFocus
+        WarrantyNoTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub WarrantyPeriodTextBox_TextChanged(sender As Object, e As EventArgs) Handles WarrantyPeriodTextBox.TextChanged
+
+    End Sub
+
+    Private Sub WarrantyPeriodTextBox_GotFocus(sender As Object, e As EventArgs) Handles WarrantyPeriodTextBox.GotFocus
+        WarrantyPeriodTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub WarrantyPeriodTextBox_LostFocus(sender As Object, e As EventArgs) Handles WarrantyPeriodTextBox.LostFocus
+        WarrantyPeriodTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub ServiceCenterTextBox_TextChanged(sender As Object, e As EventArgs) Handles ServiceCenterTextBox.TextChanged
+
+    End Sub
+
+    Private Sub ServiceCenterTextBox_GotFocus(sender As Object, e As EventArgs) Handles ServiceCenterTextBox.GotFocus
+        ServiceCenterTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub ServiceCenterTextBox_LostFocus(sender As Object, e As EventArgs) Handles ServiceCenterTextBox.LostFocus
+        ServiceCenterTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub AddressTextBox_TextChanged(sender As Object, e As EventArgs) Handles AddressTextBox.TextChanged
+
+    End Sub
+
+    Private Sub AddressTextBox_GotFocus(sender As Object, e As EventArgs) Handles AddressTextBox.GotFocus
+        AddressTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub AddressTextBox_LostFocus(sender As Object, e As EventArgs) Handles AddressTextBox.LostFocus
+        AddressTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub ContactNoTextBox_TextChanged(sender As Object, e As EventArgs) Handles ContactNoTextBox.TextChanged
+
+    End Sub
+
+    Private Sub ContactNoTextBox_GotFocus(sender As Object, e As EventArgs) Handles ContactNoTextBox.GotFocus
+        ContactNoTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub ContactNoTextBox_LostFocus(sender As Object, e As EventArgs) Handles ContactNoTextBox.LostFocus
+        ContactNoTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub RackNoVoucher_TextChanged(sender As Object, e As EventArgs) Handles RackNoVoucher.TextChanged
+
+    End Sub
+
+    Private Sub RackNoVoucher_GotFocus(sender As Object, e As EventArgs) Handles RackNoVoucher.GotFocus
+        RackNoVoucher.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub RackNoVoucher_LostFocus(sender As Object, e As EventArgs) Handles RackNoVoucher.LostFocus
+        RackNoVoucher.BackColor = Color.White
+    End Sub
+
+    Private Sub BoxNoVoucher_TextChanged(sender As Object, e As EventArgs) Handles BoxNoVoucher.TextChanged
+
+    End Sub
+
+    Private Sub BoxNoVoucher_GotFocus(sender As Object, e As EventArgs) Handles BoxNoVoucher.GotFocus
+        BoxNoVoucher.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BoxNoVoucher_LostFocus(sender As Object, e As EventArgs) Handles BoxNoVoucher.LostFocus
+        BoxNoVoucher.BackColor = Color.White
+    End Sub
+
+    Private Sub DocumentDateVoucher_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateVoucher.TextChanged
+
+    End Sub
+
+    Private Sub DocumentDateVoucher_GotFocus(sender As Object, e As EventArgs) Handles DocumentDateVoucher.GotFocus
+        DocumentDateVoucher.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub PayeeTextBox_TextChanged(sender As Object, e As EventArgs) Handles PayeeTextBox.TextChanged
+
+    End Sub
+
+    Private Sub PayeeTextBox_GotFocus(sender As Object, e As EventArgs) Handles PayeeTextBox.GotFocus
+        PayeeTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub PayeeTextBox_LostFocus(sender As Object, e As EventArgs) Handles PayeeTextBox.LostFocus
+        PayeeTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub PayorTextBox_TextChanged(sender As Object, e As EventArgs) Handles PayorTextBox.TextChanged
+
+    End Sub
+
+    Private Sub PayorTextBox_GotFocus(sender As Object, e As EventArgs) Handles PayorTextBox.GotFocus
+        PayorTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub PayorTextBox_LostFocus(sender As Object, e As EventArgs) Handles PayorTextBox.LostFocus
+        PayorTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub VoucherNoTextBox_TextChanged(sender As Object, e As EventArgs) Handles VoucherNoTextBox.TextChanged
+
+    End Sub
+
+    Private Sub VoucherNoTextBox_GotFocus(sender As Object, e As EventArgs) Handles VoucherNoTextBox.GotFocus
+        VoucherNoTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub VoucherNoTextBox_LostFocus(sender As Object, e As EventArgs) Handles VoucherNoTextBox.LostFocus
+        VoucherNoTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub BankNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles BankNameTextBox.TextChanged
+
+    End Sub
+
+    Private Sub BankNameTextBox_GotFocus(sender As Object, e As EventArgs) Handles BankNameTextBox.GotFocus
+        BankNameTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BankNameTextBox_LostFocus(sender As Object, e As EventArgs) Handles BankNameTextBox.LostFocus
+        BankNameTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub BankBranchTextBox_TextChanged(sender As Object, e As EventArgs) Handles BankBranchTextBox.TextChanged
+
+    End Sub
+
+    Private Sub BankBranchTextBox_GotFocus(sender As Object, e As EventArgs) Handles BankBranchTextBox.GotFocus
+        BankBranchTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BankBranchTextBox_LostFocus(sender As Object, e As EventArgs) Handles BankBranchTextBox.LostFocus
+        BankBranchTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub BankAddressTextBox_TextChanged(sender As Object, e As EventArgs) Handles BankAddressTextBox.TextChanged
+
+    End Sub
+
+    Private Sub BankAddressTextBox_GotFocus(sender As Object, e As EventArgs) Handles BankAddressTextBox.GotFocus
+        BankAddressTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BankAddressTextBox_LostFocus(sender As Object, e As EventArgs) Handles BankAddressTextBox.LostFocus
+        BankAddressTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub TotalValueVoucher_TextChanged(sender As Object, e As EventArgs) Handles TotalValueVoucher.TextChanged
+
+    End Sub
+
+    Private Sub TotalValueVoucher_GotFocus(sender As Object, e As EventArgs) Handles TotalValueVoucher.GotFocus
+        TotalValueVoucher.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TotalValueVoucher_LostFocus(sender As Object, e As EventArgs) Handles TotalValueVoucher.LostFocus
+        TotalValueVoucher.BackColor = Color.White
+    End Sub
+
+    Private Sub PaymentOthersTextBox_TextChanged(sender As Object, e As EventArgs) Handles PaymentOthersTextBox.TextChanged
+
+    End Sub
+
+    Private Sub PaymentOthersTextBox_GotFocus(sender As Object, e As EventArgs) Handles PaymentOthersTextBox.GotFocus
+        PaymentOthersTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub PaymentOthersTextBox_LostFocus(sender As Object, e As EventArgs) Handles PaymentOthersTextBox.LostFocus
+        PaymentOthersTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub CheckNoTextBox_TextChanged(sender As Object, e As EventArgs) Handles CheckNoTextBox.TextChanged
+
+    End Sub
+
+    Private Sub CheckNoTextBox_GotFocus(sender As Object, e As EventArgs) Handles CheckNoTextBox.GotFocus
+        CheckNoTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub CheckNoTextBox_LostFocus(sender As Object, e As EventArgs) Handles CheckNoTextBox.LostFocus
+        CheckNoTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub RackNoCorpDocu_TextChanged(sender As Object, e As EventArgs) Handles RackNoCorpDocu.TextChanged
+
+    End Sub
+
+    Private Sub RackNoCorpDocu_GotFocus(sender As Object, e As EventArgs) Handles RackNoCorpDocu.GotFocus
+        RackNoCorpDocu.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub RackNoCorpDocu_LostFocus(sender As Object, e As EventArgs) Handles RackNoCorpDocu.LostFocus
+        RackNoCorpDocu.BackColor = Color.White
+    End Sub
+
+    Private Sub BoxNoCorpDocu_TextChanged(sender As Object, e As EventArgs) Handles BoxNoCorpDocu.TextChanged
+
+    End Sub
+
+    Private Sub BoxNoCorpDocu_GotFocus(sender As Object, e As EventArgs) Handles BoxNoCorpDocu.GotFocus
+        BoxNoCorpDocu.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub BoxNoCorpDocu_LostFocus(sender As Object, e As EventArgs) Handles BoxNoCorpDocu.LostFocus
+        BoxNoCorpDocu.BackColor = Color.White
+    End Sub
+
+    Private Sub DocumentDateCorp_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateCorp.TextChanged
+
+    End Sub
+
+    Private Sub DocumentDateCorp_GotFocus(sender As Object, e As EventArgs) Handles DocumentDateCorp.GotFocus
+        DocumentDateCorp.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub MeetingDateTextBox_TextChanged(sender As Object, e As EventArgs) Handles MeetingDateTextBox.TextChanged
+
+    End Sub
+
+    Private Sub MeetingDateTextBox_GotFocus(sender As Object, e As EventArgs) Handles MeetingDateTextBox.GotFocus
+        MeetingDateTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub CompanyTextBox_TextChanged(sender As Object, e As EventArgs) Handles CompanyTextBox.TextChanged
+
+    End Sub
+
+    Private Sub CompanyTextBox_GotFocus(sender As Object, e As EventArgs) Handles CompanyTextBox.GotFocus
+        CompanyTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub CompanyTextBox_LostFocus(sender As Object, e As EventArgs) Handles CompanyTextBox.LostFocus
+        CompanyTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub SecretaryTextBox_TextChanged(sender As Object, e As EventArgs) Handles SecretaryTextBox.TextChanged
+
+    End Sub
+
+    Private Sub SecretaryTextBox_GotFocus(sender As Object, e As EventArgs) Handles SecretaryTextBox.GotFocus
+        SecretaryTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub SecretaryTextBox_LostFocus(sender As Object, e As EventArgs) Handles SecretaryTextBox.LostFocus
+        SecretaryTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub PurposeTextBox_TextChanged(sender As Object, e As EventArgs) Handles PurposeTextBox.TextChanged
+
+    End Sub
+
+    Private Sub PurposeTextBox_GotFocus(sender As Object, e As EventArgs) Handles PurposeTextBox.GotFocus
+        PurposeTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub PurposeTextBox_LostFocus(sender As Object, e As EventArgs) Handles PurposeTextBox.LostFocus
+        PurposeTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub PromoTitleTextBox_TextChanged(sender As Object, e As EventArgs) Handles PromoTitleTextBox.TextChanged
+
+    End Sub
+
+    Private Sub PromoTitleTextBox_GotFocus(sender As Object, e As EventArgs) Handles PromoTitleTextBox.GotFocus
+        PromoTitleTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub PromoTitleTextBox_LostFocus(sender As Object, e As EventArgs) Handles PromoTitleTextBox.LostFocus
+        PromoTitleTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub PromoFromTextBox_GotFocus(sender As Object, e As EventArgs) Handles PromoFromTextBox.GotFocus
+        PromoFromTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub PromoToTextBox_TextChanged(sender As Object, e As EventArgs) Handles PromoToTextBox.TextChanged
+
+    End Sub
+
+    Private Sub PromoToTextBox_GiveFeedback(sender As Object, e As GiveFeedbackEventArgs) Handles PromoToTextBox.GiveFeedback
+
+    End Sub
+
+    Private Sub PromoToTextBox_GotFocus(sender As Object, e As EventArgs) Handles PromoToTextBox.GotFocus
+        PromoToTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub DTIPermitNoTextBox_TextChanged(sender As Object, e As EventArgs) Handles DTIPermitNoTextBox.TextChanged
+
+    End Sub
+
+    Private Sub DTIPermitNoTextBox_GotFocus(sender As Object, e As EventArgs) Handles DTIPermitNoTextBox.GotFocus
+        PromoToTextBox.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub DTIPermitNoTextBox_LostFocus(sender As Object, e As EventArgs) Handles DTIPermitNoTextBox.LostFocus
+        PromoToTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub TextBox1_GotFocus(sender As Object, e As EventArgs) Handles TextBox1.GotFocus
+        TextBox1.BackColor = Color.LightYellow
+    End Sub
+
+    Private Sub TextBox1_LostFocus(sender As Object, e As EventArgs) Handles TextBox1.LostFocus
+        TextBox1.BackColor = Color.White
     End Sub
 End Class

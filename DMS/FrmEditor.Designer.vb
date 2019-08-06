@@ -1929,14 +1929,13 @@ Partial Class FrmEditor
         '
         'TabControl2
         '
-        Me.TabControl2.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
         Me.TabControl2.Controls.Add(Me.BankDepo)
         Me.TabControl2.Controls.Add(Me.Others)
         Me.TabControl2.Controls.Add(Me.Check)
         Me.TabControl2.Location = New System.Drawing.Point(0, 202)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(564, 129)
+        Me.TabControl2.Size = New System.Drawing.Size(610, 129)
         Me.TabControl2.TabIndex = 21
         Me.TabControl2.TabStop = False
         '
@@ -1950,10 +1949,10 @@ Partial Class FrmEditor
         Me.BankDepo.Controls.Add(Me.BankBranchTextBox)
         Me.BankDepo.Controls.Add(BankNameLabel)
         Me.BankDepo.Controls.Add(Me.BankNameTextBox)
-        Me.BankDepo.Location = New System.Drawing.Point(4, 28)
+        Me.BankDepo.Location = New System.Drawing.Point(4, 25)
         Me.BankDepo.Name = "BankDepo"
         Me.BankDepo.Padding = New System.Windows.Forms.Padding(3)
-        Me.BankDepo.Size = New System.Drawing.Size(556, 97)
+        Me.BankDepo.Size = New System.Drawing.Size(556, 100)
         Me.BankDepo.TabIndex = 0
         Me.BankDepo.Text = "BankDepo"
         '
@@ -1988,10 +1987,10 @@ Partial Class FrmEditor
         Me.Others.BackColor = System.Drawing.Color.Azure
         Me.Others.Controls.Add(PaymentOthersLabel)
         Me.Others.Controls.Add(Me.PaymentOthersTextBox)
-        Me.Others.Location = New System.Drawing.Point(4, 28)
+        Me.Others.Location = New System.Drawing.Point(4, 25)
         Me.Others.Name = "Others"
         Me.Others.Padding = New System.Windows.Forms.Padding(3)
-        Me.Others.Size = New System.Drawing.Size(556, 97)
+        Me.Others.Size = New System.Drawing.Size(556, 100)
         Me.Others.TabIndex = 1
         Me.Others.Text = "Others"
         '
@@ -2009,9 +2008,9 @@ Partial Class FrmEditor
         Me.Check.BackColor = System.Drawing.Color.Azure
         Me.Check.Controls.Add(Me.CheckNoTextBox)
         Me.Check.Controls.Add(CheckNoLabel)
-        Me.Check.Location = New System.Drawing.Point(4, 28)
+        Me.Check.Location = New System.Drawing.Point(4, 25)
         Me.Check.Name = "Check"
-        Me.Check.Size = New System.Drawing.Size(556, 97)
+        Me.Check.Size = New System.Drawing.Size(602, 100)
         Me.Check.TabIndex = 2
         Me.Check.Text = "Check"
         '

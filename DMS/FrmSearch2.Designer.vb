@@ -400,7 +400,7 @@ Partial Class FrmSearch2
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
         Me.SplitContainer1.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SplitContainer1.Size = New System.Drawing.Size(1240, 738)
-        Me.SplitContainer1.SplitterDistance = 251
+        Me.SplitContainer1.SplitterDistance = 260
         Me.SplitContainer1.TabIndex = 0
         Me.SplitContainer1.TabStop = False
         '
@@ -418,7 +418,7 @@ Partial Class FrmSearch2
         Me.C1TrueDBGrid2.PreviewInfo.Size = New System.Drawing.Size(0, 0)
         Me.C1TrueDBGrid2.PreviewInfo.ZoomFactor = 75.0R
         Me.C1TrueDBGrid2.PrintInfo.PageSettings = CType(resources.GetObject("C1TrueDBGrid2.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.C1TrueDBGrid2.Size = New System.Drawing.Size(1240, 251)
+        Me.C1TrueDBGrid2.Size = New System.Drawing.Size(1240, 260)
         Me.C1TrueDBGrid2.TabIndex = 0
         Me.C1TrueDBGrid2.UseCompatibleTextRendering = False
         Me.C1TrueDBGrid2.PropBag = resources.GetString("C1TrueDBGrid2.PropBag")
@@ -446,7 +446,7 @@ Partial Class FrmSearch2
         Me.SplitContainer2.Panel2.Controls.Add(Me.AcroPDF)
         Me.SplitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.SplitContainer2.Size = New System.Drawing.Size(1240, 483)
+        Me.SplitContainer2.Size = New System.Drawing.Size(1240, 474)
         Me.SplitContainer2.SplitterDistance = 629
         Me.SplitContainer2.TabIndex = 0
         Me.SplitContainer2.TabStop = False
@@ -497,7 +497,6 @@ Partial Class FrmSearch2
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
         Me.TabControl1.Controls.Add(Me.TabQuery)
         Me.TabControl1.Controls.Add(Me.TabChanges)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -825,6 +824,7 @@ Partial Class FrmSearch2
         '
         'DocumentTypeComboBox
         '
+        Me.DocumentTypeComboBox.BackColor = System.Drawing.SystemColors.Window
         Me.DocumentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DocumentTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DocumentTypeComboBox.FormattingEnabled = True
@@ -893,7 +893,6 @@ Partial Class FrmSearch2
         Me.TabControl2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TabControl2.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
         Me.TabControl2.Controls.Add(Me.Timesheet)
         Me.TabControl2.Controls.Add(Me.ReceiptInvoice)
         Me.TabControl2.Controls.Add(Me.Warranty)
@@ -913,10 +912,10 @@ Partial Class FrmSearch2
         Me.Timesheet.AutoScrollMinSize = New System.Drawing.Size(0, 300)
         Me.Timesheet.BackColor = System.Drawing.SystemColors.Control
         Me.Timesheet.Controls.Add(Me.GrpTimeSheet)
-        Me.Timesheet.Location = New System.Drawing.Point(4, 32)
+        Me.Timesheet.Location = New System.Drawing.Point(4, 29)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(601, 894)
+        Me.Timesheet.Size = New System.Drawing.Size(601, 897)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
@@ -943,7 +942,7 @@ Partial Class FrmSearch2
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(595, 888)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(595, 891)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1169,10 +1168,10 @@ Partial Class FrmSearch2
         Me.ReceiptInvoice.AutoScrollMinSize = New System.Drawing.Size(0, 400)
         Me.ReceiptInvoice.BackColor = System.Drawing.SystemColors.Control
         Me.ReceiptInvoice.Controls.Add(Me.GrpReceipt)
-        Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 32)
+        Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 29)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(601, 894)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(601, 897)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
@@ -1213,7 +1212,7 @@ Partial Class FrmSearch2
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(595, 888)
+        Me.GrpReceipt.Size = New System.Drawing.Size(595, 891)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1489,10 +1488,10 @@ Partial Class FrmSearch2
         Me.Warranty.AutoScrollMinSize = New System.Drawing.Size(0, 420)
         Me.Warranty.BackColor = System.Drawing.SystemColors.Control
         Me.Warranty.Controls.Add(Me.GrpWarranty)
-        Me.Warranty.Location = New System.Drawing.Point(4, 32)
+        Me.Warranty.Location = New System.Drawing.Point(4, 29)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(601, 894)
+        Me.Warranty.Size = New System.Drawing.Size(601, 897)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
@@ -1535,7 +1534,7 @@ Partial Class FrmSearch2
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(595, 888)
+        Me.GrpWarranty.Size = New System.Drawing.Size(595, 891)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1826,9 +1825,9 @@ Partial Class FrmSearch2
         Me.Voucher.AutoScrollMinSize = New System.Drawing.Size(0, 500)
         Me.Voucher.BackColor = System.Drawing.SystemColors.Control
         Me.Voucher.Controls.Add(Me.GrpVoucher)
-        Me.Voucher.Location = New System.Drawing.Point(4, 32)
+        Me.Voucher.Location = New System.Drawing.Point(4, 29)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(601, 894)
+        Me.Voucher.Size = New System.Drawing.Size(601, 897)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
@@ -1871,7 +1870,7 @@ Partial Class FrmSearch2
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(601, 894)
+        Me.GrpVoucher.Size = New System.Drawing.Size(601, 897)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -2305,9 +2304,9 @@ Partial Class FrmSearch2
         Me.CorpDocu.AutoScrollMinSize = New System.Drawing.Size(0, 350)
         Me.CorpDocu.BackColor = System.Drawing.SystemColors.Control
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
-        Me.CorpDocu.Location = New System.Drawing.Point(4, 32)
+        Me.CorpDocu.Location = New System.Drawing.Point(4, 29)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(601, 894)
+        Me.CorpDocu.Size = New System.Drawing.Size(601, 897)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
@@ -2330,7 +2329,7 @@ Partial Class FrmSearch2
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(601, 894)
+        Me.GrpCorp.Size = New System.Drawing.Size(601, 897)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2596,7 +2595,7 @@ Partial Class FrmSearch2
         Me.AcroPDF.Location = New System.Drawing.Point(0, 0)
         Me.AcroPDF.Name = "AcroPDF"
         Me.AcroPDF.OcxState = CType(resources.GetObject("AcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AcroPDF.Size = New System.Drawing.Size(607, 483)
+        Me.AcroPDF.Size = New System.Drawing.Size(607, 474)
         Me.AcroPDF.TabIndex = 91
         '
         'OpenFileDialog1

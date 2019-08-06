@@ -84,8 +84,8 @@ Public Class FrmMain
 
 
 
-        TabControl1.Appearance = TabAppearance.FlatButtons
-            TabControl1.ItemSize = New Size(0, 1)
+        TabControl1.Appearance = TabAppearance.Normal
+        TabControl1.ItemSize = New Size(0, 1)
             TabControl1.SizeMode = TabSizeMode.Fixed
 
         For Each TabPage In TabControl1.TabPages
