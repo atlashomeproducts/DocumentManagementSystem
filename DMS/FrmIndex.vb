@@ -92,21 +92,16 @@ Public Class FrmIndex
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnIndex.Click
         If txtCompany.Text = "" Or txtPurpose.Text = "" Or DocumentTypeComboBox.Text = "" Or batchIdTextBox.Text = "" Then
-
-
             MessageBox.Show("Please complete all the required fields.", "Incomplete Details", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
         Else
 
 
             If ListBox1.Items.Count = 0 Then
-
                 MessageBox.Show("Files not found!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             ElseIf batchIdTextBox.Text = "" Then
-
                 MessageBox.Show("Please don't leave batch name empty..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
             Else
+
 
                 Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
                 Dim cmd As New SqlCommand
@@ -115,7 +110,6 @@ Public Class FrmIndex
                 Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
                 ' Dim dRemoteDate As Date
                 '   dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
-
 
                 With cmd
                     .CommandText = strsql
@@ -134,54 +128,103 @@ Public Class FrmIndex
                     .Parameters.AddWithValue("@BoxNo", "")
                     .Parameters.AddWithValue("@UserID", "")
 
-
-
                     .Connection = con
                 End With
+
 
                 Try
 
 
                     con.Open()
+                    '  Dim Duplicate As ArrayList = New ArrayList()
 
+                    'For Each Item As String In ListBox1.SelectedItems
+
+                    '    Dim da As New SqlDataAdapter("Select Filename from DocsCatalogue where Filename = '" + My.Computer.FileSystem.GetFileInfo(Item).Name + "'", con)
+                    '    Dim ds As New DataSet()
+                    '    da.Fill(ds)
+
+                    '    If ds.Tables(0).Rows.Count > 0 Then
+                    '        ' MessageBox.Show("Filename " & My.Computer.FileSystem.GetFileInfo(Item).Name & " already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    '        Duplicate.Add(Item.ToString)
+
+                    '        'ElseIf ds.Tables(0).Rows.Count < 1 Then
+
+                    '    End If
+
+                    'Next
+                    Dim x As ArrayList = New ArrayList()
+                    Dim duplicate As List(Of String) = New List(Of String)
                     For Each Item As String In ListBox1.SelectedItems
 
 
-                        cmd.Parameters("@DocumentType").Value = DocumentTypeComboBox.Text
-                        cmd.Parameters("@BatchID").Value = batchIdTextBox.Text
-                        cmd.Parameters("@SubBatch").Value = SubBatchTextbox.Text
-                        cmd.Parameters("@ScanDate").Value = scanDateTimePicker.Text
-                        cmd.Parameters("@FileName").Value = txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name
-                        cmd.Parameters("@Status").Value = "Indexed"
-                        cmd.Parameters("@Company").Value = txtCompany.Text
-                        cmd.Parameters("@Purpose").Value = txtPurpose.Text
-                        cmd.Parameters("@RackNo").Value = RackNoTextbox.Text
-                        cmd.Parameters("@BoxNo").Value = BoxNoTextbox.Text
-                        cmd.Parameters("@UserID").Value = FrmMain.User
 
-                        cmd.ExecuteNonQuery()
+                        Dim da As New SqlDataAdapter("Select Filename from DocsCatalogue where Filename = '" + My.Computer.FileSystem.GetFileInfo(Item).Name + "'", con)
+                        Dim ds As New DataSet()
+                        da.Fill(ds)
 
+                        If ds.Tables(0).Rows.Count > 0 Then
+                            ' MessageBox.Show("Filename " & My.Computer.FileSystem.GetFileInfo(Item).Name & " already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                            duplicate.Add(My.Computer.FileSystem.GetFileInfo(Item).Name)
 
+                        ElseIf ds.Tables(0).Rows.Count < 1 Then
 
-                        File.Copy(Item, Path.Combine(My.Settings.ImgPath, txtPurpose.Text & "_" & My.Computer.FileSystem.GetFileInfo(Item).Name), True)
+                            cmd.Parameters("@DocumentType").Value = DocumentTypeComboBox.Text
+                            cmd.Parameters("@BatchID").Value = batchIdTextBox.Text
+                            cmd.Parameters("@SubBatch").Value = SubBatchTextbox.Text
+                            cmd.Parameters("@ScanDate").Value = scanDateTimePicker.Text
+                            cmd.Parameters("@FileName").Value = My.Computer.FileSystem.GetFileInfo(Item).Name
+                            cmd.Parameters("@Status").Value = "Indexed"
+                            cmd.Parameters("@Company").Value = txtCompany.Text
+                            cmd.Parameters("@Purpose").Value = txtPurpose.Text
+                            cmd.Parameters("@RackNo").Value = RackNoTextbox.Text
+                            cmd.Parameters("@BoxNo").Value = BoxNoTextbox.Text
+                            cmd.Parameters("@UserID").Value = FrmMain.User
+
+                            cmd.ExecuteNonQuery()
+
+                            ' File.Copy(Item, Path.Combine(My.Settings.ImgPath, My.Computer.FileSystem.GetFileInfo(Item).Name), True)
+
+                            If (File.Exists(Path.Combine(My.Settings.ImgPath, My.Computer.FileSystem.GetFileInfo(Item).Name))) Then
+
+                            Else
+                                File.Move(Item, Path.Combine(My.Settings.ImgPath, My.Computer.FileSystem.GetFileInfo(Item).Name))
+                                x.Add(Item)
+
+                            End If
+
+                        End If
+
                     Next
 
 
-                    con.Close()
+                        con.Close()
 
-                    Dim lst As New List(Of Object)
-                    For Each a As Object In ListBox1.SelectedItems
-                        lst.Add(a)
-                    Next
-                    For Each a As Object In lst
+                    'Dim lst As New List(Of Object)
+                    'For Each a As Object In ListBox1.SelectedItems
+                    '    lst.Add(a)
+                    'Next
+
+                    'For Each a As Object In lst
+                    '    ListBox1.Items.Remove(a)
+                    'Next
+
+                    'remove uploaded
+                    For Each a As Object In x
                         ListBox1.Items.Remove(a)
                     Next
 
                     AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
                     FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
-                    MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+                    If duplicate.Count < 1 Then
+                        MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    ElseIf duplicate.Count > 0 Then
 
+                        MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Dim dupvalue As String = String.Join(",", duplicate)
+                        MessageBox.Show("Document/s with filename/s " & dupvalue & " already exist. Please check and try again.", "File already exist", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    End If
 
 
                     con.Open()
@@ -196,13 +239,12 @@ Public Class FrmIndex
 
                 Catch ex As Exception
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Finally
-                    con.Close()
+
                 End Try
 
             End If
-
         End If
+
     End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
@@ -217,7 +259,7 @@ Public Class FrmIndex
 
         Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
         Dim cmd2 As New SqlCommand("SELECT Distinct Company FROM DocsCatalogue WHERE Status = 'Finished' ", con)
-                    Dim ds As New DataSet
+        Dim ds As New DataSet
         Dim da As New SqlDataAdapter(cmd2)
         da.Fill(ds, "list") ' list can be any name u want
         Dim col As New AutoCompleteStringCollection
@@ -243,6 +285,12 @@ Public Class FrmIndex
         End While
 
         con.Close()
+
+
+
+
+        batchIdTextBox.ReadOnly = True
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click

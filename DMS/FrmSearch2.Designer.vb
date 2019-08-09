@@ -553,17 +553,17 @@ Partial Class FrmSearch2
         'CHKFileName
         '
         Me.CHKFileName.AutoSize = True
-        Me.CHKFileName.Location = New System.Drawing.Point(43, 179)
+        Me.CHKFileName.Location = New System.Drawing.Point(43, 74)
         Me.CHKFileName.Name = "CHKFileName"
         Me.CHKFileName.Size = New System.Drawing.Size(15, 14)
-        Me.CHKFileName.TabIndex = 13
+        Me.CHKFileName.TabIndex = 5
         Me.CHKFileName.UseVisualStyleBackColor = True
         '
         'sdasd
         '
         Me.sdasd.AutoSize = True
         Me.sdasd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.sdasd.Location = New System.Drawing.Point(64, 175)
+        Me.sdasd.Location = New System.Drawing.Point(64, 70)
         Me.sdasd.Name = "sdasd"
         Me.sdasd.Size = New System.Drawing.Size(84, 20)
         Me.sdasd.TabIndex = 90
@@ -571,10 +571,10 @@ Partial Class FrmSearch2
         '
         'TxtFileName
         '
-        Me.TxtFileName.Location = New System.Drawing.Point(191, 172)
+        Me.TxtFileName.Location = New System.Drawing.Point(191, 67)
         Me.TxtFileName.Name = "TxtFileName"
         Me.TxtFileName.Size = New System.Drawing.Size(157, 26)
-        Me.TxtFileName.TabIndex = 14
+        Me.TxtFileName.TabIndex = 6
         '
         'Label36
         '
@@ -591,17 +591,17 @@ Partial Class FrmSearch2
         'CHKBatch
         '
         Me.CHKBatch.AutoSize = True
-        Me.CHKBatch.Location = New System.Drawing.Point(43, 151)
+        Me.CHKBatch.Location = New System.Drawing.Point(43, 182)
         Me.CHKBatch.Name = "CHKBatch"
         Me.CHKBatch.Size = New System.Drawing.Size(15, 14)
-        Me.CHKBatch.TabIndex = 11
+        Me.CHKBatch.TabIndex = 13
         Me.CHKBatch.UseVisualStyleBackColor = True
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(64, 147)
+        Me.Label11.Location = New System.Drawing.Point(64, 178)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(83, 20)
         Me.Label11.TabIndex = 86
@@ -609,31 +609,31 @@ Partial Class FrmSearch2
         '
         'TxtBatch
         '
-        Me.TxtBatch.Location = New System.Drawing.Point(191, 144)
+        Me.TxtBatch.Location = New System.Drawing.Point(191, 175)
         Me.TxtBatch.Name = "TxtBatch"
         Me.TxtBatch.Size = New System.Drawing.Size(157, 26)
-        Me.TxtBatch.TabIndex = 12
+        Me.TxtBatch.TabIndex = 14
         '
         'TxtBook
         '
-        Me.TxtBook.Location = New System.Drawing.Point(191, 117)
+        Me.TxtBook.Location = New System.Drawing.Point(191, 148)
         Me.TxtBook.Name = "TxtBook"
         Me.TxtBook.Size = New System.Drawing.Size(157, 26)
-        Me.TxtBook.TabIndex = 10
+        Me.TxtBook.TabIndex = 12
         '
         'TxtBox
         '
-        Me.TxtBox.Location = New System.Drawing.Point(191, 90)
+        Me.TxtBox.Location = New System.Drawing.Point(191, 121)
         Me.TxtBox.Name = "TxtBox"
         Me.TxtBox.Size = New System.Drawing.Size(157, 26)
-        Me.TxtBox.TabIndex = 8
+        Me.TxtBox.TabIndex = 10
         '
         'TxtRack
         '
-        Me.TxtRack.Location = New System.Drawing.Point(191, 63)
+        Me.TxtRack.Location = New System.Drawing.Point(191, 94)
         Me.TxtRack.Name = "TxtRack"
         Me.TxtRack.Size = New System.Drawing.Size(157, 26)
-        Me.TxtRack.TabIndex = 6
+        Me.TxtRack.TabIndex = 8
         '
         'CHKScanDate
         '
@@ -711,28 +711,28 @@ Partial Class FrmSearch2
         'CHKBook
         '
         Me.CHKBook.AutoSize = True
-        Me.CHKBook.Location = New System.Drawing.Point(43, 124)
+        Me.CHKBook.Location = New System.Drawing.Point(43, 155)
         Me.CHKBook.Name = "CHKBook"
         Me.CHKBook.Size = New System.Drawing.Size(15, 14)
-        Me.CHKBook.TabIndex = 9
+        Me.CHKBook.TabIndex = 11
         Me.CHKBook.UseVisualStyleBackColor = True
         '
         'CHKBox
         '
         Me.CHKBox.AutoSize = True
-        Me.CHKBox.Location = New System.Drawing.Point(43, 97)
+        Me.CHKBox.Location = New System.Drawing.Point(43, 128)
         Me.CHKBox.Name = "CHKBox"
         Me.CHKBox.Size = New System.Drawing.Size(15, 14)
-        Me.CHKBox.TabIndex = 7
+        Me.CHKBox.TabIndex = 9
         Me.CHKBox.UseVisualStyleBackColor = True
         '
         'CHKRack
         '
         Me.CHKRack.AutoSize = True
-        Me.CHKRack.Location = New System.Drawing.Point(43, 70)
+        Me.CHKRack.Location = New System.Drawing.Point(43, 101)
         Me.CHKRack.Name = "CHKRack"
         Me.CHKRack.Size = New System.Drawing.Size(15, 14)
-        Me.CHKRack.TabIndex = 5
+        Me.CHKRack.TabIndex = 7
         Me.CHKRack.UseVisualStyleBackColor = True
         '
         'Label7
@@ -780,7 +780,7 @@ Partial Class FrmSearch2
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(64, 120)
+        Me.Label3.Location = New System.Drawing.Point(64, 151)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(95, 20)
         Me.Label3.TabIndex = 69
@@ -790,7 +790,7 @@ Partial Class FrmSearch2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(64, 93)
+        Me.Label2.Location = New System.Drawing.Point(64, 124)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(68, 20)
         Me.Label2.TabIndex = 68
@@ -800,7 +800,7 @@ Partial Class FrmSearch2
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(64, 66)
+        Me.Label1.Location = New System.Drawing.Point(64, 97)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 67
@@ -1051,7 +1051,6 @@ Partial Class FrmSearch2
         Me.FromPeriodTextBox.Name = "FromPeriodTextBox"
         Me.FromPeriodTextBox.Size = New System.Drawing.Size(104, 22)
         Me.FromPeriodTextBox.TabIndex = 31
-        Me.FromPeriodTextBox.TabStop = False
         Me.FromPeriodTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DTFromPeriod
@@ -1069,7 +1068,6 @@ Partial Class FrmSearch2
         Me.ToPeriodTextBox.Name = "ToPeriodTextBox"
         Me.ToPeriodTextBox.Size = New System.Drawing.Size(103, 22)
         Me.ToPeriodTextBox.TabIndex = 33
-        Me.ToPeriodTextBox.TabStop = False
         Me.ToPeriodTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ToPeriodLabel
@@ -1143,7 +1141,6 @@ Partial Class FrmSearch2
         Me.DocumentDateTS.Name = "DocumentDateTS"
         Me.DocumentDateTS.Size = New System.Drawing.Size(104, 22)
         Me.DocumentDateTS.TabIndex = 26
-        Me.DocumentDateTS.TabStop = False
         Me.DocumentDateTS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DTDocuTimeSheet
@@ -1354,7 +1351,6 @@ Partial Class FrmSearch2
         Me.DocumentDateRI.Name = "DocumentDateRI"
         Me.DocumentDateRI.Size = New System.Drawing.Size(104, 22)
         Me.DocumentDateRI.TabIndex = 26
-        Me.DocumentDateRI.TabStop = False
         Me.DocumentDateRI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TotalValueLabel
@@ -1762,7 +1758,6 @@ Partial Class FrmSearch2
         Me.DatePurchasedTextBox.Name = "DatePurchasedTextBox"
         Me.DatePurchasedTextBox.Size = New System.Drawing.Size(95, 22)
         Me.DatePurchasedTextBox.TabIndex = 29
-        Me.DatePurchasedTextBox.TabStop = False
         Me.DatePurchasedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ProductTypeLabel
@@ -1964,7 +1959,7 @@ Partial Class FrmSearch2
         Me.PaymentFormComboBox.Location = New System.Drawing.Point(158, 180)
         Me.PaymentFormComboBox.Name = "PaymentFormComboBox"
         Me.PaymentFormComboBox.Size = New System.Drawing.Size(183, 24)
-        Me.PaymentFormComboBox.TabIndex = 10
+        Me.PaymentFormComboBox.TabIndex = 31
         '
         'DTDocuVoucher
         '
@@ -2154,7 +2149,6 @@ Partial Class FrmSearch2
         Me.DocumentDateVoucher.Name = "DocumentDateVoucher"
         Me.DocumentDateVoucher.Size = New System.Drawing.Size(100, 22)
         Me.DocumentDateVoucher.TabIndex = 26
-        Me.DocumentDateVoucher.TabStop = False
         Me.DocumentDateVoucher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TabControl3
@@ -2585,7 +2579,6 @@ Partial Class FrmSearch2
         Me.DocumentDateCorp.Name = "DocumentDateCorp"
         Me.DocumentDateCorp.Size = New System.Drawing.Size(100, 22)
         Me.DocumentDateCorp.TabIndex = 26
-        Me.DocumentDateCorp.TabStop = False
         Me.DocumentDateCorp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'AcroPDF

@@ -1952,7 +1952,7 @@ Partial Class FrmEditor
         Me.BankDepo.Location = New System.Drawing.Point(4, 25)
         Me.BankDepo.Name = "BankDepo"
         Me.BankDepo.Padding = New System.Windows.Forms.Padding(3)
-        Me.BankDepo.Size = New System.Drawing.Size(556, 100)
+        Me.BankDepo.Size = New System.Drawing.Size(602, 100)
         Me.BankDepo.TabIndex = 0
         Me.BankDepo.Text = "BankDepo"
         '
@@ -1990,7 +1990,7 @@ Partial Class FrmEditor
         Me.Others.Location = New System.Drawing.Point(4, 25)
         Me.Others.Name = "Others"
         Me.Others.Padding = New System.Windows.Forms.Padding(3)
-        Me.Others.Size = New System.Drawing.Size(556, 100)
+        Me.Others.Size = New System.Drawing.Size(602, 100)
         Me.Others.TabIndex = 1
         Me.Others.Text = "Others"
         '
@@ -2267,6 +2267,7 @@ Partial Class FrmEditor
         '
         'LblStat
         '
+        Me.LblStat.BackColor = System.Drawing.Color.Transparent
         Me.LblStat.Name = "LblStat"
         Me.LblStat.Size = New System.Drawing.Size(121, 17)
         Me.LblStat.Text = "ToolStripStatusLabel1"

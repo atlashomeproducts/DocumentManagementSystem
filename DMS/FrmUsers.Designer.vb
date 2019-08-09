@@ -96,7 +96,7 @@ Partial Class FrmUsers
         '
         'BtnDelete
         '
-        Me.BtnDelete.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.BtnDelete.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnDelete.Location = New System.Drawing.Point(280, 122)
         Me.BtnDelete.Name = "BtnDelete"
@@ -177,7 +177,7 @@ Partial Class FrmUsers
         '
         'BtnConfirm
         '
-        Me.BtnConfirm.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.BtnConfirm.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnConfirm.Location = New System.Drawing.Point(191, 122)
         Me.BtnConfirm.Name = "BtnConfirm"

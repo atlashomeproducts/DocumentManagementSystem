@@ -388,7 +388,6 @@ Public Class FrmMain
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles ChkShow.CheckedChanged
         If Me.ChkShow.Checked = True Then
             TxtPassword.PasswordChar = ""
-
         Else
             TxtPassword.PasswordChar = "*"
         End If

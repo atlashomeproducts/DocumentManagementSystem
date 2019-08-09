@@ -356,7 +356,7 @@ Partial Class FrmIndex
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(119, 19)
         Me.Label5.TabIndex = 27
-        Me.Label5.Text = "Sub Batch Name:"
+        Me.Label5.Text = "Sub Batch:"
         '
         'SubBatchTextbox
         '
@@ -425,13 +425,11 @@ Partial Class FrmIndex
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackgroundColor = System.Drawing.Color.GhostWhite
         Me.ClientSize = New System.Drawing.Size(873, 580)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmIndex"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "INDEX"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)

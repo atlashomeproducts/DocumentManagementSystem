@@ -2,9 +2,9 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <PublishUrlHistory>\\ATLAS_SYNOLOGY\Public\PUBLISH\DMS\|\\ATLAS_SYNOLOGY\Public\PUBLISHDMS\|D:\Desktop\DMS Prerequisites\DMS\|D:\Desktop\DMS Prerequisites\|publish\</PublishUrlHistory>
-    <InstallUrlHistory />
+    <InstallUrlHistory>https://drive.google.com/open%3fid=10fgSSeTb5wSxUJZYnjD4d046iEHmYN6T/|https://drive.google.com/open%3fid=1woyc6TKBzdo7zlJg0mQmswnqWDd61uri/|https://www.dropbox.com/s/0oogdmyjcgxuetd/DMS.application%3fdl=0/|https://drive.google.com/drive/folders/1woyc6TKBzdo7zlJg0mQmswnqWDd61uri%3fusp=sharing/</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory />
+    <UpdateUrlHistory>https://drive.google.com/open%3fid=10fgSSeTb5wSxUJZYnjD4d046iEHmYN6T/|https://www.dropbox.com/s/0oogdmyjcgxuetd/DMS.application%3fdl=0/|https://drive.google.com/drive/folders/1woyc6TKBzdo7zlJg0mQmswnqWDd61uri%3fusp=sharing/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>
