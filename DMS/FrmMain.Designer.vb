@@ -38,6 +38,8 @@ Partial Class FrmMain
         Me.TabMain = New System.Windows.Forms.TabPage()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.btnDock = New System.Windows.Forms.Button()
+        Me.LblUser = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.IndexFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,8 +49,8 @@ Partial Class FrmMain
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LblUser = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TxtQueue = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.SpDMSTotalsC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.SpDMSTotalsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -65,6 +67,7 @@ Partial Class FrmMain
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.SpDMSLogsTableAdapter = New DMS.DMSDataSetTableAdapters.spDMSLogsTableAdapter()
         Me.SpDMSLogsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabLogin.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -74,8 +77,8 @@ Partial Class FrmMain
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
@@ -249,9 +252,9 @@ Partial Class FrmMain
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.SplitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnDock)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.MenuStrip1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.LblUser)
         Me.SplitContainer1.Panel1.Controls.Add(Me.PictureBox1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.MenuStrip1)
         '
         'SplitContainer1.Panel2
         '
@@ -276,11 +279,37 @@ Partial Class FrmMain
         Me.btnDock.Text = "Dock"
         Me.btnDock.UseVisualStyleBackColor = False
         '
+        'LblUser
+        '
+        Me.LblUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LblUser.AutoSize = True
+        Me.LblUser.BackColor = System.Drawing.Color.Azure
+        Me.LblUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.LblUser.Font = New System.Drawing.Font("Britannic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblUser.Location = New System.Drawing.Point(6, 615)
+        Me.LblUser.Name = "LblUser"
+        Me.LblUser.Size = New System.Drawing.Size(52, 23)
+        Me.LblUser.TabIndex = 8
+        Me.LblUser.Text = "User"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Azure
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 27)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(743, 628)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.White
         Me.MenuStrip1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexFilesToolStripMenuItem, Me.ToolStripMenuItem1, Me.EditorToolStripMenuItem, Me.ToolStripMenuItem2, Me.SEARCHToolStripMenuItem, Me.ToolStripMenuItem3, Me.UserManagementToolStripMenuItem, Me.ToolStripMenuItem4})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexFilesToolStripMenuItem, Me.ToolStripMenuItem1, Me.EditorToolStripMenuItem, Me.ToolStripMenuItem2, Me.SEARCHToolStripMenuItem, Me.ToolStripMenuItem3, Me.UserManagementToolStripMenuItem, Me.ToolStripMenuItem4, Me.ToolStripMenuItem6, Me.TxtQueue, Me.ToolStripMenuItem5})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(0)
@@ -345,31 +374,21 @@ Partial Class FrmMain
         Me.ToolStripMenuItem4.Size = New System.Drawing.Size(40, 27)
         Me.ToolStripMenuItem4.Text = "||"
         '
-        'LblUser
+        'TxtQueue
         '
-        Me.LblUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.LblUser.AutoSize = True
-        Me.LblUser.BackColor = System.Drawing.Color.Azure
-        Me.LblUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.LblUser.Font = New System.Drawing.Font("Britannic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblUser.Location = New System.Drawing.Point(6, 615)
-        Me.LblUser.Name = "LblUser"
-        Me.LblUser.Size = New System.Drawing.Size(52, 23)
-        Me.LblUser.TabIndex = 8
-        Me.LblUser.Text = "User"
+        Me.TxtQueue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.TxtQueue.Name = "TxtQueue"
+        Me.TxtQueue.Size = New System.Drawing.Size(50, 27)
+        Me.TxtQueue.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PictureBox1
+        'ToolStripMenuItem5
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Azure
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(743, 655)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
+        Me.ToolStripMenuItem5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripMenuItem5.Enabled = False
+        Me.ToolStripMenuItem5.ForeColor = System.Drawing.Color.Black
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(81, 27)
+        Me.ToolStripMenuItem5.Text = " QUEUE"
         '
         'SplitContainer2
         '
@@ -572,6 +591,14 @@ Partial Class FrmMain
         Me.SpDMSLogsBindingSource1.DataMember = "spDMSLogs"
         Me.SpDMSLogsBindingSource1.DataSource = Me.DMSDataSet
         '
+        'ToolStripMenuItem6
+        '
+        Me.ToolStripMenuItem6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripMenuItem6.Image = CType(resources.GetObject("ToolStripMenuItem6.Image"), System.Drawing.Image)
+        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(97, 27)
+        Me.ToolStripMenuItem6.Text = "Refresh"
+        '
         'FrmMain
         '
         Me.BackgroundColor = System.Drawing.Color.Azure
@@ -592,9 +619,9 @@ Partial Class FrmMain
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -654,4 +681,7 @@ Partial Class FrmMain
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents UserManagementToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
+    Friend WithEvents TxtQueue As ToolStripTextBox
+    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem6 As ToolStripMenuItem
 End Class

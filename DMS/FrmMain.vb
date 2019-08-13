@@ -2,6 +2,7 @@
 Imports System.ComponentModel
 Imports System.Configuration
 Imports System.Data.SqlClient
+Imports System.IO
 Imports System.Runtime.InteropServices
 
 
@@ -86,7 +87,7 @@ Public Class FrmMain
 
         TabControl1.Appearance = TabAppearance.Normal
         TabControl1.ItemSize = New Size(0, 1)
-            TabControl1.SizeMode = TabSizeMode.Fixed
+        TabControl1.SizeMode = TabSizeMode.Fixed
 
         For Each TabPage In TabControl1.TabPages
 
@@ -95,7 +96,7 @@ Public Class FrmMain
 
         Next
 
-
+        TxtQueue.ReadOnly = True
 
 
 
@@ -379,6 +380,11 @@ Public Class FrmMain
 
 
 
+        Dim counter As Integer = Directory.GetFiles(My.Settings.Queue, "*.pdf", SearchOption.AllDirectories).Length
+        TxtQueue.Text = counter
+
+
+
     End Sub
 
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
@@ -399,12 +405,23 @@ Public Class FrmMain
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
+
+        Try
+
+
+            Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
         Me.SpDMSLogsTableAdapter.Fill(Me.DMSDataSet.spDMSLogs, DateTimePicker1.Value, DateTimePicker2.Value)
+            ' TxtQueue.Text = My.Settings.ImgPath.GetFiles(FullName, "*.pdf").Count
 
-
-        Me.SpDMSTotalsBindingSource.MoveLast()
+            Me.SpDMSTotalsBindingSource.MoveLast()
         Me.SpDMSLogsBindingSource.MoveLast()
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
@@ -509,5 +526,30 @@ Public Class FrmMain
 
     Private Sub TxtPassword_LostFocus(sender As Object, e As EventArgs) Handles TxtPassword.LostFocus
         TxtPassword.BackColor = Color.White
+    End Sub
+
+    Private Sub ToolStripTextBox1_Click(sender As Object, e As EventArgs) Handles TxtQueue.Click
+
+    End Sub
+
+    Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem6.Click
+        Try
+
+
+
+            Dim counter As Integer = Directory.GetFiles(My.Settings.Queue, "*.pdf", SearchOption.AllDirectories).Length
+            TxtQueue.Text = counter
+
+            Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
+            Me.SpDMSLogsTableAdapter.Fill(Me.DMSDataSet.spDMSLogs, DateTimePicker1.Value, DateTimePicker2.Value)
+
+            Me.SpDMSTotalsBindingSource.MoveLast()
+            Me.SpDMSLogsBindingSource.MoveLast()
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 End Class

@@ -37,18 +37,15 @@ Public Class FrmIndex
     '            NetApiBufferFree(ptodi)
     '            dDate = DateSerial(todi.tod_year, todi.tod_month, todi.tod_day) + " " + TimeSerial(todi.tod_hours, todi.tod_mins - todi.tod_timezone, todi.tod_secs)
     '            GetNetRemoteTOD = dDate
-
     '        Else
     '            MsgBox("Error retrieving time")
     '        End If
     '    Catch
-
     '        Try
     '            GetNetRemoteTOD = Date.Now.ToString("MM/dd/yyyy HH:mm:ss tt")
     '        Catch
     '            MsgBox("Error in GetNetRemoteTOD: " & Err.Description)
     '        End Try
-
     '    End Try
 
     '    Return GetNetRemoteTOD
@@ -81,15 +78,7 @@ Public Class FrmIndex
             End If
         End With
 
-
-
-
-
     End Sub
-
-
-
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnIndex.Click
         If txtCompany.Text = "" Or txtPurpose.Text = "" Or DocumentTypeComboBox.Text = "" Or batchIdTextBox.Text = "" Then
             MessageBox.Show("Please complete all the required fields.", "Incomplete Details", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -164,7 +153,6 @@ Public Class FrmIndex
                         da.Fill(ds)
 
                         If ds.Tables(0).Rows.Count > 0 Then
-                            ' MessageBox.Show("Filename " & My.Computer.FileSystem.GetFileInfo(Item).Name & " already exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                             duplicate.Add(My.Computer.FileSystem.GetFileInfo(Item).Name)
 
                         ElseIf ds.Tables(0).Rows.Count < 1 Then

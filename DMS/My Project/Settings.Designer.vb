@@ -216,6 +216,15 @@ Namespace My
                 Me("remoteTOD") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("\\ATLAS_SYNOLOGY\Public\NELSON")>  _
+        Public ReadOnly Property Queue() As String
+            Get
+                Return CType(Me("Queue"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
