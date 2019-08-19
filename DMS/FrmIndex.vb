@@ -279,6 +279,7 @@ Public Class FrmIndex
 
         batchIdTextBox.ReadOnly = True
 
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click

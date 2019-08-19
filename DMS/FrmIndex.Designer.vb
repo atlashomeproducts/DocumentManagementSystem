@@ -45,14 +45,14 @@ Partial Class FrmIndex
         Me.Label6 = New System.Windows.Forms.Label()
         Me.RackNoTextbox = New System.Windows.Forms.TextBox()
         Me.BoxNoTextbox = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.SubBatchTextbox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.scanDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.batchIdTextBox = New System.Windows.Forms.TextBox()
         Me.BtnIndex = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -192,6 +192,7 @@ Partial Class FrmIndex
         'SplitContainer3.Panel2
         '
         Me.SplitContainer3.Panel2.BackColor = System.Drawing.Color.Azure
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label5)
         Me.SplitContainer3.Panel2.Controls.Add(Me.Label9)
         Me.SplitContainer3.Panel2.Controls.Add(Me.Label8)
         Me.SplitContainer3.Panel2.Controls.Add(Me.txtPurpose)
@@ -205,7 +206,6 @@ Partial Class FrmIndex
         Me.SplitContainer3.Panel2.Controls.Add(Me.Label6)
         Me.SplitContainer3.Panel2.Controls.Add(Me.RackNoTextbox)
         Me.SplitContainer3.Panel2.Controls.Add(Me.BoxNoTextbox)
-        Me.SplitContainer3.Panel2.Controls.Add(Me.Label5)
         Me.SplitContainer3.Panel2.Controls.Add(Me.SubBatchTextbox)
         Me.SplitContainer3.Panel2.Controls.Add(Me.Label2)
         Me.SplitContainer3.Panel2.Controls.Add(Me.scanDateTimePicker)
@@ -347,17 +347,6 @@ Partial Class FrmIndex
         Me.BoxNoTextbox.Size = New System.Drawing.Size(106, 22)
         Me.BoxNoTextbox.TabIndex = 11
         '
-        'Label5
-        '
-        Me.Label5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.Location = New System.Drawing.Point(4, 144)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(119, 19)
-        Me.Label5.TabIndex = 27
-        Me.Label5.Text = "Sub Batch:"
-        '
         'SubBatchTextbox
         '
         Me.SubBatchTextbox.Location = New System.Drawing.Point(126, 141)
@@ -385,18 +374,6 @@ Partial Class FrmIndex
         Me.scanDateTimePicker.Size = New System.Drawing.Size(185, 22)
         Me.scanDateTimePicker.TabIndex = 10
         '
-        'Label1
-        '
-        Me.Label1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(4, 102)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(90, 16)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "Batch Name:*"
-        '
         'batchIdTextBox
         '
         Me.batchIdTextBox.Location = New System.Drawing.Point(126, 99)
@@ -419,6 +396,30 @@ Partial Class FrmIndex
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(4, 144)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(72, 16)
+        Me.Label5.TabIndex = 38
+        Me.Label5.Text = "Sub Batch:"
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(4, 102)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(90, 16)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "Batch Name:*"
         '
         'FrmIndex
         '
@@ -462,11 +463,9 @@ Partial Class FrmIndex
     Friend WithEvents Label6 As Label
     Friend WithEvents RackNoTextbox As TextBox
     Friend WithEvents BoxNoTextbox As TextBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents SubBatchTextbox As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents scanDateTimePicker As DateTimePicker
-    Friend WithEvents Label1 As Label
     Friend WithEvents batchIdTextBox As TextBox
     Friend WithEvents Splitter2 As Splitter
     Friend WithEvents ListBox1 As ListBox
@@ -479,4 +478,6 @@ Partial Class FrmIndex
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label4 As Label
     Friend WithEvents txtCompany As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label1 As Label
 End Class

@@ -67,7 +67,6 @@ Partial Class FrmMain
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.SpDMSLogsTableAdapter = New DMS.DMSDataSetTableAdapters.spDMSLogsTableAdapter()
         Me.SpDMSLogsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabLogin.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -309,7 +308,7 @@ Partial Class FrmMain
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.White
         Me.MenuStrip1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexFilesToolStripMenuItem, Me.ToolStripMenuItem1, Me.EditorToolStripMenuItem, Me.ToolStripMenuItem2, Me.SEARCHToolStripMenuItem, Me.ToolStripMenuItem3, Me.UserManagementToolStripMenuItem, Me.ToolStripMenuItem4, Me.ToolStripMenuItem6, Me.TxtQueue, Me.ToolStripMenuItem5})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexFilesToolStripMenuItem, Me.ToolStripMenuItem1, Me.EditorToolStripMenuItem, Me.ToolStripMenuItem2, Me.SEARCHToolStripMenuItem, Me.ToolStripMenuItem3, Me.UserManagementToolStripMenuItem, Me.ToolStripMenuItem4, Me.TxtQueue, Me.ToolStripMenuItem5})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(0)
@@ -384,7 +383,6 @@ Partial Class FrmMain
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripMenuItem5.Enabled = False
         Me.ToolStripMenuItem5.ForeColor = System.Drawing.Color.Black
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
         Me.ToolStripMenuItem5.Size = New System.Drawing.Size(81, 27)
@@ -591,14 +589,6 @@ Partial Class FrmMain
         Me.SpDMSLogsBindingSource1.DataMember = "spDMSLogs"
         Me.SpDMSLogsBindingSource1.DataSource = Me.DMSDataSet
         '
-        'ToolStripMenuItem6
-        '
-        Me.ToolStripMenuItem6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripMenuItem6.Image = CType(resources.GetObject("ToolStripMenuItem6.Image"), System.Drawing.Image)
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(97, 27)
-        Me.ToolStripMenuItem6.Text = "Refresh"
-        '
         'FrmMain
         '
         Me.BackgroundColor = System.Drawing.Color.Azure
@@ -683,5 +673,4 @@ Partial Class FrmMain
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents TxtQueue As ToolStripTextBox
     Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem6 As ToolStripMenuItem
 End Class

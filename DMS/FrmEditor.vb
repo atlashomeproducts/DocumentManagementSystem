@@ -92,6 +92,9 @@ Public Class FrmEditor
 
         'Temp Disabled
         Me.DocumentTypeComboBox.Enabled = False
+        Me.BatchTextBox.ReadOnly = True
+        Me.SubBatchTextBox.ReadOnly = True
+
         GrpTimeSheet.Enabled = False
         GrpReceipt.Enabled = False
         GrpCorp.Enabled = False
@@ -124,17 +127,12 @@ Public Class FrmEditor
         Else
 
 
-
-
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmd As New SqlCommand
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
 
 
             Try
-
-
-
 
                 My.Settings.Save_RackNoTS = RackNoTS.Text
                 My.Settings.Save_BoxNoTS = BoxNoTS.Text
@@ -183,6 +181,9 @@ Public Class FrmEditor
 
                 'Temp Disabled
                 Me.DocumentTypeComboBox.Enabled = False
+                Me.BatchTextBox.ReadOnly = True
+                Me.SubBatchTextBox.ReadOnly = True
+
                 GrpTimeSheet.Enabled = False
                 GrpReceipt.Enabled = False
                 GrpCorp.Enabled = False
@@ -357,6 +358,9 @@ Public Class FrmEditor
         'UpdateStatusLocked()
 
         Me.DocumentTypeComboBox.Enabled = True
+        Me.BatchTextBox.ReadOnly = False
+        Me.SubBatchTextBox.ReadOnly = False
+
         GrpTimeSheet.Enabled = True
         GrpReceipt.Enabled = True
         GrpCorp.Enabled = True
@@ -364,6 +368,8 @@ Public Class FrmEditor
         GrpWarranty.Enabled = True
 
         Me.DocsCatalogueC1TrueDBGrid.Enabled = False
+
+        Me.PurposeTextBox.ReadOnly = False
         Me.BtnSave.Enabled = True
         Me.BtnClear.Enabled = True
         Me.BtnEdit.Enabled = False
@@ -823,6 +829,9 @@ Public Class FrmEditor
     Private Sub BtnCancel1_Click(sender As Object, e As EventArgs) Handles BtnCancel1.Click
         'Temp Disabled
         Me.DocumentTypeComboBox.Enabled = False
+        Me.BatchTextBox.ReadOnly = True
+        Me.SubBatchTextBox.ReadOnly = True
+
         GrpTimeSheet.Enabled = False
         GrpReceipt.Enabled = False
         GrpCorp.Enabled = False

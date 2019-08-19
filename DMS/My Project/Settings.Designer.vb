@@ -219,7 +219,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("\\ATLAS_SYNOLOGY\Public\NELSON")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("\\ATLAS_SYNOLOGY\Public\NELSON\@1_REQUEST SKU\DONE\DOWNLOADED")>  _
         Public ReadOnly Property Queue() As String
             Get
                 Return CType(Me("Queue"),String)

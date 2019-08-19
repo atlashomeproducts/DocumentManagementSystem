@@ -101,12 +101,16 @@ Partial Class FrmEditor
         Dim CompanyLabel As System.Windows.Forms.Label
         Dim MeetingDateLabel As System.Windows.Forms.Label
         Dim Label23 As System.Windows.Forms.Label
+        Dim BatchLabel As System.Windows.Forms.Label
+        Dim SubBatchLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEditor))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.DocsCatalogueC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DMSDataSet = New DMS.DMSDataSet()
+        Me.SubBatchTextBox = New System.Windows.Forms.TextBox()
+        Me.BatchTextBox = New System.Windows.Forms.TextBox()
         Me.BtnCancel1 = New System.Windows.Forms.Button()
         Me.BtnRemove = New System.Windows.Forms.Button()
         Me.IdTextBox = New System.Windows.Forms.TextBox()
@@ -295,6 +299,8 @@ Partial Class FrmEditor
         CompanyLabel = New System.Windows.Forms.Label()
         MeetingDateLabel = New System.Windows.Forms.Label()
         Label23 = New System.Windows.Forms.Label()
+        BatchLabel = New System.Windows.Forms.Label()
+        SubBatchLabel = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -334,7 +340,7 @@ Partial Class FrmEditor
         '
         DocumentTypeLabel.AutoSize = True
         DocumentTypeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DocumentTypeLabel.Location = New System.Drawing.Point(11, 49)
+        DocumentTypeLabel.Location = New System.Drawing.Point(11, 46)
         DocumentTypeLabel.Name = "DocumentTypeLabel"
         DocumentTypeLabel.Size = New System.Drawing.Size(125, 20)
         DocumentTypeLabel.TabIndex = 0
@@ -1048,6 +1054,26 @@ Partial Class FrmEditor
         Label23.TabIndex = 43
         Label23.Text = "Company:"
         '
+        'BatchLabel
+        '
+        BatchLabel.AutoSize = True
+        BatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        BatchLabel.Location = New System.Drawing.Point(33, 80)
+        BatchLabel.Name = "BatchLabel"
+        BatchLabel.Size = New System.Drawing.Size(45, 16)
+        BatchLabel.TabIndex = 28
+        BatchLabel.Text = "Batch:"
+        '
+        'SubBatchLabel
+        '
+        SubBatchLabel.AutoSize = True
+        SubBatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        SubBatchLabel.Location = New System.Drawing.Point(6, 106)
+        SubBatchLabel.Name = "SubBatchLabel"
+        SubBatchLabel.Size = New System.Drawing.Size(72, 16)
+        SubBatchLabel.TabIndex = 29
+        SubBatchLabel.Text = "Sub Batch:"
+        '
         'SplitContainer1
         '
         Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -1089,6 +1115,10 @@ Partial Class FrmEditor
         '
         Me.SplitContainer2.Panel2.AutoScroll = True
         Me.SplitContainer2.Panel2.BackColor = System.Drawing.Color.Azure
+        Me.SplitContainer2.Panel2.Controls.Add(SubBatchLabel)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.SubBatchTextBox)
+        Me.SplitContainer2.Panel2.Controls.Add(BatchLabel)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.BatchTextBox)
         Me.SplitContainer2.Panel2.Controls.Add(Me.BtnCancel1)
         Me.SplitContainer2.Panel2.Controls.Add(Me.BtnRemove)
         Me.SplitContainer2.Panel2.Controls.Add(Me.IdTextBox)
@@ -1102,7 +1132,7 @@ Partial Class FrmEditor
         Me.SplitContainer2.Panel2.Controls.Add(DocumentTypeLabel)
         Me.SplitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer2.Size = New System.Drawing.Size(641, 684)
-        Me.SplitContainer2.SplitterDistance = 274
+        Me.SplitContainer2.SplitterDistance = 221
         Me.SplitContainer2.TabIndex = 0
         Me.SplitContainer2.TabStop = False
         '
@@ -1126,7 +1156,7 @@ Partial Class FrmEditor
         Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
         Me.DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
         Me.DocsCatalogueC1TrueDBGrid.RowHeight = 22
-        Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(641, 274)
+        Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(641, 221)
         Me.DocsCatalogueC1TrueDBGrid.TabIndex = 0
         Me.DocsCatalogueC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.DocsCatalogueC1TrueDBGrid.PropBag = resources.GetString("DocsCatalogueC1TrueDBGrid.PropBag")
@@ -1140,6 +1170,26 @@ Partial Class FrmEditor
         '
         Me.DMSDataSet.DataSetName = "DMSDataSet"
         Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SubBatchTextBox
+        '
+        Me.SubBatchTextBox.BackColor = System.Drawing.Color.White
+        Me.SubBatchTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "SubBatch", True))
+        Me.SubBatchTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.SubBatchTextBox.Location = New System.Drawing.Point(98, 103)
+        Me.SubBatchTextBox.Name = "SubBatchTextBox"
+        Me.SubBatchTextBox.Size = New System.Drawing.Size(522, 22)
+        Me.SubBatchTextBox.TabIndex = 30
+        '
+        'BatchTextBox
+        '
+        Me.BatchTextBox.BackColor = System.Drawing.Color.White
+        Me.BatchTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Batch", True))
+        Me.BatchTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.BatchTextBox.Location = New System.Drawing.Point(98, 77)
+        Me.BatchTextBox.Name = "BatchTextBox"
+        Me.BatchTextBox.Size = New System.Drawing.Size(522, 22)
+        Me.BatchTextBox.TabIndex = 29
         '
         'BtnCancel1
         '
@@ -1192,7 +1242,7 @@ Partial Class FrmEditor
         Me.TabControl1.Controls.Add(Me.Voucher)
         Me.TabControl1.Controls.Add(Me.CorpDocu)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TabControl1.Location = New System.Drawing.Point(0, 80)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 133)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(641, 304)
@@ -2259,7 +2309,7 @@ Partial Class FrmEditor
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LblStat})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 384)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 437)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(641, 22)
         Me.StatusStrip1.TabIndex = 18
@@ -2311,7 +2361,7 @@ Partial Class FrmEditor
         Me.DocumentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DocumentTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DocumentTypeComboBox.FormattingEnabled = True
-        Me.DocumentTypeComboBox.Location = New System.Drawing.Point(140, 46)
+        Me.DocumentTypeComboBox.Location = New System.Drawing.Point(140, 43)
         Me.DocumentTypeComboBox.Name = "DocumentTypeComboBox"
         Me.DocumentTypeComboBox.Size = New System.Drawing.Size(396, 28)
         Me.DocumentTypeComboBox.TabIndex = 5
@@ -2519,4 +2569,6 @@ Partial Class FrmEditor
     Friend WithEvents CompanyTextBox As TextBox
     Friend WithEvents TabMeeting2 As TabPage
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents SubBatchTextBox As TextBox
+    Friend WithEvents BatchTextBox As TextBox
 End Class

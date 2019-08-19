@@ -4,15 +4,14 @@ Imports System.Configuration
 Imports System.Data.SqlClient
 Imports System.IO
 Imports System.Runtime.InteropServices
-
-
-
+Imports System.Threading
 
 Public Class FrmMain
 
 
     Public type As String
     Public User As String
+    Dim counter As Integer
 
 
 
@@ -380,8 +379,15 @@ Public Class FrmMain
 
 
 
-        Dim counter As Integer = Directory.GetFiles(My.Settings.Queue, "*.pdf", SearchOption.AllDirectories).Length
-        TxtQueue.Text = counter
+        Dim thread As New Thread(
+        Sub()
+            counter = Directory.GetFiles(My.Settings.Queue, "*.pdf", SearchOption.AllDirectories).Length
+
+        End Sub
+                                    )
+        thread.Start()
+
+
 
 
 
@@ -400,34 +406,35 @@ Public Class FrmMain
     End Sub
     Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
         FrmUsers.Show(Me)
-
-
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
-        Try
+        'Dim thread1 As New Thread(AddressOf TotalsThread)
+        'thread1.IsBackground = True
+        'thread1.Start()
 
-
-            Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
+        Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
+        Me.SpDMSTotalsBindingSource.MoveLast()
         Me.SpDMSLogsTableAdapter.Fill(Me.DMSDataSet.spDMSLogs, DateTimePicker1.Value, DateTimePicker2.Value)
-            ' TxtQueue.Text = My.Settings.ImgPath.GetFiles(FullName, "*.pdf").Count
-
-            Me.SpDMSTotalsBindingSource.MoveLast()
         Me.SpDMSLogsBindingSource.MoveLast()
 
-
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-
-    End Sub
-
-    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
+        TxtQueue.Text = counter
 
 
     End Sub
+
+    'Sub TotalsThread()
+    '    Me.SpDMSTotalsTableAdapter.Fill(Me.DMSDataSet.spDMSTotals)
+    '    Me.SpDMSTotalsBindingSource.MoveLast()
+    '    Me.SpDMSLogsTableAdapter.Fill(Me.DMSDataSet.spDMSLogs, DateTimePicker1.Value, DateTimePicker2.Value)
+    '    Me.SpDMSLogsBindingSource.MoveLast()
+    'End Sub
+
+
+
+
+
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         Try
@@ -532,10 +539,8 @@ Public Class FrmMain
 
     End Sub
 
-    Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem6.Click
+    Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs)
         Try
-
-
 
             Dim counter As Integer = Directory.GetFiles(My.Settings.Queue, "*.pdf", SearchOption.AllDirectories).Length
             TxtQueue.Text = counter
@@ -546,10 +551,21 @@ Public Class FrmMain
             Me.SpDMSTotalsBindingSource.MoveLast()
             Me.SpDMSLogsBindingSource.MoveLast()
 
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
+        Try
+            counter = Directory.GetFiles(My.Settings.Queue, "*.pdf", SearchOption.AllDirectories).Length
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
 
     End Sub
+
 End Class
