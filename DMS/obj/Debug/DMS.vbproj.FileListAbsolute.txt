@@ -230,3 +230,5 @@ C:\Users\MIS1\Source\Repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\De
 C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\bin\Debug\C1.Win.C1Ribbon.4.dll
 C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\bin\Debug\C1.Win.C1Ribbon.4.xml
 C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.TrustInfo.xml
+C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.FrmReason.resources
+C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.FrmRemoval.resources

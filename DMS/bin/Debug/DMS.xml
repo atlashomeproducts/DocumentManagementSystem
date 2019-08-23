@@ -67,6 +67,21 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:DMS.DMSDataSet.DocsRemovalDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.vwRemovalDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.spForRemovalDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:DMS.DMSDataSet.DocumentTypesRow">
 <summary>
 Represents strongly named DataRow class.
@@ -98,6 +113,21 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:DMS.DMSDataSet.spDMSLogsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.DocsRemovalRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.vwRemovalRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.spForRemovalRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -137,6 +167,21 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:DMS.DMSDataSet.DocsRemovalRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.vwRemovalRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DMS.DMSDataSet.spForRemovalRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:DMS.DMSDataSetTableAdapters.DocumentTypesTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -168,6 +213,21 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:DMS.DMSDataSetTableAdapters.spDMSLogsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSetTableAdapters.DocsRemovalTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSetTableAdapters.vwRemovalTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DMS.DMSDataSetTableAdapters.spForRemovalTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

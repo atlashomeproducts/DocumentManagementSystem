@@ -186,7 +186,7 @@ Public Class FrmIndex
                     Next
 
 
-                        con.Close()
+                    con.Close()
 
                     'Dim lst As New List(Of Object)
                     'For Each a As Object In ListBox1.SelectedItems
@@ -202,8 +202,8 @@ Public Class FrmIndex
                         ListBox1.Items.Remove(a)
                     Next
 
-                    AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
-                    FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
+                    'AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+                    'FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
 
                     If duplicate.Count < 1 Then
                         MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -232,6 +232,8 @@ Public Class FrmIndex
 
             End If
         End If
+        AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+        FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
 
     End Sub
 

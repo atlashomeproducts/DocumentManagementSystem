@@ -178,6 +178,18 @@
     <Compile Include="FrmIndex.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmReason.Designer.vb">
+      <DependentUpon>FrmReason.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReason.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRemoval.Designer.vb">
+      <DependentUpon>FrmRemoval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRemoval.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmSearch2.Designer.vb">
       <DependentUpon>FrmSearch2.vb</DependentUpon>
     </Compile>
@@ -219,6 +231,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIndex.resx">
       <DependentUpon>FrmIndex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReason.resx">
+      <DependentUpon>FrmReason.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRemoval.resx">
+      <DependentUpon>FrmRemoval.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSearch2.resx">
       <DependentUpon>FrmSearch2.vb</DependentUpon>

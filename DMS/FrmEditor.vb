@@ -87,13 +87,18 @@ Public Class FrmEditor
 
         'Permanently Disabled
         Me.IdTextBox.ReadOnly = True
-        Me.IdTextBox.Visible = False
+        ' Me.IdTextBox.Visible = False
 
 
         'Temp Disabled
         Me.DocumentTypeComboBox.Enabled = False
         Me.BatchTextBox.ReadOnly = True
         Me.SubBatchTextBox.ReadOnly = True
+        Me.cbDocSize.Enabled = False
+        Me.txtPages.ReadOnly = True
+        Me.chkConfidential.Enabled = False
+
+
 
         GrpTimeSheet.Enabled = False
         GrpReceipt.Enabled = False
@@ -109,9 +114,16 @@ Public Class FrmEditor
         Me.BtnCancel1.Enabled = False
 
 
-        If FrmMain.type = "User" Or FrmMain.type = "" Then
+        If FrmMain.type = "System Admin" Then
+            Me.BtnRemove.Visible = True
+        Else
             Me.BtnRemove.Visible = False
         End If
+
+
+
+
+
 
 
     End Sub
@@ -183,6 +195,9 @@ Public Class FrmEditor
                 Me.DocumentTypeComboBox.Enabled = False
                 Me.BatchTextBox.ReadOnly = True
                 Me.SubBatchTextBox.ReadOnly = True
+                Me.cbDocSize.Enabled = False
+                Me.txtPages.ReadOnly = True
+                Me.chkConfidential.Enabled = False
 
                 GrpTimeSheet.Enabled = False
                 GrpReceipt.Enabled = False
@@ -200,7 +215,6 @@ Public Class FrmEditor
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
-
             End Try
 
         End If
@@ -360,6 +374,9 @@ Public Class FrmEditor
         Me.DocumentTypeComboBox.Enabled = True
         Me.BatchTextBox.ReadOnly = False
         Me.SubBatchTextBox.ReadOnly = False
+        Me.cbDocSize.Enabled = True
+        Me.txtPages.ReadOnly = False
+        Me.chkConfidential.Enabled = True
 
         GrpTimeSheet.Enabled = True
         GrpReceipt.Enabled = True
@@ -778,49 +795,57 @@ Public Class FrmEditor
 
     Private Sub BtnRemove_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click
 
-        Try
-            Dim MsgDelete = MessageBox.Show("Delete Record?", "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        'Try
+        '    Dim MsgDelete = MessageBox.Show("Delete Record?", "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            If MsgDelete = vbYes Then
-
-
-
-
-                Me.DocsCatalogueBindingSource.RemoveCurrent()
-                Me.Validate()
-                Me.DocsCatalogueBindingSource.EndEdit()
-                Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
-
-                File.Delete(My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
-                ' MessageBox.Show("Record Deleted!!", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Me.LblStat.Text = "Record Deleted."
+        '    If MsgDelete = vbYes Then
 
 
 
 
-                Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-                Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+        '        Me.DocsCatalogueBindingSource.RemoveCurrent()
+        '        Me.Validate()
+        '        Me.DocsCatalogueBindingSource.EndEdit()
+        '        Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
 
-
-
-                con.Open()
-                cmdlogs.Connection = con
-                cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
-                cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Deleted a record with ID:" & Me.IdTextBox.Text)
-                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
-                cmdlogs.ExecuteNonQuery()
-                con.Close()
+        '        File.Delete(My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
+        '        ' MessageBox.Show("Record Deleted!!", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '        Me.LblStat.Text = "Record Deleted."
 
 
 
 
-            End If
+        '        Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+        '        Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
 
-        Catch ex As Exception
 
-            MessageBox.Show(ex.Message)
 
-        End Try
+        '        con.Open()
+        '        cmdlogs.Connection = con
+        '        cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+        '        cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Deleted a record with ID:" & Me.IdTextBox.Text)
+        '        cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+        '        cmdlogs.ExecuteNonQuery()
+        '        con.Close()
+
+
+
+
+        '    End If
+
+        'Catch ex As Exception
+
+        '    MessageBox.Show(ex.Message)
+
+        'End Try
+
+
+
+
+        FrmReason.ShowDialog()
+
+
+
 
     End Sub
 
@@ -831,6 +856,9 @@ Public Class FrmEditor
         Me.DocumentTypeComboBox.Enabled = False
         Me.BatchTextBox.ReadOnly = True
         Me.SubBatchTextBox.ReadOnly = True
+        Me.cbDocSize.Enabled = False
+        Me.txtPages.ReadOnly = True
+        Me.chkConfidential.Enabled = False
 
         GrpTimeSheet.Enabled = False
         GrpReceipt.Enabled = False
@@ -1777,5 +1805,21 @@ Public Class FrmEditor
 
     Private Sub CheckNoTextBox_LostFocus(sender As Object, e As EventArgs) Handles CheckNoTextBox.LostFocus
         CheckNoTextBox.BackColor = Color.White
+    End Sub
+
+    Private Sub DocsCatalogueC1TrueDBGrid_Click_1(sender As Object, e As EventArgs) Handles DocsCatalogueC1TrueDBGrid.Click
+
+    End Sub
+
+    Private Sub DocsCatalogueC1TrueDBGrid_DoubleClick(sender As Object, e As EventArgs) Handles DocsCatalogueC1TrueDBGrid.DoubleClick
+
+    End Sub
+
+    Private Sub SplitContainer2_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles SplitContainer2.Panel2.Paint
+
+    End Sub
+
+    Private Sub IdTextBox1_TextChanged(sender As Object, e As EventArgs)
+
     End Sub
 End Class

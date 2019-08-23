@@ -39,6 +39,12 @@ Partial Public Class DMSDataSet
     
     Private tablespDMSLogs As spDMSLogsDataTable
     
+    Private tableDocsRemoval As DocsRemovalDataTable
+    
+    Private tablevwRemoval As vwRemovalDataTable
+    
+    Private tablespForRemoval As spForRemovalDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -88,6 +94,15 @@ Partial Public Class DMSDataSet
             End If
             If (Not (ds.Tables("spDMSLogs")) Is Nothing) Then
                 MyBase.Tables.Add(New spDMSLogsDataTable(ds.Tables("spDMSLogs")))
+            End If
+            If (Not (ds.Tables("DocsRemoval")) Is Nothing) Then
+                MyBase.Tables.Add(New DocsRemovalDataTable(ds.Tables("DocsRemoval")))
+            End If
+            If (Not (ds.Tables("vwRemoval")) Is Nothing) Then
+                MyBase.Tables.Add(New vwRemovalDataTable(ds.Tables("vwRemoval")))
+            End If
+            If (Not (ds.Tables("spForRemoval")) Is Nothing) Then
+                MyBase.Tables.Add(New spForRemovalDataTable(ds.Tables("spForRemoval")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -173,6 +188,36 @@ Partial Public Class DMSDataSet
     Public ReadOnly Property spDMSLogs() As spDMSLogsDataTable
         Get
             Return Me.tablespDMSLogs
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property DocsRemoval() As DocsRemovalDataTable
+        Get
+            Return Me.tableDocsRemoval
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property vwRemoval() As vwRemovalDataTable
+        Get
+            Return Me.tablevwRemoval
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property spForRemoval() As spForRemovalDataTable
+        Get
+            Return Me.tablespForRemoval
         End Get
     End Property
     
@@ -264,6 +309,15 @@ Partial Public Class DMSDataSet
             If (Not (ds.Tables("spDMSLogs")) Is Nothing) Then
                 MyBase.Tables.Add(New spDMSLogsDataTable(ds.Tables("spDMSLogs")))
             End If
+            If (Not (ds.Tables("DocsRemoval")) Is Nothing) Then
+                MyBase.Tables.Add(New DocsRemovalDataTable(ds.Tables("DocsRemoval")))
+            End If
+            If (Not (ds.Tables("vwRemoval")) Is Nothing) Then
+                MyBase.Tables.Add(New vwRemovalDataTable(ds.Tables("vwRemoval")))
+            End If
+            If (Not (ds.Tables("spForRemoval")) Is Nothing) Then
+                MyBase.Tables.Add(New spForRemovalDataTable(ds.Tables("spForRemoval")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -338,6 +392,24 @@ Partial Public Class DMSDataSet
                 Me.tablespDMSLogs.InitVars
             End If
         End If
+        Me.tableDocsRemoval = CType(MyBase.Tables("DocsRemoval"),DocsRemovalDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableDocsRemoval) Is Nothing) Then
+                Me.tableDocsRemoval.InitVars
+            End If
+        End If
+        Me.tablevwRemoval = CType(MyBase.Tables("vwRemoval"),vwRemovalDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablevwRemoval) Is Nothing) Then
+                Me.tablevwRemoval.InitVars
+            End If
+        End If
+        Me.tablespForRemoval = CType(MyBase.Tables("spForRemoval"),spForRemovalDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablespForRemoval) Is Nothing) Then
+                Me.tablespForRemoval.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -362,6 +434,12 @@ Partial Public Class DMSDataSet
         MyBase.Tables.Add(Me.tableDMSLogs)
         Me.tablespDMSLogs = New spDMSLogsDataTable()
         MyBase.Tables.Add(Me.tablespDMSLogs)
+        Me.tableDocsRemoval = New DocsRemovalDataTable()
+        MyBase.Tables.Add(Me.tableDocsRemoval)
+        Me.tablevwRemoval = New vwRemovalDataTable()
+        MyBase.Tables.Add(Me.tablevwRemoval)
+        Me.tablespForRemoval = New spForRemovalDataTable()
+        MyBase.Tables.Add(Me.tablespForRemoval)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -403,6 +481,24 @@ Partial Public Class DMSDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializespDMSLogs() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeDocsRemoval() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializevwRemoval() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializespForRemoval() As Boolean
         Return false
     End Function
     
@@ -484,6 +580,15 @@ Partial Public Class DMSDataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub spDMSLogsRowChangeEventHandler(ByVal sender As Object, ByVal e As spDMSLogsRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub DocsRemovalRowChangeEventHandler(ByVal sender As Object, ByVal e As DocsRemovalRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub vwRemovalRowChangeEventHandler(ByVal sender As Object, ByVal e As vwRemovalRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub spForRemovalRowChangeEventHandler(ByVal sender As Object, ByVal e As spForRemovalRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -934,6 +1039,12 @@ Partial Public Class DMSDataSet
         Private columnDTIPermitNo As Global.System.Data.DataColumn
         
         Private columnUserID As Global.System.Data.DataColumn
+        
+        Private columnDocSize As Global.System.Data.DataColumn
+        
+        Private columnConfidential As Global.System.Data.DataColumn
+        
+        Private columnPages As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -1459,6 +1570,30 @@ Partial Public Class DMSDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property DocSizeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDocSize
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ConfidentialColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnConfidential
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property PagesColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPages
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1555,9 +1690,12 @@ Partial Public Class DMSDataSet
                     ByVal PromoFrom As String,  _
                     ByVal PromoTo As String,  _
                     ByVal DTIPermitNo As String,  _
-                    ByVal UserID As String) As DocsCatalogueRow
+                    ByVal UserID As String,  _
+                    ByVal DocSize As String,  _
+                    ByVal Confidential As String,  _
+                    ByVal Pages As Long) As DocsCatalogueRow
             Dim rowDocsCatalogueRow As DocsCatalogueRow = CType(Me.NewRow,DocsCatalogueRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, PaymentOthers, BankName, BankBranch, BankAddress, RackNo, BoxNo, TinVendor, TinCustomer, VATreg, NONVATreg, DateReceived, AddressC, BatchDesc, SubBatch, PromoTitle, PromoFrom, PromoTo, DTIPermitNo, UserID}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, PaymentOthers, BankName, BankBranch, BankAddress, RackNo, BoxNo, TinVendor, TinCustomer, VATreg, NONVATreg, DateReceived, AddressC, BatchDesc, SubBatch, PromoTitle, PromoFrom, PromoTo, DTIPermitNo, UserID, DocSize, Confidential, Pages}
             rowDocsCatalogueRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDocsCatalogueRow)
             Return rowDocsCatalogueRow
@@ -1647,6 +1785,9 @@ Partial Public Class DMSDataSet
             Me.columnPromoTo = MyBase.Columns("PromoTo")
             Me.columnDTIPermitNo = MyBase.Columns("DTIPermitNo")
             Me.columnUserID = MyBase.Columns("UserID")
+            Me.columnDocSize = MyBase.Columns("DocSize")
+            Me.columnConfidential = MyBase.Columns("Confidential")
+            Me.columnPages = MyBase.Columns("Pages")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1774,6 +1915,12 @@ Partial Public Class DMSDataSet
             MyBase.Columns.Add(Me.columnDTIPermitNo)
             Me.columnUserID = New Global.System.Data.DataColumn("UserID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUserID)
+            Me.columnDocSize = New Global.System.Data.DataColumn("DocSize", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDocSize)
+            Me.columnConfidential = New Global.System.Data.DataColumn("Confidential", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnConfidential)
+            Me.columnPages = New Global.System.Data.DataColumn("Pages", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPages)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -1839,6 +1986,8 @@ Partial Public Class DMSDataSet
             Me.columnPromoTo.MaxLength = 50
             Me.columnDTIPermitNo.MaxLength = 2147483647
             Me.columnUserID.MaxLength = 50
+            Me.columnDocSize.MaxLength = 50
+            Me.columnConfidential.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3452,6 +3601,959 @@ Partial Public Class DMSDataSet
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class DocsRemovalDataTable
+        Inherits Global.System.Data.TypedTableBase(Of DocsRemovalRow)
+        
+        Private columnID As Global.System.Data.DataColumn
+        
+        Private columnDuplicate As Global.System.Data.DataColumn
+        
+        Private columnDuplicateID As Global.System.Data.DataColumn
+        
+        Private columnOld As Global.System.Data.DataColumn
+        
+        Private columnNotArchiving As Global.System.Data.DataColumn
+        
+        Private columnOthers As Global.System.Data.DataColumn
+        
+        Private columnOthersReason As Global.System.Data.DataColumn
+        
+        Private columnIdx As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "DocsRemoval"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property DuplicateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDuplicate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property DuplicateIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDuplicateID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property OldColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOld
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property NotArchivingColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNotArchiving
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property OthersColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOthers
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property OthersReasonColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOthersReason
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IdxColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIdx
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As DocsRemovalRow
+            Get
+                Return CType(Me.Rows(index),DocsRemovalRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event DocsRemovalRowChanging As DocsRemovalRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event DocsRemovalRowChanged As DocsRemovalRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event DocsRemovalRowDeleting As DocsRemovalRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event DocsRemovalRowDeleted As DocsRemovalRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddDocsRemovalRow(ByVal row As DocsRemovalRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddDocsRemovalRow(ByVal ID As Long, ByVal Duplicate As String, ByVal DuplicateID As String, ByVal Old As String, ByVal NotArchiving As String, ByVal Others As String, ByVal OthersReason As String) As DocsRemovalRow
+            Dim rowDocsRemovalRow As DocsRemovalRow = CType(Me.NewRow,DocsRemovalRow)
+            Dim columnValuesArray() As Object = New Object() {ID, Duplicate, DuplicateID, Old, NotArchiving, Others, OthersReason, Nothing}
+            rowDocsRemovalRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowDocsRemovalRow)
+            Return rowDocsRemovalRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindByIdx(ByVal Idx As Long) As DocsRemovalRow
+            Return CType(Me.Rows.Find(New Object() {Idx}),DocsRemovalRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As DocsRemovalDataTable = CType(MyBase.Clone,DocsRemovalDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New DocsRemovalDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnID = MyBase.Columns("ID")
+            Me.columnDuplicate = MyBase.Columns("Duplicate")
+            Me.columnDuplicateID = MyBase.Columns("DuplicateID")
+            Me.columnOld = MyBase.Columns("Old")
+            Me.columnNotArchiving = MyBase.Columns("NotArchiving")
+            Me.columnOthers = MyBase.Columns("Others")
+            Me.columnOthersReason = MyBase.Columns("OthersReason")
+            Me.columnIdx = MyBase.Columns("Idx")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnID)
+            Me.columnDuplicate = New Global.System.Data.DataColumn("Duplicate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDuplicate)
+            Me.columnDuplicateID = New Global.System.Data.DataColumn("DuplicateID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDuplicateID)
+            Me.columnOld = New Global.System.Data.DataColumn("Old", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOld)
+            Me.columnNotArchiving = New Global.System.Data.DataColumn("NotArchiving", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNotArchiving)
+            Me.columnOthers = New Global.System.Data.DataColumn("Others", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOthers)
+            Me.columnOthersReason = New Global.System.Data.DataColumn("OthersReason", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOthersReason)
+            Me.columnIdx = New Global.System.Data.DataColumn("Idx", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIdx)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIdx}, true))
+            Me.columnDuplicate.MaxLength = 50
+            Me.columnDuplicateID.MaxLength = 50
+            Me.columnOld.MaxLength = 50
+            Me.columnNotArchiving.MaxLength = 50
+            Me.columnOthers.MaxLength = 50
+            Me.columnOthersReason.MaxLength = 70
+            Me.columnIdx.AutoIncrement = true
+            Me.columnIdx.AutoIncrementSeed = -1
+            Me.columnIdx.AutoIncrementStep = -1
+            Me.columnIdx.AllowDBNull = false
+            Me.columnIdx.ReadOnly = true
+            Me.columnIdx.Unique = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewDocsRemovalRow() As DocsRemovalRow
+            Return CType(Me.NewRow,DocsRemovalRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New DocsRemovalRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(DocsRemovalRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.DocsRemovalRowChangedEvent) Is Nothing) Then
+                RaiseEvent DocsRemovalRowChanged(Me, New DocsRemovalRowChangeEvent(CType(e.Row,DocsRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.DocsRemovalRowChangingEvent) Is Nothing) Then
+                RaiseEvent DocsRemovalRowChanging(Me, New DocsRemovalRowChangeEvent(CType(e.Row,DocsRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.DocsRemovalRowDeletedEvent) Is Nothing) Then
+                RaiseEvent DocsRemovalRowDeleted(Me, New DocsRemovalRowChangeEvent(CType(e.Row,DocsRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.DocsRemovalRowDeletingEvent) Is Nothing) Then
+                RaiseEvent DocsRemovalRowDeleting(Me, New DocsRemovalRowChangeEvent(CType(e.Row,DocsRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveDocsRemovalRow(ByVal row As DocsRemovalRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DMSDataSet = New DMSDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "DocsRemovalDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class vwRemovalDataTable
+        Inherits Global.System.Data.TypedTableBase(Of vwRemovalRow)
+        
+        Private columnFilename As Global.System.Data.DataColumn
+        
+        Private columnDocumentType As Global.System.Data.DataColumn
+        
+        Private columnId As Global.System.Data.DataColumn
+        
+        Private columnSelect As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "vwRemoval"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property FilenameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFilename
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property DocumentTypeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDocumentType
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnId
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SelectColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSelect
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As vwRemovalRow
+            Get
+                Return CType(Me.Rows(index),vwRemovalRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event vwRemovalRowChanging As vwRemovalRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event vwRemovalRowChanged As vwRemovalRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event vwRemovalRowDeleting As vwRemovalRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event vwRemovalRowDeleted As vwRemovalRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddvwRemovalRow(ByVal row As vwRemovalRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddvwRemovalRow(ByVal Filename As String, ByVal DocumentType As String, ByVal _Select As String) As vwRemovalRow
+            Dim rowvwRemovalRow As vwRemovalRow = CType(Me.NewRow,vwRemovalRow)
+            Dim columnValuesArray() As Object = New Object() {Filename, DocumentType, Nothing, _Select}
+            rowvwRemovalRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowvwRemovalRow)
+            Return rowvwRemovalRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindById(ByVal Id As Long) As vwRemovalRow
+            Return CType(Me.Rows.Find(New Object() {Id}),vwRemovalRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As vwRemovalDataTable = CType(MyBase.Clone,vwRemovalDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New vwRemovalDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnFilename = MyBase.Columns("Filename")
+            Me.columnDocumentType = MyBase.Columns("DocumentType")
+            Me.columnId = MyBase.Columns("Id")
+            Me.columnSelect = MyBase.Columns("Select")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnFilename = New Global.System.Data.DataColumn("Filename", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFilename)
+            Me.columnDocumentType = New Global.System.Data.DataColumn("DocumentType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDocumentType)
+            Me.columnId = New Global.System.Data.DataColumn("Id", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnId)
+            Me.columnSelect = New Global.System.Data.DataColumn("Select", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnSelect.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "SelectColumn")
+            Me.columnSelect.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnSelect")
+            Me.columnSelect.ExtendedProperties.Add("Generator_UserColumnName", "Select")
+            MyBase.Columns.Add(Me.columnSelect)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
+            Me.columnFilename.MaxLength = 2147483647
+            Me.columnDocumentType.MaxLength = 2147483647
+            Me.columnId.AutoIncrement = true
+            Me.columnId.AutoIncrementSeed = -1
+            Me.columnId.AutoIncrementStep = -1
+            Me.columnId.AllowDBNull = false
+            Me.columnId.ReadOnly = true
+            Me.columnId.Unique = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewvwRemovalRow() As vwRemovalRow
+            Return CType(Me.NewRow,vwRemovalRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New vwRemovalRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(vwRemovalRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.vwRemovalRowChangedEvent) Is Nothing) Then
+                RaiseEvent vwRemovalRowChanged(Me, New vwRemovalRowChangeEvent(CType(e.Row,vwRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.vwRemovalRowChangingEvent) Is Nothing) Then
+                RaiseEvent vwRemovalRowChanging(Me, New vwRemovalRowChangeEvent(CType(e.Row,vwRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.vwRemovalRowDeletedEvent) Is Nothing) Then
+                RaiseEvent vwRemovalRowDeleted(Me, New vwRemovalRowChangeEvent(CType(e.Row,vwRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.vwRemovalRowDeletingEvent) Is Nothing) Then
+                RaiseEvent vwRemovalRowDeleting(Me, New vwRemovalRowChangeEvent(CType(e.Row,vwRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemovevwRemovalRow(ByVal row As vwRemovalRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DMSDataSet = New DMSDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "vwRemovalDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class spForRemovalDataTable
+        Inherits Global.System.Data.TypedTableBase(Of spForRemovalRow)
+        
+        Private columnID As Global.System.Data.DataColumn
+        
+        Private columnReason As Global.System.Data.DataColumn
+        
+        Private columnIdx As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "spForRemoval"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ReasonColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnReason
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IdxColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIdx
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As spForRemovalRow
+            Get
+                Return CType(Me.Rows(index),spForRemovalRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event spForRemovalRowChanging As spForRemovalRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event spForRemovalRowChanged As spForRemovalRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event spForRemovalRowDeleting As spForRemovalRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event spForRemovalRowDeleted As spForRemovalRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddspForRemovalRow(ByVal row As spForRemovalRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddspForRemovalRow(ByVal ID As Long, ByVal Reason As String, ByVal Idx As Long) As spForRemovalRow
+            Dim rowspForRemovalRow As spForRemovalRow = CType(Me.NewRow,spForRemovalRow)
+            Dim columnValuesArray() As Object = New Object() {ID, Reason, Idx}
+            rowspForRemovalRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowspForRemovalRow)
+            Return rowspForRemovalRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As spForRemovalDataTable = CType(MyBase.Clone,spForRemovalDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New spForRemovalDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnID = MyBase.Columns("ID")
+            Me.columnReason = MyBase.Columns("Reason")
+            Me.columnIdx = MyBase.Columns("Idx")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnID)
+            Me.columnReason = New Global.System.Data.DataColumn("Reason", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnReason)
+            Me.columnIdx = New Global.System.Data.DataColumn("Idx", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIdx)
+            Me.columnID.ReadOnly = true
+            Me.columnReason.ReadOnly = true
+            Me.columnReason.MaxLength = 81
+            Me.columnIdx.ReadOnly = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewspForRemovalRow() As spForRemovalRow
+            Return CType(Me.NewRow,spForRemovalRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New spForRemovalRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(spForRemovalRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.spForRemovalRowChangedEvent) Is Nothing) Then
+                RaiseEvent spForRemovalRowChanged(Me, New spForRemovalRowChangeEvent(CType(e.Row,spForRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.spForRemovalRowChangingEvent) Is Nothing) Then
+                RaiseEvent spForRemovalRowChanging(Me, New spForRemovalRowChangeEvent(CType(e.Row,spForRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.spForRemovalRowDeletedEvent) Is Nothing) Then
+                RaiseEvent spForRemovalRowDeleted(Me, New spForRemovalRowChangeEvent(CType(e.Row,spForRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.spForRemovalRowDeletingEvent) Is Nothing) Then
+                RaiseEvent spForRemovalRowDeleting(Me, New spForRemovalRowChangeEvent(CType(e.Row,spForRemovalRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemovespForRemovalRow(ByVal row As spForRemovalRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DMSDataSet = New DMSDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "spForRemovalDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class DocumentTypesRow
@@ -4514,6 +5616,51 @@ Partial Public Class DMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property DocSize() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.DocSizeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DocSize' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.DocSizeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Confidential() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.ConfidentialColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Confidential' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.ConfidentialColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Pages() As Long
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.PagesColumn),Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Pages' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.PagesColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsBatchNull() As Boolean
             Return Me.IsNull(Me.tableDocsCatalogue.BatchColumn)
         End Function
@@ -5231,6 +6378,42 @@ Partial Public Class DMSDataSet
         Public Sub SetUserIDNull()
             Me(Me.tableDocsCatalogue.UserIDColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsDocSizeNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.DocSizeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetDocSizeNull()
+            Me(Me.tableDocsCatalogue.DocSizeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsConfidentialNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.ConfidentialColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetConfidentialNull()
+            Me(Me.tableDocsCatalogue.ConfidentialColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsPagesNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.PagesColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetPagesNull()
+            Me(Me.tableDocsCatalogue.PagesColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -5795,6 +6978,427 @@ Partial Public Class DMSDataSet
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class DocsRemovalRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableDocsRemoval As DocsRemovalDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableDocsRemoval = CType(Me.Table,DocsRemovalDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ID() As Long
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsRemoval.IDColumn),Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ID' in table 'DocsRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsRemoval.IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Duplicate() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsRemoval.DuplicateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Duplicate' in table 'DocsRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsRemoval.DuplicateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property DuplicateID() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsRemoval.DuplicateIDColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DuplicateID' in table 'DocsRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsRemoval.DuplicateIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Old() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsRemoval.OldColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Old' in table 'DocsRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsRemoval.OldColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property NotArchiving() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsRemoval.NotArchivingColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NotArchiving' in table 'DocsRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsRemoval.NotArchivingColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Others() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsRemoval.OthersColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Others' in table 'DocsRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsRemoval.OthersColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property OthersReason() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsRemoval.OthersReasonColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'OthersReason' in table 'DocsRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsRemoval.OthersReasonColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Idx() As Long
+            Get
+                Return CType(Me(Me.tableDocsRemoval.IdxColumn),Long)
+            End Get
+            Set
+                Me(Me.tableDocsRemoval.IdxColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsIDNull() As Boolean
+            Return Me.IsNull(Me.tableDocsRemoval.IDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetIDNull()
+            Me(Me.tableDocsRemoval.IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsDuplicateNull() As Boolean
+            Return Me.IsNull(Me.tableDocsRemoval.DuplicateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetDuplicateNull()
+            Me(Me.tableDocsRemoval.DuplicateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsDuplicateIDNull() As Boolean
+            Return Me.IsNull(Me.tableDocsRemoval.DuplicateIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetDuplicateIDNull()
+            Me(Me.tableDocsRemoval.DuplicateIDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsOldNull() As Boolean
+            Return Me.IsNull(Me.tableDocsRemoval.OldColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetOldNull()
+            Me(Me.tableDocsRemoval.OldColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsNotArchivingNull() As Boolean
+            Return Me.IsNull(Me.tableDocsRemoval.NotArchivingColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetNotArchivingNull()
+            Me(Me.tableDocsRemoval.NotArchivingColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsOthersNull() As Boolean
+            Return Me.IsNull(Me.tableDocsRemoval.OthersColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetOthersNull()
+            Me(Me.tableDocsRemoval.OthersColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsOthersReasonNull() As Boolean
+            Return Me.IsNull(Me.tableDocsRemoval.OthersReasonColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetOthersReasonNull()
+            Me(Me.tableDocsRemoval.OthersReasonColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class vwRemovalRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablevwRemoval As vwRemovalDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablevwRemoval = CType(Me.Table,vwRemovalDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Filename() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevwRemoval.FilenameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Filename' in table 'vwRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevwRemoval.FilenameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property DocumentType() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevwRemoval.DocumentTypeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DocumentType' in table 'vwRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevwRemoval.DocumentTypeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Id() As Long
+            Get
+                Return CType(Me(Me.tablevwRemoval.IdColumn),Long)
+            End Get
+            Set
+                Me(Me.tablevwRemoval.IdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property _Select() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevwRemoval.SelectColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Select' in table 'vwRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevwRemoval.SelectColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsFilenameNull() As Boolean
+            Return Me.IsNull(Me.tablevwRemoval.FilenameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetFilenameNull()
+            Me(Me.tablevwRemoval.FilenameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsDocumentTypeNull() As Boolean
+            Return Me.IsNull(Me.tablevwRemoval.DocumentTypeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetDocumentTypeNull()
+            Me(Me.tablevwRemoval.DocumentTypeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Is_SelectNull() As Boolean
+            Return Me.IsNull(Me.tablevwRemoval.SelectColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Set_SelectNull()
+            Me(Me.tablevwRemoval.SelectColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class spForRemovalRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablespForRemoval As spForRemovalDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablespForRemoval = CType(Me.Table,spForRemovalDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ID() As Long
+            Get
+                Try 
+                    Return CType(Me(Me.tablespForRemoval.IDColumn),Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ID' in table 'spForRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablespForRemoval.IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Reason() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablespForRemoval.ReasonColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Reason' in table 'spForRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablespForRemoval.ReasonColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Idx() As Long
+            Get
+                Try 
+                    Return CType(Me(Me.tablespForRemoval.IdxColumn),Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Idx' in table 'spForRemoval' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablespForRemoval.IdxColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsIDNull() As Boolean
+            Return Me.IsNull(Me.tablespForRemoval.IDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetIDNull()
+            Me(Me.tablespForRemoval.IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsReasonNull() As Boolean
+            Return Me.IsNull(Me.tablespForRemoval.ReasonColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetReasonNull()
+            Me(Me.tablespForRemoval.ReasonColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsIdxNull() As Boolean
+            Return Me.IsNull(Me.tablespForRemoval.IdxColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetIdxNull()
+            Me(Me.tablespForRemoval.IdxColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -6032,6 +7636,114 @@ Partial Public Class DMSDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As spDMSLogsRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class DocsRemovalRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As DocsRemovalRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As DocsRemovalRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As DocsRemovalRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class vwRemovalRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As vwRemovalRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As vwRemovalRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As vwRemovalRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class spForRemovalRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As spForRemovalRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As spForRemovalRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As spForRemovalRow
             Get
                 Return Me.eventRow
             End Get
@@ -6623,6 +8335,9 @@ Namespace DMSDataSetTableAdapters
             tableMapping.ColumnMappings.Add("PromoTo", "PromoTo")
             tableMapping.ColumnMappings.Add("DTIPermitNo", "DTIPermitNo")
             tableMapping.ColumnMappings.Add("UserID", "UserID")
+            tableMapping.ColumnMappings.Add("DocSize", "DocSize")
+            tableMapping.ColumnMappings.Add("Confidential", "Confidential")
+            tableMapping.ColumnMappings.Add("Pages", "Pages")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -6649,7 +8364,10 @@ Namespace DMSDataSetTableAdapters
                 "sNull_PromoFrom = 1 AND [PromoFrom] IS NULL) OR ([PromoFrom] = @Original_PromoFr"& _ 
                 "om)) AND ((@IsNull_PromoTo = 1 AND [PromoTo] IS NULL) OR ([PromoTo] = @Original_"& _ 
                 "PromoTo)) AND ((@IsNull_UserID = 1 AND [UserID] IS NULL) OR ([UserID] = @Origina"& _ 
-                "l_UserID)))"
+                "l_UserID)) AND ((@IsNull_Confidential = 1 AND [Confidential] IS NULL) OR ([Confi"& _ 
+                "dential] = @Original_Confidential)) AND ((@IsNull_DocSize = 1 AND [DocSize] IS N"& _ 
+                "ULL) OR ([DocSize] = @Original_DocSize)) AND ((@IsNull_Pages = 1 AND [Pages] IS "& _ 
+                "NULL) OR ([Pages] = @Original_Pages)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ScannedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -6690,6 +8408,12 @@ Namespace DMSDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PromoTo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UserID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Confidential", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Confidential", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DocSize", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Pages", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [DocsCatalogue] ([Batch], [ScannedDate], [Filename], [Status], [Docum"& _ 
@@ -6702,25 +8426,26 @@ Namespace DMSDataSetTableAdapters
                 "dby], [BankAddress], [BankBranch], [BankName], [PaymentOthers], [BoxNo], [NONVAT"& _ 
                 "reg], [RackNo], [TinCustomer], [TinVendor], [VATreg], [AddressC], [DateReceived]"& _ 
                 ", [BatchDesc], [SubBatch], [DTIPermitNo], [PromoFrom], [PromoTitle], [PromoTo], "& _ 
-                "[UserID]) VALUES (@Batch, @ScannedDate, @Filename, @Status, @DocumentType, @Docu"& _ 
-                "mentDate, @ReferenceNo, @Remarks, @BookletNo, @Vendor, @Customer, @ItemPurchased"& _ 
-                ", @TotalValue, @LastName, @FirstName, @MiddleName, @FromPeriod, @ToPeriod, @Warr"& _ 
-                "antyNo, @ProductBrand, @ProductType, @DatePurchased, @Serial, @WarrantyPeriod, @"& _ 
-                "ServiceCenter, @Address, @ContactNo, @Email, @VoucherNo, @PaymentForm, @CheckNo,"& _ 
-                " @Payee, @Payor, @Preparedby, @Approvedby, @Recordedby, @Company, @Purpose, @Sec"& _ 
-                "retary, @MeetingDate, @Receivedby, @BankAddress, @BankBranch, @BankName, @Paymen"& _ 
-                "tOthers, @BoxNo, @NONVATreg, @RackNo, @TinCustomer, @TinVendor, @VATreg, @Addres"& _ 
-                "sC, @DateReceived, @BatchDesc, @SubBatch, @DTIPermitNo, @PromoFrom, @PromoTitle,"& _ 
-                " @PromoTo, @UserID);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Filename, Status, DocumentT"& _ 
-                "ype, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurcha"& _ 
-                "sed, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, Warranty"& _ 
-                "No, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCen"& _ 
-                "ter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, P"& _ 
-                "reparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Rec"& _ 
-                "eivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, Rac"& _ 
-                "kNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch"& _ 
-                ", DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID FROM DocsCatalogue WHERE ("& _ 
-                "Id = SCOPE_IDENTITY())"
+                "[UserID], [Confidential], [DocSize], [Pages]) VALUES (@Batch, @ScannedDate, @Fil"& _ 
+                "ename, @Status, @DocumentType, @DocumentDate, @ReferenceNo, @Remarks, @BookletNo"& _ 
+                ", @Vendor, @Customer, @ItemPurchased, @TotalValue, @LastName, @FirstName, @Middl"& _ 
+                "eName, @FromPeriod, @ToPeriod, @WarrantyNo, @ProductBrand, @ProductType, @DatePu"& _ 
+                "rchased, @Serial, @WarrantyPeriod, @ServiceCenter, @Address, @ContactNo, @Email,"& _ 
+                " @VoucherNo, @PaymentForm, @CheckNo, @Payee, @Payor, @Preparedby, @Approvedby, @"& _ 
+                "Recordedby, @Company, @Purpose, @Secretary, @MeetingDate, @Receivedby, @BankAddr"& _ 
+                "ess, @BankBranch, @BankName, @PaymentOthers, @BoxNo, @NONVATreg, @RackNo, @TinCu"& _ 
+                "stomer, @TinVendor, @VATreg, @AddressC, @DateReceived, @BatchDesc, @SubBatch, @D"& _ 
+                "TIPermitNo, @PromoFrom, @PromoTitle, @PromoTo, @UserID, @Confidential, @DocSize,"& _ 
+                " @Pages);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Filename, Status, DocumentType, Docume"& _ 
+                "ntDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalV"& _ 
+                "alue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, Product"& _ 
+                "Brand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Addres"& _ 
+                "s, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, "& _ 
+                "Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, Ba"& _ 
+                "nkAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCus"& _ 
+                "tomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermit"& _ 
+                "No, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages FROM Do"& _ 
+                "csCatalogue WHERE (Id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Batch", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Batch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6782,6 +8507,9 @@ Namespace DMSDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PromoTitle", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTitle", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PromoTo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Confidential", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [DocsCatalogue] SET [Batch] = @Batch, [ScannedDate] = @ScannedDate, [Filen"& _ 
@@ -6803,39 +8531,44 @@ Namespace DMSDataSetTableAdapters
                 ", [TinCustomer] = @TinCustomer, [TinVendor] = @TinVendor, [VATreg] = @VATreg, [A"& _ 
                 "ddressC] = @AddressC, [DateReceived] = @DateReceived, [BatchDesc] = @BatchDesc, "& _ 
                 "[SubBatch] = @SubBatch, [DTIPermitNo] = @DTIPermitNo, [PromoFrom] = @PromoFrom, "& _ 
-                "[PromoTitle] = @PromoTitle, [PromoTo] = @PromoTo, [UserID] = @UserID WHERE (([Id"& _ 
-                "] = @Original_Id) AND ((@IsNull_ScannedDate = 1 AND [ScannedDate] IS NULL) OR (["& _ 
-                "ScannedDate] = @Original_ScannedDate)) AND ((@IsNull_DocumentDate = 1 AND [Docum"& _ 
-                "entDate] IS NULL) OR ([DocumentDate] = @Original_DocumentDate)) AND ((@IsNull_Bo"& _ 
-                "okletNo = 1 AND [BookletNo] IS NULL) OR ([BookletNo] = @Original_BookletNo)) AND"& _ 
-                " ((@IsNull_TotalValue = 1 AND [TotalValue] IS NULL) OR ([TotalValue] = @Original"& _ 
-                "_TotalValue)) AND ((@IsNull_FromPeriod = 1 AND [FromPeriod] IS NULL) OR ([FromPe"& _ 
-                "riod] = @Original_FromPeriod)) AND ((@IsNull_ToPeriod = 1 AND [ToPeriod] IS NULL"& _ 
-                ") OR ([ToPeriod] = @Original_ToPeriod)) AND ((@IsNull_DatePurchased = 1 AND [Dat"& _ 
-                "ePurchased] IS NULL) OR ([DatePurchased] = @Original_DatePurchased)) AND ((@IsNu"& _ 
-                "ll_WarrantyPeriod = 1 AND [WarrantyPeriod] IS NULL) OR ([WarrantyPeriod] = @Orig"& _ 
-                "inal_WarrantyPeriod)) AND ((@IsNull_MeetingDate = 1 AND [MeetingDate] IS NULL) O"& _ 
-                "R ([MeetingDate] = @Original_MeetingDate)) AND ((@IsNull_BoxNo = 1 AND [BoxNo] I"& _ 
-                "S NULL) OR ([BoxNo] = @Original_BoxNo)) AND ((@IsNull_NONVATreg = 1 AND [NONVATr"& _ 
-                "eg] IS NULL) OR ([NONVATreg] = @Original_NONVATreg)) AND ((@IsNull_RackNo = 1 AN"& _ 
-                "D [RackNo] IS NULL) OR ([RackNo] = @Original_RackNo)) AND ((@IsNull_TinCustomer "& _ 
-                "= 1 AND [TinCustomer] IS NULL) OR ([TinCustomer] = @Original_TinCustomer)) AND ("& _ 
-                "(@IsNull_TinVendor = 1 AND [TinVendor] IS NULL) OR ([TinVendor] = @Original_TinV"& _ 
-                "endor)) AND ((@IsNull_VATreg = 1 AND [VATreg] IS NULL) OR ([VATreg] = @Original_"& _ 
-                "VATreg)) AND ((@IsNull_DateReceived = 1 AND [DateReceived] IS NULL) OR ([DateRec"& _ 
-                "eived] = @Original_DateReceived)) AND ((@IsNull_PromoFrom = 1 AND [PromoFrom] IS"& _ 
-                " NULL) OR ([PromoFrom] = @Original_PromoFrom)) AND ((@IsNull_PromoTo = 1 AND [Pr"& _ 
-                "omoTo] IS NULL) OR ([PromoTo] = @Original_PromoTo)) AND ((@IsNull_UserID = 1 AND"& _ 
-                " [UserID] IS NULL) OR ([UserID] = @Original_UserID)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, Scanne"& _ 
-                "dDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, Bookl"& _ 
-                "etNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleNa"& _ 
-                "me, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, "& _ 
-                "Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, Pay"& _ 
-                "mentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Pu"& _ 
-                "rpose, Secretary, MeetingDate, Receivedby, BankAddress, BankBranch, BankName, Pa"& _ 
-                "ymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC,"& _ 
-                " DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo,"& _ 
-                " UserID FROM DocsCatalogue WHERE (Id = @Id)"
+                "[PromoTitle] = @PromoTitle, [PromoTo] = @PromoTo, [UserID] = @UserID, [Confident"& _ 
+                "ial] = @Confidential, [DocSize] = @DocSize, [Pages] = @Pages WHERE (([Id] = @Ori"& _ 
+                "ginal_Id) AND ((@IsNull_ScannedDate = 1 AND [ScannedDate] IS NULL) OR ([ScannedD"& _ 
+                "ate] = @Original_ScannedDate)) AND ((@IsNull_DocumentDate = 1 AND [DocumentDate]"& _ 
+                " IS NULL) OR ([DocumentDate] = @Original_DocumentDate)) AND ((@IsNull_BookletNo "& _ 
+                "= 1 AND [BookletNo] IS NULL) OR ([BookletNo] = @Original_BookletNo)) AND ((@IsNu"& _ 
+                "ll_TotalValue = 1 AND [TotalValue] IS NULL) OR ([TotalValue] = @Original_TotalVa"& _ 
+                "lue)) AND ((@IsNull_FromPeriod = 1 AND [FromPeriod] IS NULL) OR ([FromPeriod] = "& _ 
+                "@Original_FromPeriod)) AND ((@IsNull_ToPeriod = 1 AND [ToPeriod] IS NULL) OR ([T"& _ 
+                "oPeriod] = @Original_ToPeriod)) AND ((@IsNull_DatePurchased = 1 AND [DatePurchas"& _ 
+                "ed] IS NULL) OR ([DatePurchased] = @Original_DatePurchased)) AND ((@IsNull_Warra"& _ 
+                "ntyPeriod = 1 AND [WarrantyPeriod] IS NULL) OR ([WarrantyPeriod] = @Original_War"& _ 
+                "rantyPeriod)) AND ((@IsNull_MeetingDate = 1 AND [MeetingDate] IS NULL) OR ([Meet"& _ 
+                "ingDate] = @Original_MeetingDate)) AND ((@IsNull_BoxNo = 1 AND [BoxNo] IS NULL) "& _ 
+                "OR ([BoxNo] = @Original_BoxNo)) AND ((@IsNull_NONVATreg = 1 AND [NONVATreg] IS N"& _ 
+                "ULL) OR ([NONVATreg] = @Original_NONVATreg)) AND ((@IsNull_RackNo = 1 AND [RackN"& _ 
+                "o] IS NULL) OR ([RackNo] = @Original_RackNo)) AND ((@IsNull_TinCustomer = 1 AND "& _ 
+                "[TinCustomer] IS NULL) OR ([TinCustomer] = @Original_TinCustomer)) AND ((@IsNull"& _ 
+                "_TinVendor = 1 AND [TinVendor] IS NULL) OR ([TinVendor] = @Original_TinVendor)) "& _ 
+                "AND ((@IsNull_VATreg = 1 AND [VATreg] IS NULL) OR ([VATreg] = @Original_VATreg))"& _ 
+                " AND ((@IsNull_DateReceived = 1 AND [DateReceived] IS NULL) OR ([DateReceived] ="& _ 
+                " @Original_DateReceived)) AND ((@IsNull_PromoFrom = 1 AND [PromoFrom] IS NULL) O"& _ 
+                "R ([PromoFrom] = @Original_PromoFrom)) AND ((@IsNull_PromoTo = 1 AND [PromoTo] I"& _ 
+                "S NULL) OR ([PromoTo] = @Original_PromoTo)) AND ((@IsNull_UserID = 1 AND [UserID"& _ 
+                "] IS NULL) OR ([UserID] = @Original_UserID)) AND ((@IsNull_Confidential = 1 AND "& _ 
+                "[Confidential] IS NULL) OR ([Confidential] = @Original_Confidential)) AND ((@IsN"& _ 
+                "ull_DocSize = 1 AND [DocSize] IS NULL) OR ([DocSize] = @Original_DocSize)) AND ("& _ 
+                "(@IsNull_Pages = 1 AND [Pages] IS NULL) OR ([Pages] = @Original_Pages)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELEC"& _ 
+                "T Id, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, Referenc"& _ 
+                "eNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, "& _ 
+                "FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductTy"& _ 
+                "pe, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Em"& _ 
+                "ail, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Reco"& _ 
+                "rdedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, BankB"& _ 
+                "ranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor"& _ 
+                ", VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, P"& _ 
+                "romoTitle, PromoTo, UserID, Confidential, DocSize, Pages FROM DocsCatalogue WHER"& _ 
+                "E (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Batch", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Batch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6897,6 +8630,9 @@ Namespace DMSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PromoTitle", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTitle", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PromoTo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Confidential", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ScannedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -6936,6 +8672,12 @@ Namespace DMSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PromoTo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UserID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Confidential", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Confidential", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DocSize", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Pages", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -6960,7 +8702,8 @@ Namespace DMSDataSetTableAdapters
                 "Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, B"& _ 
                 "ankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVe"& _ 
                 "ndor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFro"& _ 
-                "m, PromoTitle, PromoTo, UserID FROM DocsCatalogue WHERE (Status = @Status)"
+                "m, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages FROM DocsCatalogue "& _ 
+                "WHERE (Status = @Status)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -7051,7 +8794,10 @@ Namespace DMSDataSetTableAdapters
                     ByVal Original_DateReceived As String,  _
                     ByVal Original_PromoFrom As String,  _
                     ByVal Original_PromoTo As String,  _
-                    ByVal Original_UserID As String) As Integer
+                    ByVal Original_UserID As String,  _
+                    ByVal Original_Confidential As String,  _
+                    ByVal Original_DocSize As String,  _
+                    ByVal Original_Pages As Global.System.Nullable(Of Long)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Long)
             If (Original_ScannedDate.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -7186,6 +8932,27 @@ Namespace DMSDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(37).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(38).Value = CType(Original_UserID,String)
             End If
+            If (Original_Confidential Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(40).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(40).Value = CType(Original_Confidential,String)
+            End If
+            If (Original_DocSize Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(42).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(42).Value = CType(Original_DocSize,String)
+            End If
+            If (Original_Pages.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(44).Value = CType(Original_Pages.Value,Long)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(44).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -7265,7 +9032,10 @@ Namespace DMSDataSetTableAdapters
                     ByVal PromoFrom As String,  _
                     ByVal PromoTitle As String,  _
                     ByVal PromoTo As String,  _
-                    ByVal UserID As String) As Integer
+                    ByVal UserID As String,  _
+                    ByVal Confidential As String,  _
+                    ByVal DocSize As String,  _
+                    ByVal Pages As Global.System.Nullable(Of Long)) As Integer
             If (Batch Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -7566,6 +9336,21 @@ Namespace DMSDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(59).Value = CType(UserID,String)
             End If
+            If (Confidential Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(60).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(60).Value = CType(Confidential,String)
+            End If
+            If (DocSize Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(61).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(61).Value = CType(DocSize,String)
+            End If
+            If (Pages.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(62).Value = CType(Pages.Value,Long)
+            Else
+                Me.Adapter.InsertCommand.Parameters(62).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -7646,6 +9431,9 @@ Namespace DMSDataSetTableAdapters
                     ByVal PromoTitle As String,  _
                     ByVal PromoTo As String,  _
                     ByVal UserID As String,  _
+                    ByVal Confidential As String,  _
+                    ByVal DocSize As String,  _
+                    ByVal Pages As Global.System.Nullable(Of Long),  _
                     ByVal Original_Id As Long,  _
                     ByVal Original_ScannedDate As Global.System.Nullable(Of Date),  _
                     ByVal Original_DocumentDate As String,  _
@@ -7666,6 +9454,9 @@ Namespace DMSDataSetTableAdapters
                     ByVal Original_PromoFrom As String,  _
                     ByVal Original_PromoTo As String,  _
                     ByVal Original_UserID As String,  _
+                    ByVal Original_Confidential As String,  _
+                    ByVal Original_DocSize As String,  _
+                    ByVal Original_Pages As Global.System.Nullable(Of Long),  _
                     ByVal Id As Long) As Integer
             If (Batch Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
@@ -7967,141 +9758,177 @@ Namespace DMSDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(59).Value = CType(UserID,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Original_Id,Long)
-            If (Original_ScannedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(Original_ScannedDate.Value,Date)
+            If (Confidential Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(60).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Confidential,String)
+            End If
+            If (DocSize Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(61).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(DocSize,String)
+            End If
+            If (Pages.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(Pages.Value,Long)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(62).Value = Global.System.DBNull.Value
             End If
-            If (Original_DocumentDate Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(64).Value = Global.System.DBNull.Value
+            Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_Id,Long)
+            If (Original_ScannedDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Original_ScannedDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Original_DocumentDate,String)
+                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(65).Value = Global.System.DBNull.Value
+            End If
+            If (Original_DocumentDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(67).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(Original_DocumentDate,String)
             End If
             If (Original_BookletNo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(66).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(69).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(Original_BookletNo,String)
+                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(Original_BookletNo,String)
             End If
             If (Original_TotalValue.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(Original_TotalValue.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(Original_TotalValue.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(68).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(71).Value = Global.System.DBNull.Value
             End If
             If (Original_FromPeriod Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(70).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(73).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(Original_FromPeriod,String)
+                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(Original_FromPeriod,String)
             End If
             If (Original_ToPeriod Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(72).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(75).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(Original_ToPeriod,String)
+                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(Original_ToPeriod,String)
             End If
             If (Original_DatePurchased Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(74).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(77).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(Original_DatePurchased,String)
+                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(Original_DatePurchased,String)
             End If
             If (Original_WarrantyPeriod Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(76).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(79).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(Original_WarrantyPeriod,String)
+                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(Original_WarrantyPeriod,String)
             End If
             If (Original_MeetingDate Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(78).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(81).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(Original_MeetingDate,String)
+                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(Original_MeetingDate,String)
             End If
             If (Original_BoxNo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(80).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(83).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(Original_BoxNo,String)
+                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(Original_BoxNo,String)
             End If
             If (Original_NONVATreg Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(82).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(85).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(Original_NONVATreg,String)
+                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(Original_NONVATreg,String)
             End If
             If (Original_RackNo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(84).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(87).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(Original_RackNo,String)
+                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(Original_RackNo,String)
             End If
             If (Original_TinCustomer Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(86).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(89).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(Original_TinCustomer,String)
+                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(Original_TinCustomer,String)
             End If
             If (Original_TinVendor Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(88).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(91).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(Original_TinVendor,String)
+                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(Original_TinVendor,String)
             End If
             If (Original_VATreg Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(90).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(93).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(Original_VATreg,String)
+                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(Original_VATreg,String)
             End If
             If (Original_DateReceived Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(92).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(95).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(Original_DateReceived,String)
+                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(Original_DateReceived,String)
             End If
             If (Original_PromoFrom Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(94).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(97).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(Original_PromoFrom,String)
+                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(Original_PromoFrom,String)
             End If
             If (Original_PromoTo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(96).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(99).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(Original_PromoTo,String)
+                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(Original_PromoTo,String)
             End If
             If (Original_UserID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(98).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(101).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(Original_UserID,String)
+                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(Original_UserID,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(99).Value = CType(Id,Long)
+            If (Original_Confidential Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(103).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(Original_Confidential,String)
+            End If
+            If (Original_DocSize Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(105).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(Original_DocSize,String)
+            End If
+            If (Original_Pages.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(Original_Pages.Value,Long)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(107).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(108).Value = CType(Id,Long)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -8182,6 +10009,9 @@ Namespace DMSDataSetTableAdapters
                     ByVal PromoTitle As String,  _
                     ByVal PromoTo As String,  _
                     ByVal UserID As String,  _
+                    ByVal Confidential As String,  _
+                    ByVal DocSize As String,  _
+                    ByVal Pages As Global.System.Nullable(Of Long),  _
                     ByVal Original_Id As Long,  _
                     ByVal Original_ScannedDate As Global.System.Nullable(Of Date),  _
                     ByVal Original_DocumentDate As String,  _
@@ -8201,8 +10031,11 @@ Namespace DMSDataSetTableAdapters
                     ByVal Original_DateReceived As String,  _
                     ByVal Original_PromoFrom As String,  _
                     ByVal Original_PromoTo As String,  _
-                    ByVal Original_UserID As String) As Integer
-            Return Me.Update(Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Original_Id, Original_ScannedDate, Original_DocumentDate, Original_BookletNo, Original_TotalValue, Original_FromPeriod, Original_ToPeriod, Original_DatePurchased, Original_WarrantyPeriod, Original_MeetingDate, Original_BoxNo, Original_NONVATreg, Original_RackNo, Original_TinCustomer, Original_TinVendor, Original_VATreg, Original_DateReceived, Original_PromoFrom, Original_PromoTo, Original_UserID, Original_Id)
+                    ByVal Original_UserID As String,  _
+                    ByVal Original_Confidential As String,  _
+                    ByVal Original_DocSize As String,  _
+                    ByVal Original_Pages As Global.System.Nullable(Of Long)) As Integer
+            Return Me.Update(Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages, Original_Id, Original_ScannedDate, Original_DocumentDate, Original_BookletNo, Original_TotalValue, Original_FromPeriod, Original_ToPeriod, Original_DatePurchased, Original_WarrantyPeriod, Original_MeetingDate, Original_BoxNo, Original_NONVATreg, Original_RackNo, Original_TinCustomer, Original_TinVendor, Original_VATreg, Original_DateReceived, Original_PromoFrom, Original_PromoTo, Original_UserID, Original_Confidential, Original_DocSize, Original_Pages, Original_Id)
         End Function
     End Class
     
@@ -9485,6 +11318,913 @@ Namespace DMSDataSetTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class DocsRemovalTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "DocsRemoval"
+            tableMapping.ColumnMappings.Add("ID", "ID")
+            tableMapping.ColumnMappings.Add("Duplicate", "Duplicate")
+            tableMapping.ColumnMappings.Add("DuplicateID", "DuplicateID")
+            tableMapping.ColumnMappings.Add("Old", "Old")
+            tableMapping.ColumnMappings.Add("NotArchiving", "NotArchiving")
+            tableMapping.ColumnMappings.Add("Others", "Others")
+            tableMapping.ColumnMappings.Add("OthersReason", "OthersReason")
+            tableMapping.ColumnMappings.Add("Idx", "Idx")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[DocsRemoval] WHERE (((@IsNull_ID = 1 AND [ID] IS NULL) OR ([ID"& _ 
+                "] = @Original_ID)) AND ((@IsNull_Duplicate = 1 AND [Duplicate] IS NULL) OR ([Dup"& _ 
+                "licate] = @Original_Duplicate)) AND ((@IsNull_DuplicateID = 1 AND [DuplicateID] "& _ 
+                "IS NULL) OR ([DuplicateID] = @Original_DuplicateID)) AND ((@IsNull_Old = 1 AND ["& _ 
+                "Old] IS NULL) OR ([Old] = @Original_Old)) AND ((@IsNull_NotArchiving = 1 AND [No"& _ 
+                "tArchiving] IS NULL) OR ([NotArchiving] = @Original_NotArchiving)) AND ((@IsNull"& _ 
+                "_Others = 1 AND [Others] IS NULL) OR ([Others] = @Original_Others)) AND ((@IsNul"& _ 
+                "l_OthersReason = 1 AND [OthersReason] IS NULL) OR ([OthersReason] = @Original_Ot"& _ 
+                "hersReason)) AND ([Idx] = @Original_Idx))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Duplicate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duplicate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Duplicate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duplicate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DuplicateID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DuplicateID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DuplicateID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DuplicateID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Old", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Old", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Old", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Old", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NotArchiving", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NotArchiving", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NotArchiving", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NotArchiving", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Others", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Others", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Others", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Others", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OthersReason", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OthersReason", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OthersReason", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OthersReason", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Idx", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Idx", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DocsRemoval] ([ID], [Duplicate], [DuplicateID], [Old], [NotArc"& _ 
+                "hiving], [Others], [OthersReason]) VALUES (@ID, @Duplicate, @DuplicateID, @Old, "& _ 
+                "@NotArchiving, @Others, @OthersReason);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, Duplicate, DuplicateID, Old,"& _ 
+                " NotArchiving, Others, OthersReason, Idx FROM DocsRemoval WHERE (Idx = SCOPE_IDE"& _ 
+                "NTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Duplicate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duplicate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DuplicateID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DuplicateID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Old", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Old", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NotArchiving", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NotArchiving", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Others", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Others", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OthersReason", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OthersReason", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[DocsRemoval] SET [ID] = @ID, [Duplicate] = @Duplicate, [DuplicateID"& _ 
+                "] = @DuplicateID, [Old] = @Old, [NotArchiving] = @NotArchiving, [Others] = @Othe"& _ 
+                "rs, [OthersReason] = @OthersReason WHERE (((@IsNull_ID = 1 AND [ID] IS NULL) OR "& _ 
+                "([ID] = @Original_ID)) AND ((@IsNull_Duplicate = 1 AND [Duplicate] IS NULL) OR ("& _ 
+                "[Duplicate] = @Original_Duplicate)) AND ((@IsNull_DuplicateID = 1 AND [Duplicate"& _ 
+                "ID] IS NULL) OR ([DuplicateID] = @Original_DuplicateID)) AND ((@IsNull_Old = 1 A"& _ 
+                "ND [Old] IS NULL) OR ([Old] = @Original_Old)) AND ((@IsNull_NotArchiving = 1 AND"& _ 
+                " [NotArchiving] IS NULL) OR ([NotArchiving] = @Original_NotArchiving)) AND ((@Is"& _ 
+                "Null_Others = 1 AND [Others] IS NULL) OR ([Others] = @Original_Others)) AND ((@I"& _ 
+                "sNull_OthersReason = 1 AND [OthersReason] IS NULL) OR ([OthersReason] = @Origina"& _ 
+                "l_OthersReason)) AND ([Idx] = @Original_Idx));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, Duplicate, DuplicateI"& _ 
+                "D, Old, NotArchiving, Others, OthersReason, Idx FROM DocsRemoval WHERE (Idx = @I"& _ 
+                "dx)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Duplicate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duplicate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DuplicateID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DuplicateID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Old", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Old", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NotArchiving", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NotArchiving", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Others", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Others", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OthersReason", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OthersReason", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Duplicate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duplicate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Duplicate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Duplicate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DuplicateID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DuplicateID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DuplicateID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DuplicateID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Old", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Old", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Old", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Old", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NotArchiving", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NotArchiving", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NotArchiving", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NotArchiving", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Others", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Others", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Others", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Others", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OthersReason", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OthersReason", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OthersReason", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OthersReason", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Idx", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Idx", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Idx", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Idx", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.DMS.My.MySettings.Default.DMSConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT ID, Duplicate, DuplicateID, Old, NotArchiving, Others, OthersReason, Idx F"& _ 
+                "ROM dbo.DocsRemoval"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DMSDataSet.DocsRemovalDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DMSDataSet.DocsRemovalDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DMSDataSet.DocsRemovalDataTable = New DMSDataSet.DocsRemovalDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DMSDataSet.DocsRemovalDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DMSDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "DocsRemoval")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Global.System.Nullable(Of Long), ByVal Original_Duplicate As String, ByVal Original_DuplicateID As String, ByVal Original_Old As String, ByVal Original_NotArchiving As String, ByVal Original_Others As String, ByVal Original_OthersReason As String, ByVal Original_Idx As Long) As Integer
+            If (Original_ID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_ID.Value,Long)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Duplicate Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_Duplicate,String)
+            End If
+            If (Original_DuplicateID Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_DuplicateID,String)
+            End If
+            If (Original_Old Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_Old,String)
+            End If
+            If (Original_NotArchiving Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_NotArchiving,String)
+            End If
+            If (Original_Others Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_Others,String)
+            End If
+            If (Original_OthersReason Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_OthersReason,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Idx,Long)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal ID As Global.System.Nullable(Of Long), ByVal Duplicate As String, ByVal DuplicateID As String, ByVal Old As String, ByVal NotArchiving As String, ByVal Others As String, ByVal OthersReason As String) As Integer
+            If (ID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(ID.Value,Long)
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Duplicate Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Duplicate,String)
+            End If
+            If (DuplicateID Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(DuplicateID,String)
+            End If
+            If (Old Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Old,String)
+            End If
+            If (NotArchiving Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(NotArchiving,String)
+            End If
+            If (Others Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Others,String)
+            End If
+            If (OthersReason Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(OthersReason,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal ID As Global.System.Nullable(Of Long),  _
+                    ByVal Duplicate As String,  _
+                    ByVal DuplicateID As String,  _
+                    ByVal Old As String,  _
+                    ByVal NotArchiving As String,  _
+                    ByVal Others As String,  _
+                    ByVal OthersReason As String,  _
+                    ByVal Original_ID As Global.System.Nullable(Of Long),  _
+                    ByVal Original_Duplicate As String,  _
+                    ByVal Original_DuplicateID As String,  _
+                    ByVal Original_Old As String,  _
+                    ByVal Original_NotArchiving As String,  _
+                    ByVal Original_Others As String,  _
+                    ByVal Original_OthersReason As String,  _
+                    ByVal Original_Idx As Long,  _
+                    ByVal Idx As Long) As Integer
+            If (ID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(ID.Value,Long)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Duplicate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Duplicate,String)
+            End If
+            If (DuplicateID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(DuplicateID,String)
+            End If
+            If (Old Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Old,String)
+            End If
+            If (NotArchiving Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(NotArchiving,String)
+            End If
+            If (Others Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Others,String)
+            End If
+            If (OthersReason Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(OthersReason,String)
+            End If
+            If (Original_ID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_ID.Value,Long)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Duplicate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Duplicate,String)
+            End If
+            If (Original_DuplicateID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_DuplicateID,String)
+            End If
+            If (Original_Old Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Old,String)
+            End If
+            If (Original_NotArchiving Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_NotArchiving,String)
+            End If
+            If (Original_Others Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Others,String)
+            End If
+            If (Original_OthersReason Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_OthersReason,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Idx,Long)
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Idx,Long)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal ID As Global.System.Nullable(Of Long), ByVal Duplicate As String, ByVal DuplicateID As String, ByVal Old As String, ByVal NotArchiving As String, ByVal Others As String, ByVal OthersReason As String, ByVal Original_ID As Global.System.Nullable(Of Long), ByVal Original_Duplicate As String, ByVal Original_DuplicateID As String, ByVal Original_Old As String, ByVal Original_NotArchiving As String, ByVal Original_Others As String, ByVal Original_OthersReason As String, ByVal Original_Idx As Long) As Integer
+            Return Me.Update(ID, Duplicate, DuplicateID, Old, NotArchiving, Others, OthersReason, Original_ID, Original_Duplicate, Original_DuplicateID, Original_Old, Original_NotArchiving, Original_Others, Original_OthersReason, Original_Idx, Original_Idx)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class vwRemovalTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "vwRemoval"
+            tableMapping.ColumnMappings.Add("Filename", "Filename")
+            tableMapping.ColumnMappings.Add("DocumentType", "DocumentType")
+            tableMapping.ColumnMappings.Add("Id", "Id")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.DMS.My.MySettings.Default.DMSConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT Filename, DocumentType, Id FROM dbo.vwRemoval"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DMSDataSet.vwRemovalDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DMSDataSet.vwRemovalDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DMSDataSet.vwRemovalDataTable = New DMSDataSet.vwRemovalDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class spForRemovalTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "spForRemoval"
+            tableMapping.ColumnMappings.Add("ID", "ID")
+            tableMapping.ColumnMappings.Add("Reason", "Reason")
+            tableMapping.ColumnMappings.Add("Idx", "Idx")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.DMS.My.MySettings.Default.DMSConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "dbo.spForRemoval"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 19, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DMSDataSet.spForRemovalDataTable, ByVal ID As Global.System.Nullable(Of Long)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (ID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ID.Value,Long)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal ID As Global.System.Nullable(Of Long)) As DMSDataSet.spForRemovalDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (ID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ID.Value,Long)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As DMSDataSet.spForRemovalDataTable = New DMSDataSet.spForRemovalDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -9506,6 +12246,8 @@ Namespace DMSDataSetTableAdapters
         Private _dMSUserTableAdapter As DMSUserTableAdapter
         
         Private _dMSLogsTableAdapter As DMSLogsTableAdapter
+        
+        Private _docsRemovalTableAdapter As DocsRemovalTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -9593,6 +12335,20 @@ Namespace DMSDataSetTableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property DocsRemovalTableAdapter() As DocsRemovalTableAdapter
+            Get
+                Return Me._docsRemovalTableAdapter
+            End Get
+            Set
+                Me._docsRemovalTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -9631,6 +12387,10 @@ Namespace DMSDataSetTableAdapters
                             AndAlso (Not (Me._dMSLogsTableAdapter.Connection) Is Nothing)) Then
                     Return Me._dMSLogsTableAdapter.Connection
                 End If
+                If ((Not (Me._docsRemovalTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._docsRemovalTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._docsRemovalTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -9657,6 +12417,9 @@ Namespace DMSDataSetTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._dMSLogsTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._docsRemovalTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -9715,6 +12478,15 @@ Namespace DMSDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._docsRemovalTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.DocsRemoval.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._docsRemovalTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -9765,6 +12537,14 @@ Namespace DMSDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._docsRemovalTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.DocsRemoval.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._docsRemovalTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -9775,6 +12555,14 @@ Namespace DMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DMSDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._docsRemovalTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.DocsRemoval.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._docsRemovalTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._dMSLogsTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.DMSLogs.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -9881,6 +12669,11 @@ Namespace DMSDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
+            If ((Not (Me._docsRemovalTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._docsRemovalTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
                 Throw New Global.System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana"& _ 
@@ -9956,6 +12749,15 @@ Namespace DMSDataSetTableAdapters
                     If Me._dMSLogsTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._dMSLogsTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._dMSLogsTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._docsRemovalTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._docsRemovalTableAdapter, Me._docsRemovalTableAdapter.Connection)
+                    Me._docsRemovalTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._docsRemovalTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._docsRemovalTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._docsRemovalTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._docsRemovalTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -10037,6 +12839,10 @@ Namespace DMSDataSetTableAdapters
                 If (Not (Me._dMSLogsTableAdapter) Is Nothing) Then
                     Me._dMSLogsTableAdapter.Connection = CType(revertConnections(Me._dMSLogsTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._dMSLogsTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._docsRemovalTableAdapter) Is Nothing) Then
+                    Me._docsRemovalTableAdapter.Connection = CType(revertConnections(Me._docsRemovalTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._docsRemovalTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

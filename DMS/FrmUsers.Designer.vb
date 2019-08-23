@@ -161,7 +161,7 @@ Partial Class FrmUsers
         '
         Me.TxtUsertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.TxtUsertype.FormattingEnabled = True
-        Me.TxtUsertype.Items.AddRange(New Object() {"Administrator", "User"})
+        Me.TxtUsertype.Items.AddRange(New Object() {"System Admin", "Admin", "Editor", "User 1", "User 2"})
         Me.TxtUsertype.Location = New System.Drawing.Point(109, 97)
         Me.TxtUsertype.Name = "TxtUsertype"
         Me.TxtUsertype.Size = New System.Drawing.Size(254, 21)

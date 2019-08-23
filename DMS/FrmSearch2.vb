@@ -281,8 +281,9 @@ Public Class FrmSearch2
             Dim id As Integer = 0
             'Create your query as you already have done
             Dim strsql As String = "SELECT 
-                [Id]
-               ,'' [Download]
+                
+               '' [Download]
+                , [Id] [Document No]
               ,[DocumentType] [Document Type]
               ,[Batch]            
               ,[SubBatch]  [Sub Batch]               
@@ -442,7 +443,7 @@ AND Status = 'Finished'
 
             source = objbindingsource
 
-            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Id").Visible = False
+            'Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Id").Visible = False
             Me.C1TrueDBGrid2.Splits(0).ExtendRightColumn = True
 
 
@@ -458,7 +459,7 @@ AND Status = 'Finished'
 
 
 
-
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Document No").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Document Type").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Batch").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Sub Batch").Locked = True
@@ -900,40 +901,24 @@ AND Status = 'Finished'
                     If Me.C1TrueDBGrid2.Columns("Download").Value = True Then
                         FilePath = FolderBrowserDialog1.SelectedPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text
                         My.Computer.Network.DownloadFile(Path.Combine(My.Settings.ImgPath, Me.C1TrueDBGrid2.Columns("File Name").Text), FilePath, "guest", "")
-
                     End If
-
-
                     source.MoveNext()
-
                 Next
 
 
-                Try
+                Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+                Dim cmdlogs As New SqlCommand("INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+                ' Dim dRemoteDate As Date
+                '  dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
-                    Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-                    Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-                    ' Dim dRemoteDate As Date
-                    '  dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
-
-
-                    con.Open()
-                    cmdlogs.Connection = con
-                    cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
-                    cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Downloaded files.")
-                    cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
-                    cmdlogs.ExecuteNonQuery()
-                    con.Close()
-
-
-                Catch ex As Exception
-                    MessageBox.Show(ex.Message)
-                End Try
-
-
-
-
+                con.Open()
+                cmdlogs.Connection = con
+                cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+                cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Downloaded files.")
+                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                cmdlogs.ExecuteNonQuery()
+                con.Close()
 
                 MessageBox.Show("Files Downloaded.", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information)
 

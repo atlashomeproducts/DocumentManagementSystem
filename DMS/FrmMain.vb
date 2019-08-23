@@ -101,6 +101,7 @@ Public Class FrmMain
 
 
 
+
     End Sub
 
     Public Sub MinimizeAllChildren()
@@ -297,17 +298,54 @@ Public Class FrmMain
 
                 Me.LblUser.Text = "Logged in as:" & User
 
-                If type = "Administrator" Then
+                If type = "System Admin" Then
                     TabControl1.SelectTab(TabMain)
-                ElseIf type = "User" Then
-                    TabControl1.SelectTab(TabMain)
-                    UserManagementToolStripMenuItem.Visible = False
-                    Me.ToolStripMenuItem4.Visible = False
-                Else
+
+                ElseIf type = "Admin" Then
                     TabControl1.SelectTab(TabMain)
                     UserManagementToolStripMenuItem.Visible = False
                     Me.ToolStripMenuItem4.Visible = False
 
+                ElseIf type = "Editor" Then
+                    TabControl1.SelectTab(TabMain)
+                    UserManagementToolStripMenuItem.Visible = False
+                    RemovalToolStripMenuItem6.Visible = False
+                    ToolStripMenuItem4.Visible = False
+                    ToolStripMenuItem7.Visible = False
+
+                ElseIf type = "User 1" Then
+                    TabControl1.SelectTab(TabMain)
+                    UserManagementToolStripMenuItem.Visible = False
+                    EditorToolStripMenuItem.Visible = False
+                    IndexFilesToolStripMenuItem.Visible = False
+                    RemovalToolStripMenuItem6.Visible = False
+                    Me.ToolStripMenuItem1.Visible = False
+                    Me.ToolStripMenuItem2.Visible = False
+                    Me.ToolStripMenuItem3.Visible = False
+                    Me.ToolStripMenuItem4.Visible = False
+                    Me.ToolStripMenuItem5.Visible = False
+                ElseIf type = "User 2" Then
+                    TabControl1.SelectTab(TabMain)
+                    UserManagementToolStripMenuItem.Visible = False
+                    EditorToolStripMenuItem.Visible = False
+                    IndexFilesToolStripMenuItem.Visible = False
+                    RemovalToolStripMenuItem6.Visible = False
+                    Me.ToolStripMenuItem1.Visible = False
+                    Me.ToolStripMenuItem2.Visible = False
+                    Me.ToolStripMenuItem3.Visible = False
+                    Me.ToolStripMenuItem4.Visible = False
+                    Me.ToolStripMenuItem5.Visible = False
+                Else
+                    TabControl1.SelectTab(TabMain)
+                    UserManagementToolStripMenuItem.Visible = False
+                    EditorToolStripMenuItem.Visible = False
+                    IndexFilesToolStripMenuItem.Visible = False
+                    RemovalToolStripMenuItem6.Visible = False
+                    Me.ToolStripMenuItem1.Visible = False
+                    Me.ToolStripMenuItem2.Visible = False
+                    Me.ToolStripMenuItem3.Visible = False
+                    Me.ToolStripMenuItem4.Visible = False
+                    Me.ToolStripMenuItem5.Visible = False
                 End If
 
                 con.Close()
@@ -318,9 +356,6 @@ Public Class FrmMain
                 cmdlogs.Parameters.AddWithValue("@Username", User)
                 cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Logged In")
                 cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
-                'cmd.Parameters("@Username").Value = User
-                'cmd.Parameters("@Action").Value = User & " " & "logged in"
-                'cmd.Parameters("@ActionDate").Value = DateTime.Now
                 cmdlogs.ExecuteNonQuery()
                 con.Close()
 
@@ -379,13 +414,13 @@ Public Class FrmMain
 
 
 
-        Dim thread As New Thread(
-        Sub()
-            counter = Directory.GetFiles(My.Settings.Queue, "*.pdf", SearchOption.AllDirectories).Length
+        'Dim thread As New Thread(
+        'Sub()
+        '    counter = Directory.GetFiles(My.Settings.Queue, "*.pdf", SearchOption.AllDirectories).Length
 
-        End Sub
-                                    )
-        thread.Start()
+        'End Sub
+        '                            )
+        'thread.Start()
 
 
 
@@ -420,6 +455,8 @@ Public Class FrmMain
         Me.SpDMSLogsBindingSource.MoveLast()
 
         TxtQueue.Text = counter
+
+
 
 
     End Sub
@@ -560,12 +597,13 @@ Public Class FrmMain
     Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
         Try
             counter = Directory.GetFiles(My.Settings.Queue, "*.pdf", SearchOption.AllDirectories).Length
-
-
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
 
     End Sub
 
+    Private Sub ToolStripMenuItem6_Click_1(sender As Object, e As EventArgs) Handles RemovalToolStripMenuItem6.Click
+        FrmRemoval.Show()
+    End Sub
 End Class

@@ -103,12 +103,18 @@ Partial Class FrmEditor
         Dim Label23 As System.Windows.Forms.Label
         Dim BatchLabel As System.Windows.Forms.Label
         Dim SubBatchLabel As System.Windows.Forms.Label
+        Dim DocSizeLabel As System.Windows.Forms.Label
+        Dim IdLabel As System.Windows.Forms.Label
+        Dim PagesLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEditor))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.DocsCatalogueC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DMSDataSet = New DMS.DMSDataSet()
+        Me.txtPages = New System.Windows.Forms.TextBox()
+        Me.cbDocSize = New System.Windows.Forms.ComboBox()
+        Me.chkConfidential = New System.Windows.Forms.CheckBox()
         Me.SubBatchTextBox = New System.Windows.Forms.TextBox()
         Me.BatchTextBox = New System.Windows.Forms.TextBox()
         Me.BtnCancel1 = New System.Windows.Forms.Button()
@@ -301,6 +307,9 @@ Partial Class FrmEditor
         Label23 = New System.Windows.Forms.Label()
         BatchLabel = New System.Windows.Forms.Label()
         SubBatchLabel = New System.Windows.Forms.Label()
+        DocSizeLabel = New System.Windows.Forms.Label()
+        IdLabel = New System.Windows.Forms.Label()
+        PagesLabel = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -339,10 +348,10 @@ Partial Class FrmEditor
         'DocumentTypeLabel
         '
         DocumentTypeLabel.AutoSize = True
-        DocumentTypeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DocumentTypeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DocumentTypeLabel.Location = New System.Drawing.Point(11, 46)
         DocumentTypeLabel.Name = "DocumentTypeLabel"
-        DocumentTypeLabel.Size = New System.Drawing.Size(125, 20)
+        DocumentTypeLabel.Size = New System.Drawing.Size(107, 16)
         DocumentTypeLabel.TabIndex = 0
         DocumentTypeLabel.Text = "Document Type:"
         '
@@ -1057,22 +1066,52 @@ Partial Class FrmEditor
         'BatchLabel
         '
         BatchLabel.AutoSize = True
-        BatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        BatchLabel.Location = New System.Drawing.Point(33, 80)
+        BatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        BatchLabel.Location = New System.Drawing.Point(33, 72)
         BatchLabel.Name = "BatchLabel"
-        BatchLabel.Size = New System.Drawing.Size(45, 16)
+        BatchLabel.Size = New System.Drawing.Size(85, 16)
         BatchLabel.TabIndex = 28
-        BatchLabel.Text = "Batch:"
+        BatchLabel.Text = "Batch Name:"
         '
         'SubBatchLabel
         '
         SubBatchLabel.AutoSize = True
-        SubBatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        SubBatchLabel.Location = New System.Drawing.Point(6, 106)
+        SubBatchLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        SubBatchLabel.Location = New System.Drawing.Point(46, 95)
         SubBatchLabel.Name = "SubBatchLabel"
         SubBatchLabel.Size = New System.Drawing.Size(72, 16)
         SubBatchLabel.TabIndex = 29
         SubBatchLabel.Text = "Sub Batch:"
+        '
+        'DocSizeLabel
+        '
+        DocSizeLabel.AutoSize = True
+        DocSizeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DocSizeLabel.Location = New System.Drawing.Point(17, 141)
+        DocSizeLabel.Name = "DocSizeLabel"
+        DocSizeLabel.Size = New System.Drawing.Size(101, 16)
+        DocSizeLabel.TabIndex = 31
+        DocSizeLabel.Text = "Document Size:"
+        '
+        'IdLabel
+        '
+        IdLabel.AutoSize = True
+        IdLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        IdLabel.Location = New System.Drawing.Point(25, 118)
+        IdLabel.Name = "IdLabel"
+        IdLabel.Size = New System.Drawing.Size(93, 16)
+        IdLabel.TabIndex = 32
+        IdLabel.Text = "Document No:"
+        '
+        'PagesLabel
+        '
+        PagesLabel.AutoSize = True
+        PagesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PagesLabel.Location = New System.Drawing.Point(426, 141)
+        PagesLabel.Name = "PagesLabel"
+        PagesLabel.Size = New System.Drawing.Size(51, 16)
+        PagesLabel.TabIndex = 33
+        PagesLabel.Text = "Pages:"
         '
         'SplitContainer1
         '
@@ -1091,7 +1130,7 @@ Partial Class FrmEditor
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.AcroReader1)
         Me.SplitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.SplitContainer1.Size = New System.Drawing.Size(1197, 684)
+        Me.SplitContainer1.Size = New System.Drawing.Size(1197, 737)
         Me.SplitContainer1.SplitterDistance = 641
         Me.SplitContainer1.TabIndex = 0
         Me.SplitContainer1.TabStop = False
@@ -1115,6 +1154,12 @@ Partial Class FrmEditor
         '
         Me.SplitContainer2.Panel2.AutoScroll = True
         Me.SplitContainer2.Panel2.BackColor = System.Drawing.Color.Azure
+        Me.SplitContainer2.Panel2.Controls.Add(PagesLabel)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.txtPages)
+        Me.SplitContainer2.Panel2.Controls.Add(IdLabel)
+        Me.SplitContainer2.Panel2.Controls.Add(DocSizeLabel)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.cbDocSize)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.chkConfidential)
         Me.SplitContainer2.Panel2.Controls.Add(SubBatchLabel)
         Me.SplitContainer2.Panel2.Controls.Add(Me.SubBatchTextBox)
         Me.SplitContainer2.Panel2.Controls.Add(BatchLabel)
@@ -1131,8 +1176,8 @@ Partial Class FrmEditor
         Me.SplitContainer2.Panel2.Controls.Add(Me.DocumentTypeComboBox)
         Me.SplitContainer2.Panel2.Controls.Add(DocumentTypeLabel)
         Me.SplitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.SplitContainer2.Size = New System.Drawing.Size(641, 684)
-        Me.SplitContainer2.SplitterDistance = 221
+        Me.SplitContainer2.Size = New System.Drawing.Size(641, 737)
+        Me.SplitContainer2.SplitterDistance = 238
         Me.SplitContainer2.TabIndex = 0
         Me.SplitContainer2.TabStop = False
         '
@@ -1156,7 +1201,7 @@ Partial Class FrmEditor
         Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
         Me.DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
         Me.DocsCatalogueC1TrueDBGrid.RowHeight = 22
-        Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(641, 221)
+        Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(641, 238)
         Me.DocsCatalogueC1TrueDBGrid.TabIndex = 0
         Me.DocsCatalogueC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.DocsCatalogueC1TrueDBGrid.PropBag = resources.GetString("DocsCatalogueC1TrueDBGrid.PropBag")
@@ -1171,24 +1216,55 @@ Partial Class FrmEditor
         Me.DMSDataSet.DataSetName = "DMSDataSet"
         Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'txtPages
+        '
+        Me.txtPages.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Pages", True))
+        Me.txtPages.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPages.Location = New System.Drawing.Point(497, 138)
+        Me.txtPages.Name = "txtPages"
+        Me.txtPages.Size = New System.Drawing.Size(104, 22)
+        Me.txtPages.TabIndex = 34
+        '
+        'cbDocSize
+        '
+        Me.cbDocSize.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DocSize", True))
+        Me.cbDocSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbDocSize.FormattingEnabled = True
+        Me.cbDocSize.Items.AddRange(New Object() {"8.5 x 11 (Letter Size)", "8.5 x 13 (Long Bond)", "8.5 x 14 (Legal Size)", "A4 Size", "A5 Size"})
+        Me.cbDocSize.Location = New System.Drawing.Point(140, 138)
+        Me.cbDocSize.Name = "cbDocSize"
+        Me.cbDocSize.Size = New System.Drawing.Size(217, 24)
+        Me.cbDocSize.TabIndex = 32
+        '
+        'chkConfidential
+        '
+        Me.chkConfidential.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.DocsCatalogueBindingSource, "Confidential", True))
+        Me.chkConfidential.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkConfidential.Location = New System.Drawing.Point(497, 115)
+        Me.chkConfidential.Name = "chkConfidential"
+        Me.chkConfidential.Size = New System.Drawing.Size(104, 24)
+        Me.chkConfidential.TabIndex = 31
+        Me.chkConfidential.Text = "Confidential"
+        Me.chkConfidential.UseVisualStyleBackColor = True
+        '
         'SubBatchTextBox
         '
         Me.SubBatchTextBox.BackColor = System.Drawing.Color.White
         Me.SubBatchTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "SubBatch", True))
-        Me.SubBatchTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.SubBatchTextBox.Location = New System.Drawing.Point(98, 103)
+        Me.SubBatchTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SubBatchTextBox.Location = New System.Drawing.Point(140, 92)
         Me.SubBatchTextBox.Name = "SubBatchTextBox"
-        Me.SubBatchTextBox.Size = New System.Drawing.Size(522, 22)
+        Me.SubBatchTextBox.Size = New System.Drawing.Size(461, 22)
         Me.SubBatchTextBox.TabIndex = 30
         '
         'BatchTextBox
         '
         Me.BatchTextBox.BackColor = System.Drawing.Color.White
         Me.BatchTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Batch", True))
-        Me.BatchTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.BatchTextBox.Location = New System.Drawing.Point(98, 77)
+        Me.BatchTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BatchTextBox.Location = New System.Drawing.Point(140, 69)
         Me.BatchTextBox.Name = "BatchTextBox"
-        Me.BatchTextBox.Size = New System.Drawing.Size(522, 22)
+        Me.BatchTextBox.Size = New System.Drawing.Size(461, 22)
         Me.BatchTextBox.TabIndex = 29
         '
         'BtnCancel1
@@ -1210,15 +1286,16 @@ Partial Class FrmEditor
         Me.BtnRemove.Name = "BtnRemove"
         Me.BtnRemove.Size = New System.Drawing.Size(92, 27)
         Me.BtnRemove.TabIndex = 27
-        Me.BtnRemove.Text = "Remove"
+        Me.BtnRemove.Text = "For Removal"
         Me.BtnRemove.UseVisualStyleBackColor = False
         '
         'IdTextBox
         '
         Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Id", True))
-        Me.IdTextBox.Location = New System.Drawing.Point(620, 41)
+        Me.IdTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IdTextBox.Location = New System.Drawing.Point(140, 115)
         Me.IdTextBox.Name = "IdTextBox"
-        Me.IdTextBox.Size = New System.Drawing.Size(14, 20)
+        Me.IdTextBox.Size = New System.Drawing.Size(82, 22)
         Me.IdTextBox.TabIndex = 20
         Me.IdTextBox.TabStop = False
         '
@@ -1242,7 +1319,7 @@ Partial Class FrmEditor
         Me.TabControl1.Controls.Add(Me.Voucher)
         Me.TabControl1.Controls.Add(Me.CorpDocu)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TabControl1.Location = New System.Drawing.Point(0, 133)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 169)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(641, 304)
@@ -2309,7 +2386,7 @@ Partial Class FrmEditor
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LblStat})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 437)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 473)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(641, 22)
         Me.StatusStrip1.TabIndex = 18
@@ -2359,11 +2436,11 @@ Partial Class FrmEditor
         '
         Me.DocumentTypeComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "DocumentType", True))
         Me.DocumentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.DocumentTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DocumentTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DocumentTypeComboBox.FormattingEnabled = True
         Me.DocumentTypeComboBox.Location = New System.Drawing.Point(140, 43)
         Me.DocumentTypeComboBox.Name = "DocumentTypeComboBox"
-        Me.DocumentTypeComboBox.Size = New System.Drawing.Size(396, 28)
+        Me.DocumentTypeComboBox.Size = New System.Drawing.Size(461, 24)
         Me.DocumentTypeComboBox.TabIndex = 5
         '
         'AcroReader1
@@ -2373,7 +2450,7 @@ Partial Class FrmEditor
         Me.AcroReader1.Location = New System.Drawing.Point(0, 0)
         Me.AcroReader1.Name = "AcroReader1"
         Me.AcroReader1.OcxState = CType(resources.GetObject("AcroReader1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AcroReader1.Size = New System.Drawing.Size(552, 684)
+        Me.AcroReader1.Size = New System.Drawing.Size(552, 737)
         Me.AcroReader1.TabIndex = 0
         '
         'DocsCatalogueTableAdapter
@@ -2386,6 +2463,7 @@ Partial Class FrmEditor
         Me.TableAdapterManager.DMSLogsTableAdapter = Nothing
         Me.TableAdapterManager.DMSUserTableAdapter = Nothing
         Me.TableAdapterManager.DocsCatalogueTableAdapter = Me.DocsCatalogueTableAdapter
+        Me.TableAdapterManager.DocsRemovalTableAdapter = Nothing
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
@@ -2396,7 +2474,7 @@ Partial Class FrmEditor
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackgroundColor = System.Drawing.Color.Azure
-        Me.ClientSize = New System.Drawing.Size(1197, 684)
+        Me.ClientSize = New System.Drawing.Size(1197, 737)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmEditor"
@@ -2571,4 +2649,7 @@ Partial Class FrmEditor
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents SubBatchTextBox As TextBox
     Friend WithEvents BatchTextBox As TextBox
+    Friend WithEvents cbDocSize As ComboBox
+    Friend WithEvents chkConfidential As CheckBox
+    Friend WithEvents txtPages As TextBox
 End Class

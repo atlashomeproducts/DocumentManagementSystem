@@ -47,6 +47,8 @@ Partial Class FrmMain
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SEARCHToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RemovalToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TxtQueue = New System.Windows.Forms.ToolStripTextBox()
@@ -104,7 +106,7 @@ Partial Class FrmMain
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.Padding = New System.Drawing.Point(0, 0)
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1085, 687)
+        Me.TabControl1.Size = New System.Drawing.Size(1229, 687)
         Me.TabControl1.TabIndex = 1
         Me.TabControl1.TabStop = False
         '
@@ -116,7 +118,7 @@ Partial Class FrmMain
         Me.TabLogin.Location = New System.Drawing.Point(4, 22)
         Me.TabLogin.Margin = New System.Windows.Forms.Padding(0)
         Me.TabLogin.Name = "TabLogin"
-        Me.TabLogin.Size = New System.Drawing.Size(1077, 661)
+        Me.TabLogin.Size = New System.Drawing.Size(1221, 661)
         Me.TabLogin.TabIndex = 0
         Me.TabLogin.Text = "Login"
         '
@@ -133,7 +135,7 @@ Partial Class FrmMain
         Me.GroupBox1.Controls.Add(Me.TxtPassword)
         Me.GroupBox1.Controls.Add(Me.TxtUsername)
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox1.Location = New System.Drawing.Point(276, 178)
+        Me.GroupBox1.Location = New System.Drawing.Point(348, 178)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(524, 244)
         Me.GroupBox1.TabIndex = 7
@@ -232,7 +234,7 @@ Partial Class FrmMain
         Me.TabMain.Location = New System.Drawing.Point(4, 22)
         Me.TabMain.Name = "TabMain"
         Me.TabMain.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabMain.Size = New System.Drawing.Size(1077, 661)
+        Me.TabMain.Size = New System.Drawing.Size(1221, 661)
         Me.TabMain.TabIndex = 1
         Me.TabMain.Text = "Main"
         '
@@ -260,8 +262,8 @@ Partial Class FrmMain
         Me.SplitContainer1.Panel2.AutoScroll = True
         Me.SplitContainer1.Panel2.BackColor = System.Drawing.Color.White
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1071, 655)
-        Me.SplitContainer1.SplitterDistance = 743
+        Me.SplitContainer1.Size = New System.Drawing.Size(1215, 655)
+        Me.SplitContainer1.SplitterDistance = 887
         Me.SplitContainer1.TabIndex = 6
         Me.SplitContainer1.TabStop = False
         '
@@ -271,7 +273,7 @@ Partial Class FrmMain
         Me.btnDock.BackColor = System.Drawing.Color.LightSteelBlue
         Me.btnDock.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDock.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDock.Location = New System.Drawing.Point(722, 33)
+        Me.btnDock.Location = New System.Drawing.Point(866, 33)
         Me.btnDock.Name = "btnDock"
         Me.btnDock.Size = New System.Drawing.Size(24, 98)
         Me.btnDock.TabIndex = 9
@@ -299,7 +301,7 @@ Partial Class FrmMain
         Me.PictureBox1.Location = New System.Drawing.Point(0, 27)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(743, 628)
+        Me.PictureBox1.Size = New System.Drawing.Size(887, 628)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
@@ -308,12 +310,12 @@ Partial Class FrmMain
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.White
         Me.MenuStrip1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexFilesToolStripMenuItem, Me.ToolStripMenuItem1, Me.EditorToolStripMenuItem, Me.ToolStripMenuItem2, Me.SEARCHToolStripMenuItem, Me.ToolStripMenuItem3, Me.UserManagementToolStripMenuItem, Me.ToolStripMenuItem4, Me.TxtQueue, Me.ToolStripMenuItem5})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IndexFilesToolStripMenuItem, Me.ToolStripMenuItem1, Me.EditorToolStripMenuItem, Me.ToolStripMenuItem2, Me.SEARCHToolStripMenuItem, Me.ToolStripMenuItem3, Me.RemovalToolStripMenuItem6, Me.ToolStripMenuItem7, Me.UserManagementToolStripMenuItem, Me.ToolStripMenuItem4, Me.TxtQueue, Me.ToolStripMenuItem5})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(0)
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.MenuStrip1.Size = New System.Drawing.Size(743, 27)
+        Me.MenuStrip1.Size = New System.Drawing.Size(887, 27)
         Me.MenuStrip1.TabIndex = 10
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -358,6 +360,20 @@ Partial Class FrmMain
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.Size = New System.Drawing.Size(40, 27)
         Me.ToolStripMenuItem3.Text = "||"
+        '
+        'RemovalToolStripMenuItem6
+        '
+        Me.RemovalToolStripMenuItem6.Image = CType(resources.GetObject("RemovalToolStripMenuItem6.Image"), System.Drawing.Image)
+        Me.RemovalToolStripMenuItem6.Name = "RemovalToolStripMenuItem6"
+        Me.RemovalToolStripMenuItem6.Size = New System.Drawing.Size(104, 27)
+        Me.RemovalToolStripMenuItem6.Text = "Removal"
+        '
+        'ToolStripMenuItem7
+        '
+        Me.ToolStripMenuItem7.Enabled = False
+        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(40, 27)
+        Me.ToolStripMenuItem7.Text = "||"
         '
         'UserManagementToolStripMenuItem
         '
@@ -576,6 +592,7 @@ Partial Class FrmMain
         Me.TableAdapterManager.DMSLogsTableAdapter = Nothing
         Me.TableAdapterManager.DMSUserTableAdapter = Nothing
         Me.TableAdapterManager.DocsCatalogueTableAdapter = Nothing
+        Me.TableAdapterManager.DocsRemovalTableAdapter = Nothing
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
@@ -592,7 +609,7 @@ Partial Class FrmMain
         'FrmMain
         '
         Me.BackgroundColor = System.Drawing.Color.Azure
-        Me.ClientSize = New System.Drawing.Size(1085, 687)
+        Me.ClientSize = New System.Drawing.Size(1229, 687)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmMain"
@@ -673,4 +690,6 @@ Partial Class FrmMain
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents TxtQueue As ToolStripTextBox
     Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
+    Friend WithEvents RemovalToolStripMenuItem6 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem7 As ToolStripMenuItem
 End Class
