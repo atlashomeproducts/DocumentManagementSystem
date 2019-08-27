@@ -45,6 +45,8 @@ Partial Public Class DMSDataSet
     
     Private tablespForRemoval As spForRemovalDataTable
     
+    Private relationvwRemoval_spForRemoval As Global.System.Data.DataRelation
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -410,6 +412,7 @@ Partial Public Class DMSDataSet
                 Me.tablespForRemoval.InitVars
             End If
         End If
+        Me.relationvwRemoval_spForRemoval = Me.Relations("vwRemoval_spForRemoval")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -440,6 +443,8 @@ Partial Public Class DMSDataSet
         MyBase.Tables.Add(Me.tablevwRemoval)
         Me.tablespForRemoval = New spForRemovalDataTable()
         MyBase.Tables.Add(Me.tablespForRemoval)
+        Me.relationvwRemoval_spForRemoval = New Global.System.Data.DataRelation("vwRemoval_spForRemoval", New Global.System.Data.DataColumn() {Me.tablevwRemoval.IdColumn}, New Global.System.Data.DataColumn() {Me.tablespForRemoval.IDColumn}, false)
+        Me.Relations.Add(Me.relationvwRemoval_spForRemoval)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4381,9 +4386,12 @@ Partial Public Class DMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddspForRemovalRow(ByVal ID As Long, ByVal Reason As String, ByVal Idx As Long) As spForRemovalRow
+        Public Overloads Function AddspForRemovalRow(ByVal parentvwRemovalRowByvwRemoval_spForRemoval As vwRemovalRow, ByVal Reason As String, ByVal Idx As Long) As spForRemovalRow
             Dim rowspForRemovalRow As spForRemovalRow = CType(Me.NewRow,spForRemovalRow)
-            Dim columnValuesArray() As Object = New Object() {ID, Reason, Idx}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Reason, Idx}
+            If (Not (parentvwRemovalRowByvwRemoval_spForRemoval) Is Nothing) Then
+                columnValuesArray(0) = parentvwRemovalRowByvwRemoval_spForRemoval(2)
+            End If
             rowspForRemovalRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowspForRemovalRow)
             Return rowspForRemovalRow
@@ -7299,6 +7307,16 @@ Partial Public Class DMSDataSet
         Public Sub Set_SelectNull()
             Me(Me.tablevwRemoval.SelectColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GetspForRemovalRows() As spForRemovalRow()
+            If (Me.Table.ChildRelations("vwRemoval_spForRemoval") Is Nothing) Then
+                Return New spForRemovalRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("vwRemoval_spForRemoval")),spForRemovalRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -7358,6 +7376,17 @@ Partial Public Class DMSDataSet
             End Get
             Set
                 Me(Me.tablespForRemoval.IdxColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property vwRemovalRow() As vwRemovalRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("vwRemoval_spForRemoval")),vwRemovalRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("vwRemoval_spForRemoval"))
             End Set
         End Property
         

@@ -10,16 +10,18 @@ Public Class FrmRemoval
 
         Me.VwRemovalC1TrueDBGrid.Columns("Select").ValueItems.Presentation = C1.Win.C1TrueDBGrid.PresentationEnum.CheckBox
 
-
-
         For i = 0 To VwRemovalBindingSource.Count
             Me.VwRemovalC1TrueDBGrid.Columns("Select").Value = False
             VwRemovalBindingSource.MoveNext()
         Next
 
 
+        VwRemovalBindingSource.MoveFirst()
+
         Me.VwRemovalC1TrueDBGrid.Splits(0).DisplayColumns("Filename").Locked = True
         Me.VwRemovalC1TrueDBGrid.Splits(0).DisplayColumns("DocumentType").Locked = True
+        Me.IdTextBox.ReadOnly = True
+        Me.IdTextBox.Visible = False
 
 
     End Sub
@@ -30,21 +32,11 @@ Public Class FrmRemoval
     End Sub
 
     Private Sub VwRemovalC1TrueDBGrid_Click(sender As Object, e As EventArgs) Handles VwRemovalC1TrueDBGrid.Click
-        Try
-            Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.VwRemovalC1TrueDBGrid.Columns("ID").Text)
-            AcroReader1.src = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
+
     End Sub
 
     Private Sub VwRemovalC1TrueDBGrid_SelChange(sender As Object, e As CancelEventArgs) Handles VwRemovalC1TrueDBGrid.SelChange
-        Try
-            Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.VwRemovalC1TrueDBGrid.Columns("ID").Text)
-            AcroReader1.src = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnSelectAll.Click
@@ -77,6 +69,8 @@ Public Class FrmRemoval
             cmd.Connection = con
             cmd.CommandText = "spRemovalDelete"
             cmd.CommandType = CommandType.StoredProcedure
+
+
 
             Try
                 ' Dim FilePath As String
@@ -125,5 +119,14 @@ Public Class FrmRemoval
         End If
 
 
+    End Sub
+
+    Private Sub IdTextBox_TextChanged(sender As Object, e As EventArgs) Handles IdTextBox.TextChanged
+        Try
+            Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.IdTextBox.Text)
+            AcroReader1.src = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class

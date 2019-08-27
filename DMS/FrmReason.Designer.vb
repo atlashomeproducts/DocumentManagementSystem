@@ -50,6 +50,7 @@ Partial Class FrmReason
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.IsSplitterFixed = True
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
@@ -88,10 +89,10 @@ Partial Class FrmReason
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(12, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(322, 16)
+        Me.Label2.Size = New System.Drawing.Size(370, 16)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Check Reason/s for Removal of Selected Document."
         '
@@ -168,9 +169,9 @@ Partial Class FrmReason
         '
         Me.BtnCancel.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnCancel.Location = New System.Drawing.Point(453, 4)
+        Me.BtnCancel.Location = New System.Drawing.Point(458, 4)
         Me.BtnCancel.Name = "BtnCancel"
-        Me.BtnCancel.Size = New System.Drawing.Size(84, 30)
+        Me.BtnCancel.Size = New System.Drawing.Size(87, 30)
         Me.BtnCancel.TabIndex = 1
         Me.BtnCancel.Text = "Cancel"
         Me.BtnCancel.UseVisualStyleBackColor = False
@@ -181,7 +182,7 @@ Partial Class FrmReason
         Me.BtnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnConfirm.Location = New System.Drawing.Point(363, 4)
         Me.BtnConfirm.Name = "BtnConfirm"
-        Me.BtnConfirm.Size = New System.Drawing.Size(84, 30)
+        Me.BtnConfirm.Size = New System.Drawing.Size(87, 30)
         Me.BtnConfirm.TabIndex = 0
         Me.BtnConfirm.Text = "Confirm"
         Me.BtnConfirm.UseVisualStyleBackColor = False
@@ -215,7 +216,7 @@ Partial Class FrmReason
         Me.ClientSize = New System.Drawing.Size(552, 215)
         Me.ControlBox = False
         Me.Controls.Add(Me.SplitContainer1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "FrmReason"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Removal Reason"

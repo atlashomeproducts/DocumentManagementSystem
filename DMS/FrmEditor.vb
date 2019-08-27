@@ -23,8 +23,6 @@ Public Class FrmEditor
         While read.Read()
             DocumentTypeComboBox.Items.Add(read.GetString(0))
 
-
-
         End While
 
         con.Close()
@@ -44,12 +42,9 @@ Public Class FrmEditor
     Private Sub DocMan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DMSDataSet.DocumentGroups' table. You can move, or remove it, as needed.
 
-
-
         'Populate Data
         PopulateComboItems()
         Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
-
 
 
         'Format
@@ -119,10 +114,6 @@ Public Class FrmEditor
         Else
             Me.BtnRemove.Visible = False
         End If
-
-
-
-
 
 
 
@@ -369,57 +360,63 @@ Public Class FrmEditor
     Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
 
 
-        'UpdateStatusLocked()
-
-        Me.DocumentTypeComboBox.Enabled = True
-        Me.BatchTextBox.ReadOnly = False
-        Me.SubBatchTextBox.ReadOnly = False
-        Me.cbDocSize.Enabled = True
-        Me.txtPages.ReadOnly = False
-        Me.chkConfidential.Enabled = True
-
-        GrpTimeSheet.Enabled = True
-        GrpReceipt.Enabled = True
-        GrpCorp.Enabled = True
-        GrpVoucher.Enabled = True
-        GrpWarranty.Enabled = True
-
-        Me.DocsCatalogueC1TrueDBGrid.Enabled = False
-
-        Me.PurposeTextBox.ReadOnly = False
-        Me.BtnSave.Enabled = True
-        Me.BtnClear.Enabled = True
-        Me.BtnEdit.Enabled = False
-        Me.BtnCancel1.Enabled = True
+        If Me.IdTextBox.Text = "" Then
+            MessageBox.Show("No Records Found!!")
 
 
+        Else
 
-        Try
+            'UpdateStatusLocked()
 
+            Me.DocumentTypeComboBox.Enabled = True
+            Me.BatchTextBox.ReadOnly = False
+            Me.SubBatchTextBox.ReadOnly = False
+            Me.cbDocSize.Enabled = True
+            Me.txtPages.ReadOnly = False
+            Me.chkConfidential.Enabled = True
 
-            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+            GrpTimeSheet.Enabled = True
+            GrpReceipt.Enabled = True
+            GrpCorp.Enabled = True
+            GrpVoucher.Enabled = True
+            GrpWarranty.Enabled = True
+
+            Me.DocsCatalogueC1TrueDBGrid.Enabled = False
+
+            Me.PurposeTextBox.ReadOnly = False
+            Me.BtnSave.Enabled = True
+            Me.BtnClear.Enabled = True
+            Me.BtnEdit.Enabled = False
+            Me.BtnCancel1.Enabled = True
 
 
 
-            con.Open()
-            cmdlogs.Connection = con
-            cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
-            cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Edited a record with ID:" & Me.IdTextBox.Text)
-            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
-            cmdlogs.ExecuteNonQuery()
-            con.Close()
+            Try
+
+
+                Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+                Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+
+                con.Open()
+                cmdlogs.Connection = con
+                cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+                cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Edited a record with ID:" & Me.IdTextBox.Text)
+                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                cmdlogs.ExecuteNonQuery()
+                con.Close()
 
 
 
 
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
 
 
-
+        End If
     End Sub
 
 

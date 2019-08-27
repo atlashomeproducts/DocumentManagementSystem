@@ -604,6 +604,35 @@ Public Class FrmMain
     End Sub
 
     Private Sub ToolStripMenuItem6_Click_1(sender As Object, e As EventArgs) Handles RemovalToolStripMenuItem6.Click
-        FrmRemoval.Show()
+
+        Try
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+            '   Dim dRemoteDate As Date
+            ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+
+
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", User)
+            cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Opened ""Removal"" form")
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
+
+            FrmRemoval.Show(Me)
+
+            con.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+
+
+
     End Sub
 End Class

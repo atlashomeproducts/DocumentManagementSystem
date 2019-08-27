@@ -106,6 +106,8 @@ Public Class FrmSearch2
         TabControl4.Appearance = TabAppearance.Normal
         TabControl4.ItemSize = New Size(0, 1)
         TabControl4.SizeMode = TabSizeMode.Fixed
+
+
         For Each TabPage In TabControl4.TabPages
 
             TabPage.Text = ""
@@ -113,20 +115,20 @@ Public Class FrmSearch2
 
         Next
 
-
         Me.PaymentFormComboBox.Items.Add("Bank Deposit")
         Me.PaymentFormComboBox.Items.Add("Cash")
         Me.PaymentFormComboBox.Items.Add("Check")
         Me.PaymentFormComboBox.Items.Add("Others")
 
-
         Me.BtnSaveChanges1.Enabled = False
         Me.BtnDownload.Enabled = False
 
 
-
-
-
+        If FrmMain.type = "User 2" Then
+            Me.BtnDownload.Visible = False
+        Else
+            Me.BtnDownload.Visible = True
+        End If
 
 
 
@@ -228,12 +230,8 @@ Public Class FrmSearch2
         ElseIf Me.DocumentTypeCombobox2.Text = "Provisional Receipt" Then
             TabControl2.SelectTab(ReceiptInvoice)
 
-
-
-
         ElseIf Me.DocumentTypeCombobox2.Text = "Daily Time Record" Then
             TabControl2.SelectTab(Timesheet)
-
         ElseIf Me.DocumentTypeCombobox2.Text = "Warranty Card" Then
             TabControl2.SelectTab(Warranty)
 
@@ -243,23 +241,18 @@ Public Class FrmSearch2
         ElseIf Me.DocumentTypeCombobox2.Text = "Secretary's Certificate" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting)
-
         ElseIf Me.DocumentTypeCombobox2.Text = "Minutes of Board Meeting" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting)
-
         ElseIf Me.DocumentTypeCombobox2.Text = "Articles of Incorporation" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting2)
-
         ElseIf Me.DocumentTypeCombobox2.Text = "SEC Certificate of Registration" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting2)
-
         ElseIf Me.DocumentTypeCombobox2.Text = "DTI Permit" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabPromo)
-
         ElseIf Me.DocumentTypeCombobox2.Text = "Financial Statement" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting2)
@@ -268,15 +261,10 @@ Public Class FrmSearch2
             TabControl4.SelectTab(TabMeeting2)
 
         End If
-
-
-
     End Sub
 
     Private Sub Search()
         Try
-
-
             'Create a variable to hold your parameter value
             Dim id As Integer = 0
             'Create your query as you already have done
@@ -353,10 +341,11 @@ AND ISNULL([Batch], '') LIKE '%' + @Batch + '%'
 AND ISNULL([DocumentType], '') LIKE '%' + @DocType + '%'
 AND ISNULL([ScannedDate], '') BETWEEN @ScanDateFrom AND @ScanDateTo 
 AND ISNULL([FileName], '') LIKE '%' + @FileName + '%'
-
-
+AND ISNULL(Confidential, 'Unchecked') LIKE CASE WHEN '" + FrmMain.type + "' = 'System Admin' OR  '" + FrmMain.type + "' = 'Admin' THEN '%%' ELSE 'Unchecked' END
 AND Status = 'Finished'
 "
+
+
 
             'Get your connection string (You've done this right)
             Dim strconnectionstring As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
@@ -446,16 +435,14 @@ AND Status = 'Finished'
             'Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Id").Visible = False
             Me.C1TrueDBGrid2.Splits(0).ExtendRightColumn = True
 
-
-
             Me.C1TrueDBGrid2.Columns("Download").ValueItems.Presentation = C1.Win.C1TrueDBGrid.PresentationEnum.CheckBox
-
-
 
             For i = 0 To objbindingsource.Count
                 Me.C1TrueDBGrid2.Columns("Download").Value = False
                 objbindingsource.MoveNext()
             Next
+
+            source.MoveFirst()
 
 
 
@@ -518,9 +505,6 @@ AND Status = 'Finished'
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("PromoTo").Locked = True
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("DTI Permit No").Locked = True
 
-
-
-
             'Try
             '    Me.C1TrueDBGrid2.LoadLayout("default1.layout")
             'Catch ex As Exception
@@ -543,8 +527,6 @@ AND Status = 'Finished'
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnSearch.Click
 
-
-
         Try
 
             Search()
@@ -552,8 +534,6 @@ AND Status = 'Finished'
             Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
             ' Dim dRemoteDate As Date
             ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
-
-
 
             con.Open()
             cmdlogs.Connection = con
@@ -563,19 +543,9 @@ AND Status = 'Finished'
             cmdlogs.ExecuteNonQuery()
             con.Close()
 
-
-
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
-
-
-
-
-    End Sub
-
-    Private Sub C1TrueDBGrid1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -584,7 +554,7 @@ AND Status = 'Finished'
             ComboSelect()
 
             Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Finished")
-            Me.DocsCatalogueBindingSource.Filter = "[Id] = '" & Me.C1TrueDBGrid2.Columns("Id").Text & "' "
+            Me.DocsCatalogueBindingSource.Filter = "[Id] = '" & Me.C1TrueDBGrid2.Columns("Document No").Text & "' "
             AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
 
             TabControl1.SelectTab(TabChanges)
@@ -593,47 +563,41 @@ AND Status = 'Finished'
             Me.BtnSearch.Enabled = False
             Me.BtnSaveChanges1.Enabled = True
 
-
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
                 Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
             ' Dim dRemoteDate As Date
             '  dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
-
             con.Open()
             cmdlogs.Connection = con
             cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
-            cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Edited the searched record with ID:" & Me.C1TrueDBGrid2.Columns("Id").Text)
+            cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Edited the searched record with ID:" & Me.C1TrueDBGrid2.Columns("Document No").Text)
             cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
             cmdlogs.ExecuteNonQuery()
             con.Close()
-
-
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
 
-
     End Sub
     Public Sub SaveChanges()
 
-
         Me.Validate()
-            Me.DocsCatalogueBindingSource.EndEdit()
-            Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
+        Me.DocsCatalogueBindingSource.EndEdit()
+        Me.DocsCatalogueTableAdapter.Update(Me.DMSDataSet.DocsCatalogue)
 
-            Me.BtnEditRecord.Enabled = True
-            Me.C1TrueDBGrid2.Enabled = True
-            Me.BtnSearch.Enabled = True
-            Me.BtnSaveChanges1.Enabled = False
-            MessageBox.Show("Successfully Saved!!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Me.TabControl1.SelectTab(TabQuery)
-
-
+        Me.BtnEditRecord.Enabled = True
+        Me.C1TrueDBGrid2.Enabled = True
+        Me.BtnSearch.Enabled = True
+        Me.BtnSaveChanges1.Enabled = False
+        MessageBox.Show("Successfully Saved!!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Me.TabControl1.SelectTab(TabQuery)
 
 
-            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+
+
+        Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+        Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
         ' Dim dRemoteDate As Date
         '  dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
@@ -641,15 +605,10 @@ AND Status = 'Finished'
         con.Open()
         cmdlogs.Connection = con
         cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
-        cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Saved changes on searched record with ID:" & C1TrueDBGrid2.Columns("Id").Text)
+        cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Saved changes on searched record with ID:" & C1TrueDBGrid2.Columns("Document No").Text)
         cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
         cmdlogs.ExecuteNonQuery()
         con.Close()
-
-
-
-
-
 
     End Sub
     Private Sub BtnSaveChanges1_Click(sender As Object, e As EventArgs) Handles BtnSaveChanges1.Click
@@ -699,14 +658,11 @@ AND Status = 'Finished'
 
             End If
 
-
             Search()
 
         Catch ex As Exception
             MessageBox.Show("Error while updating records " & ex.Message)
         End Try
-
-
     End Sub
 
 
@@ -729,9 +685,6 @@ AND Status = 'Finished'
     Private Sub DTPromoTo_ValueChanged(sender As Object, e As EventArgs) Handles DTPromoTo.ValueChanged
         Me.PromoToTextBox.Text = Me.DTPromoTo.Value.ToString("MM/dd/yyyy")
     End Sub
-
-
-
     Private Sub DocumentDateCorp_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateCorp.LostFocus
         DocumentDateCorp.BackColor = Color.White
 
@@ -744,9 +697,6 @@ AND Status = 'Finished'
             Me.DocumentDateCorp.Clear()
         End If
     End Sub
-
-
-
     Private Sub MeetingDateTextBox_LostFocus(sender As Object, e As EventArgs) Handles MeetingDateTextBox.LostFocus
         MeetingDateTextBox.BackColor = Color.White
 
@@ -759,9 +709,6 @@ AND Status = 'Finished'
             Me.MeetingDateTextBox.Clear()
         End If
     End Sub
-
-
-
     Private Sub PromoFromTextBox_LostFocus(sender As Object, e As EventArgs) Handles PromoFromTextBox.LostFocus
         PromoFromTextBox.BackColor = Color.White
 
@@ -769,14 +716,10 @@ AND Status = 'Finished'
 
         If Date.TryParseExact(PromoFromTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoFromTextBox.Text = "" Then
         Else
-
             MessageBox.Show("Incorrect Date Format " & Me.PromoFromTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Me.PromoFromTextBox.Clear()
         End If
     End Sub
-
-
-
     Private Sub PromoToTextBox_LostFocus(sender As Object, e As EventArgs) Handles PromoToTextBox.LostFocus
         PromoToTextBox.BackColor = Color.White
 
@@ -784,14 +727,10 @@ AND Status = 'Finished'
 
         If Date.TryParseExact(PromoToTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoToTextBox.Text = "" Then
         Else
-
             MessageBox.Show("Incorrect Date Format " & Me.PromoToTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Me.PromoToTextBox.Clear()
         End If
     End Sub
-
-
-
     Private Sub DocumentDateVoucher_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateVoucher.LostFocus
 
         DocumentDateVoucher.BackColor = Color.White
@@ -804,17 +743,12 @@ AND Status = 'Finished'
             Me.DocumentDateVoucher.Clear()
         End If
     End Sub
-
-
-
     Private Sub DatePurchasedTextBox_LostFocus(sender As Object, e As EventArgs) Handles DatePurchasedTextBox.LostFocus
         SerialTextBox.BackColor = Color.White
 
         Dim DateFormat As Date
-
         If Date.TryParseExact(DatePurchasedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DatePurchasedTextBox.Text = "" Then
         Else
-
             MessageBox.Show("Incorrect Date Format " & Me.DatePurchasedTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Me.DatePurchasedTextBox.Clear()
         End If
@@ -930,11 +864,6 @@ AND Status = 'Finished'
 
 
     End Sub
-
-    Private Sub C1TrueDBGrid1_Click_1(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub C1TrueDBGrid1_DoubleClick(sender As Object, e As EventArgs)
         Try
 
@@ -946,23 +875,13 @@ AND Status = 'Finished'
 
 
     End Sub
-
-    Private Sub C1TrueDBGrid2_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid2.Click
-
-    End Sub
-
     Private Sub C1TrueDBGrid2_DoubleClick(sender As Object, e As EventArgs) Handles C1TrueDBGrid2.DoubleClick
         Try
-
             AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-    End Sub
-
-    Private Sub PaymentFormComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles PaymentFormComboBox.SelectedIndexChanged
-
     End Sub
     Private Sub ComboSelect2()
 

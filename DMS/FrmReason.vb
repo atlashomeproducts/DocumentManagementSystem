@@ -17,6 +17,10 @@ Public Class FrmReason
         'TODO: This line of code loads data into the 'DMSDataSet.DocsRemoval' table. You can move, or remove it, as needed.
         Me.LblID.Text = FrmEditor.IdTextBox.Text
 
+        TxtDupID.Enabled = False
+        TxtOthers.Enabled = False
+
+
 
 
     End Sub
@@ -24,6 +28,7 @@ Public Class FrmReason
     Private Sub BtnConfirm_Click(sender As Object, e As EventArgs) Handles BtnConfirm.Click
         Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
         Dim cmd As New SqlCommand
+        Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
 
 
         If ChkDuplicate.Checked = True And TxtDupID.Text = "" Then
@@ -48,6 +53,15 @@ Public Class FrmReason
                 cmd.Parameters.AddWithValue("@OthersReason", TxtOthers.Text)
 
                 cmd.ExecuteNonQuery()
+
+
+                cmdlogs.Connection = con
+                cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+                cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Added document no. " + LblID.Text + " for Removal.")
+                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                cmdlogs.ExecuteNonQuery()
+
+
                 Me.Close()
 
             Catch ex As Exception
@@ -58,9 +72,28 @@ Public Class FrmReason
 
         End If
 
+
+
+
     End Sub
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
+    End Sub
+
+    Private Sub ChkDuplicate_CheckedChanged(sender As Object, e As EventArgs) Handles ChkDuplicate.CheckedChanged
+        If Me.ChkDuplicate.Checked = True Then
+            Me.TxtDupID.Enabled = True
+        Else
+            Me.TxtDupID.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ChkOthers_CheckedChanged(sender As Object, e As EventArgs) Handles ChkOthers.CheckedChanged
+        If Me.ChkDuplicate.Checked = True Then
+            Me.TxtOthers.Enabled = True
+        Else
+            Me.TxtOthers.Enabled = False
+        End If
     End Sub
 End Class
