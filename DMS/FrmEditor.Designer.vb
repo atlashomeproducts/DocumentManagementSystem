@@ -1312,7 +1312,6 @@ Partial Class FrmEditor
         '
         'TabControl1
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
         Me.TabControl1.Controls.Add(Me.Timesheet)
         Me.TabControl1.Controls.Add(Me.ReceiptInvoice)
         Me.TabControl1.Controls.Add(Me.Warranty)
@@ -1332,10 +1331,10 @@ Partial Class FrmEditor
         Me.Timesheet.AutoScrollMinSize = New System.Drawing.Size(0, 300)
         Me.Timesheet.BackColor = System.Drawing.Color.GhostWhite
         Me.Timesheet.Controls.Add(Me.GrpTimeSheet)
-        Me.Timesheet.Location = New System.Drawing.Point(4, 25)
+        Me.Timesheet.Location = New System.Drawing.Point(4, 22)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(633, 275)
+        Me.Timesheet.Size = New System.Drawing.Size(633, 278)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
@@ -1397,7 +1396,7 @@ Partial Class FrmEditor
         Me.GroupBox1.Controls.Add(ToPeriodLabel)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 185)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(583, 84)
+        Me.GroupBox1.Size = New System.Drawing.Size(593, 84)
         Me.GroupBox1.TabIndex = 32
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Coverage"
@@ -1486,10 +1485,10 @@ Partial Class FrmEditor
         Me.ReceiptInvoice.AutoScrollMinSize = New System.Drawing.Size(0, 400)
         Me.ReceiptInvoice.BackColor = System.Drawing.Color.GhostWhite
         Me.ReceiptInvoice.Controls.Add(Me.GrpReceipt)
-        Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 25)
+        Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 22)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(633, 275)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(633, 278)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
@@ -1678,10 +1677,10 @@ Partial Class FrmEditor
         Me.Warranty.AutoScrollMinSize = New System.Drawing.Size(0, 420)
         Me.Warranty.BackColor = System.Drawing.Color.GhostWhite
         Me.Warranty.Controls.Add(Me.GrpWarranty)
-        Me.Warranty.Location = New System.Drawing.Point(4, 25)
+        Me.Warranty.Location = New System.Drawing.Point(4, 22)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(633, 275)
+        Me.Warranty.Size = New System.Drawing.Size(633, 278)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
@@ -1870,9 +1869,9 @@ Partial Class FrmEditor
         Me.Voucher.AutoScrollMinSize = New System.Drawing.Size(0, 500)
         Me.Voucher.BackColor = System.Drawing.Color.GhostWhite
         Me.Voucher.Controls.Add(Me.GrpVoucher)
-        Me.Voucher.Location = New System.Drawing.Point(4, 25)
+        Me.Voucher.Location = New System.Drawing.Point(4, 22)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(633, 275)
+        Me.Voucher.Size = New System.Drawing.Size(633, 278)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
@@ -2062,7 +2061,7 @@ Partial Class FrmEditor
         Me.TabControl2.Location = New System.Drawing.Point(0, 202)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(610, 129)
+        Me.TabControl2.Size = New System.Drawing.Size(613, 129)
         Me.TabControl2.TabIndex = 21
         Me.TabControl2.TabStop = False
         '
@@ -2079,7 +2078,7 @@ Partial Class FrmEditor
         Me.BankDepo.Location = New System.Drawing.Point(4, 25)
         Me.BankDepo.Name = "BankDepo"
         Me.BankDepo.Padding = New System.Windows.Forms.Padding(3)
-        Me.BankDepo.Size = New System.Drawing.Size(602, 100)
+        Me.BankDepo.Size = New System.Drawing.Size(605, 100)
         Me.BankDepo.TabIndex = 0
         Me.BankDepo.Text = "BankDepo"
         '
@@ -2156,9 +2155,9 @@ Partial Class FrmEditor
         Me.CorpDocu.AutoScrollMinSize = New System.Drawing.Size(0, 350)
         Me.CorpDocu.BackColor = System.Drawing.Color.GhostWhite
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
-        Me.CorpDocu.Location = New System.Drawing.Point(4, 25)
+        Me.CorpDocu.Location = New System.Drawing.Point(4, 22)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(633, 275)
+        Me.CorpDocu.Size = New System.Drawing.Size(633, 278)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
@@ -2194,7 +2193,7 @@ Partial Class FrmEditor
         Me.TabControl3.Location = New System.Drawing.Point(0, 98)
         Me.TabControl3.Name = "TabControl3"
         Me.TabControl3.SelectedIndex = 0
-        Me.TabControl3.Size = New System.Drawing.Size(590, 129)
+        Me.TabControl3.Size = New System.Drawing.Size(613, 129)
         Me.TabControl3.TabIndex = 45
         '
         'TabMeeting
@@ -2211,7 +2210,7 @@ Partial Class FrmEditor
         Me.TabMeeting.Location = New System.Drawing.Point(4, 25)
         Me.TabMeeting.Name = "TabMeeting"
         Me.TabMeeting.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabMeeting.Size = New System.Drawing.Size(582, 100)
+        Me.TabMeeting.Size = New System.Drawing.Size(605, 100)
         Me.TabMeeting.TabIndex = 0
         Me.TabMeeting.Text = "Meeting"
         '
@@ -2268,7 +2267,7 @@ Partial Class FrmEditor
         Me.TabPromo.Location = New System.Drawing.Point(4, 25)
         Me.TabPromo.Name = "TabPromo"
         Me.TabPromo.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPromo.Size = New System.Drawing.Size(582, 100)
+        Me.TabPromo.Size = New System.Drawing.Size(605, 100)
         Me.TabPromo.TabIndex = 1
         Me.TabPromo.Text = "Promo"
         '

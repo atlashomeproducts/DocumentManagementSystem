@@ -227,13 +227,14 @@ Public Class FrmIndex
 
                 Catch ex As Exception
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
+                Finally
+                    AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+                    FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
                 End Try
 
             End If
         End If
-        AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
-        FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
+
 
     End Sub
 

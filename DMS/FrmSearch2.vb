@@ -131,6 +131,8 @@ Public Class FrmSearch2
         End If
 
 
+        Me.IdTextBox.ReadOnly = True
+
 
 
     End Sub
@@ -516,6 +518,24 @@ AND Status = 'Finished'
             Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Download").Width = 54
             Me.C1TrueDBGrid2.Splits(0).ColumnCaptionHeight = 34
 
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Document No").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Document No").Width = 54
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Document Type").Width = 200
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Batch").Width = 200
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Sub Batch").Width = 200
+
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Rack No").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Box No").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Rack No").Width = 54
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Box No").Width = 54
+
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Scanned Date").Style.HorizontalAlignment = C1.Win.C1TrueDBGrid.AlignHorzEnum.Center
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("Scanned Date").Width = 70
+
+
+            Me.C1TrueDBGrid2.Splits(0).DisplayColumns("File Name").Width = 200
+
+
             Me.BtnDownload.Enabled = True
 
 
@@ -876,12 +896,7 @@ AND Status = 'Finished'
 
     End Sub
     Private Sub C1TrueDBGrid2_DoubleClick(sender As Object, e As EventArgs) Handles C1TrueDBGrid2.DoubleClick
-        Try
-            AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
     End Sub
     Private Sub ComboSelect2()
 
@@ -1236,15 +1251,28 @@ AND Status = 'Finished'
         PromoToTextBox.BackColor = Color.LightYellow
     End Sub
     Private Sub DTIPermitNoTextBox_GotFocus(sender As Object, e As EventArgs) Handles DTIPermitNoTextBox.GotFocus
-        PromoToTextBox.BackColor = Color.LightYellow
+        DTIPermitNoTextBox.BackColor = Color.LightYellow
     End Sub
     Private Sub DTIPermitNoTextBox_LostFocus(sender As Object, e As EventArgs) Handles DTIPermitNoTextBox.LostFocus
-        PromoToTextBox.BackColor = Color.White
+        DTIPermitNoTextBox.BackColor = Color.White
     End Sub
     Private Sub TextBox1_GotFocus(sender As Object, e As EventArgs) Handles TextBox1.GotFocus
         TextBox1.BackColor = Color.LightYellow
     End Sub
     Private Sub TextBox1_LostFocus(sender As Object, e As EventArgs) Handles TextBox1.LostFocus
         TextBox1.BackColor = Color.White
+    End Sub
+
+    Private Sub C1TrueDBGrid2_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid2.Click
+        Try
+            AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub IdTextBox_TextChanged(sender As Object, e As EventArgs) Handles IdTextBox.TextChanged
+
     End Sub
 End Class

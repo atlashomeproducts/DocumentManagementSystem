@@ -148,6 +148,7 @@ Partial Class FrmIndex
         '
         'BtnRemove
         '
+        Me.BtnRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnRemove.AutoSize = True
         Me.BtnRemove.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup
@@ -269,6 +270,8 @@ Partial Class FrmIndex
         '
         'txtPurpose
         '
+        Me.txtPurpose.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtPurpose.Location = New System.Drawing.Point(126, 79)
         Me.txtPurpose.Name = "txtPurpose"
         Me.txtPurpose.Size = New System.Drawing.Size(315, 22)
@@ -276,6 +279,8 @@ Partial Class FrmIndex
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DateTimePicker1.CustomFormat = "yyyyMMMdd"
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(126, 56)
@@ -297,6 +302,8 @@ Partial Class FrmIndex
         '
         'txtCompany
         '
+        Me.txtCompany.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtCompany.Location = New System.Drawing.Point(126, 33)
         Me.txtCompany.Name = "txtCompany"
         Me.txtCompany.Size = New System.Drawing.Size(315, 22)
@@ -304,6 +311,8 @@ Partial Class FrmIndex
         '
         'DocumentTypeComboBox
         '
+        Me.DocumentTypeComboBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DocumentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DocumentTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DocumentTypeComboBox.FormattingEnabled = True
@@ -350,6 +359,8 @@ Partial Class FrmIndex
         '
         'RackNoTextbox
         '
+        Me.RackNoTextbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RackNoTextbox.Location = New System.Drawing.Point(126, 213)
         Me.RackNoTextbox.Name = "RackNoTextbox"
         Me.RackNoTextbox.Size = New System.Drawing.Size(106, 22)
@@ -357,6 +368,8 @@ Partial Class FrmIndex
         '
         'BoxNoTextbox
         '
+        Me.BoxNoTextbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BoxNoTextbox.Location = New System.Drawing.Point(126, 189)
         Me.BoxNoTextbox.Name = "BoxNoTextbox"
         Me.BoxNoTextbox.Size = New System.Drawing.Size(106, 22)
@@ -364,6 +377,8 @@ Partial Class FrmIndex
         '
         'SubBatchTextbox
         '
+        Me.SubBatchTextbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SubBatchTextbox.Location = New System.Drawing.Point(126, 143)
         Me.SubBatchTextbox.Name = "SubBatchTextbox"
         Me.SubBatchTextbox.Size = New System.Drawing.Size(315, 22)
@@ -383,6 +398,8 @@ Partial Class FrmIndex
         '
         'scanDateTimePicker
         '
+        Me.scanDateTimePicker.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.scanDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.scanDateTimePicker.Location = New System.Drawing.Point(126, 166)
         Me.scanDateTimePicker.Name = "scanDateTimePicker"
@@ -403,14 +420,19 @@ Partial Class FrmIndex
         '
         'batchIdTextBox
         '
+        Me.batchIdTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.batchIdTextBox.Cursor = System.Windows.Forms.Cursors.No
         Me.batchIdTextBox.Location = New System.Drawing.Point(126, 101)
         Me.batchIdTextBox.Multiline = True
         Me.batchIdTextBox.Name = "batchIdTextBox"
         Me.batchIdTextBox.Size = New System.Drawing.Size(315, 42)
         Me.batchIdTextBox.TabIndex = 8
+        Me.batchIdTextBox.TabStop = False
         '
         'BtnIndex
         '
+        Me.BtnIndex.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnIndex.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnIndex.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnIndex.Location = New System.Drawing.Point(292, 201)
