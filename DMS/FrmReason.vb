@@ -20,6 +20,15 @@ Public Class FrmReason
         TxtDupID.Enabled = False
         TxtOthers.Enabled = False
 
+        TxtDupID.Clear()
+        TxtOthers.Clear()
+        ChkDuplicate.Checked = False
+        ChkOlder.Checked = False
+        ChkOthers.Checked = False
+        ChkNotArchiving.Checked = False
+
+
+
 
 
 
@@ -61,6 +70,7 @@ Public Class FrmReason
                 cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
                 cmdlogs.ExecuteNonQuery()
 
+                FrmEditor.DocsCatalogueBindingSource.RemoveCurrent()
 
                 Me.Close()
 
@@ -90,7 +100,7 @@ Public Class FrmReason
     End Sub
 
     Private Sub ChkOthers_CheckedChanged(sender As Object, e As EventArgs) Handles ChkOthers.CheckedChanged
-        If Me.ChkDuplicate.Checked = True Then
+        If Me.ChkOthers.Checked = True Then
             Me.TxtOthers.Enabled = True
         Else
             Me.TxtOthers.Enabled = False

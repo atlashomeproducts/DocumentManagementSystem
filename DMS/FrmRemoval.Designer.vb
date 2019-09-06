@@ -29,18 +29,17 @@ Partial Class FrmRemoval
         Me.VwRemovalC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
         Me.SpForRemovalC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.IdTextBox = New System.Windows.Forms.TextBox()
         Me.BtnDeselectAll = New System.Windows.Forms.Button()
         Me.BtnSelectAll = New System.Windows.Forms.Button()
         Me.BtnDelete = New System.Windows.Forms.Button()
         Me.AcroReader1 = New AxAcroPDFLib.AxAcroPDF()
         Me.VwRemovalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DMSDataSet = New DMS.DMSDataSet()
-        Me.VwRemovalTableAdapter = New DMS.DMSDataSetTableAdapters.vwRemovalTableAdapter()
+        Me.SpForRemovalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
-        Me.DmsLogsTableAdapter1 = New DMS.DMSDataSetTableAdapters.DMSLogsTableAdapter()
-        Me.SpForRemovalBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VwRemovalTableAdapter = New DMS.DMSDataSetTableAdapters.vwRemovalTableAdapter()
         Me.SpForRemovalTableAdapter = New DMS.DMSDataSetTableAdapters.spForRemovalTableAdapter()
-        Me.IdTextBox = New System.Windows.Forms.TextBox()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -58,7 +57,7 @@ Partial Class FrmRemoval
         CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VwRemovalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SpForRemovalBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SpForRemovalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainer1
@@ -144,7 +143,7 @@ Partial Class FrmRemoval
         'SpForRemovalC1TrueDBGrid
         '
         Me.SpForRemovalC1TrueDBGrid.AllowUpdate = False
-        Me.SpForRemovalC1TrueDBGrid.DataSource = Me.SpForRemovalBindingSource1
+        Me.SpForRemovalC1TrueDBGrid.DataSource = Me.SpForRemovalBindingSource
         Me.SpForRemovalC1TrueDBGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SpForRemovalC1TrueDBGrid.ExtendRightColumn = True
         Me.SpForRemovalC1TrueDBGrid.GroupByCaption = "Drag a column header here to group by that column"
@@ -160,6 +159,14 @@ Partial Class FrmRemoval
         Me.SpForRemovalC1TrueDBGrid.TabIndex = 0
         Me.SpForRemovalC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.SpForRemovalC1TrueDBGrid.PropBag = resources.GetString("SpForRemovalC1TrueDBGrid.PropBag")
+        '
+        'IdTextBox
+        '
+        Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VwRemovalBindingSource, "Id", True))
+        Me.IdTextBox.Location = New System.Drawing.Point(169, 16)
+        Me.IdTextBox.Name = "IdTextBox"
+        Me.IdTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.IdTextBox.TabIndex = 4
         '
         'BtnDeselectAll
         '
@@ -216,14 +223,16 @@ Partial Class FrmRemoval
         Me.DMSDataSet.DataSetName = "DMSDataSet"
         Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'VwRemovalTableAdapter
+        'SpForRemovalBindingSource
         '
-        Me.VwRemovalTableAdapter.ClearBeforeFill = True
+        Me.SpForRemovalBindingSource.DataMember = "spForRemoval"
+        Me.SpForRemovalBindingSource.DataSource = Me.DMSDataSet
         '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.DMSLogsTableAdapter = Me.DmsLogsTableAdapter1
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.DMSLogsTableAdapter = Nothing
         Me.TableAdapterManager.DMSUserTableAdapter = Nothing
         Me.TableAdapterManager.DocsCatalogueTableAdapter = Nothing
         Me.TableAdapterManager.DocsRemovalTableAdapter = Nothing
@@ -231,26 +240,13 @@ Partial Class FrmRemoval
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'DmsLogsTableAdapter1
+        'VwRemovalTableAdapter
         '
-        Me.DmsLogsTableAdapter1.ClearBeforeFill = True
-        '
-        'SpForRemovalBindingSource1
-        '
-        Me.SpForRemovalBindingSource1.DataMember = "vwRemoval_spForRemoval"
-        Me.SpForRemovalBindingSource1.DataSource = Me.VwRemovalBindingSource
+        Me.VwRemovalTableAdapter.ClearBeforeFill = True
         '
         'SpForRemovalTableAdapter
         '
         Me.SpForRemovalTableAdapter.ClearBeforeFill = True
-        '
-        'IdTextBox
-        '
-        Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VwRemovalBindingSource, "Id", True))
-        Me.IdTextBox.Location = New System.Drawing.Point(169, 16)
-        Me.IdTextBox.Name = "IdTextBox"
-        Me.IdTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.IdTextBox.TabIndex = 4
         '
         'FrmRemoval
         '
@@ -281,7 +277,7 @@ Partial Class FrmRemoval
         CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VwRemovalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SpForRemovalBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpForRemovalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -291,16 +287,15 @@ Partial Class FrmRemoval
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents SplitContainer3 As SplitContainer
     Friend WithEvents DMSDataSet As DMSDataSet
-    Friend WithEvents VwRemovalBindingSource As BindingSource
-    Friend WithEvents VwRemovalTableAdapter As DMSDataSetTableAdapters.vwRemovalTableAdapter
     Friend WithEvents TableAdapterManager As DMSDataSetTableAdapters.TableAdapterManager
     Friend WithEvents VwRemovalC1TrueDBGrid As C1.Win.C1TrueDBGrid.C1TrueDBGrid
     Friend WithEvents SpForRemovalC1TrueDBGrid As C1.Win.C1TrueDBGrid.C1TrueDBGrid
-    Friend WithEvents DmsLogsTableAdapter1 As DMSDataSetTableAdapters.DMSLogsTableAdapter
     Friend WithEvents BtnDeselectAll As Button
     Friend WithEvents BtnSelectAll As Button
     Friend WithEvents BtnDelete As Button
-    Friend WithEvents SpForRemovalBindingSource1 As BindingSource
-    Friend WithEvents SpForRemovalTableAdapter As DMSDataSetTableAdapters.spForRemovalTableAdapter
     Friend WithEvents IdTextBox As TextBox
+    Friend WithEvents VwRemovalBindingSource As BindingSource
+    Friend WithEvents VwRemovalTableAdapter As DMSDataSetTableAdapters.vwRemovalTableAdapter
+    Friend WithEvents SpForRemovalBindingSource As BindingSource
+    Friend WithEvents SpForRemovalTableAdapter As DMSDataSetTableAdapters.spForRemovalTableAdapter
 End Class

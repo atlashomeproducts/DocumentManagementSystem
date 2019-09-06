@@ -7,6 +7,8 @@ Public Class FrmRemoval
     Private Sub FrmRemoval_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DMSDataSet.vwRemoval' table. You can move, or remove it, as needed.
         Me.VwRemovalTableAdapter.Fill(Me.DMSDataSet.vwRemoval)
+        'TODO: This line of code loads data into the 'DMSDataSet.vwRemoval' table. You can move, or remove it, as needed.
+
 
         Me.VwRemovalC1TrueDBGrid.Columns("Select").ValueItems.Presentation = C1.Win.C1TrueDBGrid.PresentationEnum.CheckBox
 
@@ -76,7 +78,8 @@ Public Class FrmRemoval
                 ' Dim FilePath As String
                 ' If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
 
-                VwRemovalBindingSource.Position = 0
+                VwRemovalBindingSource.MoveFirst()
+
                 For i = 0 To Me.VwRemovalBindingSource.Count - 1
 
                     If Me.VwRemovalC1TrueDBGrid.Columns("Select").Value = True Then
@@ -84,9 +87,7 @@ Public Class FrmRemoval
                         cmd.Parameters("@ID").Value = Me.VwRemovalC1TrueDBGrid.Columns("ID").Text
                         cmd.ExecuteNonQuery()
                         My.Computer.FileSystem.DeleteFile(Path.Combine(My.Settings.ImgPath, Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text))
-
                     End If
-
                     VwRemovalBindingSource.MoveNext()
                 Next
 
@@ -102,19 +103,14 @@ Public Class FrmRemoval
                 cmdlogs.ExecuteNonQuery()
                 con.Close()
 
-                MessageBox.Show("Files Deleted.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                 Me.VwRemovalTableAdapter.Fill(Me.DMSDataSet.vwRemoval)
-                Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, 0)
+                MessageBox.Show("Files Deleted.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                'Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.VwRemovalC1TrueDBGrid.Columns("ID").Text)
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
-
-
-
-        ElseIf MsgDelete = vbNo Then
-
-
 
         End If
 
@@ -123,10 +119,24 @@ Public Class FrmRemoval
 
     Private Sub IdTextBox_TextChanged(sender As Object, e As EventArgs) Handles IdTextBox.TextChanged
         Try
-            Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.IdTextBox.Text)
-            AcroReader1.src = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
+
+            If IdTextBox.Text = "" Then
+
+            Else
+
+
+
+                'Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.IdTextBox.Text)
+                AcroReader1.src = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
+                Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.VwRemovalC1TrueDBGrid.Columns("ID").Text)
+
+            End If
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub SplitContainer3_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles SplitContainer3.Panel2.Paint
+
     End Sub
 End Class

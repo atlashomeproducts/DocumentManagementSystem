@@ -45,8 +45,6 @@ Partial Public Class DMSDataSet
     
     Private tablespForRemoval As spForRemovalDataTable
     
-    Private relationvwRemoval_spForRemoval As Global.System.Data.DataRelation
-    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -412,7 +410,6 @@ Partial Public Class DMSDataSet
                 Me.tablespForRemoval.InitVars
             End If
         End If
-        Me.relationvwRemoval_spForRemoval = Me.Relations("vwRemoval_spForRemoval")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -443,8 +440,6 @@ Partial Public Class DMSDataSet
         MyBase.Tables.Add(Me.tablevwRemoval)
         Me.tablespForRemoval = New spForRemovalDataTable()
         MyBase.Tables.Add(Me.tablespForRemoval)
-        Me.relationvwRemoval_spForRemoval = New Global.System.Data.DataRelation("vwRemoval_spForRemoval", New Global.System.Data.DataColumn() {Me.tablevwRemoval.IdColumn}, New Global.System.Data.DataColumn() {Me.tablespForRemoval.IDColumn}, false)
-        Me.Relations.Add(Me.relationvwRemoval_spForRemoval)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4147,6 +4142,7 @@ Partial Public Class DMSDataSet
             Me.columnId.AllowDBNull = false
             Me.columnId.ReadOnly = true
             Me.columnId.Unique = true
+            Me.columnSelect.DefaultValue = CType("False",String)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4386,12 +4382,9 @@ Partial Public Class DMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddspForRemovalRow(ByVal parentvwRemovalRowByvwRemoval_spForRemoval As vwRemovalRow, ByVal Reason As String, ByVal Idx As Long) As spForRemovalRow
+        Public Overloads Function AddspForRemovalRow(ByVal ID As Long, ByVal Reason As String, ByVal Idx As Long) As spForRemovalRow
             Dim rowspForRemovalRow As spForRemovalRow = CType(Me.NewRow,spForRemovalRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Reason, Idx}
-            If (Not (parentvwRemovalRowByvwRemoval_spForRemoval) Is Nothing) Then
-                columnValuesArray(0) = parentvwRemovalRowByvwRemoval_spForRemoval(2)
-            End If
+            Dim columnValuesArray() As Object = New Object() {ID, Reason, Idx}
             rowspForRemovalRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowspForRemovalRow)
             Return rowspForRemovalRow
@@ -7307,16 +7300,6 @@ Partial Public Class DMSDataSet
         Public Sub Set_SelectNull()
             Me(Me.tablevwRemoval.SelectColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function GetspForRemovalRows() As spForRemovalRow()
-            If (Me.Table.ChildRelations("vwRemoval_spForRemoval") Is Nothing) Then
-                Return New spForRemovalRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("vwRemoval_spForRemoval")),spForRemovalRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -7376,17 +7359,6 @@ Partial Public Class DMSDataSet
             End Get
             Set
                 Me(Me.tablespForRemoval.IdxColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property vwRemovalRow() As vwRemovalRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("vwRemoval_spForRemoval")),vwRemovalRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("vwRemoval_spForRemoval"))
             End Set
         End Property
         
@@ -8370,79 +8342,9 @@ Namespace DMSDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [DocsCatalogue] WHERE (([Id] = @Original_Id) AND ((@IsNull_ScannedDat"& _ 
-                "e = 1 AND [ScannedDate] IS NULL) OR ([ScannedDate] = @Original_ScannedDate)) AND"& _ 
-                " ((@IsNull_DocumentDate = 1 AND [DocumentDate] IS NULL) OR ([DocumentDate] = @Or"& _ 
-                "iginal_DocumentDate)) AND ((@IsNull_BookletNo = 1 AND [BookletNo] IS NULL) OR (["& _ 
-                "BookletNo] = @Original_BookletNo)) AND ((@IsNull_TotalValue = 1 AND [TotalValue]"& _ 
-                " IS NULL) OR ([TotalValue] = @Original_TotalValue)) AND ((@IsNull_FromPeriod = 1"& _ 
-                " AND [FromPeriod] IS NULL) OR ([FromPeriod] = @Original_FromPeriod)) AND ((@IsNu"& _ 
-                "ll_ToPeriod = 1 AND [ToPeriod] IS NULL) OR ([ToPeriod] = @Original_ToPeriod)) AN"& _ 
-                "D ((@IsNull_DatePurchased = 1 AND [DatePurchased] IS NULL) OR ([DatePurchased] ="& _ 
-                " @Original_DatePurchased)) AND ((@IsNull_WarrantyPeriod = 1 AND [WarrantyPeriod]"& _ 
-                " IS NULL) OR ([WarrantyPeriod] = @Original_WarrantyPeriod)) AND ((@IsNull_Meetin"& _ 
-                "gDate = 1 AND [MeetingDate] IS NULL) OR ([MeetingDate] = @Original_MeetingDate))"& _ 
-                " AND ((@IsNull_BoxNo = 1 AND [BoxNo] IS NULL) OR ([BoxNo] = @Original_BoxNo)) AN"& _ 
-                "D ((@IsNull_NONVATreg = 1 AND [NONVATreg] IS NULL) OR ([NONVATreg] = @Original_N"& _ 
-                "ONVATreg)) AND ((@IsNull_RackNo = 1 AND [RackNo] IS NULL) OR ([RackNo] = @Origin"& _ 
-                "al_RackNo)) AND ((@IsNull_TinCustomer = 1 AND [TinCustomer] IS NULL) OR ([TinCus"& _ 
-                "tomer] = @Original_TinCustomer)) AND ((@IsNull_TinVendor = 1 AND [TinVendor] IS "& _ 
-                "NULL) OR ([TinVendor] = @Original_TinVendor)) AND ((@IsNull_VATreg = 1 AND [VATr"& _ 
-                "eg] IS NULL) OR ([VATreg] = @Original_VATreg)) AND ((@IsNull_DateReceived = 1 AN"& _ 
-                "D [DateReceived] IS NULL) OR ([DateReceived] = @Original_DateReceived)) AND ((@I"& _ 
-                "sNull_PromoFrom = 1 AND [PromoFrom] IS NULL) OR ([PromoFrom] = @Original_PromoFr"& _ 
-                "om)) AND ((@IsNull_PromoTo = 1 AND [PromoTo] IS NULL) OR ([PromoTo] = @Original_"& _ 
-                "PromoTo)) AND ((@IsNull_UserID = 1 AND [UserID] IS NULL) OR ([UserID] = @Origina"& _ 
-                "l_UserID)) AND ((@IsNull_Confidential = 1 AND [Confidential] IS NULL) OR ([Confi"& _ 
-                "dential] = @Original_Confidential)) AND ((@IsNull_DocSize = 1 AND [DocSize] IS N"& _ 
-                "ULL) OR ([DocSize] = @Original_DocSize)) AND ((@IsNull_Pages = 1 AND [Pages] IS "& _ 
-                "NULL) OR ([Pages] = @Original_Pages)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [DocsCatalogue] WHERE (([Id] = @Original_Id))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ScannedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DocumentDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DocumentDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BookletNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookletNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookletNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookletNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TotalValue", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalValue", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TotalValue", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalValue", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FromPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FromPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FromPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FromPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ToPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ToPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ToPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ToPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DatePurchased", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DatePurchased", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DatePurchased", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DatePurchased", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_WarrantyPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WarrantyPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_WarrantyPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WarrantyPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MeetingDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MeetingDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MeetingDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MeetingDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BoxNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BoxNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BoxNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BoxNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NONVATreg", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NONVATreg", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NONVATreg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NONVATreg", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RackNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RackNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RackNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RackNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TinCustomer", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinCustomer", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TinCustomer", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinCustomer", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TinVendor", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinVendor", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TinVendor", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinVendor", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VATreg", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VATreg", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VATreg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VATreg", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DateReceived", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateReceived", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DateReceived", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateReceived", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PromoFrom", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoFrom", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PromoFrom", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoFrom", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PromoTo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PromoTo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UserID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Confidential", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Confidential", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DocSize", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Pages", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [DocsCatalogue] ([Batch], [ScannedDate], [Filename], [Status], [Docum"& _ 
@@ -8562,42 +8464,16 @@ Namespace DMSDataSetTableAdapters
                 "[SubBatch] = @SubBatch, [DTIPermitNo] = @DTIPermitNo, [PromoFrom] = @PromoFrom, "& _ 
                 "[PromoTitle] = @PromoTitle, [PromoTo] = @PromoTo, [UserID] = @UserID, [Confident"& _ 
                 "ial] = @Confidential, [DocSize] = @DocSize, [Pages] = @Pages WHERE (([Id] = @Ori"& _ 
-                "ginal_Id) AND ((@IsNull_ScannedDate = 1 AND [ScannedDate] IS NULL) OR ([ScannedD"& _ 
-                "ate] = @Original_ScannedDate)) AND ((@IsNull_DocumentDate = 1 AND [DocumentDate]"& _ 
-                " IS NULL) OR ([DocumentDate] = @Original_DocumentDate)) AND ((@IsNull_BookletNo "& _ 
-                "= 1 AND [BookletNo] IS NULL) OR ([BookletNo] = @Original_BookletNo)) AND ((@IsNu"& _ 
-                "ll_TotalValue = 1 AND [TotalValue] IS NULL) OR ([TotalValue] = @Original_TotalVa"& _ 
-                "lue)) AND ((@IsNull_FromPeriod = 1 AND [FromPeriod] IS NULL) OR ([FromPeriod] = "& _ 
-                "@Original_FromPeriod)) AND ((@IsNull_ToPeriod = 1 AND [ToPeriod] IS NULL) OR ([T"& _ 
-                "oPeriod] = @Original_ToPeriod)) AND ((@IsNull_DatePurchased = 1 AND [DatePurchas"& _ 
-                "ed] IS NULL) OR ([DatePurchased] = @Original_DatePurchased)) AND ((@IsNull_Warra"& _ 
-                "ntyPeriod = 1 AND [WarrantyPeriod] IS NULL) OR ([WarrantyPeriod] = @Original_War"& _ 
-                "rantyPeriod)) AND ((@IsNull_MeetingDate = 1 AND [MeetingDate] IS NULL) OR ([Meet"& _ 
-                "ingDate] = @Original_MeetingDate)) AND ((@IsNull_BoxNo = 1 AND [BoxNo] IS NULL) "& _ 
-                "OR ([BoxNo] = @Original_BoxNo)) AND ((@IsNull_NONVATreg = 1 AND [NONVATreg] IS N"& _ 
-                "ULL) OR ([NONVATreg] = @Original_NONVATreg)) AND ((@IsNull_RackNo = 1 AND [RackN"& _ 
-                "o] IS NULL) OR ([RackNo] = @Original_RackNo)) AND ((@IsNull_TinCustomer = 1 AND "& _ 
-                "[TinCustomer] IS NULL) OR ([TinCustomer] = @Original_TinCustomer)) AND ((@IsNull"& _ 
-                "_TinVendor = 1 AND [TinVendor] IS NULL) OR ([TinVendor] = @Original_TinVendor)) "& _ 
-                "AND ((@IsNull_VATreg = 1 AND [VATreg] IS NULL) OR ([VATreg] = @Original_VATreg))"& _ 
-                " AND ((@IsNull_DateReceived = 1 AND [DateReceived] IS NULL) OR ([DateReceived] ="& _ 
-                " @Original_DateReceived)) AND ((@IsNull_PromoFrom = 1 AND [PromoFrom] IS NULL) O"& _ 
-                "R ([PromoFrom] = @Original_PromoFrom)) AND ((@IsNull_PromoTo = 1 AND [PromoTo] I"& _ 
-                "S NULL) OR ([PromoTo] = @Original_PromoTo)) AND ((@IsNull_UserID = 1 AND [UserID"& _ 
-                "] IS NULL) OR ([UserID] = @Original_UserID)) AND ((@IsNull_Confidential = 1 AND "& _ 
-                "[Confidential] IS NULL) OR ([Confidential] = @Original_Confidential)) AND ((@IsN"& _ 
-                "ull_DocSize = 1 AND [DocSize] IS NULL) OR ([DocSize] = @Original_DocSize)) AND ("& _ 
-                "(@IsNull_Pages = 1 AND [Pages] IS NULL) OR ([Pages] = @Original_Pages)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELEC"& _ 
-                "T Id, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, Referenc"& _ 
-                "eNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, "& _ 
-                "FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductTy"& _ 
-                "pe, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Em"& _ 
-                "ail, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Reco"& _ 
-                "rdedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, BankB"& _ 
-                "ranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor"& _ 
-                ", VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, P"& _ 
-                "romoTitle, PromoTo, UserID, Confidential, DocSize, Pages FROM DocsCatalogue WHER"& _ 
-                "E (Id = @Id)"
+                "ginal_Id));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Filename, Status, DocumentType, Docu"& _ 
+                "mentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, Tota"& _ 
+                "lValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, Produ"& _ 
+                "ctBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Addr"& _ 
+                "ess, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby"& _ 
+                ", Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, "& _ 
+                "BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinC"& _ 
+                "ustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPerm"& _ 
+                "itNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages FROM "& _ 
+                "DocsCatalogue WHERE (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Batch", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Batch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8663,50 +8539,6 @@ Namespace DMSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ScannedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DocumentDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DocumentDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BookletNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookletNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookletNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookletNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TotalValue", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalValue", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TotalValue", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalValue", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FromPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FromPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FromPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FromPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ToPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ToPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ToPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ToPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DatePurchased", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DatePurchased", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DatePurchased", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DatePurchased", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_WarrantyPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WarrantyPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_WarrantyPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WarrantyPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MeetingDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MeetingDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MeetingDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MeetingDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BoxNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BoxNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BoxNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BoxNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NONVATreg", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NONVATreg", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NONVATreg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NONVATreg", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RackNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RackNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RackNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RackNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TinCustomer", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinCustomer", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TinCustomer", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinCustomer", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TinVendor", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinVendor", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TinVendor", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinVendor", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VATreg", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VATreg", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VATreg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VATreg", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DateReceived", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateReceived", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DateReceived", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateReceived", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PromoFrom", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoFrom", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PromoFrom", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoFrom", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PromoTo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PromoTo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UserID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Confidential", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Confidential", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DocSize", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Pages", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -8723,16 +8555,18 @@ Namespace DMSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Id, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, Refe"& _ 
-                "renceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastNa"& _ 
-                "me, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, Produ"& _ 
-                "ctType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo"& _ 
-                ", Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, "& _ 
-                "Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, B"& _ 
-                "ankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVe"& _ 
-                "ndor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFro"& _ 
-                "m, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages FROM DocsCatalogue "& _ 
-                "WHERE (Status = @Status)"
+            Me._commandCollection(0).CommandText = "SELECT        Id, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDat"& _ 
+                "e, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue,"& _ 
+                " "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         LastName, FirstName, MiddleName, FromPeriod, ToPerio"& _ 
+                "d, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod,"& _ 
+                " ServiceCenter, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Address, ContactNo, Email, VoucherNo,"& _ 
+                " PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company"& _ 
+                ", Purpose, Secretary, MeetingDate, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Receivedby, BankAd"& _ 
+                "dress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustome"& _ 
+                "r, TinVendor, VATreg, AddressC, DateReceived, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         BatchDe"& _ 
+                "sc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential,"& _ 
+                " DocSize, Pages"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            DocsCatalogue"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Status = @Status) "& _ 
+                "AND (ISNULL(Removal, 'False') <> 'True')"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -8803,185 +8637,8 @@ Namespace DMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete( _
-                    ByVal Original_Id As Long,  _
-                    ByVal Original_ScannedDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_DocumentDate As String,  _
-                    ByVal Original_BookletNo As String,  _
-                    ByVal Original_TotalValue As Global.System.Nullable(Of Double),  _
-                    ByVal Original_FromPeriod As String,  _
-                    ByVal Original_ToPeriod As String,  _
-                    ByVal Original_DatePurchased As String,  _
-                    ByVal Original_WarrantyPeriod As String,  _
-                    ByVal Original_MeetingDate As String,  _
-                    ByVal Original_BoxNo As String,  _
-                    ByVal Original_NONVATreg As String,  _
-                    ByVal Original_RackNo As String,  _
-                    ByVal Original_TinCustomer As String,  _
-                    ByVal Original_TinVendor As String,  _
-                    ByVal Original_VATreg As String,  _
-                    ByVal Original_DateReceived As String,  _
-                    ByVal Original_PromoFrom As String,  _
-                    ByVal Original_PromoTo As String,  _
-                    ByVal Original_UserID As String,  _
-                    ByVal Original_Confidential As String,  _
-                    ByVal Original_DocSize As String,  _
-                    ByVal Original_Pages As Global.System.Nullable(Of Long)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Long) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Long)
-            If (Original_ScannedDate.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_ScannedDate.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (Original_DocumentDate Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_DocumentDate,String)
-            End If
-            If (Original_BookletNo Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_BookletNo,String)
-            End If
-            If (Original_TotalValue.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_TotalValue.Value,Double)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (Original_FromPeriod Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_FromPeriod,String)
-            End If
-            If (Original_ToPeriod Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_ToPeriod,String)
-            End If
-            If (Original_DatePurchased Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_DatePurchased,String)
-            End If
-            If (Original_WarrantyPeriod Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_WarrantyPeriod,String)
-            End If
-            If (Original_MeetingDate Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_MeetingDate,String)
-            End If
-            If (Original_BoxNo Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_BoxNo,String)
-            End If
-            If (Original_NONVATreg Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_NONVATreg,String)
-            End If
-            If (Original_RackNo Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_RackNo,String)
-            End If
-            If (Original_TinCustomer Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(26).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(Original_TinCustomer,String)
-            End If
-            If (Original_TinVendor Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(28).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(28).Value = CType(Original_TinVendor,String)
-            End If
-            If (Original_VATreg Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(30).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(Original_VATreg,String)
-            End If
-            If (Original_DateReceived Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(32).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_DateReceived,String)
-            End If
-            If (Original_PromoFrom Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(34).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(34).Value = CType(Original_PromoFrom,String)
-            End If
-            If (Original_PromoTo Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(35).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(36).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(35).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(36).Value = CType(Original_PromoTo,String)
-            End If
-            If (Original_UserID Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(37).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(38).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(37).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(38).Value = CType(Original_UserID,String)
-            End If
-            If (Original_Confidential Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(40).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(40).Value = CType(Original_Confidential,String)
-            End If
-            If (Original_DocSize Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(42).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(42).Value = CType(Original_DocSize,String)
-            End If
-            If (Original_Pages.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(44).Value = CType(Original_Pages.Value,Long)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(44).Value = Global.System.DBNull.Value
-            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9464,28 +9121,6 @@ Namespace DMSDataSetTableAdapters
                     ByVal DocSize As String,  _
                     ByVal Pages As Global.System.Nullable(Of Long),  _
                     ByVal Original_Id As Long,  _
-                    ByVal Original_ScannedDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_DocumentDate As String,  _
-                    ByVal Original_BookletNo As String,  _
-                    ByVal Original_TotalValue As Global.System.Nullable(Of Double),  _
-                    ByVal Original_FromPeriod As String,  _
-                    ByVal Original_ToPeriod As String,  _
-                    ByVal Original_DatePurchased As String,  _
-                    ByVal Original_WarrantyPeriod As String,  _
-                    ByVal Original_MeetingDate As String,  _
-                    ByVal Original_BoxNo As String,  _
-                    ByVal Original_NONVATreg As String,  _
-                    ByVal Original_RackNo As String,  _
-                    ByVal Original_TinCustomer As String,  _
-                    ByVal Original_TinVendor As String,  _
-                    ByVal Original_VATreg As String,  _
-                    ByVal Original_DateReceived As String,  _
-                    ByVal Original_PromoFrom As String,  _
-                    ByVal Original_PromoTo As String,  _
-                    ByVal Original_UserID As String,  _
-                    ByVal Original_Confidential As String,  _
-                    ByVal Original_DocSize As String,  _
-                    ByVal Original_Pages As Global.System.Nullable(Of Long),  _
                     ByVal Id As Long) As Integer
             If (Batch Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
@@ -9803,161 +9438,7 @@ Namespace DMSDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(62).Value = Global.System.DBNull.Value
             End If
             Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_Id,Long)
-            If (Original_ScannedDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Original_ScannedDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(65).Value = Global.System.DBNull.Value
-            End If
-            If (Original_DocumentDate Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(67).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(Original_DocumentDate,String)
-            End If
-            If (Original_BookletNo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(69).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(Original_BookletNo,String)
-            End If
-            If (Original_TotalValue.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(Original_TotalValue.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(71).Value = Global.System.DBNull.Value
-            End If
-            If (Original_FromPeriod Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(73).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(Original_FromPeriod,String)
-            End If
-            If (Original_ToPeriod Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(75).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(Original_ToPeriod,String)
-            End If
-            If (Original_DatePurchased Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(77).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(Original_DatePurchased,String)
-            End If
-            If (Original_WarrantyPeriod Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(79).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(Original_WarrantyPeriod,String)
-            End If
-            If (Original_MeetingDate Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(81).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(Original_MeetingDate,String)
-            End If
-            If (Original_BoxNo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(83).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(Original_BoxNo,String)
-            End If
-            If (Original_NONVATreg Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(85).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(Original_NONVATreg,String)
-            End If
-            If (Original_RackNo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(87).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(Original_RackNo,String)
-            End If
-            If (Original_TinCustomer Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(89).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(Original_TinCustomer,String)
-            End If
-            If (Original_TinVendor Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(91).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(Original_TinVendor,String)
-            End If
-            If (Original_VATreg Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(93).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(Original_VATreg,String)
-            End If
-            If (Original_DateReceived Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(95).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(Original_DateReceived,String)
-            End If
-            If (Original_PromoFrom Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(97).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(Original_PromoFrom,String)
-            End If
-            If (Original_PromoTo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(99).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(Original_PromoTo,String)
-            End If
-            If (Original_UserID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(101).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(Original_UserID,String)
-            End If
-            If (Original_Confidential Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(103).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(Original_Confidential,String)
-            End If
-            If (Original_DocSize Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(105).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(Original_DocSize,String)
-            End If
-            If (Original_Pages.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(Original_Pages.Value,Long)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(107).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(108).Value = CType(Id,Long)
+            Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Id,Long)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -10041,30 +9522,8 @@ Namespace DMSDataSetTableAdapters
                     ByVal Confidential As String,  _
                     ByVal DocSize As String,  _
                     ByVal Pages As Global.System.Nullable(Of Long),  _
-                    ByVal Original_Id As Long,  _
-                    ByVal Original_ScannedDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_DocumentDate As String,  _
-                    ByVal Original_BookletNo As String,  _
-                    ByVal Original_TotalValue As Global.System.Nullable(Of Double),  _
-                    ByVal Original_FromPeriod As String,  _
-                    ByVal Original_ToPeriod As String,  _
-                    ByVal Original_DatePurchased As String,  _
-                    ByVal Original_WarrantyPeriod As String,  _
-                    ByVal Original_MeetingDate As String,  _
-                    ByVal Original_BoxNo As String,  _
-                    ByVal Original_NONVATreg As String,  _
-                    ByVal Original_RackNo As String,  _
-                    ByVal Original_TinCustomer As String,  _
-                    ByVal Original_TinVendor As String,  _
-                    ByVal Original_VATreg As String,  _
-                    ByVal Original_DateReceived As String,  _
-                    ByVal Original_PromoFrom As String,  _
-                    ByVal Original_PromoTo As String,  _
-                    ByVal Original_UserID As String,  _
-                    ByVal Original_Confidential As String,  _
-                    ByVal Original_DocSize As String,  _
-                    ByVal Original_Pages As Global.System.Nullable(Of Long)) As Integer
-            Return Me.Update(Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages, Original_Id, Original_ScannedDate, Original_DocumentDate, Original_BookletNo, Original_TotalValue, Original_FromPeriod, Original_ToPeriod, Original_DatePurchased, Original_WarrantyPeriod, Original_MeetingDate, Original_BoxNo, Original_NONVATreg, Original_RackNo, Original_TinCustomer, Original_TinVendor, Original_VATreg, Original_DateReceived, Original_PromoFrom, Original_PromoTo, Original_UserID, Original_Confidential, Original_DocSize, Original_Pages, Original_Id)
+                    ByVal Original_Id As Long) As Integer
+            Return Me.Update(Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages, Original_Id, Original_Id)
         End Function
     End Class
     
