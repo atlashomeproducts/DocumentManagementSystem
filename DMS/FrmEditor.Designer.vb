@@ -227,6 +227,7 @@ Partial Class FrmEditor
         Me.AcroReader1 = New AxAcroPDFLib.AxAcroPDF()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         DocumentDateLabel = New System.Windows.Forms.Label()
         ReferenceNoLabel = New System.Windows.Forms.Label()
@@ -1107,11 +1108,11 @@ Partial Class FrmEditor
         '
         PagesLabel.AutoSize = True
         PagesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PagesLabel.Location = New System.Drawing.Point(426, 141)
+        PagesLabel.Location = New System.Drawing.Point(433, 141)
         PagesLabel.Name = "PagesLabel"
-        PagesLabel.Size = New System.Drawing.Size(51, 16)
+        PagesLabel.Size = New System.Drawing.Size(89, 16)
         PagesLabel.TabIndex = 33
-        PagesLabel.Text = "Pages:"
+        PagesLabel.Text = "No. of Pages:"
         '
         'SplitContainer1
         '
@@ -1129,6 +1130,7 @@ Partial Class FrmEditor
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.AcroReader1)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.WebBrowser1)
         Me.SplitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer1.Size = New System.Drawing.Size(1197, 737)
         Me.SplitContainer1.SplitterDistance = 641
@@ -1220,9 +1222,9 @@ Partial Class FrmEditor
         '
         Me.txtPages.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Pages", True))
         Me.txtPages.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPages.Location = New System.Drawing.Point(497, 138)
+        Me.txtPages.Location = New System.Drawing.Point(529, 138)
         Me.txtPages.Name = "txtPages"
-        Me.txtPages.Size = New System.Drawing.Size(104, 22)
+        Me.txtPages.Size = New System.Drawing.Size(72, 22)
         Me.txtPages.TabIndex = 34
         '
         'cbDocSize
@@ -2116,7 +2118,7 @@ Partial Class FrmEditor
         Me.Others.Location = New System.Drawing.Point(4, 25)
         Me.Others.Name = "Others"
         Me.Others.Padding = New System.Windows.Forms.Padding(3)
-        Me.Others.Size = New System.Drawing.Size(602, 100)
+        Me.Others.Size = New System.Drawing.Size(605, 100)
         Me.Others.TabIndex = 1
         Me.Others.Text = "Others"
         '
@@ -2136,7 +2138,7 @@ Partial Class FrmEditor
         Me.Check.Controls.Add(CheckNoLabel)
         Me.Check.Location = New System.Drawing.Point(4, 25)
         Me.Check.Name = "Check"
-        Me.Check.Size = New System.Drawing.Size(602, 100)
+        Me.Check.Size = New System.Drawing.Size(605, 100)
         Me.Check.TabIndex = 2
         Me.Check.Text = "Check"
         '
@@ -2325,7 +2327,7 @@ Partial Class FrmEditor
         Me.TabMeeting2.Location = New System.Drawing.Point(4, 25)
         Me.TabMeeting2.Name = "TabMeeting2"
         Me.TabMeeting2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabMeeting2.Size = New System.Drawing.Size(582, 100)
+        Me.TabMeeting2.Size = New System.Drawing.Size(605, 100)
         Me.TabMeeting2.TabIndex = 2
         Me.TabMeeting2.Text = "TabMeeting2"
         '
@@ -2451,6 +2453,7 @@ Partial Class FrmEditor
         Me.AcroReader1.OcxState = CType(resources.GetObject("AcroReader1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AcroReader1.Size = New System.Drawing.Size(552, 737)
         Me.AcroReader1.TabIndex = 0
+        Me.AcroReader1.Visible = False
         '
         'DocsCatalogueTableAdapter
         '
@@ -2466,6 +2469,15 @@ Partial Class FrmEditor
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(552, 737)
+        Me.WebBrowser1.TabIndex = 1
         '
         'FrmEditor
         '
@@ -2651,4 +2663,5 @@ Partial Class FrmEditor
     Friend WithEvents cbDocSize As ComboBox
     Friend WithEvents chkConfidential As CheckBox
     Friend WithEvents txtPages As TextBox
+    Friend WithEvents WebBrowser1 As WebBrowser
 End Class

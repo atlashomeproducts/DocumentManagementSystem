@@ -106,7 +106,7 @@ Public Class FrmRemoval
 
                 Me.VwRemovalTableAdapter.Fill(Me.DMSDataSet.vwRemoval)
                 MessageBox.Show("Files Deleted.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                'Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.VwRemovalC1TrueDBGrid.Columns("ID").Text)
+
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -123,11 +123,13 @@ Public Class FrmRemoval
             If IdTextBox.Text = "" Then
 
             Else
-
-
-
                 'Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.IdTextBox.Text)
-                AcroReader1.src = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
+                '  AcroReader1.src = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
+
+
+                Dim pdffile As String = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
+                WebBrowser1.Navigate(pdffile)
+
                 Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.VwRemovalC1TrueDBGrid.Columns("ID").Text)
 
             End If
@@ -138,5 +140,63 @@ Public Class FrmRemoval
 
     Private Sub SplitContainer3_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles SplitContainer3.Panel2.Paint
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnRestore.Click
+        Dim MsgDelete = MessageBox.Show("Are you sure to restore selected documents", "Restore?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If MsgDelete = vbYes Then
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand("INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+            Dim cmd As New SqlCommand
+
+            cmd.Parameters.AddWithValue("@ID", "")
+            con.Open()
+            cmd.Connection = con
+            cmd.CommandText = "spRestoreRemoval"
+            cmd.CommandType = CommandType.StoredProcedure
+
+
+
+            Try
+                ' Dim FilePath As String
+                ' If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+
+                VwRemovalBindingSource.MoveFirst()
+
+                For i = 0 To Me.VwRemovalBindingSource.Count - 1
+
+                    If Me.VwRemovalC1TrueDBGrid.Columns("Select").Value = True Then
+
+                        cmd.Parameters("@ID").Value = Me.VwRemovalC1TrueDBGrid.Columns("ID").Text
+                        cmd.ExecuteNonQuery()
+                        'My.Computer.FileSystem.DeleteFile(Path.Combine(My.Settings.ImgPath, Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text))
+                    End If
+                    VwRemovalBindingSource.MoveNext()
+                Next
+
+
+                ' Dim dRemoteDate As Date
+                '  dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+
+
+                cmdlogs.Connection = con
+                cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
+                cmdlogs.Parameters.AddWithValue("@Action", FrmMain.User & " " & "Restored files.")
+                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                cmdlogs.ExecuteNonQuery()
+                con.Close()
+
+
+                Me.VwRemovalTableAdapter.Fill(Me.DMSDataSet.vwRemoval)
+                MessageBox.Show("Files Restored.", "Restore", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+        End If
     End Sub
 End Class

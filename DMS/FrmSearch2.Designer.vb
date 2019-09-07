@@ -42,7 +42,6 @@ Partial Class FrmSearch2
         Me.PromoFromLabel = New System.Windows.Forms.Label()
         Me.PromoTitleLabel = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.C1TrueDBGrid2 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.BtnDownload = New System.Windows.Forms.Button()
         Me.BtnSaveChanges1 = New System.Windows.Forms.Button()
@@ -84,8 +83,6 @@ Partial Class FrmSearch2
         Me.DocumentTypeLabel = New System.Windows.Forms.Label()
         Me.TabChanges = New System.Windows.Forms.TabPage()
         Me.txtPages = New System.Windows.Forms.TextBox()
-        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.cbDocSize = New System.Windows.Forms.ComboBox()
         Me.chkConfidential = New System.Windows.Forms.CheckBox()
         Me.SubBatchTextBox = New System.Windows.Forms.TextBox()
@@ -261,8 +258,13 @@ Partial Class FrmSearch2
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.BtnRemoval = New System.Windows.Forms.Button()
+        Me.C1TrueDBGrid2 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         IdLabel = New System.Windows.Forms.Label()
         DocSizeLabel = New System.Windows.Forms.Label()
         SubBatchLabel = New System.Windows.Forms.Label()
@@ -272,7 +274,6 @@ Partial Class FrmSearch2
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        CType(Me.C1TrueDBGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
@@ -280,8 +281,6 @@ Partial Class FrmSearch2
         Me.TabControl1.SuspendLayout()
         Me.TabQuery.SuspendLayout()
         Me.TabChanges.SuspendLayout()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl2.SuspendLayout()
         Me.Timesheet.SuspendLayout()
         Me.GrpTimeSheet.SuspendLayout()
@@ -303,6 +302,9 @@ Partial Class FrmSearch2
         Me.TabPromo.SuspendLayout()
         Me.TabMeeting2.SuspendLayout()
         CType(Me.AcroPDF, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.C1TrueDBGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'IdLabel
@@ -351,9 +353,9 @@ Partial Class FrmSearch2
         PagesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         PagesLabel.Location = New System.Drawing.Point(441, 106)
         PagesLabel.Name = "PagesLabel"
-        PagesLabel.Size = New System.Drawing.Size(51, 16)
+        PagesLabel.Size = New System.Drawing.Size(89, 16)
         PagesLabel.TabIndex = 45
-        PagesLabel.Text = "Pages:"
+        PagesLabel.Text = "No. of Pages:"
         '
         'Label25
         '
@@ -470,25 +472,6 @@ Partial Class FrmSearch2
         Me.SplitContainer1.TabIndex = 0
         Me.SplitContainer1.TabStop = False
         '
-        'C1TrueDBGrid2
-        '
-        Me.C1TrueDBGrid2.AlternatingRows = True
-        Me.C1TrueDBGrid2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.C1TrueDBGrid2.FilterBar = True
-        Me.C1TrueDBGrid2.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
-        Me.C1TrueDBGrid2.GroupByCaption = "Drag a column header here to group by that column"
-        Me.C1TrueDBGrid2.Images.Add(CType(resources.GetObject("C1TrueDBGrid2.Images"), System.Drawing.Image))
-        Me.C1TrueDBGrid2.Location = New System.Drawing.Point(0, 0)
-        Me.C1TrueDBGrid2.Name = "C1TrueDBGrid2"
-        Me.C1TrueDBGrid2.PreviewInfo.Location = New System.Drawing.Point(0, 0)
-        Me.C1TrueDBGrid2.PreviewInfo.Size = New System.Drawing.Size(0, 0)
-        Me.C1TrueDBGrid2.PreviewInfo.ZoomFactor = 75.0R
-        Me.C1TrueDBGrid2.PrintInfo.PageSettings = CType(resources.GetObject("C1TrueDBGrid2.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.C1TrueDBGrid2.Size = New System.Drawing.Size(1240, 235)
-        Me.C1TrueDBGrid2.TabIndex = 0
-        Me.C1TrueDBGrid2.UseCompatibleTextRendering = False
-        Me.C1TrueDBGrid2.PropBag = resources.GetString("C1TrueDBGrid2.PropBag")
-        '
         'SplitContainer2
         '
         Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -499,6 +482,7 @@ Partial Class FrmSearch2
         'SplitContainer2.Panel1
         '
         Me.SplitContainer2.Panel1.AutoScroll = True
+        Me.SplitContainer2.Panel1.Controls.Add(Me.BtnRemoval)
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnDownload)
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnSaveChanges1)
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnSearch)
@@ -510,6 +494,7 @@ Partial Class FrmSearch2
         '
         Me.SplitContainer2.Panel2.AutoScroll = True
         Me.SplitContainer2.Panel2.Controls.Add(Me.AcroPDF)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.WebBrowser1)
         Me.SplitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer2.Size = New System.Drawing.Size(1240, 518)
@@ -521,9 +506,10 @@ Partial Class FrmSearch2
         '
         Me.BtnDownload.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnDownload.Location = New System.Drawing.Point(206, 7)
+        Me.BtnDownload.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnDownload.Location = New System.Drawing.Point(294, 7)
         Me.BtnDownload.Name = "BtnDownload"
-        Me.BtnDownload.Size = New System.Drawing.Size(125, 28)
+        Me.BtnDownload.Size = New System.Drawing.Size(106, 28)
         Me.BtnDownload.TabIndex = 2
         Me.BtnDownload.Text = "Download"
         Me.BtnDownload.UseVisualStyleBackColor = False
@@ -532,9 +518,10 @@ Partial Class FrmSearch2
         '
         Me.BtnSaveChanges1.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnSaveChanges1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnSaveChanges1.Location = New System.Drawing.Point(462, 7)
+        Me.BtnSaveChanges1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSaveChanges1.Location = New System.Drawing.Point(512, 7)
         Me.BtnSaveChanges1.Name = "BtnSaveChanges1"
-        Me.BtnSaveChanges1.Size = New System.Drawing.Size(125, 28)
+        Me.BtnSaveChanges1.Size = New System.Drawing.Size(106, 28)
         Me.BtnSaveChanges1.TabIndex = 4
         Me.BtnSaveChanges1.Text = "Save Changes"
         Me.BtnSaveChanges1.UseVisualStyleBackColor = False
@@ -543,9 +530,10 @@ Partial Class FrmSearch2
         '
         Me.BtnSearch.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSearch.Location = New System.Drawing.Point(6, 7)
         Me.BtnSearch.Name = "BtnSearch"
-        Me.BtnSearch.Size = New System.Drawing.Size(125, 28)
+        Me.BtnSearch.Size = New System.Drawing.Size(110, 28)
         Me.BtnSearch.TabIndex = 1
         Me.BtnSearch.Text = "Search"
         Me.BtnSearch.UseVisualStyleBackColor = False
@@ -554,9 +542,10 @@ Partial Class FrmSearch2
         '
         Me.BtnEditRecord.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnEditRecord.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnEditRecord.Location = New System.Drawing.Point(334, 7)
+        Me.BtnEditRecord.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditRecord.Location = New System.Drawing.Point(403, 7)
         Me.BtnEditRecord.Name = "BtnEditRecord"
-        Me.BtnEditRecord.Size = New System.Drawing.Size(125, 28)
+        Me.BtnEditRecord.Size = New System.Drawing.Size(106, 28)
         Me.BtnEditRecord.TabIndex = 3
         Me.BtnEditRecord.Text = "Edit Record"
         Me.BtnEditRecord.UseVisualStyleBackColor = False
@@ -937,20 +926,10 @@ Partial Class FrmSearch2
         '
         Me.txtPages.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DocsCatalogueBindingSource, "Pages", True))
         Me.txtPages.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPages.Location = New System.Drawing.Point(495, 103)
+        Me.txtPages.Location = New System.Drawing.Point(535, 103)
         Me.txtPages.Name = "txtPages"
-        Me.txtPages.Size = New System.Drawing.Size(104, 22)
+        Me.txtPages.Size = New System.Drawing.Size(64, 22)
         Me.txtPages.TabIndex = 44
-        '
-        'DocsCatalogueBindingSource
-        '
-        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
-        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
-        '
-        'DMSDataSet
-        '
-        Me.DMSDataSet.DataSetName = "DMSDataSet"
-        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cbDocSize
         '
@@ -1080,7 +1059,7 @@ Partial Class FrmSearch2
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(595, 294)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(595, 297)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1347,7 +1326,7 @@ Partial Class FrmSearch2
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(595, 394)
+        Me.GrpReceipt.Size = New System.Drawing.Size(595, 397)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1668,7 +1647,7 @@ Partial Class FrmSearch2
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(595, 414)
+        Me.GrpWarranty.Size = New System.Drawing.Size(595, 417)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -2728,10 +2707,52 @@ Partial Class FrmSearch2
         Me.AcroPDF.OcxState = CType(resources.GetObject("AcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AcroPDF.Size = New System.Drawing.Size(610, 518)
         Me.AcroPDF.TabIndex = 91
+        Me.AcroPDF.Visible = False
         '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'BtnRemoval
+        '
+        Me.BtnRemoval.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnRemoval.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnRemoval.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRemoval.Location = New System.Drawing.Point(185, 7)
+        Me.BtnRemoval.Name = "BtnRemoval"
+        Me.BtnRemoval.Size = New System.Drawing.Size(106, 28)
+        Me.BtnRemoval.TabIndex = 3
+        Me.BtnRemoval.Text = "For Removal"
+        Me.BtnRemoval.UseVisualStyleBackColor = False
+        '
+        'C1TrueDBGrid2
+        '
+        Me.C1TrueDBGrid2.AlternatingRows = True
+        Me.C1TrueDBGrid2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.C1TrueDBGrid2.FilterBar = True
+        Me.C1TrueDBGrid2.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
+        Me.C1TrueDBGrid2.GroupByCaption = "Drag a column header here to group by that column"
+        Me.C1TrueDBGrid2.Images.Add(CType(resources.GetObject("C1TrueDBGrid2.Images"), System.Drawing.Image))
+        Me.C1TrueDBGrid2.Location = New System.Drawing.Point(0, 0)
+        Me.C1TrueDBGrid2.Name = "C1TrueDBGrid2"
+        Me.C1TrueDBGrid2.PreviewInfo.Location = New System.Drawing.Point(0, 0)
+        Me.C1TrueDBGrid2.PreviewInfo.Size = New System.Drawing.Size(0, 0)
+        Me.C1TrueDBGrid2.PreviewInfo.ZoomFactor = 75.0R
+        Me.C1TrueDBGrid2.PrintInfo.PageSettings = CType(resources.GetObject("C1TrueDBGrid2.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
+        Me.C1TrueDBGrid2.Size = New System.Drawing.Size(1240, 235)
+        Me.C1TrueDBGrid2.TabIndex = 0
+        Me.C1TrueDBGrid2.UseCompatibleTextRendering = False
+        Me.C1TrueDBGrid2.PropBag = resources.GetString("C1TrueDBGrid2.PropBag")
+        '
+        'DocsCatalogueBindingSource
+        '
+        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
+        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TableAdapterManager
         '
@@ -2749,6 +2770,15 @@ Partial Class FrmSearch2
         '
         Me.DocsCatalogueTableAdapter.ClearBeforeFill = True
         '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(610, 518)
+        Me.WebBrowser1.TabIndex = 92
+        '
         'FrmSearch2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2764,7 +2794,6 @@ Partial Class FrmSearch2
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
-        CType(Me.C1TrueDBGrid2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2774,8 +2803,6 @@ Partial Class FrmSearch2
         Me.TabQuery.PerformLayout()
         Me.TabChanges.ResumeLayout(False)
         Me.TabChanges.PerformLayout()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl2.ResumeLayout(False)
         Me.Timesheet.ResumeLayout(False)
         Me.GrpTimeSheet.ResumeLayout(False)
@@ -2809,6 +2836,9 @@ Partial Class FrmSearch2
         Me.TabMeeting2.ResumeLayout(False)
         Me.TabMeeting2.PerformLayout()
         CType(Me.AcroPDF, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.C1TrueDBGrid2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3049,6 +3079,8 @@ Partial Class FrmSearch2
     Friend WithEvents SubBatchTextBox As TextBox
     Friend WithEvents BatchTextBox As TextBox
     Friend WithEvents IdTextBox As TextBox
+    Friend WithEvents BtnRemoval As Button
+    Friend WithEvents WebBrowser1 As WebBrowser
 End Class
 
 

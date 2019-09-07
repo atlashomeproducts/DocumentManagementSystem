@@ -134,49 +134,49 @@ Public Class FrmMain
 
 
 
+
         If User = "" Then
-
-        Else
-
-
-            Try
+            Else
 
 
-                Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-                Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
-                '   Dim dRemoteDate As Date
-                ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+                Try
 
 
-                con.Open()
-                cmdlogs.Connection = con
-                cmdlogs.Parameters.AddWithValue("@Username", User)
-                cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Logged Out")
-                cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
-                cmdlogs.ExecuteNonQuery()
-                con.Close()
+                    Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+                    Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+                    '   Dim dRemoteDate As Date
+                    ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
 
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
+                    con.Open()
+                    cmdlogs.Connection = con
+                    cmdlogs.Parameters.AddWithValue("@Username", User)
+                    cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Logged Out")
+                    cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+                    cmdlogs.ExecuteNonQuery()
+                    con.Close()
+
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
 
 
 
-            My.Settings.Save_RackNoTS = ""
-            My.Settings.Save_BoxNoTS = ""
-            My.Settings.Save_RackNoRI = ""
-            My.Settings.Save_BoxNoRI = ""
-            My.Settings.Save_BookletNoRI = ""
-            My.Settings.Save_RackNoWarranty = ""
-            My.Settings.Save_BoxNoWarranty = ""
-            My.Settings.Save_RackNoVoucher = ""
-            My.Settings.Save_BoxNoVoucher = ""
-            My.Settings.Save_RackNoCorpDocu = ""
-            My.Settings.Save_BoxNoCorpDocu = ""
+                My.Settings.Save_RackNoTS = ""
+                My.Settings.Save_BoxNoTS = ""
+                My.Settings.Save_RackNoRI = ""
+                My.Settings.Save_BoxNoRI = ""
+                My.Settings.Save_BookletNoRI = ""
+                My.Settings.Save_RackNoWarranty = ""
+                My.Settings.Save_BoxNoWarranty = ""
+                My.Settings.Save_RackNoVoucher = ""
+                My.Settings.Save_BoxNoVoucher = ""
+                My.Settings.Save_RackNoCorpDocu = ""
+                My.Settings.Save_BoxNoCorpDocu = ""
 
 
-            My.Settings.Save()
+                My.Settings.Save()
 
             '  FrmSearch2.C1TrueDBGrid2.SaveLayout("default1.layout")
             End
@@ -629,6 +629,80 @@ Public Class FrmMain
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+
+
+
+
+
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+
+
+        Dim MessageLogoff = MessageBox.Show("Are you sure you want to log off?", "Log off", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+
+        If MessageLogoff = vbYes Then
+
+
+            Try
+
+
+            Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+            '   Dim dRemoteDate As Date
+            ' dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
+
+
+            con.Open()
+            cmdlogs.Connection = con
+            cmdlogs.Parameters.AddWithValue("@Username", User)
+            cmdlogs.Parameters.AddWithValue("@Action", User & " " & "Logged Out")
+            cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
+            cmdlogs.ExecuteNonQuery()
+            con.Close()
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+
+        My.Settings.Save_RackNoTS = ""
+        My.Settings.Save_BoxNoTS = ""
+        My.Settings.Save_RackNoRI = ""
+        My.Settings.Save_BoxNoRI = ""
+        My.Settings.Save_BookletNoRI = ""
+        My.Settings.Save_RackNoWarranty = ""
+        My.Settings.Save_BoxNoWarranty = ""
+        My.Settings.Save_RackNoVoucher = ""
+        My.Settings.Save_BoxNoVoucher = ""
+        My.Settings.Save_RackNoCorpDocu = ""
+        My.Settings.Save_BoxNoCorpDocu = ""
+
+
+        My.Settings.Save()
+
+
+
+        frmDocument.Close()
+        FrmEditor.Close()
+        FrmIndex.Close()
+        FrmReason.Close()
+        FrmReason3.Close()
+        FrmRemoval.Close()
+        FrmSearch2.Close()
+        FrmUsers.Close()
+
+
+        TabControl1.SelectTab(TabLogin)
+            'Close all windows and transfer to login tab
+
+
+
+        End If
+
 
 
 

@@ -37,6 +37,7 @@ Partial Class FrmMain
         Me.TxtUsername = New System.Windows.Forms.TextBox()
         Me.TabMain = New System.Windows.Forms.TabPage()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnDock = New System.Windows.Forms.Button()
         Me.LblUser = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -252,6 +253,7 @@ Partial Class FrmMain
         Me.SplitContainer1.Panel1.AutoScroll = True
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.SplitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btnDock)
         Me.SplitContainer1.Panel1.Controls.Add(Me.LblUser)
         Me.SplitContainer1.Panel1.Controls.Add(Me.PictureBox1)
@@ -266,6 +268,19 @@ Partial Class FrmMain
         Me.SplitContainer1.SplitterDistance = 887
         Me.SplitContainer1.TabIndex = 6
         Me.SplitContainer1.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(807, 611)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(74, 27)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Log Off"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'btnDock
         '
@@ -692,4 +707,5 @@ Partial Class FrmMain
     Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
     Friend WithEvents RemovalToolStripMenuItem6 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem7 As ToolStripMenuItem
+    Friend WithEvents Button1 As Button
 End Class

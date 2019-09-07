@@ -232,3 +232,4 @@ C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\bin\De
 C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.TrustInfo.xml
 C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.FrmReason.resources
 C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.FrmRemoval.resources
+C:\Users\MIS1\source\repos\atlashomeproducts\DocumentManagementSystem\DMS\obj\Debug\DMS.FrmReason3.resources

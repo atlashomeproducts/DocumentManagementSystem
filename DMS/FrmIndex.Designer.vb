@@ -34,6 +34,10 @@ Partial Class FrmIndex
         Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
         Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TxtPages = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.ChkConfidential = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -55,6 +59,7 @@ Partial Class FrmIndex
         Me.BtnIndex = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -192,10 +197,15 @@ Partial Class FrmIndex
         'SplitContainer3.Panel1
         '
         Me.SplitContainer3.Panel1.Controls.Add(Me.AxAcroPDF1)
+        Me.SplitContainer3.Panel1.Controls.Add(Me.WebBrowser1)
         '
         'SplitContainer3.Panel2
         '
         Me.SplitContainer3.Panel2.BackColor = System.Drawing.Color.Azure
+        Me.SplitContainer3.Panel2.Controls.Add(Me.Label10)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.TxtPages)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.DateTimePicker2)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.ChkConfidential)
         Me.SplitContainer3.Panel2.Controls.Add(Me.Label5)
         Me.SplitContainer3.Panel2.Controls.Add(Me.Label9)
         Me.SplitContainer3.Panel2.Controls.Add(Me.Label8)
@@ -231,6 +241,46 @@ Partial Class FrmIndex
         Me.AxAcroPDF1.Size = New System.Drawing.Size(455, 332)
         Me.AxAcroPDF1.TabIndex = 8
         Me.AxAcroPDF1.TabStop = False
+        Me.AxAcroPDF1.Visible = False
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(278, 59)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(89, 16)
+        Me.Label10.TabIndex = 42
+        Me.Label10.Text = "No. of Pages:"
+        '
+        'TxtPages
+        '
+        Me.TxtPages.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtPages.Location = New System.Drawing.Point(370, 56)
+        Me.TxtPages.Name = "TxtPages"
+        Me.TxtPages.Size = New System.Drawing.Size(70, 22)
+        Me.TxtPages.TabIndex = 41
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker2.Location = New System.Drawing.Point(7, 123)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(54, 22)
+        Me.DateTimePicker2.TabIndex = 40
+        '
+        'ChkConfidential
+        '
+        Me.ChkConfidential.AutoSize = True
+        Me.ChkConfidential.Location = New System.Drawing.Point(332, 167)
+        Me.ChkConfidential.Name = "ChkConfidential"
+        Me.ChkConfidential.Size = New System.Drawing.Size(97, 20)
+        Me.ChkConfidential.TabIndex = 39
+        Me.ChkConfidential.Text = "Confidential"
+        Me.ChkConfidential.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -264,9 +314,9 @@ Partial Class FrmIndex
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(4, 61)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(45, 16)
+        Me.Label8.Size = New System.Drawing.Size(109, 16)
         Me.Label8.TabIndex = 36
-        Me.Label8.Text = "Date:*"
+        Me.Label8.Text = "Document Date:*"
         '
         'txtPurpose
         '
@@ -285,7 +335,7 @@ Partial Class FrmIndex
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(126, 56)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(185, 22)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(128, 22)
         Me.DateTimePicker1.TabIndex = 6
         '
         'Label4
@@ -450,6 +500,15 @@ Partial Class FrmIndex
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(455, 332)
+        Me.WebBrowser1.TabIndex = 9
+        '
         'FrmIndex
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -511,4 +570,9 @@ Partial Class FrmIndex
     Friend WithEvents Label5 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents ChkConfidential As CheckBox
+    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents TxtPages As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents WebBrowser1 As WebBrowser
 End Class

@@ -124,10 +124,32 @@ Public Class FrmSearch2
         Me.BtnDownload.Enabled = False
 
 
-        If FrmMain.type = "User 2" Then
-            Me.BtnDownload.Visible = False
-        Else
+        If FrmMain.type = "System Admin" Or FrmMain.type = "Admin" Then
             Me.BtnDownload.Visible = True
+            Me.BtnEditRecord.Visible = True
+            Me.BtnSaveChanges1.Visible = True
+            Me.BtnRemoval.Visible = True
+
+        ElseIf FrmMain.type = "Editor" Then
+            Me.BtnDownload.Visible = True
+            Me.BtnEditRecord.Visible = False
+            Me.BtnSaveChanges1.Visible = False
+            Me.BtnRemoval.Visible = False
+
+
+        ElseIf FrmMain.type = "User 1" Then
+            Me.BtnDownload.Visible = True
+            Me.BtnEditRecord.Visible = False
+            Me.BtnSaveChanges1.Visible = False
+            Me.BtnRemoval.Visible = False
+
+
+
+        Else
+            Me.BtnDownload.Visible = False
+            Me.BtnEditRecord.Visible = False
+            Me.BtnSaveChanges1.Visible = False
+            Me.BtnRemoval.Visible = False
         End If
 
 
@@ -345,6 +367,7 @@ AND ISNULL([ScannedDate], '') BETWEEN @ScanDateFrom AND @ScanDateTo
 AND ISNULL([FileName], '') LIKE '%' + @FileName + '%'
 AND ISNULL(Confidential, 'Unchecked') LIKE CASE WHEN '" + FrmMain.type + "' = 'System Admin' OR  '" + FrmMain.type + "' = 'Admin' THEN '%%' ELSE 'Unchecked' END
 AND Status = 'Finished'
+AND ISNULL(Removal, 'False') <> 'True'
 "
 
 
@@ -573,9 +596,14 @@ AND Status = 'Finished'
         Try
             ComboSelect()
 
-            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Finished")
+            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Finished", IIf(FrmMain.type = "System Admin" Or FrmMain.type = "Admin", "", "Unchecked"))
             Me.DocsCatalogueBindingSource.Filter = "[Id] = '" & Me.C1TrueDBGrid2.Columns("Document No").Text & "' "
-            AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+
+
+            Dim pdffile As String = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+            WebBrowser1.Navigate(pdffile)
+
+            ' AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
 
             TabControl1.SelectTab(TabChanges)
             Me.C1TrueDBGrid2.Enabled = False
@@ -887,7 +915,11 @@ AND Status = 'Finished'
     Private Sub C1TrueDBGrid1_DoubleClick(sender As Object, e As EventArgs)
         Try
 
-            AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+            ' AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+
+
+            Dim pdffile As String = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+            WebBrowser1.Navigate(pdffile)
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -1265,7 +1297,10 @@ AND Status = 'Finished'
 
     Private Sub C1TrueDBGrid2_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid2.Click
         Try
-            AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+            ' AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+
+            Dim pdffile As String = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+            WebBrowser1.Navigate(pdffile)
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -1274,5 +1309,9 @@ AND Status = 'Finished'
 
     Private Sub IdTextBox_TextChanged(sender As Object, e As EventArgs) Handles IdTextBox.TextChanged
 
+    End Sub
+
+    Private Sub BtnRemoval_Click(sender As Object, e As EventArgs) Handles BtnRemoval.Click
+        FrmReason3.ShowDialog()
     End Sub
 End Class

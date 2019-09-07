@@ -94,8 +94,8 @@ Public Class FrmIndex
 
                 Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
                 Dim cmd As New SqlCommand
-                Dim strsql As String = "INSERT INTO DocsCatalogue([DocumentType], [Batch], [SubBatch],[ScannedDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo], [UserID])
-                                                   VALUES (@DocumentType, @BatchID, @SubBatch, @ScanDate, @FileName, @Status, @Company, @Purpose, @RackNo, @BoxNo, @UserID)"
+                Dim strsql As String = "INSERT INTO DocsCatalogue([DocumentType], [Batch], [SubBatch],[ScannedDate], [DocumentDate],[Filename],[Status], [Company], [Purpose], [RackNo], [BoxNo], [UserID], [Confidential], [Pages])
+                                                   VALUES (@DocumentType, @BatchID, @SubBatch, @ScanDate, @DocumentDate, @FileName, @Status, @Company, @Purpose, @RackNo, @BoxNo, @UserID, @Confidential, @Pages)"
                 Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
                 ' Dim dRemoteDate As Date
                 '   dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
@@ -109,6 +109,7 @@ Public Class FrmIndex
                     .Parameters.AddWithValue("@BatchID", "")
                     .Parameters.AddWithValue("@SubBatch", "")
                     .Parameters.AddWithValue("@ScanDate", "")
+                    .Parameters.AddWithValue("@DocumentDate", "")
                     .Parameters.AddWithValue("@FileName", "")
                     .Parameters.AddWithValue("@Status", "")
                     .Parameters.AddWithValue("@Company", "")
@@ -116,6 +117,8 @@ Public Class FrmIndex
                     .Parameters.AddWithValue("@RackNo", "")
                     .Parameters.AddWithValue("@BoxNo", "")
                     .Parameters.AddWithValue("@UserID", "")
+                    .Parameters.AddWithValue("@Confidential", "")
+                    .Parameters.AddWithValue("@Pages", "")
 
                     .Connection = con
                 End With
@@ -161,6 +164,7 @@ Public Class FrmIndex
                             cmd.Parameters("@BatchID").Value = batchIdTextBox.Text
                             cmd.Parameters("@SubBatch").Value = SubBatchTextbox.Text
                             cmd.Parameters("@ScanDate").Value = scanDateTimePicker.Text
+                            cmd.Parameters("@DocumentDate").Value = DateTimePicker2.Text
                             cmd.Parameters("@FileName").Value = My.Computer.FileSystem.GetFileInfo(Item).Name
                             cmd.Parameters("@Status").Value = "Indexed"
                             cmd.Parameters("@Company").Value = txtCompany.Text
@@ -168,7 +172,8 @@ Public Class FrmIndex
                             cmd.Parameters("@RackNo").Value = RackNoTextbox.Text
                             cmd.Parameters("@BoxNo").Value = BoxNoTextbox.Text
                             cmd.Parameters("@UserID").Value = FrmMain.User
-
+                            cmd.Parameters("@Confidential").Value = IIf(ChkConfidential.Checked = True, "Checked", "Unchecked")
+                            cmd.Parameters("@Pages").Value = TxtPages.Text
                             cmd.ExecuteNonQuery()
 
                             ' File.Copy(Item, Path.Combine(My.Settings.ImgPath, My.Computer.FileSystem.GetFileInfo(Item).Name), True)
@@ -241,7 +246,11 @@ Public Class FrmIndex
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         Dim path = Me.ListBox1.SelectedItem
 
-        AxAcroPDF1.src = path
+        ' AxAcroPDF1.src = path
+
+
+        WebBrowser1.Navigate(path)
+
     End Sub
 
     Private Sub Index_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -281,6 +290,8 @@ Public Class FrmIndex
 
 
         batchIdTextBox.ReadOnly = True
+
+        Me.DateTimePicker2.Value = DateTimePicker1.Value
 
 
     End Sub
@@ -339,6 +350,7 @@ Public Class FrmIndex
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         batchIdTextBox.Text = DocumentTypeComboBox.Text & "-" & txtCompany.Text & "-" & Me.DateTimePicker1.Value.ToString("yyyyMMMdd") & "-" & txtPurpose.Text
+        Me.DateTimePicker2.Value = DateTimePicker1.Value
     End Sub
 
     Private Sub txtCompany_GotFocus(sender As Object, e As EventArgs) Handles txtCompany.GotFocus

@@ -44,7 +44,9 @@ Public Class FrmEditor
 
         'Populate Data
         PopulateComboItems()
-        Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
+        Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed", IIf(FrmMain.type = "System Admin" Or FrmMain.type = "Admin", "", "Unchecked"))
+
+
 
 
         'Format
@@ -177,7 +179,7 @@ Public Class FrmEditor
 
 
 
-                Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
+                Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed", IIf(FrmMain.type = "System Admin" Or FrmMain.type = "Admin", "", "Unchecked"))
                 Me.DocsCatalogueC1TrueDBGrid.Enabled = True
 
 
@@ -429,7 +431,7 @@ Public Class FrmEditor
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
 
-            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed")
+            Me.DocsCatalogueTableAdapter.Fill(Me.DMSDataSet.DocsCatalogue, "Indexed", IIf(FrmMain.type = "System Admin" Or FrmMain.type = "Admin", "", "Unchecked"))
 
 
 
@@ -673,7 +675,11 @@ Public Class FrmEditor
     Private Sub IdTextBox_TextChanged(sender As Object, e As EventArgs) Handles IdTextBox.TextChanged
         Try
 
-            AcroReader1.src = (My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
+            Dim pdffile As String = (My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
+            WebBrowser1.Navigate(pdffile)
+
+
+            ' AcroReader1.src = (My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
 
 
             If IsDBNull(DocsCatalogueBindingSource.Current!DocumentType) Then

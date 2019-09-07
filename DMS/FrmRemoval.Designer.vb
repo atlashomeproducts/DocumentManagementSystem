@@ -27,19 +27,21 @@ Partial Class FrmRemoval
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.VwRemovalC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.VwRemovalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
         Me.SpForRemovalC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
+        Me.SpForRemovalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BtnRestore = New System.Windows.Forms.Button()
         Me.IdTextBox = New System.Windows.Forms.TextBox()
         Me.BtnDeselectAll = New System.Windows.Forms.Button()
         Me.BtnSelectAll = New System.Windows.Forms.Button()
         Me.BtnDelete = New System.Windows.Forms.Button()
         Me.AcroReader1 = New AxAcroPDFLib.AxAcroPDF()
-        Me.VwRemovalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DMSDataSet = New DMS.DMSDataSet()
-        Me.SpForRemovalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.VwRemovalTableAdapter = New DMS.DMSDataSetTableAdapters.vwRemovalTableAdapter()
         Me.SpForRemovalTableAdapter = New DMS.DMSDataSetTableAdapters.spForRemovalTableAdapter()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -49,15 +51,15 @@ Partial Class FrmRemoval
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
         CType(Me.VwRemovalC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VwRemovalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer3.Panel1.SuspendLayout()
         Me.SplitContainer3.Panel2.SuspendLayout()
         Me.SplitContainer3.SuspendLayout()
         CType(Me.SpForRemovalC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VwRemovalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SpForRemovalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainer1
@@ -73,6 +75,7 @@ Partial Class FrmRemoval
         '
         'SplitContainer1.Panel2
         '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.WebBrowser1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.AcroReader1)
         Me.SplitContainer1.Size = New System.Drawing.Size(1039, 577)
         Me.SplitContainer1.SplitterDistance = 547
@@ -117,6 +120,16 @@ Partial Class FrmRemoval
         Me.VwRemovalC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.VwRemovalC1TrueDBGrid.PropBag = resources.GetString("VwRemovalC1TrueDBGrid.PropBag")
         '
+        'VwRemovalBindingSource
+        '
+        Me.VwRemovalBindingSource.DataMember = "vwRemoval"
+        Me.VwRemovalBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'SplitContainer3
         '
         Me.SplitContainer3.Dock = System.Windows.Forms.DockStyle.Fill
@@ -132,6 +145,7 @@ Partial Class FrmRemoval
         'SplitContainer3.Panel2
         '
         Me.SplitContainer3.Panel2.AutoScroll = True
+        Me.SplitContainer3.Panel2.Controls.Add(Me.BtnRestore)
         Me.SplitContainer3.Panel2.Controls.Add(Me.IdTextBox)
         Me.SplitContainer3.Panel2.Controls.Add(Me.BtnDeselectAll)
         Me.SplitContainer3.Panel2.Controls.Add(Me.BtnSelectAll)
@@ -160,12 +174,29 @@ Partial Class FrmRemoval
         Me.SpForRemovalC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.SpForRemovalC1TrueDBGrid.PropBag = resources.GetString("SpForRemovalC1TrueDBGrid.PropBag")
         '
+        'SpForRemovalBindingSource
+        '
+        Me.SpForRemovalBindingSource.DataMember = "spForRemoval"
+        Me.SpForRemovalBindingSource.DataSource = Me.DMSDataSet
+        '
+        'BtnRestore
+        '
+        Me.BtnRestore.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnRestore.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRestore.Location = New System.Drawing.Point(108, 8)
+        Me.BtnRestore.Name = "BtnRestore"
+        Me.BtnRestore.Size = New System.Drawing.Size(95, 32)
+        Me.BtnRestore.TabIndex = 5
+        Me.BtnRestore.Text = "Restore Selected"
+        Me.BtnRestore.UseVisualStyleBackColor = False
+        '
         'IdTextBox
         '
         Me.IdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VwRemovalBindingSource, "Id", True))
-        Me.IdTextBox.Location = New System.Drawing.Point(169, 16)
+        Me.IdTextBox.Location = New System.Drawing.Point(310, 15)
         Me.IdTextBox.Name = "IdTextBox"
-        Me.IdTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.IdTextBox.Size = New System.Drawing.Size(32, 20)
         Me.IdTextBox.TabIndex = 4
         '
         'BtnDeselectAll
@@ -185,7 +216,7 @@ Partial Class FrmRemoval
         Me.BtnSelectAll.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnSelectAll.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnSelectAll.Location = New System.Drawing.Point(348, 8)
+        Me.BtnSelectAll.Location = New System.Drawing.Point(350, 8)
         Me.BtnSelectAll.Name = "BtnSelectAll"
         Me.BtnSelectAll.Size = New System.Drawing.Size(95, 32)
         Me.BtnSelectAll.TabIndex = 1
@@ -213,21 +244,6 @@ Partial Class FrmRemoval
         Me.AcroReader1.Size = New System.Drawing.Size(488, 577)
         Me.AcroReader1.TabIndex = 1
         '
-        'VwRemovalBindingSource
-        '
-        Me.VwRemovalBindingSource.DataMember = "vwRemoval"
-        Me.VwRemovalBindingSource.DataSource = Me.DMSDataSet
-        '
-        'DMSDataSet
-        '
-        Me.DMSDataSet.DataSetName = "DMSDataSet"
-        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'SpForRemovalBindingSource
-        '
-        Me.SpForRemovalBindingSource.DataMember = "spForRemoval"
-        Me.SpForRemovalBindingSource.DataSource = Me.DMSDataSet
-        '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
@@ -247,6 +263,15 @@ Partial Class FrmRemoval
         'SpForRemovalTableAdapter
         '
         Me.SpForRemovalTableAdapter.ClearBeforeFill = True
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(488, 577)
+        Me.WebBrowser1.TabIndex = 2
         '
         'FrmRemoval
         '
@@ -268,16 +293,16 @@ Partial Class FrmRemoval
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
         CType(Me.VwRemovalC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VwRemovalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer3.Panel1.ResumeLayout(False)
         Me.SplitContainer3.Panel2.ResumeLayout(False)
         Me.SplitContainer3.Panel2.PerformLayout()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer3.ResumeLayout(False)
         CType(Me.SpForRemovalC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VwRemovalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SpForRemovalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -298,4 +323,6 @@ Partial Class FrmRemoval
     Friend WithEvents VwRemovalTableAdapter As DMSDataSetTableAdapters.vwRemovalTableAdapter
     Friend WithEvents SpForRemovalBindingSource As BindingSource
     Friend WithEvents SpForRemovalTableAdapter As DMSDataSetTableAdapters.spForRemovalTableAdapter
+    Friend WithEvents BtnRestore As Button
+    Friend WithEvents WebBrowser1 As WebBrowser
 End Class

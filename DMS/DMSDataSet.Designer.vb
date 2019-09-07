@@ -1046,6 +1046,8 @@ Partial Public Class DMSDataSet
         
         Private columnPages As Global.System.Data.DataColumn
         
+        Private columnRemoval As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -1594,6 +1596,14 @@ Partial Public Class DMSDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property RemovalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRemoval
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1693,9 +1703,10 @@ Partial Public Class DMSDataSet
                     ByVal UserID As String,  _
                     ByVal DocSize As String,  _
                     ByVal Confidential As String,  _
-                    ByVal Pages As Long) As DocsCatalogueRow
+                    ByVal Pages As Long,  _
+                    ByVal Removal As String) As DocsCatalogueRow
             Dim rowDocsCatalogueRow As DocsCatalogueRow = CType(Me.NewRow,DocsCatalogueRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, PaymentOthers, BankName, BankBranch, BankAddress, RackNo, BoxNo, TinVendor, TinCustomer, VATreg, NONVATreg, DateReceived, AddressC, BatchDesc, SubBatch, PromoTitle, PromoFrom, PromoTo, DTIPermitNo, UserID, DocSize, Confidential, Pages}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, PaymentOthers, BankName, BankBranch, BankAddress, RackNo, BoxNo, TinVendor, TinCustomer, VATreg, NONVATreg, DateReceived, AddressC, BatchDesc, SubBatch, PromoTitle, PromoFrom, PromoTo, DTIPermitNo, UserID, DocSize, Confidential, Pages, Removal}
             rowDocsCatalogueRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDocsCatalogueRow)
             Return rowDocsCatalogueRow
@@ -1788,6 +1799,7 @@ Partial Public Class DMSDataSet
             Me.columnDocSize = MyBase.Columns("DocSize")
             Me.columnConfidential = MyBase.Columns("Confidential")
             Me.columnPages = MyBase.Columns("Pages")
+            Me.columnRemoval = MyBase.Columns("Removal")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1921,6 +1933,8 @@ Partial Public Class DMSDataSet
             MyBase.Columns.Add(Me.columnConfidential)
             Me.columnPages = New Global.System.Data.DataColumn("Pages", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPages)
+            Me.columnRemoval = New Global.System.Data.DataColumn("Removal", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRemoval)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -1988,6 +2002,7 @@ Partial Public Class DMSDataSet
             Me.columnUserID.MaxLength = 50
             Me.columnDocSize.MaxLength = 50
             Me.columnConfidential.MaxLength = 50
+            Me.columnRemoval.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5662,6 +5677,21 @@ Partial Public Class DMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Removal() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.RemovalColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Removal' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.RemovalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsBatchNull() As Boolean
             Return Me.IsNull(Me.tableDocsCatalogue.BatchColumn)
         End Function
@@ -6414,6 +6444,18 @@ Partial Public Class DMSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetPagesNull()
             Me(Me.tableDocsCatalogue.PagesColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsRemovalNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.RemovalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetRemovalNull()
+            Me(Me.tableDocsCatalogue.RemovalColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8339,6 +8381,7 @@ Namespace DMSDataSetTableAdapters
             tableMapping.ColumnMappings.Add("DocSize", "DocSize")
             tableMapping.ColumnMappings.Add("Confidential", "Confidential")
             tableMapping.ColumnMappings.Add("Pages", "Pages")
+            tableMapping.ColumnMappings.Add("Removal", "Removal")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -8357,26 +8400,26 @@ Namespace DMSDataSetTableAdapters
                 "dby], [BankAddress], [BankBranch], [BankName], [PaymentOthers], [BoxNo], [NONVAT"& _ 
                 "reg], [RackNo], [TinCustomer], [TinVendor], [VATreg], [AddressC], [DateReceived]"& _ 
                 ", [BatchDesc], [SubBatch], [DTIPermitNo], [PromoFrom], [PromoTitle], [PromoTo], "& _ 
-                "[UserID], [Confidential], [DocSize], [Pages]) VALUES (@Batch, @ScannedDate, @Fil"& _ 
-                "ename, @Status, @DocumentType, @DocumentDate, @ReferenceNo, @Remarks, @BookletNo"& _ 
-                ", @Vendor, @Customer, @ItemPurchased, @TotalValue, @LastName, @FirstName, @Middl"& _ 
-                "eName, @FromPeriod, @ToPeriod, @WarrantyNo, @ProductBrand, @ProductType, @DatePu"& _ 
-                "rchased, @Serial, @WarrantyPeriod, @ServiceCenter, @Address, @ContactNo, @Email,"& _ 
-                " @VoucherNo, @PaymentForm, @CheckNo, @Payee, @Payor, @Preparedby, @Approvedby, @"& _ 
-                "Recordedby, @Company, @Purpose, @Secretary, @MeetingDate, @Receivedby, @BankAddr"& _ 
-                "ess, @BankBranch, @BankName, @PaymentOthers, @BoxNo, @NONVATreg, @RackNo, @TinCu"& _ 
-                "stomer, @TinVendor, @VATreg, @AddressC, @DateReceived, @BatchDesc, @SubBatch, @D"& _ 
-                "TIPermitNo, @PromoFrom, @PromoTitle, @PromoTo, @UserID, @Confidential, @DocSize,"& _ 
-                " @Pages);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Filename, Status, DocumentType, Docume"& _ 
-                "ntDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalV"& _ 
-                "alue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, Product"& _ 
-                "Brand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Addres"& _ 
-                "s, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, "& _ 
-                "Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, Ba"& _ 
-                "nkAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCus"& _ 
-                "tomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermit"& _ 
-                "No, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages FROM Do"& _ 
-                "csCatalogue WHERE (Id = SCOPE_IDENTITY())"
+                "[UserID], [Confidential], [DocSize], [Pages], [Removal]) VALUES (@Batch, @Scanne"& _ 
+                "dDate, @Filename, @Status, @DocumentType, @DocumentDate, @ReferenceNo, @Remarks,"& _ 
+                " @BookletNo, @Vendor, @Customer, @ItemPurchased, @TotalValue, @LastName, @FirstN"& _ 
+                "ame, @MiddleName, @FromPeriod, @ToPeriod, @WarrantyNo, @ProductBrand, @ProductTy"& _ 
+                "pe, @DatePurchased, @Serial, @WarrantyPeriod, @ServiceCenter, @Address, @Contact"& _ 
+                "No, @Email, @VoucherNo, @PaymentForm, @CheckNo, @Payee, @Payor, @Preparedby, @Ap"& _ 
+                "provedby, @Recordedby, @Company, @Purpose, @Secretary, @MeetingDate, @Receivedby"& _ 
+                ", @BankAddress, @BankBranch, @BankName, @PaymentOthers, @BoxNo, @NONVATreg, @Rac"& _ 
+                "kNo, @TinCustomer, @TinVendor, @VATreg, @AddressC, @DateReceived, @BatchDesc, @S"& _ 
+                "ubBatch, @DTIPermitNo, @PromoFrom, @PromoTitle, @PromoTo, @UserID, @Confidential"& _ 
+                ", @DocSize, @Pages, @Removal);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Filename, Status,"& _ 
+                " DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, "& _ 
+                "ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod"& _ 
+                ", WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, "& _ 
+                "ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee"& _ 
+                ", Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, Meetin"& _ 
+                "gDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONV"& _ 
+                "ATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc"& _ 
+                ", SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, D"& _ 
+                "ocSize, Pages, Removal FROM DocsCatalogue WHERE (Id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Batch", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Batch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8441,6 +8484,7 @@ Namespace DMSDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Confidential", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Removal", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Removal", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [DocsCatalogue] SET [Batch] = @Batch, [ScannedDate] = @ScannedDate, [Filen"& _ 
@@ -8463,17 +8507,17 @@ Namespace DMSDataSetTableAdapters
                 "ddressC] = @AddressC, [DateReceived] = @DateReceived, [BatchDesc] = @BatchDesc, "& _ 
                 "[SubBatch] = @SubBatch, [DTIPermitNo] = @DTIPermitNo, [PromoFrom] = @PromoFrom, "& _ 
                 "[PromoTitle] = @PromoTitle, [PromoTo] = @PromoTo, [UserID] = @UserID, [Confident"& _ 
-                "ial] = @Confidential, [DocSize] = @DocSize, [Pages] = @Pages WHERE (([Id] = @Ori"& _ 
-                "ginal_Id));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Filename, Status, DocumentType, Docu"& _ 
-                "mentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, Tota"& _ 
-                "lValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, Produ"& _ 
-                "ctBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Addr"& _ 
-                "ess, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby"& _ 
-                ", Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, "& _ 
-                "BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinC"& _ 
-                "ustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPerm"& _ 
-                "itNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages FROM "& _ 
-                "DocsCatalogue WHERE (Id = @Id)"
+                "ial] = @Confidential, [DocSize] = @DocSize, [Pages] = @Pages, [Removal] = @Remov"& _ 
+                "al WHERE (([Id] = @Original_Id));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Filename, Stat"& _ 
+                "us, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Custome"& _ 
+                "r, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPer"& _ 
+                "iod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPerio"& _ 
+                "d, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Pa"& _ 
+                "yee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, Mee"& _ 
+                "tingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, N"& _ 
+                "ONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchD"& _ 
+                "esc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential"& _ 
+                ", DocSize, Pages, Removal FROM DocsCatalogue WHERE (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Batch", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Batch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8538,6 +8582,7 @@ Namespace DMSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Confidential", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Removal", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Removal", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -8565,22 +8610,29 @@ Namespace DMSDataSetTableAdapters
                 "dress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustome"& _ 
                 "r, TinVendor, VATreg, AddressC, DateReceived, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         BatchDe"& _ 
                 "sc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential,"& _ 
-                " DocSize, Pages"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            DocsCatalogue"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Status = @Status) "& _ 
-                "AND (ISNULL(Removal, 'False') <> 'True')"
+                " DocSize, Pages, Removal"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            DocsCatalogue"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Status = "& _ 
+                "@Status) AND (ISNULL(Removal, 'False') <> 'True') AND (ISNULL(Confidential, 'Unc"& _ 
+                "hecked') LIKE '%' + @ConfiStatus + '%')"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ConfiStatus", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DMSDataSet.DocsCatalogueDataTable, ByVal Status As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DMSDataSet.DocsCatalogueDataTable, ByVal Status As String, ByVal ConfiStatus As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Status Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(Status,String)
+            End If
+            If (ConfiStatus Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("ConfiStatus")
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ConfiStatus,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -8593,12 +8645,17 @@ Namespace DMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal Status As String) As DMSDataSet.DocsCatalogueDataTable
+        Public Overloads Overridable Function GetData(ByVal Status As String, ByVal ConfiStatus As String) As DMSDataSet.DocsCatalogueDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Status Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(Status,String)
+            End If
+            If (ConfiStatus Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("ConfiStatus")
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(ConfiStatus,String)
             End If
             Dim dataTable As DMSDataSet.DocsCatalogueDataTable = New DMSDataSet.DocsCatalogueDataTable()
             Me.Adapter.Fill(dataTable)
@@ -8721,7 +8778,8 @@ Namespace DMSDataSetTableAdapters
                     ByVal UserID As String,  _
                     ByVal Confidential As String,  _
                     ByVal DocSize As String,  _
-                    ByVal Pages As Global.System.Nullable(Of Long)) As Integer
+                    ByVal Pages As Global.System.Nullable(Of Long),  _
+                    ByVal Removal As String) As Integer
             If (Batch Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -9037,6 +9095,11 @@ Namespace DMSDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(62).Value = Global.System.DBNull.Value
             End If
+            If (Removal Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(63).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(63).Value = CType(Removal,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9120,6 +9183,7 @@ Namespace DMSDataSetTableAdapters
                     ByVal Confidential As String,  _
                     ByVal DocSize As String,  _
                     ByVal Pages As Global.System.Nullable(Of Long),  _
+                    ByVal Removal As String,  _
                     ByVal Original_Id As Long,  _
                     ByVal Id As Long) As Integer
             If (Batch Is Nothing) Then
@@ -9437,8 +9501,13 @@ Namespace DMSDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(62).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_Id,Long)
-            Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Id,Long)
+            If (Removal Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(63).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Removal,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Original_Id,Long)
+            Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Id,Long)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9522,8 +9591,9 @@ Namespace DMSDataSetTableAdapters
                     ByVal Confidential As String,  _
                     ByVal DocSize As String,  _
                     ByVal Pages As Global.System.Nullable(Of Long),  _
+                    ByVal Removal As String,  _
                     ByVal Original_Id As Long) As Integer
-            Return Me.Update(Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages, Original_Id, Original_Id)
+            Return Me.Update(Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages, Removal, Original_Id, Original_Id)
         End Function
     End Class
     
