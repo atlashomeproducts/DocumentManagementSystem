@@ -42,17 +42,22 @@ Partial Class FrmSearch2
         Me.PromoFromLabel = New System.Windows.Forms.Label()
         Me.PromoTitleLabel = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.C1TrueDBGrid2 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
+        Me.BtnRemoval = New System.Windows.Forms.Button()
         Me.BtnDownload = New System.Windows.Forms.Button()
         Me.BtnSaveChanges1 = New System.Windows.Forms.Button()
-        Me.BtnSearch = New System.Windows.Forms.Button()
         Me.BtnEditRecord = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabQuery = New System.Windows.Forms.TabPage()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txtWild = New System.Windows.Forms.TextBox()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.BtnSearch = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.CHKFileName = New System.Windows.Forms.CheckBox()
         Me.sdasd = New System.Windows.Forms.Label()
         Me.TxtFileName = New System.Windows.Forms.TextBox()
-        Me.Label36 = New System.Windows.Forms.Label()
         Me.CHKBatch = New System.Windows.Forms.CheckBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TxtBatch = New System.Windows.Forms.TextBox()
@@ -71,7 +76,6 @@ Partial Class FrmSearch2
         Me.CHKBox = New System.Windows.Forms.CheckBox()
         Me.CHKRack = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -81,8 +85,12 @@ Partial Class FrmSearch2
         Me.DTDocDateFrom = New System.Windows.Forms.DateTimePicker()
         Me.DocumentTypeComboBox = New System.Windows.Forms.ComboBox()
         Me.DocumentTypeLabel = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TabChanges = New System.Windows.Forms.TabPage()
         Me.txtPages = New System.Windows.Forms.TextBox()
+        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.cbDocSize = New System.Windows.Forms.ComboBox()
         Me.chkConfidential = New System.Windows.Forms.CheckBox()
         Me.SubBatchTextBox = New System.Windows.Forms.TextBox()
@@ -254,17 +262,12 @@ Partial Class FrmSearch2
         Me.PurposeTextBox = New System.Windows.Forms.TextBox()
         Me.DocumentDateLabel2 = New System.Windows.Forms.Label()
         Me.DocumentDateCorp = New System.Windows.Forms.TextBox()
-        Me.AcroPDF = New AxAcroPDFLib.AxAcroPDF()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.BtnRemoval = New System.Windows.Forms.Button()
-        Me.C1TrueDBGrid2 = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
-        Me.DocsCatalogueBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DMSDataSet = New DMS.DMSDataSet()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         IdLabel = New System.Windows.Forms.Label()
         DocSizeLabel = New System.Windows.Forms.Label()
         SubBatchLabel = New System.Windows.Forms.Label()
@@ -274,13 +277,18 @@ Partial Class FrmSearch2
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
+        CType(Me.C1TrueDBGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabQuery.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.TabChanges.SuspendLayout()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl2.SuspendLayout()
         Me.Timesheet.SuspendLayout()
         Me.GrpTimeSheet.SuspendLayout()
@@ -301,10 +309,6 @@ Partial Class FrmSearch2
         Me.TabMeeting.SuspendLayout()
         Me.TabPromo.SuspendLayout()
         Me.TabMeeting2.SuspendLayout()
-        CType(Me.AcroPDF, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.C1TrueDBGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'IdLabel
@@ -472,6 +476,25 @@ Partial Class FrmSearch2
         Me.SplitContainer1.TabIndex = 0
         Me.SplitContainer1.TabStop = False
         '
+        'C1TrueDBGrid2
+        '
+        Me.C1TrueDBGrid2.AlternatingRows = True
+        Me.C1TrueDBGrid2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.C1TrueDBGrid2.FilterBar = True
+        Me.C1TrueDBGrid2.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
+        Me.C1TrueDBGrid2.GroupByCaption = "Drag a column header here to group by that column"
+        Me.C1TrueDBGrid2.Images.Add(CType(resources.GetObject("C1TrueDBGrid2.Images"), System.Drawing.Image))
+        Me.C1TrueDBGrid2.Location = New System.Drawing.Point(0, 0)
+        Me.C1TrueDBGrid2.Name = "C1TrueDBGrid2"
+        Me.C1TrueDBGrid2.PreviewInfo.Location = New System.Drawing.Point(0, 0)
+        Me.C1TrueDBGrid2.PreviewInfo.Size = New System.Drawing.Size(0, 0)
+        Me.C1TrueDBGrid2.PreviewInfo.ZoomFactor = 75.0R
+        Me.C1TrueDBGrid2.PrintInfo.PageSettings = CType(resources.GetObject("C1TrueDBGrid2.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
+        Me.C1TrueDBGrid2.Size = New System.Drawing.Size(1240, 235)
+        Me.C1TrueDBGrid2.TabIndex = 0
+        Me.C1TrueDBGrid2.UseCompatibleTextRendering = False
+        Me.C1TrueDBGrid2.PropBag = resources.GetString("C1TrueDBGrid2.PropBag")
+        '
         'SplitContainer2
         '
         Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -485,7 +508,6 @@ Partial Class FrmSearch2
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnRemoval)
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnDownload)
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnSaveChanges1)
-        Me.SplitContainer2.Panel1.Controls.Add(Me.BtnSearch)
         Me.SplitContainer2.Panel1.Controls.Add(Me.BtnEditRecord)
         Me.SplitContainer2.Panel1.Controls.Add(Me.TabControl1)
         Me.SplitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -493,21 +515,32 @@ Partial Class FrmSearch2
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.AutoScroll = True
-        Me.SplitContainer2.Panel2.Controls.Add(Me.AcroPDF)
         Me.SplitContainer2.Panel2.Controls.Add(Me.WebBrowser1)
         Me.SplitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer2.Size = New System.Drawing.Size(1240, 518)
-        Me.SplitContainer2.SplitterDistance = 626
+        Me.SplitContainer2.SplitterDistance = 632
         Me.SplitContainer2.TabIndex = 0
         Me.SplitContainer2.TabStop = False
+        '
+        'BtnRemoval
+        '
+        Me.BtnRemoval.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnRemoval.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnRemoval.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRemoval.Location = New System.Drawing.Point(294, 7)
+        Me.BtnRemoval.Name = "BtnRemoval"
+        Me.BtnRemoval.Size = New System.Drawing.Size(106, 28)
+        Me.BtnRemoval.TabIndex = 3
+        Me.BtnRemoval.Text = "For Removal"
+        Me.BtnRemoval.UseVisualStyleBackColor = False
         '
         'BtnDownload
         '
         Me.BtnDownload.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnDownload.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnDownload.Location = New System.Drawing.Point(294, 7)
+        Me.BtnDownload.Location = New System.Drawing.Point(4, 7)
         Me.BtnDownload.Name = "BtnDownload"
         Me.BtnDownload.Size = New System.Drawing.Size(106, 28)
         Me.BtnDownload.TabIndex = 2
@@ -525,18 +558,6 @@ Partial Class FrmSearch2
         Me.BtnSaveChanges1.TabIndex = 4
         Me.BtnSaveChanges1.Text = "Save Changes"
         Me.BtnSaveChanges1.UseVisualStyleBackColor = False
-        '
-        'BtnSearch
-        '
-        Me.BtnSearch.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSearch.Location = New System.Drawing.Point(6, 7)
-        Me.BtnSearch.Name = "BtnSearch"
-        Me.BtnSearch.Size = New System.Drawing.Size(110, 28)
-        Me.BtnSearch.TabIndex = 1
-        Me.BtnSearch.Text = "Search"
-        Me.BtnSearch.UseVisualStyleBackColor = False
         '
         'BtnEditRecord
         '
@@ -559,56 +580,107 @@ Partial Class FrmSearch2
         Me.TabControl1.Location = New System.Drawing.Point(0, 41)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(626, 477)
+        Me.TabControl1.Size = New System.Drawing.Size(632, 477)
         Me.TabControl1.TabIndex = 91
         Me.TabControl1.TabStop = False
         '
         'TabQuery
         '
         Me.TabQuery.BackColor = System.Drawing.Color.Azure
-        Me.TabQuery.Controls.Add(Me.CHKFileName)
-        Me.TabQuery.Controls.Add(Me.sdasd)
-        Me.TabQuery.Controls.Add(Me.TxtFileName)
+        Me.TabQuery.Controls.Add(Me.GroupBox3)
+        Me.TabQuery.Controls.Add(Me.GroupBox2)
         Me.TabQuery.Controls.Add(Me.Label36)
-        Me.TabQuery.Controls.Add(Me.CHKBatch)
-        Me.TabQuery.Controls.Add(Me.Label11)
-        Me.TabQuery.Controls.Add(Me.TxtBatch)
-        Me.TabQuery.Controls.Add(Me.TxtBook)
-        Me.TabQuery.Controls.Add(Me.TxtBox)
-        Me.TabQuery.Controls.Add(Me.TxtRack)
-        Me.TabQuery.Controls.Add(Me.CHKScanDate)
-        Me.TabQuery.Controls.Add(Me.Label8)
-        Me.TabQuery.Controls.Add(Me.Label9)
-        Me.TabQuery.Controls.Add(Me.Label10)
-        Me.TabQuery.Controls.Add(Me.DTScanDateTo)
-        Me.TabQuery.Controls.Add(Me.DTScanDateFrom)
-        Me.TabQuery.Controls.Add(Me.CHKDocType)
-        Me.TabQuery.Controls.Add(Me.CHKDocDate)
-        Me.TabQuery.Controls.Add(Me.CHKBook)
-        Me.TabQuery.Controls.Add(Me.CHKBox)
-        Me.TabQuery.Controls.Add(Me.CHKRack)
-        Me.TabQuery.Controls.Add(Me.Label7)
         Me.TabQuery.Controls.Add(Me.Label6)
-        Me.TabQuery.Controls.Add(Me.Label5)
-        Me.TabQuery.Controls.Add(Me.Label4)
-        Me.TabQuery.Controls.Add(Me.Label3)
-        Me.TabQuery.Controls.Add(Me.Label2)
-        Me.TabQuery.Controls.Add(Me.Label1)
-        Me.TabQuery.Controls.Add(Me.DTDocDateTo)
-        Me.TabQuery.Controls.Add(Me.DTDocDateFrom)
-        Me.TabQuery.Controls.Add(Me.DocumentTypeComboBox)
-        Me.TabQuery.Controls.Add(Me.DocumentTypeLabel)
         Me.TabQuery.Location = New System.Drawing.Point(4, 32)
         Me.TabQuery.Name = "TabQuery"
         Me.TabQuery.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabQuery.Size = New System.Drawing.Size(618, 441)
+        Me.TabQuery.Size = New System.Drawing.Size(624, 441)
         Me.TabQuery.TabIndex = 0
         Me.TabQuery.Text = "TabQuery"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.txtWild)
+        Me.GroupBox3.Controls.Add(Me.Label37)
+        Me.GroupBox3.Controls.Add(Me.BtnSearch)
+        Me.GroupBox3.Location = New System.Drawing.Point(11, 20)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(597, 64)
+        Me.GroupBox3.TabIndex = 92
+        Me.GroupBox3.TabStop = False
+        '
+        'txtWild
+        '
+        Me.txtWild.Location = New System.Drawing.Point(78, 22)
+        Me.txtWild.Name = "txtWild"
+        Me.txtWild.Size = New System.Drawing.Size(393, 26)
+        Me.txtWild.TabIndex = 92
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label37.Location = New System.Drawing.Point(3, 25)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(71, 20)
+        Me.Label37.TabIndex = 93
+        Me.Label37.Text = "Search:"
+        '
+        'BtnSearch
+        '
+        Me.BtnSearch.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSearch.Location = New System.Drawing.Point(477, 20)
+        Me.BtnSearch.Name = "BtnSearch"
+        Me.BtnSearch.Size = New System.Drawing.Size(110, 28)
+        Me.BtnSearch.TabIndex = 1
+        Me.BtnSearch.Text = "Search"
+        Me.BtnSearch.UseVisualStyleBackColor = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.CHKFileName)
+        Me.GroupBox2.Controls.Add(Me.sdasd)
+        Me.GroupBox2.Controls.Add(Me.TxtFileName)
+        Me.GroupBox2.Controls.Add(Me.CHKBatch)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.TxtBatch)
+        Me.GroupBox2.Controls.Add(Me.TxtBook)
+        Me.GroupBox2.Controls.Add(Me.TxtBox)
+        Me.GroupBox2.Controls.Add(Me.TxtRack)
+        Me.GroupBox2.Controls.Add(Me.CHKScanDate)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.DTScanDateTo)
+        Me.GroupBox2.Controls.Add(Me.DTScanDateFrom)
+        Me.GroupBox2.Controls.Add(Me.CHKDocType)
+        Me.GroupBox2.Controls.Add(Me.CHKDocDate)
+        Me.GroupBox2.Controls.Add(Me.CHKBook)
+        Me.GroupBox2.Controls.Add(Me.CHKBox)
+        Me.GroupBox2.Controls.Add(Me.CHKRack)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.DTDocDateTo)
+        Me.GroupBox2.Controls.Add(Me.DTDocDateFrom)
+        Me.GroupBox2.Controls.Add(Me.DocumentTypeComboBox)
+        Me.GroupBox2.Controls.Add(Me.DocumentTypeLabel)
+        Me.GroupBox2.Location = New System.Drawing.Point(15, 89)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(561, 338)
+        Me.GroupBox2.TabIndex = 91
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Visible = False
         '
         'CHKFileName
         '
         Me.CHKFileName.AutoSize = True
-        Me.CHKFileName.Location = New System.Drawing.Point(43, 74)
+        Me.CHKFileName.Location = New System.Drawing.Point(15, 34)
         Me.CHKFileName.Name = "CHKFileName"
         Me.CHKFileName.Size = New System.Drawing.Size(15, 14)
         Me.CHKFileName.TabIndex = 5
@@ -618,7 +690,7 @@ Partial Class FrmSearch2
         '
         Me.sdasd.AutoSize = True
         Me.sdasd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.sdasd.Location = New System.Drawing.Point(64, 70)
+        Me.sdasd.Location = New System.Drawing.Point(36, 30)
         Me.sdasd.Name = "sdasd"
         Me.sdasd.Size = New System.Drawing.Size(84, 20)
         Me.sdasd.TabIndex = 90
@@ -626,27 +698,15 @@ Partial Class FrmSearch2
         '
         'TxtFileName
         '
-        Me.TxtFileName.Location = New System.Drawing.Point(191, 67)
+        Me.TxtFileName.Location = New System.Drawing.Point(163, 27)
         Me.TxtFileName.Name = "TxtFileName"
         Me.TxtFileName.Size = New System.Drawing.Size(157, 26)
         Me.TxtFileName.TabIndex = 6
         '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(326, 12)
-        Me.Label36.Name = "Label36"
-        Me.Label36.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label36.Size = New System.Drawing.Size(267, 30)
-        Me.Label36.TabIndex = 88
-        Me.Label36.Text = "Check the box if you want to search by that field. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If there is no selected it w" &
-    "ill seach all records." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
         'CHKBatch
         '
         Me.CHKBatch.AutoSize = True
-        Me.CHKBatch.Location = New System.Drawing.Point(43, 182)
+        Me.CHKBatch.Location = New System.Drawing.Point(15, 142)
         Me.CHKBatch.Name = "CHKBatch"
         Me.CHKBatch.Size = New System.Drawing.Size(15, 14)
         Me.CHKBatch.TabIndex = 13
@@ -656,7 +716,7 @@ Partial Class FrmSearch2
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(64, 178)
+        Me.Label11.Location = New System.Drawing.Point(36, 138)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(83, 20)
         Me.Label11.TabIndex = 86
@@ -664,28 +724,28 @@ Partial Class FrmSearch2
         '
         'TxtBatch
         '
-        Me.TxtBatch.Location = New System.Drawing.Point(191, 175)
+        Me.TxtBatch.Location = New System.Drawing.Point(163, 135)
         Me.TxtBatch.Name = "TxtBatch"
         Me.TxtBatch.Size = New System.Drawing.Size(157, 26)
         Me.TxtBatch.TabIndex = 14
         '
         'TxtBook
         '
-        Me.TxtBook.Location = New System.Drawing.Point(191, 148)
+        Me.TxtBook.Location = New System.Drawing.Point(163, 108)
         Me.TxtBook.Name = "TxtBook"
         Me.TxtBook.Size = New System.Drawing.Size(157, 26)
         Me.TxtBook.TabIndex = 12
         '
         'TxtBox
         '
-        Me.TxtBox.Location = New System.Drawing.Point(191, 121)
+        Me.TxtBox.Location = New System.Drawing.Point(163, 81)
         Me.TxtBox.Name = "TxtBox"
         Me.TxtBox.Size = New System.Drawing.Size(157, 26)
         Me.TxtBox.TabIndex = 10
         '
         'TxtRack
         '
-        Me.TxtRack.Location = New System.Drawing.Point(191, 94)
+        Me.TxtRack.Location = New System.Drawing.Point(163, 54)
         Me.TxtRack.Name = "TxtRack"
         Me.TxtRack.Size = New System.Drawing.Size(157, 26)
         Me.TxtRack.TabIndex = 8
@@ -693,7 +753,7 @@ Partial Class FrmSearch2
         'CHKScanDate
         '
         Me.CHKScanDate.AutoSize = True
-        Me.CHKScanDate.Location = New System.Drawing.Point(43, 270)
+        Me.CHKScanDate.Location = New System.Drawing.Point(15, 230)
         Me.CHKScanDate.Name = "CHKScanDate"
         Me.CHKScanDate.Size = New System.Drawing.Size(15, 14)
         Me.CHKScanDate.TabIndex = 18
@@ -703,7 +763,7 @@ Partial Class FrmSearch2
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(109, 293)
+        Me.Label8.Location = New System.Drawing.Point(81, 253)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(50, 20)
         Me.Label8.TabIndex = 83
@@ -713,7 +773,7 @@ Partial Class FrmSearch2
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(311, 293)
+        Me.Label9.Location = New System.Drawing.Point(283, 253)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(31, 20)
         Me.Label9.TabIndex = 82
@@ -723,7 +783,7 @@ Partial Class FrmSearch2
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(64, 266)
+        Me.Label10.Location = New System.Drawing.Point(36, 226)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(116, 20)
         Me.Label10.TabIndex = 81
@@ -732,7 +792,7 @@ Partial Class FrmSearch2
         'DTScanDateTo
         '
         Me.DTScanDateTo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTScanDateTo.Location = New System.Drawing.Point(346, 290)
+        Me.DTScanDateTo.Location = New System.Drawing.Point(318, 250)
         Me.DTScanDateTo.Name = "DTScanDateTo"
         Me.DTScanDateTo.Size = New System.Drawing.Size(129, 26)
         Me.DTScanDateTo.TabIndex = 20
@@ -740,7 +800,7 @@ Partial Class FrmSearch2
         'DTScanDateFrom
         '
         Me.DTScanDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTScanDateFrom.Location = New System.Drawing.Point(165, 290)
+        Me.DTScanDateFrom.Location = New System.Drawing.Point(137, 250)
         Me.DTScanDateFrom.Name = "DTScanDateFrom"
         Me.DTScanDateFrom.Size = New System.Drawing.Size(129, 26)
         Me.DTScanDateFrom.TabIndex = 19
@@ -748,7 +808,7 @@ Partial Class FrmSearch2
         'CHKDocType
         '
         Me.CHKDocType.AutoSize = True
-        Me.CHKDocType.Location = New System.Drawing.Point(43, 344)
+        Me.CHKDocType.Location = New System.Drawing.Point(15, 304)
         Me.CHKDocType.Name = "CHKDocType"
         Me.CHKDocType.Size = New System.Drawing.Size(15, 14)
         Me.CHKDocType.TabIndex = 21
@@ -757,7 +817,7 @@ Partial Class FrmSearch2
         'CHKDocDate
         '
         Me.CHKDocDate.AutoSize = True
-        Me.CHKDocDate.Location = New System.Drawing.Point(43, 206)
+        Me.CHKDocDate.Location = New System.Drawing.Point(15, 166)
         Me.CHKDocDate.Name = "CHKDocDate"
         Me.CHKDocDate.Size = New System.Drawing.Size(15, 14)
         Me.CHKDocDate.TabIndex = 15
@@ -766,7 +826,7 @@ Partial Class FrmSearch2
         'CHKBook
         '
         Me.CHKBook.AutoSize = True
-        Me.CHKBook.Location = New System.Drawing.Point(43, 155)
+        Me.CHKBook.Location = New System.Drawing.Point(15, 115)
         Me.CHKBook.Name = "CHKBook"
         Me.CHKBook.Size = New System.Drawing.Size(15, 14)
         Me.CHKBook.TabIndex = 11
@@ -775,7 +835,7 @@ Partial Class FrmSearch2
         'CHKBox
         '
         Me.CHKBox.AutoSize = True
-        Me.CHKBox.Location = New System.Drawing.Point(43, 128)
+        Me.CHKBox.Location = New System.Drawing.Point(15, 88)
         Me.CHKBox.Name = "CHKBox"
         Me.CHKBox.Size = New System.Drawing.Size(15, 14)
         Me.CHKBox.TabIndex = 9
@@ -784,7 +844,7 @@ Partial Class FrmSearch2
         'CHKRack
         '
         Me.CHKRack.AutoSize = True
-        Me.CHKRack.Location = New System.Drawing.Point(43, 101)
+        Me.CHKRack.Location = New System.Drawing.Point(15, 61)
         Me.CHKRack.Name = "CHKRack"
         Me.CHKRack.Size = New System.Drawing.Size(15, 14)
         Me.CHKRack.TabIndex = 7
@@ -794,28 +854,17 @@ Partial Class FrmSearch2
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(109, 229)
+        Me.Label7.Location = New System.Drawing.Point(81, 189)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(50, 20)
         Me.Label7.TabIndex = 73
         Me.Label7.Text = "From:"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(11, 13)
-        Me.Label6.Name = "Label6"
-        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label6.Size = New System.Drawing.Size(94, 20)
-        Me.Label6.TabIndex = 72
-        Me.Label6.Text = "Search by:"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(311, 229)
+        Me.Label5.Location = New System.Drawing.Point(283, 189)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 20)
         Me.Label5.TabIndex = 71
@@ -825,7 +874,7 @@ Partial Class FrmSearch2
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(64, 202)
+        Me.Label4.Location = New System.Drawing.Point(36, 162)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(126, 20)
         Me.Label4.TabIndex = 70
@@ -835,7 +884,7 @@ Partial Class FrmSearch2
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(64, 151)
+        Me.Label3.Location = New System.Drawing.Point(36, 111)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(95, 20)
         Me.Label3.TabIndex = 69
@@ -845,7 +894,7 @@ Partial Class FrmSearch2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(64, 124)
+        Me.Label2.Location = New System.Drawing.Point(36, 84)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(68, 20)
         Me.Label2.TabIndex = 68
@@ -855,7 +904,7 @@ Partial Class FrmSearch2
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(64, 97)
+        Me.Label1.Location = New System.Drawing.Point(36, 57)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 67
@@ -864,7 +913,7 @@ Partial Class FrmSearch2
         'DTDocDateTo
         '
         Me.DTDocDateTo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTDocDateTo.Location = New System.Drawing.Point(346, 226)
+        Me.DTDocDateTo.Location = New System.Drawing.Point(318, 186)
         Me.DTDocDateTo.Name = "DTDocDateTo"
         Me.DTDocDateTo.Size = New System.Drawing.Size(129, 26)
         Me.DTDocDateTo.TabIndex = 17
@@ -872,7 +921,7 @@ Partial Class FrmSearch2
         'DTDocDateFrom
         '
         Me.DTDocDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTDocDateFrom.Location = New System.Drawing.Point(165, 226)
+        Me.DTDocDateFrom.Location = New System.Drawing.Point(137, 186)
         Me.DTDocDateFrom.Name = "DTDocDateFrom"
         Me.DTDocDateFrom.Size = New System.Drawing.Size(129, 26)
         Me.DTDocDateFrom.TabIndex = 16
@@ -883,7 +932,7 @@ Partial Class FrmSearch2
         Me.DocumentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DocumentTypeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DocumentTypeComboBox.FormattingEnabled = True
-        Me.DocumentTypeComboBox.Location = New System.Drawing.Point(195, 337)
+        Me.DocumentTypeComboBox.Location = New System.Drawing.Point(167, 297)
         Me.DocumentTypeComboBox.Name = "DocumentTypeComboBox"
         Me.DocumentTypeComboBox.Size = New System.Drawing.Size(384, 28)
         Me.DocumentTypeComboBox.TabIndex = 22
@@ -892,11 +941,34 @@ Partial Class FrmSearch2
         '
         Me.DocumentTypeLabel.AutoSize = True
         Me.DocumentTypeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DocumentTypeLabel.Location = New System.Drawing.Point(64, 340)
+        Me.DocumentTypeLabel.Location = New System.Drawing.Point(36, 300)
         Me.DocumentTypeLabel.Name = "DocumentTypeLabel"
         Me.DocumentTypeLabel.Size = New System.Drawing.Size(125, 20)
         Me.DocumentTypeLabel.TabIndex = 59
         Me.DocumentTypeLabel.Text = "Document Type:"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.Location = New System.Drawing.Point(454, 3)
+        Me.Label36.Name = "Label36"
+        Me.Label36.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label36.Size = New System.Drawing.Size(158, 15)
+        Me.Label36.TabIndex = 88
+        Me.Label36.Text = "Double Click to view the file."
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(11, 8)
+        Me.Label6.Name = "Label6"
+        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label6.Size = New System.Drawing.Size(94, 20)
+        Me.Label6.TabIndex = 72
+        Me.Label6.Text = "Search by:"
+        Me.Label6.Visible = False
         '
         'TabChanges
         '
@@ -918,7 +990,7 @@ Partial Class FrmSearch2
         Me.TabChanges.Location = New System.Drawing.Point(4, 32)
         Me.TabChanges.Name = "TabChanges"
         Me.TabChanges.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabChanges.Size = New System.Drawing.Size(618, 441)
+        Me.TabChanges.Size = New System.Drawing.Size(624, 441)
         Me.TabChanges.TabIndex = 1
         Me.TabChanges.Text = "TabChanges"
         '
@@ -930,6 +1002,16 @@ Partial Class FrmSearch2
         Me.txtPages.Name = "txtPages"
         Me.txtPages.Size = New System.Drawing.Size(64, 22)
         Me.txtPages.TabIndex = 44
+        '
+        'DocsCatalogueBindingSource
+        '
+        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
+        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
+        '
+        'DMSDataSet
+        '
+        Me.DMSDataSet.DataSetName = "DMSDataSet"
+        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cbDocSize
         '
@@ -992,7 +1074,7 @@ Partial Class FrmSearch2
         Me.DocumentTypeCombobox2.FormattingEnabled = True
         Me.DocumentTypeCombobox2.Location = New System.Drawing.Point(138, 2)
         Me.DocumentTypeCombobox2.Name = "DocumentTypeCombobox2"
-        Me.DocumentTypeCombobox2.Size = New System.Drawing.Size(396, 28)
+        Me.DocumentTypeCombobox2.Size = New System.Drawing.Size(461, 28)
         Me.DocumentTypeCombobox2.TabIndex = 23
         '
         'Label32
@@ -1018,7 +1100,7 @@ Partial Class FrmSearch2
         Me.TabControl2.Location = New System.Drawing.Point(-1, 125)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(626, 310)
+        Me.TabControl2.Size = New System.Drawing.Size(632, 310)
         Me.TabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabControl2.TabIndex = 27
         Me.TabControl2.TabStop = False
@@ -1032,7 +1114,7 @@ Partial Class FrmSearch2
         Me.Timesheet.Location = New System.Drawing.Point(4, 29)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(618, 277)
+        Me.Timesheet.Size = New System.Drawing.Size(624, 277)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
@@ -1059,7 +1141,7 @@ Partial Class FrmSearch2
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(595, 297)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(601, 294)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1326,7 +1408,7 @@ Partial Class FrmSearch2
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(595, 397)
+        Me.GrpReceipt.Size = New System.Drawing.Size(595, 394)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1647,7 +1729,7 @@ Partial Class FrmSearch2
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(595, 417)
+        Me.GrpWarranty.Size = New System.Drawing.Size(595, 414)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -2698,61 +2780,19 @@ Partial Class FrmSearch2
         Me.DocumentDateCorp.TabIndex = 26
         Me.DocumentDateCorp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'AcroPDF
+        'WebBrowser1
         '
-        Me.AcroPDF.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AcroPDF.Enabled = True
-        Me.AcroPDF.Location = New System.Drawing.Point(0, 0)
-        Me.AcroPDF.Name = "AcroPDF"
-        Me.AcroPDF.OcxState = CType(resources.GetObject("AcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AcroPDF.Size = New System.Drawing.Size(610, 518)
-        Me.AcroPDF.TabIndex = 91
-        Me.AcroPDF.Visible = False
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(604, 518)
+        Me.WebBrowser1.TabIndex = 92
+        Me.WebBrowser1.Url = New System.Uri("", System.UriKind.Relative)
         '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'BtnRemoval
-        '
-        Me.BtnRemoval.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.BtnRemoval.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnRemoval.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRemoval.Location = New System.Drawing.Point(185, 7)
-        Me.BtnRemoval.Name = "BtnRemoval"
-        Me.BtnRemoval.Size = New System.Drawing.Size(106, 28)
-        Me.BtnRemoval.TabIndex = 3
-        Me.BtnRemoval.Text = "For Removal"
-        Me.BtnRemoval.UseVisualStyleBackColor = False
-        '
-        'C1TrueDBGrid2
-        '
-        Me.C1TrueDBGrid2.AlternatingRows = True
-        Me.C1TrueDBGrid2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.C1TrueDBGrid2.FilterBar = True
-        Me.C1TrueDBGrid2.FlatStyle = C1.Win.C1TrueDBGrid.FlatModeEnum.Flat
-        Me.C1TrueDBGrid2.GroupByCaption = "Drag a column header here to group by that column"
-        Me.C1TrueDBGrid2.Images.Add(CType(resources.GetObject("C1TrueDBGrid2.Images"), System.Drawing.Image))
-        Me.C1TrueDBGrid2.Location = New System.Drawing.Point(0, 0)
-        Me.C1TrueDBGrid2.Name = "C1TrueDBGrid2"
-        Me.C1TrueDBGrid2.PreviewInfo.Location = New System.Drawing.Point(0, 0)
-        Me.C1TrueDBGrid2.PreviewInfo.Size = New System.Drawing.Size(0, 0)
-        Me.C1TrueDBGrid2.PreviewInfo.ZoomFactor = 75.0R
-        Me.C1TrueDBGrid2.PrintInfo.PageSettings = CType(resources.GetObject("C1TrueDBGrid2.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
-        Me.C1TrueDBGrid2.Size = New System.Drawing.Size(1240, 235)
-        Me.C1TrueDBGrid2.TabIndex = 0
-        Me.C1TrueDBGrid2.UseCompatibleTextRendering = False
-        Me.C1TrueDBGrid2.PropBag = resources.GetString("C1TrueDBGrid2.PropBag")
-        '
-        'DocsCatalogueBindingSource
-        '
-        Me.DocsCatalogueBindingSource.DataMember = "DocsCatalogue"
-        Me.DocsCatalogueBindingSource.DataSource = Me.DMSDataSet
-        '
-        'DMSDataSet
-        '
-        Me.DMSDataSet.DataSetName = "DMSDataSet"
-        Me.DMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TableAdapterManager
         '
@@ -2770,15 +2810,6 @@ Partial Class FrmSearch2
         '
         Me.DocsCatalogueTableAdapter.ClearBeforeFill = True
         '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(610, 518)
-        Me.WebBrowser1.TabIndex = 92
-        '
         'FrmSearch2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2794,6 +2825,7 @@ Partial Class FrmSearch2
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
+        CType(Me.C1TrueDBGrid2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2801,8 +2833,14 @@ Partial Class FrmSearch2
         Me.TabControl1.ResumeLayout(False)
         Me.TabQuery.ResumeLayout(False)
         Me.TabQuery.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.TabChanges.ResumeLayout(False)
         Me.TabChanges.PerformLayout()
+        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl2.ResumeLayout(False)
         Me.Timesheet.ResumeLayout(False)
         Me.GrpTimeSheet.ResumeLayout(False)
@@ -2835,10 +2873,6 @@ Partial Class FrmSearch2
         Me.TabPromo.PerformLayout()
         Me.TabMeeting2.ResumeLayout(False)
         Me.TabMeeting2.PerformLayout()
-        CType(Me.AcroPDF, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.C1TrueDBGrid2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DocsCatalogueBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DMSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3037,7 +3071,6 @@ Partial Class FrmSearch2
     Friend WithEvents PurposeTextBox As TextBox
     Friend WithEvents DocumentDateLabel2 As Label
     Friend WithEvents DocumentDateCorp As TextBox
-    Friend WithEvents AcroPDF As AxAcroPDFLib.AxAcroPDF
     Friend WithEvents TabControl4 As TabControl
     Friend WithEvents TabMeeting As TabPage
     Friend WithEvents DTMeetingDate As DateTimePicker
@@ -3081,6 +3114,10 @@ Partial Class FrmSearch2
     Friend WithEvents IdTextBox As TextBox
     Friend WithEvents BtnRemoval As Button
     Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents txtWild As TextBox
+    Friend WithEvents Label37 As Label
 End Class
 
 

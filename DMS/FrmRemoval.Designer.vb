@@ -37,11 +37,10 @@ Partial Class FrmRemoval
         Me.BtnDeselectAll = New System.Windows.Forms.Button()
         Me.BtnSelectAll = New System.Windows.Forms.Button()
         Me.BtnDelete = New System.Windows.Forms.Button()
-        Me.AcroReader1 = New AxAcroPDFLib.AxAcroPDF()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.VwRemovalTableAdapter = New DMS.DMSDataSetTableAdapters.vwRemovalTableAdapter()
         Me.SpForRemovalTableAdapter = New DMS.DMSDataSetTableAdapters.spForRemovalTableAdapter()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -59,7 +58,7 @@ Partial Class FrmRemoval
         Me.SplitContainer3.SuspendLayout()
         CType(Me.SpForRemovalC1TrueDBGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SpForRemovalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainer1
@@ -75,8 +74,7 @@ Partial Class FrmRemoval
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.WebBrowser1)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.AcroReader1)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.AxAcroPDF1)
         Me.SplitContainer1.Size = New System.Drawing.Size(1039, 577)
         Me.SplitContainer1.SplitterDistance = 547
         Me.SplitContainer1.TabIndex = 0
@@ -234,16 +232,6 @@ Partial Class FrmRemoval
         Me.BtnDelete.Text = "Delete Selected"
         Me.BtnDelete.UseVisualStyleBackColor = False
         '
-        'AcroReader1
-        '
-        Me.AcroReader1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AcroReader1.Enabled = True
-        Me.AcroReader1.Location = New System.Drawing.Point(0, 0)
-        Me.AcroReader1.Name = "AcroReader1"
-        Me.AcroReader1.OcxState = CType(resources.GetObject("AcroReader1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AcroReader1.Size = New System.Drawing.Size(488, 577)
-        Me.AcroReader1.TabIndex = 1
-        '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
@@ -264,14 +252,15 @@ Partial Class FrmRemoval
         '
         Me.SpForRemovalTableAdapter.ClearBeforeFill = True
         '
-        'WebBrowser1
+        'AxAcroPDF1
         '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(488, 577)
-        Me.WebBrowser1.TabIndex = 2
+        Me.AxAcroPDF1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AxAcroPDF1.Enabled = True
+        Me.AxAcroPDF1.Location = New System.Drawing.Point(0, 0)
+        Me.AxAcroPDF1.Name = "AxAcroPDF1"
+        Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxAcroPDF1.Size = New System.Drawing.Size(488, 577)
+        Me.AxAcroPDF1.TabIndex = 0
         '
         'FrmRemoval
         '
@@ -302,13 +291,12 @@ Partial Class FrmRemoval
         Me.SplitContainer3.ResumeLayout(False)
         CType(Me.SpForRemovalC1TrueDBGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SpForRemovalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents AcroReader1 As AxAcroPDFLib.AxAcroPDF
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents SplitContainer3 As SplitContainer
     Friend WithEvents DMSDataSet As DMSDataSet
@@ -324,5 +312,5 @@ Partial Class FrmRemoval
     Friend WithEvents SpForRemovalBindingSource As BindingSource
     Friend WithEvents SpForRemovalTableAdapter As DMSDataSetTableAdapters.spForRemovalTableAdapter
     Friend WithEvents BtnRestore As Button
-    Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
 End Class

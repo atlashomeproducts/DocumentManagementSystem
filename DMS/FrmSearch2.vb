@@ -64,6 +64,7 @@ Public Class FrmSearch2
 
     Private Sub FrmQuery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Me.AcceptButton = BtnSearch
 
         PopulateCombobox()
 
@@ -356,19 +357,83 @@ Public Class FrmSearch2
 
                 FROM DocsCatalogue 
 
-WHERE
-ISNULL([DocumentDate], '') BETWEEN @DocDateFrom AND @DocDateTo
-AND ISNULL([RackNo], '') LIKE '%' + @RackNo + '%'
-AND ISNULL([BoxNo], '') LIKE '%' + @BoxNo + '%'
-AND ISNULL([BookletNo], '') LIKE '%' + @BookletNo + '%'
-AND ISNULL([Batch], '') LIKE '%' + @Batch + '%'
-AND ISNULL([DocumentType], '') LIKE '%' + @DocType + '%'
-AND ISNULL([ScannedDate], '') BETWEEN @ScanDateFrom AND @ScanDateTo 
-AND ISNULL([FileName], '') LIKE '%' + @FileName + '%'
-AND ISNULL(Confidential, 'Unchecked') LIKE CASE WHEN '" + FrmMain.type + "' = 'System Admin' OR  '" + FrmMain.type + "' = 'Admin' THEN '%%' ELSE 'Unchecked' END
+
+          WHERE 
+ ISNULL(Confidential, 'Unchecked') LIKE CASE WHEN '" + FrmMain.type + "' = 'System Admin' OR  '" + FrmMain.type + "' = 'Admin' THEN '%%' ELSE 'Unchecked' END
 AND Status = 'Finished'
 AND ISNULL(Removal, 'False') <> 'True'
+
+AND ([DocumentType] LIKE '%' + @Wild + '%'
+            OR  [Batch]   LIKE '%' + @Wild + '%'         
+            OR  [SubBatch] LIKE '%' + @Wild + '%'
+            OR  [RackNo] LIKE '%' + @Wild + '%'
+            OR  [BoxNo] LIKE '%' + @Wild + '%' 
+            OR  [ScannedDate] LIKE '%' + @Wild + '%'
+            OR  [Filename] LIKE '%' + @Wild + '%'
+            OR  [DocumentDate] LIKE '%' + @Wild + '%'
+            OR  [ReferenceNo] LIKE '%' + @Wild + '%'
+            OR  [BookletNo] LIKE '%' + @Wild + '%'
+            OR  [Vendor] LIKE '%' + @Wild + '%'
+            OR  [Customer] LIKE '%' + @Wild + '%'
+            OR  [ItemPurchased] LIKE '%' + @Wild + '%'
+            OR  [TotalValue] LIKE '%' + @Wild + '%'
+            OR  [LastName] LIKE '%' + @Wild + '%'
+            OR  [FirstName] LIKE '%' + @Wild + '%'
+            OR  [MiddleName] LIKE '%' + @Wild + '%'
+            OR  [WarrantyNo] LIKE '%' + @Wild + '%'
+            OR  [ProductBrand] LIKE '%' + @Wild + '%'
+            OR  [ProductType] LIKE '%' + @Wild + '%'            
+            OR  [Serial] LIKE '%' + @Wild + '%' 
+            OR  [WarrantyPeriod] LIKE '%' + @Wild + '%'
+            OR  [ServiceCenter] LIKE '%' + @Wild + '%' 
+            OR  [Address] LIKE '%' + @Wild + '%'
+            OR  [ContactNo] LIKE '%' + @Wild + '%'
+            OR  [Email] LIKE '%' + @Wild + '%'
+            OR  [VoucherNo] LIKE '%' + @Wild + '%'
+            OR  [PaymentForm] LIKE '%' + @Wild + '%'
+            OR  [CheckNo] LIKE '%' + @Wild + '%'
+            OR  [Payee] LIKE '%' + @Wild + '%'
+            OR  [Payor] LIKE '%' + @Wild + '%'
+            OR  [Preparedby] LIKE '%' + @Wild + '%'
+            OR  [Approvedby] LIKE '%' + @Wild + '%'
+            OR  [Recordedby] LIKE '%' + @Wild + '%'
+            OR  [Receivedby] LIKE '%' + @Wild + '%'
+            OR  [Company]   LIKE '%' + @Wild + '%'
+            OR  [Purpose]   LIKE '%' + @Wild + '%'
+            OR  [Secretary] LIKE '%' + @Wild + '%'            
+            OR   [PromoTitle] LIKE '%' + @Wild + '%'
+            OR   [DTIPermitNo] LIKE '%' + @Wild + '%'
+            OR  [PaymentOthers] LIKE '%' + @Wild + '%'
+            OR  [BankName] LIKE '%' + @Wild + '%'
+            OR  [BankBranch] LIKE '%' + @Wild + '%'
+            OR  [BankAddress] LIKE '%' + @Wild + '%'
+            OR  [TinVendor] LIKE '%' + @Wild + '%'
+            OR  [TinCustomer] LIKE '%' + @Wild + '%'
+            OR  [VATreg] LIKE '%' + @Wild + '%'
+            OR  [NONVATreg] LIKE '%' + @Wild + '%'      
+            OR  [AddressC] LIKE '%' + @Wild + '%')
 "
+
+
+
+
+
+
+
+
+            '            WHERE
+            '            ISNULL([DocumentDate], '') BETWEEN @DocDateFrom AND @DocDateTo
+            'And ISNULL([RackNo], '') LIKE '%' + @RackNo + '%'
+            'And ISNULL([BoxNo], '') LIKE '%' + @BoxNo + '%'
+            'And ISNULL([BookletNo], '') LIKE '%' + @BookletNo + '%'
+            'And ISNULL([Batch], '') LIKE '%' + @Batch + '%'
+            'And ISNULL([DocumentType], '') LIKE '%' + @DocType + '%'
+            'And ISNULL([ScannedDate], '') BETWEEN @ScanDateFrom AND @ScanDateTo 
+            'And ISNULL([FileName], '') LIKE '%' + @FileName + '%'
+            'And ISNULL(Confidential, 'Unchecked') LIKE CASE WHEN '" + FrmMain.type + "' = 'System Admin' OR  '" + FrmMain.type + "' = 'Admin' THEN '%%' ELSE 'Unchecked' END
+            'And Status = 'Finished'
+            'And ISNULL(Removal, 'False') <> 'True'
+
 
 
 
@@ -383,57 +448,61 @@ AND ISNULL(Removal, 'False') <> 'True'
                 .CommandText = strsql
                 .CommandType = CommandType.Text
 
-                If Me.CHKDocDate.Checked = True Then
-                    .Parameters.AddWithValue("@DocDateFrom", Me.DTDocDateFrom.Value)
-                    .Parameters.AddWithValue("@DocDateTo", Me.DTDocDateTo.Value)
-                Else
-                    .Parameters.AddWithValue("@DocDateFrom", Me.DTDocDateFrom.MinDate)
-                    .Parameters.AddWithValue("@DocDateTo", Me.DTDocDateTo.MaxDate)
-                End If
 
-                If CHKRack.Checked = True Then
-                    .Parameters.AddWithValue("@RackNo", Me.TxtRack.Text)
-                Else
-                    .Parameters.AddWithValue("@RackNo", "")
-                End If
+                .Parameters.AddWithValue("@Wild", Me.txtWild.Text)
 
-                If Me.CHKBox.Checked = True Then
-                    .Parameters.AddWithValue("@BoxNo", Me.TxtBox.Text)
-                Else
-                    .Parameters.AddWithValue("@BoxNo", "")
-                End If
 
-                If Me.CHKBook.Checked = True Then
-                    .Parameters.AddWithValue("@BookletNo", Me.TxtBook.Text)
-                Else
-                    .Parameters.AddWithValue("@BookletNo", "")
-                End If
+                'If Me.CHKDocDate.Checked = True Then
+                '    .Parameters.AddWithValue("@DocDateFrom", Me.DTDocDateFrom.Value)
+                '    .Parameters.AddWithValue("@DocDateTo", Me.DTDocDateTo.Value)
+                'Else
+                '    .Parameters.AddWithValue("@DocDateFrom", Me.DTDocDateFrom.MinDate)
+                '    .Parameters.AddWithValue("@DocDateTo", Me.DTDocDateTo.MaxDate)
+                'End If
 
-                If Me.CHKBatch.Checked = True Then
-                    .Parameters.AddWithValue("@Batch", Me.TxtBatch.Text)
-                Else
-                    .Parameters.AddWithValue("@Batch", "")
-                End If
+                'If CHKRack.Checked = True Then
+                '    .Parameters.AddWithValue("@RackNo", Me.TxtRack.Text)
+                'Else
+                '    .Parameters.AddWithValue("@RackNo", "")
+                'End If
 
-                If Me.CHKDocType.Checked = True Then
-                    .Parameters.AddWithValue("@DocType", Me.DocumentTypeComboBox.Text)
-                Else
-                    .Parameters.AddWithValue("@DocType", "")
-                End If
+                'If Me.CHKBox.Checked = True Then
+                '    .Parameters.AddWithValue("@BoxNo", Me.TxtBox.Text)
+                'Else
+                '    .Parameters.AddWithValue("@BoxNo", "")
+                'End If
 
-                If Me.CHKScanDate.Checked = True Then
-                    .Parameters.AddWithValue("@ScanDateFrom", Me.DTScanDateFrom.Value)
-                    .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.Value)
-                Else
-                    .Parameters.AddWithValue("@ScanDateFrom", Me.DTScanDateFrom.MinDate)
-                    .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.MaxDate)
-                End If
+                'If Me.CHKBook.Checked = True Then
+                '    .Parameters.AddWithValue("@BookletNo", Me.TxtBook.Text)
+                'Else
+                '    .Parameters.AddWithValue("@BookletNo", "")
+                'End If
 
-                If Me.CHKFileName.Checked = True Then
-                    .Parameters.AddWithValue("@FileName", Me.TxtFileName.Text)
-                Else
-                    .Parameters.AddWithValue("@FileName", "")
-                End If
+                'If Me.CHKBatch.Checked = True Then
+                '    .Parameters.AddWithValue("@Batch", Me.TxtBatch.Text)
+                'Else
+                '    .Parameters.AddWithValue("@Batch", "")
+                'End If
+
+                'If Me.CHKDocType.Checked = True Then
+                '    .Parameters.AddWithValue("@DocType", Me.DocumentTypeComboBox.Text)
+                'Else
+                '    .Parameters.AddWithValue("@DocType", "")
+                'End If
+
+                'If Me.CHKScanDate.Checked = True Then
+                '    .Parameters.AddWithValue("@ScanDateFrom", Me.DTScanDateFrom.Value)
+                '    .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.Value)
+                'Else
+                '    .Parameters.AddWithValue("@ScanDateFrom", Me.DTScanDateFrom.MinDate)
+                '    .Parameters.AddWithValue("@ScanDateTo", Me.DTScanDateTo.MaxDate)
+                'End If
+
+                'If Me.CHKFileName.Checked = True Then
+                '    .Parameters.AddWithValue("@FileName", Me.TxtFileName.Text)
+                'Else
+                '    .Parameters.AddWithValue("@FileName", "")
+                'End If
                 .Connection = strconnectionstring
             End With
 
@@ -569,7 +638,6 @@ AND ISNULL(Removal, 'False') <> 'True'
 
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnSearch.Click
-
         Try
 
             Search()
@@ -590,6 +658,7 @@ AND ISNULL(Removal, 'False') <> 'True'
             MessageBox.Show(ex.Message)
         End Try
 
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnEditRecord.Click
@@ -603,7 +672,7 @@ AND ISNULL(Removal, 'False') <> 'True'
             Dim pdffile As String = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
             WebBrowser1.Navigate(pdffile)
 
-            ' AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+            ' AxAcroPDF1.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
 
             TabControl1.SelectTab(TabChanges)
             Me.C1TrueDBGrid2.Enabled = False
@@ -612,7 +681,7 @@ AND ISNULL(Removal, 'False') <> 'True'
             Me.BtnSaveChanges1.Enabled = True
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
-                Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
+            Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
             ' Dim dRemoteDate As Date
             '  dRemoteDate = GetNetRemoteTOD(My.Settings.remoteTOD)
 
@@ -928,7 +997,18 @@ AND ISNULL(Removal, 'False') <> 'True'
 
     End Sub
     Private Sub C1TrueDBGrid2_DoubleClick(sender As Object, e As EventArgs) Handles C1TrueDBGrid2.DoubleClick
+        Try
+            'AxAcroPDF1.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
 
+            ' (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+
+
+            Dim pdffile As String = IIf(Me.C1TrueDBGrid2.Columns("File Name").Text = "", "", (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text))
+            WebBrowser1.Navigate(pdffile)
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
     Private Sub ComboSelect2()
 
@@ -1295,17 +1375,20 @@ AND ISNULL(Removal, 'False') <> 'True'
         TextBox1.BackColor = Color.White
     End Sub
 
-    Private Sub C1TrueDBGrid2_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid2.Click
-        Try
-            ' AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+    'Private Sub C1TrueDBGrid2_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid2.Click
+    '    Try
+    '        ' AcroPDF.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
 
-            Dim pdffile As String = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
-            WebBrowser1.Navigate(pdffile)
+    '        ' (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
+
+    '        Dim pdffile As String = IIf(Me.C1TrueDBGrid2.Columns("File Name").Text = "", "", (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text))
+    '        WebBrowser1.Navigate(pdffile)
+
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.Message)
+    '    End Try
+    'End Sub
 
     Private Sub IdTextBox_TextChanged(sender As Object, e As EventArgs) Handles IdTextBox.TextChanged
 
@@ -1314,4 +1397,20 @@ AND ISNULL(Removal, 'False') <> 'True'
     Private Sub BtnRemoval_Click(sender As Object, e As EventArgs) Handles BtnRemoval.Click
         FrmReason3.ShowDialog()
     End Sub
+
+    Private Sub C1TrueDBGrid2_Click(sender As Object, e As EventArgs) Handles C1TrueDBGrid2.Click
+        '    Try
+        '        AxAcroPDF1.src = (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+
+        '        ' (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text)
+
+
+        '        'Dim pdffile As String = IIf(Me.C1TrueDBGrid2.Columns("File Name").Text = "", "", (My.Settings.ImgPath & "\" & Me.C1TrueDBGrid2.Columns("File Name").Text))
+        '        'WebBrowser1.Navigate(pdffile)
+
+        '    Catch ex As Exception
+        '        MessageBox.Show(ex.Message)
+        '    End Try
+    End Sub
+
 End Class

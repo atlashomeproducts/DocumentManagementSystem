@@ -224,10 +224,9 @@ Partial Class FrmEditor
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnEdit = New System.Windows.Forms.Button()
         Me.DocumentTypeComboBox = New System.Windows.Forms.ComboBox()
-        Me.AcroReader1 = New AxAcroPDFLib.AxAcroPDF()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.DocsCatalogueTableAdapter = New DMS.DMSDataSetTableAdapters.DocsCatalogueTableAdapter()
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         DocumentDateLabel = New System.Windows.Forms.Label()
         ReferenceNoLabel = New System.Windows.Forms.Label()
@@ -343,7 +342,6 @@ Partial Class FrmEditor
         Me.TabPromo.SuspendLayout()
         Me.TabMeeting2.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
-        CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DocumentTypeLabel
@@ -1129,11 +1127,10 @@ Partial Class FrmEditor
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.AcroReader1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.WebBrowser1)
         Me.SplitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SplitContainer1.Size = New System.Drawing.Size(1197, 737)
-        Me.SplitContainer1.SplitterDistance = 641
+        Me.SplitContainer1.SplitterDistance = 656
         Me.SplitContainer1.TabIndex = 0
         Me.SplitContainer1.TabStop = False
         '
@@ -1178,7 +1175,7 @@ Partial Class FrmEditor
         Me.SplitContainer2.Panel2.Controls.Add(Me.DocumentTypeComboBox)
         Me.SplitContainer2.Panel2.Controls.Add(DocumentTypeLabel)
         Me.SplitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.SplitContainer2.Size = New System.Drawing.Size(641, 737)
+        Me.SplitContainer2.Size = New System.Drawing.Size(656, 737)
         Me.SplitContainer2.SplitterDistance = 238
         Me.SplitContainer2.TabIndex = 0
         Me.SplitContainer2.TabStop = False
@@ -1203,7 +1200,7 @@ Partial Class FrmEditor
         Me.DocsCatalogueC1TrueDBGrid.PreviewInfo.ZoomFactor = 75.0R
         Me.DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings = CType(resources.GetObject("DocsCatalogueC1TrueDBGrid.PrintInfo.PageSettings"), System.Drawing.Printing.PageSettings)
         Me.DocsCatalogueC1TrueDBGrid.RowHeight = 22
-        Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(641, 238)
+        Me.DocsCatalogueC1TrueDBGrid.Size = New System.Drawing.Size(656, 238)
         Me.DocsCatalogueC1TrueDBGrid.TabIndex = 0
         Me.DocsCatalogueC1TrueDBGrid.UseCompatibleTextRendering = False
         Me.DocsCatalogueC1TrueDBGrid.PropBag = resources.GetString("DocsCatalogueC1TrueDBGrid.PropBag")
@@ -1273,7 +1270,7 @@ Partial Class FrmEditor
         '
         Me.BtnCancel1.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnCancel1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnCancel1.Location = New System.Drawing.Point(97, 8)
+        Me.BtnCancel1.Location = New System.Drawing.Point(99, 8)
         Me.BtnCancel1.Name = "BtnCancel1"
         Me.BtnCancel1.Size = New System.Drawing.Size(92, 27)
         Me.BtnCancel1.TabIndex = 28
@@ -1284,7 +1281,7 @@ Partial Class FrmEditor
         '
         Me.BtnRemove.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnRemove.Location = New System.Drawing.Point(362, 8)
+        Me.BtnRemove.Location = New System.Drawing.Point(358, 8)
         Me.BtnRemove.Name = "BtnRemove"
         Me.BtnRemove.Size = New System.Drawing.Size(92, 27)
         Me.BtnRemove.TabIndex = 27
@@ -1305,7 +1302,7 @@ Partial Class FrmEditor
         '
         Me.Button1.BackColor = System.Drawing.Color.LightSteelBlue
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(453, 8)
+        Me.Button1.Location = New System.Drawing.Point(451, 8)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(92, 27)
         Me.Button1.TabIndex = 3
@@ -1320,10 +1317,10 @@ Partial Class FrmEditor
         Me.TabControl1.Controls.Add(Me.Voucher)
         Me.TabControl1.Controls.Add(Me.CorpDocu)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TabControl1.Location = New System.Drawing.Point(0, 169)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 162)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(641, 304)
+        Me.TabControl1.Size = New System.Drawing.Size(639, 313)
         Me.TabControl1.TabIndex = 26
         Me.TabControl1.TabStop = False
         '
@@ -1336,7 +1333,7 @@ Partial Class FrmEditor
         Me.Timesheet.Location = New System.Drawing.Point(4, 22)
         Me.Timesheet.Name = "Timesheet"
         Me.Timesheet.Padding = New System.Windows.Forms.Padding(3)
-        Me.Timesheet.Size = New System.Drawing.Size(633, 278)
+        Me.Timesheet.Size = New System.Drawing.Size(631, 287)
         Me.Timesheet.TabIndex = 0
         Me.Timesheet.Text = "Timesheet"
         '
@@ -1363,7 +1360,7 @@ Partial Class FrmEditor
         Me.GrpTimeSheet.ForeColor = System.Drawing.Color.Black
         Me.GrpTimeSheet.Location = New System.Drawing.Point(3, 3)
         Me.GrpTimeSheet.Name = "GrpTimeSheet"
-        Me.GrpTimeSheet.Size = New System.Drawing.Size(610, 294)
+        Me.GrpTimeSheet.Size = New System.Drawing.Size(608, 294)
         Me.GrpTimeSheet.TabIndex = 25
         Me.GrpTimeSheet.TabStop = False
         Me.GrpTimeSheet.Text = "Keywords"
@@ -1490,7 +1487,7 @@ Partial Class FrmEditor
         Me.ReceiptInvoice.Location = New System.Drawing.Point(4, 22)
         Me.ReceiptInvoice.Name = "ReceiptInvoice"
         Me.ReceiptInvoice.Padding = New System.Windows.Forms.Padding(3)
-        Me.ReceiptInvoice.Size = New System.Drawing.Size(633, 278)
+        Me.ReceiptInvoice.Size = New System.Drawing.Size(631, 287)
         Me.ReceiptInvoice.TabIndex = 1
         Me.ReceiptInvoice.Text = "Receipt/Invoice"
         '
@@ -1531,7 +1528,7 @@ Partial Class FrmEditor
         Me.GrpReceipt.ForeColor = System.Drawing.Color.Black
         Me.GrpReceipt.Location = New System.Drawing.Point(3, 3)
         Me.GrpReceipt.Name = "GrpReceipt"
-        Me.GrpReceipt.Size = New System.Drawing.Size(610, 394)
+        Me.GrpReceipt.Size = New System.Drawing.Size(608, 394)
         Me.GrpReceipt.TabIndex = 0
         Me.GrpReceipt.TabStop = False
         Me.GrpReceipt.Text = "Keywords"
@@ -1682,7 +1679,7 @@ Partial Class FrmEditor
         Me.Warranty.Location = New System.Drawing.Point(4, 22)
         Me.Warranty.Name = "Warranty"
         Me.Warranty.Padding = New System.Windows.Forms.Padding(3)
-        Me.Warranty.Size = New System.Drawing.Size(633, 278)
+        Me.Warranty.Size = New System.Drawing.Size(631, 287)
         Me.Warranty.TabIndex = 2
         Me.Warranty.Text = "Warranty"
         '
@@ -1725,7 +1722,7 @@ Partial Class FrmEditor
         Me.GrpWarranty.ForeColor = System.Drawing.Color.Black
         Me.GrpWarranty.Location = New System.Drawing.Point(3, 3)
         Me.GrpWarranty.Name = "GrpWarranty"
-        Me.GrpWarranty.Size = New System.Drawing.Size(610, 414)
+        Me.GrpWarranty.Size = New System.Drawing.Size(608, 414)
         Me.GrpWarranty.TabIndex = 0
         Me.GrpWarranty.TabStop = False
         Me.GrpWarranty.Text = "Keywords"
@@ -1873,7 +1870,7 @@ Partial Class FrmEditor
         Me.Voucher.Controls.Add(Me.GrpVoucher)
         Me.Voucher.Location = New System.Drawing.Point(4, 22)
         Me.Voucher.Name = "Voucher"
-        Me.Voucher.Size = New System.Drawing.Size(633, 278)
+        Me.Voucher.Size = New System.Drawing.Size(628, 287)
         Me.Voucher.TabIndex = 3
         Me.Voucher.Text = "Voucher"
         '
@@ -1916,7 +1913,7 @@ Partial Class FrmEditor
         Me.GrpVoucher.ForeColor = System.Drawing.Color.Black
         Me.GrpVoucher.Location = New System.Drawing.Point(0, 0)
         Me.GrpVoucher.Name = "GrpVoucher"
-        Me.GrpVoucher.Size = New System.Drawing.Size(616, 500)
+        Me.GrpVoucher.Size = New System.Drawing.Size(611, 500)
         Me.GrpVoucher.TabIndex = 1
         Me.GrpVoucher.TabStop = False
         Me.GrpVoucher.Text = "Keywords"
@@ -2159,7 +2156,7 @@ Partial Class FrmEditor
         Me.CorpDocu.Controls.Add(Me.GrpCorp)
         Me.CorpDocu.Location = New System.Drawing.Point(4, 22)
         Me.CorpDocu.Name = "CorpDocu"
-        Me.CorpDocu.Size = New System.Drawing.Size(633, 278)
+        Me.CorpDocu.Size = New System.Drawing.Size(628, 287)
         Me.CorpDocu.TabIndex = 4
         Me.CorpDocu.Text = "CorpDocu"
         '
@@ -2182,7 +2179,7 @@ Partial Class FrmEditor
         Me.GrpCorp.ForeColor = System.Drawing.Color.Black
         Me.GrpCorp.Location = New System.Drawing.Point(0, 0)
         Me.GrpCorp.Name = "GrpCorp"
-        Me.GrpCorp.Size = New System.Drawing.Size(616, 350)
+        Me.GrpCorp.Size = New System.Drawing.Size(611, 350)
         Me.GrpCorp.TabIndex = 1
         Me.GrpCorp.TabStop = False
         Me.GrpCorp.Text = "Keywords"
@@ -2387,9 +2384,9 @@ Partial Class FrmEditor
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LblStat})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 473)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 475)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(641, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(639, 22)
         Me.StatusStrip1.TabIndex = 18
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -2415,7 +2412,7 @@ Partial Class FrmEditor
         '
         Me.BtnSave.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnSave.Location = New System.Drawing.Point(188, 8)
+        Me.BtnSave.Location = New System.Drawing.Point(192, 8)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(92, 27)
         Me.BtnSave.TabIndex = 2
@@ -2444,16 +2441,14 @@ Partial Class FrmEditor
         Me.DocumentTypeComboBox.Size = New System.Drawing.Size(461, 24)
         Me.DocumentTypeComboBox.TabIndex = 5
         '
-        'AcroReader1
+        'WebBrowser1
         '
-        Me.AcroReader1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AcroReader1.Enabled = True
-        Me.AcroReader1.Location = New System.Drawing.Point(0, 0)
-        Me.AcroReader1.Name = "AcroReader1"
-        Me.AcroReader1.OcxState = CType(resources.GetObject("AcroReader1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AcroReader1.Size = New System.Drawing.Size(552, 737)
-        Me.AcroReader1.TabIndex = 0
-        Me.AcroReader1.Visible = False
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(537, 737)
+        Me.WebBrowser1.TabIndex = 1
         '
         'DocsCatalogueTableAdapter
         '
@@ -2469,15 +2464,6 @@ Partial Class FrmEditor
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(552, 737)
-        Me.WebBrowser1.TabIndex = 1
         '
         'FrmEditor
         '
@@ -2537,7 +2523,6 @@ Partial Class FrmEditor
         Me.TabMeeting2.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        CType(Me.AcroReader1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2563,7 +2548,6 @@ Partial Class FrmEditor
     Friend WithEvents CustomerTextBox As TextBox
     Friend WithEvents VendorTextBox As TextBox
     Friend WithEvents BookletNoTextBox As TextBox
-    Friend WithEvents AcroReader1 As AxAcroPDFLib.AxAcroPDF
     Friend WithEvents IdTextBox As TextBox
     Friend WithEvents DocumentDateRI As TextBox
     Friend WithEvents GrpTimeSheet As GroupBox

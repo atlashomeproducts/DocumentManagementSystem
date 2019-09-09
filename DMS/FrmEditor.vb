@@ -310,8 +310,6 @@ Public Class FrmEditor
                 Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
                 Dim cmdlogs As New SqlCommand(" INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
 
-
-
                 con.Open()
                 cmdlogs.Connection = con
                 cmdlogs.Parameters.AddWithValue("@Username", FrmMain.User)
@@ -319,9 +317,6 @@ Public Class FrmEditor
                 cmdlogs.Parameters.AddWithValue("@ActionDate", DateTime.Now)
                 cmdlogs.ExecuteNonQuery()
                 con.Close()
-
-
-
 
 
             Catch ex As Exception
@@ -675,7 +670,7 @@ Public Class FrmEditor
     Private Sub IdTextBox_TextChanged(sender As Object, e As EventArgs) Handles IdTextBox.TextChanged
         Try
 
-            Dim pdffile As String = (My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text)
+            Dim pdffile As String = IIf(IdTextBox.Text = "", (""), (My.Settings.ImgPath & "\" & Me.DocsCatalogueC1TrueDBGrid.Columns("FileName").Text))
             WebBrowser1.Navigate(pdffile)
 
 

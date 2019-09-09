@@ -59,7 +59,6 @@ Partial Class FrmIndex
         Me.BtnIndex = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         DocumentTypeLabel = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -197,7 +196,6 @@ Partial Class FrmIndex
         'SplitContainer3.Panel1
         '
         Me.SplitContainer3.Panel1.Controls.Add(Me.AxAcroPDF1)
-        Me.SplitContainer3.Panel1.Controls.Add(Me.WebBrowser1)
         '
         'SplitContainer3.Panel2
         '
@@ -239,9 +237,7 @@ Partial Class FrmIndex
         Me.AxAcroPDF1.Name = "AxAcroPDF1"
         Me.AxAcroPDF1.OcxState = CType(resources.GetObject("AxAcroPDF1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AxAcroPDF1.Size = New System.Drawing.Size(455, 332)
-        Me.AxAcroPDF1.TabIndex = 8
-        Me.AxAcroPDF1.TabStop = False
-        Me.AxAcroPDF1.Visible = False
+        Me.AxAcroPDF1.TabIndex = 10
         '
         'Label10
         '
@@ -500,15 +496,6 @@ Partial Class FrmIndex
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(455, 332)
-        Me.WebBrowser1.TabIndex = 9
-        '
         'FrmIndex
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -558,7 +545,6 @@ Partial Class FrmIndex
     Friend WithEvents batchIdTextBox As TextBox
     Friend WithEvents Splitter2 As Splitter
     Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
     Friend WithEvents BtnIndex As Button
     Friend WithEvents DocumentTypeComboBox As ComboBox
     Friend WithEvents Label9 As Label
@@ -574,5 +560,5 @@ Partial Class FrmIndex
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents TxtPages As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
 End Class

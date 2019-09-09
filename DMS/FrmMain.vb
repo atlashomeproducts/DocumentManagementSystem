@@ -709,4 +709,8 @@ Public Class FrmMain
 
 
     End Sub
+
+    Private Sub ToolStripMenuItem6_Click_2(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem6.Click
+
+    End Sub
 End Class

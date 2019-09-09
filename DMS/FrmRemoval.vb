@@ -34,7 +34,8 @@ Public Class FrmRemoval
     End Sub
 
     Private Sub VwRemovalC1TrueDBGrid_Click(sender As Object, e As EventArgs) Handles VwRemovalC1TrueDBGrid.Click
-
+        'Dim pdffile As String = IIf(IdTextBox.Text = "", (""), (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text))
+        'WebBrowser1.Navigate(pdffile)
     End Sub
 
     Private Sub VwRemovalC1TrueDBGrid_SelChange(sender As Object, e As CancelEventArgs) Handles VwRemovalC1TrueDBGrid.SelChange
@@ -42,25 +43,38 @@ Public Class FrmRemoval
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnSelectAll.Click
+        RemoveHandler IdTextBox.TextChanged, AddressOf IdTextBox_TextChanged
+        VwRemovalBindingSource.MoveFirst()
         For i = 0 To VwRemovalBindingSource.Count
-            VwRemovalBindingSource.MoveFirst()
             Me.VwRemovalC1TrueDBGrid.Columns("Select").Value = True
             VwRemovalBindingSource.MoveNext()
         Next
+
+        AddHandler IdTextBox.TextChanged, AddressOf IdTextBox_TextChanged
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles BtnDeselectAll.Click
+        RemoveHandler IdTextBox.TextChanged, AddressOf IdTextBox_TextChanged
+        VwRemovalBindingSource.MoveFirst()
         For i = 0 To VwRemovalBindingSource.Count
-            VwRemovalBindingSource.MoveFirst()
             Me.VwRemovalC1TrueDBGrid.Columns("Select").Value = False
             VwRemovalBindingSource.MoveNext()
         Next
+        AddHandler IdTextBox.TextChanged, AddressOf IdTextBox_TextChanged
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+
+
+
         Dim MsgDelete = MessageBox.Show("Are you sure to remove selected documents", "Delete?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If MsgDelete = vbYes Then
+
+
+            RemoveHandler IdTextBox.TextChanged, AddressOf IdTextBox_TextChanged
+            ' do work
+
 
             Dim con As New SqlConnection(ConfigurationManager.ConnectionStrings("DMS.My.MySettings.DMSConnectionString").ConnectionString)
             Dim cmdlogs As New SqlCommand("INSERT INTO DMSLogs(Username, Action, ActionDate) VALUES (@Username, @Action, @ActionDate)", con)
@@ -86,6 +100,9 @@ Public Class FrmRemoval
 
                         cmd.Parameters("@ID").Value = Me.VwRemovalC1TrueDBGrid.Columns("ID").Text
                         cmd.ExecuteNonQuery()
+
+
+
                         My.Computer.FileSystem.DeleteFile(Path.Combine(My.Settings.ImgPath, Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text))
                     End If
                     VwRemovalBindingSource.MoveNext()
@@ -105,11 +122,18 @@ Public Class FrmRemoval
 
 
                 Me.VwRemovalTableAdapter.Fill(Me.DMSDataSet.vwRemoval)
+
+                AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
                 MessageBox.Show("Files Deleted.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
+
+            Finally
+
+                AddHandler IdTextBox.TextChanged, AddressOf IdTextBox_TextChanged
+
             End Try
 
         End If
@@ -124,11 +148,10 @@ Public Class FrmRemoval
 
             Else
                 'Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.IdTextBox.Text)
-                '  AcroReader1.src = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
+                AxAcroPDF1.src = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
 
-
-                Dim pdffile As String = (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text)
-                WebBrowser1.Navigate(pdffile)
+                'Dim pdffile As String = IIf(IdTextBox.Text = "", (""), (My.Settings.ImgPath & "\" & Me.VwRemovalC1TrueDBGrid.Columns("FileName").Text))
+                'WebBrowser1.Navigate(pdffile)
 
                 Me.SpForRemovalTableAdapter.Fill(Me.DMSDataSet.spForRemoval, Me.VwRemovalC1TrueDBGrid.Columns("ID").Text)
 

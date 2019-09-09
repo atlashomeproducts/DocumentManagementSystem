@@ -80,6 +80,8 @@ Public Class FrmIndex
 
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnIndex.Click
+
+
         If txtCompany.Text = "" Or txtPurpose.Text = "" Or DocumentTypeComboBox.Text = "" Or batchIdTextBox.Text = "" Then
             MessageBox.Show("Please complete all the required fields.", "Incomplete Details", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
@@ -147,6 +149,7 @@ Public Class FrmIndex
                     'Next
                     Dim x As ArrayList = New ArrayList()
                     Dim duplicate As List(Of String) = New List(Of String)
+
                     For Each Item As String In ListBox1.SelectedItems
 
 
@@ -159,7 +162,6 @@ Public Class FrmIndex
                             duplicate.Add(My.Computer.FileSystem.GetFileInfo(Item).Name)
 
                         ElseIf ds.Tables(0).Rows.Count < 1 Then
-
                             cmd.Parameters("@DocumentType").Value = DocumentTypeComboBox.Text
                             cmd.Parameters("@BatchID").Value = batchIdTextBox.Text
                             cmd.Parameters("@SubBatch").Value = SubBatchTextbox.Text
@@ -176,11 +178,13 @@ Public Class FrmIndex
                             cmd.Parameters("@Pages").Value = TxtPages.Text
                             cmd.ExecuteNonQuery()
 
+
                             ' File.Copy(Item, Path.Combine(My.Settings.ImgPath, My.Computer.FileSystem.GetFileInfo(Item).Name), True)
 
                             If (File.Exists(Path.Combine(My.Settings.ImgPath, My.Computer.FileSystem.GetFileInfo(Item).Name))) Then
 
                             Else
+
                                 File.Move(Item, Path.Combine(My.Settings.ImgPath, My.Computer.FileSystem.GetFileInfo(Item).Name))
                                 x.Add(Item)
 
@@ -211,9 +215,11 @@ Public Class FrmIndex
                     'FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
 
                     If duplicate.Count < 1 Then
+
+                        AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
                         MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     ElseIf duplicate.Count > 0 Then
-
+                        AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
                         MessageBox.Show("Index Success!!", "Indexed", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Dim dupvalue As String = String.Join(",", duplicate)
                         MessageBox.Show("Document/s with filename/s " & dupvalue & " already exist. Please check and try again.", "File already exist", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -233,7 +239,6 @@ Public Class FrmIndex
                 Catch ex As Exception
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Finally
-                    AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
                     FrmMain.SpDMSTotalsTableAdapter.Fill(FrmMain.DMSDataSet.spDMSTotals)
                 End Try
 
@@ -246,10 +251,10 @@ Public Class FrmIndex
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         Dim path = Me.ListBox1.SelectedItem
 
-        ' AxAcroPDF1.src = path
+        AxAcroPDF1.src = path
 
 
-        WebBrowser1.Navigate(path)
+        '  WebBrowser1.Navigate(path)
 
     End Sub
 
@@ -291,32 +296,27 @@ Public Class FrmIndex
 
         batchIdTextBox.ReadOnly = True
 
-        Me.DateTimePicker2.Value = DateTimePicker1.Value
 
+
+        Me.DateTimePicker2.Value = DateTimePicker1.Value
+        Me.DateTimePicker2.Visible = False
 
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles BtnRemove.Click
-
+        Dim MsgDelete = MessageBox.Show("Remove Items?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         Try
-
-            Dim MsgDelete = MessageBox.Show("Remove Items?", "Remove?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-
             If MsgDelete = vbYes Then
-
-
 
                 Do While (ListBox1.SelectedItems.Count > 0)
                     ListBox1.Items.Remove(ListBox1.SelectedItem)
                 Loop
 
-                AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+                ' AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
 
-            ElseIf MsgDelete = vbNo Then
+                ' WebBrowser1.Navigate("")
 
             End If
-
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -443,5 +443,14 @@ Public Class FrmIndex
 
     Private Sub ListBox1_LostFocus(sender As Object, e As EventArgs) Handles ListBox1.LostFocus
         ListBox1.BackColor = Color.White
+    End Sub
+
+    Private Sub ListBox1_Click(sender As Object, e As EventArgs) Handles ListBox1.Click
+        Dim path = Me.ListBox1.SelectedItem
+
+        AxAcroPDF1.src = path
+
+
+        ' WebBrowser1.Navigate(path)
     End Sub
 End Class
