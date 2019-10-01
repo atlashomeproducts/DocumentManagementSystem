@@ -52,6 +52,7 @@ Partial Class FrmMain
         Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TxtQueue = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
@@ -70,7 +71,6 @@ Partial Class FrmMain
         Me.TableAdapterManager = New DMS.DMSDataSetTableAdapters.TableAdapterManager()
         Me.SpDMSLogsTableAdapter = New DMS.DMSDataSetTableAdapters.spDMSLogsTableAdapter()
         Me.SpDMSLogsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HelpToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.TabLogin.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -405,6 +405,13 @@ Partial Class FrmMain
         Me.ToolStripMenuItem4.Size = New System.Drawing.Size(40, 27)
         Me.ToolStripMenuItem4.Text = "||"
         '
+        'HelpToolStripMenuItem6
+        '
+        Me.HelpToolStripMenuItem6.Image = CType(resources.GetObject("HelpToolStripMenuItem6.Image"), System.Drawing.Image)
+        Me.HelpToolStripMenuItem6.Name = "HelpToolStripMenuItem6"
+        Me.HelpToolStripMenuItem6.Size = New System.Drawing.Size(73, 27)
+        Me.HelpToolStripMenuItem6.Text = "Help"
+        '
         'TxtQueue
         '
         Me.TxtQueue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
@@ -621,13 +628,6 @@ Partial Class FrmMain
         '
         Me.SpDMSLogsBindingSource1.DataMember = "spDMSLogs"
         Me.SpDMSLogsBindingSource1.DataSource = Me.DMSDataSet
-        '
-        'HelpToolStripMenuItem6
-        '
-        Me.HelpToolStripMenuItem6.Image = CType(resources.GetObject("HelpToolStripMenuItem6.Image"), System.Drawing.Image)
-        Me.HelpToolStripMenuItem6.Name = "HelpToolStripMenuItem6"
-        Me.HelpToolStripMenuItem6.Size = New System.Drawing.Size(73, 27)
-        Me.HelpToolStripMenuItem6.Text = "Help"
         '
         'FrmMain
         '

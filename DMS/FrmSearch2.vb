@@ -116,10 +116,21 @@ Public Class FrmSearch2
 
         Next
 
-        Me.PaymentFormComboBox.Items.Add("Bank Deposit")
-        Me.PaymentFormComboBox.Items.Add("Cash")
-        Me.PaymentFormComboBox.Items.Add("Check")
-        Me.PaymentFormComboBox.Items.Add("Others")
+
+
+        TabControl5.Appearance = TabAppearance.Normal
+        TabControl5.ItemSize = New Size(0, 1)
+        TabControl5.SizeMode = TabSizeMode.Fixed
+
+
+        For Each TabPage In TabControl5.TabPages
+
+            TabPage.Text = ""
+            TabPage.BackColor = Color.Azure
+
+        Next
+
+
 
         Me.BtnSaveChanges1.Enabled = False
         Me.BtnDownload.Enabled = False
@@ -181,6 +192,32 @@ Public Class FrmSearch2
         End Try
 
 
+        Me.PaymentFormComboBox.Items.Add("Bank Deposit")
+        Me.PaymentFormComboBox.Items.Add("Cash")
+        Me.PaymentFormComboBox.Items.Add("Check")
+        Me.PaymentFormComboBox.Items.Add("Others")
+
+
+
+        Me.PaymentFormImport.Items.Add("Letter of Credit")
+        Me.PaymentFormImport.Items.Add("DP")
+        Me.PaymentFormImport.Items.Add("Others")
+
+
+
+        Me.ShipBatchImport.Items.Add("Batch 1")
+        Me.ShipBatchImport.Items.Add("Batch 2")
+        Me.ShipBatchImport.Items.Add("Batch 3")
+        Me.ShipBatchImport.Items.Add("Batch 4")
+        Me.ShipBatchImport.Items.Add("Batch 5")
+        Me.ShipBatchImport.Items.Add("Batch 6")
+        Me.ShipBatchImport.Items.Add("Batch 7")
+        Me.ShipBatchImport.Items.Add("Batch 8")
+        Me.ShipBatchImport.Items.Add("Batch 9")
+        Me.ShipBatchImport.Items.Add("Batch 10")
+
+
+
 
     End Sub
 
@@ -204,16 +241,12 @@ Public Class FrmSearch2
             TabControl2.SelectTab(ReceiptInvoice)
         ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Provisional Receipt" Then
             TabControl2.SelectTab(ReceiptInvoice)
-
         ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Daily Time Record" Then
             TabControl2.SelectTab(Timesheet)
-
         ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Warranty Card" Then
             TabControl2.SelectTab(Warranty)
-
         ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Payment Voucher" Then
             TabControl2.SelectTab(Voucher)
-
         ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Secretary's Certificate" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting)
@@ -235,6 +268,38 @@ Public Class FrmSearch2
         ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "General Information Sheet" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting2)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Importation Documents" Then
+            TabControl2.SelectTab(Importation)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "BIR Form" Then
+            TabControl2.SelectTab(BIR)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "HR Document" Then
+            TabControl2.SelectTab(HRDoc)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Board Resolution" Then
+            TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting2)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Copyright" Then
+            TabControl2.SelectTab(Copyright)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Trademark" Then
+            TabControl2.SelectTab(Trademark)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Trademark" Then
+            TabControl2.SelectTab(Trademark)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Patent" Then
+            TabControl2.SelectTab(Patent)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "BIR Importer Clearance Certificate (BIR-ICC)" Then
+            TabControl2.SelectTab(BIRClear)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Certificate of Accreditation" Then
+            TabControl2.SelectTab(Accredit)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "GS1 Membership Subscription" Then
+            TabControl2.SelectTab(Subs)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Contract" Then
+            TabControl2.SelectTab(Contract)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Special Power of Attorney" Then
+            TabControl2.SelectTab(Attorney)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Other Documents" Then
+            TabControl2.SelectTab(OtherDoc)
+        ElseIf Me.C1TrueDBGrid2.Columns("Document Type").Text = "Memorandum" Then
+            TabControl2.SelectTab(Memo)
+
         End If
 
 
@@ -254,15 +319,12 @@ Public Class FrmSearch2
             TabControl2.SelectTab(ReceiptInvoice)
         ElseIf Me.DocumentTypeCombobox2.Text = "Provisional Receipt" Then
             TabControl2.SelectTab(ReceiptInvoice)
-
         ElseIf Me.DocumentTypeCombobox2.Text = "Daily Time Record" Then
             TabControl2.SelectTab(Timesheet)
         ElseIf Me.DocumentTypeCombobox2.Text = "Warranty Card" Then
             TabControl2.SelectTab(Warranty)
-
         ElseIf Me.DocumentTypeCombobox2.Text = "Payment Voucher" Then
             TabControl2.SelectTab(Voucher)
-
         ElseIf Me.DocumentTypeCombobox2.Text = "Secretary's Certificate" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting)
@@ -284,6 +346,41 @@ Public Class FrmSearch2
         ElseIf Me.DocumentTypeCombobox2.Text = "General Information Sheet" Then
             TabControl2.SelectTab(CorpDocu)
             TabControl4.SelectTab(TabMeeting2)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Importation Documents" Then
+            TabControl2.SelectTab(Importation)
+        ElseIf Me.DocumentTypeCombobox2.Text = "BIR Form" Then
+            TabControl2.SelectTab(BIR)
+        ElseIf Me.DocumentTypeCombobox2.Text = "HR Document" Then
+            TabControl2.SelectTab(HRDoc)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Board Resolution" Then
+            TabControl2.SelectTab(CorpDocu)
+            TabControl4.SelectTab(TabMeeting2)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Copyright" Then
+            TabControl2.SelectTab(Copyright)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Trademark" Then
+            TabControl2.SelectTab(Trademark)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Trademark" Then
+            TabControl2.SelectTab(Trademark)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Patent" Then
+            TabControl2.SelectTab(Patent)
+        ElseIf Me.DocumentTypeCombobox2.Text = "BIR Importer Clearance Certificate (BIR-ICC)" Then
+            TabControl2.SelectTab(BIRClear)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Certificate of Accreditation" Then
+            TabControl2.SelectTab(Accredit)
+        ElseIf Me.DocumentTypeCombobox2.Text = "GS1 Membership Subscription" Then
+            TabControl2.SelectTab(Subs)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Contract" Then
+            TabControl2.SelectTab(Contract)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Special Power of Attorney" Then
+            TabControl2.SelectTab(Attorney)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Other Documents" Then
+            TabControl2.SelectTab(OtherDoc)
+        ElseIf Me.DocumentTypeCombobox2.Text = "Memorandum" Then
+            TabControl2.SelectTab(Memo)
+
+
+
+
 
         End If
     End Sub
@@ -729,57 +826,17 @@ AND ([DocumentType] LIKE '%' + @Wild + '%'
 
     End Sub
     Private Sub BtnSaveChanges1_Click(sender As Object, e As EventArgs) Handles BtnSaveChanges1.Click
-
         Try
 
 
-
-            Dim DateFormat As Date
-
-            If Date.TryParseExact(DocumentDateTS.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateTS.Text = "" Then
-                SaveChanges()
-            ElseIf Date.TryParseExact(FromPeriodTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodTextBox.Text = "" Then
-                SaveChanges()
-            ElseIf Date.TryParseExact(ToPeriodTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodTextBox.Text = "" Then
-                SaveChanges()
-            ElseIf Date.TryParseExact(DocumentDateRI.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateRI.Text = "" Then
-                SaveChanges()
-            ElseIf Date.TryParseExact(DatePurchasedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DatePurchasedTextBox.Text = "" Then
-                SaveChanges()
-            ElseIf Date.TryParseExact(DocumentDateVoucher.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateVoucher.Text = "" Then
-                SaveChanges()
-            ElseIf Date.TryParseExact(DateReceivedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DateReceivedTextBox.Text = "" Then
-                SaveChanges()
-            ElseIf Date.TryParseExact(DocumentDateCorp.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateCorp.Text = "" Then
-                SaveChanges()
-            ElseIf Date.TryParseExact(MeetingDateTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.MeetingDateTextBox.Text = "" Then
-                SaveChanges()
-            ElseIf Date.TryParseExact(PromoFromTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoFromTextBox.Text = "" Then
-                SaveChanges()
-            ElseIf Date.TryParseExact(PromoToTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoToTextBox.Text = "" Then
-                SaveChanges()
-            Else
-
-                MessageBox.Show("Incorrect Date Format")
-                Me.DocumentDateTS.Clear()
-                Me.FromPeriodTextBox.Clear()
-                Me.ToPeriodTextBox.Clear()
-                Me.DocumentDateRI.Clear()
-                Me.DatePurchasedTextBox.Clear()
-                Me.DocumentDateVoucher.Clear()
-                Me.DateReceivedTextBox.Clear()
-                Me.DocumentDateCorp.Clear()
-                Me.MeetingDateTextBox.Clear()
-                Me.PromoFromTextBox.Clear()
-                Me.PromoToTextBox.Clear()
-
-            End If
-
+            SaveChanges()
             Search()
 
         Catch ex As Exception
-            MessageBox.Show("Error while updating records " & ex.Message)
+            MessageBox.Show(ex.Message)
         End Try
+
+
     End Sub
 
 
@@ -861,7 +918,7 @@ AND ([DocumentType] LIKE '%' + @Wild + '%'
         End If
     End Sub
     Private Sub DatePurchasedTextBox_LostFocus(sender As Object, e As EventArgs) Handles DatePurchasedTextBox.LostFocus
-        SerialTextBox.BackColor = Color.White
+        DatePurchasedTextBox.BackColor = Color.White
 
         Dim DateFormat As Date
         If Date.TryParseExact(DatePurchasedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DatePurchasedTextBox.Text = "" Then
@@ -934,7 +991,16 @@ AND ([DocumentType] LIKE '%' + @Wild + '%'
     End Sub
 
     Private Sub PromoFromTextBox_TextChanged(sender As Object, e As EventArgs) Handles PromoFromTextBox.TextChanged
+        PromoFromTextBox.BackColor = Color.White
 
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(PromoFromTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.PromoFromTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.PromoFromTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.PromoFromTextBox.Clear()
+        End If
     End Sub
 
     Private Sub DocumentTypeCombobox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DocumentTypeCombobox2.SelectedIndexChanged
@@ -1082,6 +1148,17 @@ AND ([DocumentType] LIKE '%' + @Wild + '%'
     End Sub
     Private Sub DocumentDateTS_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateTS.LostFocus
         DocumentDateTS.BackColor = Color.White
+
+
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DocumentDateTS.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateTS.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DocumentDateTS.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DocumentDateTS.Clear()
+        End If
     End Sub
     Private Sub LastNameTextBox_GotFocus(sender As Object, e As EventArgs) Handles LastNameTextBox.GotFocus
         LastNameTextBox.BackColor = Color.LightYellow
@@ -1413,4 +1490,896 @@ AND ([DocumentType] LIKE '%' + @Wild + '%'
         '    End Try
     End Sub
 
+    Private Sub DateTimePicker4_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker3_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BankAddressLabel_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTMeetingDate_ValueChanged_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub MeetingDateLabel_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged_2(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged_4(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged_3(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTDocuBIR_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTDocuHRDoc_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTFilingTrade_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTToTrade_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTFromTrade_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTRegDateTrade_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTFilingPatent_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTToPatent_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTFromPatent_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged_2(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTToClear_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTFromClear_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged_3(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTToSubs_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTFromSubs_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged_4(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTDateSignContract_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTToContract_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTFromContract_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTToAttorney_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTFromAttorney_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTIssuePlaceAttorney_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged_5(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTIssuePlaceOther_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker2_ValueChanged_6(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTIssueDateMemo_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DTIssueDateMemo_ValueChanged_1(sender As Object, e As EventArgs) Handles DTIssueDateMemo.ValueChanged
+        Me.IssueDateMemo.Text = Me.DTIssueDateMemo.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub IssueDateMemo_TextChanged(sender As Object, e As EventArgs) Handles IssueDateMemo.TextChanged
+
+    End Sub
+
+    Private Sub IssueDateMemo_LostFocus(sender As Object, e As EventArgs) Handles IssueDateMemo.LostFocus
+        IssueDateMemo.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(IssueDateMemo.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.IssueDateMemo.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.IssueDateMemo.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.IssueDateMemo.Clear()
+        End If
+    End Sub
+
+    Private Sub DTIssueDateOther_ValueChanged(sender As Object, e As EventArgs) Handles DTIssueDateOther.ValueChanged
+        Me.IssueDateOther.Text = Me.DTIssueDateOther.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTIssuePlaceOther_ValueChanged_1(sender As Object, e As EventArgs) Handles DTIssuePlaceOther.ValueChanged
+        Me.IssuePlaceOther.Text = Me.DTIssuePlaceOther.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub IssueDateOther_TextChanged(sender As Object, e As EventArgs) Handles IssueDateOther.TextChanged
+
+    End Sub
+
+    Private Sub IssueDateOther_LostFocus(sender As Object, e As EventArgs) Handles IssueDateOther.LostFocus
+        IssueDateOther.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(IssueDateOther.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.IssueDateOther.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.IssueDateOther.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.IssueDateOther.Clear()
+        End If
+    End Sub
+
+    Private Sub IssuePlaceOther_TextChanged(sender As Object, e As EventArgs) Handles IssuePlaceOther.TextChanged
+
+    End Sub
+
+    Private Sub IssuePlaceOther_LostFocus(sender As Object, e As EventArgs) Handles IssuePlaceOther.LostFocus
+        IssuePlaceOther.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(IssuePlaceOther.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.IssuePlaceOther.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.IssuePlaceOther.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.IssuePlaceOther.Clear()
+        End If
+    End Sub
+
+    Private Sub DTIssueDateAttorney_ValueChanged(sender As Object, e As EventArgs) Handles DTIssueDateAttorney.ValueChanged
+        Me.IssueDateAttorney.Text = Me.DTIssueDateAttorney.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTIssuePlaceAttorney_ValueChanged_1(sender As Object, e As EventArgs) Handles DTIssuePlaceAttorney.ValueChanged
+        Me.IssuePlaceAttorney.Text = Me.DTIssuePlaceAttorney.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub IssueDateAttorney_TextChanged(sender As Object, e As EventArgs) Handles IssueDateAttorney.TextChanged
+
+    End Sub
+
+    Private Sub IssueDateAttorney_LostFocus(sender As Object, e As EventArgs) Handles IssueDateAttorney.LostFocus
+        IssueDateAttorney.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(IssueDateAttorney.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.IssueDateAttorney.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.IssueDateAttorney.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.IssueDateAttorney.Clear()
+        End If
+    End Sub
+
+    Private Sub IssuePlaceAttorney_TextChanged(sender As Object, e As EventArgs) Handles IssuePlaceAttorney.TextChanged
+
+    End Sub
+
+    Private Sub IssuePlaceAttorney_LostFocus(sender As Object, e As EventArgs) Handles IssuePlaceAttorney.LostFocus
+        IssuePlaceAttorney.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(IssuePlaceAttorney.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.IssuePlaceAttorney.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.IssuePlaceAttorney.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.IssuePlaceAttorney.Clear()
+        End If
+    End Sub
+
+    Private Sub DTFromAttorney_ValueChanged_1(sender As Object, e As EventArgs) Handles DTFromAttorney.ValueChanged
+        Me.FromPeriodAttorney.Text = Me.DTFromAttorney.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTToAttorney_ValueChanged_1(sender As Object, e As EventArgs) Handles DTToAttorney.ValueChanged
+        Me.ToPeriodAttorney.Text = Me.DTToAttorney.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub FromPeriodAttorney_TextChanged(sender As Object, e As EventArgs) Handles FromPeriodAttorney.TextChanged
+
+    End Sub
+
+    Private Sub FromPeriodAttorney_LostFocus(sender As Object, e As EventArgs) Handles FromPeriodAttorney.LostFocus
+        FromPeriodAttorney.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FromPeriodAttorney.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodAttorney.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FromPeriodAttorney.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FromPeriodAttorney.Clear()
+        End If
+    End Sub
+
+    Private Sub ToPeriodAttorney_TextChanged(sender As Object, e As EventArgs) Handles ToPeriodAttorney.TextChanged
+
+    End Sub
+
+    Private Sub ToPeriodAttorney_LostFocus(sender As Object, e As EventArgs) Handles ToPeriodAttorney.LostFocus
+        ToPeriodAttorney.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(ToPeriodAttorney.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodAttorney.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.ToPeriodAttorney.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.ToPeriodAttorney.Clear()
+        End If
+    End Sub
+
+    Private Sub DTFromContract_ValueChanged_1(sender As Object, e As EventArgs) Handles DTFromContract.ValueChanged
+        Me.FromPeriodContract.Text = Me.DTFromContract.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub FromPeriodContract_TextChanged(sender As Object, e As EventArgs) Handles FromPeriodContract.TextChanged
+
+    End Sub
+
+    Private Sub FromPeriodContract_LostFocus(sender As Object, e As EventArgs) Handles FromPeriodContract.LostFocus
+        FromPeriodContract.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FromPeriodContract.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodContract.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FromPeriodContract.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FromPeriodContract.Clear()
+        End If
+    End Sub
+
+    Private Sub DTToContract_ValueChanged_1(sender As Object, e As EventArgs) Handles DTToContract.ValueChanged
+        Me.ToPeriodContract.Text = Me.DTToContract.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub ToPeriodContract_TextChanged(sender As Object, e As EventArgs) Handles ToPeriodContract.TextChanged
+
+    End Sub
+
+    Private Sub ToPeriodContract_LostFocus(sender As Object, e As EventArgs) Handles ToPeriodContract.LostFocus
+        ToPeriodContract.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(ToPeriodContract.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodContract.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.ToPeriodContract.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.ToPeriodContract.Clear()
+        End If
+    End Sub
+
+    Private Sub DTDateSignContract_ValueChanged_1(sender As Object, e As EventArgs) Handles DTDateSignContract.ValueChanged
+        Me.SignDateContract.Text = Me.DTDateSignContract.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub SignDateContract_TextChanged(sender As Object, e As EventArgs) Handles SignDateContract.TextChanged
+
+    End Sub
+
+    Private Sub SignDateContract_LostFocus(sender As Object, e As EventArgs) Handles SignDateContract.LostFocus
+        SignDateContract.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(SignDateContract.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.SignDateContract.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.SignDateContract.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.SignDateContract.Clear()
+        End If
+    End Sub
+
+    Private Sub DTSubsDateSubs_ValueChanged(sender As Object, e As EventArgs) Handles DTSubsDateSubs.ValueChanged
+        Me.SubsDateSubs.Text = Me.DTSubsDateSubs.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTFromSubs_ValueChanged_1(sender As Object, e As EventArgs) Handles DTFromSubs.ValueChanged
+        Me.FromPeriodSubs.Text = Me.DTFromSubs.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTToSubs_ValueChanged_1(sender As Object, e As EventArgs) Handles DTToSubs.ValueChanged
+        Me.ToPeriodSubs.Text = Me.DTToSubs.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub ToPeriodSubs_TextChanged(sender As Object, e As EventArgs) Handles ToPeriodSubs.TextChanged
+
+    End Sub
+
+    Private Sub ToPeriodSubs_LostFocus(sender As Object, e As EventArgs) Handles ToPeriodSubs.LostFocus
+        ToPeriodSubs.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(ToPeriodSubs.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodSubs.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.ToPeriodSubs.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.ToPeriodSubs.Clear()
+        End If
+    End Sub
+
+    Private Sub FromPeriodSubs_TextChanged(sender As Object, e As EventArgs) Handles FromPeriodSubs.TextChanged
+
+    End Sub
+
+    Private Sub FromPeriodSubs_LostFocus(sender As Object, e As EventArgs) Handles FromPeriodSubs.LostFocus
+        FromPeriodSubs.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FromPeriodSubs.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodSubs.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FromPeriodSubs.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FromPeriodSubs.Clear()
+        End If
+    End Sub
+
+    Private Sub SubsDateSubs_TextChanged(sender As Object, e As EventArgs) Handles SubsDateSubs.TextChanged
+
+    End Sub
+
+    Private Sub SubsDateSubs_LostFocus(sender As Object, e As EventArgs) Handles SubsDateSubs.LostFocus
+        SubsDateSubs.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(SubsDateSubs.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.SubsDateSubs.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.SubsDateSubs.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.SubsDateSubs.Clear()
+        End If
+    End Sub
+
+    Private Sub DTIssueDateAccre_ValueChanged(sender As Object, e As EventArgs) Handles DTIssueDateAccre.ValueChanged
+        Me.IssueDateAccre.Text = Me.DTIssueDateAccre.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTFromAccre_ValueChanged(sender As Object, e As EventArgs) Handles DTFromAccre.ValueChanged
+        Me.FromPeriodAccre.Text = Me.DTFromAccre.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTToAccre_ValueChanged(sender As Object, e As EventArgs) Handles DTToAccre.ValueChanged
+        Me.ToPeriodAccre.Text = Me.DTToAccre.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub IssueDateAccre_TextChanged(sender As Object, e As EventArgs) Handles IssueDateAccre.TextChanged
+
+    End Sub
+
+    Private Sub IssueDateAccre_LostFocus(sender As Object, e As EventArgs) Handles IssueDateAccre.LostFocus
+        IssueDateAccre.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(IssueDateAccre.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.IssueDateAccre.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.IssueDateAccre.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.IssueDateAccre.Clear()
+        End If
+    End Sub
+
+    Private Sub FromPeriodAccre_TextChanged(sender As Object, e As EventArgs) Handles FromPeriodAccre.TextChanged
+
+    End Sub
+
+    Private Sub FromPeriodAccre_LostFocus(sender As Object, e As EventArgs) Handles FromPeriodAccre.LostFocus
+        FromPeriodAccre.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FromPeriodAccre.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodAccre.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FromPeriodAccre.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FromPeriodAccre.Clear()
+        End If
+    End Sub
+
+    Private Sub ToPeriodAccre_TextChanged(sender As Object, e As EventArgs) Handles ToPeriodAccre.TextChanged
+
+    End Sub
+
+    Private Sub ToPeriodAccre_LostFocus(sender As Object, e As EventArgs) Handles ToPeriodAccre.LostFocus
+        ToPeriodAccre.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(ToPeriodAccre.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodAccre.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.ToPeriodAccre.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.ToPeriodAccre.Clear()
+        End If
+    End Sub
+
+    Private Sub DTIssueDateClear_ValueChanged(sender As Object, e As EventArgs) Handles DTIssueDateClear.ValueChanged
+        Me.IssueDateClear.Text = Me.DTIssueDateClear.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTFromClear_ValueChanged_1(sender As Object, e As EventArgs) Handles DTFromClear.ValueChanged
+        Me.FromPeriodClear.Text = Me.DTFromClear.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTToClear_ValueChanged_1(sender As Object, e As EventArgs) Handles DTToClear.ValueChanged
+        Me.ToPeriodClear.Text = Me.DTToClear.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub IssueDateClear_TextChanged(sender As Object, e As EventArgs) Handles IssueDateClear.TextChanged
+
+    End Sub
+
+    Private Sub IssueDateClear_LostFocus(sender As Object, e As EventArgs) Handles IssueDateClear.LostFocus
+        IssueDateClear.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(IssueDateClear.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.IssueDateClear.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.IssueDateClear.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.IssueDateClear.Clear()
+        End If
+    End Sub
+
+    Private Sub FromPeriodClear_TextChanged(sender As Object, e As EventArgs) Handles FromPeriodClear.TextChanged
+
+    End Sub
+
+    Private Sub FromPeriodClear_LostFocus(sender As Object, e As EventArgs) Handles FromPeriodClear.LostFocus
+        FromPeriodClear.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FromPeriodClear.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodClear.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FromPeriodClear.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FromPeriodClear.Clear()
+        End If
+    End Sub
+
+    Private Sub ToPeriodClear_TextChanged(sender As Object, e As EventArgs) Handles ToPeriodClear.TextChanged
+
+    End Sub
+
+    Private Sub ToPeriodClear_LostFocus(sender As Object, e As EventArgs) Handles ToPeriodClear.LostFocus
+        ToPeriodClear.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(ToPeriodClear.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodClear.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.ToPeriodClear.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.ToPeriodClear.Clear()
+        End If
+    End Sub
+
+    Private Sub DocumentDateTS_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateTS.TextChanged
+
+    End Sub
+
+    Private Sub DTFromPeriod_ValueChanged(sender As Object, e As EventArgs) Handles DTFromPeriod.ValueChanged
+        Me.FromPeriodTextBox.Text = Me.DTFromPeriod.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTToPeriod_ValueChanged(sender As Object, e As EventArgs) Handles DTToPeriod.ValueChanged
+        Me.ToPeriodTextBox.Text = Me.DTToPeriod.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub FromPeriodTextBox_TextChanged(sender As Object, e As EventArgs) Handles FromPeriodTextBox.TextChanged
+
+    End Sub
+
+    Private Sub ToPeriodTextBox_TextChanged(sender As Object, e As EventArgs) Handles ToPeriodTextBox.TextChanged
+
+    End Sub
+
+    Private Sub DocumentDateRI_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateRI.TextChanged
+
+    End Sub
+
+    Private Sub DatePurchasedTextBox_TextChanged(sender As Object, e As EventArgs) Handles DatePurchasedTextBox.TextChanged
+
+    End Sub
+
+    Private Sub DocumentDateVoucher_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateVoucher.TextChanged
+
+    End Sub
+
+    Private Sub DTDateReceived_ValueChanged(sender As Object, e As EventArgs) Handles DTDateReceived.ValueChanged
+        Me.DateReceivedTextBox.Text = Me.DTDateReceived.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DateReceivedTextBox_TextChanged(sender As Object, e As EventArgs) Handles DateReceivedTextBox.TextChanged
+
+    End Sub
+
+    Private Sub DateReceivedTextBox_LostFocus(sender As Object, e As EventArgs) Handles DateReceivedTextBox.LostFocus
+        DateReceivedTextBox.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DateReceivedTextBox.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DateReceivedTextBox.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DateReceivedTextBox.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DateReceivedTextBox.Clear()
+        End If
+    End Sub
+
+    Private Sub DocumentDateCorp_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateCorp.TextChanged
+
+    End Sub
+
+    Private Sub MeetingDateTextBox_TextChanged(sender As Object, e As EventArgs) Handles MeetingDateTextBox.TextChanged
+
+    End Sub
+
+    Private Sub PromoToTextBox_TextChanged(sender As Object, e As EventArgs) Handles PromoToTextBox.TextChanged
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged_5(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        Me.ImpMonthImport.Text = Me.DateTimePicker1.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub ImpMonthImport_TextChanged(sender As Object, e As EventArgs) Handles ImpMonthImport.TextChanged
+
+    End Sub
+
+    Private Sub ImpMonthImport_LostFocus(sender As Object, e As EventArgs) Handles ImpMonthImport.LostFocus
+        ImpMonthImport.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(ImpMonthImport.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ImpMonthImport.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.ImpMonthImport.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.ImpMonthImport.Clear()
+        End If
+    End Sub
+
+    Private Sub DTVesselImport_ValueChanged(sender As Object, e As EventArgs) Handles DTVesselImport.ValueChanged
+        Me.VesselArrivedImport.Text = Me.DTVesselImport.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub VesselArrivedImport_TextChanged(sender As Object, e As EventArgs) Handles VesselArrivedImport.TextChanged
+
+    End Sub
+
+    Private Sub VesselArrivedImport_LostFocus(sender As Object, e As EventArgs) Handles VesselArrivedImport.LostFocus
+
+        VesselArrivedImport.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(VesselArrivedImport.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.VesselArrivedImport.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.VesselArrivedImport.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.VesselArrivedImport.Clear()
+        End If
+    End Sub
+
+    Private Sub DTDocuBIR_ValueChanged_1(sender As Object, e As EventArgs) Handles DTDocuBIR.ValueChanged
+
+        Me.DocumentDateBIR.Text = Me.DTDocuBIR.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DocumentDateBIR_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateBIR.TextChanged
+
+    End Sub
+
+    Private Sub DocumentDateBIR_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateBIR.LostFocus
+        DocumentDateBIR.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DocumentDateBIR.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateBIR.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DocumentDateBIR.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DocumentDateBIR.Clear()
+        End If
+    End Sub
+
+    Private Sub DTDocuHRDoc_ValueChanged_1(sender As Object, e As EventArgs) Handles DTDocuHRDoc.ValueChanged
+        Me.DocumentDateHRDoc.Text = Me.DTDocuHRDoc.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DocumentDateHRDoc_TextChanged(sender As Object, e As EventArgs) Handles DocumentDateHRDoc.TextChanged
+
+    End Sub
+
+    Private Sub DocumentDateHRDoc_LostFocus(sender As Object, e As EventArgs) Handles DocumentDateHRDoc.LostFocus
+        DocumentDateHRDoc.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(DocumentDateHRDoc.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.DocumentDateHRDoc.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.DocumentDateHRDoc.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.DocumentDateHRDoc.Clear()
+        End If
+    End Sub
+
+    Private Sub DTCreateDate_ValueChanged(sender As Object, e As EventArgs) Handles DTCreateDate.ValueChanged
+        Me.CreationDateCopy.Text = Me.DTCreateDate.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub CreationDateCopy_TextChanged(sender As Object, e As EventArgs) Handles CreationDateCopy.TextChanged
+        CreationDateCopy.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(CreationDateCopy.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.CreationDateCopy.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.CreationDateCopy.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.CreationDateCopy.Clear()
+        End If
+    End Sub
+
+    Private Sub DTRegDateTrade_ValueChanged_1(sender As Object, e As EventArgs) Handles DTRegDateTrade.ValueChanged
+        Me.RegDateTrade.Text = Me.DTRegDateTrade.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub RegDateTrade_TextChanged(sender As Object, e As EventArgs) Handles RegDateTrade.TextChanged
+
+    End Sub
+
+    Private Sub RegDateTrade_LostFocus(sender As Object, e As EventArgs) Handles RegDateTrade.LostFocus
+        RegDateTrade.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(RegDateTrade.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.RegDateTrade.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.RegDateTrade.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.RegDateTrade.Clear()
+        End If
+    End Sub
+
+    Private Sub DTFromTrade_ValueChanged_1(sender As Object, e As EventArgs) Handles DTFromTrade.ValueChanged
+        Me.FromPeriodTrade.Text = Me.DTFromTrade.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTToTrade_ValueChanged_1(sender As Object, e As EventArgs) Handles DTToTrade.ValueChanged
+        Me.ToPeriodTrade.Text = Me.DTToTrade.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTFilingTrade_ValueChanged_1(sender As Object, e As EventArgs) Handles DTFilingTrade.ValueChanged
+        Me.FilingDateTrade.Text = Me.DTFilingTrade.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub FromPeriodTrade_TextChanged(sender As Object, e As EventArgs) Handles FromPeriodTrade.TextChanged
+
+    End Sub
+
+    Private Sub FromPeriodTrade_LostFocus(sender As Object, e As EventArgs) Handles FromPeriodTrade.LostFocus
+
+        FromPeriodTrade.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FromPeriodTrade.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodTrade.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FromPeriodTrade.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FromPeriodTrade.Clear()
+        End If
+    End Sub
+
+    Private Sub ToPeriodTrade_TextChanged(sender As Object, e As EventArgs) Handles ToPeriodTrade.TextChanged
+
+    End Sub
+
+    Private Sub ToPeriodTrade_LostFocus(sender As Object, e As EventArgs) Handles ToPeriodTrade.LostFocus
+
+        ToPeriodTrade.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(ToPeriodTrade.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodTrade.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.ToPeriodTrade.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.ToPeriodTrade.Clear()
+        End If
+    End Sub
+
+    Private Sub FilingDateTrade_TextChanged(sender As Object, e As EventArgs) Handles FilingDateTrade.TextChanged
+
+    End Sub
+
+    Private Sub FilingDateTrade_LostFocus(sender As Object, e As EventArgs) Handles FilingDateTrade.LostFocus
+        FilingDateTrade.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FilingDateTrade.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FilingDateTrade.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FilingDateTrade.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FilingDateTrade.Clear()
+        End If
+    End Sub
+
+    Private Sub DTRegDatePatent_ValueChanged(sender As Object, e As EventArgs) Handles DTRegDatePatent.ValueChanged
+        Me.RegDatePatent.Text = Me.DTRegDatePatent.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTFromPatent_ValueChanged_1(sender As Object, e As EventArgs) Handles DTFromPatent.ValueChanged
+        Me.FromPeriodPatent.Text = Me.DTFromPatent.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTToPatent_ValueChanged_1(sender As Object, e As EventArgs) Handles DTToPatent.ValueChanged
+        Me.ToPeriodPatent.Text = Me.DTToPatent.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub DTFilingPatent_ValueChanged_1(sender As Object, e As EventArgs) Handles DTFilingPatent.ValueChanged
+        Me.FilingDatePatent.Text = Me.DTFilingPatent.Value.ToString("MM/dd/yyyy")
+    End Sub
+
+    Private Sub RegDatePatent_TextChanged(sender As Object, e As EventArgs) Handles RegDatePatent.TextChanged
+
+    End Sub
+
+    Private Sub RegDatePatent_LostFocus(sender As Object, e As EventArgs) Handles RegDatePatent.LostFocus
+        RegDatePatent.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(RegDatePatent.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.RegDatePatent.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.RegDatePatent.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.RegDatePatent.Clear()
+        End If
+    End Sub
+
+    Private Sub FromPeriodPatent_TextChanged(sender As Object, e As EventArgs) Handles FromPeriodPatent.TextChanged
+
+    End Sub
+
+    Private Sub FromPeriodPatent_LostFocus(sender As Object, e As EventArgs) Handles FromPeriodPatent.LostFocus
+        FromPeriodPatent.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FromPeriodPatent.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FromPeriodPatent.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FromPeriodPatent.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FromPeriodPatent.Clear()
+        End If
+    End Sub
+
+    Private Sub ToPeriodPatent_TextChanged(sender As Object, e As EventArgs) Handles ToPeriodPatent.TextChanged
+
+    End Sub
+
+    Private Sub ToPeriodPatent_LostFocus(sender As Object, e As EventArgs) Handles ToPeriodPatent.LostFocus
+        ToPeriodPatent.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(ToPeriodPatent.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.ToPeriodPatent.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.ToPeriodPatent.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.ToPeriodPatent.Clear()
+        End If
+    End Sub
+
+    Private Sub FilingDatePatent_TextChanged(sender As Object, e As EventArgs) Handles FilingDatePatent.TextChanged
+
+    End Sub
+
+    Private Sub FilingDatePatent_LostFocus(sender As Object, e As EventArgs) Handles FilingDatePatent.LostFocus
+        FilingDatePatent.BackColor = Color.White
+
+        Dim DateFormat As Date
+
+        If Date.TryParseExact(FilingDatePatent.Text.ToString(), "mm/dd/yyyy", System.Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None, DateFormat) Or Me.FilingDatePatent.Text = "" Then
+        Else
+
+            MessageBox.Show("Incorrect Date Format " & Me.FilingDatePatent.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.FilingDatePatent.Clear()
+        End If
+    End Sub
 End Class

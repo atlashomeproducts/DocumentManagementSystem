@@ -1048,6 +1048,110 @@ Partial Public Class DMSDataSet
         
         Private columnRemoval As Global.System.Data.DataColumn
         
+        Private columnImportMonth As Global.System.Data.DataColumn
+        
+        Private columnCountry As Global.System.Data.DataColumn
+        
+        Private columnISRNo As Global.System.Data.DataColumn
+        
+        Private columnPRONo As Global.System.Data.DataColumn
+        
+        Private columnShipBatch As Global.System.Data.DataColumn
+        
+        Private columnCargoDesc As Global.System.Data.DataColumn
+        
+        Private columnShipLine As Global.System.Data.DataColumn
+        
+        Private columnBillNo As Global.System.Data.DataColumn
+        
+        Private columnContQtyx40 As Global.System.Data.DataColumn
+        
+        Private columnContQtyx20 As Global.System.Data.DataColumn
+        
+        Private columnVesselArrived As Global.System.Data.DataColumn
+        
+        Private columnLetterCredit As Global.System.Data.DataColumn
+        
+        Private columnDPNo As Global.System.Data.DataColumn
+        
+        Private columnBrokeCompany As Global.System.Data.DataColumn
+        
+        Private columnCustomsNo As Global.System.Data.DataColumn
+        
+        Private columnRegNo As Global.System.Data.DataColumn
+        
+        Private columnInsuranceCompany As Global.System.Data.DataColumn
+        
+        Private columnPolicyNo As Global.System.Data.DataColumn
+        
+        Private columnYearReport As Global.System.Data.DataColumn
+        
+        Private columnSex As Global.System.Data.DataColumn
+        
+        Private columnTitle As Global.System.Data.DataColumn
+        
+        Private columnAuthor As Global.System.Data.DataColumn
+        
+        Private columnClass As Global.System.Data.DataColumn
+        
+        Private columnCreationDate As Global.System.Data.DataColumn
+        
+        Private columnPeriodProtect As Global.System.Data.DataColumn
+        
+        Private columnRegDate As Global.System.Data.DataColumn
+        
+        Private columnTerm As Global.System.Data.DataColumn
+        
+        Private columnFilingDate As Global.System.Data.DataColumn
+        
+        Private columnRegistrant As Global.System.Data.DataColumn
+        
+        Private columnRegMark As Global.System.Data.DataColumn
+        
+        Private columnIssueDate As Global.System.Data.DataColumn
+        
+        Private columnBIRICCNo As Global.System.Data.DataColumn
+        
+        Private columnAccreditNo As Global.System.Data.DataColumn
+        
+        Private columnCompanyPrefix As Global.System.Data.DataColumn
+        
+        Private columnGLN As Global.System.Data.DataColumn
+        
+        Private columnSubsDate As Global.System.Data.DataColumn
+        
+        Private columnContractType As Global.System.Data.DataColumn
+        
+        Private columnSignDate As Global.System.Data.DataColumn
+        
+        Private columnContractPlace As Global.System.Data.DataColumn
+        
+        Private columnP1Company As Global.System.Data.DataColumn
+        
+        Private columnP1FirstName As Global.System.Data.DataColumn
+        
+        Private columnP1MiddleName As Global.System.Data.DataColumn
+        
+        Private columnP1LastName As Global.System.Data.DataColumn
+        
+        Private columnP1Position As Global.System.Data.DataColumn
+        
+        Private columnP2Company As Global.System.Data.DataColumn
+        
+        Private columnP2FirstName As Global.System.Data.DataColumn
+        
+        Private columnP2MiddleName As Global.System.Data.DataColumn
+        
+        Private columnP2LastName As Global.System.Data.DataColumn
+        
+        Private columnP2Position As Global.System.Data.DataColumn
+        
+        Private columnIssuePlace As Global.System.Data.DataColumn
+        
+        Private columnMemoType As Global.System.Data.DataColumn
+        
+        Private columnMemoSubj As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -1604,6 +1708,422 @@ Partial Public Class DMSDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ImportMonthColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnImportMonth
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CountryColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCountry
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ISRNoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnISRNo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property PRONoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPRONo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ShipBatchColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnShipBatch
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CargoDescColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCargoDesc
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ShipLineColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnShipLine
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property BillNoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBillNo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ContQtyx40Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnContQtyx40
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ContQtyx20Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnContQtyx20
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property VesselArrivedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnVesselArrived
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property LetterCreditColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLetterCredit
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property DPNoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDPNo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property BrokeCompanyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBrokeCompany
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CustomsNoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustomsNo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property RegNoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRegNo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property InsuranceCompanyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnInsuranceCompany
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property PolicyNoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPolicyNo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property YearReportColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnYearReport
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SexColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSex
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property TitleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTitle
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property AuthorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAuthor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ClassColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnClass
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CreationDateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCreationDate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property PeriodProtectColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPeriodProtect
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property RegDateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRegDate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property TermColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTerm
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property FilingDateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFilingDate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property RegistrantColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRegistrant
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property RegMarkColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRegMark
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IssueDateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIssueDate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property BIRICCNoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBIRICCNo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property AccreditNoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAccreditNo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CompanyPrefixColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCompanyPrefix
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property GLNColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGLN
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SubsDateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSubsDate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ContractTypeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnContractType
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SignDateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSignDate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property ContractPlaceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnContractPlace
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property P1CompanyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnP1Company
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property P1FirstNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnP1FirstName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property P1MiddleNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnP1MiddleName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property P1LastNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnP1LastName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property P1PositionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnP1Position
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property P2CompanyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnP2Company
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property P2FirstNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnP2FirstName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property P2MiddleNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnP2MiddleName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property P2LastNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnP2LastName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property P2PositionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnP2Position
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IssuePlaceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIssuePlace
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property MemoTypeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMemoType
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property MemoSubjColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMemoSubj
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1704,9 +2224,61 @@ Partial Public Class DMSDataSet
                     ByVal DocSize As String,  _
                     ByVal Confidential As String,  _
                     ByVal Pages As Long,  _
-                    ByVal Removal As String) As DocsCatalogueRow
+                    ByVal Removal As String,  _
+                    ByVal ImportMonth As String,  _
+                    ByVal Country As String,  _
+                    ByVal ISRNo As String,  _
+                    ByVal PRONo As String,  _
+                    ByVal ShipBatch As String,  _
+                    ByVal CargoDesc As String,  _
+                    ByVal ShipLine As String,  _
+                    ByVal BillNo As String,  _
+                    ByVal ContQtyx40 As String,  _
+                    ByVal ContQtyx20 As String,  _
+                    ByVal VesselArrived As String,  _
+                    ByVal LetterCredit As String,  _
+                    ByVal DPNo As String,  _
+                    ByVal BrokeCompany As String,  _
+                    ByVal CustomsNo As String,  _
+                    ByVal RegNo As String,  _
+                    ByVal InsuranceCompany As String,  _
+                    ByVal PolicyNo As String,  _
+                    ByVal YearReport As String,  _
+                    ByVal Sex As String,  _
+                    ByVal Title As String,  _
+                    ByVal Author As String,  _
+                    ByVal _Class As String,  _
+                    ByVal CreationDate As String,  _
+                    ByVal PeriodProtect As String,  _
+                    ByVal RegDate As String,  _
+                    ByVal Term As String,  _
+                    ByVal FilingDate As String,  _
+                    ByVal Registrant As String,  _
+                    ByVal RegMark As String,  _
+                    ByVal IssueDate As String,  _
+                    ByVal BIRICCNo As String,  _
+                    ByVal AccreditNo As String,  _
+                    ByVal CompanyPrefix As String,  _
+                    ByVal GLN As String,  _
+                    ByVal SubsDate As String,  _
+                    ByVal ContractType As String,  _
+                    ByVal SignDate As String,  _
+                    ByVal ContractPlace As String,  _
+                    ByVal P1Company As String,  _
+                    ByVal P1FirstName As String,  _
+                    ByVal P1MiddleName As String,  _
+                    ByVal P1LastName As String,  _
+                    ByVal P1Position As String,  _
+                    ByVal P2Company As String,  _
+                    ByVal P2FirstName As String,  _
+                    ByVal P2MiddleName As String,  _
+                    ByVal P2LastName As String,  _
+                    ByVal P2Position As String,  _
+                    ByVal IssuePlace As String,  _
+                    ByVal MemoType As String,  _
+                    ByVal MemoSubj As String) As DocsCatalogueRow
             Dim rowDocsCatalogueRow As DocsCatalogueRow = CType(Me.NewRow,DocsCatalogueRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, PaymentOthers, BankName, BankBranch, BankAddress, RackNo, BoxNo, TinVendor, TinCustomer, VATreg, NONVATreg, DateReceived, AddressC, BatchDesc, SubBatch, PromoTitle, PromoFrom, PromoTo, DTIPermitNo, UserID, DocSize, Confidential, Pages, Removal}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, PaymentOthers, BankName, BankBranch, BankAddress, RackNo, BoxNo, TinVendor, TinCustomer, VATreg, NONVATreg, DateReceived, AddressC, BatchDesc, SubBatch, PromoTitle, PromoFrom, PromoTo, DTIPermitNo, UserID, DocSize, Confidential, Pages, Removal, ImportMonth, Country, ISRNo, PRONo, ShipBatch, CargoDesc, ShipLine, BillNo, ContQtyx40, ContQtyx20, VesselArrived, LetterCredit, DPNo, BrokeCompany, CustomsNo, RegNo, InsuranceCompany, PolicyNo, YearReport, Sex, Title, Author, _Class, CreationDate, PeriodProtect, RegDate, Term, FilingDate, Registrant, RegMark, IssueDate, BIRICCNo, AccreditNo, CompanyPrefix, GLN, SubsDate, ContractType, SignDate, ContractPlace, P1Company, P1FirstName, P1MiddleName, P1LastName, P1Position, P2Company, P2FirstName, P2MiddleName, P2LastName, P2Position, IssuePlace, MemoType, MemoSubj}
             rowDocsCatalogueRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDocsCatalogueRow)
             Return rowDocsCatalogueRow
@@ -1800,6 +2372,58 @@ Partial Public Class DMSDataSet
             Me.columnConfidential = MyBase.Columns("Confidential")
             Me.columnPages = MyBase.Columns("Pages")
             Me.columnRemoval = MyBase.Columns("Removal")
+            Me.columnImportMonth = MyBase.Columns("ImportMonth")
+            Me.columnCountry = MyBase.Columns("Country")
+            Me.columnISRNo = MyBase.Columns("ISRNo")
+            Me.columnPRONo = MyBase.Columns("PRONo")
+            Me.columnShipBatch = MyBase.Columns("ShipBatch")
+            Me.columnCargoDesc = MyBase.Columns("CargoDesc")
+            Me.columnShipLine = MyBase.Columns("ShipLine")
+            Me.columnBillNo = MyBase.Columns("BillNo")
+            Me.columnContQtyx40 = MyBase.Columns("ContQtyx40")
+            Me.columnContQtyx20 = MyBase.Columns("ContQtyx20")
+            Me.columnVesselArrived = MyBase.Columns("VesselArrived")
+            Me.columnLetterCredit = MyBase.Columns("LetterCredit")
+            Me.columnDPNo = MyBase.Columns("DPNo")
+            Me.columnBrokeCompany = MyBase.Columns("BrokeCompany")
+            Me.columnCustomsNo = MyBase.Columns("CustomsNo")
+            Me.columnRegNo = MyBase.Columns("RegNo")
+            Me.columnInsuranceCompany = MyBase.Columns("InsuranceCompany")
+            Me.columnPolicyNo = MyBase.Columns("PolicyNo")
+            Me.columnYearReport = MyBase.Columns("YearReport")
+            Me.columnSex = MyBase.Columns("Sex")
+            Me.columnTitle = MyBase.Columns("Title")
+            Me.columnAuthor = MyBase.Columns("Author")
+            Me.columnClass = MyBase.Columns("Class")
+            Me.columnCreationDate = MyBase.Columns("CreationDate")
+            Me.columnPeriodProtect = MyBase.Columns("PeriodProtect")
+            Me.columnRegDate = MyBase.Columns("RegDate")
+            Me.columnTerm = MyBase.Columns("Term")
+            Me.columnFilingDate = MyBase.Columns("FilingDate")
+            Me.columnRegistrant = MyBase.Columns("Registrant")
+            Me.columnRegMark = MyBase.Columns("RegMark")
+            Me.columnIssueDate = MyBase.Columns("IssueDate")
+            Me.columnBIRICCNo = MyBase.Columns("BIRICCNo")
+            Me.columnAccreditNo = MyBase.Columns("AccreditNo")
+            Me.columnCompanyPrefix = MyBase.Columns("CompanyPrefix")
+            Me.columnGLN = MyBase.Columns("GLN")
+            Me.columnSubsDate = MyBase.Columns("SubsDate")
+            Me.columnContractType = MyBase.Columns("ContractType")
+            Me.columnSignDate = MyBase.Columns("SignDate")
+            Me.columnContractPlace = MyBase.Columns("ContractPlace")
+            Me.columnP1Company = MyBase.Columns("P1Company")
+            Me.columnP1FirstName = MyBase.Columns("P1FirstName")
+            Me.columnP1MiddleName = MyBase.Columns("P1MiddleName")
+            Me.columnP1LastName = MyBase.Columns("P1LastName")
+            Me.columnP1Position = MyBase.Columns("P1Position")
+            Me.columnP2Company = MyBase.Columns("P2Company")
+            Me.columnP2FirstName = MyBase.Columns("P2FirstName")
+            Me.columnP2MiddleName = MyBase.Columns("P2MiddleName")
+            Me.columnP2LastName = MyBase.Columns("P2LastName")
+            Me.columnP2Position = MyBase.Columns("P2Position")
+            Me.columnIssuePlace = MyBase.Columns("IssuePlace")
+            Me.columnMemoType = MyBase.Columns("MemoType")
+            Me.columnMemoSubj = MyBase.Columns("MemoSubj")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1935,6 +2559,113 @@ Partial Public Class DMSDataSet
             MyBase.Columns.Add(Me.columnPages)
             Me.columnRemoval = New Global.System.Data.DataColumn("Removal", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnRemoval)
+            Me.columnImportMonth = New Global.System.Data.DataColumn("ImportMonth", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnImportMonth)
+            Me.columnCountry = New Global.System.Data.DataColumn("Country", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCountry)
+            Me.columnISRNo = New Global.System.Data.DataColumn("ISRNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnISRNo)
+            Me.columnPRONo = New Global.System.Data.DataColumn("PRONo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPRONo)
+            Me.columnShipBatch = New Global.System.Data.DataColumn("ShipBatch", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnShipBatch)
+            Me.columnCargoDesc = New Global.System.Data.DataColumn("CargoDesc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCargoDesc)
+            Me.columnShipLine = New Global.System.Data.DataColumn("ShipLine", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnShipLine)
+            Me.columnBillNo = New Global.System.Data.DataColumn("BillNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBillNo)
+            Me.columnContQtyx40 = New Global.System.Data.DataColumn("ContQtyx40", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnContQtyx40)
+            Me.columnContQtyx20 = New Global.System.Data.DataColumn("ContQtyx20", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnContQtyx20)
+            Me.columnVesselArrived = New Global.System.Data.DataColumn("VesselArrived", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVesselArrived)
+            Me.columnLetterCredit = New Global.System.Data.DataColumn("LetterCredit", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLetterCredit)
+            Me.columnDPNo = New Global.System.Data.DataColumn("DPNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDPNo)
+            Me.columnBrokeCompany = New Global.System.Data.DataColumn("BrokeCompany", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBrokeCompany)
+            Me.columnCustomsNo = New Global.System.Data.DataColumn("CustomsNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustomsNo)
+            Me.columnRegNo = New Global.System.Data.DataColumn("RegNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRegNo)
+            Me.columnInsuranceCompany = New Global.System.Data.DataColumn("InsuranceCompany", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnInsuranceCompany)
+            Me.columnPolicyNo = New Global.System.Data.DataColumn("PolicyNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPolicyNo)
+            Me.columnYearReport = New Global.System.Data.DataColumn("YearReport", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnYearReport)
+            Me.columnSex = New Global.System.Data.DataColumn("Sex", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSex)
+            Me.columnTitle = New Global.System.Data.DataColumn("Title", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTitle)
+            Me.columnAuthor = New Global.System.Data.DataColumn("Author", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAuthor)
+            Me.columnClass = New Global.System.Data.DataColumn("Class", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnClass.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "ClassColumn")
+            Me.columnClass.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnClass")
+            Me.columnClass.ExtendedProperties.Add("Generator_UserColumnName", "Class")
+            MyBase.Columns.Add(Me.columnClass)
+            Me.columnCreationDate = New Global.System.Data.DataColumn("CreationDate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCreationDate)
+            Me.columnPeriodProtect = New Global.System.Data.DataColumn("PeriodProtect", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPeriodProtect)
+            Me.columnRegDate = New Global.System.Data.DataColumn("RegDate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRegDate)
+            Me.columnTerm = New Global.System.Data.DataColumn("Term", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTerm)
+            Me.columnFilingDate = New Global.System.Data.DataColumn("FilingDate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFilingDate)
+            Me.columnRegistrant = New Global.System.Data.DataColumn("Registrant", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRegistrant)
+            Me.columnRegMark = New Global.System.Data.DataColumn("RegMark", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRegMark)
+            Me.columnIssueDate = New Global.System.Data.DataColumn("IssueDate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIssueDate)
+            Me.columnBIRICCNo = New Global.System.Data.DataColumn("BIRICCNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBIRICCNo)
+            Me.columnAccreditNo = New Global.System.Data.DataColumn("AccreditNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAccreditNo)
+            Me.columnCompanyPrefix = New Global.System.Data.DataColumn("CompanyPrefix", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCompanyPrefix)
+            Me.columnGLN = New Global.System.Data.DataColumn("GLN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGLN)
+            Me.columnSubsDate = New Global.System.Data.DataColumn("SubsDate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSubsDate)
+            Me.columnContractType = New Global.System.Data.DataColumn("ContractType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnContractType)
+            Me.columnSignDate = New Global.System.Data.DataColumn("SignDate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSignDate)
+            Me.columnContractPlace = New Global.System.Data.DataColumn("ContractPlace", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnContractPlace)
+            Me.columnP1Company = New Global.System.Data.DataColumn("P1Company", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnP1Company)
+            Me.columnP1FirstName = New Global.System.Data.DataColumn("P1FirstName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnP1FirstName)
+            Me.columnP1MiddleName = New Global.System.Data.DataColumn("P1MiddleName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnP1MiddleName)
+            Me.columnP1LastName = New Global.System.Data.DataColumn("P1LastName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnP1LastName)
+            Me.columnP1Position = New Global.System.Data.DataColumn("P1Position", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnP1Position)
+            Me.columnP2Company = New Global.System.Data.DataColumn("P2Company", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnP2Company)
+            Me.columnP2FirstName = New Global.System.Data.DataColumn("P2FirstName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnP2FirstName)
+            Me.columnP2MiddleName = New Global.System.Data.DataColumn("P2MiddleName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnP2MiddleName)
+            Me.columnP2LastName = New Global.System.Data.DataColumn("P2LastName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnP2LastName)
+            Me.columnP2Position = New Global.System.Data.DataColumn("P2Position", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnP2Position)
+            Me.columnIssuePlace = New Global.System.Data.DataColumn("IssuePlace", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIssuePlace)
+            Me.columnMemoType = New Global.System.Data.DataColumn("MemoType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMemoType)
+            Me.columnMemoSubj = New Global.System.Data.DataColumn("MemoSubj", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMemoSubj)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -2003,6 +2734,58 @@ Partial Public Class DMSDataSet
             Me.columnDocSize.MaxLength = 50
             Me.columnConfidential.MaxLength = 50
             Me.columnRemoval.MaxLength = 50
+            Me.columnImportMonth.MaxLength = 50
+            Me.columnCountry.MaxLength = 500
+            Me.columnISRNo.MaxLength = 50
+            Me.columnPRONo.MaxLength = 50
+            Me.columnShipBatch.MaxLength = 50
+            Me.columnCargoDesc.MaxLength = 2147483647
+            Me.columnShipLine.MaxLength = 500
+            Me.columnBillNo.MaxLength = 50
+            Me.columnContQtyx40.MaxLength = 50
+            Me.columnContQtyx20.MaxLength = 50
+            Me.columnVesselArrived.MaxLength = 50
+            Me.columnLetterCredit.MaxLength = 50
+            Me.columnDPNo.MaxLength = 50
+            Me.columnBrokeCompany.MaxLength = 50
+            Me.columnCustomsNo.MaxLength = 50
+            Me.columnRegNo.MaxLength = 50
+            Me.columnInsuranceCompany.MaxLength = 50
+            Me.columnPolicyNo.MaxLength = 50
+            Me.columnYearReport.MaxLength = 50
+            Me.columnSex.MaxLength = 50
+            Me.columnTitle.MaxLength = 500
+            Me.columnAuthor.MaxLength = 2147483647
+            Me.columnClass.MaxLength = 500
+            Me.columnCreationDate.MaxLength = 50
+            Me.columnPeriodProtect.MaxLength = 50
+            Me.columnRegDate.MaxLength = 50
+            Me.columnTerm.MaxLength = 50
+            Me.columnFilingDate.MaxLength = 50
+            Me.columnRegistrant.MaxLength = 50
+            Me.columnRegMark.MaxLength = 50
+            Me.columnIssueDate.MaxLength = 50
+            Me.columnBIRICCNo.MaxLength = 50
+            Me.columnAccreditNo.MaxLength = 50
+            Me.columnCompanyPrefix.MaxLength = 50
+            Me.columnGLN.MaxLength = 50
+            Me.columnSubsDate.MaxLength = 50
+            Me.columnContractType.MaxLength = 50
+            Me.columnSignDate.MaxLength = 50
+            Me.columnContractPlace.MaxLength = 500
+            Me.columnP1Company.MaxLength = 500
+            Me.columnP1FirstName.MaxLength = 50
+            Me.columnP1MiddleName.MaxLength = 50
+            Me.columnP1LastName.MaxLength = 50
+            Me.columnP1Position.MaxLength = 50
+            Me.columnP2Company.MaxLength = 500
+            Me.columnP2FirstName.MaxLength = 50
+            Me.columnP2MiddleName.MaxLength = 50
+            Me.columnP2LastName.MaxLength = 50
+            Me.columnP2Position.MaxLength = 50
+            Me.columnIssuePlace.MaxLength = 50
+            Me.columnMemoType.MaxLength = 50
+            Me.columnMemoSubj.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5692,6 +6475,786 @@ Partial Public Class DMSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ImportMonth() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.ImportMonthColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ImportMonth' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.ImportMonthColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Country() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.CountryColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Country' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.CountryColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ISRNo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.ISRNoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ISRNo' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.ISRNoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property PRONo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.PRONoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'PRONo' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.PRONoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ShipBatch() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.ShipBatchColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ShipBatch' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.ShipBatchColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CargoDesc() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.CargoDescColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CargoDesc' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.CargoDescColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ShipLine() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.ShipLineColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ShipLine' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.ShipLineColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property BillNo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.BillNoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BillNo' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.BillNoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ContQtyx40() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.ContQtyx40Column),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ContQtyx40' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.ContQtyx40Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ContQtyx20() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.ContQtyx20Column),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ContQtyx20' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.ContQtyx20Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property VesselArrived() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.VesselArrivedColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'VesselArrived' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.VesselArrivedColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property LetterCredit() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.LetterCreditColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'LetterCredit' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.LetterCreditColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property DPNo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.DPNoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DPNo' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.DPNoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property BrokeCompany() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.BrokeCompanyColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BrokeCompany' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.BrokeCompanyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CustomsNo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.CustomsNoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CustomsNo' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.CustomsNoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property RegNo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.RegNoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RegNo' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.RegNoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property InsuranceCompany() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.InsuranceCompanyColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'InsuranceCompany' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.InsuranceCompanyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property PolicyNo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.PolicyNoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'PolicyNo' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.PolicyNoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property YearReport() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.YearReportColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'YearReport' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.YearReportColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Sex() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.SexColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Sex' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.SexColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Title() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.TitleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Title' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.TitleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Author() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.AuthorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Author' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.AuthorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property _Class() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.ClassColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Class' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.ClassColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CreationDate() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.CreationDateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CreationDate' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.CreationDateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property PeriodProtect() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.PeriodProtectColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'PeriodProtect' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.PeriodProtectColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property RegDate() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.RegDateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RegDate' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.RegDateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Term() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.TermColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Term' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.TermColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property FilingDate() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.FilingDateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FilingDate' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.FilingDateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Registrant() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.RegistrantColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Registrant' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.RegistrantColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property RegMark() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.RegMarkColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RegMark' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.RegMarkColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property IssueDate() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.IssueDateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IssueDate' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.IssueDateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property BIRICCNo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.BIRICCNoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BIRICCNo' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.BIRICCNoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property AccreditNo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.AccreditNoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AccreditNo' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.AccreditNoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CompanyPrefix() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.CompanyPrefixColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CompanyPrefix' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.CompanyPrefixColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property GLN() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.GLNColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GLN' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.GLNColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SubsDate() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.SubsDateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SubsDate' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.SubsDateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ContractType() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.ContractTypeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ContractType' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.ContractTypeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SignDate() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.SignDateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SignDate' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.SignDateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ContractPlace() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.ContractPlaceColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ContractPlace' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.ContractPlaceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property P1Company() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.P1CompanyColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'P1Company' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.P1CompanyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property P1FirstName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.P1FirstNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'P1FirstName' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.P1FirstNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property P1MiddleName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.P1MiddleNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'P1MiddleName' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.P1MiddleNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property P1LastName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.P1LastNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'P1LastName' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.P1LastNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property P1Position() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.P1PositionColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'P1Position' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.P1PositionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property P2Company() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.P2CompanyColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'P2Company' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.P2CompanyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property P2FirstName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.P2FirstNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'P2FirstName' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.P2FirstNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property P2MiddleName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.P2MiddleNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'P2MiddleName' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.P2MiddleNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property P2LastName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.P2LastNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'P2LastName' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.P2LastNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property P2Position() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.P2PositionColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'P2Position' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.P2PositionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property IssuePlace() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.IssuePlaceColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IssuePlace' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.IssuePlaceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property MemoType() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.MemoTypeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MemoType' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.MemoTypeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property MemoSubj() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDocsCatalogue.MemoSubjColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MemoSubj' in table 'DocsCatalogue' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDocsCatalogue.MemoSubjColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsBatchNull() As Boolean
             Return Me.IsNull(Me.tableDocsCatalogue.BatchColumn)
         End Function
@@ -6456,6 +8019,630 @@ Partial Public Class DMSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetRemovalNull()
             Me(Me.tableDocsCatalogue.RemovalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsImportMonthNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.ImportMonthColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetImportMonthNull()
+            Me(Me.tableDocsCatalogue.ImportMonthColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCountryNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.CountryColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCountryNull()
+            Me(Me.tableDocsCatalogue.CountryColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsISRNoNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.ISRNoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetISRNoNull()
+            Me(Me.tableDocsCatalogue.ISRNoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsPRONoNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.PRONoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetPRONoNull()
+            Me(Me.tableDocsCatalogue.PRONoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsShipBatchNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.ShipBatchColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetShipBatchNull()
+            Me(Me.tableDocsCatalogue.ShipBatchColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCargoDescNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.CargoDescColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCargoDescNull()
+            Me(Me.tableDocsCatalogue.CargoDescColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsShipLineNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.ShipLineColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetShipLineNull()
+            Me(Me.tableDocsCatalogue.ShipLineColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsBillNoNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.BillNoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetBillNoNull()
+            Me(Me.tableDocsCatalogue.BillNoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsContQtyx40Null() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.ContQtyx40Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetContQtyx40Null()
+            Me(Me.tableDocsCatalogue.ContQtyx40Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsContQtyx20Null() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.ContQtyx20Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetContQtyx20Null()
+            Me(Me.tableDocsCatalogue.ContQtyx20Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsVesselArrivedNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.VesselArrivedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetVesselArrivedNull()
+            Me(Me.tableDocsCatalogue.VesselArrivedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsLetterCreditNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.LetterCreditColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetLetterCreditNull()
+            Me(Me.tableDocsCatalogue.LetterCreditColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsDPNoNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.DPNoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetDPNoNull()
+            Me(Me.tableDocsCatalogue.DPNoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsBrokeCompanyNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.BrokeCompanyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetBrokeCompanyNull()
+            Me(Me.tableDocsCatalogue.BrokeCompanyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCustomsNoNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.CustomsNoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCustomsNoNull()
+            Me(Me.tableDocsCatalogue.CustomsNoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsRegNoNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.RegNoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetRegNoNull()
+            Me(Me.tableDocsCatalogue.RegNoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsInsuranceCompanyNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.InsuranceCompanyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetInsuranceCompanyNull()
+            Me(Me.tableDocsCatalogue.InsuranceCompanyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsPolicyNoNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.PolicyNoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetPolicyNoNull()
+            Me(Me.tableDocsCatalogue.PolicyNoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsYearReportNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.YearReportColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetYearReportNull()
+            Me(Me.tableDocsCatalogue.YearReportColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsSexNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.SexColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetSexNull()
+            Me(Me.tableDocsCatalogue.SexColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsTitleNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.TitleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetTitleNull()
+            Me(Me.tableDocsCatalogue.TitleColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsAuthorNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.AuthorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetAuthorNull()
+            Me(Me.tableDocsCatalogue.AuthorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Is_ClassNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.ClassColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Set_ClassNull()
+            Me(Me.tableDocsCatalogue.ClassColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCreationDateNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.CreationDateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCreationDateNull()
+            Me(Me.tableDocsCatalogue.CreationDateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsPeriodProtectNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.PeriodProtectColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetPeriodProtectNull()
+            Me(Me.tableDocsCatalogue.PeriodProtectColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsRegDateNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.RegDateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetRegDateNull()
+            Me(Me.tableDocsCatalogue.RegDateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsTermNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.TermColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetTermNull()
+            Me(Me.tableDocsCatalogue.TermColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsFilingDateNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.FilingDateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetFilingDateNull()
+            Me(Me.tableDocsCatalogue.FilingDateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsRegistrantNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.RegistrantColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetRegistrantNull()
+            Me(Me.tableDocsCatalogue.RegistrantColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsRegMarkNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.RegMarkColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetRegMarkNull()
+            Me(Me.tableDocsCatalogue.RegMarkColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsIssueDateNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.IssueDateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetIssueDateNull()
+            Me(Me.tableDocsCatalogue.IssueDateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsBIRICCNoNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.BIRICCNoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetBIRICCNoNull()
+            Me(Me.tableDocsCatalogue.BIRICCNoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsAccreditNoNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.AccreditNoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetAccreditNoNull()
+            Me(Me.tableDocsCatalogue.AccreditNoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCompanyPrefixNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.CompanyPrefixColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCompanyPrefixNull()
+            Me(Me.tableDocsCatalogue.CompanyPrefixColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsGLNNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.GLNColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetGLNNull()
+            Me(Me.tableDocsCatalogue.GLNColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsSubsDateNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.SubsDateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetSubsDateNull()
+            Me(Me.tableDocsCatalogue.SubsDateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsContractTypeNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.ContractTypeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetContractTypeNull()
+            Me(Me.tableDocsCatalogue.ContractTypeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsSignDateNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.SignDateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetSignDateNull()
+            Me(Me.tableDocsCatalogue.SignDateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsContractPlaceNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.ContractPlaceColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetContractPlaceNull()
+            Me(Me.tableDocsCatalogue.ContractPlaceColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsP1CompanyNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.P1CompanyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetP1CompanyNull()
+            Me(Me.tableDocsCatalogue.P1CompanyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsP1FirstNameNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.P1FirstNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetP1FirstNameNull()
+            Me(Me.tableDocsCatalogue.P1FirstNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsP1MiddleNameNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.P1MiddleNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetP1MiddleNameNull()
+            Me(Me.tableDocsCatalogue.P1MiddleNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsP1LastNameNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.P1LastNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetP1LastNameNull()
+            Me(Me.tableDocsCatalogue.P1LastNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsP1PositionNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.P1PositionColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetP1PositionNull()
+            Me(Me.tableDocsCatalogue.P1PositionColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsP2CompanyNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.P2CompanyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetP2CompanyNull()
+            Me(Me.tableDocsCatalogue.P2CompanyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsP2FirstNameNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.P2FirstNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetP2FirstNameNull()
+            Me(Me.tableDocsCatalogue.P2FirstNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsP2MiddleNameNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.P2MiddleNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetP2MiddleNameNull()
+            Me(Me.tableDocsCatalogue.P2MiddleNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsP2LastNameNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.P2LastNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetP2LastNameNull()
+            Me(Me.tableDocsCatalogue.P2LastNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsP2PositionNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.P2PositionColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetP2PositionNull()
+            Me(Me.tableDocsCatalogue.P2PositionColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsIssuePlaceNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.IssuePlaceColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetIssuePlaceNull()
+            Me(Me.tableDocsCatalogue.IssuePlaceColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsMemoTypeNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.MemoTypeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetMemoTypeNull()
+            Me(Me.tableDocsCatalogue.MemoTypeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsMemoSubjNull() As Boolean
+            Return Me.IsNull(Me.tableDocsCatalogue.MemoSubjColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetMemoSubjNull()
+            Me(Me.tableDocsCatalogue.MemoSubjColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8382,12 +10569,295 @@ Namespace DMSDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Confidential", "Confidential")
             tableMapping.ColumnMappings.Add("Pages", "Pages")
             tableMapping.ColumnMappings.Add("Removal", "Removal")
+            tableMapping.ColumnMappings.Add("ImportMonth", "ImportMonth")
+            tableMapping.ColumnMappings.Add("Country", "Country")
+            tableMapping.ColumnMappings.Add("ISRNo", "ISRNo")
+            tableMapping.ColumnMappings.Add("PRONo", "PRONo")
+            tableMapping.ColumnMappings.Add("ShipBatch", "ShipBatch")
+            tableMapping.ColumnMappings.Add("CargoDesc", "CargoDesc")
+            tableMapping.ColumnMappings.Add("ShipLine", "ShipLine")
+            tableMapping.ColumnMappings.Add("BillNo", "BillNo")
+            tableMapping.ColumnMappings.Add("ContQtyx40", "ContQtyx40")
+            tableMapping.ColumnMappings.Add("ContQtyx20", "ContQtyx20")
+            tableMapping.ColumnMappings.Add("VesselArrived", "VesselArrived")
+            tableMapping.ColumnMappings.Add("LetterCredit", "LetterCredit")
+            tableMapping.ColumnMappings.Add("DPNo", "DPNo")
+            tableMapping.ColumnMappings.Add("BrokeCompany", "BrokeCompany")
+            tableMapping.ColumnMappings.Add("CustomsNo", "CustomsNo")
+            tableMapping.ColumnMappings.Add("RegNo", "RegNo")
+            tableMapping.ColumnMappings.Add("InsuranceCompany", "InsuranceCompany")
+            tableMapping.ColumnMappings.Add("PolicyNo", "PolicyNo")
+            tableMapping.ColumnMappings.Add("YearReport", "YearReport")
+            tableMapping.ColumnMappings.Add("Sex", "Sex")
+            tableMapping.ColumnMappings.Add("Title", "Title")
+            tableMapping.ColumnMappings.Add("Author", "Author")
+            tableMapping.ColumnMappings.Add("Class", "Class")
+            tableMapping.ColumnMappings.Add("CreationDate", "CreationDate")
+            tableMapping.ColumnMappings.Add("PeriodProtect", "PeriodProtect")
+            tableMapping.ColumnMappings.Add("RegDate", "RegDate")
+            tableMapping.ColumnMappings.Add("Term", "Term")
+            tableMapping.ColumnMappings.Add("FilingDate", "FilingDate")
+            tableMapping.ColumnMappings.Add("Registrant", "Registrant")
+            tableMapping.ColumnMappings.Add("RegMark", "RegMark")
+            tableMapping.ColumnMappings.Add("IssueDate", "IssueDate")
+            tableMapping.ColumnMappings.Add("BIRICCNo", "BIRICCNo")
+            tableMapping.ColumnMappings.Add("AccreditNo", "AccreditNo")
+            tableMapping.ColumnMappings.Add("CompanyPrefix", "CompanyPrefix")
+            tableMapping.ColumnMappings.Add("GLN", "GLN")
+            tableMapping.ColumnMappings.Add("SubsDate", "SubsDate")
+            tableMapping.ColumnMappings.Add("ContractType", "ContractType")
+            tableMapping.ColumnMappings.Add("SignDate", "SignDate")
+            tableMapping.ColumnMappings.Add("ContractPlace", "ContractPlace")
+            tableMapping.ColumnMappings.Add("P1Company", "P1Company")
+            tableMapping.ColumnMappings.Add("P1FirstName", "P1FirstName")
+            tableMapping.ColumnMappings.Add("P1MiddleName", "P1MiddleName")
+            tableMapping.ColumnMappings.Add("P1LastName", "P1LastName")
+            tableMapping.ColumnMappings.Add("P1Position", "P1Position")
+            tableMapping.ColumnMappings.Add("P2Company", "P2Company")
+            tableMapping.ColumnMappings.Add("P2FirstName", "P2FirstName")
+            tableMapping.ColumnMappings.Add("P2MiddleName", "P2MiddleName")
+            tableMapping.ColumnMappings.Add("P2LastName", "P2LastName")
+            tableMapping.ColumnMappings.Add("P2Position", "P2Position")
+            tableMapping.ColumnMappings.Add("IssuePlace", "IssuePlace")
+            tableMapping.ColumnMappings.Add("MemoType", "MemoType")
+            tableMapping.ColumnMappings.Add("MemoSubj", "MemoSubj")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [DocsCatalogue] WHERE (([Id] = @Original_Id))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [DocsCatalogue] WHERE (([Id] = @Original_Id) AND ((@IsNull_ScannedDat"& _ 
+                "e = 1 AND [ScannedDate] IS NULL) OR ([ScannedDate] = @Original_ScannedDate)) AND"& _ 
+                " ((@IsNull_DocumentDate = 1 AND [DocumentDate] IS NULL) OR ([DocumentDate] = @Or"& _ 
+                "iginal_DocumentDate)) AND ((@IsNull_BookletNo = 1 AND [BookletNo] IS NULL) OR (["& _ 
+                "BookletNo] = @Original_BookletNo)) AND ((@IsNull_TotalValue = 1 AND [TotalValue]"& _ 
+                " IS NULL) OR ([TotalValue] = @Original_TotalValue)) AND ((@IsNull_FromPeriod = 1"& _ 
+                " AND [FromPeriod] IS NULL) OR ([FromPeriod] = @Original_FromPeriod)) AND ((@IsNu"& _ 
+                "ll_ToPeriod = 1 AND [ToPeriod] IS NULL) OR ([ToPeriod] = @Original_ToPeriod)) AN"& _ 
+                "D ((@IsNull_DatePurchased = 1 AND [DatePurchased] IS NULL) OR ([DatePurchased] ="& _ 
+                " @Original_DatePurchased)) AND ((@IsNull_WarrantyPeriod = 1 AND [WarrantyPeriod]"& _ 
+                " IS NULL) OR ([WarrantyPeriod] = @Original_WarrantyPeriod)) AND ((@IsNull_Meetin"& _ 
+                "gDate = 1 AND [MeetingDate] IS NULL) OR ([MeetingDate] = @Original_MeetingDate))"& _ 
+                " AND ((@IsNull_BoxNo = 1 AND [BoxNo] IS NULL) OR ([BoxNo] = @Original_BoxNo)) AN"& _ 
+                "D ((@IsNull_NONVATreg = 1 AND [NONVATreg] IS NULL) OR ([NONVATreg] = @Original_N"& _ 
+                "ONVATreg)) AND ((@IsNull_RackNo = 1 AND [RackNo] IS NULL) OR ([RackNo] = @Origin"& _ 
+                "al_RackNo)) AND ((@IsNull_TinCustomer = 1 AND [TinCustomer] IS NULL) OR ([TinCus"& _ 
+                "tomer] = @Original_TinCustomer)) AND ((@IsNull_TinVendor = 1 AND [TinVendor] IS "& _ 
+                "NULL) OR ([TinVendor] = @Original_TinVendor)) AND ((@IsNull_VATreg = 1 AND [VATr"& _ 
+                "eg] IS NULL) OR ([VATreg] = @Original_VATreg)) AND ((@IsNull_DateReceived = 1 AN"& _ 
+                "D [DateReceived] IS NULL) OR ([DateReceived] = @Original_DateReceived)) AND ((@I"& _ 
+                "sNull_PromoFrom = 1 AND [PromoFrom] IS NULL) OR ([PromoFrom] = @Original_PromoFr"& _ 
+                "om)) AND ((@IsNull_PromoTo = 1 AND [PromoTo] IS NULL) OR ([PromoTo] = @Original_"& _ 
+                "PromoTo)) AND ((@IsNull_UserID = 1 AND [UserID] IS NULL) OR ([UserID] = @Origina"& _ 
+                "l_UserID)) AND ((@IsNull_Confidential = 1 AND [Confidential] IS NULL) OR ([Confi"& _ 
+                "dential] = @Original_Confidential)) AND ((@IsNull_DocSize = 1 AND [DocSize] IS N"& _ 
+                "ULL) OR ([DocSize] = @Original_DocSize)) AND ((@IsNull_Pages = 1 AND [Pages] IS "& _ 
+                "NULL) OR ([Pages] = @Original_Pages)) AND ((@IsNull_Removal = 1 AND [Removal] IS"& _ 
+                " NULL) OR ([Removal] = @Original_Removal)) AND ((@IsNull_AccreditNo = 1 AND [Acc"& _ 
+                "reditNo] IS NULL) OR ([AccreditNo] = @Original_AccreditNo)) AND ((@IsNull_BIRICC"& _ 
+                "No = 1 AND [BIRICCNo] IS NULL) OR ([BIRICCNo] = @Original_BIRICCNo)) AND ((@IsNu"& _ 
+                "ll_BillNo = 1 AND [BillNo] IS NULL) OR ([BillNo] = @Original_BillNo)) AND ((@IsN"& _ 
+                "ull_BrokeCompany = 1 AND [BrokeCompany] IS NULL) OR ([BrokeCompany] = @Original_"& _ 
+                "BrokeCompany)) AND ((@IsNull_Class = 1 AND [Class] IS NULL) OR ([Class] = @Origi"& _ 
+                "nal_Class)) AND ((@IsNull_CompanyPrefix = 1 AND [CompanyPrefix] IS NULL) OR ([Co"& _ 
+                "mpanyPrefix] = @Original_CompanyPrefix)) AND ((@IsNull_ContQtyx20 = 1 AND [ContQ"& _ 
+                "tyx20] IS NULL) OR ([ContQtyx20] = @Original_ContQtyx20)) AND ((@IsNull_ContQtyx"& _ 
+                "40 = 1 AND [ContQtyx40] IS NULL) OR ([ContQtyx40] = @Original_ContQtyx40)) AND ("& _ 
+                "(@IsNull_ContractPlace = 1 AND [ContractPlace] IS NULL) OR ([ContractPlace] = @O"& _ 
+                "riginal_ContractPlace)) AND ((@IsNull_ContractType = 1 AND [ContractType] IS NUL"& _ 
+                "L) OR ([ContractType] = @Original_ContractType)) AND ((@IsNull_Country = 1 AND ["& _ 
+                "Country] IS NULL) OR ([Country] = @Original_Country)) AND ((@IsNull_CreationDate"& _ 
+                " = 1 AND [CreationDate] IS NULL) OR ([CreationDate] = @Original_CreationDate)) A"& _ 
+                "ND ((@IsNull_CustomsNo = 1 AND [CustomsNo] IS NULL) OR ([CustomsNo] = @Original_"& _ 
+                "CustomsNo)) AND ((@IsNull_DPNo = 1 AND [DPNo] IS NULL) OR ([DPNo] = @Original_DP"& _ 
+                "No)) AND ((@IsNull_FilingDate = 1 AND [FilingDate] IS NULL) OR ([FilingDate] = @"& _ 
+                "Original_FilingDate)) AND ((@IsNull_GLN = 1 AND [GLN] IS NULL) OR ([GLN] = @Orig"& _ 
+                "inal_GLN)) AND ((@IsNull_ISRNo = 1 AND [ISRNo] IS NULL) OR ([ISRNo] = @Original_"& _ 
+                "ISRNo)) AND ((@IsNull_ImportMonth = 1 AND [ImportMonth] IS NULL) OR ([ImportMont"& _ 
+                "h] = @Original_ImportMonth)) AND ((@IsNull_InsuranceCompany = 1 AND [InsuranceCo"& _ 
+                "mpany] IS NULL) OR ([InsuranceCompany] = @Original_InsuranceCompany)) AND ((@IsN"& _ 
+                "ull_IssueDate = 1 AND [IssueDate] IS NULL) OR ([IssueDate] = @Original_IssueDate"& _ 
+                ")) AND ((@IsNull_IssuePlace = 1 AND [IssuePlace] IS NULL) OR ([IssuePlace] = @Or"& _ 
+                "iginal_IssuePlace)) AND ((@IsNull_LetterCredit = 1 AND [LetterCredit] IS NULL) O"& _ 
+                "R ([LetterCredit] = @Original_LetterCredit)) AND ((@IsNull_MemoSubj = 1 AND [Mem"& _ 
+                "oSubj] IS NULL) OR ([MemoSubj] = @Original_MemoSubj)) AND ((@IsNull_MemoType = 1"& _ 
+                " AND [MemoType] IS NULL) OR ([MemoType] = @Original_MemoType)) AND ((@IsNull_P1C"& _ 
+                "ompany = 1 AND [P1Company] IS NULL) OR ([P1Company] = @Original_P1Company)) AND "& _ 
+                "((@IsNull_P1FirstName = 1 AND [P1FirstName] IS NULL) OR ([P1FirstName] = @Origin"& _ 
+                "al_P1FirstName)) AND ((@IsNull_P1LastName = 1 AND [P1LastName] IS NULL) OR ([P1L"& _ 
+                "astName] = @Original_P1LastName)) AND ((@IsNull_P1MiddleName = 1 AND [P1MiddleNa"& _ 
+                "me] IS NULL) OR ([P1MiddleName] = @Original_P1MiddleName)) AND ((@IsNull_P1Posit"& _ 
+                "ion = 1 AND [P1Position] IS NULL) OR ([P1Position] = @Original_P1Position)) AND "& _ 
+                "((@IsNull_P2Company = 1 AND [P2Company] IS NULL) OR ([P2Company] = @Original_P2C"& _ 
+                "ompany)) AND ((@IsNull_P2FirstName = 1 AND [P2FirstName] IS NULL) OR ([P2FirstNa"& _ 
+                "me] = @Original_P2FirstName)) AND ((@IsNull_P2LastName = 1 AND [P2LastName] IS N"& _ 
+                "ULL) OR ([P2LastName] = @Original_P2LastName)) AND ((@IsNull_P2MiddleName = 1 AN"& _ 
+                "D [P2MiddleName] IS NULL) OR ([P2MiddleName] = @Original_P2MiddleName)) AND ((@I"& _ 
+                "sNull_P2Position = 1 AND [P2Position] IS NULL) OR ([P2Position] = @Original_P2Po"& _ 
+                "sition)) AND ((@IsNull_PRONo = 1 AND [PRONo] IS NULL) OR ([PRONo] = @Original_PR"& _ 
+                "ONo)) AND ((@IsNull_PeriodProtect = 1 AND [PeriodProtect] IS NULL) OR ([PeriodPr"& _ 
+                "otect] = @Original_PeriodProtect)) AND ((@IsNull_PolicyNo = 1 AND [PolicyNo] IS "& _ 
+                "NULL) OR ([PolicyNo] = @Original_PolicyNo)) AND ((@IsNull_RegDate = 1 AND [RegDa"& _ 
+                "te] IS NULL) OR ([RegDate] = @Original_RegDate)) AND ((@IsNull_RegMark = 1 AND ["& _ 
+                "RegMark] IS NULL) OR ([RegMark] = @Original_RegMark)) AND ((@IsNull_RegNo = 1 AN"& _ 
+                "D [RegNo] IS NULL) OR ([RegNo] = @Original_RegNo)) AND ((@IsNull_Registrant = 1 "& _ 
+                "AND [Registrant] IS NULL) OR ([Registrant] = @Original_Registrant)) AND ((@IsNul"& _ 
+                "l_Sex = 1 AND [Sex] IS NULL) OR ([Sex] = @Original_Sex)) AND ((@IsNull_ShipBatch"& _ 
+                " = 1 AND [ShipBatch] IS NULL) OR ([ShipBatch] = @Original_ShipBatch)) AND ((@IsN"& _ 
+                "ull_ShipLine = 1 AND [ShipLine] IS NULL) OR ([ShipLine] = @Original_ShipLine)) A"& _ 
+                "ND ((@IsNull_SignDate = 1 AND [SignDate] IS NULL) OR ([SignDate] = @Original_Sig"& _ 
+                "nDate)) AND ((@IsNull_SubsDate = 1 AND [SubsDate] IS NULL) OR ([SubsDate] = @Ori"& _ 
+                "ginal_SubsDate)) AND ((@IsNull_Term = 1 AND [Term] IS NULL) OR ([Term] = @Origin"& _ 
+                "al_Term)) AND ((@IsNull_Title = 1 AND [Title] IS NULL) OR ([Title] = @Original_T"& _ 
+                "itle)) AND ((@IsNull_VesselArrived = 1 AND [VesselArrived] IS NULL) OR ([VesselA"& _ 
+                "rrived] = @Original_VesselArrived)) AND ((@IsNull_YearReport = 1 AND [YearReport"& _ 
+                "] IS NULL) OR ([YearReport] = @Original_YearReport)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ScannedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DocumentDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DocumentDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BookletNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookletNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookletNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookletNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TotalValue", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalValue", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TotalValue", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalValue", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FromPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FromPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FromPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FromPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ToPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ToPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ToPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ToPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DatePurchased", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DatePurchased", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DatePurchased", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DatePurchased", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_WarrantyPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WarrantyPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_WarrantyPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WarrantyPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MeetingDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MeetingDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MeetingDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MeetingDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BoxNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BoxNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BoxNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BoxNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NONVATreg", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NONVATreg", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NONVATreg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NONVATreg", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RackNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RackNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RackNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RackNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TinCustomer", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinCustomer", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TinCustomer", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinCustomer", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TinVendor", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinVendor", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TinVendor", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinVendor", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VATreg", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VATreg", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VATreg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VATreg", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DateReceived", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateReceived", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DateReceived", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateReceived", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PromoFrom", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoFrom", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PromoFrom", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoFrom", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PromoTo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PromoTo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UserID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Confidential", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Confidential", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DocSize", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Pages", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Removal", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Removal", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Removal", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Removal", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AccreditNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AccreditNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AccreditNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AccreditNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BIRICCNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BIRICCNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BIRICCNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BIRICCNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BillNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BillNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BrokeCompany", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BrokeCompany", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BrokeCompany", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BrokeCompany", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Class", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Class", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Class", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Class", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CompanyPrefix", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CompanyPrefix", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CompanyPrefix", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CompanyPrefix", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ContQtyx20", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx20", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ContQtyx20", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx20", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ContQtyx40", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx40", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ContQtyx40", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx40", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ContractPlace", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractPlace", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ContractPlace", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractPlace", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ContractType", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractType", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ContractType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Country", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Country", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Country", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Country", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreationDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreationDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreationDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreationDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustomsNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomsNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustomsNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomsNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DPNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DPNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DPNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DPNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FilingDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FilingDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FilingDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FilingDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GLN", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GLN", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GLN", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GLN", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ISRNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ISRNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ISRNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ISRNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ImportMonth", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ImportMonth", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ImportMonth", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ImportMonth", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_InsuranceCompany", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InsuranceCompany", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InsuranceCompany", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InsuranceCompany", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IssueDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssueDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IssueDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssueDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IssuePlace", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssuePlace", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IssuePlace", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssuePlace", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LetterCredit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LetterCredit", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LetterCredit", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LetterCredit", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MemoSubj", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoSubj", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MemoSubj", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoSubj", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MemoType", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoType", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MemoType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P1Company", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Company", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P1Company", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Company", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P1FirstName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1FirstName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P1FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1FirstName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P1LastName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1LastName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P1LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1LastName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P1MiddleName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1MiddleName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P1MiddleName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1MiddleName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P1Position", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Position", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P1Position", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Position", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P2Company", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Company", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P2Company", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Company", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P2FirstName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2FirstName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P2FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2FirstName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P2LastName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2LastName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P2LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2LastName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P2MiddleName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2MiddleName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P2MiddleName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2MiddleName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P2Position", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Position", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P2Position", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Position", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PRONo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PRONo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PRONo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PRONo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PeriodProtect", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeriodProtect", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PeriodProtect", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeriodProtect", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PolicyNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PolicyNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PolicyNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PolicyNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RegDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RegDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RegMark", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegMark", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RegMark", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegMark", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RegNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RegNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Registrant", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Registrant", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Registrant", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Registrant", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Sex", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Sex", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Sex", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Sex", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShipBatch", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipBatch", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShipBatch", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipBatch", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShipLine", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipLine", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShipLine", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipLine", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SignDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SignDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SignDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SignDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SubsDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SubsDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SubsDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SubsDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Term", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Term", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Term", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Term", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Title", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Title", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Title", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VesselArrived", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VesselArrived", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VesselArrived", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VesselArrived", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_YearReport", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "YearReport", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_YearReport", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "YearReport", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [DocsCatalogue] ([Batch], [ScannedDate], [Filename], [Status], [Docum"& _ 
@@ -8400,26 +10870,50 @@ Namespace DMSDataSetTableAdapters
                 "dby], [BankAddress], [BankBranch], [BankName], [PaymentOthers], [BoxNo], [NONVAT"& _ 
                 "reg], [RackNo], [TinCustomer], [TinVendor], [VATreg], [AddressC], [DateReceived]"& _ 
                 ", [BatchDesc], [SubBatch], [DTIPermitNo], [PromoFrom], [PromoTitle], [PromoTo], "& _ 
-                "[UserID], [Confidential], [DocSize], [Pages], [Removal]) VALUES (@Batch, @Scanne"& _ 
-                "dDate, @Filename, @Status, @DocumentType, @DocumentDate, @ReferenceNo, @Remarks,"& _ 
-                " @BookletNo, @Vendor, @Customer, @ItemPurchased, @TotalValue, @LastName, @FirstN"& _ 
-                "ame, @MiddleName, @FromPeriod, @ToPeriod, @WarrantyNo, @ProductBrand, @ProductTy"& _ 
-                "pe, @DatePurchased, @Serial, @WarrantyPeriod, @ServiceCenter, @Address, @Contact"& _ 
-                "No, @Email, @VoucherNo, @PaymentForm, @CheckNo, @Payee, @Payor, @Preparedby, @Ap"& _ 
-                "provedby, @Recordedby, @Company, @Purpose, @Secretary, @MeetingDate, @Receivedby"& _ 
-                ", @BankAddress, @BankBranch, @BankName, @PaymentOthers, @BoxNo, @NONVATreg, @Rac"& _ 
-                "kNo, @TinCustomer, @TinVendor, @VATreg, @AddressC, @DateReceived, @BatchDesc, @S"& _ 
-                "ubBatch, @DTIPermitNo, @PromoFrom, @PromoTitle, @PromoTo, @UserID, @Confidential"& _ 
-                ", @DocSize, @Pages, @Removal);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Filename, Status,"& _ 
-                " DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, "& _ 
-                "ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod"& _ 
-                ", WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, "& _ 
-                "ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee"& _ 
-                ", Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, Meetin"& _ 
-                "gDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONV"& _ 
-                "ATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc"& _ 
-                ", SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, D"& _ 
-                "ocSize, Pages, Removal FROM DocsCatalogue WHERE (Id = SCOPE_IDENTITY())"
+                "[UserID], [Confidential], [DocSize], [Pages], [Removal], [AccreditNo], [Author],"& _ 
+                " [BIRICCNo], [BillNo], [BrokeCompany], [CargoDesc], [Class], [CompanyPrefix], [C"& _ 
+                "ontQtyx20], [ContQtyx40], [ContractPlace], [ContractType], [Country], [CreationD"& _ 
+                "ate], [CustomsNo], [DPNo], [FilingDate], [GLN], [ISRNo], [ImportMonth], [Insuran"& _ 
+                "ceCompany], [IssueDate], [IssuePlace], [LetterCredit], [MemoSubj], [MemoType], ["& _ 
+                "P1Company], [P1FirstName], [P1LastName], [P1MiddleName], [P1Position], [P2Compan"& _ 
+                "y], [P2FirstName], [P2LastName], [P2MiddleName], [P2Position], [PRONo], [PeriodP"& _ 
+                "rotect], [PolicyNo], [RegDate], [RegMark], [RegNo], [Registrant], [Sex], [ShipBa"& _ 
+                "tch], [ShipLine], [SignDate], [SubsDate], [Term], [Title], [VesselArrived], [Yea"& _ 
+                "rReport]) VALUES (@Batch, @ScannedDate, @Filename, @Status, @DocumentType, @Docu"& _ 
+                "mentDate, @ReferenceNo, @Remarks, @BookletNo, @Vendor, @Customer, @ItemPurchased"& _ 
+                ", @TotalValue, @LastName, @FirstName, @MiddleName, @FromPeriod, @ToPeriod, @Warr"& _ 
+                "antyNo, @ProductBrand, @ProductType, @DatePurchased, @Serial, @WarrantyPeriod, @"& _ 
+                "ServiceCenter, @Address, @ContactNo, @Email, @VoucherNo, @PaymentForm, @CheckNo,"& _ 
+                " @Payee, @Payor, @Preparedby, @Approvedby, @Recordedby, @Company, @Purpose, @Sec"& _ 
+                "retary, @MeetingDate, @Receivedby, @BankAddress, @BankBranch, @BankName, @Paymen"& _ 
+                "tOthers, @BoxNo, @NONVATreg, @RackNo, @TinCustomer, @TinVendor, @VATreg, @Addres"& _ 
+                "sC, @DateReceived, @BatchDesc, @SubBatch, @DTIPermitNo, @PromoFrom, @PromoTitle,"& _ 
+                " @PromoTo, @UserID, @Confidential, @DocSize, @Pages, @Removal, @AccreditNo, @Aut"& _ 
+                "hor, @BIRICCNo, @BillNo, @BrokeCompany, @CargoDesc, @Class, @CompanyPrefix, @Con"& _ 
+                "tQtyx20, @ContQtyx40, @ContractPlace, @ContractType, @Country, @CreationDate, @C"& _ 
+                "ustomsNo, @DPNo, @FilingDate, @GLN, @ISRNo, @ImportMonth, @InsuranceCompany, @Is"& _ 
+                "sueDate, @IssuePlace, @LetterCredit, @MemoSubj, @MemoType, @P1Company, @P1FirstN"& _ 
+                "ame, @P1LastName, @P1MiddleName, @P1Position, @P2Company, @P2FirstName, @P2LastN"& _ 
+                "ame, @P2MiddleName, @P2Position, @PRONo, @PeriodProtect, @PolicyNo, @RegDate, @R"& _ 
+                "egMark, @RegNo, @Registrant, @Sex, @ShipBatch, @ShipLine, @SignDate, @SubsDate, "& _ 
+                "@Term, @Title, @VesselArrived, @YearReport);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Fil"& _ 
+                "ename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vend"& _ 
+                "or, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPe"& _ 
+                "riod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, Wa"& _ 
+                "rrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, "& _ 
+                "CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Sec"& _ 
+                "retary, MeetingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOther"& _ 
+                "s, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateRecei"& _ 
+                "ved, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, C"& _ 
+                "onfidential, DocSize, Pages, Removal, AccreditNo, Author, BIRICCNo, BillNo, Brok"& _ 
+                "eCompany, CargoDesc, Class, CompanyPrefix, ContQtyx20, ContQtyx40, ContractPlace"& _ 
+                ", ContractType, Country, CreationDate, CustomsNo, DPNo, FilingDate, GLN, ISRNo, "& _ 
+                "ImportMonth, InsuranceCompany, IssueDate, IssuePlace, LetterCredit, MemoSubj, Me"& _ 
+                "moType, P1Company, P1FirstName, P1LastName, P1MiddleName, P1Position, P2Company,"& _ 
+                " P2FirstName, P2LastName, P2MiddleName, P2Position, PRONo, PeriodProtect, Policy"& _ 
+                "No, RegDate, RegMark, RegNo, Registrant, Sex, ShipBatch, ShipLine, SignDate, Sub"& _ 
+                "sDate, Term, Title, VesselArrived, YearReport FROM DocsCatalogue WHERE (Id = SCO"& _ 
+                "PE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Batch", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Batch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8485,6 +10979,58 @@ Namespace DMSDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Removal", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Removal", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AccreditNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AccreditNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Author", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Author", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BIRICCNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BIRICCNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BillNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BrokeCompany", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BrokeCompany", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CargoDesc", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CargoDesc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Class", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Class", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CompanyPrefix", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CompanyPrefix", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ContQtyx20", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx20", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ContQtyx40", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx40", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ContractPlace", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractPlace", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ContractType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Country", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Country", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreationDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreationDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustomsNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomsNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DPNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DPNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FilingDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FilingDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GLN", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GLN", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ISRNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ISRNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ImportMonth", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ImportMonth", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InsuranceCompany", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InsuranceCompany", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IssueDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssueDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IssuePlace", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssuePlace", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LetterCredit", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LetterCredit", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MemoSubj", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoSubj", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MemoType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P1Company", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Company", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P1FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1FirstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P1LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1LastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P1MiddleName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1MiddleName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P1Position", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Position", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P2Company", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Company", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P2FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2FirstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P2LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2LastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P2MiddleName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2MiddleName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P2Position", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Position", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PRONo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PRONo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PeriodProtect", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeriodProtect", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PolicyNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PolicyNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RegDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RegMark", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegMark", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RegNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Registrant", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Registrant", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sex", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Sex", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShipBatch", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipBatch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShipLine", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipLine", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SignDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SignDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SubsDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SubsDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Term", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Term", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VesselArrived", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VesselArrived", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@YearReport", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "YearReport", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [DocsCatalogue] SET [Batch] = @Batch, [ScannedDate] = @ScannedDate, [Filen"& _ 
@@ -8508,16 +11054,125 @@ Namespace DMSDataSetTableAdapters
                 "[SubBatch] = @SubBatch, [DTIPermitNo] = @DTIPermitNo, [PromoFrom] = @PromoFrom, "& _ 
                 "[PromoTitle] = @PromoTitle, [PromoTo] = @PromoTo, [UserID] = @UserID, [Confident"& _ 
                 "ial] = @Confidential, [DocSize] = @DocSize, [Pages] = @Pages, [Removal] = @Remov"& _ 
-                "al WHERE (([Id] = @Original_Id));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Filename, Stat"& _ 
-                "us, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Custome"& _ 
-                "r, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPer"& _ 
-                "iod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPerio"& _ 
-                "d, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Pa"& _ 
-                "yee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, Mee"& _ 
-                "tingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, N"& _ 
-                "ONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchD"& _ 
-                "esc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential"& _ 
-                ", DocSize, Pages, Removal FROM DocsCatalogue WHERE (Id = @Id)"
+                "al, [AccreditNo] = @AccreditNo, [Author] = @Author, [BIRICCNo] = @BIRICCNo, [Bil"& _ 
+                "lNo] = @BillNo, [BrokeCompany] = @BrokeCompany, [CargoDesc] = @CargoDesc, [Class"& _ 
+                "] = @Class, [CompanyPrefix] = @CompanyPrefix, [ContQtyx20] = @ContQtyx20, [ContQ"& _ 
+                "tyx40] = @ContQtyx40, [ContractPlace] = @ContractPlace, [ContractType] = @Contra"& _ 
+                "ctType, [Country] = @Country, [CreationDate] = @CreationDate, [CustomsNo] = @Cus"& _ 
+                "tomsNo, [DPNo] = @DPNo, [FilingDate] = @FilingDate, [GLN] = @GLN, [ISRNo] = @ISR"& _ 
+                "No, [ImportMonth] = @ImportMonth, [InsuranceCompany] = @InsuranceCompany, [Issue"& _ 
+                "Date] = @IssueDate, [IssuePlace] = @IssuePlace, [LetterCredit] = @LetterCredit, "& _ 
+                "[MemoSubj] = @MemoSubj, [MemoType] = @MemoType, [P1Company] = @P1Company, [P1Fir"& _ 
+                "stName] = @P1FirstName, [P1LastName] = @P1LastName, [P1MiddleName] = @P1MiddleNa"& _ 
+                "me, [P1Position] = @P1Position, [P2Company] = @P2Company, [P2FirstName] = @P2Fir"& _ 
+                "stName, [P2LastName] = @P2LastName, [P2MiddleName] = @P2MiddleName, [P2Position]"& _ 
+                " = @P2Position, [PRONo] = @PRONo, [PeriodProtect] = @PeriodProtect, [PolicyNo] ="& _ 
+                " @PolicyNo, [RegDate] = @RegDate, [RegMark] = @RegMark, [RegNo] = @RegNo, [Regis"& _ 
+                "trant] = @Registrant, [Sex] = @Sex, [ShipBatch] = @ShipBatch, [ShipLine] = @Ship"& _ 
+                "Line, [SignDate] = @SignDate, [SubsDate] = @SubsDate, [Term] = @Term, [Title] = "& _ 
+                "@Title, [VesselArrived] = @VesselArrived, [YearReport] = @YearReport WHERE (([Id"& _ 
+                "] = @Original_Id) AND ((@IsNull_ScannedDate = 1 AND [ScannedDate] IS NULL) OR (["& _ 
+                "ScannedDate] = @Original_ScannedDate)) AND ((@IsNull_DocumentDate = 1 AND [Docum"& _ 
+                "entDate] IS NULL) OR ([DocumentDate] = @Original_DocumentDate)) AND ((@IsNull_Bo"& _ 
+                "okletNo = 1 AND [BookletNo] IS NULL) OR ([BookletNo] = @Original_BookletNo)) AND"& _ 
+                " ((@IsNull_TotalValue = 1 AND [TotalValue] IS NULL) OR ([TotalValue] = @Original"& _ 
+                "_TotalValue)) AND ((@IsNull_FromPeriod = 1 AND [FromPeriod] IS NULL) OR ([FromPe"& _ 
+                "riod] = @Original_FromPeriod)) AND ((@IsNull_ToPeriod = 1 AND [ToPeriod] IS NULL"& _ 
+                ") OR ([ToPeriod] = @Original_ToPeriod)) AND ((@IsNull_DatePurchased = 1 AND [Dat"& _ 
+                "ePurchased] IS NULL) OR ([DatePurchased] = @Original_DatePurchased)) AND ((@IsNu"& _ 
+                "ll_WarrantyPeriod = 1 AND [WarrantyPeriod] IS NULL) OR ([WarrantyPeriod] = @Orig"& _ 
+                "inal_WarrantyPeriod)) AND ((@IsNull_MeetingDate = 1 AND [MeetingDate] IS NULL) O"& _ 
+                "R ([MeetingDate] = @Original_MeetingDate)) AND ((@IsNull_BoxNo = 1 AND [BoxNo] I"& _ 
+                "S NULL) OR ([BoxNo] = @Original_BoxNo)) AND ((@IsNull_NONVATreg = 1 AND [NONVATr"& _ 
+                "eg] IS NULL) OR ([NONVATreg] = @Original_NONVATreg)) AND ((@IsNull_RackNo = 1 AN"& _ 
+                "D [RackNo] IS NULL) OR ([RackNo] = @Original_RackNo)) AND ((@IsNull_TinCustomer "& _ 
+                "= 1 AND [TinCustomer] IS NULL) OR ([TinCustomer] = @Original_TinCustomer)) AND ("& _ 
+                "(@IsNull_TinVendor = 1 AND [TinVendor] IS NULL) OR ([TinVendor] = @Original_TinV"& _ 
+                "endor)) AND ((@IsNull_VATreg = 1 AND [VATreg] IS NULL) OR ([VATreg] = @Original_"& _ 
+                "VATreg)) AND ((@IsNull_DateReceived = 1 AND [DateReceived] IS NULL) OR ([DateRec"& _ 
+                "eived] = @Original_DateReceived)) AND ((@IsNull_PromoFrom = 1 AND [PromoFrom] IS"& _ 
+                " NULL) OR ([PromoFrom] = @Original_PromoFrom)) AND ((@IsNull_PromoTo = 1 AND [Pr"& _ 
+                "omoTo] IS NULL) OR ([PromoTo] = @Original_PromoTo)) AND ((@IsNull_UserID = 1 AND"& _ 
+                " [UserID] IS NULL) OR ([UserID] = @Original_UserID)) AND ((@IsNull_Confidential "& _ 
+                "= 1 AND [Confidential] IS NULL) OR ([Confidential] = @Original_Confidential)) AN"& _ 
+                "D ((@IsNull_DocSize = 1 AND [DocSize] IS NULL) OR ([DocSize] = @Original_DocSize"& _ 
+                ")) AND ((@IsNull_Pages = 1 AND [Pages] IS NULL) OR ([Pages] = @Original_Pages)) "& _ 
+                "AND ((@IsNull_Removal = 1 AND [Removal] IS NULL) OR ([Removal] = @Original_Remov"& _ 
+                "al)) AND ((@IsNull_AccreditNo = 1 AND [AccreditNo] IS NULL) OR ([AccreditNo] = @"& _ 
+                "Original_AccreditNo)) AND ((@IsNull_BIRICCNo = 1 AND [BIRICCNo] IS NULL) OR ([BI"& _ 
+                "RICCNo] = @Original_BIRICCNo)) AND ((@IsNull_BillNo = 1 AND [BillNo] IS NULL) OR"& _ 
+                " ([BillNo] = @Original_BillNo)) AND ((@IsNull_BrokeCompany = 1 AND [BrokeCompany"& _ 
+                "] IS NULL) OR ([BrokeCompany] = @Original_BrokeCompany)) AND ((@IsNull_Class = 1"& _ 
+                " AND [Class] IS NULL) OR ([Class] = @Original_Class)) AND ((@IsNull_CompanyPrefi"& _ 
+                "x = 1 AND [CompanyPrefix] IS NULL) OR ([CompanyPrefix] = @Original_CompanyPrefix"& _ 
+                ")) AND ((@IsNull_ContQtyx20 = 1 AND [ContQtyx20] IS NULL) OR ([ContQtyx20] = @Or"& _ 
+                "iginal_ContQtyx20)) AND ((@IsNull_ContQtyx40 = 1 AND [ContQtyx40] IS NULL) OR (["& _ 
+                "ContQtyx40] = @Original_ContQtyx40)) AND ((@IsNull_ContractPlace = 1 AND [Contra"& _ 
+                "ctPlace] IS NULL) OR ([ContractPlace] = @Original_ContractPlace)) AND ((@IsNull_"& _ 
+                "ContractType = 1 AND [ContractType] IS NULL) OR ([ContractType] = @Original_Cont"& _ 
+                "ractType)) AND ((@IsNull_Country = 1 AND [Country] IS NULL) OR ([Country] = @Ori"& _ 
+                "ginal_Country)) AND ((@IsNull_CreationDate = 1 AND [CreationDate] IS NULL) OR (["& _ 
+                "CreationDate] = @Original_CreationDate)) AND ((@IsNull_CustomsNo = 1 AND [Custom"& _ 
+                "sNo] IS NULL) OR ([CustomsNo] = @Original_CustomsNo)) AND ((@IsNull_DPNo = 1 AND"& _ 
+                " [DPNo] IS NULL) OR ([DPNo] = @Original_DPNo)) AND ((@IsNull_FilingDate = 1 AND "& _ 
+                "[FilingDate] IS NULL) OR ([FilingDate] = @Original_FilingDate)) AND ((@IsNull_GL"& _ 
+                "N = 1 AND [GLN] IS NULL) OR ([GLN] = @Original_GLN)) AND ((@IsNull_ISRNo = 1 AND"& _ 
+                " [ISRNo] IS NULL) OR ([ISRNo] = @Original_ISRNo)) AND ((@IsNull_ImportMonth = 1 "& _ 
+                "AND [ImportMonth] IS NULL) OR ([ImportMonth] = @Original_ImportMonth)) AND ((@Is"& _ 
+                "Null_InsuranceCompany = 1 AND [InsuranceCompany] IS NULL) OR ([InsuranceCompany]"& _ 
+                " = @Original_InsuranceCompany)) AND ((@IsNull_IssueDate = 1 AND [IssueDate] IS N"& _ 
+                "ULL) OR ([IssueDate] = @Original_IssueDate)) AND ((@IsNull_IssuePlace = 1 AND [I"& _ 
+                "ssuePlace] IS NULL) OR ([IssuePlace] = @Original_IssuePlace)) AND ((@IsNull_Lett"& _ 
+                "erCredit = 1 AND [LetterCredit] IS NULL) OR ([LetterCredit] = @Original_LetterCr"& _ 
+                "edit)) AND ((@IsNull_MemoSubj = 1 AND [MemoSubj] IS NULL) OR ([MemoSubj] = @Orig"& _ 
+                "inal_MemoSubj)) AND ((@IsNull_MemoType = 1 AND [MemoType] IS NULL) OR ([MemoType"& _ 
+                "] = @Original_MemoType)) AND ((@IsNull_P1Company = 1 AND [P1Company] IS NULL) OR"& _ 
+                " ([P1Company] = @Original_P1Company)) AND ((@IsNull_P1FirstName = 1 AND [P1First"& _ 
+                "Name] IS NULL) OR ([P1FirstName] = @Original_P1FirstName)) AND ((@IsNull_P1LastN"& _ 
+                "ame = 1 AND [P1LastName] IS NULL) OR ([P1LastName] = @Original_P1LastName)) AND "& _ 
+                "((@IsNull_P1MiddleName = 1 AND [P1MiddleName] IS NULL) OR ([P1MiddleName] = @Ori"& _ 
+                "ginal_P1MiddleName)) AND ((@IsNull_P1Position = 1 AND [P1Position] IS NULL) OR ("& _ 
+                "[P1Position] = @Original_P1Position)) AND ((@IsNull_P2Company = 1 AND [P2Company"& _ 
+                "] IS NULL) OR ([P2Company] = @Original_P2Company)) AND ((@IsNull_P2FirstName = 1"& _ 
+                " AND [P2FirstName] IS NULL) OR ([P2FirstName] = @Original_P2FirstName)) AND ((@I"& _ 
+                "sNull_P2LastName = 1 AND [P2LastName] IS NULL) OR ([P2LastName] = @Original_P2La"& _ 
+                "stName)) AND ((@IsNull_P2MiddleName = 1 AND [P2MiddleName] IS NULL) OR ([P2Middl"& _ 
+                "eName] = @Original_P2MiddleName)) AND ((@IsNull_P2Position = 1 AND [P2Position] "& _ 
+                "IS NULL) OR ([P2Position] = @Original_P2Position)) AND ((@IsNull_PRONo = 1 AND ["& _ 
+                "PRONo] IS NULL) OR ([PRONo] = @Original_PRONo)) AND ((@IsNull_PeriodProtect = 1 "& _ 
+                "AND [PeriodProtect] IS NULL) OR ([PeriodProtect] = @Original_PeriodProtect)) AND"& _ 
+                " ((@IsNull_PolicyNo = 1 AND [PolicyNo] IS NULL) OR ([PolicyNo] = @Original_Polic"& _ 
+                "yNo)) AND ((@IsNull_RegDate = 1 AND [RegDate] IS NULL) OR ([RegDate] = @Original"& _ 
+                "_RegDate)) AND ((@IsNull_RegMark = 1 AND [RegMark] IS NULL) OR ([RegMark] = @Ori"& _ 
+                "ginal_RegMark)) AND ((@IsNull_RegNo = 1 AND [RegNo] IS NULL) OR ([RegNo] = @Orig"& _ 
+                "inal_RegNo)) AND ((@IsNull_Registrant = 1 AND [Registrant] IS NULL) OR ([Registr"& _ 
+                "ant] = @Original_Registrant)) AND ((@IsNull_Sex = 1 AND [Sex] IS NULL) OR ([Sex]"& _ 
+                " = @Original_Sex)) AND ((@IsNull_ShipBatch = 1 AND [ShipBatch] IS NULL) OR ([Shi"& _ 
+                "pBatch] = @Original_ShipBatch)) AND ((@IsNull_ShipLine = 1 AND [ShipLine] IS NUL"& _ 
+                "L) OR ([ShipLine] = @Original_ShipLine)) AND ((@IsNull_SignDate = 1 AND [SignDat"& _ 
+                "e] IS NULL) OR ([SignDate] = @Original_SignDate)) AND ((@IsNull_SubsDate = 1 AND"& _ 
+                " [SubsDate] IS NULL) OR ([SubsDate] = @Original_SubsDate)) AND ((@IsNull_Term = "& _ 
+                "1 AND [Term] IS NULL) OR ([Term] = @Original_Term)) AND ((@IsNull_Title = 1 AND "& _ 
+                "[Title] IS NULL) OR ([Title] = @Original_Title)) AND ((@IsNull_VesselArrived = 1"& _ 
+                " AND [VesselArrived] IS NULL) OR ([VesselArrived] = @Original_VesselArrived)) AN"& _ 
+                "D ((@IsNull_YearReport = 1 AND [YearReport] IS NULL) OR ([YearReport] = @Origina"& _ 
+                "l_YearReport)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Batch, ScannedDate, Filename, Status, DocumentType,"& _ 
+                " DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased,"& _ 
+                " TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, "& _ 
+                "ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter,"& _ 
+                " Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Prepa"& _ 
+                "redby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receive"& _ 
+                "dby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo,"& _ 
+                " TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DT"& _ 
+                "IPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages,"& _ 
+                " Removal, AccreditNo, Author, BIRICCNo, BillNo, BrokeCompany, CargoDesc, Class, "& _ 
+                "CompanyPrefix, ContQtyx20, ContQtyx40, ContractPlace, ContractType, Country, Cre"& _ 
+                "ationDate, CustomsNo, DPNo, FilingDate, GLN, ISRNo, ImportMonth, InsuranceCompan"& _ 
+                "y, IssueDate, IssuePlace, LetterCredit, MemoSubj, MemoType, P1Company, P1FirstNa"& _ 
+                "me, P1LastName, P1MiddleName, P1Position, P2Company, P2FirstName, P2LastName, P2"& _ 
+                "MiddleName, P2Position, PRONo, PeriodProtect, PolicyNo, RegDate, RegMark, RegNo,"& _ 
+                " Registrant, Sex, ShipBatch, ShipLine, SignDate, SubsDate, Term, Title, VesselAr"& _ 
+                "rived, YearReport FROM DocsCatalogue WHERE (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Batch", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Batch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8583,7 +11238,205 @@ Namespace DMSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Removal", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Removal", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AccreditNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AccreditNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Author", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Author", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BIRICCNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BIRICCNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BillNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BrokeCompany", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BrokeCompany", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CargoDesc", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CargoDesc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Class", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Class", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CompanyPrefix", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CompanyPrefix", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ContQtyx20", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx20", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ContQtyx40", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx40", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ContractPlace", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractPlace", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ContractType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Country", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Country", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CreationDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreationDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustomsNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomsNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DPNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DPNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FilingDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FilingDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GLN", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GLN", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ISRNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ISRNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ImportMonth", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ImportMonth", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InsuranceCompany", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InsuranceCompany", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IssueDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssueDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IssuePlace", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssuePlace", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LetterCredit", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LetterCredit", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MemoSubj", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoSubj", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MemoType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P1Company", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Company", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P1FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1FirstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P1LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1LastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P1MiddleName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1MiddleName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P1Position", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Position", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P2Company", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Company", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P2FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2FirstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P2LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2LastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P2MiddleName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2MiddleName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@P2Position", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Position", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PRONo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PRONo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PeriodProtect", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeriodProtect", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PolicyNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PolicyNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RegDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RegMark", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegMark", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RegNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Registrant", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Registrant", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sex", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Sex", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShipBatch", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipBatch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShipLine", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipLine", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SignDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SignDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SubsDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SubsDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Term", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Term", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VesselArrived", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VesselArrived", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@YearReport", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "YearReport", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ScannedDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ScannedDate", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ScannedDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DocumentDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DocumentDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BookletNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookletNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BookletNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BookletNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TotalValue", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalValue", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TotalValue", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalValue", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FromPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FromPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FromPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FromPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ToPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ToPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ToPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ToPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DatePurchased", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DatePurchased", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DatePurchased", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DatePurchased", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_WarrantyPeriod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WarrantyPeriod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_WarrantyPeriod", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "WarrantyPeriod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MeetingDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MeetingDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MeetingDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MeetingDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BoxNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BoxNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BoxNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BoxNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NONVATreg", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NONVATreg", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NONVATreg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NONVATreg", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RackNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RackNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RackNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RackNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TinCustomer", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinCustomer", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TinCustomer", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinCustomer", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TinVendor", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinVendor", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TinVendor", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TinVendor", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VATreg", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VATreg", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VATreg", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VATreg", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DateReceived", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateReceived", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DateReceived", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DateReceived", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PromoFrom", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoFrom", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PromoFrom", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoFrom", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PromoTo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PromoTo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PromoTo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UserID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Confidential", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Confidential", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Confidential", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DocSize", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DocSize", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DocSize", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Pages", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Pages", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Pages", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Removal", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Removal", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Removal", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Removal", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AccreditNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AccreditNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AccreditNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AccreditNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BIRICCNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BIRICCNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BIRICCNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BIRICCNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BillNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BillNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BillNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BrokeCompany", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BrokeCompany", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BrokeCompany", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BrokeCompany", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Class", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Class", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Class", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Class", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CompanyPrefix", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CompanyPrefix", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CompanyPrefix", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CompanyPrefix", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ContQtyx20", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx20", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ContQtyx20", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx20", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ContQtyx40", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx40", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ContQtyx40", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContQtyx40", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ContractPlace", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractPlace", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ContractPlace", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractPlace", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ContractType", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractType", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ContractType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ContractType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Country", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Country", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Country", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Country", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CreationDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreationDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CreationDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CreationDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustomsNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomsNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustomsNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomsNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DPNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DPNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DPNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DPNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FilingDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FilingDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FilingDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FilingDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GLN", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GLN", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GLN", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GLN", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ISRNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ISRNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ISRNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ISRNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ImportMonth", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ImportMonth", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ImportMonth", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ImportMonth", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_InsuranceCompany", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InsuranceCompany", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InsuranceCompany", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InsuranceCompany", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IssueDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssueDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IssueDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssueDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IssuePlace", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssuePlace", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IssuePlace", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IssuePlace", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LetterCredit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LetterCredit", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LetterCredit", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LetterCredit", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MemoSubj", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoSubj", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MemoSubj", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoSubj", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MemoType", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoType", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MemoType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MemoType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P1Company", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Company", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P1Company", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Company", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P1FirstName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1FirstName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P1FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1FirstName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P1LastName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1LastName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P1LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1LastName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P1MiddleName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1MiddleName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P1MiddleName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1MiddleName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P1Position", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Position", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P1Position", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P1Position", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P2Company", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Company", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P2Company", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Company", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P2FirstName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2FirstName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P2FirstName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2FirstName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P2LastName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2LastName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P2LastName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2LastName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P2MiddleName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2MiddleName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P2MiddleName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2MiddleName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_P2Position", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Position", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_P2Position", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "P2Position", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PRONo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PRONo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PRONo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PRONo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PeriodProtect", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeriodProtect", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PeriodProtect", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeriodProtect", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PolicyNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PolicyNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PolicyNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PolicyNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RegDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RegDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RegMark", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegMark", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RegMark", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegMark", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RegNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegNo", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RegNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Registrant", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Registrant", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Registrant", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Registrant", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Sex", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Sex", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Sex", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Sex", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShipBatch", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipBatch", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShipBatch", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipBatch", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShipLine", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipLine", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShipLine", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShipLine", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SignDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SignDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SignDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SignDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SubsDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SubsDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SubsDate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SubsDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Term", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Term", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Term", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Term", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Title", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Title", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Title", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Title", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VesselArrived", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VesselArrived", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VesselArrived", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VesselArrived", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_YearReport", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "YearReport", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_YearReport", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "YearReport", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -8600,19 +11453,24 @@ Namespace DMSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        Id, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDat"& _ 
-                "e, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue,"& _ 
-                " "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         LastName, FirstName, MiddleName, FromPeriod, ToPerio"& _ 
-                "d, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod,"& _ 
-                " ServiceCenter, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Address, ContactNo, Email, VoucherNo,"& _ 
-                " PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company"& _ 
-                ", Purpose, Secretary, MeetingDate, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Receivedby, BankAd"& _ 
-                "dress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustome"& _ 
-                "r, TinVendor, VATreg, AddressC, DateReceived, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         BatchDe"& _ 
-                "sc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential,"& _ 
-                " DocSize, Pages, Removal"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            DocsCatalogue"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Status = "& _ 
-                "@Status) AND (ISNULL(Removal, 'False') <> 'True') AND (ISNULL(Confidential, 'Unc"& _ 
-                "hecked') LIKE '%' + @ConfiStatus + '%')"
+            Me._commandCollection(0).CommandText = "SELECT Id, Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, Refe"& _ 
+                "renceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastNa"& _ 
+                "me, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, Produ"& _ 
+                "ctType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo"& _ 
+                ", Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, "& _ 
+                "Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, B"& _ 
+                "ankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVe"& _ 
+                "ndor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFro"& _ 
+                "m, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages, Removal, AccreditN"& _ 
+                "o, Author, BIRICCNo, BillNo, BrokeCompany, CargoDesc, Class, CompanyPrefix, Cont"& _ 
+                "Qtyx20, ContQtyx40, ContractPlace, ContractType, Country, CreationDate, CustomsN"& _ 
+                "o, DPNo, FilingDate, GLN, ISRNo, ImportMonth, InsuranceCompany, IssueDate, Issue"& _ 
+                "Place, LetterCredit, MemoSubj, MemoType, P1Company, P1FirstName, P1LastName, P1M"& _ 
+                "iddleName, P1Position, P2Company, P2FirstName, P2LastName, P2MiddleName, P2Posit"& _ 
+                "ion, PRONo, PeriodProtect, PolicyNo, RegDate, RegMark, RegNo, Registrant, Sex, S"& _ 
+                "hipBatch, ShipLine, SignDate, SubsDate, Term, Title, VesselArrived, YearReport F"& _ 
+                "ROM DocsCatalogue WHERE (Status = @Status) AND (ISNULL(Removal, 'False') <> 'Tru"& _ 
+                "e') AND (ISNULL(Confidential, 'Unchecked') LIKE '%' + @ConfiStatus + '%')"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ConfiStatus", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8694,8 +11552,593 @@ Namespace DMSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Long) As Integer
+        Public Overloads Overridable Function Delete( _
+                    ByVal Original_Id As Long,  _
+                    ByVal Original_ScannedDate As Global.System.Nullable(Of Date),  _
+                    ByVal Original_DocumentDate As String,  _
+                    ByVal Original_BookletNo As String,  _
+                    ByVal Original_TotalValue As Global.System.Nullable(Of Double),  _
+                    ByVal Original_FromPeriod As String,  _
+                    ByVal Original_ToPeriod As String,  _
+                    ByVal Original_DatePurchased As String,  _
+                    ByVal Original_WarrantyPeriod As String,  _
+                    ByVal Original_MeetingDate As String,  _
+                    ByVal Original_BoxNo As String,  _
+                    ByVal Original_NONVATreg As String,  _
+                    ByVal Original_RackNo As String,  _
+                    ByVal Original_TinCustomer As String,  _
+                    ByVal Original_TinVendor As String,  _
+                    ByVal Original_VATreg As String,  _
+                    ByVal Original_DateReceived As String,  _
+                    ByVal Original_PromoFrom As String,  _
+                    ByVal Original_PromoTo As String,  _
+                    ByVal Original_UserID As String,  _
+                    ByVal Original_Confidential As String,  _
+                    ByVal Original_DocSize As String,  _
+                    ByVal Original_Pages As Global.System.Nullable(Of Long),  _
+                    ByVal Original_Removal As String,  _
+                    ByVal Original_AccreditNo As String,  _
+                    ByVal Original_BIRICCNo As String,  _
+                    ByVal Original_BillNo As String,  _
+                    ByVal Original_BrokeCompany As String,  _
+                    ByVal Original_Class As String,  _
+                    ByVal Original_CompanyPrefix As String,  _
+                    ByVal Original_ContQtyx20 As String,  _
+                    ByVal Original_ContQtyx40 As String,  _
+                    ByVal Original_ContractPlace As String,  _
+                    ByVal Original_ContractType As String,  _
+                    ByVal Original_Country As String,  _
+                    ByVal Original_CreationDate As String,  _
+                    ByVal Original_CustomsNo As String,  _
+                    ByVal Original_DPNo As String,  _
+                    ByVal Original_FilingDate As String,  _
+                    ByVal Original_GLN As String,  _
+                    ByVal Original_ISRNo As String,  _
+                    ByVal Original_ImportMonth As String,  _
+                    ByVal Original_InsuranceCompany As String,  _
+                    ByVal Original_IssueDate As String,  _
+                    ByVal Original_IssuePlace As String,  _
+                    ByVal Original_LetterCredit As String,  _
+                    ByVal Original_MemoSubj As String,  _
+                    ByVal Original_MemoType As String,  _
+                    ByVal Original_P1Company As String,  _
+                    ByVal Original_P1FirstName As String,  _
+                    ByVal Original_P1LastName As String,  _
+                    ByVal Original_P1MiddleName As String,  _
+                    ByVal Original_P1Position As String,  _
+                    ByVal Original_P2Company As String,  _
+                    ByVal Original_P2FirstName As String,  _
+                    ByVal Original_P2LastName As String,  _
+                    ByVal Original_P2MiddleName As String,  _
+                    ByVal Original_P2Position As String,  _
+                    ByVal Original_PRONo As String,  _
+                    ByVal Original_PeriodProtect As String,  _
+                    ByVal Original_PolicyNo As String,  _
+                    ByVal Original_RegDate As String,  _
+                    ByVal Original_RegMark As String,  _
+                    ByVal Original_RegNo As String,  _
+                    ByVal Original_Registrant As String,  _
+                    ByVal Original_Sex As String,  _
+                    ByVal Original_ShipBatch As String,  _
+                    ByVal Original_ShipLine As String,  _
+                    ByVal Original_SignDate As String,  _
+                    ByVal Original_SubsDate As String,  _
+                    ByVal Original_Term As String,  _
+                    ByVal Original_Title As String,  _
+                    ByVal Original_VesselArrived As String,  _
+                    ByVal Original_YearReport As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Long)
+            If (Original_ScannedDate.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_ScannedDate.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Original_DocumentDate Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_DocumentDate,String)
+            End If
+            If (Original_BookletNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_BookletNo,String)
+            End If
+            If (Original_TotalValue.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_TotalValue.Value,Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (Original_FromPeriod Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_FromPeriod,String)
+            End If
+            If (Original_ToPeriod Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_ToPeriod,String)
+            End If
+            If (Original_DatePurchased Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_DatePurchased,String)
+            End If
+            If (Original_WarrantyPeriod Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_WarrantyPeriod,String)
+            End If
+            If (Original_MeetingDate Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_MeetingDate,String)
+            End If
+            If (Original_BoxNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_BoxNo,String)
+            End If
+            If (Original_NONVATreg Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_NONVATreg,String)
+            End If
+            If (Original_RackNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_RackNo,String)
+            End If
+            If (Original_TinCustomer Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(Original_TinCustomer,String)
+            End If
+            If (Original_TinVendor Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(28).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(28).Value = CType(Original_TinVendor,String)
+            End If
+            If (Original_VATreg Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(30).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(Original_VATreg,String)
+            End If
+            If (Original_DateReceived Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(32).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_DateReceived,String)
+            End If
+            If (Original_PromoFrom Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(34).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(34).Value = CType(Original_PromoFrom,String)
+            End If
+            If (Original_PromoTo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(35).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(36).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(35).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(36).Value = CType(Original_PromoTo,String)
+            End If
+            If (Original_UserID Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(37).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(38).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(37).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(38).Value = CType(Original_UserID,String)
+            End If
+            If (Original_Confidential Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(40).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(40).Value = CType(Original_Confidential,String)
+            End If
+            If (Original_DocSize Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(42).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(42).Value = CType(Original_DocSize,String)
+            End If
+            If (Original_Pages.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(44).Value = CType(Original_Pages.Value,Long)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(44).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Removal Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(45).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(46).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(45).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(46).Value = CType(Original_Removal,String)
+            End If
+            If (Original_AccreditNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(47).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(48).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(47).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(48).Value = CType(Original_AccreditNo,String)
+            End If
+            If (Original_BIRICCNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(49).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(50).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(49).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(50).Value = CType(Original_BIRICCNo,String)
+            End If
+            If (Original_BillNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(51).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(52).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(51).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(52).Value = CType(Original_BillNo,String)
+            End If
+            If (Original_BrokeCompany Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(53).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(54).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(53).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(54).Value = CType(Original_BrokeCompany,String)
+            End If
+            If (Original_Class Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(55).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(56).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(55).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(56).Value = CType(Original_Class,String)
+            End If
+            If (Original_CompanyPrefix Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(57).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(58).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(57).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(58).Value = CType(Original_CompanyPrefix,String)
+            End If
+            If (Original_ContQtyx20 Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(59).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(60).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(59).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(60).Value = CType(Original_ContQtyx20,String)
+            End If
+            If (Original_ContQtyx40 Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(61).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(62).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(61).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(62).Value = CType(Original_ContQtyx40,String)
+            End If
+            If (Original_ContractPlace Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(63).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(64).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(63).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(64).Value = CType(Original_ContractPlace,String)
+            End If
+            If (Original_ContractType Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(65).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(66).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(65).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(66).Value = CType(Original_ContractType,String)
+            End If
+            If (Original_Country Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(67).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(68).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(67).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(68).Value = CType(Original_Country,String)
+            End If
+            If (Original_CreationDate Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(69).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(70).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(69).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(70).Value = CType(Original_CreationDate,String)
+            End If
+            If (Original_CustomsNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(71).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(72).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(71).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(72).Value = CType(Original_CustomsNo,String)
+            End If
+            If (Original_DPNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(73).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(74).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(73).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(74).Value = CType(Original_DPNo,String)
+            End If
+            If (Original_FilingDate Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(75).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(76).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(75).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(76).Value = CType(Original_FilingDate,String)
+            End If
+            If (Original_GLN Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(77).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(78).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(77).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(78).Value = CType(Original_GLN,String)
+            End If
+            If (Original_ISRNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(79).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(80).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(79).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(80).Value = CType(Original_ISRNo,String)
+            End If
+            If (Original_ImportMonth Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(81).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(82).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(81).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(82).Value = CType(Original_ImportMonth,String)
+            End If
+            If (Original_InsuranceCompany Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(83).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(84).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(83).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(84).Value = CType(Original_InsuranceCompany,String)
+            End If
+            If (Original_IssueDate Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(85).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(86).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(85).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(86).Value = CType(Original_IssueDate,String)
+            End If
+            If (Original_IssuePlace Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(87).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(88).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(87).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(88).Value = CType(Original_IssuePlace,String)
+            End If
+            If (Original_LetterCredit Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(89).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(90).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(89).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(90).Value = CType(Original_LetterCredit,String)
+            End If
+            If (Original_MemoSubj Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(91).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(92).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(91).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(92).Value = CType(Original_MemoSubj,String)
+            End If
+            If (Original_MemoType Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(93).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(94).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(93).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(94).Value = CType(Original_MemoType,String)
+            End If
+            If (Original_P1Company Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(95).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(96).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(95).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(96).Value = CType(Original_P1Company,String)
+            End If
+            If (Original_P1FirstName Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(97).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(98).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(97).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(98).Value = CType(Original_P1FirstName,String)
+            End If
+            If (Original_P1LastName Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(99).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(100).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(99).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(100).Value = CType(Original_P1LastName,String)
+            End If
+            If (Original_P1MiddleName Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(101).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(102).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(101).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(102).Value = CType(Original_P1MiddleName,String)
+            End If
+            If (Original_P1Position Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(103).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(104).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(103).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(104).Value = CType(Original_P1Position,String)
+            End If
+            If (Original_P2Company Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(105).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(106).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(105).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(106).Value = CType(Original_P2Company,String)
+            End If
+            If (Original_P2FirstName Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(107).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(108).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(107).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(108).Value = CType(Original_P2FirstName,String)
+            End If
+            If (Original_P2LastName Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(109).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(110).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(109).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(110).Value = CType(Original_P2LastName,String)
+            End If
+            If (Original_P2MiddleName Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(111).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(112).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(111).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(112).Value = CType(Original_P2MiddleName,String)
+            End If
+            If (Original_P2Position Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(113).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(114).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(113).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(114).Value = CType(Original_P2Position,String)
+            End If
+            If (Original_PRONo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(115).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(116).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(115).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(116).Value = CType(Original_PRONo,String)
+            End If
+            If (Original_PeriodProtect Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(117).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(118).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(117).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(118).Value = CType(Original_PeriodProtect,String)
+            End If
+            If (Original_PolicyNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(119).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(120).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(119).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(120).Value = CType(Original_PolicyNo,String)
+            End If
+            If (Original_RegDate Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(121).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(122).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(121).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(122).Value = CType(Original_RegDate,String)
+            End If
+            If (Original_RegMark Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(123).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(124).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(123).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(124).Value = CType(Original_RegMark,String)
+            End If
+            If (Original_RegNo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(125).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(126).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(125).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(126).Value = CType(Original_RegNo,String)
+            End If
+            If (Original_Registrant Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(127).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(128).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(127).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(128).Value = CType(Original_Registrant,String)
+            End If
+            If (Original_Sex Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(129).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(130).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(129).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(130).Value = CType(Original_Sex,String)
+            End If
+            If (Original_ShipBatch Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(131).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(132).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(131).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(132).Value = CType(Original_ShipBatch,String)
+            End If
+            If (Original_ShipLine Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(133).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(134).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(133).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(134).Value = CType(Original_ShipLine,String)
+            End If
+            If (Original_SignDate Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(135).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(136).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(135).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(136).Value = CType(Original_SignDate,String)
+            End If
+            If (Original_SubsDate Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(137).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(138).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(137).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(138).Value = CType(Original_SubsDate,String)
+            End If
+            If (Original_Term Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(139).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(140).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(139).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(140).Value = CType(Original_Term,String)
+            End If
+            If (Original_Title Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(141).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(142).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(141).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(142).Value = CType(Original_Title,String)
+            End If
+            If (Original_VesselArrived Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(143).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(144).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(143).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(144).Value = CType(Original_VesselArrived,String)
+            End If
+            If (Original_YearReport Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(145).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(146).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(145).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(146).Value = CType(Original_YearReport,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -8779,7 +12222,59 @@ Namespace DMSDataSetTableAdapters
                     ByVal Confidential As String,  _
                     ByVal DocSize As String,  _
                     ByVal Pages As Global.System.Nullable(Of Long),  _
-                    ByVal Removal As String) As Integer
+                    ByVal Removal As String,  _
+                    ByVal AccreditNo As String,  _
+                    ByVal Author As String,  _
+                    ByVal BIRICCNo As String,  _
+                    ByVal BillNo As String,  _
+                    ByVal BrokeCompany As String,  _
+                    ByVal CargoDesc As String,  _
+                    ByVal _Class As String,  _
+                    ByVal CompanyPrefix As String,  _
+                    ByVal ContQtyx20 As String,  _
+                    ByVal ContQtyx40 As String,  _
+                    ByVal ContractPlace As String,  _
+                    ByVal ContractType As String,  _
+                    ByVal Country As String,  _
+                    ByVal CreationDate As String,  _
+                    ByVal CustomsNo As String,  _
+                    ByVal DPNo As String,  _
+                    ByVal FilingDate As String,  _
+                    ByVal GLN As String,  _
+                    ByVal ISRNo As String,  _
+                    ByVal ImportMonth As String,  _
+                    ByVal InsuranceCompany As String,  _
+                    ByVal IssueDate As String,  _
+                    ByVal IssuePlace As String,  _
+                    ByVal LetterCredit As String,  _
+                    ByVal MemoSubj As String,  _
+                    ByVal MemoType As String,  _
+                    ByVal P1Company As String,  _
+                    ByVal P1FirstName As String,  _
+                    ByVal P1LastName As String,  _
+                    ByVal P1MiddleName As String,  _
+                    ByVal P1Position As String,  _
+                    ByVal P2Company As String,  _
+                    ByVal P2FirstName As String,  _
+                    ByVal P2LastName As String,  _
+                    ByVal P2MiddleName As String,  _
+                    ByVal P2Position As String,  _
+                    ByVal PRONo As String,  _
+                    ByVal PeriodProtect As String,  _
+                    ByVal PolicyNo As String,  _
+                    ByVal RegDate As String,  _
+                    ByVal RegMark As String,  _
+                    ByVal RegNo As String,  _
+                    ByVal Registrant As String,  _
+                    ByVal Sex As String,  _
+                    ByVal ShipBatch As String,  _
+                    ByVal ShipLine As String,  _
+                    ByVal SignDate As String,  _
+                    ByVal SubsDate As String,  _
+                    ByVal Term As String,  _
+                    ByVal Title As String,  _
+                    ByVal VesselArrived As String,  _
+                    ByVal YearReport As String) As Integer
             If (Batch Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -9100,6 +12595,266 @@ Namespace DMSDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(63).Value = CType(Removal,String)
             End If
+            If (AccreditNo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(64).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(64).Value = CType(AccreditNo,String)
+            End If
+            If (Author Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(65).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(65).Value = CType(Author,String)
+            End If
+            If (BIRICCNo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(66).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(66).Value = CType(BIRICCNo,String)
+            End If
+            If (BillNo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(67).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(67).Value = CType(BillNo,String)
+            End If
+            If (BrokeCompany Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(68).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(68).Value = CType(BrokeCompany,String)
+            End If
+            If (CargoDesc Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(69).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(69).Value = CType(CargoDesc,String)
+            End If
+            If (_Class Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(70).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(70).Value = CType(_Class,String)
+            End If
+            If (CompanyPrefix Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(71).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(71).Value = CType(CompanyPrefix,String)
+            End If
+            If (ContQtyx20 Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(72).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(72).Value = CType(ContQtyx20,String)
+            End If
+            If (ContQtyx40 Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(73).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(73).Value = CType(ContQtyx40,String)
+            End If
+            If (ContractPlace Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(74).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(74).Value = CType(ContractPlace,String)
+            End If
+            If (ContractType Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(75).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(75).Value = CType(ContractType,String)
+            End If
+            If (Country Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(76).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(76).Value = CType(Country,String)
+            End If
+            If (CreationDate Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(77).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(77).Value = CType(CreationDate,String)
+            End If
+            If (CustomsNo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(78).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(78).Value = CType(CustomsNo,String)
+            End If
+            If (DPNo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(79).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(79).Value = CType(DPNo,String)
+            End If
+            If (FilingDate Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(80).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(80).Value = CType(FilingDate,String)
+            End If
+            If (GLN Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(81).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(81).Value = CType(GLN,String)
+            End If
+            If (ISRNo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(82).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(82).Value = CType(ISRNo,String)
+            End If
+            If (ImportMonth Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(83).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(83).Value = CType(ImportMonth,String)
+            End If
+            If (InsuranceCompany Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(84).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(84).Value = CType(InsuranceCompany,String)
+            End If
+            If (IssueDate Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(85).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(85).Value = CType(IssueDate,String)
+            End If
+            If (IssuePlace Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(86).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(86).Value = CType(IssuePlace,String)
+            End If
+            If (LetterCredit Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(87).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(87).Value = CType(LetterCredit,String)
+            End If
+            If (MemoSubj Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(88).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(88).Value = CType(MemoSubj,String)
+            End If
+            If (MemoType Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(89).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(89).Value = CType(MemoType,String)
+            End If
+            If (P1Company Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(90).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(90).Value = CType(P1Company,String)
+            End If
+            If (P1FirstName Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(91).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(91).Value = CType(P1FirstName,String)
+            End If
+            If (P1LastName Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(92).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(92).Value = CType(P1LastName,String)
+            End If
+            If (P1MiddleName Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(93).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(93).Value = CType(P1MiddleName,String)
+            End If
+            If (P1Position Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(94).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(94).Value = CType(P1Position,String)
+            End If
+            If (P2Company Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(95).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(95).Value = CType(P2Company,String)
+            End If
+            If (P2FirstName Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(96).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(96).Value = CType(P2FirstName,String)
+            End If
+            If (P2LastName Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(97).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(97).Value = CType(P2LastName,String)
+            End If
+            If (P2MiddleName Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(98).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(98).Value = CType(P2MiddleName,String)
+            End If
+            If (P2Position Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(99).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(99).Value = CType(P2Position,String)
+            End If
+            If (PRONo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(100).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(100).Value = CType(PRONo,String)
+            End If
+            If (PeriodProtect Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(101).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(101).Value = CType(PeriodProtect,String)
+            End If
+            If (PolicyNo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(102).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(102).Value = CType(PolicyNo,String)
+            End If
+            If (RegDate Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(103).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(103).Value = CType(RegDate,String)
+            End If
+            If (RegMark Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(104).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(104).Value = CType(RegMark,String)
+            End If
+            If (RegNo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(105).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(105).Value = CType(RegNo,String)
+            End If
+            If (Registrant Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(106).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(106).Value = CType(Registrant,String)
+            End If
+            If (Sex Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(107).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(107).Value = CType(Sex,String)
+            End If
+            If (ShipBatch Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(108).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(108).Value = CType(ShipBatch,String)
+            End If
+            If (ShipLine Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(109).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(109).Value = CType(ShipLine,String)
+            End If
+            If (SignDate Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(110).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(110).Value = CType(SignDate,String)
+            End If
+            If (SubsDate Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(111).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(111).Value = CType(SubsDate,String)
+            End If
+            If (Term Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(112).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(112).Value = CType(Term,String)
+            End If
+            If (Title Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(113).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(113).Value = CType(Title,String)
+            End If
+            If (VesselArrived Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(114).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(114).Value = CType(VesselArrived,String)
+            End If
+            If (YearReport Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(115).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(115).Value = CType(YearReport,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9184,7 +12939,132 @@ Namespace DMSDataSetTableAdapters
                     ByVal DocSize As String,  _
                     ByVal Pages As Global.System.Nullable(Of Long),  _
                     ByVal Removal As String,  _
+                    ByVal AccreditNo As String,  _
+                    ByVal Author As String,  _
+                    ByVal BIRICCNo As String,  _
+                    ByVal BillNo As String,  _
+                    ByVal BrokeCompany As String,  _
+                    ByVal CargoDesc As String,  _
+                    ByVal _Class As String,  _
+                    ByVal CompanyPrefix As String,  _
+                    ByVal ContQtyx20 As String,  _
+                    ByVal ContQtyx40 As String,  _
+                    ByVal ContractPlace As String,  _
+                    ByVal ContractType As String,  _
+                    ByVal Country As String,  _
+                    ByVal CreationDate As String,  _
+                    ByVal CustomsNo As String,  _
+                    ByVal DPNo As String,  _
+                    ByVal FilingDate As String,  _
+                    ByVal GLN As String,  _
+                    ByVal ISRNo As String,  _
+                    ByVal ImportMonth As String,  _
+                    ByVal InsuranceCompany As String,  _
+                    ByVal IssueDate As String,  _
+                    ByVal IssuePlace As String,  _
+                    ByVal LetterCredit As String,  _
+                    ByVal MemoSubj As String,  _
+                    ByVal MemoType As String,  _
+                    ByVal P1Company As String,  _
+                    ByVal P1FirstName As String,  _
+                    ByVal P1LastName As String,  _
+                    ByVal P1MiddleName As String,  _
+                    ByVal P1Position As String,  _
+                    ByVal P2Company As String,  _
+                    ByVal P2FirstName As String,  _
+                    ByVal P2LastName As String,  _
+                    ByVal P2MiddleName As String,  _
+                    ByVal P2Position As String,  _
+                    ByVal PRONo As String,  _
+                    ByVal PeriodProtect As String,  _
+                    ByVal PolicyNo As String,  _
+                    ByVal RegDate As String,  _
+                    ByVal RegMark As String,  _
+                    ByVal RegNo As String,  _
+                    ByVal Registrant As String,  _
+                    ByVal Sex As String,  _
+                    ByVal ShipBatch As String,  _
+                    ByVal ShipLine As String,  _
+                    ByVal SignDate As String,  _
+                    ByVal SubsDate As String,  _
+                    ByVal Term As String,  _
+                    ByVal Title As String,  _
+                    ByVal VesselArrived As String,  _
+                    ByVal YearReport As String,  _
                     ByVal Original_Id As Long,  _
+                    ByVal Original_ScannedDate As Global.System.Nullable(Of Date),  _
+                    ByVal Original_DocumentDate As String,  _
+                    ByVal Original_BookletNo As String,  _
+                    ByVal Original_TotalValue As Global.System.Nullable(Of Double),  _
+                    ByVal Original_FromPeriod As String,  _
+                    ByVal Original_ToPeriod As String,  _
+                    ByVal Original_DatePurchased As String,  _
+                    ByVal Original_WarrantyPeriod As String,  _
+                    ByVal Original_MeetingDate As String,  _
+                    ByVal Original_BoxNo As String,  _
+                    ByVal Original_NONVATreg As String,  _
+                    ByVal Original_RackNo As String,  _
+                    ByVal Original_TinCustomer As String,  _
+                    ByVal Original_TinVendor As String,  _
+                    ByVal Original_VATreg As String,  _
+                    ByVal Original_DateReceived As String,  _
+                    ByVal Original_PromoFrom As String,  _
+                    ByVal Original_PromoTo As String,  _
+                    ByVal Original_UserID As String,  _
+                    ByVal Original_Confidential As String,  _
+                    ByVal Original_DocSize As String,  _
+                    ByVal Original_Pages As Global.System.Nullable(Of Long),  _
+                    ByVal Original_Removal As String,  _
+                    ByVal Original_AccreditNo As String,  _
+                    ByVal Original_BIRICCNo As String,  _
+                    ByVal Original_BillNo As String,  _
+                    ByVal Original_BrokeCompany As String,  _
+                    ByVal Original_Class As String,  _
+                    ByVal Original_CompanyPrefix As String,  _
+                    ByVal Original_ContQtyx20 As String,  _
+                    ByVal Original_ContQtyx40 As String,  _
+                    ByVal Original_ContractPlace As String,  _
+                    ByVal Original_ContractType As String,  _
+                    ByVal Original_Country As String,  _
+                    ByVal Original_CreationDate As String,  _
+                    ByVal Original_CustomsNo As String,  _
+                    ByVal Original_DPNo As String,  _
+                    ByVal Original_FilingDate As String,  _
+                    ByVal Original_GLN As String,  _
+                    ByVal Original_ISRNo As String,  _
+                    ByVal Original_ImportMonth As String,  _
+                    ByVal Original_InsuranceCompany As String,  _
+                    ByVal Original_IssueDate As String,  _
+                    ByVal Original_IssuePlace As String,  _
+                    ByVal Original_LetterCredit As String,  _
+                    ByVal Original_MemoSubj As String,  _
+                    ByVal Original_MemoType As String,  _
+                    ByVal Original_P1Company As String,  _
+                    ByVal Original_P1FirstName As String,  _
+                    ByVal Original_P1LastName As String,  _
+                    ByVal Original_P1MiddleName As String,  _
+                    ByVal Original_P1Position As String,  _
+                    ByVal Original_P2Company As String,  _
+                    ByVal Original_P2FirstName As String,  _
+                    ByVal Original_P2LastName As String,  _
+                    ByVal Original_P2MiddleName As String,  _
+                    ByVal Original_P2Position As String,  _
+                    ByVal Original_PRONo As String,  _
+                    ByVal Original_PeriodProtect As String,  _
+                    ByVal Original_PolicyNo As String,  _
+                    ByVal Original_RegDate As String,  _
+                    ByVal Original_RegMark As String,  _
+                    ByVal Original_RegNo As String,  _
+                    ByVal Original_Registrant As String,  _
+                    ByVal Original_Sex As String,  _
+                    ByVal Original_ShipBatch As String,  _
+                    ByVal Original_ShipLine As String,  _
+                    ByVal Original_SignDate As String,  _
+                    ByVal Original_SubsDate As String,  _
+                    ByVal Original_Term As String,  _
+                    ByVal Original_Title As String,  _
+                    ByVal Original_VesselArrived As String,  _
+                    ByVal Original_YearReport As String,  _
                     ByVal Id As Long) As Integer
             If (Batch Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
@@ -9506,8 +13386,779 @@ Namespace DMSDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Removal,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Original_Id,Long)
-            Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Id,Long)
+            If (AccreditNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(64).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(AccreditNo,String)
+            End If
+            If (Author Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(65).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Author,String)
+            End If
+            If (BIRICCNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(66).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(BIRICCNo,String)
+            End If
+            If (BillNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(67).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(BillNo,String)
+            End If
+            If (BrokeCompany Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(68).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(BrokeCompany,String)
+            End If
+            If (CargoDesc Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(69).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(CargoDesc,String)
+            End If
+            If (_Class Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(70).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(_Class,String)
+            End If
+            If (CompanyPrefix Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(71).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(CompanyPrefix,String)
+            End If
+            If (ContQtyx20 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(72).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(ContQtyx20,String)
+            End If
+            If (ContQtyx40 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(73).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(ContQtyx40,String)
+            End If
+            If (ContractPlace Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(74).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(ContractPlace,String)
+            End If
+            If (ContractType Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(75).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(ContractType,String)
+            End If
+            If (Country Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(76).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(Country,String)
+            End If
+            If (CreationDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(77).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(CreationDate,String)
+            End If
+            If (CustomsNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(78).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(CustomsNo,String)
+            End If
+            If (DPNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(79).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(DPNo,String)
+            End If
+            If (FilingDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(80).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(FilingDate,String)
+            End If
+            If (GLN Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(81).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(GLN,String)
+            End If
+            If (ISRNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(82).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(ISRNo,String)
+            End If
+            If (ImportMonth Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(83).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(ImportMonth,String)
+            End If
+            If (InsuranceCompany Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(84).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(InsuranceCompany,String)
+            End If
+            If (IssueDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(85).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(IssueDate,String)
+            End If
+            If (IssuePlace Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(86).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(IssuePlace,String)
+            End If
+            If (LetterCredit Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(87).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(LetterCredit,String)
+            End If
+            If (MemoSubj Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(88).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(MemoSubj,String)
+            End If
+            If (MemoType Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(89).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(MemoType,String)
+            End If
+            If (P1Company Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(90).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(P1Company,String)
+            End If
+            If (P1FirstName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(91).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(P1FirstName,String)
+            End If
+            If (P1LastName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(92).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(P1LastName,String)
+            End If
+            If (P1MiddleName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(93).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(P1MiddleName,String)
+            End If
+            If (P1Position Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(94).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(P1Position,String)
+            End If
+            If (P2Company Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(95).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(P2Company,String)
+            End If
+            If (P2FirstName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(96).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(P2FirstName,String)
+            End If
+            If (P2LastName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(97).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(P2LastName,String)
+            End If
+            If (P2MiddleName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(98).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(P2MiddleName,String)
+            End If
+            If (P2Position Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(99).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(P2Position,String)
+            End If
+            If (PRONo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(100).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(PRONo,String)
+            End If
+            If (PeriodProtect Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(101).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(PeriodProtect,String)
+            End If
+            If (PolicyNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(102).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(PolicyNo,String)
+            End If
+            If (RegDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(103).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(RegDate,String)
+            End If
+            If (RegMark Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(104).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(RegMark,String)
+            End If
+            If (RegNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(105).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(RegNo,String)
+            End If
+            If (Registrant Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(106).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(Registrant,String)
+            End If
+            If (Sex Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(107).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(Sex,String)
+            End If
+            If (ShipBatch Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(108).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(108).Value = CType(ShipBatch,String)
+            End If
+            If (ShipLine Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(109).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(109).Value = CType(ShipLine,String)
+            End If
+            If (SignDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(110).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(110).Value = CType(SignDate,String)
+            End If
+            If (SubsDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(111).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(111).Value = CType(SubsDate,String)
+            End If
+            If (Term Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(112).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(112).Value = CType(Term,String)
+            End If
+            If (Title Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(113).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(113).Value = CType(Title,String)
+            End If
+            If (VesselArrived Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(114).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(114).Value = CType(VesselArrived,String)
+            End If
+            If (YearReport Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(115).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(115).Value = CType(YearReport,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(116).Value = CType(Original_Id,Long)
+            If (Original_ScannedDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(117).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(118).Value = CType(Original_ScannedDate.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(117).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(118).Value = Global.System.DBNull.Value
+            End If
+            If (Original_DocumentDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(119).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(120).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(119).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(120).Value = CType(Original_DocumentDate,String)
+            End If
+            If (Original_BookletNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(121).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(122).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(121).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(122).Value = CType(Original_BookletNo,String)
+            End If
+            If (Original_TotalValue.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(123).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(124).Value = CType(Original_TotalValue.Value,Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(123).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(124).Value = Global.System.DBNull.Value
+            End If
+            If (Original_FromPeriod Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(125).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(126).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(125).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(126).Value = CType(Original_FromPeriod,String)
+            End If
+            If (Original_ToPeriod Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(127).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(128).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(127).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(128).Value = CType(Original_ToPeriod,String)
+            End If
+            If (Original_DatePurchased Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(129).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(130).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(129).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(130).Value = CType(Original_DatePurchased,String)
+            End If
+            If (Original_WarrantyPeriod Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(131).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(132).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(131).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(132).Value = CType(Original_WarrantyPeriod,String)
+            End If
+            If (Original_MeetingDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(133).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(134).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(133).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(134).Value = CType(Original_MeetingDate,String)
+            End If
+            If (Original_BoxNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(135).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(136).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(135).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(136).Value = CType(Original_BoxNo,String)
+            End If
+            If (Original_NONVATreg Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(137).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(138).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(137).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(138).Value = CType(Original_NONVATreg,String)
+            End If
+            If (Original_RackNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(139).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(140).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(139).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(140).Value = CType(Original_RackNo,String)
+            End If
+            If (Original_TinCustomer Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(141).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(142).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(141).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(142).Value = CType(Original_TinCustomer,String)
+            End If
+            If (Original_TinVendor Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(143).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(144).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(143).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(144).Value = CType(Original_TinVendor,String)
+            End If
+            If (Original_VATreg Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(145).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(146).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(145).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(146).Value = CType(Original_VATreg,String)
+            End If
+            If (Original_DateReceived Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(147).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(148).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(147).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(148).Value = CType(Original_DateReceived,String)
+            End If
+            If (Original_PromoFrom Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(149).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(150).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(149).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(150).Value = CType(Original_PromoFrom,String)
+            End If
+            If (Original_PromoTo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(151).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(152).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(151).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(152).Value = CType(Original_PromoTo,String)
+            End If
+            If (Original_UserID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(153).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(154).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(153).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(154).Value = CType(Original_UserID,String)
+            End If
+            If (Original_Confidential Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(155).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(156).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(155).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(156).Value = CType(Original_Confidential,String)
+            End If
+            If (Original_DocSize Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(157).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(158).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(157).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(158).Value = CType(Original_DocSize,String)
+            End If
+            If (Original_Pages.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(159).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(160).Value = CType(Original_Pages.Value,Long)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(159).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(160).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Removal Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(161).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(162).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(161).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(162).Value = CType(Original_Removal,String)
+            End If
+            If (Original_AccreditNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(163).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(164).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(163).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(164).Value = CType(Original_AccreditNo,String)
+            End If
+            If (Original_BIRICCNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(165).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(166).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(165).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(166).Value = CType(Original_BIRICCNo,String)
+            End If
+            If (Original_BillNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(167).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(168).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(167).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(168).Value = CType(Original_BillNo,String)
+            End If
+            If (Original_BrokeCompany Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(169).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(170).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(169).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(170).Value = CType(Original_BrokeCompany,String)
+            End If
+            If (Original_Class Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(171).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(172).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(171).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(172).Value = CType(Original_Class,String)
+            End If
+            If (Original_CompanyPrefix Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(173).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(174).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(173).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(174).Value = CType(Original_CompanyPrefix,String)
+            End If
+            If (Original_ContQtyx20 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(175).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(176).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(175).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(176).Value = CType(Original_ContQtyx20,String)
+            End If
+            If (Original_ContQtyx40 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(177).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(178).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(177).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(178).Value = CType(Original_ContQtyx40,String)
+            End If
+            If (Original_ContractPlace Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(179).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(180).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(179).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(180).Value = CType(Original_ContractPlace,String)
+            End If
+            If (Original_ContractType Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(181).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(182).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(181).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(182).Value = CType(Original_ContractType,String)
+            End If
+            If (Original_Country Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(183).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(184).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(183).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(184).Value = CType(Original_Country,String)
+            End If
+            If (Original_CreationDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(185).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(186).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(185).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(186).Value = CType(Original_CreationDate,String)
+            End If
+            If (Original_CustomsNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(187).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(188).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(187).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(188).Value = CType(Original_CustomsNo,String)
+            End If
+            If (Original_DPNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(189).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(190).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(189).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(190).Value = CType(Original_DPNo,String)
+            End If
+            If (Original_FilingDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(191).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(192).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(191).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(192).Value = CType(Original_FilingDate,String)
+            End If
+            If (Original_GLN Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(193).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(194).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(193).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(194).Value = CType(Original_GLN,String)
+            End If
+            If (Original_ISRNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(195).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(196).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(195).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(196).Value = CType(Original_ISRNo,String)
+            End If
+            If (Original_ImportMonth Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(197).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(198).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(197).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(198).Value = CType(Original_ImportMonth,String)
+            End If
+            If (Original_InsuranceCompany Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(199).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(200).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(199).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(200).Value = CType(Original_InsuranceCompany,String)
+            End If
+            If (Original_IssueDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(201).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(202).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(201).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(202).Value = CType(Original_IssueDate,String)
+            End If
+            If (Original_IssuePlace Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(203).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(204).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(203).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(204).Value = CType(Original_IssuePlace,String)
+            End If
+            If (Original_LetterCredit Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(205).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(206).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(205).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(206).Value = CType(Original_LetterCredit,String)
+            End If
+            If (Original_MemoSubj Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(207).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(208).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(207).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(208).Value = CType(Original_MemoSubj,String)
+            End If
+            If (Original_MemoType Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(209).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(210).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(209).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(210).Value = CType(Original_MemoType,String)
+            End If
+            If (Original_P1Company Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(211).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(212).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(211).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(212).Value = CType(Original_P1Company,String)
+            End If
+            If (Original_P1FirstName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(213).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(214).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(213).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(214).Value = CType(Original_P1FirstName,String)
+            End If
+            If (Original_P1LastName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(215).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(216).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(215).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(216).Value = CType(Original_P1LastName,String)
+            End If
+            If (Original_P1MiddleName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(217).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(218).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(217).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(218).Value = CType(Original_P1MiddleName,String)
+            End If
+            If (Original_P1Position Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(219).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(220).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(219).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(220).Value = CType(Original_P1Position,String)
+            End If
+            If (Original_P2Company Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(221).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(222).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(221).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(222).Value = CType(Original_P2Company,String)
+            End If
+            If (Original_P2FirstName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(223).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(224).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(223).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(224).Value = CType(Original_P2FirstName,String)
+            End If
+            If (Original_P2LastName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(225).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(226).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(225).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(226).Value = CType(Original_P2LastName,String)
+            End If
+            If (Original_P2MiddleName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(227).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(228).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(227).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(228).Value = CType(Original_P2MiddleName,String)
+            End If
+            If (Original_P2Position Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(229).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(230).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(229).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(230).Value = CType(Original_P2Position,String)
+            End If
+            If (Original_PRONo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(231).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(232).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(231).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(232).Value = CType(Original_PRONo,String)
+            End If
+            If (Original_PeriodProtect Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(233).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(234).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(233).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(234).Value = CType(Original_PeriodProtect,String)
+            End If
+            If (Original_PolicyNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(235).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(236).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(235).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(236).Value = CType(Original_PolicyNo,String)
+            End If
+            If (Original_RegDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(237).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(238).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(237).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(238).Value = CType(Original_RegDate,String)
+            End If
+            If (Original_RegMark Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(239).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(240).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(239).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(240).Value = CType(Original_RegMark,String)
+            End If
+            If (Original_RegNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(241).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(242).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(241).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(242).Value = CType(Original_RegNo,String)
+            End If
+            If (Original_Registrant Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(243).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(244).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(243).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(244).Value = CType(Original_Registrant,String)
+            End If
+            If (Original_Sex Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(245).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(246).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(245).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(246).Value = CType(Original_Sex,String)
+            End If
+            If (Original_ShipBatch Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(247).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(248).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(247).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(248).Value = CType(Original_ShipBatch,String)
+            End If
+            If (Original_ShipLine Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(249).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(250).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(249).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(250).Value = CType(Original_ShipLine,String)
+            End If
+            If (Original_SignDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(251).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(252).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(251).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(252).Value = CType(Original_SignDate,String)
+            End If
+            If (Original_SubsDate Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(253).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(254).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(253).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(254).Value = CType(Original_SubsDate,String)
+            End If
+            If (Original_Term Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(255).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(256).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(255).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(256).Value = CType(Original_Term,String)
+            End If
+            If (Original_Title Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(257).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(258).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(257).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(258).Value = CType(Original_Title,String)
+            End If
+            If (Original_VesselArrived Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(259).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(260).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(259).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(260).Value = CType(Original_VesselArrived,String)
+            End If
+            If (Original_YearReport Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(261).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(262).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(261).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(262).Value = CType(Original_YearReport,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(263).Value = CType(Id,Long)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9592,8 +14243,133 @@ Namespace DMSDataSetTableAdapters
                     ByVal DocSize As String,  _
                     ByVal Pages As Global.System.Nullable(Of Long),  _
                     ByVal Removal As String,  _
-                    ByVal Original_Id As Long) As Integer
-            Return Me.Update(Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages, Removal, Original_Id, Original_Id)
+                    ByVal AccreditNo As String,  _
+                    ByVal Author As String,  _
+                    ByVal BIRICCNo As String,  _
+                    ByVal BillNo As String,  _
+                    ByVal BrokeCompany As String,  _
+                    ByVal CargoDesc As String,  _
+                    ByVal _Class As String,  _
+                    ByVal CompanyPrefix As String,  _
+                    ByVal ContQtyx20 As String,  _
+                    ByVal ContQtyx40 As String,  _
+                    ByVal ContractPlace As String,  _
+                    ByVal ContractType As String,  _
+                    ByVal Country As String,  _
+                    ByVal CreationDate As String,  _
+                    ByVal CustomsNo As String,  _
+                    ByVal DPNo As String,  _
+                    ByVal FilingDate As String,  _
+                    ByVal GLN As String,  _
+                    ByVal ISRNo As String,  _
+                    ByVal ImportMonth As String,  _
+                    ByVal InsuranceCompany As String,  _
+                    ByVal IssueDate As String,  _
+                    ByVal IssuePlace As String,  _
+                    ByVal LetterCredit As String,  _
+                    ByVal MemoSubj As String,  _
+                    ByVal MemoType As String,  _
+                    ByVal P1Company As String,  _
+                    ByVal P1FirstName As String,  _
+                    ByVal P1LastName As String,  _
+                    ByVal P1MiddleName As String,  _
+                    ByVal P1Position As String,  _
+                    ByVal P2Company As String,  _
+                    ByVal P2FirstName As String,  _
+                    ByVal P2LastName As String,  _
+                    ByVal P2MiddleName As String,  _
+                    ByVal P2Position As String,  _
+                    ByVal PRONo As String,  _
+                    ByVal PeriodProtect As String,  _
+                    ByVal PolicyNo As String,  _
+                    ByVal RegDate As String,  _
+                    ByVal RegMark As String,  _
+                    ByVal RegNo As String,  _
+                    ByVal Registrant As String,  _
+                    ByVal Sex As String,  _
+                    ByVal ShipBatch As String,  _
+                    ByVal ShipLine As String,  _
+                    ByVal SignDate As String,  _
+                    ByVal SubsDate As String,  _
+                    ByVal Term As String,  _
+                    ByVal Title As String,  _
+                    ByVal VesselArrived As String,  _
+                    ByVal YearReport As String,  _
+                    ByVal Original_Id As Long,  _
+                    ByVal Original_ScannedDate As Global.System.Nullable(Of Date),  _
+                    ByVal Original_DocumentDate As String,  _
+                    ByVal Original_BookletNo As String,  _
+                    ByVal Original_TotalValue As Global.System.Nullable(Of Double),  _
+                    ByVal Original_FromPeriod As String,  _
+                    ByVal Original_ToPeriod As String,  _
+                    ByVal Original_DatePurchased As String,  _
+                    ByVal Original_WarrantyPeriod As String,  _
+                    ByVal Original_MeetingDate As String,  _
+                    ByVal Original_BoxNo As String,  _
+                    ByVal Original_NONVATreg As String,  _
+                    ByVal Original_RackNo As String,  _
+                    ByVal Original_TinCustomer As String,  _
+                    ByVal Original_TinVendor As String,  _
+                    ByVal Original_VATreg As String,  _
+                    ByVal Original_DateReceived As String,  _
+                    ByVal Original_PromoFrom As String,  _
+                    ByVal Original_PromoTo As String,  _
+                    ByVal Original_UserID As String,  _
+                    ByVal Original_Confidential As String,  _
+                    ByVal Original_DocSize As String,  _
+                    ByVal Original_Pages As Global.System.Nullable(Of Long),  _
+                    ByVal Original_Removal As String,  _
+                    ByVal Original_AccreditNo As String,  _
+                    ByVal Original_BIRICCNo As String,  _
+                    ByVal Original_BillNo As String,  _
+                    ByVal Original_BrokeCompany As String,  _
+                    ByVal Original_Class As String,  _
+                    ByVal Original_CompanyPrefix As String,  _
+                    ByVal Original_ContQtyx20 As String,  _
+                    ByVal Original_ContQtyx40 As String,  _
+                    ByVal Original_ContractPlace As String,  _
+                    ByVal Original_ContractType As String,  _
+                    ByVal Original_Country As String,  _
+                    ByVal Original_CreationDate As String,  _
+                    ByVal Original_CustomsNo As String,  _
+                    ByVal Original_DPNo As String,  _
+                    ByVal Original_FilingDate As String,  _
+                    ByVal Original_GLN As String,  _
+                    ByVal Original_ISRNo As String,  _
+                    ByVal Original_ImportMonth As String,  _
+                    ByVal Original_InsuranceCompany As String,  _
+                    ByVal Original_IssueDate As String,  _
+                    ByVal Original_IssuePlace As String,  _
+                    ByVal Original_LetterCredit As String,  _
+                    ByVal Original_MemoSubj As String,  _
+                    ByVal Original_MemoType As String,  _
+                    ByVal Original_P1Company As String,  _
+                    ByVal Original_P1FirstName As String,  _
+                    ByVal Original_P1LastName As String,  _
+                    ByVal Original_P1MiddleName As String,  _
+                    ByVal Original_P1Position As String,  _
+                    ByVal Original_P2Company As String,  _
+                    ByVal Original_P2FirstName As String,  _
+                    ByVal Original_P2LastName As String,  _
+                    ByVal Original_P2MiddleName As String,  _
+                    ByVal Original_P2Position As String,  _
+                    ByVal Original_PRONo As String,  _
+                    ByVal Original_PeriodProtect As String,  _
+                    ByVal Original_PolicyNo As String,  _
+                    ByVal Original_RegDate As String,  _
+                    ByVal Original_RegMark As String,  _
+                    ByVal Original_RegNo As String,  _
+                    ByVal Original_Registrant As String,  _
+                    ByVal Original_Sex As String,  _
+                    ByVal Original_ShipBatch As String,  _
+                    ByVal Original_ShipLine As String,  _
+                    ByVal Original_SignDate As String,  _
+                    ByVal Original_SubsDate As String,  _
+                    ByVal Original_Term As String,  _
+                    ByVal Original_Title As String,  _
+                    ByVal Original_VesselArrived As String,  _
+                    ByVal Original_YearReport As String) As Integer
+            Return Me.Update(Batch, ScannedDate, Filename, Status, DocumentType, DocumentDate, ReferenceNo, Remarks, BookletNo, Vendor, Customer, ItemPurchased, TotalValue, LastName, FirstName, MiddleName, FromPeriod, ToPeriod, WarrantyNo, ProductBrand, ProductType, DatePurchased, Serial, WarrantyPeriod, ServiceCenter, Address, ContactNo, Email, VoucherNo, PaymentForm, CheckNo, Payee, Payor, Preparedby, Approvedby, Recordedby, Company, Purpose, Secretary, MeetingDate, Receivedby, BankAddress, BankBranch, BankName, PaymentOthers, BoxNo, NONVATreg, RackNo, TinCustomer, TinVendor, VATreg, AddressC, DateReceived, BatchDesc, SubBatch, DTIPermitNo, PromoFrom, PromoTitle, PromoTo, UserID, Confidential, DocSize, Pages, Removal, AccreditNo, Author, BIRICCNo, BillNo, BrokeCompany, CargoDesc, _Class, CompanyPrefix, ContQtyx20, ContQtyx40, ContractPlace, ContractType, Country, CreationDate, CustomsNo, DPNo, FilingDate, GLN, ISRNo, ImportMonth, InsuranceCompany, IssueDate, IssuePlace, LetterCredit, MemoSubj, MemoType, P1Company, P1FirstName, P1LastName, P1MiddleName, P1Position, P2Company, P2FirstName, P2LastName, P2MiddleName, P2Position, PRONo, PeriodProtect, PolicyNo, RegDate, RegMark, RegNo, Registrant, Sex, ShipBatch, ShipLine, SignDate, SubsDate, Term, Title, VesselArrived, YearReport, Original_Id, Original_ScannedDate, Original_DocumentDate, Original_BookletNo, Original_TotalValue, Original_FromPeriod, Original_ToPeriod, Original_DatePurchased, Original_WarrantyPeriod, Original_MeetingDate, Original_BoxNo, Original_NONVATreg, Original_RackNo, Original_TinCustomer, Original_TinVendor, Original_VATreg, Original_DateReceived, Original_PromoFrom, Original_PromoTo, Original_UserID, Original_Confidential, Original_DocSize, Original_Pages, Original_Removal, Original_AccreditNo, Original_BIRICCNo, Original_BillNo, Original_BrokeCompany, Original_Class, Original_CompanyPrefix, Original_ContQtyx20, Original_ContQtyx40, Original_ContractPlace, Original_ContractType, Original_Country, Original_CreationDate, Original_CustomsNo, Original_DPNo, Original_FilingDate, Original_GLN, Original_ISRNo, Original_ImportMonth, Original_InsuranceCompany, Original_IssueDate, Original_IssuePlace, Original_LetterCredit, Original_MemoSubj, Original_MemoType, Original_P1Company, Original_P1FirstName, Original_P1LastName, Original_P1MiddleName, Original_P1Position, Original_P2Company, Original_P2FirstName, Original_P2LastName, Original_P2MiddleName, Original_P2Position, Original_PRONo, Original_PeriodProtect, Original_PolicyNo, Original_RegDate, Original_RegMark, Original_RegNo, Original_Registrant, Original_Sex, Original_ShipBatch, Original_ShipLine, Original_SignDate, Original_SubsDate, Original_Term, Original_Title, Original_VesselArrived, Original_YearReport, Original_Id)
         End Function
     End Class
     

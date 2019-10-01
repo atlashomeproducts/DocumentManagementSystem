@@ -312,7 +312,7 @@ Public Class FrmIndex
                     ListBox1.Items.Remove(ListBox1.SelectedItem)
                 Loop
 
-                ' AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
+                AxAcroPDF1.LoadFile("NOTEXISTING.pdf")
 
                 ' WebBrowser1.Navigate("")
 
