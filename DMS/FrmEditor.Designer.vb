@@ -299,7 +299,10 @@ Partial Class FrmEditor
         Dim Label92 As System.Windows.Forms.Label
         Dim Label93 As System.Windows.Forms.Label
         Dim Label94 As System.Windows.Forms.Label
+        Dim Label109 As System.Windows.Forms.Label
+        Dim Label95 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEditor))
+        Dim Label96 As System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.DocsCatalogueC1TrueDBGrid = New C1.Win.C1TrueDBGrid.C1TrueDBGrid()
@@ -911,6 +914,9 @@ Partial Class FrmEditor
         Label92 = New System.Windows.Forms.Label()
         Label93 = New System.Windows.Forms.Label()
         Label94 = New System.Windows.Forms.Label()
+        Label109 = New System.Windows.Forms.Label()
+        Label95 = New System.Windows.Forms.Label()
+        Label96 = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -1682,7 +1688,6 @@ Partial Class FrmEditor
         MeetingDateLabel.Size = New System.Drawing.Size(91, 16)
         MeetingDateLabel.TabIndex = 39
         MeetingDateLabel.Text = "Meeting Date:"
-        AddHandler MeetingDateLabel.Click, AddressOf Me.MeetingDateLabel_Click
         '
         'Label23
         '
@@ -3496,6 +3501,24 @@ Partial Class FrmEditor
         Label94.TabIndex = 61
         Label94.Text = "mm/dd/yyyy"
         '
+        'Label109
+        '
+        Label109.AutoSize = True
+        Label109.Location = New System.Drawing.Point(260, 178)
+        Label109.Name = "Label109"
+        Label109.Size = New System.Drawing.Size(85, 16)
+        Label109.TabIndex = 53
+        Label109.Text = "(no. of years)"
+        '
+        'Label95
+        '
+        Label95.AutoSize = True
+        Label95.Location = New System.Drawing.Point(260, 150)
+        Label95.Name = "Label95"
+        Label95.Size = New System.Drawing.Size(85, 16)
+        Label95.TabIndex = 54
+        Label95.Text = "(no. of years)"
+        '
         'SplitContainer1
         '
         Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -3606,7 +3629,7 @@ Partial Class FrmEditor
         Me.txtPages.Location = New System.Drawing.Point(554, 139)
         Me.txtPages.Name = "txtPages"
         Me.txtPages.Size = New System.Drawing.Size(72, 22)
-        Me.txtPages.TabIndex = 34
+        Me.txtPages.TabIndex = 13
         '
         'cbDocSize
         '
@@ -3617,7 +3640,7 @@ Partial Class FrmEditor
         Me.cbDocSize.Location = New System.Drawing.Point(165, 139)
         Me.cbDocSize.Name = "cbDocSize"
         Me.cbDocSize.Size = New System.Drawing.Size(217, 24)
-        Me.cbDocSize.TabIndex = 32
+        Me.cbDocSize.TabIndex = 11
         '
         'chkConfidential
         '
@@ -3626,7 +3649,7 @@ Partial Class FrmEditor
         Me.chkConfidential.Location = New System.Drawing.Point(522, 116)
         Me.chkConfidential.Name = "chkConfidential"
         Me.chkConfidential.Size = New System.Drawing.Size(104, 24)
-        Me.chkConfidential.TabIndex = 31
+        Me.chkConfidential.TabIndex = 12
         Me.chkConfidential.Text = "Confidential"
         Me.chkConfidential.UseVisualStyleBackColor = True
         '
@@ -3638,7 +3661,7 @@ Partial Class FrmEditor
         Me.SubBatchTextBox.Location = New System.Drawing.Point(165, 93)
         Me.SubBatchTextBox.Name = "SubBatchTextBox"
         Me.SubBatchTextBox.Size = New System.Drawing.Size(461, 22)
-        Me.SubBatchTextBox.TabIndex = 30
+        Me.SubBatchTextBox.TabIndex = 9
         '
         'BatchTextBox
         '
@@ -3648,7 +3671,7 @@ Partial Class FrmEditor
         Me.BatchTextBox.Location = New System.Drawing.Point(165, 70)
         Me.BatchTextBox.Name = "BatchTextBox"
         Me.BatchTextBox.Size = New System.Drawing.Size(461, 22)
-        Me.BatchTextBox.TabIndex = 29
+        Me.BatchTextBox.TabIndex = 8
         '
         'BtnCancel1
         '
@@ -3657,7 +3680,7 @@ Partial Class FrmEditor
         Me.BtnCancel1.Location = New System.Drawing.Point(99, 8)
         Me.BtnCancel1.Name = "BtnCancel1"
         Me.BtnCancel1.Size = New System.Drawing.Size(92, 27)
-        Me.BtnCancel1.TabIndex = 28
+        Me.BtnCancel1.TabIndex = 2
         Me.BtnCancel1.Text = "Cancel"
         Me.BtnCancel1.UseVisualStyleBackColor = False
         '
@@ -3668,7 +3691,7 @@ Partial Class FrmEditor
         Me.BtnRemove.Location = New System.Drawing.Point(358, 8)
         Me.BtnRemove.Name = "BtnRemove"
         Me.BtnRemove.Size = New System.Drawing.Size(92, 27)
-        Me.BtnRemove.TabIndex = 27
+        Me.BtnRemove.TabIndex = 4
         Me.BtnRemove.Text = "For Removal"
         Me.BtnRemove.UseVisualStyleBackColor = False
         '
@@ -3679,7 +3702,7 @@ Partial Class FrmEditor
         Me.IdTextBox.Location = New System.Drawing.Point(165, 116)
         Me.IdTextBox.Name = "IdTextBox"
         Me.IdTextBox.Size = New System.Drawing.Size(82, 22)
-        Me.IdTextBox.TabIndex = 20
+        Me.IdTextBox.TabIndex = 10
         Me.IdTextBox.TabStop = False
         '
         'Button1
@@ -3689,7 +3712,7 @@ Partial Class FrmEditor
         Me.Button1.Location = New System.Drawing.Point(451, 8)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(92, 27)
-        Me.Button1.TabIndex = 3
+        Me.Button1.TabIndex = 5
         Me.Button1.Text = "Refresh List"
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -3769,7 +3792,7 @@ Partial Class FrmEditor
         Me.BoxNoTS.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoTS.Name = "BoxNoTS"
         Me.BoxNoTS.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoTS.TabIndex = 7
+        Me.BoxNoTS.TabIndex = 15
         '
         'RackNoTS
         '
@@ -3778,7 +3801,7 @@ Partial Class FrmEditor
         Me.RackNoTS.Location = New System.Drawing.Point(158, 27)
         Me.RackNoTS.Name = "RackNoTS"
         Me.RackNoTS.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoTS.TabIndex = 6
+        Me.RackNoTS.TabIndex = 14
         '
         'GroupBox1
         '
@@ -3802,7 +3825,7 @@ Partial Class FrmEditor
         Me.DTToPeriod.Location = New System.Drawing.Point(285, 47)
         Me.DTToPeriod.Name = "DTToPeriod"
         Me.DTToPeriod.Size = New System.Drawing.Size(18, 22)
-        Me.DTToPeriod.TabIndex = 16
+        Me.DTToPeriod.TabIndex = 24
         '
         'FromPeriodTextBox
         '
@@ -3811,7 +3834,7 @@ Partial Class FrmEditor
         Me.FromPeriodTextBox.Location = New System.Drawing.Point(181, 21)
         Me.FromPeriodTextBox.Name = "FromPeriodTextBox"
         Me.FromPeriodTextBox.Size = New System.Drawing.Size(104, 22)
-        Me.FromPeriodTextBox.TabIndex = 13
+        Me.FromPeriodTextBox.TabIndex = 21
         Me.FromPeriodTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DTFromPeriod
@@ -3819,7 +3842,7 @@ Partial Class FrmEditor
         Me.DTFromPeriod.Location = New System.Drawing.Point(286, 21)
         Me.DTFromPeriod.Name = "DTFromPeriod"
         Me.DTFromPeriod.Size = New System.Drawing.Size(18, 22)
-        Me.DTFromPeriod.TabIndex = 14
+        Me.DTFromPeriod.TabIndex = 22
         '
         'ToPeriodTextBox
         '
@@ -3828,7 +3851,7 @@ Partial Class FrmEditor
         Me.ToPeriodTextBox.Location = New System.Drawing.Point(181, 47)
         Me.ToPeriodTextBox.Name = "ToPeriodTextBox"
         Me.ToPeriodTextBox.Size = New System.Drawing.Size(103, 22)
-        Me.ToPeriodTextBox.TabIndex = 15
+        Me.ToPeriodTextBox.TabIndex = 23
         Me.ToPeriodTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'MiddleNameTextBox
@@ -3838,7 +3861,7 @@ Partial Class FrmEditor
         Me.MiddleNameTextBox.Location = New System.Drawing.Point(158, 151)
         Me.MiddleNameTextBox.Name = "MiddleNameTextBox"
         Me.MiddleNameTextBox.Size = New System.Drawing.Size(461, 22)
-        Me.MiddleNameTextBox.TabIndex = 12
+        Me.MiddleNameTextBox.TabIndex = 20
         '
         'FirstNameTextBox
         '
@@ -3847,7 +3870,7 @@ Partial Class FrmEditor
         Me.FirstNameTextBox.Location = New System.Drawing.Point(158, 128)
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
         Me.FirstNameTextBox.Size = New System.Drawing.Size(461, 22)
-        Me.FirstNameTextBox.TabIndex = 11
+        Me.FirstNameTextBox.TabIndex = 19
         '
         'LastNameTextBox
         '
@@ -3856,7 +3879,7 @@ Partial Class FrmEditor
         Me.LastNameTextBox.Location = New System.Drawing.Point(158, 105)
         Me.LastNameTextBox.Name = "LastNameTextBox"
         Me.LastNameTextBox.Size = New System.Drawing.Size(461, 22)
-        Me.LastNameTextBox.TabIndex = 10
+        Me.LastNameTextBox.TabIndex = 18
         '
         'DocumentDateTS
         '
@@ -3865,7 +3888,7 @@ Partial Class FrmEditor
         Me.DocumentDateTS.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateTS.Name = "DocumentDateTS"
         Me.DocumentDateTS.Size = New System.Drawing.Size(104, 22)
-        Me.DocumentDateTS.TabIndex = 8
+        Me.DocumentDateTS.TabIndex = 16
         Me.DocumentDateTS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DTDocuTimeSheet
@@ -3873,7 +3896,7 @@ Partial Class FrmEditor
         Me.DTDocuTimeSheet.Location = New System.Drawing.Point(263, 73)
         Me.DTDocuTimeSheet.Name = "DTDocuTimeSheet"
         Me.DTDocuTimeSheet.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuTimeSheet.TabIndex = 9
+        Me.DTDocuTimeSheet.TabIndex = 17
         '
         'ReceiptInvoice
         '
@@ -3936,7 +3959,7 @@ Partial Class FrmEditor
         Me.NONVATregCheckBox.Location = New System.Drawing.Point(413, 49)
         Me.NONVATregCheckBox.Name = "NONVATregCheckBox"
         Me.NONVATregCheckBox.Size = New System.Drawing.Size(160, 24)
-        Me.NONVATregCheckBox.TabIndex = 19
+        Me.NONVATregCheckBox.TabIndex = 21
         Me.NONVATregCheckBox.Text = "NON-VAT Registered"
         Me.NONVATregCheckBox.UseVisualStyleBackColor = True
         '
@@ -3946,7 +3969,7 @@ Partial Class FrmEditor
         Me.VATregCheckBox.Location = New System.Drawing.Point(413, 27)
         Me.VATregCheckBox.Name = "VATregCheckBox"
         Me.VATregCheckBox.Size = New System.Drawing.Size(127, 24)
-        Me.VATregCheckBox.TabIndex = 18
+        Me.VATregCheckBox.TabIndex = 20
         Me.VATregCheckBox.Text = "VAT Registered"
         Me.VATregCheckBox.UseVisualStyleBackColor = True
         '
@@ -3957,7 +3980,7 @@ Partial Class FrmEditor
         Me.AddressCTextBox.Location = New System.Drawing.Point(158, 200)
         Me.AddressCTextBox.Name = "AddressCTextBox"
         Me.AddressCTextBox.Size = New System.Drawing.Size(461, 22)
-        Me.AddressCTextBox.TabIndex = 14
+        Me.AddressCTextBox.TabIndex = 25
         '
         'TinCustomerTextBox
         '
@@ -3966,7 +3989,7 @@ Partial Class FrmEditor
         Me.TinCustomerTextBox.Location = New System.Drawing.Point(158, 252)
         Me.TinCustomerTextBox.Name = "TinCustomerTextBox"
         Me.TinCustomerTextBox.Size = New System.Drawing.Size(182, 22)
-        Me.TinCustomerTextBox.TabIndex = 16
+        Me.TinCustomerTextBox.TabIndex = 27
         '
         'TinVendorTextBox
         '
@@ -3975,7 +3998,7 @@ Partial Class FrmEditor
         Me.TinVendorTextBox.Location = New System.Drawing.Point(158, 229)
         Me.TinVendorTextBox.Name = "TinVendorTextBox"
         Me.TinVendorTextBox.Size = New System.Drawing.Size(182, 22)
-        Me.TinVendorTextBox.TabIndex = 15
+        Me.TinVendorTextBox.TabIndex = 26
         '
         'BoxNoRI
         '
@@ -3984,7 +4007,7 @@ Partial Class FrmEditor
         Me.BoxNoRI.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoRI.Name = "BoxNoRI"
         Me.BoxNoRI.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoRI.TabIndex = 7
+        Me.BoxNoRI.TabIndex = 15
         '
         'RackNoRI
         '
@@ -3993,7 +4016,7 @@ Partial Class FrmEditor
         Me.RackNoRI.Location = New System.Drawing.Point(158, 27)
         Me.RackNoRI.Name = "RackNoRI"
         Me.RackNoRI.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoRI.TabIndex = 6
+        Me.RackNoRI.TabIndex = 14
         '
         'DocumentDateRI
         '
@@ -4002,7 +4025,7 @@ Partial Class FrmEditor
         Me.DocumentDateRI.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateRI.Name = "DocumentDateRI"
         Me.DocumentDateRI.Size = New System.Drawing.Size(104, 22)
-        Me.DocumentDateRI.TabIndex = 8
+        Me.DocumentDateRI.TabIndex = 16
         Me.DocumentDateRI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TotalValueRI
@@ -4012,7 +4035,7 @@ Partial Class FrmEditor
         Me.TotalValueRI.Location = New System.Drawing.Point(434, 102)
         Me.TotalValueRI.Name = "TotalValueRI"
         Me.TotalValueRI.Size = New System.Drawing.Size(140, 22)
-        Me.TotalValueRI.TabIndex = 20
+        Me.TotalValueRI.TabIndex = 22
         '
         'ItemPurchasedTextBox
         '
@@ -4031,7 +4054,7 @@ Partial Class FrmEditor
         Me.CustomerTextBox.Location = New System.Drawing.Point(158, 177)
         Me.CustomerTextBox.Name = "CustomerTextBox"
         Me.CustomerTextBox.Size = New System.Drawing.Size(461, 22)
-        Me.CustomerTextBox.TabIndex = 13
+        Me.CustomerTextBox.TabIndex = 24
         '
         'VendorTextBox
         '
@@ -4040,7 +4063,7 @@ Partial Class FrmEditor
         Me.VendorTextBox.Location = New System.Drawing.Point(158, 154)
         Me.VendorTextBox.Name = "VendorTextBox"
         Me.VendorTextBox.Size = New System.Drawing.Size(461, 22)
-        Me.VendorTextBox.TabIndex = 12
+        Me.VendorTextBox.TabIndex = 23
         '
         'BookletNoTextBox
         '
@@ -4049,14 +4072,14 @@ Partial Class FrmEditor
         Me.BookletNoTextBox.Location = New System.Drawing.Point(158, 102)
         Me.BookletNoTextBox.Name = "BookletNoTextBox"
         Me.BookletNoTextBox.Size = New System.Drawing.Size(123, 22)
-        Me.BookletNoTextBox.TabIndex = 10
+        Me.BookletNoTextBox.TabIndex = 18
         '
         'DTDocuRI
         '
         Me.DTDocuRI.Location = New System.Drawing.Point(263, 73)
         Me.DTDocuRI.Name = "DTDocuRI"
         Me.DTDocuRI.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuRI.TabIndex = 9
+        Me.DTDocuRI.TabIndex = 17
         '
         'ReferenceNoRI
         '
@@ -4065,7 +4088,7 @@ Partial Class FrmEditor
         Me.ReferenceNoRI.Location = New System.Drawing.Point(158, 125)
         Me.ReferenceNoRI.Name = "ReferenceNoRI"
         Me.ReferenceNoRI.Size = New System.Drawing.Size(123, 22)
-        Me.ReferenceNoRI.TabIndex = 11
+        Me.ReferenceNoRI.TabIndex = 19
         '
         'Warranty
         '
@@ -4131,7 +4154,7 @@ Partial Class FrmEditor
         Me.BoxNoWarranty.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoWarranty.Name = "BoxNoWarranty"
         Me.BoxNoWarranty.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoWarranty.TabIndex = 7
+        Me.BoxNoWarranty.TabIndex = 15
         '
         'RackNoWarranty
         '
@@ -4140,14 +4163,14 @@ Partial Class FrmEditor
         Me.RackNoWarranty.Location = New System.Drawing.Point(158, 27)
         Me.RackNoWarranty.Name = "RackNoWarranty"
         Me.RackNoWarranty.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoWarranty.TabIndex = 6
+        Me.RackNoWarranty.TabIndex = 14
         '
         'DTDatePurchased
         '
         Me.DTDatePurchased.Location = New System.Drawing.Point(255, 149)
         Me.DTDatePurchased.Name = "DTDatePurchased"
         Me.DTDatePurchased.Size = New System.Drawing.Size(18, 22)
-        Me.DTDatePurchased.TabIndex = 12
+        Me.DTDatePurchased.TabIndex = 20
         '
         'EmailTextBox
         '
@@ -4156,7 +4179,7 @@ Partial Class FrmEditor
         Me.EmailTextBox.Location = New System.Drawing.Point(158, 359)
         Me.EmailTextBox.Name = "EmailTextBox"
         Me.EmailTextBox.Size = New System.Drawing.Size(191, 22)
-        Me.EmailTextBox.TabIndex = 19
+        Me.EmailTextBox.TabIndex = 27
         '
         'ContactNoTextBox
         '
@@ -4165,7 +4188,7 @@ Partial Class FrmEditor
         Me.ContactNoTextBox.Location = New System.Drawing.Point(158, 336)
         Me.ContactNoTextBox.Name = "ContactNoTextBox"
         Me.ContactNoTextBox.Size = New System.Drawing.Size(191, 22)
-        Me.ContactNoTextBox.TabIndex = 18
+        Me.ContactNoTextBox.TabIndex = 26
         '
         'AddressTextBox
         '
@@ -4175,7 +4198,7 @@ Partial Class FrmEditor
         Me.AddressTextBox.Multiline = True
         Me.AddressTextBox.Name = "AddressTextBox"
         Me.AddressTextBox.Size = New System.Drawing.Size(461, 47)
-        Me.AddressTextBox.TabIndex = 17
+        Me.AddressTextBox.TabIndex = 25
         '
         'ServiceCenterTextBox
         '
@@ -4184,7 +4207,7 @@ Partial Class FrmEditor
         Me.ServiceCenterTextBox.Location = New System.Drawing.Point(158, 258)
         Me.ServiceCenterTextBox.Name = "ServiceCenterTextBox"
         Me.ServiceCenterTextBox.Size = New System.Drawing.Size(461, 22)
-        Me.ServiceCenterTextBox.TabIndex = 16
+        Me.ServiceCenterTextBox.TabIndex = 24
         '
         'WarrantyPeriodTextBox
         '
@@ -4193,7 +4216,7 @@ Partial Class FrmEditor
         Me.WarrantyPeriodTextBox.Location = New System.Drawing.Point(158, 227)
         Me.WarrantyPeriodTextBox.Name = "WarrantyPeriodTextBox"
         Me.WarrantyPeriodTextBox.Size = New System.Drawing.Size(140, 22)
-        Me.WarrantyPeriodTextBox.TabIndex = 15
+        Me.WarrantyPeriodTextBox.TabIndex = 23
         '
         'SerialTextBox
         '
@@ -4202,7 +4225,7 @@ Partial Class FrmEditor
         Me.SerialTextBox.Location = New System.Drawing.Point(158, 126)
         Me.SerialTextBox.Name = "SerialTextBox"
         Me.SerialTextBox.Size = New System.Drawing.Size(303, 22)
-        Me.SerialTextBox.TabIndex = 10
+        Me.SerialTextBox.TabIndex = 18
         '
         'TotalValueWarranty
         '
@@ -4211,7 +4234,7 @@ Partial Class FrmEditor
         Me.TotalValueWarranty.Location = New System.Drawing.Point(158, 382)
         Me.TotalValueWarranty.Name = "TotalValueWarranty"
         Me.TotalValueWarranty.Size = New System.Drawing.Size(191, 22)
-        Me.TotalValueWarranty.TabIndex = 20
+        Me.TotalValueWarranty.TabIndex = 28
         '
         'ReferenceNoTextBox1
         '
@@ -4220,7 +4243,7 @@ Partial Class FrmEditor
         Me.ReferenceNoTextBox1.Location = New System.Drawing.Point(158, 181)
         Me.ReferenceNoTextBox1.Name = "ReferenceNoTextBox1"
         Me.ReferenceNoTextBox1.Size = New System.Drawing.Size(140, 22)
-        Me.ReferenceNoTextBox1.TabIndex = 13
+        Me.ReferenceNoTextBox1.TabIndex = 21
         '
         'DatePurchasedTextBox
         '
@@ -4229,7 +4252,7 @@ Partial Class FrmEditor
         Me.DatePurchasedTextBox.Location = New System.Drawing.Point(158, 149)
         Me.DatePurchasedTextBox.Name = "DatePurchasedTextBox"
         Me.DatePurchasedTextBox.Size = New System.Drawing.Size(95, 22)
-        Me.DatePurchasedTextBox.TabIndex = 11
+        Me.DatePurchasedTextBox.TabIndex = 19
         Me.DatePurchasedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ProductTypeTextBox
@@ -4239,7 +4262,7 @@ Partial Class FrmEditor
         Me.ProductTypeTextBox.Location = New System.Drawing.Point(158, 103)
         Me.ProductTypeTextBox.Name = "ProductTypeTextBox"
         Me.ProductTypeTextBox.Size = New System.Drawing.Size(303, 22)
-        Me.ProductTypeTextBox.TabIndex = 9
+        Me.ProductTypeTextBox.TabIndex = 17
         '
         'ProductBrandTextBox
         '
@@ -4248,7 +4271,7 @@ Partial Class FrmEditor
         Me.ProductBrandTextBox.Location = New System.Drawing.Point(158, 80)
         Me.ProductBrandTextBox.Name = "ProductBrandTextBox"
         Me.ProductBrandTextBox.Size = New System.Drawing.Size(303, 22)
-        Me.ProductBrandTextBox.TabIndex = 8
+        Me.ProductBrandTextBox.TabIndex = 16
         '
         'WarrantyNoTextBox
         '
@@ -4257,7 +4280,7 @@ Partial Class FrmEditor
         Me.WarrantyNoTextBox.Location = New System.Drawing.Point(158, 204)
         Me.WarrantyNoTextBox.Name = "WarrantyNoTextBox"
         Me.WarrantyNoTextBox.Size = New System.Drawing.Size(140, 22)
-        Me.WarrantyNoTextBox.TabIndex = 14
+        Me.WarrantyNoTextBox.TabIndex = 22
         '
         'Voucher
         '
@@ -4320,7 +4343,7 @@ Partial Class FrmEditor
         Me.DTDateReceived.Location = New System.Drawing.Point(259, 441)
         Me.DTDateReceived.Name = "DTDateReceived"
         Me.DTDateReceived.Size = New System.Drawing.Size(18, 22)
-        Me.DTDateReceived.TabIndex = 23
+        Me.DTDateReceived.TabIndex = 31
         '
         'BoxNoVoucher
         '
@@ -4329,7 +4352,7 @@ Partial Class FrmEditor
         Me.BoxNoVoucher.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoVoucher.Name = "BoxNoVoucher"
         Me.BoxNoVoucher.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoVoucher.TabIndex = 7
+        Me.BoxNoVoucher.TabIndex = 15
         '
         'RackNoVoucher
         '
@@ -4338,7 +4361,7 @@ Partial Class FrmEditor
         Me.RackNoVoucher.Location = New System.Drawing.Point(158, 27)
         Me.RackNoVoucher.Name = "RackNoVoucher"
         Me.RackNoVoucher.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoVoucher.TabIndex = 6
+        Me.RackNoVoucher.TabIndex = 14
         '
         'DateReceivedTextBox
         '
@@ -4347,7 +4370,7 @@ Partial Class FrmEditor
         Me.DateReceivedTextBox.Location = New System.Drawing.Point(158, 441)
         Me.DateReceivedTextBox.Name = "DateReceivedTextBox"
         Me.DateReceivedTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.DateReceivedTextBox.TabIndex = 22
+        Me.DateReceivedTextBox.TabIndex = 30
         '
         'PaymentFormComboBox
         '
@@ -4358,14 +4381,14 @@ Partial Class FrmEditor
         Me.PaymentFormComboBox.Location = New System.Drawing.Point(158, 180)
         Me.PaymentFormComboBox.Name = "PaymentFormComboBox"
         Me.PaymentFormComboBox.Size = New System.Drawing.Size(183, 24)
-        Me.PaymentFormComboBox.TabIndex = 13
+        Me.PaymentFormComboBox.TabIndex = 21
         '
         'DTDocuVoucher
         '
         Me.DTDocuVoucher.Location = New System.Drawing.Point(259, 73)
         Me.DTDocuVoucher.Name = "DTDocuVoucher"
         Me.DTDocuVoucher.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuVoucher.TabIndex = 9
+        Me.DTDocuVoucher.TabIndex = 17
         '
         'ReceivedbyTextBox
         '
@@ -4374,7 +4397,7 @@ Partial Class FrmEditor
         Me.ReceivedbyTextBox.Location = New System.Drawing.Point(158, 418)
         Me.ReceivedbyTextBox.Name = "ReceivedbyTextBox"
         Me.ReceivedbyTextBox.Size = New System.Drawing.Size(464, 22)
-        Me.ReceivedbyTextBox.TabIndex = 21
+        Me.ReceivedbyTextBox.TabIndex = 29
         '
         'RecordedbyTextBox
         '
@@ -4383,7 +4406,7 @@ Partial Class FrmEditor
         Me.RecordedbyTextBox.Location = New System.Drawing.Point(158, 395)
         Me.RecordedbyTextBox.Name = "RecordedbyTextBox"
         Me.RecordedbyTextBox.Size = New System.Drawing.Size(464, 22)
-        Me.RecordedbyTextBox.TabIndex = 20
+        Me.RecordedbyTextBox.TabIndex = 28
         '
         'ApprovedbyTextBox
         '
@@ -4392,7 +4415,7 @@ Partial Class FrmEditor
         Me.ApprovedbyTextBox.Location = New System.Drawing.Point(158, 372)
         Me.ApprovedbyTextBox.Name = "ApprovedbyTextBox"
         Me.ApprovedbyTextBox.Size = New System.Drawing.Size(464, 22)
-        Me.ApprovedbyTextBox.TabIndex = 19
+        Me.ApprovedbyTextBox.TabIndex = 27
         '
         'PreparedbyTextBox
         '
@@ -4401,7 +4424,7 @@ Partial Class FrmEditor
         Me.PreparedbyTextBox.Location = New System.Drawing.Point(158, 349)
         Me.PreparedbyTextBox.Name = "PreparedbyTextBox"
         Me.PreparedbyTextBox.Size = New System.Drawing.Size(464, 22)
-        Me.PreparedbyTextBox.TabIndex = 18
+        Me.PreparedbyTextBox.TabIndex = 26
         '
         'PayorTextBox
         '
@@ -4410,7 +4433,7 @@ Partial Class FrmEditor
         Me.PayorTextBox.Location = New System.Drawing.Point(158, 126)
         Me.PayorTextBox.Name = "PayorTextBox"
         Me.PayorTextBox.Size = New System.Drawing.Size(464, 22)
-        Me.PayorTextBox.TabIndex = 11
+        Me.PayorTextBox.TabIndex = 19
         '
         'PayeeTextBox
         '
@@ -4419,7 +4442,7 @@ Partial Class FrmEditor
         Me.PayeeTextBox.Location = New System.Drawing.Point(158, 103)
         Me.PayeeTextBox.Name = "PayeeTextBox"
         Me.PayeeTextBox.Size = New System.Drawing.Size(464, 22)
-        Me.PayeeTextBox.TabIndex = 10
+        Me.PayeeTextBox.TabIndex = 18
         '
         'TotalValueVoucher
         '
@@ -4428,7 +4451,7 @@ Partial Class FrmEditor
         Me.TotalValueVoucher.Location = New System.Drawing.Point(158, 326)
         Me.TotalValueVoucher.Name = "TotalValueVoucher"
         Me.TotalValueVoucher.Size = New System.Drawing.Size(183, 22)
-        Me.TotalValueVoucher.TabIndex = 17
+        Me.TotalValueVoucher.TabIndex = 25
         '
         'VoucherNoTextBox
         '
@@ -4437,7 +4460,7 @@ Partial Class FrmEditor
         Me.VoucherNoTextBox.Location = New System.Drawing.Point(158, 149)
         Me.VoucherNoTextBox.Name = "VoucherNoTextBox"
         Me.VoucherNoTextBox.Size = New System.Drawing.Size(183, 22)
-        Me.VoucherNoTextBox.TabIndex = 12
+        Me.VoucherNoTextBox.TabIndex = 20
         '
         'DocumentDateVoucher
         '
@@ -4446,7 +4469,7 @@ Partial Class FrmEditor
         Me.DocumentDateVoucher.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateVoucher.Name = "DocumentDateVoucher"
         Me.DocumentDateVoucher.Size = New System.Drawing.Size(100, 22)
-        Me.DocumentDateVoucher.TabIndex = 8
+        Me.DocumentDateVoucher.TabIndex = 16
         Me.DocumentDateVoucher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TabControl2
@@ -4454,11 +4477,11 @@ Partial Class FrmEditor
         Me.TabControl2.Controls.Add(Me.BankDepo)
         Me.TabControl2.Controls.Add(Me.Others)
         Me.TabControl2.Controls.Add(Me.Check)
-        Me.TabControl2.Location = New System.Drawing.Point(0, 202)
+        Me.TabControl2.Location = New System.Drawing.Point(0, 200)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
         Me.TabControl2.Size = New System.Drawing.Size(632, 129)
-        Me.TabControl2.TabIndex = 21
+        Me.TabControl2.TabIndex = 22
         Me.TabControl2.TabStop = False
         '
         'BankDepo
@@ -4485,7 +4508,7 @@ Partial Class FrmEditor
         Me.BankAddressTextBox.Multiline = True
         Me.BankAddressTextBox.Name = "BankAddressTextBox"
         Me.BankAddressTextBox.Size = New System.Drawing.Size(464, 46)
-        Me.BankAddressTextBox.TabIndex = 16
+        Me.BankAddressTextBox.TabIndex = 24
         '
         'BankBranchTextBox
         '
@@ -4493,7 +4516,7 @@ Partial Class FrmEditor
         Me.BankBranchTextBox.Location = New System.Drawing.Point(154, 25)
         Me.BankBranchTextBox.Name = "BankBranchTextBox"
         Me.BankBranchTextBox.Size = New System.Drawing.Size(464, 22)
-        Me.BankBranchTextBox.TabIndex = 15
+        Me.BankBranchTextBox.TabIndex = 23
         '
         'BankNameTextBox
         '
@@ -4501,7 +4524,7 @@ Partial Class FrmEditor
         Me.BankNameTextBox.Location = New System.Drawing.Point(154, 2)
         Me.BankNameTextBox.Name = "BankNameTextBox"
         Me.BankNameTextBox.Size = New System.Drawing.Size(464, 22)
-        Me.BankNameTextBox.TabIndex = 14
+        Me.BankNameTextBox.TabIndex = 22
         '
         'Others
         '
@@ -4523,7 +4546,7 @@ Partial Class FrmEditor
         Me.PaymentOthersTextBox.Location = New System.Drawing.Point(154, 4)
         Me.PaymentOthersTextBox.Name = "PaymentOthersTextBox"
         Me.PaymentOthersTextBox.Size = New System.Drawing.Size(464, 22)
-        Me.PaymentOthersTextBox.TabIndex = 14
+        Me.PaymentOthersTextBox.TabIndex = 22
         '
         'Check
         '
@@ -4615,7 +4638,7 @@ Partial Class FrmEditor
         Me.DTMeetingDate.Location = New System.Drawing.Point(255, 5)
         Me.DTMeetingDate.Name = "DTMeetingDate"
         Me.DTMeetingDate.Size = New System.Drawing.Size(18, 22)
-        Me.DTMeetingDate.TabIndex = 41
+        Me.DTMeetingDate.TabIndex = 19
         '
         'MeetingDateTextBox
         '
@@ -4624,7 +4647,7 @@ Partial Class FrmEditor
         Me.MeetingDateTextBox.Location = New System.Drawing.Point(154, 5)
         Me.MeetingDateTextBox.Name = "MeetingDateTextBox"
         Me.MeetingDateTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.MeetingDateTextBox.TabIndex = 40
+        Me.MeetingDateTextBox.TabIndex = 18
         Me.MeetingDateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'SecretaryTextBox
@@ -4634,7 +4657,7 @@ Partial Class FrmEditor
         Me.SecretaryTextBox.Location = New System.Drawing.Point(154, 51)
         Me.SecretaryTextBox.Name = "SecretaryTextBox"
         Me.SecretaryTextBox.Size = New System.Drawing.Size(463, 22)
-        Me.SecretaryTextBox.TabIndex = 43
+        Me.SecretaryTextBox.TabIndex = 21
         '
         'CompanyTextBox
         '
@@ -4643,7 +4666,7 @@ Partial Class FrmEditor
         Me.CompanyTextBox.Location = New System.Drawing.Point(154, 28)
         Me.CompanyTextBox.Name = "CompanyTextBox"
         Me.CompanyTextBox.Size = New System.Drawing.Size(464, 22)
-        Me.CompanyTextBox.TabIndex = 42
+        Me.CompanyTextBox.TabIndex = 20
         '
         'TabPromo
         '
@@ -4672,14 +4695,14 @@ Partial Class FrmEditor
         Me.DTPromoTo.Location = New System.Drawing.Point(255, 50)
         Me.DTPromoTo.Name = "DTPromoTo"
         Me.DTPromoTo.Size = New System.Drawing.Size(18, 22)
-        Me.DTPromoTo.TabIndex = 54
+        Me.DTPromoTo.TabIndex = 22
         '
         'DTPromoFrom
         '
         Me.DTPromoFrom.Location = New System.Drawing.Point(255, 28)
         Me.DTPromoFrom.Name = "DTPromoFrom"
         Me.DTPromoFrom.Size = New System.Drawing.Size(18, 22)
-        Me.DTPromoFrom.TabIndex = 53
+        Me.DTPromoFrom.TabIndex = 20
         '
         'DTIPermitNoTextBox
         '
@@ -4687,7 +4710,7 @@ Partial Class FrmEditor
         Me.DTIPermitNoTextBox.Location = New System.Drawing.Point(154, 73)
         Me.DTIPermitNoTextBox.Name = "DTIPermitNoTextBox"
         Me.DTIPermitNoTextBox.Size = New System.Drawing.Size(229, 22)
-        Me.DTIPermitNoTextBox.TabIndex = 52
+        Me.DTIPermitNoTextBox.TabIndex = 23
         '
         'PromoToTextBox
         '
@@ -4695,7 +4718,7 @@ Partial Class FrmEditor
         Me.PromoToTextBox.Location = New System.Drawing.Point(154, 50)
         Me.PromoToTextBox.Name = "PromoToTextBox"
         Me.PromoToTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.PromoToTextBox.TabIndex = 51
+        Me.PromoToTextBox.TabIndex = 21
         '
         'PromoFromTextBox
         '
@@ -4703,7 +4726,7 @@ Partial Class FrmEditor
         Me.PromoFromTextBox.Location = New System.Drawing.Point(154, 27)
         Me.PromoFromTextBox.Name = "PromoFromTextBox"
         Me.PromoFromTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.PromoFromTextBox.TabIndex = 49
+        Me.PromoFromTextBox.TabIndex = 19
         '
         'PromoTitleTextBox
         '
@@ -4711,7 +4734,7 @@ Partial Class FrmEditor
         Me.PromoTitleTextBox.Location = New System.Drawing.Point(154, 4)
         Me.PromoTitleTextBox.Name = "PromoTitleTextBox"
         Me.PromoTitleTextBox.Size = New System.Drawing.Size(344, 22)
-        Me.PromoTitleTextBox.TabIndex = 47
+        Me.PromoTitleTextBox.TabIndex = 18
         '
         'TabMeeting2
         '
@@ -4732,7 +4755,7 @@ Partial Class FrmEditor
         Me.TextBox1.Location = New System.Drawing.Point(154, 5)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(374, 22)
-        Me.TextBox1.TabIndex = 44
+        Me.TextBox1.TabIndex = 18
         '
         'BoxNoCorpDocu
         '
@@ -4741,7 +4764,7 @@ Partial Class FrmEditor
         Me.BoxNoCorpDocu.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoCorpDocu.Name = "BoxNoCorpDocu"
         Me.BoxNoCorpDocu.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoCorpDocu.TabIndex = 7
+        Me.BoxNoCorpDocu.TabIndex = 15
         '
         'RackNoCorpDocu
         '
@@ -4750,14 +4773,14 @@ Partial Class FrmEditor
         Me.RackNoCorpDocu.Location = New System.Drawing.Point(158, 27)
         Me.RackNoCorpDocu.Name = "RackNoCorpDocu"
         Me.RackNoCorpDocu.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoCorpDocu.TabIndex = 6
+        Me.RackNoCorpDocu.TabIndex = 14
         '
         'DTDocuCorp
         '
         Me.DTDocuCorp.Location = New System.Drawing.Point(259, 73)
         Me.DTDocuCorp.Name = "DTDocuCorp"
         Me.DTDocuCorp.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuCorp.TabIndex = 9
+        Me.DTDocuCorp.TabIndex = 17
         '
         'PurposeTextBox
         '
@@ -4766,7 +4789,7 @@ Partial Class FrmEditor
         Me.PurposeTextBox.Location = New System.Drawing.Point(158, 227)
         Me.PurposeTextBox.Name = "PurposeTextBox"
         Me.PurposeTextBox.Size = New System.Drawing.Size(463, 22)
-        Me.PurposeTextBox.TabIndex = 14
+        Me.PurposeTextBox.TabIndex = 24
         '
         'DocumentDateCorp
         '
@@ -4775,7 +4798,7 @@ Partial Class FrmEditor
         Me.DocumentDateCorp.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateCorp.Name = "DocumentDateCorp"
         Me.DocumentDateCorp.Size = New System.Drawing.Size(100, 22)
-        Me.DocumentDateCorp.TabIndex = 8
+        Me.DocumentDateCorp.TabIndex = 16
         Me.DocumentDateCorp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Importation
@@ -4859,7 +4882,7 @@ Partial Class FrmEditor
         Me.DateTimePicker1.Location = New System.Drawing.Point(275, 72)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(18, 22)
-        Me.DateTimePicker1.TabIndex = 57
+        Me.DateTimePicker1.TabIndex = 17
         '
         'DTVesselImport
         '
@@ -4867,7 +4890,7 @@ Partial Class FrmEditor
         Me.DTVesselImport.Location = New System.Drawing.Point(271, 327)
         Me.DTVesselImport.Name = "DTVesselImport"
         Me.DTVesselImport.Size = New System.Drawing.Size(18, 22)
-        Me.DTVesselImport.TabIndex = 55
+        Me.DTVesselImport.TabIndex = 29
         '
         'PolicyNoImport
         '
@@ -4875,7 +4898,7 @@ Partial Class FrmEditor
         Me.PolicyNoImport.Location = New System.Drawing.Point(170, 561)
         Me.PolicyNoImport.Name = "PolicyNoImport"
         Me.PolicyNoImport.Size = New System.Drawing.Size(217, 22)
-        Me.PolicyNoImport.TabIndex = 54
+        Me.PolicyNoImport.TabIndex = 38
         '
         'InsuranceCompanyImport
         '
@@ -4883,7 +4906,7 @@ Partial Class FrmEditor
         Me.InsuranceCompanyImport.Location = New System.Drawing.Point(170, 537)
         Me.InsuranceCompanyImport.Name = "InsuranceCompanyImport"
         Me.InsuranceCompanyImport.Size = New System.Drawing.Size(449, 22)
-        Me.InsuranceCompanyImport.TabIndex = 53
+        Me.InsuranceCompanyImport.TabIndex = 37
         '
         'RegNoImport
         '
@@ -4891,7 +4914,7 @@ Partial Class FrmEditor
         Me.RegNoImport.Location = New System.Drawing.Point(170, 514)
         Me.RegNoImport.Name = "RegNoImport"
         Me.RegNoImport.Size = New System.Drawing.Size(217, 22)
-        Me.RegNoImport.TabIndex = 52
+        Me.RegNoImport.TabIndex = 36
         '
         'CustomsNoImport
         '
@@ -4899,7 +4922,7 @@ Partial Class FrmEditor
         Me.CustomsNoImport.Location = New System.Drawing.Point(170, 491)
         Me.CustomsNoImport.Name = "CustomsNoImport"
         Me.CustomsNoImport.Size = New System.Drawing.Size(217, 22)
-        Me.CustomsNoImport.TabIndex = 51
+        Me.CustomsNoImport.TabIndex = 35
         '
         'BrokeCompanyImport
         '
@@ -4907,7 +4930,7 @@ Partial Class FrmEditor
         Me.BrokeCompanyImport.Location = New System.Drawing.Point(170, 467)
         Me.BrokeCompanyImport.Name = "BrokeCompanyImport"
         Me.BrokeCompanyImport.Size = New System.Drawing.Size(449, 22)
-        Me.BrokeCompanyImport.TabIndex = 50
+        Me.BrokeCompanyImport.TabIndex = 34
         '
         'PaymentFormImport
         '
@@ -4917,7 +4940,7 @@ Partial Class FrmEditor
         Me.PaymentFormImport.Location = New System.Drawing.Point(170, 397)
         Me.PaymentFormImport.Name = "PaymentFormImport"
         Me.PaymentFormImport.Size = New System.Drawing.Size(217, 24)
-        Me.PaymentFormImport.TabIndex = 49
+        Me.PaymentFormImport.TabIndex = 32
         '
         'TabControl4
         '
@@ -4951,7 +4974,7 @@ Partial Class FrmEditor
         Me.LetterCreditImport.Location = New System.Drawing.Point(160, 0)
         Me.LetterCreditImport.Name = "LetterCreditImport"
         Me.LetterCreditImport.Size = New System.Drawing.Size(217, 22)
-        Me.LetterCreditImport.TabIndex = 1
+        Me.LetterCreditImport.TabIndex = 33
         '
         'DPNo
         '
@@ -4973,7 +4996,7 @@ Partial Class FrmEditor
         Me.DPNoImport.Location = New System.Drawing.Point(160, 1)
         Me.DPNoImport.Name = "DPNoImport"
         Me.DPNoImport.Size = New System.Drawing.Size(217, 22)
-        Me.DPNoImport.TabIndex = 51
+        Me.DPNoImport.TabIndex = 33
         '
         'OthersImport
         '
@@ -4994,7 +5017,7 @@ Partial Class FrmEditor
         Me.PaymentOthersImport.Location = New System.Drawing.Point(160, 2)
         Me.PaymentOthersImport.Name = "PaymentOthersImport"
         Me.PaymentOthersImport.Size = New System.Drawing.Size(217, 22)
-        Me.PaymentOthersImport.TabIndex = 1
+        Me.PaymentOthersImport.TabIndex = 33
         '
         'BankBranchImport
         '
@@ -5002,7 +5025,7 @@ Partial Class FrmEditor
         Me.BankBranchImport.Location = New System.Drawing.Point(170, 373)
         Me.BankBranchImport.Name = "BankBranchImport"
         Me.BankBranchImport.Size = New System.Drawing.Size(449, 22)
-        Me.BankBranchImport.TabIndex = 47
+        Me.BankBranchImport.TabIndex = 31
         '
         'BankNameImport
         '
@@ -5010,7 +5033,7 @@ Partial Class FrmEditor
         Me.BankNameImport.Location = New System.Drawing.Point(170, 350)
         Me.BankNameImport.Name = "BankNameImport"
         Me.BankNameImport.Size = New System.Drawing.Size(449, 22)
-        Me.BankNameImport.TabIndex = 46
+        Me.BankNameImport.TabIndex = 30
         '
         'VesselArrivedImport
         '
@@ -5018,7 +5041,7 @@ Partial Class FrmEditor
         Me.VesselArrivedImport.Location = New System.Drawing.Point(170, 327)
         Me.VesselArrivedImport.Name = "VesselArrivedImport"
         Me.VesselArrivedImport.Size = New System.Drawing.Size(100, 22)
-        Me.VesselArrivedImport.TabIndex = 45
+        Me.VesselArrivedImport.TabIndex = 28
         '
         'ContQtyx20Import
         '
@@ -5026,7 +5049,7 @@ Partial Class FrmEditor
         Me.ContQtyx20Import.Location = New System.Drawing.Point(170, 304)
         Me.ContQtyx20Import.Name = "ContQtyx20Import"
         Me.ContQtyx20Import.Size = New System.Drawing.Size(123, 22)
-        Me.ContQtyx20Import.TabIndex = 44
+        Me.ContQtyx20Import.TabIndex = 27
         '
         'ContQtyx40Import
         '
@@ -5034,7 +5057,7 @@ Partial Class FrmEditor
         Me.ContQtyx40Import.Location = New System.Drawing.Point(170, 281)
         Me.ContQtyx40Import.Name = "ContQtyx40Import"
         Me.ContQtyx40Import.Size = New System.Drawing.Size(123, 22)
-        Me.ContQtyx40Import.TabIndex = 43
+        Me.ContQtyx40Import.TabIndex = 26
         '
         'BillNoImport
         '
@@ -5042,7 +5065,7 @@ Partial Class FrmEditor
         Me.BillNoImport.Location = New System.Drawing.Point(213, 258)
         Me.BillNoImport.Name = "BillNoImport"
         Me.BillNoImport.Size = New System.Drawing.Size(123, 22)
-        Me.BillNoImport.TabIndex = 42
+        Me.BillNoImport.TabIndex = 25
         '
         'ShipLineImport
         '
@@ -5050,7 +5073,7 @@ Partial Class FrmEditor
         Me.ShipLineImport.Location = New System.Drawing.Point(170, 235)
         Me.ShipLineImport.Name = "ShipLineImport"
         Me.ShipLineImport.Size = New System.Drawing.Size(449, 22)
-        Me.ShipLineImport.TabIndex = 41
+        Me.ShipLineImport.TabIndex = 24
         '
         'CargoDescImport
         '
@@ -5058,7 +5081,7 @@ Partial Class FrmEditor
         Me.CargoDescImport.Location = New System.Drawing.Point(170, 212)
         Me.CargoDescImport.Name = "CargoDescImport"
         Me.CargoDescImport.Size = New System.Drawing.Size(449, 22)
-        Me.CargoDescImport.TabIndex = 40
+        Me.CargoDescImport.TabIndex = 23
         '
         'ShipBatchImport
         '
@@ -5068,7 +5091,7 @@ Partial Class FrmEditor
         Me.ShipBatchImport.Location = New System.Drawing.Point(170, 187)
         Me.ShipBatchImport.Name = "ShipBatchImport"
         Me.ShipBatchImport.Size = New System.Drawing.Size(166, 24)
-        Me.ShipBatchImport.TabIndex = 39
+        Me.ShipBatchImport.TabIndex = 22
         '
         'PRONoImport
         '
@@ -5076,7 +5099,7 @@ Partial Class FrmEditor
         Me.PRONoImport.Location = New System.Drawing.Point(170, 164)
         Me.PRONoImport.Name = "PRONoImport"
         Me.PRONoImport.Size = New System.Drawing.Size(166, 22)
-        Me.PRONoImport.TabIndex = 38
+        Me.PRONoImport.TabIndex = 21
         '
         'ISRNoImport
         '
@@ -5084,7 +5107,7 @@ Partial Class FrmEditor
         Me.ISRNoImport.Location = New System.Drawing.Point(170, 141)
         Me.ISRNoImport.Name = "ISRNoImport"
         Me.ISRNoImport.Size = New System.Drawing.Size(166, 22)
-        Me.ISRNoImport.TabIndex = 37
+        Me.ISRNoImport.TabIndex = 20
         '
         'CountryImport
         '
@@ -5092,7 +5115,7 @@ Partial Class FrmEditor
         Me.CountryImport.Location = New System.Drawing.Point(170, 118)
         Me.CountryImport.Name = "CountryImport"
         Me.CountryImport.Size = New System.Drawing.Size(246, 22)
-        Me.CountryImport.TabIndex = 36
+        Me.CountryImport.TabIndex = 19
         '
         'CompanyImport
         '
@@ -5100,7 +5123,7 @@ Partial Class FrmEditor
         Me.CompanyImport.Location = New System.Drawing.Point(170, 95)
         Me.CompanyImport.Name = "CompanyImport"
         Me.CompanyImport.Size = New System.Drawing.Size(449, 22)
-        Me.CompanyImport.TabIndex = 35
+        Me.CompanyImport.TabIndex = 18
         '
         'ImpMonthImport
         '
@@ -5108,7 +5131,7 @@ Partial Class FrmEditor
         Me.ImpMonthImport.Location = New System.Drawing.Point(170, 72)
         Me.ImpMonthImport.Name = "ImpMonthImport"
         Me.ImpMonthImport.Size = New System.Drawing.Size(104, 22)
-        Me.ImpMonthImport.TabIndex = 34
+        Me.ImpMonthImport.TabIndex = 16
         '
         'BoxNoImport
         '
@@ -5117,7 +5140,7 @@ Partial Class FrmEditor
         Me.BoxNoImport.Location = New System.Drawing.Point(170, 50)
         Me.BoxNoImport.Name = "BoxNoImport"
         Me.BoxNoImport.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoImport.TabIndex = 7
+        Me.BoxNoImport.TabIndex = 15
         '
         'RackNoImport
         '
@@ -5126,7 +5149,7 @@ Partial Class FrmEditor
         Me.RackNoImport.Location = New System.Drawing.Point(170, 27)
         Me.RackNoImport.Name = "RackNoImport"
         Me.RackNoImport.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoImport.TabIndex = 6
+        Me.RackNoImport.TabIndex = 14
         '
         'BIR
         '
@@ -5179,7 +5202,7 @@ Partial Class FrmEditor
         Me.AddressCBIR.Location = New System.Drawing.Point(158, 127)
         Me.AddressCBIR.Name = "AddressCBIR"
         Me.AddressCBIR.Size = New System.Drawing.Size(464, 22)
-        Me.AddressCBIR.TabIndex = 42
+        Me.AddressCBIR.TabIndex = 19
         '
         'YearReportBIR
         '
@@ -5187,7 +5210,7 @@ Partial Class FrmEditor
         Me.YearReportBIR.Location = New System.Drawing.Point(158, 239)
         Me.YearReportBIR.Name = "YearReportBIR"
         Me.YearReportBIR.Size = New System.Drawing.Size(122, 22)
-        Me.YearReportBIR.TabIndex = 41
+        Me.YearReportBIR.TabIndex = 23
         '
         'TinVendorBIR
         '
@@ -5195,7 +5218,7 @@ Partial Class FrmEditor
         Me.TinVendorBIR.Location = New System.Drawing.Point(158, 211)
         Me.TinVendorBIR.Name = "TinVendorBIR"
         Me.TinVendorBIR.Size = New System.Drawing.Size(220, 22)
-        Me.TinVendorBIR.TabIndex = 40
+        Me.TinVendorBIR.TabIndex = 22
         '
         'TinCustomerBIR
         '
@@ -5203,7 +5226,7 @@ Partial Class FrmEditor
         Me.TinCustomerBIR.Location = New System.Drawing.Point(158, 150)
         Me.TinCustomerBIR.Name = "TinCustomerBIR"
         Me.TinCustomerBIR.Size = New System.Drawing.Size(220, 22)
-        Me.TinCustomerBIR.TabIndex = 39
+        Me.TinCustomerBIR.TabIndex = 20
         '
         'AddressBIR
         '
@@ -5211,7 +5234,7 @@ Partial Class FrmEditor
         Me.AddressBIR.Location = New System.Drawing.Point(158, 188)
         Me.AddressBIR.Name = "AddressBIR"
         Me.AddressBIR.Size = New System.Drawing.Size(464, 22)
-        Me.AddressBIR.TabIndex = 38
+        Me.AddressBIR.TabIndex = 21
         '
         'CompanyBIR
         '
@@ -5219,7 +5242,7 @@ Partial Class FrmEditor
         Me.CompanyBIR.Location = New System.Drawing.Point(158, 104)
         Me.CompanyBIR.Name = "CompanyBIR"
         Me.CompanyBIR.Size = New System.Drawing.Size(464, 22)
-        Me.CompanyBIR.TabIndex = 37
+        Me.CompanyBIR.TabIndex = 18
         '
         'BoxNoBIR
         '
@@ -5228,7 +5251,7 @@ Partial Class FrmEditor
         Me.BoxNoBIR.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoBIR.Name = "BoxNoBIR"
         Me.BoxNoBIR.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoBIR.TabIndex = 7
+        Me.BoxNoBIR.TabIndex = 15
         '
         'RackNoBIR
         '
@@ -5237,14 +5260,14 @@ Partial Class FrmEditor
         Me.RackNoBIR.Location = New System.Drawing.Point(158, 27)
         Me.RackNoBIR.Name = "RackNoBIR"
         Me.RackNoBIR.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoBIR.TabIndex = 6
+        Me.RackNoBIR.TabIndex = 14
         '
         'DTDocuBIR
         '
         Me.DTDocuBIR.Location = New System.Drawing.Point(259, 73)
         Me.DTDocuBIR.Name = "DTDocuBIR"
         Me.DTDocuBIR.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuBIR.TabIndex = 9
+        Me.DTDocuBIR.TabIndex = 17
         '
         'DocumentDateBIR
         '
@@ -5253,7 +5276,7 @@ Partial Class FrmEditor
         Me.DocumentDateBIR.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateBIR.Name = "DocumentDateBIR"
         Me.DocumentDateBIR.Size = New System.Drawing.Size(100, 22)
-        Me.DocumentDateBIR.TabIndex = 8
+        Me.DocumentDateBIR.TabIndex = 16
         Me.DocumentDateBIR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'HRDoc
@@ -5304,7 +5327,7 @@ Partial Class FrmEditor
         Me.SexHRDoc.Location = New System.Drawing.Point(158, 204)
         Me.SexHRDoc.Name = "SexHRDoc"
         Me.SexHRDoc.Size = New System.Drawing.Size(100, 22)
-        Me.SexHRDoc.TabIndex = 41
+        Me.SexHRDoc.TabIndex = 22
         '
         'LastNameHRDoc
         '
@@ -5312,7 +5335,7 @@ Partial Class FrmEditor
         Me.LastNameHRDoc.Location = New System.Drawing.Point(158, 181)
         Me.LastNameHRDoc.Name = "LastNameHRDoc"
         Me.LastNameHRDoc.Size = New System.Drawing.Size(464, 22)
-        Me.LastNameHRDoc.TabIndex = 40
+        Me.LastNameHRDoc.TabIndex = 21
         '
         'MiddleNameHRDoc
         '
@@ -5320,7 +5343,7 @@ Partial Class FrmEditor
         Me.MiddleNameHRDoc.Location = New System.Drawing.Point(158, 158)
         Me.MiddleNameHRDoc.Name = "MiddleNameHRDoc"
         Me.MiddleNameHRDoc.Size = New System.Drawing.Size(464, 22)
-        Me.MiddleNameHRDoc.TabIndex = 39
+        Me.MiddleNameHRDoc.TabIndex = 20
         '
         'FirstNameHRDoc
         '
@@ -5328,7 +5351,7 @@ Partial Class FrmEditor
         Me.FirstNameHRDoc.Location = New System.Drawing.Point(158, 135)
         Me.FirstNameHRDoc.Name = "FirstNameHRDoc"
         Me.FirstNameHRDoc.Size = New System.Drawing.Size(464, 22)
-        Me.FirstNameHRDoc.TabIndex = 38
+        Me.FirstNameHRDoc.TabIndex = 19
         '
         'CompanyHRDoc
         '
@@ -5336,7 +5359,7 @@ Partial Class FrmEditor
         Me.CompanyHRDoc.Location = New System.Drawing.Point(158, 111)
         Me.CompanyHRDoc.Name = "CompanyHRDoc"
         Me.CompanyHRDoc.Size = New System.Drawing.Size(464, 22)
-        Me.CompanyHRDoc.TabIndex = 37
+        Me.CompanyHRDoc.TabIndex = 18
         '
         'BoxNoHRDoc
         '
@@ -5345,7 +5368,7 @@ Partial Class FrmEditor
         Me.BoxNoHRDoc.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoHRDoc.Name = "BoxNoHRDoc"
         Me.BoxNoHRDoc.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoHRDoc.TabIndex = 7
+        Me.BoxNoHRDoc.TabIndex = 15
         '
         'RackNoHRDoc
         '
@@ -5354,14 +5377,14 @@ Partial Class FrmEditor
         Me.RackNoHRDoc.Location = New System.Drawing.Point(158, 27)
         Me.RackNoHRDoc.Name = "RackNoHRDoc"
         Me.RackNoHRDoc.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoHRDoc.TabIndex = 6
+        Me.RackNoHRDoc.TabIndex = 14
         '
         'DTDocuHRDoc
         '
         Me.DTDocuHRDoc.Location = New System.Drawing.Point(259, 73)
         Me.DTDocuHRDoc.Name = "DTDocuHRDoc"
         Me.DTDocuHRDoc.Size = New System.Drawing.Size(18, 22)
-        Me.DTDocuHRDoc.TabIndex = 9
+        Me.DTDocuHRDoc.TabIndex = 17
         '
         'DocumentDateHRDoc
         '
@@ -5370,7 +5393,7 @@ Partial Class FrmEditor
         Me.DocumentDateHRDoc.Location = New System.Drawing.Point(158, 73)
         Me.DocumentDateHRDoc.Name = "DocumentDateHRDoc"
         Me.DocumentDateHRDoc.Size = New System.Drawing.Size(100, 22)
-        Me.DocumentDateHRDoc.TabIndex = 8
+        Me.DocumentDateHRDoc.TabIndex = 16
         Me.DocumentDateHRDoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Copyright
@@ -5420,7 +5443,7 @@ Partial Class FrmEditor
         Me.DTCreateDate.Location = New System.Drawing.Point(257, 173)
         Me.DTCreateDate.Name = "DTCreateDate"
         Me.DTCreateDate.Size = New System.Drawing.Size(18, 22)
-        Me.DTCreateDate.TabIndex = 40
+        Me.DTCreateDate.TabIndex = 21
         '
         'PeriodProtectCopy
         '
@@ -5428,7 +5451,7 @@ Partial Class FrmEditor
         Me.PeriodProtectCopy.Location = New System.Drawing.Point(156, 196)
         Me.PeriodProtectCopy.Name = "PeriodProtectCopy"
         Me.PeriodProtectCopy.Size = New System.Drawing.Size(243, 22)
-        Me.PeriodProtectCopy.TabIndex = 39
+        Me.PeriodProtectCopy.TabIndex = 22
         '
         'CreationDateCopy
         '
@@ -5436,7 +5459,7 @@ Partial Class FrmEditor
         Me.CreationDateCopy.Location = New System.Drawing.Point(156, 173)
         Me.CreationDateCopy.Name = "CreationDateCopy"
         Me.CreationDateCopy.Size = New System.Drawing.Size(100, 22)
-        Me.CreationDateCopy.TabIndex = 38
+        Me.CreationDateCopy.TabIndex = 20
         '
         'ClassCopy
         '
@@ -5444,7 +5467,7 @@ Partial Class FrmEditor
         Me.ClassCopy.Location = New System.Drawing.Point(156, 149)
         Me.ClassCopy.Name = "ClassCopy"
         Me.ClassCopy.Size = New System.Drawing.Size(243, 22)
-        Me.ClassCopy.TabIndex = 37
+        Me.ClassCopy.TabIndex = 19
         '
         'AuthorCopy
         '
@@ -5452,7 +5475,7 @@ Partial Class FrmEditor
         Me.AuthorCopy.Location = New System.Drawing.Point(156, 126)
         Me.AuthorCopy.Name = "AuthorCopy"
         Me.AuthorCopy.Size = New System.Drawing.Size(466, 22)
-        Me.AuthorCopy.TabIndex = 36
+        Me.AuthorCopy.TabIndex = 18
         '
         'TitleCopy
         '
@@ -5460,7 +5483,7 @@ Partial Class FrmEditor
         Me.TitleCopy.Location = New System.Drawing.Point(156, 103)
         Me.TitleCopy.Name = "TitleCopy"
         Me.TitleCopy.Size = New System.Drawing.Size(466, 22)
-        Me.TitleCopy.TabIndex = 35
+        Me.TitleCopy.TabIndex = 17
         '
         'RegNoCopy
         '
@@ -5468,7 +5491,7 @@ Partial Class FrmEditor
         Me.RegNoCopy.Location = New System.Drawing.Point(157, 80)
         Me.RegNoCopy.Name = "RegNoCopy"
         Me.RegNoCopy.Size = New System.Drawing.Size(124, 22)
-        Me.RegNoCopy.TabIndex = 34
+        Me.RegNoCopy.TabIndex = 16
         '
         'BoxNoCopy
         '
@@ -5477,7 +5500,7 @@ Partial Class FrmEditor
         Me.BoxNoCopy.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoCopy.Name = "BoxNoCopy"
         Me.BoxNoCopy.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoCopy.TabIndex = 7
+        Me.BoxNoCopy.TabIndex = 15
         '
         'RackNoCopy
         '
@@ -5486,7 +5509,7 @@ Partial Class FrmEditor
         Me.RackNoCopy.Location = New System.Drawing.Point(158, 27)
         Me.RackNoCopy.Name = "RackNoCopy"
         Me.RackNoCopy.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoCopy.TabIndex = 6
+        Me.RackNoCopy.TabIndex = 14
         '
         'Trademark
         '
@@ -5545,28 +5568,28 @@ Partial Class FrmEditor
         Me.DTFilingTrade.Location = New System.Drawing.Point(259, 203)
         Me.DTFilingTrade.Name = "DTFilingTrade"
         Me.DTFilingTrade.Size = New System.Drawing.Size(18, 22)
-        Me.DTFilingTrade.TabIndex = 48
+        Me.DTFilingTrade.TabIndex = 25
         '
         'DTToTrade
         '
         Me.DTToTrade.Location = New System.Drawing.Point(259, 175)
         Me.DTToTrade.Name = "DTToTrade"
         Me.DTToTrade.Size = New System.Drawing.Size(18, 22)
-        Me.DTToTrade.TabIndex = 46
+        Me.DTToTrade.TabIndex = 23
         '
         'DTFromTrade
         '
         Me.DTFromTrade.Location = New System.Drawing.Point(259, 152)
         Me.DTFromTrade.Name = "DTFromTrade"
         Me.DTFromTrade.Size = New System.Drawing.Size(18, 22)
-        Me.DTFromTrade.TabIndex = 44
+        Me.DTFromTrade.TabIndex = 21
         '
         'DTRegDateTrade
         '
         Me.DTRegDateTrade.Location = New System.Drawing.Point(259, 101)
         Me.DTRegDateTrade.Name = "DTRegDateTrade"
         Me.DTRegDateTrade.Size = New System.Drawing.Size(18, 22)
-        Me.DTRegDateTrade.TabIndex = 42
+        Me.DTRegDateTrade.TabIndex = 18
         '
         'RegMarkTrade
         '
@@ -5574,7 +5597,7 @@ Partial Class FrmEditor
         Me.RegMarkTrade.Location = New System.Drawing.Point(158, 249)
         Me.RegMarkTrade.Name = "RegMarkTrade"
         Me.RegMarkTrade.Size = New System.Drawing.Size(464, 22)
-        Me.RegMarkTrade.TabIndex = 41
+        Me.RegMarkTrade.TabIndex = 27
         '
         'RegistrantTrade
         '
@@ -5582,7 +5605,7 @@ Partial Class FrmEditor
         Me.RegistrantTrade.Location = New System.Drawing.Point(158, 226)
         Me.RegistrantTrade.Name = "RegistrantTrade"
         Me.RegistrantTrade.Size = New System.Drawing.Size(464, 22)
-        Me.RegistrantTrade.TabIndex = 40
+        Me.RegistrantTrade.TabIndex = 26
         '
         'FilingDateTrade
         '
@@ -5590,7 +5613,7 @@ Partial Class FrmEditor
         Me.FilingDateTrade.Location = New System.Drawing.Point(158, 203)
         Me.FilingDateTrade.Name = "FilingDateTrade"
         Me.FilingDateTrade.Size = New System.Drawing.Size(100, 22)
-        Me.FilingDateTrade.TabIndex = 39
+        Me.FilingDateTrade.TabIndex = 24
         '
         'ToPeriodTrade
         '
@@ -5598,7 +5621,7 @@ Partial Class FrmEditor
         Me.ToPeriodTrade.Location = New System.Drawing.Point(158, 175)
         Me.ToPeriodTrade.Name = "ToPeriodTrade"
         Me.ToPeriodTrade.Size = New System.Drawing.Size(100, 22)
-        Me.ToPeriodTrade.TabIndex = 38
+        Me.ToPeriodTrade.TabIndex = 22
         '
         'FromPeriodTrade
         '
@@ -5606,7 +5629,7 @@ Partial Class FrmEditor
         Me.FromPeriodTrade.Location = New System.Drawing.Point(158, 152)
         Me.FromPeriodTrade.Name = "FromPeriodTrade"
         Me.FromPeriodTrade.Size = New System.Drawing.Size(100, 22)
-        Me.FromPeriodTrade.TabIndex = 37
+        Me.FromPeriodTrade.TabIndex = 20
         '
         'TermTrade
         '
@@ -5614,7 +5637,7 @@ Partial Class FrmEditor
         Me.TermTrade.Location = New System.Drawing.Point(158, 124)
         Me.TermTrade.Name = "TermTrade"
         Me.TermTrade.Size = New System.Drawing.Size(100, 22)
-        Me.TermTrade.TabIndex = 36
+        Me.TermTrade.TabIndex = 19
         '
         'RegDateTrade
         '
@@ -5622,7 +5645,7 @@ Partial Class FrmEditor
         Me.RegDateTrade.Location = New System.Drawing.Point(158, 101)
         Me.RegDateTrade.Name = "RegDateTrade"
         Me.RegDateTrade.Size = New System.Drawing.Size(100, 22)
-        Me.RegDateTrade.TabIndex = 35
+        Me.RegDateTrade.TabIndex = 17
         '
         'RegNoTrade
         '
@@ -5630,7 +5653,7 @@ Partial Class FrmEditor
         Me.RegNoTrade.Location = New System.Drawing.Point(158, 78)
         Me.RegNoTrade.Name = "RegNoTrade"
         Me.RegNoTrade.Size = New System.Drawing.Size(123, 22)
-        Me.RegNoTrade.TabIndex = 34
+        Me.RegNoTrade.TabIndex = 16
         '
         'BoxNoTrade
         '
@@ -5639,7 +5662,7 @@ Partial Class FrmEditor
         Me.BoxNoTrade.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoTrade.Name = "BoxNoTrade"
         Me.BoxNoTrade.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoTrade.TabIndex = 7
+        Me.BoxNoTrade.TabIndex = 15
         '
         'RackNoTrade
         '
@@ -5648,7 +5671,7 @@ Partial Class FrmEditor
         Me.RackNoTrade.Location = New System.Drawing.Point(158, 27)
         Me.RackNoTrade.Name = "RackNoTrade"
         Me.RackNoTrade.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoTrade.TabIndex = 6
+        Me.RackNoTrade.TabIndex = 14
         '
         'Patent
         '
@@ -5707,28 +5730,28 @@ Partial Class FrmEditor
         Me.DTFilingPatent.Location = New System.Drawing.Point(259, 203)
         Me.DTFilingPatent.Name = "DTFilingPatent"
         Me.DTFilingPatent.Size = New System.Drawing.Size(18, 22)
-        Me.DTFilingPatent.TabIndex = 50
+        Me.DTFilingPatent.TabIndex = 25
         '
         'DTToPatent
         '
         Me.DTToPatent.Location = New System.Drawing.Point(259, 175)
         Me.DTToPatent.Name = "DTToPatent"
         Me.DTToPatent.Size = New System.Drawing.Size(18, 22)
-        Me.DTToPatent.TabIndex = 48
+        Me.DTToPatent.TabIndex = 23
         '
         'DTFromPatent
         '
         Me.DTFromPatent.Location = New System.Drawing.Point(259, 152)
         Me.DTFromPatent.Name = "DTFromPatent"
         Me.DTFromPatent.Size = New System.Drawing.Size(18, 22)
-        Me.DTFromPatent.TabIndex = 46
+        Me.DTFromPatent.TabIndex = 21
         '
         'DTRegDatePatent
         '
         Me.DTRegDatePatent.Location = New System.Drawing.Point(259, 101)
         Me.DTRegDatePatent.Name = "DTRegDatePatent"
         Me.DTRegDatePatent.Size = New System.Drawing.Size(18, 22)
-        Me.DTRegDatePatent.TabIndex = 44
+        Me.DTRegDatePatent.TabIndex = 18
         '
         'FilingDatePatent
         '
@@ -5736,7 +5759,7 @@ Partial Class FrmEditor
         Me.FilingDatePatent.Location = New System.Drawing.Point(158, 203)
         Me.FilingDatePatent.Name = "FilingDatePatent"
         Me.FilingDatePatent.Size = New System.Drawing.Size(100, 22)
-        Me.FilingDatePatent.TabIndex = 41
+        Me.FilingDatePatent.TabIndex = 24
         '
         'TitlePatent
         '
@@ -5744,7 +5767,7 @@ Partial Class FrmEditor
         Me.TitlePatent.Location = New System.Drawing.Point(158, 249)
         Me.TitlePatent.Name = "TitlePatent"
         Me.TitlePatent.Size = New System.Drawing.Size(464, 22)
-        Me.TitlePatent.TabIndex = 40
+        Me.TitlePatent.TabIndex = 27
         '
         'RegistrantPatent
         '
@@ -5752,7 +5775,7 @@ Partial Class FrmEditor
         Me.RegistrantPatent.Location = New System.Drawing.Point(158, 226)
         Me.RegistrantPatent.Name = "RegistrantPatent"
         Me.RegistrantPatent.Size = New System.Drawing.Size(464, 22)
-        Me.RegistrantPatent.TabIndex = 39
+        Me.RegistrantPatent.TabIndex = 26
         '
         'ToPeriodPatent
         '
@@ -5760,7 +5783,7 @@ Partial Class FrmEditor
         Me.ToPeriodPatent.Location = New System.Drawing.Point(158, 175)
         Me.ToPeriodPatent.Name = "ToPeriodPatent"
         Me.ToPeriodPatent.Size = New System.Drawing.Size(100, 22)
-        Me.ToPeriodPatent.TabIndex = 38
+        Me.ToPeriodPatent.TabIndex = 22
         '
         'FromPeriodPatent
         '
@@ -5768,7 +5791,7 @@ Partial Class FrmEditor
         Me.FromPeriodPatent.Location = New System.Drawing.Point(158, 152)
         Me.FromPeriodPatent.Name = "FromPeriodPatent"
         Me.FromPeriodPatent.Size = New System.Drawing.Size(100, 22)
-        Me.FromPeriodPatent.TabIndex = 37
+        Me.FromPeriodPatent.TabIndex = 20
         '
         'TermPatent
         '
@@ -5776,7 +5799,7 @@ Partial Class FrmEditor
         Me.TermPatent.Location = New System.Drawing.Point(158, 124)
         Me.TermPatent.Name = "TermPatent"
         Me.TermPatent.Size = New System.Drawing.Size(100, 22)
-        Me.TermPatent.TabIndex = 36
+        Me.TermPatent.TabIndex = 19
         '
         'RegDatePatent
         '
@@ -5784,7 +5807,7 @@ Partial Class FrmEditor
         Me.RegDatePatent.Location = New System.Drawing.Point(158, 101)
         Me.RegDatePatent.Name = "RegDatePatent"
         Me.RegDatePatent.Size = New System.Drawing.Size(100, 22)
-        Me.RegDatePatent.TabIndex = 35
+        Me.RegDatePatent.TabIndex = 17
         '
         'RegNoPatent
         '
@@ -5792,7 +5815,7 @@ Partial Class FrmEditor
         Me.RegNoPatent.Location = New System.Drawing.Point(158, 78)
         Me.RegNoPatent.Name = "RegNoPatent"
         Me.RegNoPatent.Size = New System.Drawing.Size(122, 22)
-        Me.RegNoPatent.TabIndex = 34
+        Me.RegNoPatent.TabIndex = 16
         '
         'BoxNoPatent
         '
@@ -5801,7 +5824,7 @@ Partial Class FrmEditor
         Me.BoxNoPatent.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoPatent.Name = "BoxNoPatent"
         Me.BoxNoPatent.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoPatent.TabIndex = 7
+        Me.BoxNoPatent.TabIndex = 15
         '
         'RackNoPatent
         '
@@ -5810,7 +5833,7 @@ Partial Class FrmEditor
         Me.RackNoPatent.Location = New System.Drawing.Point(158, 27)
         Me.RackNoPatent.Name = "RackNoPatent"
         Me.RackNoPatent.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoPatent.TabIndex = 6
+        Me.RackNoPatent.TabIndex = 14
         '
         'BIRClear
         '
@@ -5826,6 +5849,7 @@ Partial Class FrmEditor
         'GrpClear
         '
         Me.GrpClear.BackColor = System.Drawing.Color.Azure
+        Me.GrpClear.Controls.Add(Label109)
         Me.GrpClear.Controls.Add(Label69)
         Me.GrpClear.Controls.Add(Me.DTToClear)
         Me.GrpClear.Controls.Add(Label44)
@@ -5865,21 +5889,21 @@ Partial Class FrmEditor
         Me.DTToClear.Location = New System.Drawing.Point(259, 221)
         Me.DTToClear.Name = "DTToClear"
         Me.DTToClear.Size = New System.Drawing.Size(18, 22)
-        Me.DTToClear.TabIndex = 50
+        Me.DTToClear.TabIndex = 25
         '
         'DTFromClear
         '
         Me.DTFromClear.Location = New System.Drawing.Point(259, 198)
         Me.DTFromClear.Name = "DTFromClear"
         Me.DTFromClear.Size = New System.Drawing.Size(18, 22)
-        Me.DTFromClear.TabIndex = 48
+        Me.DTFromClear.TabIndex = 23
         '
         'DTIssueDateClear
         '
         Me.DTIssueDateClear.Location = New System.Drawing.Point(259, 129)
         Me.DTIssueDateClear.Name = "DTIssueDateClear"
         Me.DTIssueDateClear.Size = New System.Drawing.Size(18, 22)
-        Me.DTIssueDateClear.TabIndex = 46
+        Me.DTIssueDateClear.TabIndex = 19
         '
         'ToPeriodClear
         '
@@ -5887,7 +5911,7 @@ Partial Class FrmEditor
         Me.ToPeriodClear.Location = New System.Drawing.Point(158, 221)
         Me.ToPeriodClear.Name = "ToPeriodClear"
         Me.ToPeriodClear.Size = New System.Drawing.Size(100, 22)
-        Me.ToPeriodClear.TabIndex = 40
+        Me.ToPeriodClear.TabIndex = 24
         '
         'FromPeriodClear
         '
@@ -5895,7 +5919,7 @@ Partial Class FrmEditor
         Me.FromPeriodClear.Location = New System.Drawing.Point(158, 198)
         Me.FromPeriodClear.Name = "FromPeriodClear"
         Me.FromPeriodClear.Size = New System.Drawing.Size(100, 22)
-        Me.FromPeriodClear.TabIndex = 39
+        Me.FromPeriodClear.TabIndex = 22
         '
         'TermClear
         '
@@ -5903,7 +5927,7 @@ Partial Class FrmEditor
         Me.TermClear.Location = New System.Drawing.Point(158, 175)
         Me.TermClear.Name = "TermClear"
         Me.TermClear.Size = New System.Drawing.Size(100, 22)
-        Me.TermClear.TabIndex = 38
+        Me.TermClear.TabIndex = 21
         '
         'AccreditNoClear
         '
@@ -5911,7 +5935,7 @@ Partial Class FrmEditor
         Me.AccreditNoClear.Location = New System.Drawing.Point(158, 152)
         Me.AccreditNoClear.Name = "AccreditNoClear"
         Me.AccreditNoClear.Size = New System.Drawing.Size(122, 22)
-        Me.AccreditNoClear.TabIndex = 37
+        Me.AccreditNoClear.TabIndex = 20
         '
         'IssueDateClear
         '
@@ -5919,7 +5943,7 @@ Partial Class FrmEditor
         Me.IssueDateClear.Location = New System.Drawing.Point(158, 129)
         Me.IssueDateClear.Name = "IssueDateClear"
         Me.IssueDateClear.Size = New System.Drawing.Size(100, 22)
-        Me.IssueDateClear.TabIndex = 36
+        Me.IssueDateClear.TabIndex = 18
         '
         'TinCustomerClear
         '
@@ -5927,7 +5951,7 @@ Partial Class FrmEditor
         Me.TinCustomerClear.Location = New System.Drawing.Point(158, 101)
         Me.TinCustomerClear.Name = "TinCustomerClear"
         Me.TinCustomerClear.Size = New System.Drawing.Size(187, 22)
-        Me.TinCustomerClear.TabIndex = 35
+        Me.TinCustomerClear.TabIndex = 17
         '
         'CompanyClear
         '
@@ -5935,7 +5959,7 @@ Partial Class FrmEditor
         Me.CompanyClear.Location = New System.Drawing.Point(158, 78)
         Me.CompanyClear.Name = "CompanyClear"
         Me.CompanyClear.Size = New System.Drawing.Size(464, 22)
-        Me.CompanyClear.TabIndex = 34
+        Me.CompanyClear.TabIndex = 16
         '
         'BoxNoClear
         '
@@ -5944,7 +5968,7 @@ Partial Class FrmEditor
         Me.BoxNoClear.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoClear.Name = "BoxNoClear"
         Me.BoxNoClear.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoClear.TabIndex = 7
+        Me.BoxNoClear.TabIndex = 15
         '
         'RackNoClear
         '
@@ -5953,7 +5977,7 @@ Partial Class FrmEditor
         Me.RackNoClear.Location = New System.Drawing.Point(158, 27)
         Me.RackNoClear.Name = "RackNoClear"
         Me.RackNoClear.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoClear.TabIndex = 6
+        Me.RackNoClear.TabIndex = 14
         '
         'Accredit
         '
@@ -5969,6 +5993,7 @@ Partial Class FrmEditor
         'GrpAccre
         '
         Me.GrpAccre.BackColor = System.Drawing.Color.Azure
+        Me.GrpAccre.Controls.Add(Label95)
         Me.GrpAccre.Controls.Add(Label73)
         Me.GrpAccre.Controls.Add(Me.DTToAccre)
         Me.GrpAccre.Controls.Add(Label72)
@@ -6006,21 +6031,21 @@ Partial Class FrmEditor
         Me.DTToAccre.Location = New System.Drawing.Point(259, 193)
         Me.DTToAccre.Name = "DTToAccre"
         Me.DTToAccre.Size = New System.Drawing.Size(18, 22)
-        Me.DTToAccre.TabIndex = 52
+        Me.DTToAccre.TabIndex = 24
         '
         'DTFromAccre
         '
         Me.DTFromAccre.Location = New System.Drawing.Point(259, 170)
         Me.DTFromAccre.Name = "DTFromAccre"
         Me.DTFromAccre.Size = New System.Drawing.Size(18, 22)
-        Me.DTFromAccre.TabIndex = 50
+        Me.DTFromAccre.TabIndex = 22
         '
         'DTIssueDateAccre
         '
         Me.DTIssueDateAccre.Location = New System.Drawing.Point(259, 101)
         Me.DTIssueDateAccre.Name = "DTIssueDateAccre"
         Me.DTIssueDateAccre.Size = New System.Drawing.Size(18, 22)
-        Me.DTIssueDateAccre.TabIndex = 48
+        Me.DTIssueDateAccre.TabIndex = 18
         '
         'ToPeriodAccre
         '
@@ -6028,7 +6053,7 @@ Partial Class FrmEditor
         Me.ToPeriodAccre.Location = New System.Drawing.Point(158, 193)
         Me.ToPeriodAccre.Name = "ToPeriodAccre"
         Me.ToPeriodAccre.Size = New System.Drawing.Size(100, 22)
-        Me.ToPeriodAccre.TabIndex = 39
+        Me.ToPeriodAccre.TabIndex = 23
         '
         'FromPeriodAccre
         '
@@ -6036,7 +6061,7 @@ Partial Class FrmEditor
         Me.FromPeriodAccre.Location = New System.Drawing.Point(158, 170)
         Me.FromPeriodAccre.Name = "FromPeriodAccre"
         Me.FromPeriodAccre.Size = New System.Drawing.Size(100, 22)
-        Me.FromPeriodAccre.TabIndex = 38
+        Me.FromPeriodAccre.TabIndex = 21
         '
         'TermAccre
         '
@@ -6044,7 +6069,7 @@ Partial Class FrmEditor
         Me.TermAccre.Location = New System.Drawing.Point(158, 147)
         Me.TermAccre.Name = "TermAccre"
         Me.TermAccre.Size = New System.Drawing.Size(100, 22)
-        Me.TermAccre.TabIndex = 37
+        Me.TermAccre.TabIndex = 20
         '
         'AccreditNoAccre
         '
@@ -6052,7 +6077,7 @@ Partial Class FrmEditor
         Me.AccreditNoAccre.Location = New System.Drawing.Point(158, 124)
         Me.AccreditNoAccre.Name = "AccreditNoAccre"
         Me.AccreditNoAccre.Size = New System.Drawing.Size(122, 22)
-        Me.AccreditNoAccre.TabIndex = 36
+        Me.AccreditNoAccre.TabIndex = 19
         '
         'IssueDateAccre
         '
@@ -6060,7 +6085,7 @@ Partial Class FrmEditor
         Me.IssueDateAccre.Location = New System.Drawing.Point(158, 101)
         Me.IssueDateAccre.Name = "IssueDateAccre"
         Me.IssueDateAccre.Size = New System.Drawing.Size(100, 22)
-        Me.IssueDateAccre.TabIndex = 35
+        Me.IssueDateAccre.TabIndex = 17
         '
         'CompanyAccre
         '
@@ -6068,7 +6093,7 @@ Partial Class FrmEditor
         Me.CompanyAccre.Location = New System.Drawing.Point(158, 78)
         Me.CompanyAccre.Name = "CompanyAccre"
         Me.CompanyAccre.Size = New System.Drawing.Size(464, 22)
-        Me.CompanyAccre.TabIndex = 34
+        Me.CompanyAccre.TabIndex = 16
         '
         'BoxNoAccre
         '
@@ -6077,7 +6102,7 @@ Partial Class FrmEditor
         Me.BoxNoAccre.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoAccre.Name = "BoxNoAccre"
         Me.BoxNoAccre.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoAccre.TabIndex = 7
+        Me.BoxNoAccre.TabIndex = 15
         '
         'RackNoAccre
         '
@@ -6086,7 +6111,7 @@ Partial Class FrmEditor
         Me.RackNoAccre.Location = New System.Drawing.Point(158, 27)
         Me.RackNoAccre.Name = "RackNoAccre"
         Me.RackNoAccre.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoAccre.TabIndex = 6
+        Me.RackNoAccre.TabIndex = 14
         '
         'Subs
         '
@@ -6102,6 +6127,7 @@ Partial Class FrmEditor
         'GrpSubs
         '
         Me.GrpSubs.BackColor = System.Drawing.Color.Azure
+        Me.GrpSubs.Controls.Add(Label96)
         Me.GrpSubs.Controls.Add(Label75)
         Me.GrpSubs.Controls.Add(Me.DTToSubs)
         Me.GrpSubs.Controls.Add(Label74)
@@ -6141,21 +6167,21 @@ Partial Class FrmEditor
         Me.DTToSubs.Location = New System.Drawing.Point(259, 226)
         Me.DTToSubs.Name = "DTToSubs"
         Me.DTToSubs.Size = New System.Drawing.Size(18, 22)
-        Me.DTToSubs.TabIndex = 54
+        Me.DTToSubs.TabIndex = 25
         '
         'DTFromSubs
         '
         Me.DTFromSubs.Location = New System.Drawing.Point(259, 203)
         Me.DTFromSubs.Name = "DTFromSubs"
         Me.DTFromSubs.Size = New System.Drawing.Size(18, 22)
-        Me.DTFromSubs.TabIndex = 52
+        Me.DTFromSubs.TabIndex = 23
         '
         'DTSubsDateSubs
         '
         Me.DTSubsDateSubs.Location = New System.Drawing.Point(259, 152)
         Me.DTSubsDateSubs.Name = "DTSubsDateSubs"
         Me.DTSubsDateSubs.Size = New System.Drawing.Size(18, 22)
-        Me.DTSubsDateSubs.TabIndex = 50
+        Me.DTSubsDateSubs.TabIndex = 20
         '
         'ToPeriodSubs
         '
@@ -6163,7 +6189,7 @@ Partial Class FrmEditor
         Me.ToPeriodSubs.Location = New System.Drawing.Point(158, 226)
         Me.ToPeriodSubs.Name = "ToPeriodSubs"
         Me.ToPeriodSubs.Size = New System.Drawing.Size(100, 22)
-        Me.ToPeriodSubs.TabIndex = 40
+        Me.ToPeriodSubs.TabIndex = 24
         '
         'FromPeriodSubs
         '
@@ -6171,7 +6197,7 @@ Partial Class FrmEditor
         Me.FromPeriodSubs.Location = New System.Drawing.Point(158, 203)
         Me.FromPeriodSubs.Name = "FromPeriodSubs"
         Me.FromPeriodSubs.Size = New System.Drawing.Size(100, 22)
-        Me.FromPeriodSubs.TabIndex = 39
+        Me.FromPeriodSubs.TabIndex = 22
         '
         'TermSubs
         '
@@ -6179,7 +6205,7 @@ Partial Class FrmEditor
         Me.TermSubs.Location = New System.Drawing.Point(158, 175)
         Me.TermSubs.Name = "TermSubs"
         Me.TermSubs.Size = New System.Drawing.Size(100, 22)
-        Me.TermSubs.TabIndex = 38
+        Me.TermSubs.TabIndex = 21
         '
         'SubsDateSubs
         '
@@ -6187,7 +6213,7 @@ Partial Class FrmEditor
         Me.SubsDateSubs.Location = New System.Drawing.Point(158, 152)
         Me.SubsDateSubs.Name = "SubsDateSubs"
         Me.SubsDateSubs.Size = New System.Drawing.Size(100, 22)
-        Me.SubsDateSubs.TabIndex = 37
+        Me.SubsDateSubs.TabIndex = 19
         '
         'GLNSubs
         '
@@ -6195,7 +6221,7 @@ Partial Class FrmEditor
         Me.GLNSubs.Location = New System.Drawing.Point(158, 124)
         Me.GLNSubs.Name = "GLNSubs"
         Me.GLNSubs.Size = New System.Drawing.Size(220, 22)
-        Me.GLNSubs.TabIndex = 36
+        Me.GLNSubs.TabIndex = 18
         '
         'CompanyPrefixSubs
         '
@@ -6203,7 +6229,7 @@ Partial Class FrmEditor
         Me.CompanyPrefixSubs.Location = New System.Drawing.Point(158, 101)
         Me.CompanyPrefixSubs.Name = "CompanyPrefixSubs"
         Me.CompanyPrefixSubs.Size = New System.Drawing.Size(220, 22)
-        Me.CompanyPrefixSubs.TabIndex = 35
+        Me.CompanyPrefixSubs.TabIndex = 17
         '
         'CompanySubs
         '
@@ -6211,7 +6237,7 @@ Partial Class FrmEditor
         Me.CompanySubs.Location = New System.Drawing.Point(158, 78)
         Me.CompanySubs.Name = "CompanySubs"
         Me.CompanySubs.Size = New System.Drawing.Size(464, 22)
-        Me.CompanySubs.TabIndex = 34
+        Me.CompanySubs.TabIndex = 16
         '
         'BoxNoSubs
         '
@@ -6220,7 +6246,7 @@ Partial Class FrmEditor
         Me.BoxNoSubs.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoSubs.Name = "BoxNoSubs"
         Me.BoxNoSubs.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoSubs.TabIndex = 7
+        Me.BoxNoSubs.TabIndex = 15
         '
         'RackNoSubs
         '
@@ -6229,7 +6255,7 @@ Partial Class FrmEditor
         Me.RackNoSubs.Location = New System.Drawing.Point(158, 27)
         Me.RackNoSubs.Name = "RackNoSubs"
         Me.RackNoSubs.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoSubs.TabIndex = 6
+        Me.RackNoSubs.TabIndex = 14
         '
         'Contract
         '
@@ -6307,21 +6333,21 @@ Partial Class FrmEditor
         Me.DTDateSignContract.Location = New System.Drawing.Point(259, 232)
         Me.DTDateSignContract.Name = "DTDateSignContract"
         Me.DTDateSignContract.Size = New System.Drawing.Size(18, 22)
-        Me.DTDateSignContract.TabIndex = 58
+        Me.DTDateSignContract.TabIndex = 23
         '
         'DTToContract
         '
         Me.DTToContract.Location = New System.Drawing.Point(259, 179)
         Me.DTToContract.Name = "DTToContract"
         Me.DTToContract.Size = New System.Drawing.Size(18, 22)
-        Me.DTToContract.TabIndex = 56
+        Me.DTToContract.TabIndex = 21
         '
         'DTFromContract
         '
         Me.DTFromContract.Location = New System.Drawing.Point(259, 156)
         Me.DTFromContract.Name = "DTFromContract"
         Me.DTFromContract.Size = New System.Drawing.Size(18, 22)
-        Me.DTFromContract.TabIndex = 54
+        Me.DTFromContract.TabIndex = 19
         '
         'P2PositionContract
         '
@@ -6329,7 +6355,7 @@ Partial Class FrmEditor
         Me.P2PositionContract.Location = New System.Drawing.Point(158, 545)
         Me.P2PositionContract.Name = "P2PositionContract"
         Me.P2PositionContract.Size = New System.Drawing.Size(464, 22)
-        Me.P2PositionContract.TabIndex = 49
+        Me.P2PositionContract.TabIndex = 34
         '
         'P2LastNameContract
         '
@@ -6337,7 +6363,7 @@ Partial Class FrmEditor
         Me.P2LastNameContract.Location = New System.Drawing.Point(158, 522)
         Me.P2LastNameContract.Name = "P2LastNameContract"
         Me.P2LastNameContract.Size = New System.Drawing.Size(464, 22)
-        Me.P2LastNameContract.TabIndex = 48
+        Me.P2LastNameContract.TabIndex = 33
         '
         'P2MiddleNameContract
         '
@@ -6345,7 +6371,7 @@ Partial Class FrmEditor
         Me.P2MiddleNameContract.Location = New System.Drawing.Point(158, 499)
         Me.P2MiddleNameContract.Name = "P2MiddleNameContract"
         Me.P2MiddleNameContract.Size = New System.Drawing.Size(464, 22)
-        Me.P2MiddleNameContract.TabIndex = 47
+        Me.P2MiddleNameContract.TabIndex = 32
         '
         'P2FirstNameContract
         '
@@ -6353,7 +6379,7 @@ Partial Class FrmEditor
         Me.P2FirstNameContract.Location = New System.Drawing.Point(158, 476)
         Me.P2FirstNameContract.Name = "P2FirstNameContract"
         Me.P2FirstNameContract.Size = New System.Drawing.Size(464, 22)
-        Me.P2FirstNameContract.TabIndex = 46
+        Me.P2FirstNameContract.TabIndex = 31
         '
         'P2CompanyContract
         '
@@ -6361,7 +6387,7 @@ Partial Class FrmEditor
         Me.P2CompanyContract.Location = New System.Drawing.Point(158, 453)
         Me.P2CompanyContract.Name = "P2CompanyContract"
         Me.P2CompanyContract.Size = New System.Drawing.Size(464, 22)
-        Me.P2CompanyContract.TabIndex = 45
+        Me.P2CompanyContract.TabIndex = 30
         '
         'P1PositionContract
         '
@@ -6369,7 +6395,7 @@ Partial Class FrmEditor
         Me.P1PositionContract.Location = New System.Drawing.Point(158, 399)
         Me.P1PositionContract.Name = "P1PositionContract"
         Me.P1PositionContract.Size = New System.Drawing.Size(464, 22)
-        Me.P1PositionContract.TabIndex = 44
+        Me.P1PositionContract.TabIndex = 29
         '
         'P1LastNameContract
         '
@@ -6377,7 +6403,7 @@ Partial Class FrmEditor
         Me.P1LastNameContract.Location = New System.Drawing.Point(158, 376)
         Me.P1LastNameContract.Name = "P1LastNameContract"
         Me.P1LastNameContract.Size = New System.Drawing.Size(464, 22)
-        Me.P1LastNameContract.TabIndex = 43
+        Me.P1LastNameContract.TabIndex = 28
         '
         'P1MiddleNameContract
         '
@@ -6385,7 +6411,7 @@ Partial Class FrmEditor
         Me.P1MiddleNameContract.Location = New System.Drawing.Point(158, 353)
         Me.P1MiddleNameContract.Name = "P1MiddleNameContract"
         Me.P1MiddleNameContract.Size = New System.Drawing.Size(464, 22)
-        Me.P1MiddleNameContract.TabIndex = 42
+        Me.P1MiddleNameContract.TabIndex = 27
         '
         'P1FirstNameContract
         '
@@ -6393,7 +6419,7 @@ Partial Class FrmEditor
         Me.P1FirstNameContract.Location = New System.Drawing.Point(158, 330)
         Me.P1FirstNameContract.Name = "P1FirstNameContract"
         Me.P1FirstNameContract.Size = New System.Drawing.Size(464, 22)
-        Me.P1FirstNameContract.TabIndex = 41
+        Me.P1FirstNameContract.TabIndex = 26
         '
         'P1CompanyContract
         '
@@ -6401,7 +6427,7 @@ Partial Class FrmEditor
         Me.P1CompanyContract.Location = New System.Drawing.Point(158, 307)
         Me.P1CompanyContract.Name = "P1CompanyContract"
         Me.P1CompanyContract.Size = New System.Drawing.Size(464, 22)
-        Me.P1CompanyContract.TabIndex = 40
+        Me.P1CompanyContract.TabIndex = 25
         '
         'ContractPlaceContract
         '
@@ -6409,7 +6435,7 @@ Partial Class FrmEditor
         Me.ContractPlaceContract.Location = New System.Drawing.Point(158, 255)
         Me.ContractPlaceContract.Name = "ContractPlaceContract"
         Me.ContractPlaceContract.Size = New System.Drawing.Size(288, 22)
-        Me.ContractPlaceContract.TabIndex = 39
+        Me.ContractPlaceContract.TabIndex = 24
         '
         'SignDateContract
         '
@@ -6417,7 +6443,7 @@ Partial Class FrmEditor
         Me.SignDateContract.Location = New System.Drawing.Point(158, 232)
         Me.SignDateContract.Name = "SignDateContract"
         Me.SignDateContract.Size = New System.Drawing.Size(100, 22)
-        Me.SignDateContract.TabIndex = 38
+        Me.SignDateContract.TabIndex = 22
         '
         'ToPeriodContract
         '
@@ -6425,7 +6451,7 @@ Partial Class FrmEditor
         Me.ToPeriodContract.Location = New System.Drawing.Point(158, 179)
         Me.ToPeriodContract.Name = "ToPeriodContract"
         Me.ToPeriodContract.Size = New System.Drawing.Size(100, 22)
-        Me.ToPeriodContract.TabIndex = 37
+        Me.ToPeriodContract.TabIndex = 20
         '
         'FromPeriodContract
         '
@@ -6433,7 +6459,7 @@ Partial Class FrmEditor
         Me.FromPeriodContract.Location = New System.Drawing.Point(158, 156)
         Me.FromPeriodContract.Name = "FromPeriodContract"
         Me.FromPeriodContract.Size = New System.Drawing.Size(100, 22)
-        Me.FromPeriodContract.TabIndex = 36
+        Me.FromPeriodContract.TabIndex = 18
         '
         'PurposeContract
         '
@@ -6441,7 +6467,7 @@ Partial Class FrmEditor
         Me.PurposeContract.Location = New System.Drawing.Point(158, 101)
         Me.PurposeContract.Name = "PurposeContract"
         Me.PurposeContract.Size = New System.Drawing.Size(464, 22)
-        Me.PurposeContract.TabIndex = 35
+        Me.PurposeContract.TabIndex = 17
         '
         'ContractTypeContract
         '
@@ -6449,7 +6475,7 @@ Partial Class FrmEditor
         Me.ContractTypeContract.Location = New System.Drawing.Point(158, 78)
         Me.ContractTypeContract.Name = "ContractTypeContract"
         Me.ContractTypeContract.Size = New System.Drawing.Size(288, 22)
-        Me.ContractTypeContract.TabIndex = 34
+        Me.ContractTypeContract.TabIndex = 16
         '
         'BoxNoContract
         '
@@ -6458,7 +6484,7 @@ Partial Class FrmEditor
         Me.BoxNoContract.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoContract.Name = "BoxNoContract"
         Me.BoxNoContract.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoContract.TabIndex = 7
+        Me.BoxNoContract.TabIndex = 15
         '
         'RackNoContract
         '
@@ -6467,7 +6493,7 @@ Partial Class FrmEditor
         Me.RackNoContract.Location = New System.Drawing.Point(158, 27)
         Me.RackNoContract.Name = "RackNoContract"
         Me.RackNoContract.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoContract.TabIndex = 6
+        Me.RackNoContract.TabIndex = 14
         '
         'Attorney
         '
@@ -6540,28 +6566,28 @@ Partial Class FrmEditor
         Me.DTToAttorney.Location = New System.Drawing.Point(259, 438)
         Me.DTToAttorney.Name = "DTToAttorney"
         Me.DTToAttorney.Size = New System.Drawing.Size(18, 22)
-        Me.DTToAttorney.TabIndex = 62
+        Me.DTToAttorney.TabIndex = 32
         '
         'DTFromAttorney
         '
         Me.DTFromAttorney.Location = New System.Drawing.Point(259, 414)
         Me.DTFromAttorney.Name = "DTFromAttorney"
         Me.DTFromAttorney.Size = New System.Drawing.Size(18, 22)
-        Me.DTFromAttorney.TabIndex = 60
+        Me.DTFromAttorney.TabIndex = 30
         '
         'DTIssuePlaceAttorney
         '
         Me.DTIssuePlaceAttorney.Location = New System.Drawing.Point(259, 124)
         Me.DTIssuePlaceAttorney.Name = "DTIssuePlaceAttorney"
         Me.DTIssuePlaceAttorney.Size = New System.Drawing.Size(18, 22)
-        Me.DTIssuePlaceAttorney.TabIndex = 58
+        Me.DTIssuePlaceAttorney.TabIndex = 20
         '
         'DTIssueDateAttorney
         '
         Me.DTIssueDateAttorney.Location = New System.Drawing.Point(259, 101)
         Me.DTIssueDateAttorney.Name = "DTIssueDateAttorney"
         Me.DTIssueDateAttorney.Size = New System.Drawing.Size(18, 22)
-        Me.DTIssueDateAttorney.TabIndex = 56
+        Me.DTIssueDateAttorney.TabIndex = 18
         '
         'ToPeriodAttorney
         '
@@ -6569,7 +6595,7 @@ Partial Class FrmEditor
         Me.ToPeriodAttorney.Location = New System.Drawing.Point(158, 438)
         Me.ToPeriodAttorney.Name = "ToPeriodAttorney"
         Me.ToPeriodAttorney.Size = New System.Drawing.Size(100, 22)
-        Me.ToPeriodAttorney.TabIndex = 45
+        Me.ToPeriodAttorney.TabIndex = 31
         '
         'FromPeriodAttorney
         '
@@ -6577,7 +6603,7 @@ Partial Class FrmEditor
         Me.FromPeriodAttorney.Location = New System.Drawing.Point(158, 414)
         Me.FromPeriodAttorney.Name = "FromPeriodAttorney"
         Me.FromPeriodAttorney.Size = New System.Drawing.Size(100, 22)
-        Me.FromPeriodAttorney.TabIndex = 44
+        Me.FromPeriodAttorney.TabIndex = 29
         '
         'P2LastNameAttorney
         '
@@ -6585,7 +6611,7 @@ Partial Class FrmEditor
         Me.P2LastNameAttorney.Location = New System.Drawing.Point(158, 362)
         Me.P2LastNameAttorney.Name = "P2LastNameAttorney"
         Me.P2LastNameAttorney.Size = New System.Drawing.Size(464, 22)
-        Me.P2LastNameAttorney.TabIndex = 43
+        Me.P2LastNameAttorney.TabIndex = 28
         '
         'P2MiddleNameAttorney
         '
@@ -6593,7 +6619,7 @@ Partial Class FrmEditor
         Me.P2MiddleNameAttorney.Location = New System.Drawing.Point(158, 339)
         Me.P2MiddleNameAttorney.Name = "P2MiddleNameAttorney"
         Me.P2MiddleNameAttorney.Size = New System.Drawing.Size(464, 22)
-        Me.P2MiddleNameAttorney.TabIndex = 42
+        Me.P2MiddleNameAttorney.TabIndex = 27
         '
         'P2FirstNameAttorney
         '
@@ -6601,7 +6627,7 @@ Partial Class FrmEditor
         Me.P2FirstNameAttorney.Location = New System.Drawing.Point(158, 316)
         Me.P2FirstNameAttorney.Name = "P2FirstNameAttorney"
         Me.P2FirstNameAttorney.Size = New System.Drawing.Size(464, 22)
-        Me.P2FirstNameAttorney.TabIndex = 41
+        Me.P2FirstNameAttorney.TabIndex = 26
         '
         'P2CompanyAttorney
         '
@@ -6609,7 +6635,7 @@ Partial Class FrmEditor
         Me.P2CompanyAttorney.Location = New System.Drawing.Point(158, 293)
         Me.P2CompanyAttorney.Name = "P2CompanyAttorney"
         Me.P2CompanyAttorney.Size = New System.Drawing.Size(464, 22)
-        Me.P2CompanyAttorney.TabIndex = 40
+        Me.P2CompanyAttorney.TabIndex = 25
         '
         'P1LastNameAttorney
         '
@@ -6617,7 +6643,7 @@ Partial Class FrmEditor
         Me.P1LastNameAttorney.Location = New System.Drawing.Point(158, 243)
         Me.P1LastNameAttorney.Name = "P1LastNameAttorney"
         Me.P1LastNameAttorney.Size = New System.Drawing.Size(464, 22)
-        Me.P1LastNameAttorney.TabIndex = 39
+        Me.P1LastNameAttorney.TabIndex = 24
         '
         'P1MiddleNameAttorney
         '
@@ -6625,7 +6651,7 @@ Partial Class FrmEditor
         Me.P1MiddleNameAttorney.Location = New System.Drawing.Point(158, 220)
         Me.P1MiddleNameAttorney.Name = "P1MiddleNameAttorney"
         Me.P1MiddleNameAttorney.Size = New System.Drawing.Size(464, 22)
-        Me.P1MiddleNameAttorney.TabIndex = 38
+        Me.P1MiddleNameAttorney.TabIndex = 23
         '
         'P1FirstNameAttorney
         '
@@ -6633,7 +6659,7 @@ Partial Class FrmEditor
         Me.P1FirstNameAttorney.Location = New System.Drawing.Point(158, 196)
         Me.P1FirstNameAttorney.Name = "P1FirstNameAttorney"
         Me.P1FirstNameAttorney.Size = New System.Drawing.Size(464, 22)
-        Me.P1FirstNameAttorney.TabIndex = 37
+        Me.P1FirstNameAttorney.TabIndex = 22
         '
         'P1CompanyAttorney
         '
@@ -6641,7 +6667,7 @@ Partial Class FrmEditor
         Me.P1CompanyAttorney.Location = New System.Drawing.Point(158, 173)
         Me.P1CompanyAttorney.Name = "P1CompanyAttorney"
         Me.P1CompanyAttorney.Size = New System.Drawing.Size(464, 22)
-        Me.P1CompanyAttorney.TabIndex = 36
+        Me.P1CompanyAttorney.TabIndex = 21
         '
         'IssuePlaceAttorney
         '
@@ -6649,7 +6675,7 @@ Partial Class FrmEditor
         Me.IssuePlaceAttorney.Location = New System.Drawing.Point(158, 124)
         Me.IssuePlaceAttorney.Name = "IssuePlaceAttorney"
         Me.IssuePlaceAttorney.Size = New System.Drawing.Size(100, 22)
-        Me.IssuePlaceAttorney.TabIndex = 35
+        Me.IssuePlaceAttorney.TabIndex = 19
         '
         'IssueDateAttorney
         '
@@ -6657,7 +6683,7 @@ Partial Class FrmEditor
         Me.IssueDateAttorney.Location = New System.Drawing.Point(158, 101)
         Me.IssueDateAttorney.Name = "IssueDateAttorney"
         Me.IssueDateAttorney.Size = New System.Drawing.Size(100, 22)
-        Me.IssueDateAttorney.TabIndex = 34
+        Me.IssueDateAttorney.TabIndex = 17
         '
         'BoxNoAttorney
         '
@@ -6666,7 +6692,7 @@ Partial Class FrmEditor
         Me.BoxNoAttorney.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoAttorney.Name = "BoxNoAttorney"
         Me.BoxNoAttorney.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoAttorney.TabIndex = 7
+        Me.BoxNoAttorney.TabIndex = 15
         '
         'RackNoAttorney
         '
@@ -6675,7 +6701,7 @@ Partial Class FrmEditor
         Me.RackNoAttorney.Location = New System.Drawing.Point(158, 27)
         Me.RackNoAttorney.Name = "RackNoAttorney"
         Me.RackNoAttorney.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoAttorney.TabIndex = 6
+        Me.RackNoAttorney.TabIndex = 14
         '
         'PurposeAttorney
         '
@@ -6684,7 +6710,7 @@ Partial Class FrmEditor
         Me.PurposeAttorney.Location = New System.Drawing.Point(158, 78)
         Me.PurposeAttorney.Name = "PurposeAttorney"
         Me.PurposeAttorney.Size = New System.Drawing.Size(464, 22)
-        Me.PurposeAttorney.TabIndex = 14
+        Me.PurposeAttorney.TabIndex = 16
         '
         'OtherDoc
         '
@@ -6737,14 +6763,14 @@ Partial Class FrmEditor
         Me.DTIssuePlaceOther.Location = New System.Drawing.Point(259, 119)
         Me.DTIssuePlaceOther.Name = "DTIssuePlaceOther"
         Me.DTIssuePlaceOther.Size = New System.Drawing.Size(18, 22)
-        Me.DTIssuePlaceOther.TabIndex = 60
+        Me.DTIssuePlaceOther.TabIndex = 20
         '
         'DTIssueDateOther
         '
         Me.DTIssueDateOther.Location = New System.Drawing.Point(259, 96)
         Me.DTIssueDateOther.Name = "DTIssueDateOther"
         Me.DTIssueDateOther.Size = New System.Drawing.Size(18, 22)
-        Me.DTIssueDateOther.TabIndex = 58
+        Me.DTIssueDateOther.TabIndex = 18
         '
         'LastNameOther
         '
@@ -6752,7 +6778,7 @@ Partial Class FrmEditor
         Me.LastNameOther.Location = New System.Drawing.Point(158, 245)
         Me.LastNameOther.Name = "LastNameOther"
         Me.LastNameOther.Size = New System.Drawing.Size(464, 22)
-        Me.LastNameOther.TabIndex = 39
+        Me.LastNameOther.TabIndex = 24
         '
         'MiddleNameOther
         '
@@ -6760,7 +6786,7 @@ Partial Class FrmEditor
         Me.MiddleNameOther.Location = New System.Drawing.Point(158, 222)
         Me.MiddleNameOther.Name = "MiddleNameOther"
         Me.MiddleNameOther.Size = New System.Drawing.Size(464, 22)
-        Me.MiddleNameOther.TabIndex = 38
+        Me.MiddleNameOther.TabIndex = 23
         '
         'FirstNameOther
         '
@@ -6768,7 +6794,7 @@ Partial Class FrmEditor
         Me.FirstNameOther.Location = New System.Drawing.Point(158, 199)
         Me.FirstNameOther.Name = "FirstNameOther"
         Me.FirstNameOther.Size = New System.Drawing.Size(464, 22)
-        Me.FirstNameOther.TabIndex = 37
+        Me.FirstNameOther.TabIndex = 22
         '
         'CompanyOther
         '
@@ -6776,7 +6802,7 @@ Partial Class FrmEditor
         Me.CompanyOther.Location = New System.Drawing.Point(158, 176)
         Me.CompanyOther.Name = "CompanyOther"
         Me.CompanyOther.Size = New System.Drawing.Size(464, 22)
-        Me.CompanyOther.TabIndex = 36
+        Me.CompanyOther.TabIndex = 21
         '
         'IssuePlaceOther
         '
@@ -6784,7 +6810,7 @@ Partial Class FrmEditor
         Me.IssuePlaceOther.Location = New System.Drawing.Point(158, 119)
         Me.IssuePlaceOther.Name = "IssuePlaceOther"
         Me.IssuePlaceOther.Size = New System.Drawing.Size(100, 22)
-        Me.IssuePlaceOther.TabIndex = 35
+        Me.IssuePlaceOther.TabIndex = 19
         '
         'IssueDateOther
         '
@@ -6792,7 +6818,7 @@ Partial Class FrmEditor
         Me.IssueDateOther.Location = New System.Drawing.Point(158, 96)
         Me.IssueDateOther.Name = "IssueDateOther"
         Me.IssueDateOther.Size = New System.Drawing.Size(100, 22)
-        Me.IssueDateOther.TabIndex = 34
+        Me.IssueDateOther.TabIndex = 17
         '
         'BoxNoOther
         '
@@ -6801,7 +6827,7 @@ Partial Class FrmEditor
         Me.BoxNoOther.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoOther.Name = "BoxNoOther"
         Me.BoxNoOther.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoOther.TabIndex = 7
+        Me.BoxNoOther.TabIndex = 15
         '
         'RackNoOther
         '
@@ -6810,7 +6836,7 @@ Partial Class FrmEditor
         Me.RackNoOther.Location = New System.Drawing.Point(158, 27)
         Me.RackNoOther.Name = "RackNoOther"
         Me.RackNoOther.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoOther.TabIndex = 6
+        Me.RackNoOther.TabIndex = 14
         '
         'PurposeOther
         '
@@ -6819,7 +6845,7 @@ Partial Class FrmEditor
         Me.PurposeOther.Location = New System.Drawing.Point(158, 73)
         Me.PurposeOther.Name = "PurposeOther"
         Me.PurposeOther.Size = New System.Drawing.Size(464, 22)
-        Me.PurposeOther.TabIndex = 14
+        Me.PurposeOther.TabIndex = 16
         '
         'Memo
         '
@@ -6885,7 +6911,7 @@ Partial Class FrmEditor
         Me.DTIssueDateMemo.Location = New System.Drawing.Point(259, 165)
         Me.DTIssueDateMemo.Name = "DTIssueDateMemo"
         Me.DTIssueDateMemo.Size = New System.Drawing.Size(18, 22)
-        Me.DTIssueDateMemo.TabIndex = 60
+        Me.DTIssueDateMemo.TabIndex = 21
         '
         'P2LastNameMemo
         '
@@ -6893,7 +6919,7 @@ Partial Class FrmEditor
         Me.P2LastNameMemo.Location = New System.Drawing.Point(158, 416)
         Me.P2LastNameMemo.Name = "P2LastNameMemo"
         Me.P2LastNameMemo.Size = New System.Drawing.Size(464, 22)
-        Me.P2LastNameMemo.TabIndex = 45
+        Me.P2LastNameMemo.TabIndex = 29
         '
         'P2MiddleNameMemo
         '
@@ -6901,7 +6927,7 @@ Partial Class FrmEditor
         Me.P2MiddleNameMemo.Location = New System.Drawing.Point(158, 393)
         Me.P2MiddleNameMemo.Name = "P2MiddleNameMemo"
         Me.P2MiddleNameMemo.Size = New System.Drawing.Size(464, 22)
-        Me.P2MiddleNameMemo.TabIndex = 44
+        Me.P2MiddleNameMemo.TabIndex = 28
         '
         'P2FirstNameMemo
         '
@@ -6909,7 +6935,7 @@ Partial Class FrmEditor
         Me.P2FirstNameMemo.Location = New System.Drawing.Point(158, 370)
         Me.P2FirstNameMemo.Name = "P2FirstNameMemo"
         Me.P2FirstNameMemo.Size = New System.Drawing.Size(464, 22)
-        Me.P2FirstNameMemo.TabIndex = 43
+        Me.P2FirstNameMemo.TabIndex = 27
         '
         'P2CompanyMemo
         '
@@ -6917,7 +6943,7 @@ Partial Class FrmEditor
         Me.P2CompanyMemo.Location = New System.Drawing.Point(158, 347)
         Me.P2CompanyMemo.Name = "P2CompanyMemo"
         Me.P2CompanyMemo.Size = New System.Drawing.Size(464, 22)
-        Me.P2CompanyMemo.TabIndex = 42
+        Me.P2CompanyMemo.TabIndex = 26
         '
         'P1LastNameMemo
         '
@@ -6925,7 +6951,7 @@ Partial Class FrmEditor
         Me.P1LastNameMemo.Location = New System.Drawing.Point(158, 290)
         Me.P1LastNameMemo.Name = "P1LastNameMemo"
         Me.P1LastNameMemo.Size = New System.Drawing.Size(464, 22)
-        Me.P1LastNameMemo.TabIndex = 41
+        Me.P1LastNameMemo.TabIndex = 25
         '
         'P1MiddleNameMemo
         '
@@ -6933,7 +6959,7 @@ Partial Class FrmEditor
         Me.P1MiddleNameMemo.Location = New System.Drawing.Point(158, 267)
         Me.P1MiddleNameMemo.Name = "P1MiddleNameMemo"
         Me.P1MiddleNameMemo.Size = New System.Drawing.Size(464, 22)
-        Me.P1MiddleNameMemo.TabIndex = 40
+        Me.P1MiddleNameMemo.TabIndex = 24
         '
         'P1FirstNameMemo
         '
@@ -6941,7 +6967,7 @@ Partial Class FrmEditor
         Me.P1FirstNameMemo.Location = New System.Drawing.Point(158, 244)
         Me.P1FirstNameMemo.Name = "P1FirstNameMemo"
         Me.P1FirstNameMemo.Size = New System.Drawing.Size(464, 22)
-        Me.P1FirstNameMemo.TabIndex = 39
+        Me.P1FirstNameMemo.TabIndex = 23
         '
         'P1CompanyMemo
         '
@@ -6949,7 +6975,7 @@ Partial Class FrmEditor
         Me.P1CompanyMemo.Location = New System.Drawing.Point(158, 221)
         Me.P1CompanyMemo.Name = "P1CompanyMemo"
         Me.P1CompanyMemo.Size = New System.Drawing.Size(464, 22)
-        Me.P1CompanyMemo.TabIndex = 38
+        Me.P1CompanyMemo.TabIndex = 22
         '
         'IssueDateMemo
         '
@@ -6957,7 +6983,7 @@ Partial Class FrmEditor
         Me.IssueDateMemo.Location = New System.Drawing.Point(158, 165)
         Me.IssueDateMemo.Name = "IssueDateMemo"
         Me.IssueDateMemo.Size = New System.Drawing.Size(100, 22)
-        Me.IssueDateMemo.TabIndex = 37
+        Me.IssueDateMemo.TabIndex = 20
         '
         'MemoSubjMemo
         '
@@ -6965,7 +6991,7 @@ Partial Class FrmEditor
         Me.MemoSubjMemo.Location = New System.Drawing.Point(158, 119)
         Me.MemoSubjMemo.Name = "MemoSubjMemo"
         Me.MemoSubjMemo.Size = New System.Drawing.Size(464, 22)
-        Me.MemoSubjMemo.TabIndex = 36
+        Me.MemoSubjMemo.TabIndex = 18
         '
         'MemoTypeMemo
         '
@@ -6973,7 +6999,7 @@ Partial Class FrmEditor
         Me.MemoTypeMemo.Location = New System.Drawing.Point(158, 96)
         Me.MemoTypeMemo.Name = "MemoTypeMemo"
         Me.MemoTypeMemo.Size = New System.Drawing.Size(464, 22)
-        Me.MemoTypeMemo.TabIndex = 35
+        Me.MemoTypeMemo.TabIndex = 17
         '
         'CompanyMemo
         '
@@ -6981,7 +7007,7 @@ Partial Class FrmEditor
         Me.CompanyMemo.Location = New System.Drawing.Point(158, 73)
         Me.CompanyMemo.Name = "CompanyMemo"
         Me.CompanyMemo.Size = New System.Drawing.Size(464, 22)
-        Me.CompanyMemo.TabIndex = 34
+        Me.CompanyMemo.TabIndex = 16
         '
         'BoxNoMemo
         '
@@ -6990,7 +7016,7 @@ Partial Class FrmEditor
         Me.BoxNoMemo.Location = New System.Drawing.Point(158, 50)
         Me.BoxNoMemo.Name = "BoxNoMemo"
         Me.BoxNoMemo.Size = New System.Drawing.Size(123, 22)
-        Me.BoxNoMemo.TabIndex = 7
+        Me.BoxNoMemo.TabIndex = 15
         '
         'RackNoMemo
         '
@@ -6999,7 +7025,7 @@ Partial Class FrmEditor
         Me.RackNoMemo.Location = New System.Drawing.Point(158, 27)
         Me.RackNoMemo.Name = "RackNoMemo"
         Me.RackNoMemo.Size = New System.Drawing.Size(123, 22)
-        Me.RackNoMemo.TabIndex = 6
+        Me.RackNoMemo.TabIndex = 14
         '
         'PurposeMemo
         '
@@ -7008,7 +7034,7 @@ Partial Class FrmEditor
         Me.PurposeMemo.Location = New System.Drawing.Point(158, 142)
         Me.PurposeMemo.Name = "PurposeMemo"
         Me.PurposeMemo.Size = New System.Drawing.Size(464, 22)
-        Me.PurposeMemo.TabIndex = 14
+        Me.PurposeMemo.TabIndex = 19
         '
         'StatusStrip1
         '
@@ -7033,7 +7059,7 @@ Partial Class FrmEditor
         Me.BtnClear.Location = New System.Drawing.Point(544, 8)
         Me.BtnClear.Name = "BtnClear"
         Me.BtnClear.Size = New System.Drawing.Size(92, 27)
-        Me.BtnClear.TabIndex = 4
+        Me.BtnClear.TabIndex = 6
         Me.BtnClear.Text = "Clear Keys"
         Me.BtnClear.UseVisualStyleBackColor = False
         '
@@ -7044,7 +7070,7 @@ Partial Class FrmEditor
         Me.BtnSave.Location = New System.Drawing.Point(192, 8)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(92, 27)
-        Me.BtnSave.TabIndex = 2
+        Me.BtnSave.TabIndex = 3
         Me.BtnSave.Text = "Save"
         Me.BtnSave.UseVisualStyleBackColor = False
         '
@@ -7068,7 +7094,7 @@ Partial Class FrmEditor
         Me.DocumentTypeComboBox.Location = New System.Drawing.Point(165, 44)
         Me.DocumentTypeComboBox.Name = "DocumentTypeComboBox"
         Me.DocumentTypeComboBox.Size = New System.Drawing.Size(461, 24)
-        Me.DocumentTypeComboBox.TabIndex = 5
+        Me.DocumentTypeComboBox.TabIndex = 7
         '
         'Browser
         '
@@ -7093,6 +7119,15 @@ Partial Class FrmEditor
         Me.TableAdapterManager.DocumentGroupsTableAdapter = Nothing
         Me.TableAdapterManager.DocumentTypesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = DMS.DMSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'Label96
+        '
+        Label96.AutoSize = True
+        Label96.Location = New System.Drawing.Point(261, 179)
+        Label96.Name = "Label96"
+        Label96.Size = New System.Drawing.Size(85, 16)
+        Label96.TabIndex = 56
+        Label96.Text = "(no. of years)"
         '
         'FrmEditor
         '
