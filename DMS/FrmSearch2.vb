@@ -146,7 +146,7 @@ Public Class FrmSearch2
             Me.BtnDownload.Visible = True
             Me.BtnEditRecord.Visible = False
             Me.BtnSaveChanges1.Visible = False
-            Me.BtnRemoval.Visible = False
+            Me.BtnRemoval.Visible = True
 
 
         ElseIf FrmMain.type = "User 1" Then

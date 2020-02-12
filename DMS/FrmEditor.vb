@@ -995,18 +995,14 @@ Public Class FrmEditor
 
 
             If IsDBNull(DocsCatalogueBindingSource.Current!DocumentType) Then
-
                 DocumentTypeComboBox.SelectedIndex = -1
-
             End If
 
 
 
 
             If IsDBNull(DocsCatalogueBindingSource.Current!PaymentForm) Then
-
                 PaymentFormComboBox.SelectedIndex = -1
-
             End If
 
 
