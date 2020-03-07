@@ -696,8 +696,28 @@ Public Class FrmMain
         FrmUsers.Close()
 
 
-        TabControl1.SelectTab(TabLogin)
+
+
+
+
+
+
+
+
+            TabControl1.SelectTab(TabLogin)
             'Close all windows and transfer to login tab
+
+
+
+            UserManagementToolStripMenuItem.Visible = True
+            EditorToolStripMenuItem.Visible = True
+            IndexFilesToolStripMenuItem.Visible = True
+            RemovalToolStripMenuItem6.Visible = True
+            Me.ToolStripMenuItem1.Visible = True
+            Me.ToolStripMenuItem2.Visible = True
+            Me.ToolStripMenuItem3.Visible = True
+            Me.ToolStripMenuItem4.Visible = True
+            Me.ToolStripMenuItem5.Visible = True
 
 
 
